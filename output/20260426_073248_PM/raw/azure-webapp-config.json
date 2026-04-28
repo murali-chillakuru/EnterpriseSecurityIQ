@@ -1,0 +1,48 @@
+[
+  {
+    "CollectedAt": "2026-04-26T23:40:16.176604+00:00",
+    "Collector": "AzureCompute",
+    "Data": {
+      "AppId": "/subscriptions/9154cdcb-5a52-452a-b1e7-483be9eee6d2/resourceGroups/rg-ecma2-poc-wus2/providers/Microsoft.Web/sites/func-ecma2poc-lkxerbapuxyv2",
+      "FtpsState": null,
+      "HttpsOnly": true,
+      "Location": "West US 2",
+      "ManagedIdentityType": "SystemAssigned",
+      "MinTlsVersion": null,
+      "Name": "func-ecma2poc-lkxerbapuxyv2",
+      "RemoteDebuggingEnabled": null,
+      "SubscriptionId": "9154cdcb-5a52-452a-b1e7-483be9eee6d2",
+      "SubscriptionName": "Infra"
+    },
+    "Description": "Web App: func-ecma2poc-lkxerbapuxyv2",
+    "EvidenceId": "56c878b5-7ddb-5e29-9593-4ffa2ecb167d",
+    "EvidenceType": "azure-webapp-config",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/9154cdcb-5a52-452a-b1e7-483be9eee6d2/resourceGroups/rg-ecma2-poc-wus2/providers/Microsoft.Web/sites/func-ecma2poc-lkxerbapuxyv2",
+    "ResourceType": "WebApp",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:40:29.835652+00:00",
+    "Collector": "AzureCompute",
+    "Data": {
+      "AppId": "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/resourceGroups/rg-AIFutureInitiative/providers/Microsoft.Web/sites/aifutureinitiative",
+      "FtpsState": null,
+      "HttpsOnly": true,
+      "Location": "East US 2",
+      "ManagedIdentityType": "SystemAssigned",
+      "MinTlsVersion": null,
+      "Name": "aifutureinitiative",
+      "RemoteDebuggingEnabled": null,
+      "SubscriptionId": "d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0",
+      "SubscriptionName": "AI"
+    },
+    "Description": "Web App: aifutureinitiative",
+    "EvidenceId": "f5eea47b-a0c0-57ad-9375-5c2b42f16bf9",
+    "EvidenceType": "azure-webapp-config",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/resourceGroups/rg-AIFutureInitiative/providers/Microsoft.Web/sites/aifutureinitiative",
+    "ResourceType": "WebApp",
+    "Source": "Azure"
+  }
+]

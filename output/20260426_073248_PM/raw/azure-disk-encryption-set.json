@@ -1,0 +1,47 @@
+[
+  {
+    "CollectedAt": "2026-04-26T23:39:35.057237+00:00",
+    "Collector": "AzureAdditionalServices",
+    "Data": {
+      "DesId": "/subscriptions/0eb177bd-28b1-44da-b683-1508e1268aee/resourceGroups/ALL-PCIDSS-RESOURCES-RG/providers/Microsoft.Compute/diskEncryptionSets/pcidsstestdes",
+      "EncryptionType": "EncryptionAtRestWithCustomerKey",
+      "KeyVaultKeyUrl": "https://pcidsskv.vault.azure.net/keys/pcidsskvkey/274b56d7e65a407d878658fccf786a4a",
+      "Location": "eastus2",
+      "Name": "pcidsstestdes",
+      "ProvisioningState": "Succeeded",
+      "SubscriptionId": "0eb177bd-28b1-44da-b683-1508e1268aee",
+      "SubscriptionName": "Prod"
+    },
+    "Description": "Disk Encryption Set: pcidsstestdes",
+    "EvidenceId": "a54cd3f5-60d1-50f0-bc77-99e1666df863",
+    "EvidenceType": "azure-disk-encryption-set",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/0eb177bd-28b1-44da-b683-1508e1268aee/resourceGroups/ALL-PCIDSS-RESOURCES-RG/providers/Microsoft.Compute/diskEncryptionSets/pcidsstestdes",
+    "ResourceType": "DiskEncryptionSet",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:40:42.407229+00:00",
+    "Collector": "AzureManagedDisks",
+    "Data": {
+      "AutoKeyRotationError": "",
+      "EncryptionType": "EncryptionAtRestWithCustomerKey",
+      "IdentityType": "SystemAssigned",
+      "KeyVaultKeyUrl": "https://pcidsskv.vault.azure.net/keys/pcidsskvkey/274b56d7e65a407d878658fccf786a4a",
+      "Location": "eastus2",
+      "Name": "pcidsstestdes",
+      "ResourceGroup": "ALL-PCIDSS-RESOURCES-RG",
+      "RotationToLatestKeyVersionEnabled": null,
+      "SetId": "/subscriptions/0eb177bd-28b1-44da-b683-1508e1268aee/resourceGroups/ALL-PCIDSS-RESOURCES-RG/providers/Microsoft.Compute/diskEncryptionSets/pcidsstestdes",
+      "SubscriptionId": "0eb177bd-28b1-44da-b683-1508e1268aee",
+      "SubscriptionName": "Prod"
+    },
+    "Description": "Disk encryption set: pcidsstestdes",
+    "EvidenceId": "4127aa9b-c640-5a0c-8f0e-04faf8c04baa",
+    "EvidenceType": "azure-disk-encryption-set",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/0eb177bd-28b1-44da-b683-1508e1268aee/resourceGroups/ALL-PCIDSS-RESOURCES-RG/providers/Microsoft.Compute/diskEncryptionSets/pcidsstestdes",
+    "ResourceType": "DiskEncryptionSet",
+    "Source": "Azure"
+  }
+]

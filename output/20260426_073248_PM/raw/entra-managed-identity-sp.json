@@ -1,0 +1,2605 @@
+[
+  {
+    "CollectedAt": "2026-04-26T23:36:18.237648+00:00",
+    "Collector": "EntraWorkloadIdentity",
+    "Data": {
+      "AccountEnabled": true,
+      "AlternativeNames": [
+        "isExplicit=False",
+        "/providers/Microsoft.Management/managementGroups/4a3eb5f4-1ec6-4a73-bb03-1ca63cb52d67/providers/Microsoft.Authorization/policyAssignments/8da3c7e1-a5dc-43ea-8f59"
+      ],
+      "AppId": "6e1bf86a-ff8e-4e9b-b487-077e0b8b8e07",
+      "DisplayName": "8da3c7e1-a5dc-43ea-8f59",
+      "ServicePrincipalId": "00cede0c-887f-4e9e-a29c-72a6f5dd4cba",
+      "ServicePrincipalType": "managedidentity",
+      "Tags": []
+    },
+    "Description": "Managed Identity SP: 8da3c7e1-a5dc-43ea-8f59",
+    "EvidenceId": "22a730bf-cd20-539e-9974-3e26bffaa9bd",
+    "EvidenceType": "entra-managed-identity-sp",
+    "RawReference": null,
+    "ResourceId": "00cede0c-887f-4e9e-a29c-72a6f5dd4cba",
+    "ResourceType": "ManagedIdentityServicePrincipal",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:36:18.237816+00:00",
+    "Collector": "EntraWorkloadIdentity",
+    "Data": {
+      "AccountEnabled": true,
+      "AlternativeNames": [
+        "isExplicit=False",
+        "/providers/Microsoft.Management/managementGroups/4a3eb5f4-1ec6-4a73-bb03-1ca63cb52d67/providers/Microsoft.Authorization/policyAssignments/90bec87fdb354183b7f55ab2"
+      ],
+      "AppId": "1f0b461d-2bab-4482-a131-a39ffb6fedfa",
+      "DisplayName": "90bec87fdb354183b7f55ab2",
+      "ServicePrincipalId": "0326ca1d-4cbc-4863-98a3-10fa4baae5c6",
+      "ServicePrincipalType": "managedidentity",
+      "Tags": []
+    },
+    "Description": "Managed Identity SP: 90bec87fdb354183b7f55ab2",
+    "EvidenceId": "e2215265-32fd-57e4-83f7-69b3a015cfa8",
+    "EvidenceType": "entra-managed-identity-sp",
+    "RawReference": null,
+    "ResourceId": "0326ca1d-4cbc-4863-98a3-10fa4baae5c6",
+    "ResourceType": "ManagedIdentityServicePrincipal",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:36:18.237885+00:00",
+    "Collector": "EntraWorkloadIdentity",
+    "Data": {
+      "AccountEnabled": true,
+      "AlternativeNames": [
+        "isExplicit=False",
+        "/subscriptions/9154cdcb-5a52-452a-b1e7-483be9eee6d2/resourcegroups/RG-ADLS-Governance-Retention/providers/Microsoft.CognitiveServices/accounts/fdy-ia6nebdpvu5bm"
+      ],
+      "AppId": "5e0673c5-68f0-4fb5-9abb-0cb293ba4b78",
+      "DisplayName": "fdy-ia6nebdpvu5bm",
+      "ServicePrincipalId": "063b9dbf-d83b-429f-a80c-0681aecab13d",
+      "ServicePrincipalType": "managedidentity",
+      "Tags": []
+    },
+    "Description": "Managed Identity SP: fdy-ia6nebdpvu5bm",
+    "EvidenceId": "f233da0d-66aa-5101-a5a0-cd12aa12cddd",
+    "EvidenceType": "entra-managed-identity-sp",
+    "RawReference": null,
+    "ResourceId": "063b9dbf-d83b-429f-a80c-0681aecab13d",
+    "ResourceType": "ManagedIdentityServicePrincipal",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:36:18.237940+00:00",
+    "Collector": "EntraWorkloadIdentity",
+    "Data": {
+      "AccountEnabled": true,
+      "AlternativeNames": [
+        "isExplicit=False",
+        "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/providers/Microsoft.Authorization/policyAssignments/Defender for Containers provisioning ARC k8s Enabled"
+      ],
+      "AppId": "6600b93f-94f5-44e1-984a-15ee4d45da26",
+      "DisplayName": "Defender for Containers provisioning ARC k8s Enabled",
+      "ServicePrincipalId": "0806a407-074a-406c-9b4d-81a3d6f08a81",
+      "ServicePrincipalType": "managedidentity",
+      "Tags": []
+    },
+    "Description": "Managed Identity SP: Defender for Containers provisioning ARC k8s Enabled",
+    "EvidenceId": "1c6ef45d-a77c-5c97-b059-b9113bae7add",
+    "EvidenceType": "entra-managed-identity-sp",
+    "RawReference": null,
+    "ResourceId": "0806a407-074a-406c-9b4d-81a3d6f08a81",
+    "ResourceType": "ManagedIdentityServicePrincipal",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:36:18.238005+00:00",
+    "Collector": "EntraWorkloadIdentity",
+    "Data": {
+      "AccountEnabled": true,
+      "AlternativeNames": [
+        "isExplicit=False",
+        "/subscriptions/0eb177bd-28b1-44da-b683-1508e1268aee/providers/Microsoft.Authorization/policyAssignments/ASC provisioning default LA agent Linux Arc"
+      ],
+      "AppId": "75eb4029-b89a-446f-ba1a-ad805062f290",
+      "DisplayName": "ASC provisioning default LA agent Linux Arc",
+      "ServicePrincipalId": "0aaeb9f2-4d7c-4c03-b16e-07e3b0dbcd11",
+      "ServicePrincipalType": "managedidentity",
+      "Tags": []
+    },
+    "Description": "Managed Identity SP: ASC provisioning default LA agent Linux Arc",
+    "EvidenceId": "b4972a52-9575-50be-99a9-7a3a0fb31be6",
+    "EvidenceType": "entra-managed-identity-sp",
+    "RawReference": null,
+    "ResourceId": "0aaeb9f2-4d7c-4c03-b16e-07e3b0dbcd11",
+    "ResourceType": "ManagedIdentityServicePrincipal",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:36:18.238064+00:00",
+    "Collector": "EntraWorkloadIdentity",
+    "Data": {
+      "AccountEnabled": true,
+      "AlternativeNames": [
+        "isExplicit=False",
+        "/subscriptions/0eb177bd-28b1-44da-b683-1508e1268aee/providers/Microsoft.Security/dataScanners/StorageDataScanner"
+      ],
+      "AppId": "902cb259-b3e9-4ae2-b905-7545276e6465",
+      "DisplayName": "StorageDataScanner",
+      "ServicePrincipalId": "0e52c87e-1419-4392-84b6-799a052c8151",
+      "ServicePrincipalType": "managedidentity",
+      "Tags": []
+    },
+    "Description": "Managed Identity SP: StorageDataScanner",
+    "EvidenceId": "fcb48e34-d3be-5a1b-a0a3-9143f3fd747a",
+    "EvidenceType": "entra-managed-identity-sp",
+    "RawReference": null,
+    "ResourceId": "0e52c87e-1419-4392-84b6-799a052c8151",
+    "ResourceType": "ManagedIdentityServicePrincipal",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:36:18.238099+00:00",
+    "Collector": "EntraWorkloadIdentity",
+    "Data": {
+      "AccountEnabled": true,
+      "AlternativeNames": [
+        "isExplicit=False",
+        "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/resourcegroups/rg-AIFutureInitiative/providers/Microsoft.Purview/accounts/AiFutureInititativePurview"
+      ],
+      "AppId": "59105547-a61c-47d8-8ae8-364bbdadf957",
+      "DisplayName": "AiFutureInititativePurview",
+      "ServicePrincipalId": "0e5e0e0b-e5b5-490c-935c-d32cb0566bc5",
+      "ServicePrincipalType": "managedidentity",
+      "Tags": []
+    },
+    "Description": "Managed Identity SP: AiFutureInititativePurview",
+    "EvidenceId": "ff8c3ac8-73ac-5886-92e3-1d74d31307e5",
+    "EvidenceType": "entra-managed-identity-sp",
+    "RawReference": null,
+    "ResourceId": "0e5e0e0b-e5b5-490c-935c-d32cb0566bc5",
+    "ResourceType": "ManagedIdentityServicePrincipal",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:36:18.238159+00:00",
+    "Collector": "EntraWorkloadIdentity",
+    "Data": {
+      "AccountEnabled": true,
+      "AlternativeNames": [
+        "isExplicit=False",
+        "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/resourcegroups/rg-CompliSense/providers/Microsoft.CognitiveServices/accounts/complisense-resource"
+      ],
+      "AppId": "1210d00e-5a60-4089-8014-fc0b51e79d30",
+      "DisplayName": "complisense-resource",
+      "ServicePrincipalId": "1245cb6f-f91e-4d70-949f-ec22de356394",
+      "ServicePrincipalType": "managedidentity",
+      "Tags": []
+    },
+    "Description": "Managed Identity SP: complisense-resource",
+    "EvidenceId": "ef75e4a7-30ac-51d3-9783-108883fd9bb7",
+    "EvidenceType": "entra-managed-identity-sp",
+    "RawReference": null,
+    "ResourceId": "1245cb6f-f91e-4d70-949f-ec22de356394",
+    "ResourceType": "ManagedIdentityServicePrincipal",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:36:18.238231+00:00",
+    "Collector": "EntraWorkloadIdentity",
+    "Data": {
+      "AccountEnabled": true,
+      "AlternativeNames": [
+        "isExplicit=False",
+        "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/resourcegroups/rg-OpenAPI-Demo01/providers/Microsoft.CognitiveServices/accounts/openapi-demo01-resource/projects/openapi-demo01"
+      ],
+      "AppId": "b7c4bf6f-3761-4672-9cfe-19948d6a5d1d",
+      "DisplayName": "openapi-demo01-resource/projects/openapi-demo01",
+      "ServicePrincipalId": "15b34526-713a-4ea8-8ce6-63e4170f0833",
+      "ServicePrincipalType": "managedidentity",
+      "Tags": [
+        "AgentCreatedBy:Foundry",
+        "AgenticInstance"
+      ]
+    },
+    "Description": "Managed Identity SP: openapi-demo01-resource/projects/openapi-demo01",
+    "EvidenceId": "c198b689-154d-5c3f-aa1b-f162596c2525",
+    "EvidenceType": "entra-managed-identity-sp",
+    "RawReference": null,
+    "ResourceId": "15b34526-713a-4ea8-8ce6-63e4170f0833",
+    "ResourceType": "ManagedIdentityServicePrincipal",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:36:18.238273+00:00",
+    "Collector": "EntraWorkloadIdentity",
+    "Data": {
+      "AccountEnabled": true,
+      "AlternativeNames": [
+        "isExplicit=False",
+        "/providers/Microsoft.Management/managementGroups/4a3eb5f4-1ec6-4a73-bb03-1ca63cb52d67/providers/Microsoft.Authorization/policyAssignments/5170706051b8421791489f8b"
+      ],
+      "AppId": "ceb59e79-0f55-4d79-ab4e-3e38f8c3da3e",
+      "DisplayName": "5170706051b8421791489f8b",
+      "ServicePrincipalId": "15ceabfe-c847-4ecb-9986-4dcbaf99ae6c",
+      "ServicePrincipalType": "managedidentity",
+      "Tags": []
+    },
+    "Description": "Managed Identity SP: 5170706051b8421791489f8b",
+    "EvidenceId": "2c001773-51c3-5c83-af06-0895904bbad7",
+    "EvidenceType": "entra-managed-identity-sp",
+    "RawReference": null,
+    "ResourceId": "15ceabfe-c847-4ecb-9986-4dcbaf99ae6c",
+    "ResourceType": "ManagedIdentityServicePrincipal",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:36:18.238310+00:00",
+    "Collector": "EntraWorkloadIdentity",
+    "Data": {
+      "AccountEnabled": true,
+      "AlternativeNames": [
+        "isExplicit=False",
+        "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourcegroups/RG-LogAnalyticsWorkspace/providers/Microsoft.Logic/workflows/CreateSNOWRecord"
+      ],
+      "AppId": "de9e0fdd-5f47-444b-bb14-8aa993cf38bd",
+      "DisplayName": "CreateSNOWRecord",
+      "ServicePrincipalId": "16e104f7-8a8f-4995-88a7-865608812bfb",
+      "ServicePrincipalType": "managedidentity",
+      "Tags": []
+    },
+    "Description": "Managed Identity SP: CreateSNOWRecord",
+    "EvidenceId": "11755227-cfc6-5af6-8b77-bfc5db2c8ef8",
+    "EvidenceType": "entra-managed-identity-sp",
+    "RawReference": null,
+    "ResourceId": "16e104f7-8a8f-4995-88a7-865608812bfb",
+    "ResourceType": "ManagedIdentityServicePrincipal",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:36:18.238344+00:00",
+    "Collector": "EntraWorkloadIdentity",
+    "Data": {
+      "AccountEnabled": true,
+      "AlternativeNames": [
+        "isExplicit=False",
+        "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/resourcegroups/rg-CompliSense/providers/Microsoft.CognitiveServices/accounts/complisense-resource/projects/complisense"
+      ],
+      "AppId": "00f817d4-49d7-4dbb-96ad-2f63bdf723e5",
+      "DisplayName": "complisense-resource/projects/complisense",
+      "ServicePrincipalId": "1775f97c-5d65-4993-909d-6f9724b45ecf",
+      "ServicePrincipalType": "managedidentity",
+      "Tags": [
+        "AgentCreatedBy:Foundry",
+        "AgenticInstance"
+      ]
+    },
+    "Description": "Managed Identity SP: complisense-resource/projects/complisense",
+    "EvidenceId": "541a8248-7d48-58d8-8e1b-13c3dc641975",
+    "EvidenceType": "entra-managed-identity-sp",
+    "RawReference": null,
+    "ResourceId": "1775f97c-5d65-4993-909d-6f9724b45ecf",
+    "ResourceType": "ManagedIdentityServicePrincipal",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:36:18.238388+00:00",
+    "Collector": "EntraWorkloadIdentity",
+    "Data": {
+      "AccountEnabled": true,
+      "AlternativeNames": [
+        "isExplicit=False",
+        "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/resourcegroups/SearchIQ-RG/providers/Microsoft.CognitiveServices/accounts/searchiq-resource"
+      ],
+      "AppId": "aa640986-fc5b-481d-a50d-9dcf931ecbf7",
+      "DisplayName": "searchiq-resource",
+      "ServicePrincipalId": "19a7bc8b-5e20-40ef-88de-eb9b155d247b",
+      "ServicePrincipalType": "managedidentity",
+      "Tags": []
+    },
+    "Description": "Managed Identity SP: searchiq-resource",
+    "EvidenceId": "d39c6e36-268d-5f2f-a14a-469a7a2b9b71",
+    "EvidenceType": "entra-managed-identity-sp",
+    "RawReference": null,
+    "ResourceId": "19a7bc8b-5e20-40ef-88de-eb9b155d247b",
+    "ResourceType": "ManagedIdentityServicePrincipal",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:36:18.238463+00:00",
+    "Collector": "EntraWorkloadIdentity",
+    "Data": {
+      "AccountEnabled": true,
+      "AlternativeNames": [
+        "isExplicit=False",
+        "/subscriptions/9154cdcb-5a52-452a-b1e7-483be9eee6d2/providers/Microsoft.Authorization/policyAssignments/Defender for Containers provisioning Policy extension for Arc-e"
+      ],
+      "AppId": "f2133eb7-6f31-4a15-a976-104236bdc26d",
+      "DisplayName": "Defender for Containers provisioning Policy extension for Arc-e",
+      "ServicePrincipalId": "1fd02f70-f498-4b8d-8629-1e0b4d2bb8b9",
+      "ServicePrincipalType": "managedidentity",
+      "Tags": []
+    },
+    "Description": "Managed Identity SP: Defender for Containers provisioning Policy extension for Arc-e",
+    "EvidenceId": "2f76364b-07bb-5eca-81c8-4b013e695390",
+    "EvidenceType": "entra-managed-identity-sp",
+    "RawReference": null,
+    "ResourceId": "1fd02f70-f498-4b8d-8629-1e0b4d2bb8b9",
+    "ResourceType": "ManagedIdentityServicePrincipal",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:36:18.238498+00:00",
+    "Collector": "EntraWorkloadIdentity",
+    "Data": {
+      "AccountEnabled": true,
+      "AlternativeNames": [
+        "isExplicit=False",
+        "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/resourcegroups/rg-AIFutureInitiative/providers/Microsoft.CognitiveServices/accounts/ai-futureinitiative-resource/projects/ai-futureinitiative"
+      ],
+      "AppId": "365e6b61-4130-4b6f-8008-da27414e206e",
+      "DisplayName": "ai-futureinitiative-resource/projects/ai-futureinitiative",
+      "ServicePrincipalId": "1fd16dde-a1b2-4e1b-aacf-e059749df01d",
+      "ServicePrincipalType": "managedidentity",
+      "Tags": [
+        "AgentCreatedBy:Foundry",
+        "AgenticInstance"
+      ]
+    },
+    "Description": "Managed Identity SP: ai-futureinitiative-resource/projects/ai-futureinitiative",
+    "EvidenceId": "ed7c0d0c-5f59-56b1-8cf0-a808e906e5b9",
+    "EvidenceType": "entra-managed-identity-sp",
+    "RawReference": null,
+    "ResourceId": "1fd16dde-a1b2-4e1b-aacf-e059749df01d",
+    "ResourceType": "ManagedIdentityServicePrincipal",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:36:18.238541+00:00",
+    "Collector": "EntraWorkloadIdentity",
+    "Data": {
+      "AccountEnabled": true,
+      "AlternativeNames": [
+        "isExplicit=False",
+        "/providers/Microsoft.Management/managementGroups/4a3eb5f4-1ec6-4a73-bb03-1ca63cb52d67/providers/Microsoft.Authorization/policyAssignments/824d5aedd5674d5196697565"
+      ],
+      "AppId": "17d2b111-4518-4c0d-8b64-5d2cbd23ec21",
+      "DisplayName": "824d5aedd5674d5196697565",
+      "ServicePrincipalId": "210e5c80-2aa8-474d-a360-6661645bb8aa",
+      "ServicePrincipalType": "managedidentity",
+      "Tags": []
+    },
+    "Description": "Managed Identity SP: 824d5aedd5674d5196697565",
+    "EvidenceId": "b1a280af-5503-5f92-9fd0-bf77d72f1229",
+    "EvidenceType": "entra-managed-identity-sp",
+    "RawReference": null,
+    "ResourceId": "210e5c80-2aa8-474d-a360-6661645bb8aa",
+    "ResourceType": "ManagedIdentityServicePrincipal",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:36:18.238581+00:00",
+    "Collector": "EntraWorkloadIdentity",
+    "Data": {
+      "AccountEnabled": true,
+      "AlternativeNames": [
+        "isExplicit=True",
+        "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/resourcegroups/rg-AIFutureInitiative/providers/Microsoft.ManagedIdentity/userAssignedIdentities/umai-AiFutureInititativePurview"
+      ],
+      "AppId": "17fa9ebd-24b7-4135-b377-5fb968d8f9fe",
+      "DisplayName": "umai-AiFutureInititativePurview",
+      "ServicePrincipalId": "2246c8cc-dba4-42cd-b151-57fa1cdab4f2",
+      "ServicePrincipalType": "managedidentity",
+      "Tags": []
+    },
+    "Description": "Managed Identity SP: umai-AiFutureInititativePurview",
+    "EvidenceId": "0ca34d97-de2f-5641-b1fd-c1a5f6c4750f",
+    "EvidenceType": "entra-managed-identity-sp",
+    "RawReference": null,
+    "ResourceId": "2246c8cc-dba4-42cd-b151-57fa1cdab4f2",
+    "ResourceType": "ManagedIdentityServicePrincipal",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:36:18.238613+00:00",
+    "Collector": "EntraWorkloadIdentity",
+    "Data": {
+      "AccountEnabled": true,
+      "AlternativeNames": [
+        "isExplicit=False",
+        "/providers/Microsoft.Management/managementGroups/4a3eb5f4-1ec6-4a73-bb03-1ca63cb52d67/providers/Microsoft.Authorization/policyAssignments/6c0357b2e5f0439aa2544088"
+      ],
+      "AppId": "c259002f-2504-405b-ac43-043ecb8672fb",
+      "DisplayName": "6c0357b2e5f0439aa2544088",
+      "ServicePrincipalId": "22ded9a8-9513-4c7b-b9e0-6cfc3a95d672",
+      "ServicePrincipalType": "managedidentity",
+      "Tags": []
+    },
+    "Description": "Managed Identity SP: 6c0357b2e5f0439aa2544088",
+    "EvidenceId": "bba0ec1b-5a8e-5a50-bed2-9e181aad14fd",
+    "EvidenceType": "entra-managed-identity-sp",
+    "RawReference": null,
+    "ResourceId": "22ded9a8-9513-4c7b-b9e0-6cfc3a95d672",
+    "ResourceType": "ManagedIdentityServicePrincipal",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:36:18.238682+00:00",
+    "Collector": "EntraWorkloadIdentity",
+    "Data": {
+      "AccountEnabled": true,
+      "AlternativeNames": [
+        "isExplicit=False",
+        "/providers/Microsoft.Management/managementGroups/4a3eb5f4-1ec6-4a73-bb03-1ca63cb52d67/providers/Microsoft.Authorization/policyAssignments/90d3f028feee43839f0a99c1"
+      ],
+      "AppId": "f1d32a61-ef36-4fb5-b900-c12ce186fd20",
+      "DisplayName": "90d3f028feee43839f0a99c1",
+      "ServicePrincipalId": "253025c1-25e7-4c48-888b-cb2b53c9f41f",
+      "ServicePrincipalType": "managedidentity",
+      "Tags": []
+    },
+    "Description": "Managed Identity SP: 90d3f028feee43839f0a99c1",
+    "EvidenceId": "b9283a3a-4796-55d1-9814-59f8fa85cf02",
+    "EvidenceType": "entra-managed-identity-sp",
+    "RawReference": null,
+    "ResourceId": "253025c1-25e7-4c48-888b-cb2b53c9f41f",
+    "ResourceType": "ManagedIdentityServicePrincipal",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:36:18.238733+00:00",
+    "Collector": "EntraWorkloadIdentity",
+    "Data": {
+      "AccountEnabled": true,
+      "AlternativeNames": [
+        "isExplicit=False",
+        "/subscriptions/9154cdcb-5a52-452a-b1e7-483be9eee6d2/providers/Microsoft.Authorization/policyAssignments/b6b21d937cf245d4bd7f36ea"
+      ],
+      "AppId": "db6580a6-a40e-4e0d-8a2d-7759dff290d9",
+      "DisplayName": "b6b21d937cf245d4bd7f36ea",
+      "ServicePrincipalId": "25b1a8c0-9fb4-4735-96cb-ecbc873265d9",
+      "ServicePrincipalType": "managedidentity",
+      "Tags": []
+    },
+    "Description": "Managed Identity SP: b6b21d937cf245d4bd7f36ea",
+    "EvidenceId": "d0badb88-a76d-54f2-a37b-1fde916fd69f",
+    "EvidenceType": "entra-managed-identity-sp",
+    "RawReference": null,
+    "ResourceId": "25b1a8c0-9fb4-4735-96cb-ecbc873265d9",
+    "ResourceType": "ManagedIdentityServicePrincipal",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:36:18.238775+00:00",
+    "Collector": "EntraWorkloadIdentity",
+    "Data": {
+      "AccountEnabled": true,
+      "AlternativeNames": [
+        "isExplicit=False",
+        "/subscriptions/9154cdcb-5a52-452a-b1e7-483be9eee6d2/resourcegroups/AppProxy-POC-RG/providers/Microsoft.Compute/virtualMachines/IIS-WebServer"
+      ],
+      "AppId": "1127a9a1-e820-4616-a3b4-357fc04d15b6",
+      "DisplayName": "IIS-WebServer",
+      "ServicePrincipalId": "26929a80-0cc5-4fac-9777-79fa177eadd0",
+      "ServicePrincipalType": "managedidentity",
+      "Tags": []
+    },
+    "Description": "Managed Identity SP: IIS-WebServer",
+    "EvidenceId": "e82e62f0-5ffa-51d0-96e6-f11c0f7ae716",
+    "EvidenceType": "entra-managed-identity-sp",
+    "RawReference": null,
+    "ResourceId": "26929a80-0cc5-4fac-9777-79fa177eadd0",
+    "ResourceType": "ManagedIdentityServicePrincipal",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:36:18.238838+00:00",
+    "Collector": "EntraWorkloadIdentity",
+    "Data": {
+      "AccountEnabled": true,
+      "AlternativeNames": [
+        "isExplicit=True",
+        "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/resourcegroups/rg-AIFutureInitiative/providers/Microsoft.ManagedIdentity/userAssignedIdentities/aisearch-tenantcompliance-uami"
+      ],
+      "AppId": "2504537f-8d2c-4417-85ab-aa1246fdbcab",
+      "DisplayName": "aisearch-tenantcompliance-uami",
+      "ServicePrincipalId": "289b4e3b-b6f9-483d-8805-03fe18e2e417",
+      "ServicePrincipalType": "managedidentity",
+      "Tags": []
+    },
+    "Description": "Managed Identity SP: aisearch-tenantcompliance-uami",
+    "EvidenceId": "bf2f4c05-eeed-50a8-8a8e-820ff6c922c8",
+    "EvidenceType": "entra-managed-identity-sp",
+    "RawReference": null,
+    "ResourceId": "289b4e3b-b6f9-483d-8805-03fe18e2e417",
+    "ResourceType": "ManagedIdentityServicePrincipal",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:36:18.238902+00:00",
+    "Collector": "EntraWorkloadIdentity",
+    "Data": {
+      "AccountEnabled": true,
+      "AlternativeNames": [
+        "isExplicit=False",
+        "/providers/Microsoft.Management/managementGroups/4a3eb5f4-1ec6-4a73-bb03-1ca63cb52d67/providers/Microsoft.Authorization/policyAssignments/f7352185003540fcbacfa7a1"
+      ],
+      "AppId": "f83ce4f0-207e-464b-a66c-3dd9fd35c0ab",
+      "DisplayName": "f7352185003540fcbacfa7a1",
+      "ServicePrincipalId": "2bdc42ae-d82c-4903-b37b-c6565dc0f4d7",
+      "ServicePrincipalType": "managedidentity",
+      "Tags": []
+    },
+    "Description": "Managed Identity SP: f7352185003540fcbacfa7a1",
+    "EvidenceId": "19bcffd7-f2fb-53b8-9031-d68776ae2caf",
+    "EvidenceType": "entra-managed-identity-sp",
+    "RawReference": null,
+    "ResourceId": "2bdc42ae-d82c-4903-b37b-c6565dc0f4d7",
+    "ResourceType": "ManagedIdentityServicePrincipal",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:36:18.238994+00:00",
+    "Collector": "EntraWorkloadIdentity",
+    "Data": {
+      "AccountEnabled": true,
+      "AlternativeNames": [
+        "isExplicit=False",
+        "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/providers/Microsoft.Authorization/policyAssignments/Defender for Containers provisioning AKS Security Profile"
+      ],
+      "AppId": "37f8be6f-cc4c-4f2b-a7bd-0433f2d7726f",
+      "DisplayName": "Defender for Containers provisioning AKS Security Profile",
+      "ServicePrincipalId": "322b8b0f-1756-4841-9534-b57e583a4e33",
+      "ServicePrincipalType": "managedidentity",
+      "Tags": []
+    },
+    "Description": "Managed Identity SP: Defender for Containers provisioning AKS Security Profile",
+    "EvidenceId": "282d5716-a65f-5805-b8cf-7aa7b69b9eea",
+    "EvidenceType": "entra-managed-identity-sp",
+    "RawReference": null,
+    "ResourceId": "322b8b0f-1756-4841-9534-b57e583a4e33",
+    "ResourceType": "ManagedIdentityServicePrincipal",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:36:18.239037+00:00",
+    "Collector": "EntraWorkloadIdentity",
+    "Data": {
+      "AccountEnabled": true,
+      "AlternativeNames": [
+        "isExplicit=False",
+        "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/providers/Microsoft.Authorization/policyAssignments/Defender for SQL on SQL VMs and Arc-enabled SQL Servers"
+      ],
+      "AppId": "09e9d1b9-78a1-424f-af8b-7c1d4c72323e",
+      "DisplayName": "Defender for SQL on SQL VMs and Arc-enabled SQL Servers",
+      "ServicePrincipalId": "325725c7-ec5e-4f95-b929-63c476212d22",
+      "ServicePrincipalType": "managedidentity",
+      "Tags": []
+    },
+    "Description": "Managed Identity SP: Defender for SQL on SQL VMs and Arc-enabled SQL Servers",
+    "EvidenceId": "ee5efc99-2067-51a6-8230-048b959e8d02",
+    "EvidenceType": "entra-managed-identity-sp",
+    "RawReference": null,
+    "ResourceId": "325725c7-ec5e-4f95-b929-63c476212d22",
+    "ResourceType": "ManagedIdentityServicePrincipal",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:36:18.239098+00:00",
+    "Collector": "EntraWorkloadIdentity",
+    "Data": {
+      "AccountEnabled": true,
+      "AlternativeNames": [
+        "isExplicit=False",
+        "/subscriptions/9154cdcb-5a52-452a-b1e7-483be9eee6d2/resourcegroups/rg-ecma2-poc-wus2/providers/Microsoft.Web/sites/func-ecma2poc-lkxerbapuxyv2"
+      ],
+      "AppId": "56ffc791-62d8-4669-b3e7-cef92fa69eae",
+      "DisplayName": "func-ecma2poc-lkxerbapuxyv2",
+      "ServicePrincipalId": "35c52c9b-c0ec-44b6-a3e0-29cf1bfa2e3c",
+      "ServicePrincipalType": "managedidentity",
+      "Tags": []
+    },
+    "Description": "Managed Identity SP: func-ecma2poc-lkxerbapuxyv2",
+    "EvidenceId": "a5b89ee3-12ee-5355-88c9-954d6bb281f6",
+    "EvidenceType": "entra-managed-identity-sp",
+    "RawReference": null,
+    "ResourceId": "35c52c9b-c0ec-44b6-a3e0-29cf1bfa2e3c",
+    "ResourceType": "ManagedIdentityServicePrincipal",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:36:18.239220+00:00",
+    "Collector": "EntraWorkloadIdentity",
+    "Data": {
+      "AccountEnabled": true,
+      "AlternativeNames": [
+        "isExplicit=False",
+        "/providers/Microsoft.Management/managementGroups/4a3eb5f4-1ec6-4a73-bb03-1ca63cb52d67/providers/Microsoft.Authorization/policyAssignments/858ea32b2a314ea8891c12f1"
+      ],
+      "AppId": "9a8db690-0aac-40ce-965e-39fc7d1372df",
+      "DisplayName": "858ea32b2a314ea8891c12f1",
+      "ServicePrincipalId": "3e7aba55-89ed-4580-af9b-b45cdd71f4cf",
+      "ServicePrincipalType": "managedidentity",
+      "Tags": []
+    },
+    "Description": "Managed Identity SP: 858ea32b2a314ea8891c12f1",
+    "EvidenceId": "163c189b-c696-563d-bf6a-de6706861f01",
+    "EvidenceType": "entra-managed-identity-sp",
+    "RawReference": null,
+    "ResourceId": "3e7aba55-89ed-4580-af9b-b45cdd71f4cf",
+    "ResourceType": "ManagedIdentityServicePrincipal",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:36:18.239310+00:00",
+    "Collector": "EntraWorkloadIdentity",
+    "Data": {
+      "AccountEnabled": true,
+      "AlternativeNames": [
+        "isExplicit=False",
+        "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/providers/Microsoft.Security/pricings/StorageAccounts/securityOperators/DefenderForStorageSecurityOperator"
+      ],
+      "AppId": "383dba18-d7fa-4591-9d0c-7d69b0202a7f",
+      "DisplayName": "StorageAccounts/securityOperators/DefenderForStorageSecurityOperator",
+      "ServicePrincipalId": "3e88b067-270e-4e14-9e72-896eb60026ac",
+      "ServicePrincipalType": "managedidentity",
+      "Tags": []
+    },
+    "Description": "Managed Identity SP: StorageAccounts/securityOperators/DefenderForStorageSecurityOperator",
+    "EvidenceId": "8ad2a347-ea67-55da-ba30-97c3575fc734",
+    "EvidenceType": "entra-managed-identity-sp",
+    "RawReference": null,
+    "ResourceId": "3e88b067-270e-4e14-9e72-896eb60026ac",
+    "ResourceType": "ManagedIdentityServicePrincipal",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:36:18.239407+00:00",
+    "Collector": "EntraWorkloadIdentity",
+    "Data": {
+      "AccountEnabled": true,
+      "AlternativeNames": [
+        "isExplicit=False",
+        "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/resourcegroups/SearchIQ-RG/providers/Microsoft.CognitiveServices/accounts/searchiq-resource/projects/searchiq"
+      ],
+      "AppId": "50c41126-757a-4365-bb48-d30fd31bcddc",
+      "DisplayName": "searchiq-resource/projects/searchiq",
+      "ServicePrincipalId": "44224a33-d29e-4dae-bf59-7c66eb5e6ea1",
+      "ServicePrincipalType": "managedidentity",
+      "Tags": [
+        "AgentCreatedBy:Foundry",
+        "AgenticInstance"
+      ]
+    },
+    "Description": "Managed Identity SP: searchiq-resource/projects/searchiq",
+    "EvidenceId": "f077bd5c-e489-5356-9f3b-78e57e46bb85",
+    "EvidenceType": "entra-managed-identity-sp",
+    "RawReference": null,
+    "ResourceId": "44224a33-d29e-4dae-bf59-7c66eb5e6ea1",
+    "ResourceType": "ManagedIdentityServicePrincipal",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:36:18.239451+00:00",
+    "Collector": "EntraWorkloadIdentity",
+    "Data": {
+      "AccountEnabled": true,
+      "AlternativeNames": [
+        "isExplicit=False",
+        "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/resourcegroups/PostureIQ-RG/providers/Microsoft.CognitiveServices/accounts/postureiq-resource"
+      ],
+      "AppId": "b97c11a7-3915-40cf-b2c9-6596b3f548d6",
+      "DisplayName": "postureiq-resource",
+      "ServicePrincipalId": "44c081e1-7594-4f77-b1c3-ec1c27408444",
+      "ServicePrincipalType": "managedidentity",
+      "Tags": []
+    },
+    "Description": "Managed Identity SP: postureiq-resource",
+    "EvidenceId": "7407ef4f-dd97-5009-b10f-ca1fd2d29fd8",
+    "EvidenceType": "entra-managed-identity-sp",
+    "RawReference": null,
+    "ResourceId": "44c081e1-7594-4f77-b1c3-ec1c27408444",
+    "ResourceType": "ManagedIdentityServicePrincipal",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:36:18.239522+00:00",
+    "Collector": "EntraWorkloadIdentity",
+    "Data": {
+      "AccountEnabled": true,
+      "AlternativeNames": [
+        "isExplicit=False",
+        "/subscriptions/0eb177bd-28b1-44da-b683-1508e1268aee/providers/Microsoft.Security/pricings/StorageAccounts/securityOperators/DefenderForStorageSecurityOperator"
+      ],
+      "AppId": "dfa8b837-34e6-465b-bceb-c2e6e289a899",
+      "DisplayName": "StorageAccounts/securityOperators/DefenderForStorageSecurityOperator",
+      "ServicePrincipalId": "4a13b06b-4f8f-4e84-a371-cb3f27b36e53",
+      "ServicePrincipalType": "managedidentity",
+      "Tags": []
+    },
+    "Description": "Managed Identity SP: StorageAccounts/securityOperators/DefenderForStorageSecurityOperator",
+    "EvidenceId": "a5ea8f51-4cdb-5035-b2eb-14d4f4bf3779",
+    "EvidenceType": "entra-managed-identity-sp",
+    "RawReference": null,
+    "ResourceId": "4a13b06b-4f8f-4e84-a371-cb3f27b36e53",
+    "ResourceType": "ManagedIdentityServicePrincipal",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:36:18.239576+00:00",
+    "Collector": "EntraWorkloadIdentity",
+    "Data": {
+      "AccountEnabled": true,
+      "AlternativeNames": [
+        "isExplicit=False",
+        "/providers/Microsoft.Management/managementGroups/4a3eb5f4-1ec6-4a73-bb03-1ca63cb52d67/providers/Microsoft.Authorization/policyAssignments/badd3947057245a69bf00b1b"
+      ],
+      "AppId": "8e39a039-67e7-4991-9356-0f55291d7bab",
+      "DisplayName": "badd3947057245a69bf00b1b",
+      "ServicePrincipalId": "4c97260b-ef18-4703-a4d3-217ee3984d1a",
+      "ServicePrincipalType": "managedidentity",
+      "Tags": []
+    },
+    "Description": "Managed Identity SP: badd3947057245a69bf00b1b",
+    "EvidenceId": "f1860eed-8c9a-53ff-999c-58845ee4bfa6",
+    "EvidenceType": "entra-managed-identity-sp",
+    "RawReference": null,
+    "ResourceId": "4c97260b-ef18-4703-a4d3-217ee3984d1a",
+    "ResourceType": "ManagedIdentityServicePrincipal",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:36:18.239615+00:00",
+    "Collector": "EntraWorkloadIdentity",
+    "Data": {
+      "AccountEnabled": true,
+      "AlternativeNames": [
+        "isExplicit=False",
+        "/subscriptions/0eb177bd-28b1-44da-b683-1508e1268aee/resourcegroups/All-PCIDSS-Resources-RG/providers/Microsoft.Compute/diskEncryptionSets/pcidsstestdes"
+      ],
+      "AppId": "81a921cf-f066-439d-961e-bc5a6f62b22a",
+      "DisplayName": "pcidsstestdes",
+      "ServicePrincipalId": "4f54421b-3905-466c-a6de-53b8852829af",
+      "ServicePrincipalType": "managedidentity",
+      "Tags": []
+    },
+    "Description": "Managed Identity SP: pcidsstestdes",
+    "EvidenceId": "98aeec76-bb1e-5b22-bd53-116029587105",
+    "EvidenceType": "entra-managed-identity-sp",
+    "RawReference": null,
+    "ResourceId": "4f54421b-3905-466c-a6de-53b8852829af",
+    "ResourceType": "ManagedIdentityServicePrincipal",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:36:18.239675+00:00",
+    "Collector": "EntraWorkloadIdentity",
+    "Data": {
+      "AccountEnabled": true,
+      "AlternativeNames": [
+        "isExplicit=False",
+        "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/providers/Microsoft.Authorization/policyAssignments/SqlVmAndArcSqlServersProtection"
+      ],
+      "AppId": "272a2026-0ed5-4d9e-b92f-30ddf1b7b03b",
+      "DisplayName": "SqlVmAndArcSqlServersProtection",
+      "ServicePrincipalId": "540c5c19-9ac1-4f8b-91bc-b481ab7e9c58",
+      "ServicePrincipalType": "managedidentity",
+      "Tags": []
+    },
+    "Description": "Managed Identity SP: SqlVmAndArcSqlServersProtection",
+    "EvidenceId": "1b3189dc-aea0-5e6c-bcd6-3104c76a2cea",
+    "EvidenceType": "entra-managed-identity-sp",
+    "RawReference": null,
+    "ResourceId": "540c5c19-9ac1-4f8b-91bc-b481ab7e9c58",
+    "ResourceType": "ManagedIdentityServicePrincipal",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:36:18.239728+00:00",
+    "Collector": "EntraWorkloadIdentity",
+    "Data": {
+      "AccountEnabled": true,
+      "AlternativeNames": [
+        "isExplicit=False",
+        "/subscriptions/9154cdcb-5a52-452a-b1e7-483be9eee6d2/resourcegroups/rg-ecma2-poc-wus2/providers/Microsoft.Compute/virtualMachines/vm-ecma2poc"
+      ],
+      "AppId": "72623c0e-f9b8-4136-b057-f4e84dcd0e61",
+      "DisplayName": "vm-ecma2poc",
+      "ServicePrincipalId": "56780476-b474-4a0b-a718-85d09e2e953b",
+      "ServicePrincipalType": "managedidentity",
+      "Tags": []
+    },
+    "Description": "Managed Identity SP: vm-ecma2poc",
+    "EvidenceId": "c56b6857-e64c-562f-bb38-68743d6835af",
+    "EvidenceType": "entra-managed-identity-sp",
+    "RawReference": null,
+    "ResourceId": "56780476-b474-4a0b-a718-85d09e2e953b",
+    "ResourceType": "ManagedIdentityServicePrincipal",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:36:18.239775+00:00",
+    "Collector": "EntraWorkloadIdentity",
+    "Data": {
+      "AccountEnabled": true,
+      "AlternativeNames": [
+        "isExplicit=False",
+        "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/providers/Microsoft.Authorization/policyAssignments/Defender for Containers provisioning AKS Security Profile"
+      ],
+      "AppId": "62bc66b9-414f-4f67-a085-e2855f8912d6",
+      "DisplayName": "Defender for Containers provisioning AKS Security Profile",
+      "ServicePrincipalId": "57e39093-b768-4742-985e-52f3536cc7b1",
+      "ServicePrincipalType": "managedidentity",
+      "Tags": []
+    },
+    "Description": "Managed Identity SP: Defender for Containers provisioning AKS Security Profile",
+    "EvidenceId": "f9f5ced9-e9c2-51da-b9c2-2157c17f29b0",
+    "EvidenceType": "entra-managed-identity-sp",
+    "RawReference": null,
+    "ResourceId": "57e39093-b768-4742-985e-52f3536cc7b1",
+    "ResourceType": "ManagedIdentityServicePrincipal",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:36:18.239808+00:00",
+    "Collector": "EntraWorkloadIdentity",
+    "Data": {
+      "AccountEnabled": true,
+      "AlternativeNames": [
+        "isExplicit=False",
+        "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/providers/Microsoft.Security/dataScanners/StorageDataScanner"
+      ],
+      "AppId": "052c47bc-db0a-4198-b1ed-0a27b7b60ba7",
+      "DisplayName": "StorageDataScanner",
+      "ServicePrincipalId": "580a8764-713a-4229-b444-cb811b757abc",
+      "ServicePrincipalType": "managedidentity",
+      "Tags": []
+    },
+    "Description": "Managed Identity SP: StorageDataScanner",
+    "EvidenceId": "a5b3d6d6-9679-59d1-8d1d-02ce703d8e64",
+    "EvidenceType": "entra-managed-identity-sp",
+    "RawReference": null,
+    "ResourceId": "580a8764-713a-4229-b444-cb811b757abc",
+    "ResourceType": "ManagedIdentityServicePrincipal",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:36:18.239890+00:00",
+    "Collector": "EntraWorkloadIdentity",
+    "Data": {
+      "AccountEnabled": true,
+      "AlternativeNames": [
+        "isExplicit=False",
+        "/providers/Microsoft.Management/managementGroups/4a3eb5f4-1ec6-4a73-bb03-1ca63cb52d67/providers/Microsoft.Authorization/policyAssignments/ea5dc1d1-985d-43c9-b7d5"
+      ],
+      "AppId": "00f86b75-7d67-4d9b-8254-dd2c264adda4",
+      "DisplayName": "ea5dc1d1-985d-43c9-b7d5",
+      "ServicePrincipalId": "5d664f91-455c-45e3-b087-74ec0af1dec4",
+      "ServicePrincipalType": "managedidentity",
+      "Tags": []
+    },
+    "Description": "Managed Identity SP: ea5dc1d1-985d-43c9-b7d5",
+    "EvidenceId": "22c5c491-0e58-53ee-84f9-ad23d210df5f",
+    "EvidenceType": "entra-managed-identity-sp",
+    "RawReference": null,
+    "ResourceId": "5d664f91-455c-45e3-b087-74ec0af1dec4",
+    "ResourceType": "ManagedIdentityServicePrincipal",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:36:18.239986+00:00",
+    "Collector": "EntraWorkloadIdentity",
+    "Data": {
+      "AccountEnabled": true,
+      "AlternativeNames": [
+        "isExplicit=False",
+        "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/resourcegroups/ESIQNew-RG/providers/Microsoft.CognitiveServices/accounts/ESIQNew-AI/projects/ESIQNew-project"
+      ],
+      "AppId": "76327689-6959-4135-aaa6-28c8a6046966",
+      "DisplayName": "ESIQNew-AI/projects/ESIQNew-project",
+      "ServicePrincipalId": "62482419-c7cd-4652-96db-557e16e526b5",
+      "ServicePrincipalType": "managedidentity",
+      "Tags": [
+        "AgentCreatedBy:Foundry",
+        "AgenticInstance"
+      ]
+    },
+    "Description": "Managed Identity SP: ESIQNew-AI/projects/ESIQNew-project",
+    "EvidenceId": "712f4f5e-297e-5e6a-9082-b11018a9507d",
+    "EvidenceType": "entra-managed-identity-sp",
+    "RawReference": null,
+    "ResourceId": "62482419-c7cd-4652-96db-557e16e526b5",
+    "ResourceType": "ManagedIdentityServicePrincipal",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:36:18.240026+00:00",
+    "Collector": "EntraWorkloadIdentity",
+    "Data": {
+      "AccountEnabled": true,
+      "AlternativeNames": [
+        "isExplicit=False",
+        "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/resourcegroups/rg-AIFutureInitiative/providers/Microsoft.Search/searchServices/aifutureinitiative-aisearch"
+      ],
+      "AppId": "907f478f-414f-443e-9160-cd6197bfaf00",
+      "DisplayName": "aifutureinitiative-aisearch",
+      "ServicePrincipalId": "6490fcfb-2fc8-4572-873e-b86d095b6501",
+      "ServicePrincipalType": "managedidentity",
+      "Tags": []
+    },
+    "Description": "Managed Identity SP: aifutureinitiative-aisearch",
+    "EvidenceId": "16a5d80f-3235-5654-bb79-92ddeb6b3cf1",
+    "EvidenceType": "entra-managed-identity-sp",
+    "RawReference": null,
+    "ResourceId": "6490fcfb-2fc8-4572-873e-b86d095b6501",
+    "ResourceType": "ManagedIdentityServicePrincipal",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:36:18.240123+00:00",
+    "Collector": "EntraWorkloadIdentity",
+    "Data": {
+      "AccountEnabled": true,
+      "AlternativeNames": [
+        "isExplicit=False",
+        "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/providers/Microsoft.Security/pricings/CloudPosture/securityOperators/DefenderCSPMSecurityOperator"
+      ],
+      "AppId": "ed018aee-e72d-4b72-9f5a-28e608b673c0",
+      "DisplayName": "CloudPosture/securityOperators/DefenderCSPMSecurityOperator",
+      "ServicePrincipalId": "6b9984c3-1112-48d5-b880-7707393929dc",
+      "ServicePrincipalType": "managedidentity",
+      "Tags": []
+    },
+    "Description": "Managed Identity SP: CloudPosture/securityOperators/DefenderCSPMSecurityOperator",
+    "EvidenceId": "3d0e685f-8809-516d-8a52-3e532e0788f4",
+    "EvidenceType": "entra-managed-identity-sp",
+    "RawReference": null,
+    "ResourceId": "6b9984c3-1112-48d5-b880-7707393929dc",
+    "ResourceType": "ManagedIdentityServicePrincipal",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:36:18.240167+00:00",
+    "Collector": "EntraWorkloadIdentity",
+    "Data": {
+      "AccountEnabled": true,
+      "AlternativeNames": [
+        "isExplicit=False",
+        "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/providers/Microsoft.Security/pricings/CloudPosture/securityOperators/DefenderCSPMSecurityOperator"
+      ],
+      "AppId": "ab5fa409-2bf9-4749-81f2-b8fbbb2bd7ea",
+      "DisplayName": "CloudPosture/securityOperators/DefenderCSPMSecurityOperator",
+      "ServicePrincipalId": "6ce4a948-cbbc-4850-bcc8-0beef9e840c3",
+      "ServicePrincipalType": "managedidentity",
+      "Tags": []
+    },
+    "Description": "Managed Identity SP: CloudPosture/securityOperators/DefenderCSPMSecurityOperator",
+    "EvidenceId": "dac00541-4939-54a1-960e-0d23c9d7b29c",
+    "EvidenceType": "entra-managed-identity-sp",
+    "RawReference": null,
+    "ResourceId": "6ce4a948-cbbc-4850-bcc8-0beef9e840c3",
+    "ResourceType": "ManagedIdentityServicePrincipal",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:36:18.240200+00:00",
+    "Collector": "EntraWorkloadIdentity",
+    "Data": {
+      "AccountEnabled": true,
+      "AlternativeNames": [
+        "isExplicit=False",
+        "/providers/Microsoft.Management/managementGroups/4a3eb5f4-1ec6-4a73-bb03-1ca63cb52d67/providers/Microsoft.Authorization/policyAssignments/b98c8baa88b84bdfae24c001"
+      ],
+      "AppId": "f67af6ae-aabf-44fa-ab64-545dda7d24c6",
+      "DisplayName": "b98c8baa88b84bdfae24c001",
+      "ServicePrincipalId": "6cf00db8-f973-45d0-8916-afa6ad33051b",
+      "ServicePrincipalType": "managedidentity",
+      "Tags": []
+    },
+    "Description": "Managed Identity SP: b98c8baa88b84bdfae24c001",
+    "EvidenceId": "a582d971-5c77-5142-9e68-5c96f1617d73",
+    "EvidenceType": "entra-managed-identity-sp",
+    "RawReference": null,
+    "ResourceId": "6cf00db8-f973-45d0-8916-afa6ad33051b",
+    "ResourceType": "ManagedIdentityServicePrincipal",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:36:18.240233+00:00",
+    "Collector": "EntraWorkloadIdentity",
+    "Data": {
+      "AccountEnabled": true,
+      "AlternativeNames": [
+        "isExplicit=False",
+        "/subscriptions/9154cdcb-5a52-452a-b1e7-483be9eee6d2/resourcegroups/RG-ADLS-Governance-Retention/providers/Microsoft.CognitiveServices/accounts/fdy-ia6nebdpvu5bm/projects/adls-gov-docs"
+      ],
+      "AppId": "b2b4084f-b582-4399-bd86-cf0db60703c9",
+      "DisplayName": "fdy-ia6nebdpvu5bm/projects/adls-gov-docs",
+      "ServicePrincipalId": "6d15fb61-538f-47c7-a624-e360cb0dd3e7",
+      "ServicePrincipalType": "managedidentity",
+      "Tags": [
+        "AgentCreatedBy:Foundry",
+        "AgenticInstance"
+      ]
+    },
+    "Description": "Managed Identity SP: fdy-ia6nebdpvu5bm/projects/adls-gov-docs",
+    "EvidenceId": "bb4b8320-6f04-52bf-87e9-eddd3fe7435b",
+    "EvidenceType": "entra-managed-identity-sp",
+    "RawReference": null,
+    "ResourceId": "6d15fb61-538f-47c7-a624-e360cb0dd3e7",
+    "ResourceType": "ManagedIdentityServicePrincipal",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:36:18.240298+00:00",
+    "Collector": "EntraWorkloadIdentity",
+    "Data": {
+      "AccountEnabled": true,
+      "AlternativeNames": [
+        "isExplicit=False",
+        "/subscriptions/0eb177bd-28b1-44da-b683-1508e1268aee/providers/Microsoft.Authorization/policyAssignments/ASC provisioning default LA agent Windows Arc"
+      ],
+      "AppId": "03343673-af43-47c3-97f9-43a4f3d74a74",
+      "DisplayName": "ASC provisioning default LA agent Windows Arc",
+      "ServicePrincipalId": "7014df1b-ad0c-4b24-8a1e-390b0c3795bd",
+      "ServicePrincipalType": "managedidentity",
+      "Tags": []
+    },
+    "Description": "Managed Identity SP: ASC provisioning default LA agent Windows Arc",
+    "EvidenceId": "4f789c61-8b35-58ba-9591-f240c8093e89",
+    "EvidenceType": "entra-managed-identity-sp",
+    "RawReference": null,
+    "ResourceId": "7014df1b-ad0c-4b24-8a1e-390b0c3795bd",
+    "ResourceType": "ManagedIdentityServicePrincipal",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:36:18.240333+00:00",
+    "Collector": "EntraWorkloadIdentity",
+    "Data": {
+      "AccountEnabled": true,
+      "AlternativeNames": [
+        "isExplicit=False",
+        "/providers/Microsoft.Management/managementGroups/4a3eb5f4-1ec6-4a73-bb03-1ca63cb52d67/providers/Microsoft.Authorization/policyAssignments/bb640a5e-b643-4642-a138"
+      ],
+      "AppId": "daec0f84-d81a-4bd0-b688-754e10646e0c",
+      "DisplayName": "bb640a5e-b643-4642-a138",
+      "ServicePrincipalId": "7074dab7-9460-49e3-889f-f1a69da47dce",
+      "ServicePrincipalType": "managedidentity",
+      "Tags": []
+    },
+    "Description": "Managed Identity SP: bb640a5e-b643-4642-a138",
+    "EvidenceId": "a9739792-aa99-565a-97e7-ca30f2c86de0",
+    "EvidenceType": "entra-managed-identity-sp",
+    "RawReference": null,
+    "ResourceId": "7074dab7-9460-49e3-889f-f1a69da47dce",
+    "ResourceType": "ManagedIdentityServicePrincipal",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:36:18.240424+00:00",
+    "Collector": "EntraWorkloadIdentity",
+    "Data": {
+      "AccountEnabled": true,
+      "AlternativeNames": [
+        "isExplicit=False",
+        "/subscriptions/0eb177bd-28b1-44da-b683-1508e1268aee/providers/Microsoft.Security/pricings/Containers/securityOperators/DefenderForContainersSecurityOperator"
+      ],
+      "AppId": "638a9d2c-8f69-4410-947c-7865878ef0c4",
+      "DisplayName": "Containers/securityOperators/DefenderForContainersSecurityOperator",
+      "ServicePrincipalId": "7788b2db-348b-41ee-9634-56dfa9dcef1d",
+      "ServicePrincipalType": "managedidentity",
+      "Tags": []
+    },
+    "Description": "Managed Identity SP: Containers/securityOperators/DefenderForContainersSecurityOperator",
+    "EvidenceId": "b2238a98-f4e5-572f-8e77-973bf77b9d0a",
+    "EvidenceType": "entra-managed-identity-sp",
+    "RawReference": null,
+    "ResourceId": "7788b2db-348b-41ee-9634-56dfa9dcef1d",
+    "ResourceType": "ManagedIdentityServicePrincipal",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:36:18.240557+00:00",
+    "Collector": "EntraWorkloadIdentity",
+    "Data": {
+      "AccountEnabled": true,
+      "AlternativeNames": [
+        "isExplicit=False",
+        "/subscriptions/9154cdcb-5a52-452a-b1e7-483be9eee6d2/providers/Microsoft.Security/pricings/CloudPosture/securityOperators/DefenderCSPMSecurityOperator"
+      ],
+      "AppId": "72fc5ff5-df98-4354-af02-05f462f06eaf",
+      "DisplayName": "CloudPosture/securityOperators/DefenderCSPMSecurityOperator",
+      "ServicePrincipalId": "77a751f2-5072-47b3-a493-6e956fa7843a",
+      "ServicePrincipalType": "managedidentity",
+      "Tags": []
+    },
+    "Description": "Managed Identity SP: CloudPosture/securityOperators/DefenderCSPMSecurityOperator",
+    "EvidenceId": "2773dfc5-8f37-54d1-a894-958ab5f5e686",
+    "EvidenceType": "entra-managed-identity-sp",
+    "RawReference": null,
+    "ResourceId": "77a751f2-5072-47b3-a493-6e956fa7843a",
+    "ResourceType": "ManagedIdentityServicePrincipal",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:36:18.240705+00:00",
+    "Collector": "EntraWorkloadIdentity",
+    "Data": {
+      "AccountEnabled": true,
+      "AlternativeNames": [
+        "isExplicit=False",
+        "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/providers/Microsoft.Authorization/policyAssignments/Defender for Containers provisioning Azure Policy Addon for Kub"
+      ],
+      "AppId": "81b068d9-487a-4a4d-aed2-ec18239234d7",
+      "DisplayName": "Defender for Containers provisioning Azure Policy Addon for Kub",
+      "ServicePrincipalId": "7c306661-d078-4bf5-8b8e-b4a1f7394e4e",
+      "ServicePrincipalType": "managedidentity",
+      "Tags": []
+    },
+    "Description": "Managed Identity SP: Defender for Containers provisioning Azure Policy Addon for Kub",
+    "EvidenceId": "5893f822-0caf-59b8-b636-4533030357fd",
+    "EvidenceType": "entra-managed-identity-sp",
+    "RawReference": null,
+    "ResourceId": "7c306661-d078-4bf5-8b8e-b4a1f7394e4e",
+    "ResourceType": "ManagedIdentityServicePrincipal",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:36:18.240750+00:00",
+    "Collector": "EntraWorkloadIdentity",
+    "Data": {
+      "AccountEnabled": true,
+      "AlternativeNames": [
+        "isExplicit=False",
+        "/subscriptions/0eb177bd-28b1-44da-b683-1508e1268aee/providers/Microsoft.Authorization/policyAssignments/Defender for SQL on SQL VMs and Arc-enabled SQL Servers"
+      ],
+      "AppId": "84d8d896-d3ba-48f6-9d30-832be774746b",
+      "DisplayName": "Defender for SQL on SQL VMs and Arc-enabled SQL Servers",
+      "ServicePrincipalId": "7cca9fed-f0b2-4f9c-b29b-1533a8c84649",
+      "ServicePrincipalType": "managedidentity",
+      "Tags": []
+    },
+    "Description": "Managed Identity SP: Defender for SQL on SQL VMs and Arc-enabled SQL Servers",
+    "EvidenceId": "438f7d1b-0ab9-5fdf-a67b-698dabce966d",
+    "EvidenceType": "entra-managed-identity-sp",
+    "RawReference": null,
+    "ResourceId": "7cca9fed-f0b2-4f9c-b29b-1533a8c84649",
+    "ResourceType": "ManagedIdentityServicePrincipal",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:36:18.240777+00:00",
+    "Collector": "EntraWorkloadIdentity",
+    "Data": {
+      "AccountEnabled": true,
+      "AlternativeNames": [
+        "isExplicit=False",
+        "/subscriptions/9154cdcb-5a52-452a-b1e7-483be9eee6d2/providers/Microsoft.Authorization/policyAssignments/Defender for Containers provisioning ARC k8s Enabled"
+      ],
+      "AppId": "1bfaa97f-c5bd-429e-9ea8-ca4c80a9b9f8",
+      "DisplayName": "Defender for Containers provisioning ARC k8s Enabled",
+      "ServicePrincipalId": "7d92128b-7606-4db0-8a97-3e701d39bd58",
+      "ServicePrincipalType": "managedidentity",
+      "Tags": []
+    },
+    "Description": "Managed Identity SP: Defender for Containers provisioning ARC k8s Enabled",
+    "EvidenceId": "e090be54-889d-5cb9-a8d0-fe7270cbebbb",
+    "EvidenceType": "entra-managed-identity-sp",
+    "RawReference": null,
+    "ResourceId": "7d92128b-7606-4db0-8a97-3e701d39bd58",
+    "ResourceType": "ManagedIdentityServicePrincipal",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:36:18.240841+00:00",
+    "Collector": "EntraWorkloadIdentity",
+    "Data": {
+      "AccountEnabled": true,
+      "AlternativeNames": [
+        "isExplicit=False",
+        "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/providers/Microsoft.Security/dataScanners/StorageDataScanner"
+      ],
+      "AppId": "4d8393e0-a776-44ba-9e02-b6fa69b76475",
+      "DisplayName": "StorageDataScanner",
+      "ServicePrincipalId": "82dffad3-c9e1-4b96-9f75-43032b12d13c",
+      "ServicePrincipalType": "managedidentity",
+      "Tags": []
+    },
+    "Description": "Managed Identity SP: StorageDataScanner",
+    "EvidenceId": "e7c2671f-99b2-5a5f-a734-ef5c6467994e",
+    "EvidenceType": "entra-managed-identity-sp",
+    "RawReference": null,
+    "ResourceId": "82dffad3-c9e1-4b96-9f75-43032b12d13c",
+    "ResourceType": "ManagedIdentityServicePrincipal",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:36:18.240884+00:00",
+    "Collector": "EntraWorkloadIdentity",
+    "Data": {
+      "AccountEnabled": true,
+      "AlternativeNames": [
+        "isExplicit=False",
+        "/subscriptions/9154cdcb-5a52-452a-b1e7-483be9eee6d2/providers/Microsoft.Authorization/policyAssignments/Defender for SQL on SQL VMs and Arc-enabled SQL Servers- Custom"
+      ],
+      "AppId": "449ff2c0-f7d7-4f8d-bad2-5a7d147274fd",
+      "DisplayName": "Defender for SQL on SQL VMs and Arc-enabled SQL Servers- Custom",
+      "ServicePrincipalId": "86ba2f9d-a17d-4c52-b8d6-32ec66054370",
+      "ServicePrincipalType": "managedidentity",
+      "Tags": []
+    },
+    "Description": "Managed Identity SP: Defender for SQL on SQL VMs and Arc-enabled SQL Servers- Custom",
+    "EvidenceId": "424bce04-7777-5f26-845c-401fc864c48f",
+    "EvidenceType": "entra-managed-identity-sp",
+    "RawReference": null,
+    "ResourceId": "86ba2f9d-a17d-4c52-b8d6-32ec66054370",
+    "ResourceType": "ManagedIdentityServicePrincipal",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:36:18.240916+00:00",
+    "Collector": "EntraWorkloadIdentity",
+    "Data": {
+      "AccountEnabled": true,
+      "AlternativeNames": [
+        "isExplicit=False",
+        "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/providers/Microsoft.Authorization/policyAssignments/Defender for Containers provisioning Azure Policy Addon for Kub"
+      ],
+      "AppId": "7998400d-3c01-4d0a-8c6c-9619683eccd7",
+      "DisplayName": "Defender for Containers provisioning Azure Policy Addon for Kub",
+      "ServicePrincipalId": "875e43ee-a572-442e-b932-3f0508387ba4",
+      "ServicePrincipalType": "managedidentity",
+      "Tags": []
+    },
+    "Description": "Managed Identity SP: Defender for Containers provisioning Azure Policy Addon for Kub",
+    "EvidenceId": "5379950c-abc4-5618-8d4d-f2a52971f5b7",
+    "EvidenceType": "entra-managed-identity-sp",
+    "RawReference": null,
+    "ResourceId": "875e43ee-a572-442e-b932-3f0508387ba4",
+    "ResourceType": "ManagedIdentityServicePrincipal",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:36:18.240963+00:00",
+    "Collector": "EntraWorkloadIdentity",
+    "Data": {
+      "AccountEnabled": true,
+      "AlternativeNames": [
+        "isExplicit=False",
+        "/subscriptions/0eb177bd-28b1-44da-b683-1508e1268aee/providers/Microsoft.Authorization/policyAssignments/Defender for Containers provisioning AKS Security Profile"
+      ],
+      "AppId": "1e0434f6-11d0-4192-b4ac-4a891af0ce88",
+      "DisplayName": "Defender for Containers provisioning AKS Security Profile",
+      "ServicePrincipalId": "8c088255-8940-4a4b-bd43-4626dedd00d4",
+      "ServicePrincipalType": "managedidentity",
+      "Tags": []
+    },
+    "Description": "Managed Identity SP: Defender for Containers provisioning AKS Security Profile",
+    "EvidenceId": "11b5de1b-8596-5bf2-8eaa-cbfaff318755",
+    "EvidenceType": "entra-managed-identity-sp",
+    "RawReference": null,
+    "ResourceId": "8c088255-8940-4a4b-bd43-4626dedd00d4",
+    "ResourceType": "ManagedIdentityServicePrincipal",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:36:18.240989+00:00",
+    "Collector": "EntraWorkloadIdentity",
+    "Data": {
+      "AccountEnabled": true,
+      "AlternativeNames": [
+        "isExplicit=False",
+        "/subscriptions/0eb177bd-28b1-44da-b683-1508e1268aee/providers/Microsoft.Security/pricings/CloudPosture/securityOperators/DefenderCSPMSecurityOperator"
+      ],
+      "AppId": "492f010a-705a-42e3-94d4-9c1d2d359f29",
+      "DisplayName": "CloudPosture/securityOperators/DefenderCSPMSecurityOperator",
+      "ServicePrincipalId": "8dcd2647-984f-4e47-b568-57eac6d0274e",
+      "ServicePrincipalType": "managedidentity",
+      "Tags": []
+    },
+    "Description": "Managed Identity SP: CloudPosture/securityOperators/DefenderCSPMSecurityOperator",
+    "EvidenceId": "b5bf075d-1ab5-5964-93f4-900e2fcab29f",
+    "EvidenceType": "entra-managed-identity-sp",
+    "RawReference": null,
+    "ResourceId": "8dcd2647-984f-4e47-b568-57eac6d0274e",
+    "ResourceType": "ManagedIdentityServicePrincipal",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:36:18.241012+00:00",
+    "Collector": "EntraWorkloadIdentity",
+    "Data": {
+      "AccountEnabled": true,
+      "AlternativeNames": [
+        "isExplicit=False",
+        "/subscriptions/9154cdcb-5a52-452a-b1e7-483be9eee6d2/resourcegroups/AppProxy-POC-RG/providers/Microsoft.Compute/virtualMachines/AppProxy-Conn"
+      ],
+      "AppId": "4ae4b3b0-ef82-45de-987f-4343a639485a",
+      "DisplayName": "AppProxy-Conn",
+      "ServicePrincipalId": "8f4b8c25-1cec-409b-8aee-2ebca1e8572b",
+      "ServicePrincipalType": "managedidentity",
+      "Tags": []
+    },
+    "Description": "Managed Identity SP: AppProxy-Conn",
+    "EvidenceId": "8b6c8e06-4b8c-5b48-9497-8a8e711f46cd",
+    "EvidenceType": "entra-managed-identity-sp",
+    "RawReference": null,
+    "ResourceId": "8f4b8c25-1cec-409b-8aee-2ebca1e8572b",
+    "ResourceType": "ManagedIdentityServicePrincipal",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:36:18.241033+00:00",
+    "Collector": "EntraWorkloadIdentity",
+    "Data": {
+      "AccountEnabled": true,
+      "AlternativeNames": [
+        "isExplicit=False",
+        "/providers/Microsoft.Management/managementGroups/4a3eb5f4-1ec6-4a73-bb03-1ca63cb52d67/providers/Microsoft.Authorization/policyAssignments/MCAPSGovDeployPolicies"
+      ],
+      "AppId": "09307e72-5ca3-49f3-b2f5-0c6f7b3fc74e",
+      "DisplayName": "MCAPSGovDeployPolicies",
+      "ServicePrincipalId": "8fb9e0f0-ffd4-4855-9451-7bc0c88dc4a6",
+      "ServicePrincipalType": "managedidentity",
+      "Tags": []
+    },
+    "Description": "Managed Identity SP: MCAPSGovDeployPolicies",
+    "EvidenceId": "5a2976b2-5e42-5a0d-9932-e1e009eb0064",
+    "EvidenceType": "entra-managed-identity-sp",
+    "RawReference": null,
+    "ResourceId": "8fb9e0f0-ffd4-4855-9451-7bc0c88dc4a6",
+    "ResourceType": "ManagedIdentityServicePrincipal",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:36:18.241050+00:00",
+    "Collector": "EntraWorkloadIdentity",
+    "Data": {
+      "AccountEnabled": true,
+      "AlternativeNames": [
+        "isExplicit=False",
+        "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/providers/Microsoft.Authorization/policyAssignments/Defender for Containers provisioning ARC k8s Enabled"
+      ],
+      "AppId": "b486de49-50c5-475d-a3c0-0978c00b6042",
+      "DisplayName": "Defender for Containers provisioning ARC k8s Enabled",
+      "ServicePrincipalId": "8ff35f6c-b4b0-4728-b4bb-c23d7bda88f0",
+      "ServicePrincipalType": "managedidentity",
+      "Tags": []
+    },
+    "Description": "Managed Identity SP: Defender for Containers provisioning ARC k8s Enabled",
+    "EvidenceId": "035715e8-106a-59d7-88e9-33ed71a9434c",
+    "EvidenceType": "entra-managed-identity-sp",
+    "RawReference": null,
+    "ResourceId": "8ff35f6c-b4b0-4728-b4bb-c23d7bda88f0",
+    "ResourceType": "ManagedIdentityServicePrincipal",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:36:18.241074+00:00",
+    "Collector": "EntraWorkloadIdentity",
+    "Data": {
+      "AccountEnabled": true,
+      "AlternativeNames": [
+        "isExplicit=False",
+        "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/resourcegroups/RG-AzureAIFoundary-FedRAMP-High/providers/Microsoft.CognitiveServices/accounts/FedRAMP-High-FoundryResource/projects/DefaultProject-NotForUse"
+      ],
+      "AppId": "905386a0-e7c8-40b8-8efc-5770cb2c7393",
+      "DisplayName": "FedRAMP-High-FoundryResource/projects/DefaultProject-NotForUse",
+      "ServicePrincipalId": "91c08c4c-0b05-4ef6-ad5d-041b181a7515",
+      "ServicePrincipalType": "managedidentity",
+      "Tags": [
+        "AgentCreatedBy:Foundry",
+        "AgenticInstance"
+      ]
+    },
+    "Description": "Managed Identity SP: FedRAMP-High-FoundryResource/projects/DefaultProject-NotForUse",
+    "EvidenceId": "ff89822a-1c85-5cec-9304-e11e9a210473",
+    "EvidenceType": "entra-managed-identity-sp",
+    "RawReference": null,
+    "ResourceId": "91c08c4c-0b05-4ef6-ad5d-041b181a7515",
+    "ResourceType": "ManagedIdentityServicePrincipal",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:36:18.241097+00:00",
+    "Collector": "EntraWorkloadIdentity",
+    "Data": {
+      "AccountEnabled": true,
+      "AlternativeNames": [
+        "isExplicit=False",
+        "/providers/Microsoft.Management/managementGroups/4a3eb5f4-1ec6-4a73-bb03-1ca63cb52d67/providers/Microsoft.Authorization/policyAssignments/d5072a66a8f04841a5c5e871"
+      ],
+      "AppId": "f9d1621a-e20e-4ebe-affc-fae0afd08c3f",
+      "DisplayName": "d5072a66a8f04841a5c5e871",
+      "ServicePrincipalId": "9265a466-177e-46ec-961d-72fe02a968c9",
+      "ServicePrincipalType": "managedidentity",
+      "Tags": []
+    },
+    "Description": "Managed Identity SP: d5072a66a8f04841a5c5e871",
+    "EvidenceId": "48ec286f-4593-5755-bd85-c7744ab0b072",
+    "EvidenceType": "entra-managed-identity-sp",
+    "RawReference": null,
+    "ResourceId": "9265a466-177e-46ec-961d-72fe02a968c9",
+    "ResourceType": "ManagedIdentityServicePrincipal",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:36:18.241136+00:00",
+    "Collector": "EntraWorkloadIdentity",
+    "Data": {
+      "AccountEnabled": true,
+      "AlternativeNames": [
+        "isExplicit=False",
+        "/subscriptions/9154cdcb-5a52-452a-b1e7-483be9eee6d2/providers/Microsoft.Authorization/policyAssignments/ASC provisioning default LA agent Linux Arc"
+      ],
+      "AppId": "41b4e778-8d32-4696-b119-2563b7baa2f7",
+      "DisplayName": "ASC provisioning default LA agent Linux Arc",
+      "ServicePrincipalId": "9687b5dd-3e1b-485d-802e-4e6faee95cde",
+      "ServicePrincipalType": "managedidentity",
+      "Tags": []
+    },
+    "Description": "Managed Identity SP: ASC provisioning default LA agent Linux Arc",
+    "EvidenceId": "70eae4d0-987f-5ef5-9b0e-02d5dafcc1a9",
+    "EvidenceType": "entra-managed-identity-sp",
+    "RawReference": null,
+    "ResourceId": "9687b5dd-3e1b-485d-802e-4e6faee95cde",
+    "ResourceType": "ManagedIdentityServicePrincipal",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:36:18.241169+00:00",
+    "Collector": "EntraWorkloadIdentity",
+    "Data": {
+      "AccountEnabled": true,
+      "AlternativeNames": [
+        "isExplicit=False",
+        "/providers/Microsoft.Management/managementGroups/4a3eb5f4-1ec6-4a73-bb03-1ca63cb52d67/providers/Microsoft.Authorization/policyAssignments/149bca90-7486-41d7-8a70"
+      ],
+      "AppId": "3b3baa93-33b0-4ddb-ae06-89ed92a238c6",
+      "DisplayName": "149bca90-7486-41d7-8a70",
+      "ServicePrincipalId": "9b5d58c1-aa28-46f4-899e-ce16c1c14777",
+      "ServicePrincipalType": "managedidentity",
+      "Tags": []
+    },
+    "Description": "Managed Identity SP: 149bca90-7486-41d7-8a70",
+    "EvidenceId": "82d4b5eb-789a-56ce-b393-d51d22cf43c7",
+    "EvidenceType": "entra-managed-identity-sp",
+    "RawReference": null,
+    "ResourceId": "9b5d58c1-aa28-46f4-899e-ce16c1c14777",
+    "ResourceType": "ManagedIdentityServicePrincipal",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:36:18.241188+00:00",
+    "Collector": "EntraWorkloadIdentity",
+    "Data": {
+      "AccountEnabled": true,
+      "AlternativeNames": [
+        "isExplicit=False",
+        "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/resourcegroups/dlg-rg-eus2/providers/Microsoft.CognitiveServices/accounts/dlg-foundry-eus2"
+      ],
+      "AppId": "4f5c483b-09fa-45fd-a201-0dfcbad33032",
+      "DisplayName": "dlg-foundry-eus2",
+      "ServicePrincipalId": "9be21dfe-1a08-4ca9-9998-3e89afb16d1e",
+      "ServicePrincipalType": "managedidentity",
+      "Tags": []
+    },
+    "Description": "Managed Identity SP: dlg-foundry-eus2",
+    "EvidenceId": "54c1fd3d-bd26-57b2-9cab-301122e1e0e1",
+    "EvidenceType": "entra-managed-identity-sp",
+    "RawReference": null,
+    "ResourceId": "9be21dfe-1a08-4ca9-9998-3e89afb16d1e",
+    "ResourceType": "ManagedIdentityServicePrincipal",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:36:18.241205+00:00",
+    "Collector": "EntraWorkloadIdentity",
+    "Data": {
+      "AccountEnabled": true,
+      "AlternativeNames": [
+        "isExplicit=False",
+        "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/resourcegroups/RG-AzureAIFoundary-FedRAMP-High/providers/Microsoft.Search/searchServices/fedramp-high-aisearch"
+      ],
+      "AppId": "a6a687ad-de42-4026-adc5-d13db8d68acc",
+      "DisplayName": "fedramp-high-aisearch",
+      "ServicePrincipalId": "9c376b61-e89f-4688-9062-42f4dc7662fe",
+      "ServicePrincipalType": "managedidentity",
+      "Tags": []
+    },
+    "Description": "Managed Identity SP: fedramp-high-aisearch",
+    "EvidenceId": "5226f2f1-8569-5f86-8411-534167124039",
+    "EvidenceType": "entra-managed-identity-sp",
+    "RawReference": null,
+    "ResourceId": "9c376b61-e89f-4688-9062-42f4dc7662fe",
+    "ResourceType": "ManagedIdentityServicePrincipal",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:36:18.241224+00:00",
+    "Collector": "EntraWorkloadIdentity",
+    "Data": {
+      "AccountEnabled": true,
+      "AlternativeNames": [
+        "isExplicit=False",
+        "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/providers/Microsoft.Authorization/policyAssignments/ASC provisioning default LA agent Linux Arc"
+      ],
+      "AppId": "801bf79c-e805-44cd-8cf9-eeead613deda",
+      "DisplayName": "ASC provisioning default LA agent Linux Arc",
+      "ServicePrincipalId": "9d317c85-9146-49ee-886c-2c3166a78743",
+      "ServicePrincipalType": "managedidentity",
+      "Tags": []
+    },
+    "Description": "Managed Identity SP: ASC provisioning default LA agent Linux Arc",
+    "EvidenceId": "bc7b68e9-be55-5f86-9699-2fdea4a8dc0a",
+    "EvidenceType": "entra-managed-identity-sp",
+    "RawReference": null,
+    "ResourceId": "9d317c85-9146-49ee-886c-2c3166a78743",
+    "ResourceType": "ManagedIdentityServicePrincipal",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:36:18.241243+00:00",
+    "Collector": "EntraWorkloadIdentity",
+    "Data": {
+      "AccountEnabled": true,
+      "AlternativeNames": [
+        "isExplicit=False",
+        "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/providers/Microsoft.Authorization/policyAssignments/Defender for SQL on SQL VMs and Arc-enabled SQL Servers"
+      ],
+      "AppId": "b6082171-2a53-46cb-a462-91c344f13da0",
+      "DisplayName": "Defender for SQL on SQL VMs and Arc-enabled SQL Servers",
+      "ServicePrincipalId": "9d5f2851-7349-4481-b73b-1873cfb068d1",
+      "ServicePrincipalType": "managedidentity",
+      "Tags": []
+    },
+    "Description": "Managed Identity SP: Defender for SQL on SQL VMs and Arc-enabled SQL Servers",
+    "EvidenceId": "e9977911-04e7-51c8-a2ca-52fdf596e4b0",
+    "EvidenceType": "entra-managed-identity-sp",
+    "RawReference": null,
+    "ResourceId": "9d5f2851-7349-4481-b73b-1873cfb068d1",
+    "ResourceType": "ManagedIdentityServicePrincipal",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:36:18.241323+00:00",
+    "Collector": "EntraWorkloadIdentity",
+    "Data": {
+      "AccountEnabled": true,
+      "AlternativeNames": [
+        "isExplicit=False",
+        "/providers/Microsoft.Management/managementGroups/4a3eb5f4-1ec6-4a73-bb03-1ca63cb52d67/providers/Microsoft.Authorization/policyAssignments/03c822a1-6bb4-4a26-aeaf"
+      ],
+      "AppId": "d928c47e-b574-4479-9508-399260866d98",
+      "DisplayName": "03c822a1-6bb4-4a26-aeaf",
+      "ServicePrincipalId": "a1e4b1ce-db1e-4540-b7e8-a4229fde3bc9",
+      "ServicePrincipalType": "managedidentity",
+      "Tags": []
+    },
+    "Description": "Managed Identity SP: 03c822a1-6bb4-4a26-aeaf",
+    "EvidenceId": "c0459667-0481-556b-a105-5413070124a1",
+    "EvidenceType": "entra-managed-identity-sp",
+    "RawReference": null,
+    "ResourceId": "a1e4b1ce-db1e-4540-b7e8-a4229fde3bc9",
+    "ResourceType": "ManagedIdentityServicePrincipal",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:36:18.241351+00:00",
+    "Collector": "EntraWorkloadIdentity",
+    "Data": {
+      "AccountEnabled": true,
+      "AlternativeNames": [
+        "isExplicit=False",
+        "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/providers/Microsoft.Security/pricings/Containers/securityOperators/DefenderForContainersSecurityOperator"
+      ],
+      "AppId": "97cddfc1-9641-4edf-b3a3-4640ae0bd5a0",
+      "DisplayName": "Containers/securityOperators/DefenderForContainersSecurityOperator",
+      "ServicePrincipalId": "a37103e4-b3b1-4bff-81b8-795706e093d7",
+      "ServicePrincipalType": "managedidentity",
+      "Tags": []
+    },
+    "Description": "Managed Identity SP: Containers/securityOperators/DefenderForContainersSecurityOperator",
+    "EvidenceId": "e9bab652-f738-50c1-85b1-d830e07b231f",
+    "EvidenceType": "entra-managed-identity-sp",
+    "RawReference": null,
+    "ResourceId": "a37103e4-b3b1-4bff-81b8-795706e093d7",
+    "ResourceType": "ManagedIdentityServicePrincipal",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:36:18.241372+00:00",
+    "Collector": "EntraWorkloadIdentity",
+    "Data": {
+      "AccountEnabled": true,
+      "AlternativeNames": [
+        "isExplicit=False",
+        "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/providers/Microsoft.Authorization/policyAssignments/Defender for Containers provisioning Policy extension for Arc-e"
+      ],
+      "AppId": "c4b402c1-d9b4-40da-9f18-8279cc8b379c",
+      "DisplayName": "Defender for Containers provisioning Policy extension for Arc-e",
+      "ServicePrincipalId": "a46458a0-0fc4-4047-b3e5-dcbdc58bda16",
+      "ServicePrincipalType": "managedidentity",
+      "Tags": []
+    },
+    "Description": "Managed Identity SP: Defender for Containers provisioning Policy extension for Arc-e",
+    "EvidenceId": "d94c2365-7eea-54a9-8e30-57e8cd392e35",
+    "EvidenceType": "entra-managed-identity-sp",
+    "RawReference": null,
+    "ResourceId": "a46458a0-0fc4-4047-b3e5-dcbdc58bda16",
+    "ResourceType": "ManagedIdentityServicePrincipal",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:36:18.241388+00:00",
+    "Collector": "EntraWorkloadIdentity",
+    "Data": {
+      "AccountEnabled": true,
+      "AlternativeNames": [
+        "isExplicit=False",
+        "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/resourcegroups/PostureIQ-RG/providers/Microsoft.CognitiveServices/accounts/postureiq-resource/projects/postureiq"
+      ],
+      "AppId": "31a6b1a0-dfff-4baa-93a2-bd0458b073c0",
+      "DisplayName": "postureiq-resource/projects/postureiq",
+      "ServicePrincipalId": "a4b5fea1-ca41-4d7c-a21b-c8a1f861a1d0",
+      "ServicePrincipalType": "managedidentity",
+      "Tags": [
+        "AgentCreatedBy:Foundry",
+        "AgenticInstance"
+      ]
+    },
+    "Description": "Managed Identity SP: postureiq-resource/projects/postureiq",
+    "EvidenceId": "09ca0bd4-d692-5a13-a200-caa12ff19ae0",
+    "EvidenceType": "entra-managed-identity-sp",
+    "RawReference": null,
+    "ResourceId": "a4b5fea1-ca41-4d7c-a21b-c8a1f861a1d0",
+    "ResourceType": "ManagedIdentityServicePrincipal",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:36:18.241406+00:00",
+    "Collector": "EntraWorkloadIdentity",
+    "Data": {
+      "AccountEnabled": true,
+      "AlternativeNames": [
+        "isExplicit=False",
+        "/subscriptions/9154cdcb-5a52-452a-b1e7-483be9eee6d2/providers/Microsoft.Security/pricings/Containers/securityOperators/DefenderForContainersSecurityOperator"
+      ],
+      "AppId": "f847dfcf-5a29-448a-aac9-f28c88e8dde5",
+      "DisplayName": "Containers/securityOperators/DefenderForContainersSecurityOperator",
+      "ServicePrincipalId": "a5591289-fc2b-4a90-a09e-b9ca0f18972a",
+      "ServicePrincipalType": "managedidentity",
+      "Tags": []
+    },
+    "Description": "Managed Identity SP: Containers/securityOperators/DefenderForContainersSecurityOperator",
+    "EvidenceId": "b8c9e70e-ea1c-56b8-84e1-5117554c2d0c",
+    "EvidenceType": "entra-managed-identity-sp",
+    "RawReference": null,
+    "ResourceId": "a5591289-fc2b-4a90-a09e-b9ca0f18972a",
+    "ResourceType": "ManagedIdentityServicePrincipal",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:36:18.241430+00:00",
+    "Collector": "EntraWorkloadIdentity",
+    "Data": {
+      "AccountEnabled": true,
+      "AlternativeNames": [
+        "isExplicit=False",
+        "/subscriptions/0eb177bd-28b1-44da-b683-1508e1268aee/providers/Microsoft.Authorization/policyAssignments/SqlVmAndArcSqlServersProtection"
+      ],
+      "AppId": "c4041fcc-be85-4432-a60f-30afdf66be6e",
+      "DisplayName": "SqlVmAndArcSqlServersProtection",
+      "ServicePrincipalId": "a7f158a1-7ffd-428f-876e-dc8869b1337b",
+      "ServicePrincipalType": "managedidentity",
+      "Tags": []
+    },
+    "Description": "Managed Identity SP: SqlVmAndArcSqlServersProtection",
+    "EvidenceId": "8454039a-2884-5efb-92a2-3603fc60f0d4",
+    "EvidenceType": "entra-managed-identity-sp",
+    "RawReference": null,
+    "ResourceId": "a7f158a1-7ffd-428f-876e-dc8869b1337b",
+    "ResourceType": "ManagedIdentityServicePrincipal",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:36:18.241456+00:00",
+    "Collector": "EntraWorkloadIdentity",
+    "Data": {
+      "AccountEnabled": true,
+      "AlternativeNames": [
+        "isExplicit=False",
+        "/subscriptions/9154cdcb-5a52-452a-b1e7-483be9eee6d2/providers/Microsoft.Authorization/policyAssignments/Defender for Containers provisioning Azure Policy Addon for Kub"
+      ],
+      "AppId": "116ed0e9-45f8-47cc-ade7-bad2b80429a4",
+      "DisplayName": "Defender for Containers provisioning Azure Policy Addon for Kub",
+      "ServicePrincipalId": "aa7ccdd1-4878-4720-9d4c-ed5bbac20f76",
+      "ServicePrincipalType": "managedidentity",
+      "Tags": []
+    },
+    "Description": "Managed Identity SP: Defender for Containers provisioning Azure Policy Addon for Kub",
+    "EvidenceId": "f3f07bcb-41b2-58a5-8ca7-b54a047dea57",
+    "EvidenceType": "entra-managed-identity-sp",
+    "RawReference": null,
+    "ResourceId": "aa7ccdd1-4878-4720-9d4c-ed5bbac20f76",
+    "ResourceType": "ManagedIdentityServicePrincipal",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:36:18.241503+00:00",
+    "Collector": "EntraWorkloadIdentity",
+    "Data": {
+      "AccountEnabled": true,
+      "AlternativeNames": [
+        "isExplicit=False",
+        "/providers/Microsoft.Management/managementGroups/4a3eb5f4-1ec6-4a73-bb03-1ca63cb52d67/providers/Microsoft.Authorization/policyAssignments/5223bb8021834a628f2ae743"
+      ],
+      "AppId": "53dff8af-4d84-40be-8e35-0dd7db01c53c",
+      "DisplayName": "5223bb8021834a628f2ae743",
+      "ServicePrincipalId": "ae320321-8aaf-4e91-8bde-2fa2732961ff",
+      "ServicePrincipalType": "managedidentity",
+      "Tags": []
+    },
+    "Description": "Managed Identity SP: 5223bb8021834a628f2ae743",
+    "EvidenceId": "d1b9f423-ac09-536d-bb67-58b1a23a7aa3",
+    "EvidenceType": "entra-managed-identity-sp",
+    "RawReference": null,
+    "ResourceId": "ae320321-8aaf-4e91-8bde-2fa2732961ff",
+    "ResourceType": "ManagedIdentityServicePrincipal",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:36:18.241528+00:00",
+    "Collector": "EntraWorkloadIdentity",
+    "Data": {
+      "AccountEnabled": true,
+      "AlternativeNames": [
+        "isExplicit=True",
+        "/subscriptions/9154cdcb-5a52-452a-b1e7-483be9eee6d2/resourcegroups/RG-ADLS-Governance-Retention/providers/Microsoft.ManagedIdentity/userAssignedIdentities/id-aca-ia6nebdpvu5bm"
+      ],
+      "AppId": "cf2d727b-f519-4a6e-bb2d-f4369089aebd",
+      "DisplayName": "id-aca-ia6nebdpvu5bm",
+      "ServicePrincipalId": "b078a38b-6e35-4ab4-b32d-9aeb05809a2d",
+      "ServicePrincipalType": "managedidentity",
+      "Tags": []
+    },
+    "Description": "Managed Identity SP: id-aca-ia6nebdpvu5bm",
+    "EvidenceId": "89d3fdca-d255-5a67-84a8-91185392bbb6",
+    "EvidenceType": "entra-managed-identity-sp",
+    "RawReference": null,
+    "ResourceId": "b078a38b-6e35-4ab4-b32d-9aeb05809a2d",
+    "ResourceType": "ManagedIdentityServicePrincipal",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:36:18.241552+00:00",
+    "Collector": "EntraWorkloadIdentity",
+    "Data": {
+      "AccountEnabled": true,
+      "AlternativeNames": [
+        "isExplicit=False",
+        "/providers/Microsoft.Management/managementGroups/4a3eb5f4-1ec6-4a73-bb03-1ca63cb52d67/providers/Microsoft.Authorization/policyAssignments/663c8470-c04e-44b9-83c8"
+      ],
+      "AppId": "8787b4c3-b947-4f91-b5ec-c6ecea8e738d",
+      "DisplayName": "663c8470-c04e-44b9-83c8",
+      "ServicePrincipalId": "b1763bfa-1f1b-46d5-a5f2-63ac498865ad",
+      "ServicePrincipalType": "managedidentity",
+      "Tags": []
+    },
+    "Description": "Managed Identity SP: 663c8470-c04e-44b9-83c8",
+    "EvidenceId": "f857741b-a29d-5bda-bea9-d45a4d15616d",
+    "EvidenceType": "entra-managed-identity-sp",
+    "RawReference": null,
+    "ResourceId": "b1763bfa-1f1b-46d5-a5f2-63ac498865ad",
+    "ResourceType": "ManagedIdentityServicePrincipal",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:36:18.241572+00:00",
+    "Collector": "EntraWorkloadIdentity",
+    "Data": {
+      "AccountEnabled": true,
+      "AlternativeNames": [
+        "isExplicit=False",
+        "/subscriptions/9154cdcb-5a52-452a-b1e7-483be9eee6d2/providers/Microsoft.Authorization/policyAssignments/SqlVmAndArcSqlServersProtection"
+      ],
+      "AppId": "b7d8642c-9709-4352-b55d-23bf418b52c0",
+      "DisplayName": "SqlVmAndArcSqlServersProtection",
+      "ServicePrincipalId": "b1c1f5ed-9c08-47fa-a380-5e0d89d9d608",
+      "ServicePrincipalType": "managedidentity",
+      "Tags": []
+    },
+    "Description": "Managed Identity SP: SqlVmAndArcSqlServersProtection",
+    "EvidenceId": "46531c8b-7271-5ae8-8678-ba2a29a17f76",
+    "EvidenceType": "entra-managed-identity-sp",
+    "RawReference": null,
+    "ResourceId": "b1c1f5ed-9c08-47fa-a380-5e0d89d9d608",
+    "ResourceType": "ManagedIdentityServicePrincipal",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:36:18.241600+00:00",
+    "Collector": "EntraWorkloadIdentity",
+    "Data": {
+      "AccountEnabled": true,
+      "AlternativeNames": [
+        "isExplicit=False",
+        "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourcegroups/RG-LogAnalyticsWorkspace/providers/Microsoft.Logic/workflows/SNOW-CreateAndUpdateIncident"
+      ],
+      "AppId": "5eaf5075-6bbe-4e3a-999b-0b4e0dcc3900",
+      "DisplayName": "SNOW-CreateAndUpdateIncident",
+      "ServicePrincipalId": "b2f35913-e6cb-480e-a48a-f58d6b1ee0c4",
+      "ServicePrincipalType": "managedidentity",
+      "Tags": []
+    },
+    "Description": "Managed Identity SP: SNOW-CreateAndUpdateIncident",
+    "EvidenceId": "bdaf1c4f-37ed-5b3b-ba80-8cbe11d37441",
+    "EvidenceType": "entra-managed-identity-sp",
+    "RawReference": null,
+    "ResourceId": "b2f35913-e6cb-480e-a48a-f58d6b1ee0c4",
+    "ResourceType": "ManagedIdentityServicePrincipal",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:36:18.241633+00:00",
+    "Collector": "EntraWorkloadIdentity",
+    "Data": {
+      "AccountEnabled": true,
+      "AlternativeNames": [
+        "isExplicit=False",
+        "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/resourcegroups/RG-AzureAIFoundary-FedRAMP-High/providers/Microsoft.CognitiveServices/accounts/FedRAMP-High-FoundryResource"
+      ],
+      "AppId": "15d5ae80-c195-4fe8-b734-485033d598d6",
+      "DisplayName": "FedRAMP-High-FoundryResource",
+      "ServicePrincipalId": "b88a3e7c-9f95-47c7-b088-f4fef6a2d652",
+      "ServicePrincipalType": "managedidentity",
+      "Tags": []
+    },
+    "Description": "Managed Identity SP: FedRAMP-High-FoundryResource",
+    "EvidenceId": "492add73-e2ee-5b92-8aae-60d22809b363",
+    "EvidenceType": "entra-managed-identity-sp",
+    "RawReference": null,
+    "ResourceId": "b88a3e7c-9f95-47c7-b088-f4fef6a2d652",
+    "ResourceType": "ManagedIdentityServicePrincipal",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:36:18.241652+00:00",
+    "Collector": "EntraWorkloadIdentity",
+    "Data": {
+      "AccountEnabled": true,
+      "AlternativeNames": [
+        "isExplicit=False",
+        "/subscriptions/0eb177bd-28b1-44da-b683-1508e1268aee/providers/Microsoft.Authorization/policyAssignments/Defender for Containers provisioning Policy extension for Arc-e"
+      ],
+      "AppId": "179435c2-026f-4c9d-8807-90a324333eb7",
+      "DisplayName": "Defender for Containers provisioning Policy extension for Arc-e",
+      "ServicePrincipalId": "b90dc60d-2c43-4366-8476-b7979d0cfd77",
+      "ServicePrincipalType": "managedidentity",
+      "Tags": []
+    },
+    "Description": "Managed Identity SP: Defender for Containers provisioning Policy extension for Arc-e",
+    "EvidenceId": "a42e75a9-be1c-5ce6-9a12-83279d06605d",
+    "EvidenceType": "entra-managed-identity-sp",
+    "RawReference": null,
+    "ResourceId": "b90dc60d-2c43-4366-8476-b7979d0cfd77",
+    "ResourceType": "ManagedIdentityServicePrincipal",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:36:18.241668+00:00",
+    "Collector": "EntraWorkloadIdentity",
+    "Data": {
+      "AccountEnabled": true,
+      "AlternativeNames": [
+        "isExplicit=False",
+        "/providers/Microsoft.Management/managementGroups/4a3eb5f4-1ec6-4a73-bb03-1ca63cb52d67/providers/Microsoft.Authorization/policyAssignments/cf8a2083-96ef-4243-8969"
+      ],
+      "AppId": "204b87a4-fde8-4e22-ac0b-d930ea424af2",
+      "DisplayName": "cf8a2083-96ef-4243-8969",
+      "ServicePrincipalId": "b948efc8-cdd9-4d83-a0c0-c72f01d48a3d",
+      "ServicePrincipalType": "managedidentity",
+      "Tags": []
+    },
+    "Description": "Managed Identity SP: cf8a2083-96ef-4243-8969",
+    "EvidenceId": "80ed1190-9122-55e4-bd0d-76af3c674dd9",
+    "EvidenceType": "entra-managed-identity-sp",
+    "RawReference": null,
+    "ResourceId": "b948efc8-cdd9-4d83-a0c0-c72f01d48a3d",
+    "ResourceType": "ManagedIdentityServicePrincipal",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:36:18.241694+00:00",
+    "Collector": "EntraWorkloadIdentity",
+    "Data": {
+      "AccountEnabled": true,
+      "AlternativeNames": [
+        "isExplicit=False",
+        "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/providers/Microsoft.Security/pricings/StorageAccounts/securityOperators/DefenderForStorageSecurityOperator"
+      ],
+      "AppId": "12f4080c-83d2-4310-bb4f-435cfc4aa088",
+      "DisplayName": "StorageAccounts/securityOperators/DefenderForStorageSecurityOperator",
+      "ServicePrincipalId": "bb4d17e3-f627-42ed-a75d-f97b1ff3e8c5",
+      "ServicePrincipalType": "managedidentity",
+      "Tags": []
+    },
+    "Description": "Managed Identity SP: StorageAccounts/securityOperators/DefenderForStorageSecurityOperator",
+    "EvidenceId": "56153aa8-0ab7-545f-a2f1-10b7c96ca50c",
+    "EvidenceType": "entra-managed-identity-sp",
+    "RawReference": null,
+    "ResourceId": "bb4d17e3-f627-42ed-a75d-f97b1ff3e8c5",
+    "ResourceType": "ManagedIdentityServicePrincipal",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:36:18.241724+00:00",
+    "Collector": "EntraWorkloadIdentity",
+    "Data": {
+      "AccountEnabled": true,
+      "AlternativeNames": [
+        "isExplicit=False",
+        "/subscriptions/9154cdcb-5a52-452a-b1e7-483be9eee6d2/resourcegroups/RG-POC-Sentinel/providers/Microsoft.Compute/virtualMachines/vm01"
+      ],
+      "AppId": "042ce111-8b54-4abb-bc92-75386fda4ceb",
+      "DisplayName": "vm01",
+      "ServicePrincipalId": "bce78bce-f661-45b6-9ccc-564f5eef97fe",
+      "ServicePrincipalType": "managedidentity",
+      "Tags": []
+    },
+    "Description": "Managed Identity SP: vm01",
+    "EvidenceId": "8d8d7149-c110-538d-85c2-618f3de8ca86",
+    "EvidenceType": "entra-managed-identity-sp",
+    "RawReference": null,
+    "ResourceId": "bce78bce-f661-45b6-9ccc-564f5eef97fe",
+    "ResourceType": "ManagedIdentityServicePrincipal",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:36:18.241742+00:00",
+    "Collector": "EntraWorkloadIdentity",
+    "Data": {
+      "AccountEnabled": true,
+      "AlternativeNames": [
+        "isExplicit=False",
+        "/subscriptions/9154cdcb-5a52-452a-b1e7-483be9eee6d2/providers/Microsoft.Security/pricings/StorageAccounts/securityOperators/DefenderForStorageSecurityOperator"
+      ],
+      "AppId": "3f7b86a8-0f6b-4bc2-aa45-0c57e3ecb9e4",
+      "DisplayName": "StorageAccounts/securityOperators/DefenderForStorageSecurityOperator",
+      "ServicePrincipalId": "bd7535b8-49e4-4d01-bd93-4b3674698329",
+      "ServicePrincipalType": "managedidentity",
+      "Tags": []
+    },
+    "Description": "Managed Identity SP: StorageAccounts/securityOperators/DefenderForStorageSecurityOperator",
+    "EvidenceId": "f9aaa6f4-25e4-5f6f-a89e-0c2e04109fe5",
+    "EvidenceType": "entra-managed-identity-sp",
+    "RawReference": null,
+    "ResourceId": "bd7535b8-49e4-4d01-bd93-4b3674698329",
+    "ResourceType": "ManagedIdentityServicePrincipal",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:36:18.241760+00:00",
+    "Collector": "EntraWorkloadIdentity",
+    "Data": {
+      "AccountEnabled": true,
+      "AlternativeNames": [
+        "isExplicit=False",
+        "/subscriptions/9154cdcb-5a52-452a-b1e7-483be9eee6d2/resourcegroups/vm02_group/providers/Microsoft.Authorization/policyAssignments/a01dc6f2f5764815ae2de97e"
+      ],
+      "AppId": "e0726173-d282-4708-9c23-0669c9004736",
+      "DisplayName": "a01dc6f2f5764815ae2de97e",
+      "ServicePrincipalId": "bd84241c-ec03-4313-9d30-af01853a7219",
+      "ServicePrincipalType": "managedidentity",
+      "Tags": []
+    },
+    "Description": "Managed Identity SP: a01dc6f2f5764815ae2de97e",
+    "EvidenceId": "6afe5a7b-5bc1-5970-8c49-5d0f5ec0d3c0",
+    "EvidenceType": "entra-managed-identity-sp",
+    "RawReference": null,
+    "ResourceId": "bd84241c-ec03-4313-9d30-af01853a7219",
+    "ResourceType": "ManagedIdentityServicePrincipal",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:36:18.241778+00:00",
+    "Collector": "EntraWorkloadIdentity",
+    "Data": {
+      "AccountEnabled": true,
+      "AlternativeNames": [
+        "isExplicit=False",
+        "/subscriptions/9154cdcb-5a52-452a-b1e7-483be9eee6d2/providers/Microsoft.Authorization/policyAssignments/Defender for Containers provisioning AKS Security Profile"
+      ],
+      "AppId": "8173bfd6-c96d-49e0-87d1-8f558e2c2356",
+      "DisplayName": "Defender for Containers provisioning AKS Security Profile",
+      "ServicePrincipalId": "bd93dacc-2732-4640-b51e-89f67beb99c2",
+      "ServicePrincipalType": "managedidentity",
+      "Tags": []
+    },
+    "Description": "Managed Identity SP: Defender for Containers provisioning AKS Security Profile",
+    "EvidenceId": "46588e53-6e95-5ede-9aef-097bd80283a9",
+    "EvidenceType": "entra-managed-identity-sp",
+    "RawReference": null,
+    "ResourceId": "bd93dacc-2732-4640-b51e-89f67beb99c2",
+    "ResourceType": "ManagedIdentityServicePrincipal",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:36:18.241796+00:00",
+    "Collector": "EntraWorkloadIdentity",
+    "Data": {
+      "AccountEnabled": true,
+      "AlternativeNames": [
+        "isExplicit=False",
+        "/providers/Microsoft.Management/managementGroups/4a3eb5f4-1ec6-4a73-bb03-1ca63cb52d67/providers/Microsoft.Authorization/policyAssignments/b1b98cf6-9f4d-41d0-bee0"
+      ],
+      "AppId": "b303966b-835b-4467-9fc6-63e6f89ff9c2",
+      "DisplayName": "b1b98cf6-9f4d-41d0-bee0",
+      "ServicePrincipalId": "c0d84f67-d0ce-4668-9286-78cc065b6a69",
+      "ServicePrincipalType": "managedidentity",
+      "Tags": []
+    },
+    "Description": "Managed Identity SP: b1b98cf6-9f4d-41d0-bee0",
+    "EvidenceId": "10b6f233-37bc-5be8-b060-b1bde97a7d29",
+    "EvidenceType": "entra-managed-identity-sp",
+    "RawReference": null,
+    "ResourceId": "c0d84f67-d0ce-4668-9286-78cc065b6a69",
+    "ResourceType": "ManagedIdentityServicePrincipal",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:36:18.241814+00:00",
+    "Collector": "EntraWorkloadIdentity",
+    "Data": {
+      "AccountEnabled": true,
+      "AlternativeNames": [
+        "isExplicit=False",
+        "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/providers/Microsoft.Authorization/policyAssignments/ASC provisioning default LA agent Windows Arc"
+      ],
+      "AppId": "93f225aa-e0ce-473f-8b80-abe2bda91bee",
+      "DisplayName": "ASC provisioning default LA agent Windows Arc",
+      "ServicePrincipalId": "c13ee9eb-6c47-4ebd-885a-606bbc8231b7",
+      "ServicePrincipalType": "managedidentity",
+      "Tags": []
+    },
+    "Description": "Managed Identity SP: ASC provisioning default LA agent Windows Arc",
+    "EvidenceId": "2cdea8c2-79bf-59fe-af7d-f4114b0583c2",
+    "EvidenceType": "entra-managed-identity-sp",
+    "RawReference": null,
+    "ResourceId": "c13ee9eb-6c47-4ebd-885a-606bbc8231b7",
+    "ResourceType": "ManagedIdentityServicePrincipal",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:36:18.241852+00:00",
+    "Collector": "EntraWorkloadIdentity",
+    "Data": {
+      "AccountEnabled": true,
+      "AlternativeNames": [
+        "isExplicit=False",
+        "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/resourcegroups/rg-AIFutureInitiative/providers/Microsoft.CognitiveServices/accounts/ai-futureinitiative-resource"
+      ],
+      "AppId": "72b5118f-3c90-47a1-ad26-044d63516a79",
+      "DisplayName": "ai-futureinitiative-resource",
+      "ServicePrincipalId": "c5a14175-1cd3-4215-a150-caf732ead336",
+      "ServicePrincipalType": "managedidentity",
+      "Tags": []
+    },
+    "Description": "Managed Identity SP: ai-futureinitiative-resource",
+    "EvidenceId": "161f777c-3450-5b7d-9616-f521d7f49bf1",
+    "EvidenceType": "entra-managed-identity-sp",
+    "RawReference": null,
+    "ResourceId": "c5a14175-1cd3-4215-a150-caf732ead336",
+    "ResourceType": "ManagedIdentityServicePrincipal",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:36:18.241874+00:00",
+    "Collector": "EntraWorkloadIdentity",
+    "Data": {
+      "AccountEnabled": true,
+      "AlternativeNames": [
+        "isExplicit=False",
+        "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/resourcegroups/ESIQNew-RG/providers/Microsoft.CognitiveServices/accounts/ESIQNew-AI"
+      ],
+      "AppId": "21bda45d-5763-41a9-b16a-eed5f242d25a",
+      "DisplayName": "ESIQNew-AI",
+      "ServicePrincipalId": "c702fcc7-8141-47a6-b064-0dc735a0cf1e",
+      "ServicePrincipalType": "managedidentity",
+      "Tags": []
+    },
+    "Description": "Managed Identity SP: ESIQNew-AI",
+    "EvidenceId": "85258659-1127-5389-a138-414cc3eaffb9",
+    "EvidenceType": "entra-managed-identity-sp",
+    "RawReference": null,
+    "ResourceId": "c702fcc7-8141-47a6-b064-0dc735a0cf1e",
+    "ResourceType": "ManagedIdentityServicePrincipal",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:36:18.241894+00:00",
+    "Collector": "EntraWorkloadIdentity",
+    "Data": {
+      "AccountEnabled": true,
+      "AlternativeNames": [
+        "isExplicit=False",
+        "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/resourcegroups/rg-AIFutureInitiative/providers/Microsoft.Web/sites/aifutureinitiative"
+      ],
+      "AppId": "098520a8-6b1c-489f-aea0-6d62f8a3d9fb",
+      "DisplayName": "aifutureinitiative",
+      "ServicePrincipalId": "c8c59fe3-c1df-4597-914d-0906bfe70b4e",
+      "ServicePrincipalType": "managedidentity",
+      "Tags": []
+    },
+    "Description": "Managed Identity SP: aifutureinitiative",
+    "EvidenceId": "8755220f-122c-51d5-b919-2f7db0710d63",
+    "EvidenceType": "entra-managed-identity-sp",
+    "RawReference": null,
+    "ResourceId": "c8c59fe3-c1df-4597-914d-0906bfe70b4e",
+    "ResourceType": "ManagedIdentityServicePrincipal",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:36:18.241915+00:00",
+    "Collector": "EntraWorkloadIdentity",
+    "Data": {
+      "AccountEnabled": true,
+      "AlternativeNames": [
+        "isExplicit=False",
+        "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/resourcegroups/RG-AzureAIFoundary-FedRAMP-High/providers/Microsoft.CognitiveServices/accounts/fedramp-high-openai"
+      ],
+      "AppId": "f0c2d1c1-f9b4-4eed-8fc8-00f30ea8b2cf",
+      "DisplayName": "fedramp-high-openai",
+      "ServicePrincipalId": "ca426f04-1be6-4f85-bfc3-2ded6e7893e2",
+      "ServicePrincipalType": "managedidentity",
+      "Tags": []
+    },
+    "Description": "Managed Identity SP: fedramp-high-openai",
+    "EvidenceId": "f3fca58e-58f7-5563-86a1-2633cbcbe647",
+    "EvidenceType": "entra-managed-identity-sp",
+    "RawReference": null,
+    "ResourceId": "ca426f04-1be6-4f85-bfc3-2ded6e7893e2",
+    "ResourceType": "ManagedIdentityServicePrincipal",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:36:18.241934+00:00",
+    "Collector": "EntraWorkloadIdentity",
+    "Data": {
+      "AccountEnabled": true,
+      "AlternativeNames": [
+        "isExplicit=False",
+        "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/resourcegroups/rg-OpenAPI-Demo01/providers/Microsoft.CognitiveServices/accounts/openapi-demo01-resource"
+      ],
+      "AppId": "34aa2309-8f55-4e53-b7ba-52fa1595308f",
+      "DisplayName": "openapi-demo01-resource",
+      "ServicePrincipalId": "ca571010-bbf9-40c8-8616-0c1c9455b06f",
+      "ServicePrincipalType": "managedidentity",
+      "Tags": []
+    },
+    "Description": "Managed Identity SP: openapi-demo01-resource",
+    "EvidenceId": "add85c49-65d1-5f15-9d12-cd9d4cac8017",
+    "EvidenceType": "entra-managed-identity-sp",
+    "RawReference": null,
+    "ResourceId": "ca571010-bbf9-40c8-8616-0c1c9455b06f",
+    "ResourceType": "ManagedIdentityServicePrincipal",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:36:18.241950+00:00",
+    "Collector": "EntraWorkloadIdentity",
+    "Data": {
+      "AccountEnabled": true,
+      "AlternativeNames": [
+        "isExplicit=False",
+        "/subscriptions/0eb177bd-28b1-44da-b683-1508e1268aee/providers/Microsoft.Authorization/policyAssignments/Defender for Containers provisioning ARC k8s Enabled"
+      ],
+      "AppId": "5e9aa430-768e-4a72-9cab-5d8637d29714",
+      "DisplayName": "Defender for Containers provisioning ARC k8s Enabled",
+      "ServicePrincipalId": "ca63f04b-d8d4-41b2-b0b7-dbe486e297b7",
+      "ServicePrincipalType": "managedidentity",
+      "Tags": []
+    },
+    "Description": "Managed Identity SP: Defender for Containers provisioning ARC k8s Enabled",
+    "EvidenceId": "f518973e-48d3-5fcc-978f-24b18a70b8bb",
+    "EvidenceType": "entra-managed-identity-sp",
+    "RawReference": null,
+    "ResourceId": "ca63f04b-d8d4-41b2-b0b7-dbe486e297b7",
+    "ResourceType": "ManagedIdentityServicePrincipal",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:36:18.241967+00:00",
+    "Collector": "EntraWorkloadIdentity",
+    "Data": {
+      "AccountEnabled": true,
+      "AlternativeNames": [
+        "isExplicit=False",
+        "/providers/Microsoft.Management/managementGroups/4a3eb5f4-1ec6-4a73-bb03-1ca63cb52d67/providers/Microsoft.Authorization/policyAssignments/e72637ea-049f-4b41-84b2"
+      ],
+      "AppId": "cff16494-ee5e-45e5-b368-155a219e248b",
+      "DisplayName": "e72637ea-049f-4b41-84b2",
+      "ServicePrincipalId": "cae908ca-c96d-4e08-b397-eff988023ba4",
+      "ServicePrincipalType": "managedidentity",
+      "Tags": []
+    },
+    "Description": "Managed Identity SP: e72637ea-049f-4b41-84b2",
+    "EvidenceId": "440b3907-2753-540e-a0eb-d0eaa3e58bc3",
+    "EvidenceType": "entra-managed-identity-sp",
+    "RawReference": null,
+    "ResourceId": "cae908ca-c96d-4e08-b397-eff988023ba4",
+    "ResourceType": "ManagedIdentityServicePrincipal",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:36:18.242036+00:00",
+    "Collector": "EntraWorkloadIdentity",
+    "Data": {
+      "AccountEnabled": true,
+      "AlternativeNames": [
+        "isExplicit=False",
+        "/providers/Microsoft.Management/managementGroups/4a3eb5f4-1ec6-4a73-bb03-1ca63cb52d67/providers/Microsoft.Authorization/policyAssignments/490e7aadcad341fc8b6a228f"
+      ],
+      "AppId": "25ffc95a-765e-489f-b2da-68ba7caeea22",
+      "DisplayName": "490e7aadcad341fc8b6a228f",
+      "ServicePrincipalId": "d5486048-f66d-4623-bfd1-10001a4759b3",
+      "ServicePrincipalType": "managedidentity",
+      "Tags": []
+    },
+    "Description": "Managed Identity SP: 490e7aadcad341fc8b6a228f",
+    "EvidenceId": "558d460f-259d-5de5-bac3-9001bade65f0",
+    "EvidenceType": "entra-managed-identity-sp",
+    "RawReference": null,
+    "ResourceId": "d5486048-f66d-4623-bfd1-10001a4759b3",
+    "ResourceType": "ManagedIdentityServicePrincipal",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:36:18.242053+00:00",
+    "Collector": "EntraWorkloadIdentity",
+    "Data": {
+      "AccountEnabled": true,
+      "AlternativeNames": [
+        "isExplicit=False",
+        "/providers/Microsoft.Management/managementGroups/4a3eb5f4-1ec6-4a73-bb03-1ca63cb52d67/providers/Microsoft.Authorization/policyAssignments/3d2264329e8b426698283467"
+      ],
+      "AppId": "b18c5e6e-d173-4738-8e00-5bae6b1b65d9",
+      "DisplayName": "3d2264329e8b426698283467",
+      "ServicePrincipalId": "d61a6f4b-0993-4eb9-bd51-41f693802e88",
+      "ServicePrincipalType": "managedidentity",
+      "Tags": []
+    },
+    "Description": "Managed Identity SP: 3d2264329e8b426698283467",
+    "EvidenceId": "bffdddd3-f99c-50dd-948b-ab12512df179",
+    "EvidenceType": "entra-managed-identity-sp",
+    "RawReference": null,
+    "ResourceId": "d61a6f4b-0993-4eb9-bd51-41f693802e88",
+    "ResourceType": "ManagedIdentityServicePrincipal",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:36:18.242075+00:00",
+    "Collector": "EntraWorkloadIdentity",
+    "Data": {
+      "AccountEnabled": true,
+      "AlternativeNames": [
+        "isExplicit=True",
+        "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/resourcegroups/ESIQNew-RG/providers/Microsoft.ManagedIdentity/userAssignedIdentities/ESIQNew-identity"
+      ],
+      "AppId": "d5d10273-4a8b-4251-9b9d-00fe035df97a",
+      "DisplayName": "ESIQNew-identity",
+      "ServicePrincipalId": "d742617c-6f14-4215-be65-e1f7b68866de",
+      "ServicePrincipalType": "managedidentity",
+      "Tags": []
+    },
+    "Description": "Managed Identity SP: ESIQNew-identity",
+    "EvidenceId": "b75884a3-c615-50dc-9536-0167b1ac5395",
+    "EvidenceType": "entra-managed-identity-sp",
+    "RawReference": null,
+    "ResourceId": "d742617c-6f14-4215-be65-e1f7b68866de",
+    "ResourceType": "ManagedIdentityServicePrincipal",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:36:18.242095+00:00",
+    "Collector": "EntraWorkloadIdentity",
+    "Data": {
+      "AccountEnabled": true,
+      "AlternativeNames": [
+        "isExplicit=True",
+        "/subscriptions/9154cdcb-5a52-452a-b1e7-483be9eee6d2/resourcegroups/RG-ADLS-Governance-Retention/providers/Microsoft.ManagedIdentity/userAssignedIdentities/id-purview-scan-ia6nebdpvu5bm"
+      ],
+      "AppId": "d817da0b-5e0b-4639-afe7-a2b32a95e3af",
+      "DisplayName": "id-purview-scan-ia6nebdpvu5bm",
+      "ServicePrincipalId": "d86dbb8d-536a-4e56-b1e4-20b493020aa7",
+      "ServicePrincipalType": "managedidentity",
+      "Tags": []
+    },
+    "Description": "Managed Identity SP: id-purview-scan-ia6nebdpvu5bm",
+    "EvidenceId": "fb625a94-10cf-5f1a-8e5e-49c129d065c9",
+    "EvidenceType": "entra-managed-identity-sp",
+    "RawReference": null,
+    "ResourceId": "d86dbb8d-536a-4e56-b1e4-20b493020aa7",
+    "ResourceType": "ManagedIdentityServicePrincipal",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:36:18.242168+00:00",
+    "Collector": "EntraWorkloadIdentity",
+    "Data": {
+      "AccountEnabled": true,
+      "AlternativeNames": [
+        "isExplicit=False",
+        "/subscriptions/9154cdcb-5a52-452a-b1e7-483be9eee6d2/providers/Microsoft.Authorization/policyAssignments/ASC provisioning default LA agent Windows Arc"
+      ],
+      "AppId": "28b0d9a2-4f45-48dc-a41a-d5c36d4704b6",
+      "DisplayName": "ASC provisioning default LA agent Windows Arc",
+      "ServicePrincipalId": "e26ec08b-1e8b-4725-8baf-8004a2834dfe",
+      "ServicePrincipalType": "managedidentity",
+      "Tags": []
+    },
+    "Description": "Managed Identity SP: ASC provisioning default LA agent Windows Arc",
+    "EvidenceId": "a18214fd-8da0-5a2c-9e11-722d140db7dd",
+    "EvidenceType": "entra-managed-identity-sp",
+    "RawReference": null,
+    "ResourceId": "e26ec08b-1e8b-4725-8baf-8004a2834dfe",
+    "ResourceType": "ManagedIdentityServicePrincipal",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:36:18.242188+00:00",
+    "Collector": "EntraWorkloadIdentity",
+    "Data": {
+      "AccountEnabled": true,
+      "AlternativeNames": [
+        "isExplicit=False",
+        "/providers/Microsoft.Management/managementGroups/4a3eb5f4-1ec6-4a73-bb03-1ca63cb52d67/providers/Microsoft.Authorization/policyAssignments/893f03da-0562-4fcd-a5ad"
+      ],
+      "AppId": "cc13f4ba-699f-47bf-a81a-c37a85e02595",
+      "DisplayName": "893f03da-0562-4fcd-a5ad",
+      "ServicePrincipalId": "e2c86033-ea57-4c87-95d3-df6eb88620e3",
+      "ServicePrincipalType": "managedidentity",
+      "Tags": []
+    },
+    "Description": "Managed Identity SP: 893f03da-0562-4fcd-a5ad",
+    "EvidenceId": "799d542c-f86a-5f8f-b720-b6aebee3fb24",
+    "EvidenceType": "entra-managed-identity-sp",
+    "RawReference": null,
+    "ResourceId": "e2c86033-ea57-4c87-95d3-df6eb88620e3",
+    "ResourceType": "ManagedIdentityServicePrincipal",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:36:18.242205+00:00",
+    "Collector": "EntraWorkloadIdentity",
+    "Data": {
+      "AccountEnabled": true,
+      "AlternativeNames": [
+        "isExplicit=False",
+        "/providers/Microsoft.Management/managementGroups/4a3eb5f4-1ec6-4a73-bb03-1ca63cb52d67/providers/Microsoft.Authorization/policyAssignments/f02ac9b299ec41bf80a1c3f1"
+      ],
+      "AppId": "388d3893-202b-40da-bea5-2680b631a715",
+      "DisplayName": "f02ac9b299ec41bf80a1c3f1",
+      "ServicePrincipalId": "e32561bf-5ace-4e14-89f7-0416c6c4a33f",
+      "ServicePrincipalType": "managedidentity",
+      "Tags": []
+    },
+    "Description": "Managed Identity SP: f02ac9b299ec41bf80a1c3f1",
+    "EvidenceId": "c1f4da9e-82b0-5c18-b80b-3f3b0ced6d32",
+    "EvidenceType": "entra-managed-identity-sp",
+    "RawReference": null,
+    "ResourceId": "e32561bf-5ace-4e14-89f7-0416c6c4a33f",
+    "ResourceType": "ManagedIdentityServicePrincipal",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:36:18.242230+00:00",
+    "Collector": "EntraWorkloadIdentity",
+    "Data": {
+      "AccountEnabled": true,
+      "AlternativeNames": [
+        "isExplicit=False",
+        "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/providers/Microsoft.Authorization/policyAssignments/Defender for Containers provisioning Policy extension for Arc-e"
+      ],
+      "AppId": "b9dc6dd9-99ba-45fd-87d6-a8aa8654a3e0",
+      "DisplayName": "Defender for Containers provisioning Policy extension for Arc-e",
+      "ServicePrincipalId": "e4cb2e67-1ae4-44d5-b989-c9da6ef6530e",
+      "ServicePrincipalType": "managedidentity",
+      "Tags": []
+    },
+    "Description": "Managed Identity SP: Defender for Containers provisioning Policy extension for Arc-e",
+    "EvidenceId": "b6d969a3-24ed-5f46-9eeb-207a285ef508",
+    "EvidenceType": "entra-managed-identity-sp",
+    "RawReference": null,
+    "ResourceId": "e4cb2e67-1ae4-44d5-b989-c9da6ef6530e",
+    "ResourceType": "ManagedIdentityServicePrincipal",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:36:18.242292+00:00",
+    "Collector": "EntraWorkloadIdentity",
+    "Data": {
+      "AccountEnabled": true,
+      "AlternativeNames": [
+        "isExplicit=False",
+        "/providers/Microsoft.Management/managementGroups/4a3eb5f4-1ec6-4a73-bb03-1ca63cb52d67/providers/Microsoft.Authorization/policyAssignments/67d192945d484916b73e39eb"
+      ],
+      "AppId": "b8017026-bb77-4179-bd6e-42bab4430727",
+      "DisplayName": "67d192945d484916b73e39eb",
+      "ServicePrincipalId": "ef6b52b8-a05c-46a9-abcb-9285963a4539",
+      "ServicePrincipalType": "managedidentity",
+      "Tags": []
+    },
+    "Description": "Managed Identity SP: 67d192945d484916b73e39eb",
+    "EvidenceId": "6d77de5c-c441-5a91-9c28-d2f3ac46b058",
+    "EvidenceType": "entra-managed-identity-sp",
+    "RawReference": null,
+    "ResourceId": "ef6b52b8-a05c-46a9-abcb-9285963a4539",
+    "ResourceType": "ManagedIdentityServicePrincipal",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:36:18.242314+00:00",
+    "Collector": "EntraWorkloadIdentity",
+    "Data": {
+      "AccountEnabled": true,
+      "AlternativeNames": [
+        "isExplicit=False",
+        "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/providers/Microsoft.Security/pricings/Containers/securityOperators/DefenderForContainersSecurityOperator"
+      ],
+      "AppId": "8891bb79-407c-4823-b50e-32dfe851c062",
+      "DisplayName": "Containers/securityOperators/DefenderForContainersSecurityOperator",
+      "ServicePrincipalId": "f0f003c9-0ab8-4f21-95f9-bc0d00407a4e",
+      "ServicePrincipalType": "managedidentity",
+      "Tags": []
+    },
+    "Description": "Managed Identity SP: Containers/securityOperators/DefenderForContainersSecurityOperator",
+    "EvidenceId": "db2e922a-f73d-53c4-b805-6712aa8a7c6a",
+    "EvidenceType": "entra-managed-identity-sp",
+    "RawReference": null,
+    "ResourceId": "f0f003c9-0ab8-4f21-95f9-bc0d00407a4e",
+    "ResourceType": "ManagedIdentityServicePrincipal",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:36:18.242339+00:00",
+    "Collector": "EntraWorkloadIdentity",
+    "Data": {
+      "AccountEnabled": true,
+      "AlternativeNames": [
+        "isExplicit=False",
+        "/subscriptions/9154cdcb-5a52-452a-b1e7-483be9eee6d2/resourcegroups/vm02_group/providers/Microsoft.Compute/virtualMachines/vm02"
+      ],
+      "AppId": "2f93d840-1702-4a9b-b510-31c94c025db6",
+      "DisplayName": "vm02",
+      "ServicePrincipalId": "f2657bfc-04d0-4f1c-8295-ce45d59a5d25",
+      "ServicePrincipalType": "managedidentity",
+      "Tags": []
+    },
+    "Description": "Managed Identity SP: vm02",
+    "EvidenceId": "92299791-c284-5c4f-b5f4-f41d8cb58631",
+    "EvidenceType": "entra-managed-identity-sp",
+    "RawReference": null,
+    "ResourceId": "f2657bfc-04d0-4f1c-8295-ce45d59a5d25",
+    "ResourceType": "ManagedIdentityServicePrincipal",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:36:18.242376+00:00",
+    "Collector": "EntraWorkloadIdentity",
+    "Data": {
+      "AccountEnabled": true,
+      "AlternativeNames": [
+        "isExplicit=False",
+        "/subscriptions/0eb177bd-28b1-44da-b683-1508e1268aee/providers/Microsoft.Authorization/policyAssignments/Defender for Containers provisioning Azure Policy Addon for Kub"
+      ],
+      "AppId": "618c1af4-5313-4d4b-8b00-686066ab7787",
+      "DisplayName": "Defender for Containers provisioning Azure Policy Addon for Kub",
+      "ServicePrincipalId": "f3d1db1d-c839-4f01-9ee8-db3bf28dfe68",
+      "ServicePrincipalType": "managedidentity",
+      "Tags": []
+    },
+    "Description": "Managed Identity SP: Defender for Containers provisioning Azure Policy Addon for Kub",
+    "EvidenceId": "599dc692-59ff-55f4-b84b-80ac74947d3a",
+    "EvidenceType": "entra-managed-identity-sp",
+    "RawReference": null,
+    "ResourceId": "f3d1db1d-c839-4f01-9ee8-db3bf28dfe68",
+    "ResourceType": "ManagedIdentityServicePrincipal",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:36:18.242432+00:00",
+    "Collector": "EntraWorkloadIdentity",
+    "Data": {
+      "AccountEnabled": true,
+      "AlternativeNames": [
+        "isExplicit=False",
+        "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/resourcegroups/RG-AzureAIFoundary-FedRAMP-High/providers/Microsoft.CognitiveServices/accounts/FedRAMP-High-FoundryResource/projects/FedRAMP-High-Foundry-Project"
+      ],
+      "AppId": "96ecb839-bc7d-430e-98d5-8c1d51386f33",
+      "DisplayName": "FedRAMP-High-FoundryResource/projects/FedRAMP-High-Foundry-Project",
+      "ServicePrincipalId": "f8a12850-dcfc-4026-a490-891952ab90ba",
+      "ServicePrincipalType": "managedidentity",
+      "Tags": [
+        "AgentCreatedBy:Foundry",
+        "AgenticInstance"
+      ]
+    },
+    "Description": "Managed Identity SP: FedRAMP-High-FoundryResource/projects/FedRAMP-High-Foundry-Project",
+    "EvidenceId": "270d7298-6607-5d79-ab24-00eeded43e8e",
+    "EvidenceType": "entra-managed-identity-sp",
+    "RawReference": null,
+    "ResourceId": "f8a12850-dcfc-4026-a490-891952ab90ba",
+    "ResourceType": "ManagedIdentityServicePrincipal",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:36:18.242468+00:00",
+    "Collector": "EntraWorkloadIdentity",
+    "Data": {
+      "AccountEnabled": true,
+      "AlternativeNames": [
+        "isExplicit=False",
+        "/providers/Microsoft.Management/managementGroups/4a3eb5f4-1ec6-4a73-bb03-1ca63cb52d67/providers/Microsoft.Authorization/policyAssignments/1c3c31b3-9573-4be2-a5fd"
+      ],
+      "AppId": "e7dda8c7-7064-472f-bca6-3c00b20efe9b",
+      "DisplayName": "1c3c31b3-9573-4be2-a5fd",
+      "ServicePrincipalId": "fa783867-6d27-4ea8-b228-44ca79973b45",
+      "ServicePrincipalType": "managedidentity",
+      "Tags": []
+    },
+    "Description": "Managed Identity SP: 1c3c31b3-9573-4be2-a5fd",
+    "EvidenceId": "23cf4e9c-8a98-5e69-9b96-53ca28b423a1",
+    "EvidenceType": "entra-managed-identity-sp",
+    "RawReference": null,
+    "ResourceId": "fa783867-6d27-4ea8-b228-44ca79973b45",
+    "ResourceType": "ManagedIdentityServicePrincipal",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:36:18.242487+00:00",
+    "Collector": "EntraWorkloadIdentity",
+    "Data": {
+      "AccountEnabled": true,
+      "AlternativeNames": [
+        "isExplicit=False",
+        "/subscriptions/9154cdcb-5a52-452a-b1e7-483be9eee6d2/providers/Microsoft.Security/dataScanners/StorageDataScanner"
+      ],
+      "AppId": "1d320999-ace7-4c91-95de-9c17b384a660",
+      "DisplayName": "StorageDataScanner",
+      "ServicePrincipalId": "fadb8fc5-1f55-44be-9381-625af565ca28",
+      "ServicePrincipalType": "managedidentity",
+      "Tags": []
+    },
+    "Description": "Managed Identity SP: StorageDataScanner",
+    "EvidenceId": "ef0afa65-7937-5d53-8ad8-aacfabf561ed",
+    "EvidenceType": "entra-managed-identity-sp",
+    "RawReference": null,
+    "ResourceId": "fadb8fc5-1f55-44be-9381-625af565ca28",
+    "ResourceType": "ManagedIdentityServicePrincipal",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:36:18.242518+00:00",
+    "Collector": "EntraWorkloadIdentity",
+    "Data": {
+      "AccountEnabled": true,
+      "AlternativeNames": [
+        "isExplicit=False",
+        "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/providers/Microsoft.Authorization/policyAssignments/SqlVmAndArcSqlServersProtection"
+      ],
+      "AppId": "35f6d28e-99b5-49c3-8e30-ebf6fa7f0e09",
+      "DisplayName": "SqlVmAndArcSqlServersProtection",
+      "ServicePrincipalId": "fd312f4a-09b7-493e-90a2-8678d8890fc6",
+      "ServicePrincipalType": "managedidentity",
+      "Tags": []
+    },
+    "Description": "Managed Identity SP: SqlVmAndArcSqlServersProtection",
+    "EvidenceId": "1eca7b90-d8a0-5a2c-a130-02156f1fa45a",
+    "EvidenceType": "entra-managed-identity-sp",
+    "RawReference": null,
+    "ResourceId": "fd312f4a-09b7-493e-90a2-8678d8890fc6",
+    "ResourceType": "ManagedIdentityServicePrincipal",
+    "Source": "Entra"
+  }
+]

@@ -1,0 +1,81 @@
+[
+  {
+    "CollectedAt": "2026-04-26T23:32:58.876004+00:00",
+    "Collector": "EntraTenant",
+    "Data": {
+      "DisplayName": "Contoso",
+      "HasP1License": false,
+      "HasP2License": false,
+      "LicensePlans": [
+        "AzureAdvancedThreatAnalytics",
+        "TeamspaceAPI",
+        "MicrosoftKaizala",
+        "MultiFactorService",
+        "SharePoint",
+        "PowerBI",
+        "MixedRealityCollaborationServices",
+        "M365LabelAnalytics",
+        "ccibotsprod",
+        "MicrosoftOffice",
+        "ProcessSimple",
+        "OnlineService",
+        "Microsoft.ProjectBabylon",
+        "MicrosoftPrint",
+        "Windows",
+        "Adallom",
+        "ProjectProgramsAndPortfolios",
+        "Bing",
+        "DefenderforIoT",
+        "MIPExchangeSolutions",
+        "RMSOnline",
+        "WindowsUpdateforBusinessCloudExtensions",
+        "SCO",
+        "Modern-Workplace-Core-ITaas",
+        "CRM",
+        "Sway",
+        "LearningAppServiceInTeams",
+        "WhiteboardServices",
+        "WevEngine",
+        "MicrosoftEndpointDLP",
+        "M365Multi-TenantManagement",
+        "CustomerLockbox",
+        "OfficeForms",
+        "Deskless",
+        "MicrosoftCommunicationsOnline",
+        "AADPremiumService",
+        "VivaSkills",
+        "M365CommunicationCompliance",
+        "exchange",
+        "WindowsDefenderATP",
+        "YammerEnterprise",
+        "PowerAppsService",
+        "Chapter5FluidApp",
+        "MicrosoftStream",
+        "ProjectWorkManagement",
+        "Office365InsiderRisk",
+        "WorkplaceAnalytics",
+        "MicrosoftThreatProtection",
+        "To-Do"
+      ],
+      "OnPremisesSyncEnabled": false,
+      "TechnicalNotificationMails": [
+        "mchillakuru@microsoft.com"
+      ],
+      "TenantId": "4a3eb5f4-1ec6-4a73-bb03-1ca63cb52d67",
+      "VerifiedDomains": [
+        {
+          "IsDefault": true,
+          "IsInitial": true,
+          "Name": "MngEnvMCAP250477.onmicrosoft.com"
+        }
+      ]
+    },
+    "Description": "Tenant: Contoso",
+    "EvidenceId": "6e4a447d-6a2e-5cbc-8aab-3c0b1b2e8592",
+    "EvidenceType": "entra-tenant-info",
+    "RawReference": null,
+    "ResourceId": "4a3eb5f4-1ec6-4a73-bb03-1ca63cb52d67",
+    "ResourceType": "Tenant",
+    "Source": "Entra"
+  }
+]

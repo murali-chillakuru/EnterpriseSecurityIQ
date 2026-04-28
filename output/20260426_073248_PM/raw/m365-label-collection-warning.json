@@ -1,0 +1,18 @@
+[
+  {
+    "CollectedAt": "2026-04-26T23:40:41.571700+00:00",
+    "Collector": "M365SensitivityLabels",
+    "Data": {
+      "Impact": "Cannot determine whether sensitivity labels are defined. The tenant may have labels but the current user lacks permission or the required license (E5 / Information Protection P2) is missing.",
+      "Recommendation": "Assign the Information Protection Reader role or run with a service principal that has InformationProtection.Read.All.",
+      "Warning": "LabelAPIInaccessible"
+    },
+    "Description": "Sensitivity label APIs are inaccessible \u2014 cannot determine label status",
+    "EvidenceId": "1b878686-b9c0-5adb-adc1-1db5d3b269f6",
+    "EvidenceType": "m365-label-collection-warning",
+    "RawReference": null,
+    "ResourceId": "m365-label-api-warning",
+    "ResourceType": "CollectionWarning",
+    "Source": "Entra"
+  }
+]

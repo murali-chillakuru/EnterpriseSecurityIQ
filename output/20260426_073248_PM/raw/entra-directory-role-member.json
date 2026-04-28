@@ -1,0 +1,629 @@
+[
+  {
+    "CollectedAt": "2026-04-26T23:37:10.820194+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "IsPrivilegedRole": false,
+      "MemberDisplayName": "Murali Chillakuru",
+      "MemberId": "1b8c4b44-387b-43e8-b13e-61ffd26b7f33",
+      "MemberUPN": "murali.chillakuru_outlook.com#EXT#@MngEnvMCAP250477.onmicrosoft.com",
+      "RoleId": "b595d950-1922-432b-809e-5346094accd1",
+      "RoleName": "Security Reader"
+    },
+    "Description": "Member of Security Reader: Murali Chillakuru",
+    "EvidenceId": "e4fe0b55-f5a6-56c3-a22a-91529cd1f9c1",
+    "EvidenceType": "entra-directory-role-member",
+    "RawReference": null,
+    "ResourceId": "1b8c4b44-387b-43e8-b13e-61ffd26b7f33",
+    "ResourceType": "DirectoryRoleMember",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:38:25.017083+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "IsPrivilegedRole": false,
+      "MemberDisplayName": "Murali Chillakuru",
+      "MemberId": "1b8c4b44-387b-43e8-b13e-61ffd26b7f33",
+      "MemberUPN": "murali.chillakuru_outlook.com#EXT#@MngEnvMCAP250477.onmicrosoft.com",
+      "RoleId": "ef41c09a-bf0c-4c66-a361-8ef3353c9fcc",
+      "RoleName": "Global Reader"
+    },
+    "Description": "Member of Global Reader: Murali Chillakuru",
+    "EvidenceId": "e4fe0b55-f5a6-56c3-a22a-91529cd1f9c1",
+    "EvidenceType": "entra-directory-role-member",
+    "RawReference": null,
+    "ResourceId": "1b8c4b44-387b-43e8-b13e-61ffd26b7f33",
+    "ResourceType": "DirectoryRoleMember",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:37.574981+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "IsPrivilegedRole": false,
+      "MemberDisplayName": "Murali Chillakuru ( SA )",
+      "MemberId": "27583dc5-4afe-43f6-854f-a5564c115003",
+      "MemberUPN": "admin@MngEnvMCAP250477.onmicrosoft.com",
+      "RoleId": "06a5d92a-2a13-434d-9194-161de6eb9867",
+      "RoleName": "Teams Administrator"
+    },
+    "Description": "Member of Teams Administrator: Murali Chillakuru ( SA )",
+    "EvidenceId": "168c3b07-0120-527d-bf3f-b8532bfaeeee",
+    "EvidenceType": "entra-directory-role-member",
+    "RawReference": null,
+    "ResourceId": "27583dc5-4afe-43f6-854f-a5564c115003",
+    "ResourceType": "DirectoryRoleMember",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:54.936467+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "IsPrivilegedRole": false,
+      "MemberDisplayName": "Murali Chillakuru ( SA )",
+      "MemberId": "27583dc5-4afe-43f6-854f-a5564c115003",
+      "MemberUPN": "admin@MngEnvMCAP250477.onmicrosoft.com",
+      "RoleId": "1c006ff1-8422-4ac2-b901-235e91028b4b",
+      "RoleName": "Agent ID Administrator"
+    },
+    "Description": "Member of Agent ID Administrator: Murali Chillakuru ( SA )",
+    "EvidenceId": "168c3b07-0120-527d-bf3f-b8532bfaeeee",
+    "EvidenceType": "entra-directory-role-member",
+    "RawReference": null,
+    "ResourceId": "27583dc5-4afe-43f6-854f-a5564c115003",
+    "ResourceType": "DirectoryRoleMember",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:57.251824+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "IsPrivilegedRole": true,
+      "MemberDisplayName": "Murali Chillakuru ( SA )",
+      "MemberId": "27583dc5-4afe-43f6-854f-a5564c115003",
+      "MemberUPN": "admin@MngEnvMCAP250477.onmicrosoft.com",
+      "RoleId": "1c7d29a7-1f06-4e00-8ed0-57c6a7405653",
+      "RoleName": "Application Administrator"
+    },
+    "Description": "Member of Application Administrator: Murali Chillakuru ( SA )",
+    "EvidenceId": "168c3b07-0120-527d-bf3f-b8532bfaeeee",
+    "EvidenceType": "entra-directory-role-member",
+    "RawReference": null,
+    "ResourceId": "27583dc5-4afe-43f6-854f-a5564c115003",
+    "ResourceType": "DirectoryRoleMember",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:59.293199+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "IsPrivilegedRole": false,
+      "MemberDisplayName": "Murali Chillakuru ( SA )",
+      "MemberId": "27583dc5-4afe-43f6-854f-a5564c115003",
+      "MemberUPN": "admin@MngEnvMCAP250477.onmicrosoft.com",
+      "RoleId": "1c8d6a94-f0ae-4497-a629-ecaa14e6eafd",
+      "RoleName": "Compliance Administrator"
+    },
+    "Description": "Member of Compliance Administrator: Murali Chillakuru ( SA )",
+    "EvidenceId": "168c3b07-0120-527d-bf3f-b8532bfaeeee",
+    "EvidenceType": "entra-directory-role-member",
+    "RawReference": null,
+    "ResourceId": "27583dc5-4afe-43f6-854f-a5564c115003",
+    "ResourceType": "DirectoryRoleMember",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:34:52.552345+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "IsPrivilegedRole": false,
+      "MemberDisplayName": "Murali Chillakuru ( SA )",
+      "MemberId": "27583dc5-4afe-43f6-854f-a5564c115003",
+      "MemberUPN": "admin@MngEnvMCAP250477.onmicrosoft.com",
+      "RoleId": "4a112873-c532-4614-856c-5c6f5955eb1f",
+      "RoleName": "Agent Registry Administrator"
+    },
+    "Description": "Member of Agent Registry Administrator: Murali Chillakuru ( SA )",
+    "EvidenceId": "168c3b07-0120-527d-bf3f-b8532bfaeeee",
+    "EvidenceType": "entra-directory-role-member",
+    "RawReference": null,
+    "ResourceId": "27583dc5-4afe-43f6-854f-a5564c115003",
+    "ResourceType": "DirectoryRoleMember",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:35:06.532887+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "IsPrivilegedRole": false,
+      "MemberDisplayName": "Murali Chillakuru ( SA )",
+      "MemberId": "27583dc5-4afe-43f6-854f-a5564c115003",
+      "MemberUPN": "admin@MngEnvMCAP250477.onmicrosoft.com",
+      "RoleId": "56cbc8c9-dfd1-4d89-b09e-52250e33b8b5",
+      "RoleName": "Identity Governance Administrator"
+    },
+    "Description": "Member of Identity Governance Administrator: Murali Chillakuru ( SA )",
+    "EvidenceId": "168c3b07-0120-527d-bf3f-b8532bfaeeee",
+    "EvidenceType": "entra-directory-role-member",
+    "RawReference": null,
+    "ResourceId": "27583dc5-4afe-43f6-854f-a5564c115003",
+    "ResourceType": "DirectoryRoleMember",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:35:20.416047+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "IsPrivilegedRole": false,
+      "MemberDisplayName": "Murali Chillakuru ( SA )",
+      "MemberId": "27583dc5-4afe-43f6-854f-a5564c115003",
+      "MemberUPN": "admin@MngEnvMCAP250477.onmicrosoft.com",
+      "RoleId": "593bce25-4eb8-4d9f-a67c-7aa68e8cadff",
+      "RoleName": "SharePoint Advanced Management Administrator"
+    },
+    "Description": "Member of SharePoint Advanced Management Administrator: Murali Chillakuru ( SA )",
+    "EvidenceId": "168c3b07-0120-527d-bf3f-b8532bfaeeee",
+    "EvidenceType": "entra-directory-role-member",
+    "RawReference": null,
+    "ResourceId": "27583dc5-4afe-43f6-854f-a5564c115003",
+    "ResourceType": "DirectoryRoleMember",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:35:39.080996+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "IsPrivilegedRole": false,
+      "MemberDisplayName": "Murali Chillakuru ( SA )",
+      "MemberId": "27583dc5-4afe-43f6-854f-a5564c115003",
+      "MemberUPN": "admin@MngEnvMCAP250477.onmicrosoft.com",
+      "RoleId": "66c45152-083b-454e-9475-af442794f9c8",
+      "RoleName": "Purview Workload Content Administrator"
+    },
+    "Description": "Member of Purview Workload Content Administrator: Murali Chillakuru ( SA )",
+    "EvidenceId": "168c3b07-0120-527d-bf3f-b8532bfaeeee",
+    "EvidenceType": "entra-directory-role-member",
+    "RawReference": null,
+    "ResourceId": "27583dc5-4afe-43f6-854f-a5564c115003",
+    "ResourceType": "DirectoryRoleMember",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:35:41.362960+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "IsPrivilegedRole": false,
+      "MemberDisplayName": "Murali Chillakuru ( SA )",
+      "MemberId": "27583dc5-4afe-43f6-854f-a5564c115003",
+      "MemberUPN": "admin@MngEnvMCAP250477.onmicrosoft.com",
+      "RoleId": "699b945f-abbc-4511-ac68-cf054df79fd0",
+      "RoleName": "Dynamics 365 Administrator"
+    },
+    "Description": "Member of Dynamics 365 Administrator: Murali Chillakuru ( SA )",
+    "EvidenceId": "168c3b07-0120-527d-bf3f-b8532bfaeeee",
+    "EvidenceType": "entra-directory-role-member",
+    "RawReference": null,
+    "ResourceId": "27583dc5-4afe-43f6-854f-a5564c115003",
+    "ResourceType": "DirectoryRoleMember",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:35:43.969375+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "IsPrivilegedRole": true,
+      "MemberDisplayName": "Murali Chillakuru ( SA )",
+      "MemberId": "27583dc5-4afe-43f6-854f-a5564c115003",
+      "MemberUPN": "admin@MngEnvMCAP250477.onmicrosoft.com",
+      "RoleId": "6cf45069-5555-49d6-9332-f57dfa659b30",
+      "RoleName": "SharePoint Administrator"
+    },
+    "Description": "Member of SharePoint Administrator: Murali Chillakuru ( SA )",
+    "EvidenceId": "168c3b07-0120-527d-bf3f-b8532bfaeeee",
+    "EvidenceType": "entra-directory-role-member",
+    "RawReference": null,
+    "ResourceId": "27583dc5-4afe-43f6-854f-a5564c115003",
+    "ResourceType": "DirectoryRoleMember",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:36:09.333054+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "IsPrivilegedRole": false,
+      "MemberDisplayName": "Murali Chillakuru ( SA )",
+      "MemberId": "27583dc5-4afe-43f6-854f-a5564c115003",
+      "MemberUPN": "admin@MngEnvMCAP250477.onmicrosoft.com",
+      "RoleId": "7e635b13-d67e-45a0-a6e1-0e2c3a0d7f2b",
+      "RoleName": "Purview Workload Content Reader"
+    },
+    "Description": "Member of Purview Workload Content Reader: Murali Chillakuru ( SA )",
+    "EvidenceId": "168c3b07-0120-527d-bf3f-b8532bfaeeee",
+    "EvidenceType": "entra-directory-role-member",
+    "RawReference": null,
+    "ResourceId": "27583dc5-4afe-43f6-854f-a5564c115003",
+    "ResourceType": "DirectoryRoleMember",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:36:22.768763+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "IsPrivilegedRole": false,
+      "MemberDisplayName": "Murali Chillakuru ( SA )",
+      "MemberId": "27583dc5-4afe-43f6-854f-a5564c115003",
+      "MemberUPN": "admin@MngEnvMCAP250477.onmicrosoft.com",
+      "RoleId": "87cd5e2d-cf73-4768-af31-6af0f15c4cfb",
+      "RoleName": "Office Apps Administrator"
+    },
+    "Description": "Member of Office Apps Administrator: Murali Chillakuru ( SA )",
+    "EvidenceId": "168c3b07-0120-527d-bf3f-b8532bfaeeee",
+    "EvidenceType": "entra-directory-role-member",
+    "RawReference": null,
+    "ResourceId": "27583dc5-4afe-43f6-854f-a5564c115003",
+    "ResourceType": "DirectoryRoleMember",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:36:37.390923+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "IsPrivilegedRole": true,
+      "MemberDisplayName": "Murali Chillakuru ( SA )",
+      "MemberId": "27583dc5-4afe-43f6-854f-a5564c115003",
+      "MemberUPN": "admin@MngEnvMCAP250477.onmicrosoft.com",
+      "RoleId": "929fa52d-f9da-4ca4-b785-7bdd8c6a7af0",
+      "RoleName": "Global Administrator"
+    },
+    "Description": "Member of Global Administrator: Murali Chillakuru ( SA )",
+    "EvidenceId": "168c3b07-0120-527d-bf3f-b8532bfaeeee",
+    "EvidenceType": "entra-directory-role-member",
+    "RawReference": null,
+    "ResourceId": "27583dc5-4afe-43f6-854f-a5564c115003",
+    "ResourceType": "DirectoryRoleMember",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:37:10.820079+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "IsPrivilegedRole": false,
+      "MemberDisplayName": "Murali Chillakuru ( SA )",
+      "MemberId": "27583dc5-4afe-43f6-854f-a5564c115003",
+      "MemberUPN": "admin@MngEnvMCAP250477.onmicrosoft.com",
+      "RoleId": "b595d950-1922-432b-809e-5346094accd1",
+      "RoleName": "Security Reader"
+    },
+    "Description": "Member of Security Reader: Murali Chillakuru ( SA )",
+    "EvidenceId": "168c3b07-0120-527d-bf3f-b8532bfaeeee",
+    "EvidenceType": "entra-directory-role-member",
+    "RawReference": null,
+    "ResourceId": "27583dc5-4afe-43f6-854f-a5564c115003",
+    "ResourceType": "DirectoryRoleMember",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:37:20.239798+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "IsPrivilegedRole": false,
+      "MemberDisplayName": "Murali Chillakuru ( SA )",
+      "MemberId": "27583dc5-4afe-43f6-854f-a5564c115003",
+      "MemberUPN": "admin@MngEnvMCAP250477.onmicrosoft.com",
+      "RoleId": "b79a69dc-c355-4017-95dd-da34b53e9021",
+      "RoleName": "SharePoint Embedded Administrator"
+    },
+    "Description": "Member of SharePoint Embedded Administrator: Murali Chillakuru ( SA )",
+    "EvidenceId": "168c3b07-0120-527d-bf3f-b8532bfaeeee",
+    "EvidenceType": "entra-directory-role-member",
+    "RawReference": null,
+    "ResourceId": "27583dc5-4afe-43f6-854f-a5564c115003",
+    "ResourceType": "DirectoryRoleMember",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:37:38.155407+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "IsPrivilegedRole": false,
+      "MemberDisplayName": "Murali Chillakuru ( SA )",
+      "MemberId": "27583dc5-4afe-43f6-854f-a5564c115003",
+      "MemberUPN": "admin@MngEnvMCAP250477.onmicrosoft.com",
+      "RoleId": "c85636ed-49ec-4ff2-bf10-154f6c9bde36",
+      "RoleName": "AI Administrator"
+    },
+    "Description": "Member of AI Administrator: Murali Chillakuru ( SA )",
+    "EvidenceId": "168c3b07-0120-527d-bf3f-b8532bfaeeee",
+    "EvidenceType": "entra-directory-role-member",
+    "RawReference": null,
+    "ResourceId": "27583dc5-4afe-43f6-854f-a5564c115003",
+    "ResourceType": "DirectoryRoleMember",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:37:42.374312+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "IsPrivilegedRole": false,
+      "MemberDisplayName": "Murali Chillakuru ( SA )",
+      "MemberId": "27583dc5-4afe-43f6-854f-a5564c115003",
+      "MemberUPN": "admin@MngEnvMCAP250477.onmicrosoft.com",
+      "RoleId": "cd4d4373-237b-4580-aa97-c6c9dbeec240",
+      "RoleName": "External Identity Provider Administrator"
+    },
+    "Description": "Member of External Identity Provider Administrator: Murali Chillakuru ( SA )",
+    "EvidenceId": "168c3b07-0120-527d-bf3f-b8532bfaeeee",
+    "EvidenceType": "entra-directory-role-member",
+    "RawReference": null,
+    "ResourceId": "27583dc5-4afe-43f6-854f-a5564c115003",
+    "ResourceType": "DirectoryRoleMember",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:38:13.359871+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "IsPrivilegedRole": false,
+      "MemberDisplayName": "Murali Chillakuru ( SA )",
+      "MemberId": "27583dc5-4afe-43f6-854f-a5564c115003",
+      "MemberUPN": "admin@MngEnvMCAP250477.onmicrosoft.com",
+      "RoleId": "e5c8c5d7-2228-483a-bfda-263f5bcd745b",
+      "RoleName": "Power Platform Administrator"
+    },
+    "Description": "Member of Power Platform Administrator: Murali Chillakuru ( SA )",
+    "EvidenceId": "168c3b07-0120-527d-bf3f-b8532bfaeeee",
+    "EvidenceType": "entra-directory-role-member",
+    "RawReference": null,
+    "ResourceId": "27583dc5-4afe-43f6-854f-a5564c115003",
+    "ResourceType": "DirectoryRoleMember",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:38:15.508153+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "IsPrivilegedRole": false,
+      "MemberDisplayName": "Murali Chillakuru ( SA )",
+      "MemberId": "27583dc5-4afe-43f6-854f-a5564c115003",
+      "MemberUPN": "admin@MngEnvMCAP250477.onmicrosoft.com",
+      "RoleId": "e74559a6-beab-43ab-bdbc-c32cc72969df",
+      "RoleName": "Compliance Data Administrator"
+    },
+    "Description": "Member of Compliance Data Administrator: Murali Chillakuru ( SA )",
+    "EvidenceId": "168c3b07-0120-527d-bf3f-b8532bfaeeee",
+    "EvidenceType": "entra-directory-role-member",
+    "RawReference": null,
+    "ResourceId": "27583dc5-4afe-43f6-854f-a5564c115003",
+    "ResourceType": "DirectoryRoleMember",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:38:25.016947+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "IsPrivilegedRole": false,
+      "MemberDisplayName": "Murali Chillakuru ( SA )",
+      "MemberId": "27583dc5-4afe-43f6-854f-a5564c115003",
+      "MemberUPN": "admin@MngEnvMCAP250477.onmicrosoft.com",
+      "RoleId": "ef41c09a-bf0c-4c66-a361-8ef3353c9fcc",
+      "RoleName": "Global Reader"
+    },
+    "Description": "Member of Global Reader: Murali Chillakuru ( SA )",
+    "EvidenceId": "168c3b07-0120-527d-bf3f-b8532bfaeeee",
+    "EvidenceType": "entra-directory-role-member",
+    "RawReference": null,
+    "ResourceId": "27583dc5-4afe-43f6-854f-a5564c115003",
+    "ResourceType": "DirectoryRoleMember",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:34:05.615880+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "IsPrivilegedRole": false,
+      "MemberDisplayName": "AI-Agents-Roles-To-Managed-Identities",
+      "MemberId": "43c288ce-c8d7-48e8-952f-4f98d26d79b6",
+      "MemberUPN": "",
+      "RoleId": "1f9424c4-9fe3-4c62-8aa8-48b03aa3acf5",
+      "RoleName": "Directory Readers"
+    },
+    "Description": "Member of Directory Readers: AI-Agents-Roles-To-Managed-Identities",
+    "EvidenceId": "2808cb64-34e9-559e-b5bd-c421974e0e88",
+    "EvidenceType": "entra-directory-role-member",
+    "RawReference": null,
+    "ResourceId": "43c288ce-c8d7-48e8-952f-4f98d26d79b6",
+    "ResourceType": "DirectoryRoleMember",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:35:09.218990+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "IsPrivilegedRole": false,
+      "MemberDisplayName": "AI-Agents-Roles-To-Managed-Identities",
+      "MemberId": "43c288ce-c8d7-48e8-952f-4f98d26d79b6",
+      "MemberUPN": "",
+      "RoleId": "572f1ef6-57c6-4b18-9041-99471d192d9b",
+      "RoleName": "Azure DevOps Administrator"
+    },
+    "Description": "Member of Azure DevOps Administrator: AI-Agents-Roles-To-Managed-Identities",
+    "EvidenceId": "2808cb64-34e9-559e-b5bd-c421974e0e88",
+    "EvidenceType": "entra-directory-role-member",
+    "RawReference": null,
+    "ResourceId": "43c288ce-c8d7-48e8-952f-4f98d26d79b6",
+    "ResourceType": "DirectoryRoleMember",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:36:09.333132+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "IsPrivilegedRole": false,
+      "MemberDisplayName": "AI-Agents-Roles-To-Managed-Identities",
+      "MemberId": "43c288ce-c8d7-48e8-952f-4f98d26d79b6",
+      "MemberUPN": "",
+      "RoleId": "7e635b13-d67e-45a0-a6e1-0e2c3a0d7f2b",
+      "RoleName": "Purview Workload Content Reader"
+    },
+    "Description": "Member of Purview Workload Content Reader: AI-Agents-Roles-To-Managed-Identities",
+    "EvidenceId": "2808cb64-34e9-559e-b5bd-c421974e0e88",
+    "EvidenceType": "entra-directory-role-member",
+    "RawReference": null,
+    "ResourceId": "43c288ce-c8d7-48e8-952f-4f98d26d79b6",
+    "ResourceType": "DirectoryRoleMember",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:38:25.017062+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "IsPrivilegedRole": false,
+      "MemberDisplayName": "AI-Agents-Roles-To-Managed-Identities",
+      "MemberId": "43c288ce-c8d7-48e8-952f-4f98d26d79b6",
+      "MemberUPN": "",
+      "RoleId": "ef41c09a-bf0c-4c66-a361-8ef3353c9fcc",
+      "RoleName": "Global Reader"
+    },
+    "Description": "Member of Global Reader: AI-Agents-Roles-To-Managed-Identities",
+    "EvidenceId": "2808cb64-34e9-559e-b5bd-c421974e0e88",
+    "EvidenceType": "entra-directory-role-member",
+    "RawReference": null,
+    "ResourceId": "43c288ce-c8d7-48e8-952f-4f98d26d79b6",
+    "ResourceType": "DirectoryRoleMember",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:35:13.867344+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "IsPrivilegedRole": true,
+      "MemberDisplayName": "Murali Chillakuru",
+      "MemberId": "8c5fc820-4189-40a5-923e-d59bd02e75f9",
+      "MemberUPN": "mchillakuru_microsoft.com#EXT#@MngEnvMCAP250477.onmicrosoft.com",
+      "RoleId": "578f3b78-74ff-4c47-9dd6-019206a36055",
+      "RoleName": "Security Administrator"
+    },
+    "Description": "Member of Security Administrator: Murali Chillakuru",
+    "EvidenceId": "5aa149ba-f137-5db7-a037-26f8f08d202f",
+    "EvidenceType": "entra-directory-role-member",
+    "RawReference": null,
+    "ResourceId": "8c5fc820-4189-40a5-923e-d59bd02e75f9",
+    "ResourceType": "DirectoryRoleMember",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:35:20.416130+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "IsPrivilegedRole": false,
+      "MemberDisplayName": "Murali Chillakuru",
+      "MemberId": "8c5fc820-4189-40a5-923e-d59bd02e75f9",
+      "MemberUPN": "mchillakuru_microsoft.com#EXT#@MngEnvMCAP250477.onmicrosoft.com",
+      "RoleId": "593bce25-4eb8-4d9f-a67c-7aa68e8cadff",
+      "RoleName": "SharePoint Advanced Management Administrator"
+    },
+    "Description": "Member of SharePoint Advanced Management Administrator: Murali Chillakuru",
+    "EvidenceId": "5aa149ba-f137-5db7-a037-26f8f08d202f",
+    "EvidenceType": "entra-directory-role-member",
+    "RawReference": null,
+    "ResourceId": "8c5fc820-4189-40a5-923e-d59bd02e75f9",
+    "ResourceType": "DirectoryRoleMember",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:35:43.969453+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "IsPrivilegedRole": true,
+      "MemberDisplayName": "Murali Chillakuru",
+      "MemberId": "8c5fc820-4189-40a5-923e-d59bd02e75f9",
+      "MemberUPN": "mchillakuru_microsoft.com#EXT#@MngEnvMCAP250477.onmicrosoft.com",
+      "RoleId": "6cf45069-5555-49d6-9332-f57dfa659b30",
+      "RoleName": "SharePoint Administrator"
+    },
+    "Description": "Member of SharePoint Administrator: Murali Chillakuru",
+    "EvidenceId": "5aa149ba-f137-5db7-a037-26f8f08d202f",
+    "EvidenceType": "entra-directory-role-member",
+    "RawReference": null,
+    "ResourceId": "8c5fc820-4189-40a5-923e-d59bd02e75f9",
+    "ResourceType": "DirectoryRoleMember",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:36:22.768864+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "IsPrivilegedRole": false,
+      "MemberDisplayName": "Murali Chillakuru",
+      "MemberId": "8c5fc820-4189-40a5-923e-d59bd02e75f9",
+      "MemberUPN": "mchillakuru_microsoft.com#EXT#@MngEnvMCAP250477.onmicrosoft.com",
+      "RoleId": "87cd5e2d-cf73-4768-af31-6af0f15c4cfb",
+      "RoleName": "Office Apps Administrator"
+    },
+    "Description": "Member of Office Apps Administrator: Murali Chillakuru",
+    "EvidenceId": "5aa149ba-f137-5db7-a037-26f8f08d202f",
+    "EvidenceType": "entra-directory-role-member",
+    "RawReference": null,
+    "ResourceId": "8c5fc820-4189-40a5-923e-d59bd02e75f9",
+    "ResourceType": "DirectoryRoleMember",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:37:10.820171+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "IsPrivilegedRole": false,
+      "MemberDisplayName": "Murali Chillakuru",
+      "MemberId": "8c5fc820-4189-40a5-923e-d59bd02e75f9",
+      "MemberUPN": "mchillakuru_microsoft.com#EXT#@MngEnvMCAP250477.onmicrosoft.com",
+      "RoleId": "b595d950-1922-432b-809e-5346094accd1",
+      "RoleName": "Security Reader"
+    },
+    "Description": "Member of Security Reader: Murali Chillakuru",
+    "EvidenceId": "5aa149ba-f137-5db7-a037-26f8f08d202f",
+    "EvidenceType": "entra-directory-role-member",
+    "RawReference": null,
+    "ResourceId": "8c5fc820-4189-40a5-923e-d59bd02e75f9",
+    "ResourceType": "DirectoryRoleMember",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:37:20.239875+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "IsPrivilegedRole": false,
+      "MemberDisplayName": "Murali Chillakuru",
+      "MemberId": "8c5fc820-4189-40a5-923e-d59bd02e75f9",
+      "MemberUPN": "mchillakuru_microsoft.com#EXT#@MngEnvMCAP250477.onmicrosoft.com",
+      "RoleId": "b79a69dc-c355-4017-95dd-da34b53e9021",
+      "RoleName": "SharePoint Embedded Administrator"
+    },
+    "Description": "Member of SharePoint Embedded Administrator: Murali Chillakuru",
+    "EvidenceId": "5aa149ba-f137-5db7-a037-26f8f08d202f",
+    "EvidenceType": "entra-directory-role-member",
+    "RawReference": null,
+    "ResourceId": "8c5fc820-4189-40a5-923e-d59bd02e75f9",
+    "ResourceType": "DirectoryRoleMember",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:38:25.017038+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "IsPrivilegedRole": false,
+      "MemberDisplayName": "Murali Chillakuru",
+      "MemberId": "8c5fc820-4189-40a5-923e-d59bd02e75f9",
+      "MemberUPN": "mchillakuru_microsoft.com#EXT#@MngEnvMCAP250477.onmicrosoft.com",
+      "RoleId": "ef41c09a-bf0c-4c66-a361-8ef3353c9fcc",
+      "RoleName": "Global Reader"
+    },
+    "Description": "Member of Global Reader: Murali Chillakuru",
+    "EvidenceId": "5aa149ba-f137-5db7-a037-26f8f08d202f",
+    "EvidenceType": "entra-directory-role-member",
+    "RawReference": null,
+    "ResourceId": "8c5fc820-4189-40a5-923e-d59bd02e75f9",
+    "ResourceType": "DirectoryRoleMember",
+    "Source": "Entra"
+  }
+]

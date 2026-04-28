@@ -1,0 +1,65 @@
+"""{{ project_name }} — Configuration loader.
+
+Loads from JSON config file + environment variable overrides.
+"""
+
+from __future__ import annotations
+
+import json
+import os
+from dataclasses import dataclass, field
+from pathlib import Path
+from typing import Any
+
+
+@dataclass
+class AzureConfig:
+    openai_endpoint: str = ""
+    openai_deployment: str = "{{ azure.models.primary | default('gpt-4.1') }}"
+    openai_api_version: str = "2024-12-01-preview"
+    storage_account: str = ""
+    storage_container: str = "reports"
+    subscription_id: str = ""
+    tenant_id: str = ""
+
+    @classmethod
+    def from_env(cls) -> "AzureConfig":
+        return cls(
+            openai_endpoint=os.getenv("AZURE_OPENAI_ENDPOINT", ""),
+            openai_deployment=os.getenv("AZURE_OPENAI_DEPLOYMENT", "{{ azure.models.primary | default('gpt-4.1') }}"),
+            openai_api_version=os.getenv("AZURE_OPENAI_API_VERSION", "2024-12-01-preview"),
+            storage_account=os.getenv("AZURE_STORAGE_ACCOUNT", ""),
+            storage_container=os.getenv("AZURE_STORAGE_CONTAINER", "reports"),
+            subscription_id=os.getenv("AZURE_SUBSCRIPTION_ID", ""),
+            tenant_id=os.getenv("AZURE_TENANT_ID", ""),
+        )
+
+
+@dataclass
+class AppConfig:
+    project_name: str = "{{ project_name }}"
+    base_name: str = "{{ base_name }}"
+    log_level: str = "INFO"
+    port: int = 8088
+    azure: AzureConfig = field(default_factory=AzureConfig)
+    thresholds: dict[str, Any] = field(default_factory=dict)
+
+    @classmethod
+    def load(cls, config_path: str | Path | None = None) -> "AppConfig":
+        """Load config from JSON file, then overlay env vars."""
+        data: dict[str, Any] = {}
+
+        if config_path:
+            p = Path(config_path)
+            if p.exists():
+                data = json.loads(p.read_text(encoding="utf-8"))
+
+        azure = AzureConfig.from_env()
+        return cls(
+            project_name=data.get("project_name", "{{ project_name }}"),
+            base_name=data.get("base_name", "{{ base_name }}"),
+            log_level=os.getenv("LOG_LEVEL", data.get("log_level", "INFO")),
+            port=int(os.getenv("PORT", data.get("port", 8088))),
+            azure=azure,
+            thresholds=data.get("thresholds", {}),
+        )

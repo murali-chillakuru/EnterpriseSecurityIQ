@@ -1,0 +1,28 @@
+[
+  {
+    "CollectedAt": "2026-04-26T23:42:01.360944+00:00",
+    "Collector": "AzureAIContentSafety",
+    "Data": {
+      "AccountId": "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/resourceGroups/RG-AzureAIFoundary-FedRAMP-High/providers/Microsoft.CognitiveServices/accounts/fedramp-high-openai",
+      "AccountName": "fedramp-high-openai",
+      "CustomerManagedKey": false,
+      "DisableLocalAuth": true,
+      "DynamicThrottlingEnabled": null,
+      "Encryption": false,
+      "Kind": "openai",
+      "NetworkDefaultAction": "Allow",
+      "PrivateEndpoints": 0,
+      "PublicNetworkAccess": "Enabled",
+      "RestrictOutboundAccess": null,
+      "SubscriptionId": "d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0",
+      "SubscriptionName": "AI"
+    },
+    "Description": "AI Governance: fedramp-high-openai",
+    "EvidenceId": "75bde2af-6caa-5023-ba1a-2d80bdc0d7a2",
+    "EvidenceType": "azure-ai-governance",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/resourceGroups/RG-AzureAIFoundary-FedRAMP-High/providers/Microsoft.CognitiveServices/accounts/fedramp-high-openai",
+    "ResourceType": "AIGovernance",
+    "Source": "Azure"
+  }
+]

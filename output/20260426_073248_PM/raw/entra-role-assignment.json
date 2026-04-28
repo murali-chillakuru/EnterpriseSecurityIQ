@@ -1,0 +1,886 @@
+[
+  {
+    "CollectedAt": "2026-04-26T23:33:05.387635+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DirectoryScopeId": "/",
+      "Id": "0gJe1hQCdEaOXXZvszDiwHFrEmYLhapAlcPIA9J0Pxg-1",
+      "PrincipalId": "66126b71-850b-40aa-95c3-c803d2743f18",
+      "RoleDefinitionId": "d65e02d2-0214-4674-8e5d-766fb330e2c0"
+    },
+    "Description": "Role assignment: 66126b71-850b-40aa-95c3-c803d2743f18",
+    "EvidenceId": "2484560e-3812-5985-ab13-59f7e06243e9",
+    "EvidenceType": "entra-role-assignment",
+    "RawReference": null,
+    "ResourceId": "0gJe1hQCdEaOXXZvszDiwHFrEmYLhapAlcPIA9J0Pxg-1",
+    "ResourceType": "RoleAssignment",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:05.388358+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DirectoryScopeId": "/",
+      "Id": "31t0KwMIgE2qZYIsRJParCDIX4yJQaVAkj7Vm9Audfk-1",
+      "PrincipalId": "8c5fc820-4189-40a5-923e-d59bd02e75f9",
+      "RoleDefinitionId": "2b745bdf-0803-4d80-aa65-822c4493daac"
+    },
+    "Description": "Role assignment: 8c5fc820-4189-40a5-923e-d59bd02e75f9",
+    "EvidenceId": "97acbe1d-d8f8-583c-8c6c-422d51d7e982",
+    "EvidenceType": "entra-role-assignment",
+    "RawReference": null,
+    "ResourceId": "31t0KwMIgE2qZYIsRJParCDIX4yJQaVAkj7Vm9Audfk-1",
+    "ResourceType": "RoleAssignment",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:05.388332+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DirectoryScopeId": "/",
+      "Id": "31t0KwMIgE2qZYIsRJParMU9WCf-SvZDhU-lVkwRUAM-1",
+      "PrincipalId": "27583dc5-4afe-43f6-854f-a5564c115003",
+      "RoleDefinitionId": "2b745bdf-0803-4d80-aa65-822c4493daac"
+    },
+    "Description": "Role assignment: 27583dc5-4afe-43f6-854f-a5564c115003",
+    "EvidenceId": "79e9c03a-6ecd-5922-837f-4e2c06090458",
+    "EvidenceType": "entra-role-assignment",
+    "RawReference": null,
+    "ResourceId": "31t0KwMIgE2qZYIsRJParMU9WCf-SvZDhU-lVkwRUAM-1",
+    "ResourceType": "RoleAssignment",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:05.388057+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DirectoryScopeId": "/",
+      "Id": "3i5W0tt0fkWntlROI267YcU9WCf-SvZDhU-lVkwRUAM-1",
+      "PrincipalId": "27583dc5-4afe-43f6-854f-a5564c115003",
+      "RoleDefinitionId": "d2562ede-74db-457e-a7b6-544e236ebb61"
+    },
+    "Description": "Role assignment: 27583dc5-4afe-43f6-854f-a5564c115003",
+    "EvidenceId": "8859ed3e-17af-5685-89ef-f7f52dcdd7eb",
+    "EvidenceType": "entra-role-assignment",
+    "RawReference": null,
+    "ResourceId": "3i5W0tt0fkWntlROI267YcU9WCf-SvZDhU-lVkwRUAM-1",
+    "ResourceType": "RoleAssignment",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:05.388249+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DirectoryScopeId": "/",
+      "Id": "3zuX44dJrkmDerqOIxxyhs6IwkPXyOhIlS9PmNJtebY-1",
+      "PrincipalId": "43c288ce-c8d7-48e8-952f-4f98d26d79b6",
+      "RoleDefinitionId": "e3973bdf-4987-49ae-837a-ba8e231c7286"
+    },
+    "Description": "Role assignment: 43c288ce-c8d7-48e8-952f-4f98d26d79b6",
+    "EvidenceId": "6bc905c3-792c-52cf-ad1f-867adab7f80e",
+    "EvidenceType": "entra-role-assignment",
+    "RawReference": null,
+    "ResourceId": "3zuX44dJrkmDerqOIxxyhs6IwkPXyOhIlS9PmNJtebY-1",
+    "ResourceType": "RoleAssignment",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:05.387690+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DirectoryScopeId": "/",
+      "Id": "4-PYiFWPHkqVOpuYmLiHa-GBwESUdXdPscPsHCdAhEQ-1",
+      "PrincipalId": "44c081e1-7594-4f77-b1c3-ec1c27408444",
+      "RoleDefinitionId": "88d8e3e3-8f55-4a1e-953a-9b9898b8876b"
+    },
+    "Description": "Role assignment: 44c081e1-7594-4f77-b1c3-ec1c27408444",
+    "EvidenceId": "eb1a76b9-b35c-582e-b4a5-0cb946199469",
+    "EvidenceType": "entra-role-assignment",
+    "RawReference": null,
+    "ResourceId": "4-PYiFWPHkqVOpuYmLiHa-GBwESUdXdPscPsHCdAhEQ-1",
+    "ResourceType": "RoleAssignment",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:05.387673+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DirectoryScopeId": "/",
+      "Id": "4-PYiFWPHkqVOpuYmLiHa86IwkPXyOhIlS9PmNJtebY-1",
+      "PrincipalId": "43c288ce-c8d7-48e8-952f-4f98d26d79b6",
+      "RoleDefinitionId": "88d8e3e3-8f55-4a1e-953a-9b9898b8876b"
+    },
+    "Description": "Role assignment: 43c288ce-c8d7-48e8-952f-4f98d26d79b6",
+    "EvidenceId": "4a39f2b1-cca4-55f8-a04a-cc48dd5c46f1",
+    "EvidenceType": "entra-role-assignment",
+    "RawReference": null,
+    "ResourceId": "4-PYiFWPHkqVOpuYmLiHa86IwkPXyOhIlS9PmNJtebY-1",
+    "ResourceType": "RoleAssignment",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:05.387707+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DirectoryScopeId": "/",
+      "Id": "4-PYiFWPHkqVOpuYmLiHa8ep7Wh7HQFBkP4Y6JO4jRU-1",
+      "PrincipalId": "68eda9c7-1d7b-4101-90fe-18e893b88d15",
+      "RoleDefinitionId": "88d8e3e3-8f55-4a1e-953a-9b9898b8876b"
+    },
+    "Description": "Role assignment: 68eda9c7-1d7b-4101-90fe-18e893b88d15",
+    "EvidenceId": "86634686-58ee-51f8-941d-46d992f2df4c",
+    "EvidenceType": "entra-role-assignment",
+    "RawReference": null,
+    "ResourceId": "4-PYiFWPHkqVOpuYmLiHa8ep7Wh7HQFBkP4Y6JO4jRU-1",
+    "ResourceType": "RoleAssignment",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:05.388144+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DirectoryScopeId": "/",
+      "Id": "ACSUax9p8EudEtiiVKK69cU9WCf-SvZDhU-lVkwRUAM-1",
+      "PrincipalId": "27583dc5-4afe-43f6-854f-a5564c115003",
+      "RoleDefinitionId": "6b942400-691f-4bf0-9d12-d8a254a2baf5"
+    },
+    "Description": "Role assignment: 27583dc5-4afe-43f6-854f-a5564c115003",
+    "EvidenceId": "36accf01-9318-5fc8-8605-fb8275f4e722",
+    "EvidenceType": "entra-role-assignment",
+    "RawReference": null,
+    "ResourceId": "ACSUax9p8EudEtiiVKK69cU9WCf-SvZDhU-lVkwRUAM-1",
+    "ResourceType": "RoleAssignment",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:05.388178+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DirectoryScopeId": "/",
+      "Id": "GvkEP9dK00u8-kmILqGoisU9WCf-SvZDhU-lVkwRUAM-1",
+      "PrincipalId": "27583dc5-4afe-43f6-854f-a5564c115003",
+      "RoleDefinitionId": "3f04f91a-4ad7-4bd3-bcfa-49882ea1a88a"
+    },
+    "Description": "Role assignment: 27583dc5-4afe-43f6-854f-a5564c115003",
+    "EvidenceId": "3fe46d8a-1255-527f-9543-667815db51d8",
+    "EvidenceType": "entra-role-assignment",
+    "RawReference": null,
+    "ResourceId": "GvkEP9dK00u8-kmILqGoisU9WCf-SvZDhU-lVkwRUAM-1",
+    "ResourceType": "RoleAssignment",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:05.388128+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DirectoryScopeId": "/",
+      "Id": "KGJQ237SfUuV5SlZVtZhX8U9WCf-SvZDhU-lVkwRUAM-1",
+      "PrincipalId": "27583dc5-4afe-43f6-854f-a5564c115003",
+      "RoleDefinitionId": "db506228-d27e-4b7d-95e5-295956d6615f"
+    },
+    "Description": "Role assignment: 27583dc5-4afe-43f6-854f-a5564c115003",
+    "EvidenceId": "3b85d5a8-2865-5822-a144-dd18e44c1d31",
+    "EvidenceType": "entra-role-assignment",
+    "RawReference": null,
+    "ResourceId": "KGJQ237SfUuV5SlZVtZhX8U9WCf-SvZDhU-lVkwRUAM-1",
+    "ResourceType": "RoleAssignment",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:05.387809+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DirectoryScopeId": "/",
+      "Id": "LJnv8vs6uUa3z6Em7nTEURAQV8r5u8hAhhYMHJRVsG8-1",
+      "PrincipalId": "ca571010-bbf9-40c8-8616-0c1c9455b06f",
+      "RoleDefinitionId": "f2ef992c-3afb-46b9-b7cf-a126ee74c451"
+    },
+    "Description": "Role assignment: ca571010-bbf9-40c8-8616-0c1c9455b06f",
+    "EvidenceId": "f15bdac5-84dd-5f2b-b4b1-50d6aa8183a2",
+    "EvidenceType": "entra-role-assignment",
+    "RawReference": null,
+    "ResourceId": "LJnv8vs6uUa3z6Em7nTEURAQV8r5u8hAhhYMHJRVsG8-1",
+    "ResourceType": "RoleAssignment",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:05.387792+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DirectoryScopeId": "/",
+      "Id": "LJnv8vs6uUa3z6Em7nTEUSDIX4yJQaVAkj7Vm9Audfk-1",
+      "PrincipalId": "8c5fc820-4189-40a5-923e-d59bd02e75f9",
+      "RoleDefinitionId": "f2ef992c-3afb-46b9-b7cf-a126ee74c451"
+    },
+    "Description": "Role assignment: 8c5fc820-4189-40a5-923e-d59bd02e75f9",
+    "EvidenceId": "49bfc515-216f-5cec-a35a-9ed6a2fa3012",
+    "EvidenceType": "entra-role-assignment",
+    "RawReference": null,
+    "ResourceId": "LJnv8vs6uUa3z6Em7nTEUSDIX4yJQaVAkj7Vm9Audfk-1",
+    "ResourceType": "RoleAssignment",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:05.387723+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DirectoryScopeId": "/",
+      "Id": "LJnv8vs6uUa3z6Em7nTEUURLjBt7OOhDsT5h_9JrfzM-1",
+      "PrincipalId": "1b8c4b44-387b-43e8-b13e-61ffd26b7f33",
+      "RoleDefinitionId": "f2ef992c-3afb-46b9-b7cf-a126ee74c451"
+    },
+    "Description": "Role assignment: 1b8c4b44-387b-43e8-b13e-61ffd26b7f33",
+    "EvidenceId": "2781a850-9e01-5e8a-9e34-319ace13bc0f",
+    "EvidenceType": "entra-role-assignment",
+    "RawReference": null,
+    "ResourceId": "LJnv8vs6uUa3z6Em7nTEUURLjBt7OOhDsT5h_9JrfzM-1",
+    "ResourceType": "RoleAssignment",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:05.387758+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DirectoryScopeId": "/",
+      "Id": "LJnv8vs6uUa3z6Em7nTEUc6IwkPXyOhIlS9PmNJtebY-1",
+      "PrincipalId": "43c288ce-c8d7-48e8-952f-4f98d26d79b6",
+      "RoleDefinitionId": "f2ef992c-3afb-46b9-b7cf-a126ee74c451"
+    },
+    "Description": "Role assignment: 43c288ce-c8d7-48e8-952f-4f98d26d79b6",
+    "EvidenceId": "b5f966b5-b032-55f7-94a9-a01174d155ba",
+    "EvidenceType": "entra-role-assignment",
+    "RawReference": null,
+    "ResourceId": "LJnv8vs6uUa3z6Em7nTEUc6IwkPXyOhIlS9PmNJtebY-1",
+    "ResourceType": "RoleAssignment",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:05.387742+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DirectoryScopeId": "/",
+      "Id": "LJnv8vs6uUa3z6Em7nTEUcU9WCf-SvZDhU-lVkwRUAM-1",
+      "PrincipalId": "27583dc5-4afe-43f6-854f-a5564c115003",
+      "RoleDefinitionId": "f2ef992c-3afb-46b9-b7cf-a126ee74c451"
+    },
+    "Description": "Role assignment: 27583dc5-4afe-43f6-854f-a5564c115003",
+    "EvidenceId": "ce0bc9f4-5d94-5809-82e0-fa9177603f08",
+    "EvidenceType": "entra-role-assignment",
+    "RawReference": null,
+    "ResourceId": "LJnv8vs6uUa3z6Em7nTEUcU9WCf-SvZDhU-lVkwRUAM-1",
+    "ResourceType": "RoleAssignment",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:05.387775+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DirectoryScopeId": "/",
+      "Id": "LJnv8vs6uUa3z6Em7nTEUeGBwESUdXdPscPsHCdAhEQ-1",
+      "PrincipalId": "44c081e1-7594-4f77-b1c3-ec1c27408444",
+      "RoleDefinitionId": "f2ef992c-3afb-46b9-b7cf-a126ee74c451"
+    },
+    "Description": "Role assignment: 44c081e1-7594-4f77-b1c3-ec1c27408444",
+    "EvidenceId": "63eaf17a-7b75-59ab-adaf-28b0d8350195",
+    "EvidenceType": "entra-role-assignment",
+    "RawReference": null,
+    "ResourceId": "LJnv8vs6uUa3z6Em7nTEUeGBwESUdXdPscPsHCdAhEQ-1",
+    "ResourceType": "RoleAssignment",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:05.387654+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DirectoryScopeId": "/",
+      "Id": "NIwd6_WsDUaEJMHxpvvbhXFrEmYLhapAlcPIA9J0Pxg-1",
+      "PrincipalId": "66126b71-850b-40aa-95c3-c803d2743f18",
+      "RoleDefinitionId": "eb1d8c34-acf5-460d-8424-c1f1a6fbdb85"
+    },
+    "Description": "Role assignment: 66126b71-850b-40aa-95c3-c803d2743f18",
+    "EvidenceId": "8b809401-63e7-5b9d-acc4-668f1232b573",
+    "EvidenceType": "entra-role-assignment",
+    "RawReference": null,
+    "ResourceId": "NIwd6_WsDUaEJMHxpvvbhXFrEmYLhapAlcPIA9J0Pxg-1",
+    "ResourceType": "RoleAssignment",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:05.388025+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DirectoryScopeId": "/",
+      "Id": "OqLR5hHa5EuVcL78htBnp8U9WCf-SvZDhU-lVkwRUAM-1",
+      "PrincipalId": "27583dc5-4afe-43f6-854f-a5564c115003",
+      "RoleDefinitionId": "e6d1a23a-da11-4be4-9570-befc86d067a7"
+    },
+    "Description": "Role assignment: 27583dc5-4afe-43f6-854f-a5564c115003",
+    "EvidenceId": "729173f6-dad3-521d-8df1-b6bb771d5f63",
+    "EvidenceType": "entra-role-assignment",
+    "RawReference": null,
+    "ResourceId": "OqLR5hHa5EuVcL78htBnp8U9WCf-SvZDhU-lVkwRUAM-1",
+    "ResourceType": "RoleAssignment",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:05.388041+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DirectoryScopeId": "/",
+      "Id": "OqLR5hHa5EuVcL78htBnp_v8kGTIL3JFhz64bQlbZQE-1",
+      "PrincipalId": "6490fcfb-2fc8-4572-873e-b86d095b6501",
+      "RoleDefinitionId": "e6d1a23a-da11-4be4-9570-befc86d067a7"
+    },
+    "Description": "Role assignment: 6490fcfb-2fc8-4572-873e-b86d095b6501",
+    "EvidenceId": "6ec757ab-719f-5787-a060-5295c9990cdf",
+    "EvidenceType": "entra-role-assignment",
+    "RawReference": null,
+    "ResourceId": "OqLR5hHa5EuVcL78htBnp_v8kGTIL3JFhz64bQlbZQE-1",
+    "ResourceType": "RoleAssignment",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:05.388161+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DirectoryScopeId": "/",
+      "Id": "RhIJaeggVkqqTQZgdbKnqMU9WCf-SvZDhU-lVkwRUAM-1",
+      "PrincipalId": "27583dc5-4afe-43f6-854f-a5564c115003",
+      "RoleDefinitionId": "69091246-20e8-4a56-aa4d-066075b2a7a8"
+    },
+    "Description": "Role assignment: 27583dc5-4afe-43f6-854f-a5564c115003",
+    "EvidenceId": "f84f3760-ee75-5162-9ef2-3a40c8f5bd1a",
+    "EvidenceType": "entra-role-assignment",
+    "RawReference": null,
+    "ResourceId": "RhIJaeggVkqqTQZgdbKnqMU9WCf-SvZDhU-lVkwRUAM-1",
+    "ResourceType": "RoleAssignment",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:05.388283+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DirectoryScopeId": "/",
+      "Id": "SpwAmT87V0mCqZ014S23fiDIX4yJQaVAkj7Vm9Audfk-1",
+      "PrincipalId": "8c5fc820-4189-40a5-923e-d59bd02e75f9",
+      "RoleDefinitionId": "99009c4a-3b3f-4957-82a9-9d35e12db77e"
+    },
+    "Description": "Role assignment: 8c5fc820-4189-40a5-923e-d59bd02e75f9",
+    "EvidenceId": "68ba72ec-136c-5f2f-9cbe-3b09449280c1",
+    "EvidenceType": "entra-role-assignment",
+    "RawReference": null,
+    "ResourceId": "SpwAmT87V0mCqZ014S23fiDIX4yJQaVAkj7Vm9Audfk-1",
+    "ResourceType": "RoleAssignment",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:05.388265+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DirectoryScopeId": "/",
+      "Id": "SpwAmT87V0mCqZ014S23fsU9WCf-SvZDhU-lVkwRUAM-1",
+      "PrincipalId": "27583dc5-4afe-43f6-854f-a5564c115003",
+      "RoleDefinitionId": "99009c4a-3b3f-4957-82a9-9d35e12db77e"
+    },
+    "Description": "Role assignment: 27583dc5-4afe-43f6-854f-a5564c115003",
+    "EvidenceId": "53f94090-1107-5352-b98f-91ad71b07749",
+    "EvidenceType": "entra-role-assignment",
+    "RawReference": null,
+    "ResourceId": "SpwAmT87V0mCqZ014S23fsU9WCf-SvZDhU-lVkwRUAM-1",
+    "ResourceType": "RoleAssignment",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:05.387939+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DirectoryScopeId": "/",
+      "Id": "UB-K8uf2cUWBi2oS8q9rbCDIX4yJQaVAkj7Vm9Audfk-1",
+      "PrincipalId": "8c5fc820-4189-40a5-923e-d59bd02e75f9",
+      "RoleDefinitionId": "f28a1f50-f6e7-4571-818b-6a12f2af6b6c"
+    },
+    "Description": "Role assignment: 8c5fc820-4189-40a5-923e-d59bd02e75f9",
+    "EvidenceId": "6d16fbe1-219f-54d4-93a4-6cffaefdbceb",
+    "EvidenceType": "entra-role-assignment",
+    "RawReference": null,
+    "ResourceId": "UB-K8uf2cUWBi2oS8q9rbCDIX4yJQaVAkj7Vm9Audfk-1",
+    "ResourceType": "RoleAssignment",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:05.387923+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DirectoryScopeId": "/",
+      "Id": "UB-K8uf2cUWBi2oS8q9rbMU9WCf-SvZDhU-lVkwRUAM-1",
+      "PrincipalId": "27583dc5-4afe-43f6-854f-a5564c115003",
+      "RoleDefinitionId": "f28a1f50-f6e7-4571-818b-6a12f2af6b6c"
+    },
+    "Description": "Role assignment: 27583dc5-4afe-43f6-854f-a5564c115003",
+    "EvidenceId": "1720511d-f647-5bd5-a324-41d67f6f69e5",
+    "EvidenceType": "entra-role-assignment",
+    "RawReference": null,
+    "ResourceId": "UB-K8uf2cUWBi2oS8q9rbMU9WCf-SvZDhU-lVkwRUAM-1",
+    "ResourceType": "RoleAssignment",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:05.388093+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DirectoryScopeId": "/",
+      "Id": "Y3E2RKHrw0SYr_V4eHn5asU9WCf-SvZDhU-lVkwRUAM-1",
+      "PrincipalId": "27583dc5-4afe-43f6-854f-a5564c115003",
+      "RoleDefinitionId": "44367163-eba1-44c3-98af-f5787879f96a"
+    },
+    "Description": "Role assignment: 27583dc5-4afe-43f6-854f-a5564c115003",
+    "EvidenceId": "87252d7b-af85-5c8c-a646-f796d08692a7",
+    "EvidenceType": "entra-role-assignment",
+    "RawReference": null,
+    "ResourceId": "Y3E2RKHrw0SYr_V4eHn5asU9WCf-SvZDhU-lVkwRUAM-1",
+    "ResourceType": "RoleAssignment",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:05.388075+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DirectoryScopeId": "/",
+      "Id": "kl2Jm9Msx0SdAqasLV6lw8U9WCf-SvZDhU-lVkwRUAM-1",
+      "PrincipalId": "27583dc5-4afe-43f6-854f-a5564c115003",
+      "RoleDefinitionId": "9b895d92-2cd3-44c7-9d02-a6ac2d5ea5c3"
+    },
+    "Description": "Role assignment: 27583dc5-4afe-43f6-854f-a5564c115003",
+    "EvidenceId": "b9e29f46-e666-52dd-b084-b7e743802b88",
+    "EvidenceType": "entra-role-assignment",
+    "RawReference": null,
+    "ResourceId": "kl2Jm9Msx0SdAqasLV6lw8U9WCf-SvZDhU-lVkwRUAM-1",
+    "ResourceType": "RoleAssignment",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:05.388008+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DirectoryScopeId": "/",
+      "Id": "l1cxFy0QtECT4EMgYsrKGFAoofj83CZApJCJGVKrkLo-1",
+      "PrincipalId": "f8a12850-dcfc-4026-a490-891952ab90ba",
+      "RoleDefinitionId": "17315797-102d-40b4-93e0-432062caca18"
+    },
+    "Description": "Role assignment: f8a12850-dcfc-4026-a490-891952ab90ba",
+    "EvidenceId": "57731cd7-dde8-5949-a4c2-3851b807abe0",
+    "EvidenceType": "entra-role-assignment",
+    "RawReference": null,
+    "ResourceId": "l1cxFy0QtECT4EMgYsrKGFAoofj83CZApJCJGVKrkLo-1",
+    "ResourceType": "RoleAssignment",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:05.387991+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DirectoryScopeId": "/",
+      "Id": "l1cxFy0QtECT4EMgYsrKGHw-iriVn8dHsIj0_vai1lI-1",
+      "PrincipalId": "b88a3e7c-9f95-47c7-b088-f4fef6a2d652",
+      "RoleDefinitionId": "17315797-102d-40b4-93e0-432062caca18"
+    },
+    "Description": "Role assignment: b88a3e7c-9f95-47c7-b088-f4fef6a2d652",
+    "EvidenceId": "50cd0eba-0183-5b48-9fcf-86ad65865101",
+    "EvidenceType": "entra-role-assignment",
+    "RawReference": null,
+    "ResourceId": "l1cxFy0QtECT4EMgYsrKGHw-iriVn8dHsIj0_vai1lI-1",
+    "ResourceType": "RoleAssignment",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:05.387957+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DirectoryScopeId": "/",
+      "Id": "l1cxFy0QtECT4EMgYsrKGMU9WCf-SvZDhU-lVkwRUAM-1",
+      "PrincipalId": "27583dc5-4afe-43f6-854f-a5564c115003",
+      "RoleDefinitionId": "17315797-102d-40b4-93e0-432062caca18"
+    },
+    "Description": "Role assignment: 27583dc5-4afe-43f6-854f-a5564c115003",
+    "EvidenceId": "ccc3ae35-1d9d-56c2-a3f2-b3a965c369e9",
+    "EvidenceType": "entra-role-assignment",
+    "RawReference": null,
+    "ResourceId": "l1cxFy0QtECT4EMgYsrKGMU9WCf-SvZDhU-lVkwRUAM-1",
+    "ResourceType": "RoleAssignment",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:05.387974+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DirectoryScopeId": "/",
+      "Id": "l1cxFy0QtECT4EMgYsrKGPv8kGTIL3JFhz64bQlbZQE-1",
+      "PrincipalId": "6490fcfb-2fc8-4572-873e-b86d095b6501",
+      "RoleDefinitionId": "17315797-102d-40b4-93e0-432062caca18"
+    },
+    "Description": "Role assignment: 6490fcfb-2fc8-4572-873e-b86d095b6501",
+    "EvidenceId": "67430a81-0b8e-5a15-b570-7339bb1b4ea9",
+    "EvidenceType": "entra-role-assignment",
+    "RawReference": null,
+    "ResourceId": "l1cxFy0QtECT4EMgYsrKGPv8kGTIL3JFhz64bQlbZQE-1",
+    "ResourceType": "RoleAssignment",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:05.388112+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DirectoryScopeId": "/",
+      "Id": "l4VkEWyS80ycNrzrsLqNzMU9WCf-SvZDhU-lVkwRUAM-1",
+      "PrincipalId": "27583dc5-4afe-43f6-854f-a5564c115003",
+      "RoleDefinitionId": "11648597-926c-4cf3-9c36-bcebb0ba8dcc"
+    },
+    "Description": "Role assignment: 27583dc5-4afe-43f6-854f-a5564c115003",
+    "EvidenceId": "cce5d084-c283-5b44-973e-e50a4bbeee12",
+    "EvidenceType": "entra-role-assignment",
+    "RawReference": null,
+    "ResourceId": "l4VkEWyS80ycNrzrsLqNzMU9WCf-SvZDhU-lVkwRUAM-1",
+    "ResourceType": "RoleAssignment",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:05.387595+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DirectoryScopeId": "/",
+      "Id": "lAPpYvVpN0KRkAEhdxReEFM58sMTVAZDncJx-0ZT4_8-1",
+      "PrincipalId": "c3f23953-5413-4306-9dc2-71fb4653e3ff",
+      "RoleDefinitionId": "62e90394-69f5-4237-9190-012177145e10"
+    },
+    "Description": "Role assignment: c3f23953-5413-4306-9dc2-71fb4653e3ff",
+    "EvidenceId": "d02fe016-5b05-507b-b2bb-9eba4853a62e",
+    "EvidenceType": "entra-role-assignment",
+    "RawReference": null,
+    "ResourceId": "lAPpYvVpN0KRkAEhdxReEFM58sMTVAZDncJx-0ZT4_8-1",
+    "ResourceType": "RoleAssignment",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:05.387616+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DirectoryScopeId": "/",
+      "Id": "lAPpYvVpN0KRkAEhdxReEFdz-9K2qnBLg00XhvAME54-1",
+      "PrincipalId": "d2fb7357-aab6-4b70-834d-1786f00c139e",
+      "RoleDefinitionId": "62e90394-69f5-4237-9190-012177145e10"
+    },
+    "Description": "Role assignment: d2fb7357-aab6-4b70-834d-1786f00c139e",
+    "EvidenceId": "8669de1b-4116-5ae4-a735-95b92b50eebf",
+    "EvidenceType": "entra-role-assignment",
+    "RawReference": null,
+    "ResourceId": "lAPpYvVpN0KRkAEhdxReEFdz-9K2qnBLg00XhvAME54-1",
+    "ResourceType": "RoleAssignment",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:05.387544+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DirectoryScopeId": "/",
+      "Id": "lAPpYvVpN0KRkAEhdxReEIvKmHyV-edEspkWP0wxons-1",
+      "PrincipalId": "7c98ca8b-f995-44e7-b299-163f4c31a27b",
+      "RoleDefinitionId": "62e90394-69f5-4237-9190-012177145e10"
+    },
+    "Description": "Role assignment: 7c98ca8b-f995-44e7-b299-163f4c31a27b",
+    "EvidenceId": "dea96f62-909e-54ce-afd6-8ec3d5e333ff",
+    "EvidenceType": "entra-role-assignment",
+    "RawReference": null,
+    "ResourceId": "lAPpYvVpN0KRkAEhdxReEIvKmHyV-edEspkWP0wxons-1",
+    "ResourceType": "RoleAssignment",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:05.387563+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DirectoryScopeId": "/",
+      "Id": "lAPpYvVpN0KRkAEhdxReEKPp2rt9dcREgN_Qzu6DoiQ-1",
+      "PrincipalId": "bbdae9a3-757d-44c4-80df-d0ceee83a224",
+      "RoleDefinitionId": "62e90394-69f5-4237-9190-012177145e10"
+    },
+    "Description": "Role assignment: bbdae9a3-757d-44c4-80df-d0ceee83a224",
+    "EvidenceId": "528dd3d7-2c24-52a6-9372-1c17483fe4b1",
+    "EvidenceType": "entra-role-assignment",
+    "RawReference": null,
+    "ResourceId": "lAPpYvVpN0KRkAEhdxReEKPp2rt9dcREgN_Qzu6DoiQ-1",
+    "ResourceType": "RoleAssignment",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:05.387495+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DirectoryScopeId": "/",
+      "Id": "lAPpYvVpN0KRkAEhdxReELuqqifVg9NEm57u6bZH6yY-1",
+      "PrincipalId": "27aaaabb-83d5-44d3-9b9e-eee9b647eb26",
+      "RoleDefinitionId": "62e90394-69f5-4237-9190-012177145e10"
+    },
+    "Description": "Role assignment: 27aaaabb-83d5-44d3-9b9e-eee9b647eb26",
+    "EvidenceId": "8c74e32e-d9ea-5eb4-9787-08ffb12a043e",
+    "EvidenceType": "entra-role-assignment",
+    "RawReference": null,
+    "ResourceId": "lAPpYvVpN0KRkAEhdxReELuqqifVg9NEm57u6bZH6yY-1",
+    "ResourceType": "RoleAssignment",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:05.387404+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DirectoryScopeId": "/",
+      "Id": "lAPpYvVpN0KRkAEhdxReEMU9WCf-SvZDhU-lVkwRUAM-1",
+      "PrincipalId": "27583dc5-4afe-43f6-854f-a5564c115003",
+      "RoleDefinitionId": "62e90394-69f5-4237-9190-012177145e10"
+    },
+    "Description": "Role assignment: 27583dc5-4afe-43f6-854f-a5564c115003",
+    "EvidenceId": "c57b0004-433d-5827-8318-93c88ef536ef",
+    "EvidenceType": "entra-role-assignment",
+    "RawReference": null,
+    "ResourceId": "lAPpYvVpN0KRkAEhdxReEMU9WCf-SvZDhU-lVkwRUAM-1",
+    "ResourceType": "RoleAssignment",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:05.387523+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DirectoryScopeId": "/",
+      "Id": "lAPpYvVpN0KRkAEhdxReEPKuoCpT6HtBtsJa9aEhC3U-1",
+      "PrincipalId": "2aa0aef2-e853-417b-b6c2-5af5a1210b75",
+      "RoleDefinitionId": "62e90394-69f5-4237-9190-012177145e10"
+    },
+    "Description": "Role assignment: 2aa0aef2-e853-417b-b6c2-5af5a1210b75",
+    "EvidenceId": "e2202001-6114-5790-95b6-6ebcc851cfeb",
+    "EvidenceType": "entra-role-assignment",
+    "RawReference": null,
+    "ResourceId": "lAPpYvVpN0KRkAEhdxReEPKuoCpT6HtBtsJa9aEhC3U-1",
+    "ResourceType": "RoleAssignment",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:05.388409+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DirectoryScopeId": "/",
+      "Id": "oUUvvn1Fr0KgZ27B-mO8RcU9WCf-SvZDhU-lVkwRUAM-1",
+      "PrincipalId": "27583dc5-4afe-43f6-854f-a5564c115003",
+      "RoleDefinitionId": "be2f45a1-457d-42af-a067-6ec1fa63bc45"
+    },
+    "Description": "Role assignment: 27583dc5-4afe-43f6-854f-a5564c115003",
+    "EvidenceId": "e57b86a2-efc8-54eb-80ec-10ccce56cc57",
+    "EvidenceType": "entra-role-assignment",
+    "RawReference": null,
+    "ResourceId": "oUUvvn1Fr0KgZ27B-mO8RcU9WCf-SvZDhU-lVkwRUAM-1",
+    "ResourceType": "RoleAssignment",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:05.388232+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DirectoryScopeId": "/",
+      "Id": "rZR04FQW0k2SLm-BpxvwD3VBocXTHBVCoVDK9zLq0zY-1",
+      "PrincipalId": "c5a14175-1cd3-4215-a150-caf732ead336",
+      "RoleDefinitionId": "e07494ad-1654-4dd2-922e-6f81a71bf00f"
+    },
+    "Description": "Role assignment: c5a14175-1cd3-4215-a150-caf732ead336",
+    "EvidenceId": "96b50cf8-a178-5723-ad13-9c2ab1b12831",
+    "EvidenceType": "entra-role-assignment",
+    "RawReference": null,
+    "ResourceId": "rZR04FQW0k2SLm-BpxvwD3VBocXTHBVCoVDK9zLq0zY-1",
+    "ResourceType": "RoleAssignment",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:05.388215+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DirectoryScopeId": "/",
+      "Id": "rZR04FQW0k2SLm-BpxvwD86IwkPXyOhIlS9PmNJtebY-1",
+      "PrincipalId": "43c288ce-c8d7-48e8-952f-4f98d26d79b6",
+      "RoleDefinitionId": "e07494ad-1654-4dd2-922e-6f81a71bf00f"
+    },
+    "Description": "Role assignment: 43c288ce-c8d7-48e8-952f-4f98d26d79b6",
+    "EvidenceId": "3d878147-f0fa-59fb-a22a-207c81734fd6",
+    "EvidenceType": "entra-role-assignment",
+    "RawReference": null,
+    "ResourceId": "rZR04FQW0k2SLm-BpxvwD86IwkPXyOhIlS9PmNJtebY-1",
+    "ResourceType": "RoleAssignment",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:05.388198+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DirectoryScopeId": "/",
+      "Id": "rZR04FQW0k2SLm-BpxvwD8U9WCf-SvZDhU-lVkwRUAM-1",
+      "PrincipalId": "27583dc5-4afe-43f6-854f-a5564c115003",
+      "RoleDefinitionId": "e07494ad-1654-4dd2-922e-6f81a71bf00f"
+    },
+    "Description": "Role assignment: 27583dc5-4afe-43f6-854f-a5564c115003",
+    "EvidenceId": "7c5f3138-a468-57e4-ae72-f50ed43be02a",
+    "EvidenceType": "entra-role-assignment",
+    "RawReference": null,
+    "ResourceId": "rZR04FQW0k2SLm-BpxvwD8U9WCf-SvZDhU-lVkwRUAM-1",
+    "ResourceType": "RoleAssignment",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:05.387907+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DirectoryScopeId": "/",
+      "Id": "t2trXXHeI0a0r5Y4CjUlCRAQV8r5u8hAhhYMHJRVsG8-1",
+      "PrincipalId": "ca571010-bbf9-40c8-8616-0c1c9455b06f",
+      "RoleDefinitionId": "5d6b6bb7-de71-4623-b4af-96380a352509"
+    },
+    "Description": "Role assignment: ca571010-bbf9-40c8-8616-0c1c9455b06f",
+    "EvidenceId": "dc14bdc8-f030-5355-a3c4-de63e3c306f0",
+    "EvidenceType": "entra-role-assignment",
+    "RawReference": null,
+    "ResourceId": "t2trXXHeI0a0r5Y4CjUlCRAQV8r5u8hAhhYMHJRVsG8-1",
+    "ResourceType": "RoleAssignment",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:05.387891+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DirectoryScopeId": "/",
+      "Id": "t2trXXHeI0a0r5Y4CjUlCSDIX4yJQaVAkj7Vm9Audfk-1",
+      "PrincipalId": "8c5fc820-4189-40a5-923e-d59bd02e75f9",
+      "RoleDefinitionId": "5d6b6bb7-de71-4623-b4af-96380a352509"
+    },
+    "Description": "Role assignment: 8c5fc820-4189-40a5-923e-d59bd02e75f9",
+    "EvidenceId": "f04fc82c-9774-5e6b-9527-c38913ede10f",
+    "EvidenceType": "entra-role-assignment",
+    "RawReference": null,
+    "ResourceId": "t2trXXHeI0a0r5Y4CjUlCSDIX4yJQaVAkj7Vm9Audfk-1",
+    "ResourceType": "RoleAssignment",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:05.387840+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DirectoryScopeId": "/",
+      "Id": "t2trXXHeI0a0r5Y4CjUlCURLjBt7OOhDsT5h_9JrfzM-1",
+      "PrincipalId": "1b8c4b44-387b-43e8-b13e-61ffd26b7f33",
+      "RoleDefinitionId": "5d6b6bb7-de71-4623-b4af-96380a352509"
+    },
+    "Description": "Role assignment: 1b8c4b44-387b-43e8-b13e-61ffd26b7f33",
+    "EvidenceId": "7c05cac8-39d9-5f0e-8d0b-80e32007a425",
+    "EvidenceType": "entra-role-assignment",
+    "RawReference": null,
+    "ResourceId": "t2trXXHeI0a0r5Y4CjUlCURLjBt7OOhDsT5h_9JrfzM-1",
+    "ResourceType": "RoleAssignment",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:05.387858+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DirectoryScopeId": "/",
+      "Id": "t2trXXHeI0a0r5Y4CjUlCcU9WCf-SvZDhU-lVkwRUAM-1",
+      "PrincipalId": "27583dc5-4afe-43f6-854f-a5564c115003",
+      "RoleDefinitionId": "5d6b6bb7-de71-4623-b4af-96380a352509"
+    },
+    "Description": "Role assignment: 27583dc5-4afe-43f6-854f-a5564c115003",
+    "EvidenceId": "5999b77b-7b62-51bd-88c7-266b6db05c97",
+    "EvidenceType": "entra-role-assignment",
+    "RawReference": null,
+    "ResourceId": "t2trXXHeI0a0r5Y4CjUlCcU9WCf-SvZDhU-lVkwRUAM-1",
+    "ResourceType": "RoleAssignment",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:05.387874+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DirectoryScopeId": "/",
+      "Id": "t2trXXHeI0a0r5Y4CjUlCeGBwESUdXdPscPsHCdAhEQ-1",
+      "PrincipalId": "44c081e1-7594-4f77-b1c3-ec1c27408444",
+      "RoleDefinitionId": "5d6b6bb7-de71-4623-b4af-96380a352509"
+    },
+    "Description": "Role assignment: 44c081e1-7594-4f77-b1c3-ec1c27408444",
+    "EvidenceId": "b14861e0-34da-5c9d-9fc5-f5868eba2ddf",
+    "EvidenceType": "entra-role-assignment",
+    "RawReference": null,
+    "ResourceId": "t2trXXHeI0a0r5Y4CjUlCeGBwESUdXdPscPsHCdAhEQ-1",
+    "ResourceType": "RoleAssignment",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:05.388314+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DirectoryScopeId": "/",
+      "Id": "tnh9Gp9Ca0e46zX7cV__1CDIX4yJQaVAkj7Vm9Audfk-1",
+      "PrincipalId": "8c5fc820-4189-40a5-923e-d59bd02e75f9",
+      "RoleDefinitionId": "1a7d78b6-429f-476b-b8eb-35fb715fffd4"
+    },
+    "Description": "Role assignment: 8c5fc820-4189-40a5-923e-d59bd02e75f9",
+    "EvidenceId": "28bd96ca-3df2-5ce1-aeca-8e5f85d37734",
+    "EvidenceType": "entra-role-assignment",
+    "RawReference": null,
+    "ResourceId": "tnh9Gp9Ca0e46zX7cV__1CDIX4yJQaVAkj7Vm9Audfk-1",
+    "ResourceType": "RoleAssignment",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:05.388298+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DirectoryScopeId": "/",
+      "Id": "tnh9Gp9Ca0e46zX7cV__1MU9WCf-SvZDhU-lVkwRUAM-1",
+      "PrincipalId": "27583dc5-4afe-43f6-854f-a5564c115003",
+      "RoleDefinitionId": "1a7d78b6-429f-476b-b8eb-35fb715fffd4"
+    },
+    "Description": "Role assignment: 27583dc5-4afe-43f6-854f-a5564c115003",
+    "EvidenceId": "03b5b533-a4fe-51ae-9781-d813110c9e32",
+    "EvidenceType": "entra-role-assignment",
+    "RawReference": null,
+    "ResourceId": "tnh9Gp9Ca0e46zX7cV__1MU9WCf-SvZDhU-lVkwRUAM-1",
+    "ResourceType": "RoleAssignment",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:05.388382+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DirectoryScopeId": "/",
+      "Id": "xdPYRQLIxkWzKh1wteHobsU9WCf-SvZDhU-lVkwRUAM-1",
+      "PrincipalId": "27583dc5-4afe-43f6-854f-a5564c115003",
+      "RoleDefinitionId": "45d8d3c5-c802-45c6-b32a-1d70b5e1e86e"
+    },
+    "Description": "Role assignment: 27583dc5-4afe-43f6-854f-a5564c115003",
+    "EvidenceId": "4af30a51-d51e-545e-8233-8e1e7473de7f",
+    "EvidenceType": "entra-role-assignment",
+    "RawReference": null,
+    "ResourceId": "xdPYRQLIxkWzKh1wteHobsU9WCf-SvZDhU-lVkwRUAM-1",
+    "ResourceType": "RoleAssignment",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:05.387824+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DirectoryScopeId": "/",
+      "Id": "y-RKGSaxskC9W2CRs4CXfSDIX4yJQaVAkj7Vm9Audfk-1",
+      "PrincipalId": "8c5fc820-4189-40a5-923e-d59bd02e75f9",
+      "RoleDefinitionId": "194ae4cb-b126-40b2-bd5b-6091b380977d"
+    },
+    "Description": "Role assignment: 8c5fc820-4189-40a5-923e-d59bd02e75f9",
+    "EvidenceId": "77902b88-bcfc-5d96-a32e-83926d5ee7e6",
+    "EvidenceType": "entra-role-assignment",
+    "RawReference": null,
+    "ResourceId": "y-RKGSaxskC9W2CRs4CXfSDIX4yJQaVAkj7Vm9Audfk-1",
+    "ResourceType": "RoleAssignment",
+    "Source": "Entra"
+  }
+]

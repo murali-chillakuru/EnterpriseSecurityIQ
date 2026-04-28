@@ -1,0 +1,19 @@
+[
+  {
+    "CollectedAt": "2026-04-26T23:41:30.138263+00:00",
+    "Collector": "SharePointOneDrive",
+    "Data": {
+      "Error": "\n        APIError\n        Code: 403\n        message: None\n        error: MainError(additional_data={}, code='accessDenied', details=None, inner_error=InnerError(additional_data={}, client_request_id='65f6e0b5-cfc9-4960-b028-4038c43d924f', date=datetime.datetime(2026, 4, 26, 23, 41, 31), odata_type=None, request_id='65f6e0b5-cfc9-4960-b028-4038c43d924f'), message='Caller does not have required permissions for this API', target=None)\n        ",
+      "Impact": "External sharing posture could not be evaluated.",
+      "Recommendation": "Ensure the service principal has SharePointTenantSettings.Read.All permission.",
+      "Warning": "TenantSharingSettingsFailed"
+    },
+    "Description": "Tenant sharing settings collection failed: \n        APIError\n        Code: 403\n        message: None\n        error: MainError(additional_data={}, code='accessDenied', details=None, inner_error=InnerError(additional_data={}, client_request_id='65f6e0b5-cfc9-4960-b028-4038c43d924f', date=datetime.datetime(2026, 4, 26, 23, 41, 31), odata_type=None, request_id='65f6e0b5-cfc9-4960-b028-4038c43d924f'), message='Caller does not have required permissions for this API', target=None)\n        ",
+    "EvidenceId": "74ab4004-e8f4-5c95-bcc6-c10a8ea47a70",
+    "EvidenceType": "spo-collection-warning",
+    "RawReference": null,
+    "ResourceId": "spo-tenant-config-failure",
+    "ResourceType": "CollectionWarning",
+    "Source": "Entra"
+  }
+]

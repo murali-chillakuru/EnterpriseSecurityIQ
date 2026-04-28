@@ -1,0 +1,2576 @@
+[
+  {
+    "CollectedAt": "2026-04-26T23:33:01.511072+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DisplayName": "People Administrator",
+      "IsBuiltIn": true,
+      "IsEnabled": true,
+      "IsPrivileged": false,
+      "RoleId": "024906de-61e5-49c8-8572-40335f1e0e10"
+    },
+    "Description": "Role: People Administrator",
+    "EvidenceId": "15f830b1-f522-5b51-980e-96fb20b5b472",
+    "EvidenceType": "entra-role-definition",
+    "RawReference": null,
+    "ResourceId": "024906de-61e5-49c8-8572-40335f1e0e10",
+    "ResourceType": "RoleDefinition",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:01.511398+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DisplayName": "Purview Workload Content Writer",
+      "IsBuiltIn": true,
+      "IsEnabled": true,
+      "IsPrivileged": false,
+      "RoleId": "02d5655b-c1cf-4e5f-98da-5fb919085bf6"
+    },
+    "Description": "Role: Purview Workload Content Writer",
+    "EvidenceId": "25ab305a-2826-597c-b6d6-0bf932ab99de",
+    "EvidenceType": "entra-role-definition",
+    "RawReference": null,
+    "ResourceId": "02d5655b-c1cf-4e5f-98da-5fb919085bf6",
+    "ResourceType": "RoleDefinition",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:01.509809+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DisplayName": "Authentication Policy Administrator",
+      "IsBuiltIn": true,
+      "IsEnabled": true,
+      "IsPrivileged": false,
+      "RoleId": "0526716b-113d-4c15-b2c8-68e3c22b9f80"
+    },
+    "Description": "Role: Authentication Policy Administrator",
+    "EvidenceId": "7b30e59f-583f-58c2-b337-fbab737c0b45",
+    "EvidenceType": "entra-role-definition",
+    "RawReference": null,
+    "ResourceId": "0526716b-113d-4c15-b2c8-68e3c22b9f80",
+    "ResourceType": "RoleDefinition",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:01.509738+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DisplayName": "Search Administrator",
+      "IsBuiltIn": true,
+      "IsEnabled": true,
+      "IsPrivileged": false,
+      "RoleId": "0964bb5e-9bdb-4d7b-ac29-58e794862a40"
+    },
+    "Description": "Role: Search Administrator",
+    "EvidenceId": "e7875342-1ff5-51ba-ad00-eddbeac46787",
+    "EvidenceType": "entra-role-definition",
+    "RawReference": null,
+    "ResourceId": "0964bb5e-9bdb-4d7b-ac29-58e794862a40",
+    "ResourceType": "RoleDefinition",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:01.511305+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DisplayName": "Authentication Extensibility Password Administrator",
+      "IsBuiltIn": true,
+      "IsEnabled": true,
+      "IsPrivileged": false,
+      "RoleId": "0b00bede-4072-4d22-b441-e7df02a1ef63"
+    },
+    "Description": "Role: Authentication Extensibility Password Administrator",
+    "EvidenceId": "258057f6-bd32-5f83-85f5-c85f2ea1109c",
+    "EvidenceType": "entra-role-definition",
+    "RawReference": null,
+    "ResourceId": "0b00bede-4072-4d22-b441-e7df02a1ef63",
+    "ResourceType": "RoleDefinition",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:01.511117+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DisplayName": "Viva Glint Tenant Administrator",
+      "IsBuiltIn": true,
+      "IsEnabled": true,
+      "IsPrivileged": false,
+      "RoleId": "0ec3f692-38d6-4d14-9e69-0377ca7797ad"
+    },
+    "Description": "Role: Viva Glint Tenant Administrator",
+    "EvidenceId": "00bf88db-8ae8-52a7-8756-40372e2bf774",
+    "EvidenceType": "entra-role-definition",
+    "RawReference": null,
+    "ResourceId": "0ec3f692-38d6-4d14-9e69-0377ca7797ad",
+    "ResourceType": "RoleDefinition",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:01.509615+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DisplayName": "External ID User Flow Attribute Administrator",
+      "IsBuiltIn": true,
+      "IsEnabled": true,
+      "IsPrivileged": false,
+      "RoleId": "0f971eea-41eb-4569-a71e-57bb8a3eff1e"
+    },
+    "Description": "Role: External ID User Flow Attribute Administrator",
+    "EvidenceId": "7d04acd0-a764-534a-9459-06f4a0741764",
+    "EvidenceType": "entra-role-definition",
+    "RawReference": null,
+    "ResourceId": "0f971eea-41eb-4569-a71e-57bb8a3eff1e",
+    "ResourceType": "RoleDefinition",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:01.510754+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DisplayName": "Teams Reader",
+      "IsBuiltIn": true,
+      "IsEnabled": true,
+      "IsPrivileged": false,
+      "RoleId": "1076ac91-f3d9-41a7-a339-dcdf5f480acc"
+    },
+    "Description": "Role: Teams Reader",
+    "EvidenceId": "be36d4c8-39e8-59ae-aa09-3257240a5e55",
+    "EvidenceType": "entra-role-definition",
+    "RawReference": null,
+    "ResourceId": "1076ac91-f3d9-41a7-a339-dcdf5f480acc",
+    "ResourceType": "RoleDefinition",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:01.508849+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DisplayName": "Guest User",
+      "IsBuiltIn": true,
+      "IsEnabled": true,
+      "IsPrivileged": false,
+      "RoleId": "10dae51f-b6af-4016-8d66-8c2a99b929b3"
+    },
+    "Description": "Role: Guest User",
+    "EvidenceId": "ede027a4-50bc-5f4d-8812-24e13beb11a5",
+    "EvidenceType": "entra-role-definition",
+    "RawReference": null,
+    "ResourceId": "10dae51f-b6af-4016-8d66-8c2a99b929b3",
+    "ResourceType": "RoleDefinition",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:01.510479+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DisplayName": "Tenant Creator",
+      "IsBuiltIn": true,
+      "IsEnabled": true,
+      "IsPrivileged": false,
+      "RoleId": "112ca1a2-15ad-4102-995e-45b0bc479a6a"
+    },
+    "Description": "Role: Tenant Creator",
+    "EvidenceId": "d11df122-7b95-585f-85af-15eab8b6cf0a",
+    "EvidenceType": "entra-role-definition",
+    "RawReference": null,
+    "ResourceId": "112ca1a2-15ad-4102-995e-45b0bc479a6a",
+    "ResourceType": "RoleDefinition",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:01.510184+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DisplayName": "Windows 365 Administrator",
+      "IsBuiltIn": true,
+      "IsEnabled": true,
+      "IsPrivileged": false,
+      "RoleId": "11451d60-acb2-45eb-a7d6-43d0f0125c13"
+    },
+    "Description": "Role: Windows 365 Administrator",
+    "EvidenceId": "6e18f6b7-1513-54a0-8f7d-c7af1601e19c",
+    "EvidenceType": "entra-role-definition",
+    "RawReference": null,
+    "ResourceId": "11451d60-acb2-45eb-a7d6-43d0f0125c13",
+    "ResourceType": "RoleDefinition",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:01.509838+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DisplayName": "Power Platform Administrator",
+      "IsBuiltIn": true,
+      "IsEnabled": true,
+      "IsPrivileged": false,
+      "RoleId": "11648597-926c-4cf3-9c36-bcebb0ba8dcc"
+    },
+    "Description": "Role: Power Platform Administrator",
+    "EvidenceId": "44f66a54-edfd-54f0-bf61-7cd3e8f3ff62",
+    "EvidenceType": "entra-role-definition",
+    "RawReference": null,
+    "ResourceId": "11648597-926c-4cf3-9c36-bcebb0ba8dcc",
+    "ResourceType": "RoleDefinition",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:01.511574+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DisplayName": "Tenant Governance Relationship Reader",
+      "IsBuiltIn": true,
+      "IsEnabled": true,
+      "IsPrivileged": false,
+      "RoleId": "124577f8-48ed-456a-839f-13b419002e33"
+    },
+    "Description": "Role: Tenant Governance Relationship Reader",
+    "EvidenceId": "5aa599ac-9088-5426-98ea-5e08bcf74e61",
+    "EvidenceType": "entra-role-definition",
+    "RawReference": null,
+    "ResourceId": "124577f8-48ed-456a-839f-13b419002e33",
+    "ResourceType": "RoleDefinition",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:01.510424+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DisplayName": "Microsoft Hardware Warranty Administrator",
+      "IsBuiltIn": true,
+      "IsEnabled": true,
+      "IsPrivileged": false,
+      "RoleId": "1501b917-7653-4ff9-a4b5-203eaf33784f"
+    },
+    "Description": "Role: Microsoft Hardware Warranty Administrator",
+    "EvidenceId": "8cb65892-8a2d-551f-96f3-88eb11ef5ad6",
+    "EvidenceType": "entra-role-definition",
+    "RawReference": null,
+    "ResourceId": "1501b917-7653-4ff9-a4b5-203eaf33784f",
+    "ResourceType": "RoleDefinition",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:01.509321+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DisplayName": "Cloud Application Administrator",
+      "IsBuiltIn": true,
+      "IsEnabled": true,
+      "IsPrivileged": true,
+      "RoleId": "158c047a-c907-4556-b7ef-446551a6b5f7"
+    },
+    "Description": "Role: Cloud Application Administrator",
+    "EvidenceId": "df0874b7-b5df-50e1-a45b-d8799f17c4a0",
+    "EvidenceType": "entra-role-definition",
+    "RawReference": null,
+    "ResourceId": "158c047a-c907-4556-b7ef-446551a6b5f7",
+    "ResourceType": "RoleDefinition",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:01.510936+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DisplayName": "Microsoft 365 Backup Administrator",
+      "IsBuiltIn": true,
+      "IsEnabled": true,
+      "IsPrivileged": false,
+      "RoleId": "1707125e-0aa2-4d4d-8655-a7c786c76a25"
+    },
+    "Description": "Role: Microsoft 365 Backup Administrator",
+    "EvidenceId": "b87efdc3-80cb-597e-a30a-608045cc2d93",
+    "EvidenceType": "entra-role-definition",
+    "RawReference": null,
+    "ResourceId": "1707125e-0aa2-4d4d-8655-a7c786c76a25",
+    "ResourceType": "RoleDefinition",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:01.509183+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DisplayName": "Compliance Administrator",
+      "IsBuiltIn": true,
+      "IsEnabled": true,
+      "IsPrivileged": false,
+      "RoleId": "17315797-102d-40b4-93e0-432062caca18"
+    },
+    "Description": "Role: Compliance Administrator",
+    "EvidenceId": "8463eb89-a6ce-5f7b-badc-368e2f8ff58f",
+    "EvidenceType": "entra-role-definition",
+    "RawReference": null,
+    "ResourceId": "17315797-102d-40b4-93e0-432062caca18",
+    "ResourceType": "RoleDefinition",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:01.509276+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DisplayName": "Security Administrator",
+      "IsBuiltIn": true,
+      "IsEnabled": true,
+      "IsPrivileged": true,
+      "RoleId": "194ae4cb-b126-40b2-bd5b-6091b380977d"
+    },
+    "Description": "Role: Security Administrator",
+    "EvidenceId": "2d2305b5-4ae3-53d9-bb24-55f38e6230a3",
+    "EvidenceType": "entra-role-definition",
+    "RawReference": null,
+    "ResourceId": "194ae4cb-b126-40b2-bd5b-6091b380977d",
+    "ResourceType": "RoleDefinition",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:01.511508+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DisplayName": "Tenant Governance Administrator",
+      "IsBuiltIn": true,
+      "IsEnabled": true,
+      "IsPrivileged": false,
+      "RoleId": "1981f584-96e9-4a6f-95b0-f522373f8fae"
+    },
+    "Description": "Role: Tenant Governance Administrator",
+    "EvidenceId": "5fa42ff1-1a8d-52ba-9a2b-7ce16ee8cc13",
+    "EvidenceType": "entra-role-definition",
+    "RawReference": null,
+    "ResourceId": "1981f584-96e9-4a6f-95b0-f522373f8fae",
+    "ResourceType": "RoleDefinition",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:01.510845+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DisplayName": "SharePoint Embedded Administrator",
+      "IsBuiltIn": true,
+      "IsEnabled": true,
+      "IsPrivileged": false,
+      "RoleId": "1a7d78b6-429f-476b-b8eb-35fb715fffd4"
+    },
+    "Description": "Role: SharePoint Embedded Administrator",
+    "EvidenceId": "45c84c08-000b-51dc-aa03-8562b3cb89af",
+    "EvidenceType": "entra-role-definition",
+    "RawReference": null,
+    "ResourceId": "1a7d78b6-429f-476b-b8eb-35fb715fffd4",
+    "ResourceType": "RoleDefinition",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:01.510091+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DisplayName": "Attribute Definition Reader",
+      "IsBuiltIn": true,
+      "IsEnabled": true,
+      "IsPrivileged": false,
+      "RoleId": "1d336d2c-4ae8-42ef-9711-b3604ce3fc2c"
+    },
+    "Description": "Role: Attribute Definition Reader",
+    "EvidenceId": "171f634c-1d9e-50a0-979f-1def00a005f2",
+    "EvidenceType": "entra-role-definition",
+    "RawReference": null,
+    "ResourceId": "1d336d2c-4ae8-42ef-9711-b3604ce3fc2c",
+    "ResourceType": "RoleDefinition",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:01.510044+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DisplayName": "AI Reader",
+      "IsBuiltIn": true,
+      "IsEnabled": true,
+      "IsPrivileged": false,
+      "RoleId": "1fe13547-53f6-408d-ac04-7f8eed167b38"
+    },
+    "Description": "Role: AI Reader",
+    "EvidenceId": "71903257-8239-53d0-b6cc-81b850b19652",
+    "EvidenceType": "entra-role-definition",
+    "RawReference": null,
+    "ResourceId": "1fe13547-53f6-408d-ac04-7f8eed167b38",
+    "ResourceType": "RoleDefinition",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:01.510232+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DisplayName": "Authentication Extensibility Administrator",
+      "IsBuiltIn": true,
+      "IsEnabled": true,
+      "IsPrivileged": false,
+      "RoleId": "25a516ed-2fa0-40ea-a2d0-12923a21473a"
+    },
+    "Description": "Role: Authentication Extensibility Administrator",
+    "EvidenceId": "5ff18003-02c6-5f03-8d2c-7c3aa100782f",
+    "EvidenceType": "entra-role-definition",
+    "RawReference": null,
+    "ResourceId": "25a516ed-2fa0-40ea-a2d0-12923a21473a",
+    "ResourceType": "RoleDefinition",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:01.510388+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DisplayName": "Insights Analyst",
+      "IsBuiltIn": true,
+      "IsEnabled": true,
+      "IsPrivileged": false,
+      "RoleId": "25df335f-86eb-4119-b717-0ff02de207e9"
+    },
+    "Description": "Role: Insights Analyst",
+    "EvidenceId": "c1208993-bd7f-5127-bdcd-0820d44b9be9",
+    "EvidenceType": "entra-role-definition",
+    "RawReference": null,
+    "ResourceId": "25df335f-86eb-4119-b717-0ff02de207e9",
+    "ResourceType": "RoleDefinition",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:01.510550+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DisplayName": "User Experience Success Manager",
+      "IsBuiltIn": true,
+      "IsEnabled": true,
+      "IsPrivileged": false,
+      "RoleId": "27460883-1df1-4691-b032-3b79643e5e63"
+    },
+    "Description": "Role: User Experience Success Manager",
+    "EvidenceId": "722dc499-85cd-502d-9815-71af1eff14e2",
+    "EvidenceType": "entra-role-definition",
+    "RawReference": null,
+    "ResourceId": "27460883-1df1-4691-b032-3b79643e5e63",
+    "ResourceType": "RoleDefinition",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:01.510453+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DisplayName": "Microsoft Hardware Warranty Specialist",
+      "IsBuiltIn": true,
+      "IsEnabled": true,
+      "IsPrivileged": false,
+      "RoleId": "281fe777-fb20-4fbb-b7a3-ccebce5b0d96"
+    },
+    "Description": "Role: Microsoft Hardware Warranty Specialist",
+    "EvidenceId": "efc8393a-9ddd-5bca-932f-6275a92f5f93",
+    "EvidenceType": "entra-role-definition",
+    "RawReference": null,
+    "ResourceId": "281fe777-fb20-4fbb-b7a3-ccebce5b0d96",
+    "ResourceType": "RoleDefinition",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:01.509074+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DisplayName": "Exchange Administrator",
+      "IsBuiltIn": true,
+      "IsEnabled": true,
+      "IsPrivileged": true,
+      "RoleId": "29232cdf-9323-42fd-ade2-1d097af3e4de"
+    },
+    "Description": "Role: Exchange Administrator",
+    "EvidenceId": "6130afa7-e995-5970-892e-143630d3de38",
+    "EvidenceType": "entra-role-definition",
+    "RawReference": null,
+    "ResourceId": "29232cdf-9323-42fd-ade2-1d097af3e4de",
+    "ResourceType": "RoleDefinition",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:01.508877+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DisplayName": "Restricted Guest User",
+      "IsBuiltIn": true,
+      "IsEnabled": true,
+      "IsPrivileged": false,
+      "RoleId": "2af84b1e-32c8-42b7-82bc-daa82404023b"
+    },
+    "Description": "Role: Restricted Guest User",
+    "EvidenceId": "04855135-9061-52e4-9145-ff2fa81e9d81",
+    "EvidenceType": "entra-role-definition",
+    "RawReference": null,
+    "ResourceId": "2af84b1e-32c8-42b7-82bc-daa82404023b",
+    "ResourceType": "RoleDefinition",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:01.509213+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DisplayName": "Device Managers",
+      "IsBuiltIn": true,
+      "IsEnabled": true,
+      "IsPrivileged": false,
+      "RoleId": "2b499bcd-da44-4968-8aec-78e1674fa64d"
+    },
+    "Description": "Role: Device Managers",
+    "EvidenceId": "461c4b9f-7492-5467-a199-ecf55e18f3f2",
+    "EvidenceType": "entra-role-definition",
+    "RawReference": null,
+    "ResourceId": "2b499bcd-da44-4968-8aec-78e1674fa64d",
+    "ResourceType": "RoleDefinition",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:01.509884+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DisplayName": "Office Apps Administrator",
+      "IsBuiltIn": true,
+      "IsEnabled": true,
+      "IsPrivileged": false,
+      "RoleId": "2b745bdf-0803-4d80-aa65-822c4493daac"
+    },
+    "Description": "Role: Office Apps Administrator",
+    "EvidenceId": "ae75f458-8e9c-5d3a-baf0-df3fcc8f2aed",
+    "EvidenceType": "entra-role-definition",
+    "RawReference": null,
+    "ResourceId": "2b745bdf-0803-4d80-aa65-822c4493daac",
+    "ResourceType": "RoleDefinition",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:01.511095+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DisplayName": "IoT Device Administrator",
+      "IsBuiltIn": true,
+      "IsEnabled": true,
+      "IsPrivileged": false,
+      "RoleId": "2ea5ce4c-b2d8-4668-bd81-3680bd2d227a"
+    },
+    "Description": "Role: IoT Device Administrator",
+    "EvidenceId": "14257b1c-d19c-591f-85f3-550384a4eda8",
+    "EvidenceType": "entra-role-definition",
+    "RawReference": null,
+    "ResourceId": "2ea5ce4c-b2d8-4668-bd81-3680bd2d227a",
+    "ResourceType": "RoleDefinition",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:01.511255+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DisplayName": "Teams External Collaboration Administrator",
+      "IsBuiltIn": true,
+      "IsEnabled": true,
+      "IsPrivileged": false,
+      "RoleId": "2fe872fb-daa8-4afc-8f6c-53c4565cfef4"
+    },
+    "Description": "Role: Teams External Collaboration Administrator",
+    "EvidenceId": "e0939a2d-2f17-5220-b5df-c0865d203ad8",
+    "EvidenceType": "entra-role-definition",
+    "RawReference": null,
+    "ResourceId": "2fe872fb-daa8-4afc-8f6c-53c4565cfef4",
+    "ResourceType": "RoleDefinition",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:01.510121+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DisplayName": "Exchange Recipient Administrator",
+      "IsBuiltIn": true,
+      "IsEnabled": true,
+      "IsPrivileged": false,
+      "RoleId": "31392ffb-586c-42d1-9346-e59415a2cc4e"
+    },
+    "Description": "Role: Exchange Recipient Administrator",
+    "EvidenceId": "baeaf417-ef38-567f-ba93-0a5d8ee814e1",
+    "EvidenceType": "entra-role-definition",
+    "RawReference": null,
+    "ResourceId": "31392ffb-586c-42d1-9346-e59415a2cc4e",
+    "ResourceType": "RoleDefinition",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:01.509912+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DisplayName": "Insights Business Leader",
+      "IsBuiltIn": true,
+      "IsEnabled": true,
+      "IsPrivileged": false,
+      "RoleId": "31e939ad-9672-4796-9c2e-873181342d2d"
+    },
+    "Description": "Role: Insights Business Leader",
+    "EvidenceId": "fafef272-d535-5f1a-9bdb-138aae77329b",
+    "EvidenceType": "entra-role-definition",
+    "RawReference": null,
+    "ResourceId": "31e939ad-9672-4796-9c2e-873181342d2d",
+    "ResourceType": "RoleDefinition",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:01.510168+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DisplayName": "Windows Update Deployment Administrator",
+      "IsBuiltIn": true,
+      "IsEnabled": true,
+      "IsPrivileged": false,
+      "RoleId": "32696413-001a-46ae-978c-ce0f6b3620d2"
+    },
+    "Description": "Role: Windows Update Deployment Administrator",
+    "EvidenceId": "725f3aa4-c4bb-5f4b-b5bc-a58f27bbc647",
+    "EvidenceType": "entra-role-definition",
+    "RawReference": null,
+    "ResourceId": "32696413-001a-46ae-978c-ce0f6b3620d2",
+    "ResourceType": "RoleDefinition",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:01.509438+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DisplayName": "Desktop Analytics Administrator",
+      "IsBuiltIn": true,
+      "IsEnabled": true,
+      "IsPrivileged": false,
+      "RoleId": "38a96431-2bdf-4b4c-8b6e-5d3d8abac1a4"
+    },
+    "Description": "Role: Desktop Analytics Administrator",
+    "EvidenceId": "dec99a51-fb8f-5c2b-b30a-ec04ae875577",
+    "EvidenceType": "entra-role-definition",
+    "RawReference": null,
+    "ResourceId": "38a96431-2bdf-4b4c-8b6e-5d3d8abac1a4",
+    "ResourceType": "RoleDefinition",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:01.509307+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DisplayName": "Intune Administrator",
+      "IsBuiltIn": true,
+      "IsEnabled": true,
+      "IsPrivileged": false,
+      "RoleId": "3a2c62db-5318-420d-8d74-23affee5d9d5"
+    },
+    "Description": "Role: Intune Administrator",
+    "EvidenceId": "32463e82-a37f-542c-bbd8-98c6a79a1ce2",
+    "EvidenceType": "entra-role-definition",
+    "RawReference": null,
+    "ResourceId": "3a2c62db-5318-420d-8d74-23affee5d9d5",
+    "ResourceType": "RoleDefinition",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:01.509926+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DisplayName": "Teams Devices Administrator",
+      "IsBuiltIn": true,
+      "IsEnabled": true,
+      "IsPrivileged": false,
+      "RoleId": "3d762c5a-1b6c-493f-843e-55a3b42923d4"
+    },
+    "Description": "Role: Teams Devices Administrator",
+    "EvidenceId": "82b0265f-9903-54b0-b886-469c900d2822",
+    "EvidenceType": "entra-role-definition",
+    "RawReference": null,
+    "ResourceId": "3d762c5a-1b6c-493f-843e-55a3b42923d4",
+    "ResourceType": "RoleDefinition",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:01.509645+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DisplayName": "B2C IEF Policy Administrator",
+      "IsBuiltIn": true,
+      "IsEnabled": true,
+      "IsPrivileged": false,
+      "RoleId": "3edaf663-341e-4475-9f94-5c398ef6c070"
+    },
+    "Description": "Role: B2C IEF Policy Administrator",
+    "EvidenceId": "29b4e2fb-68d4-50d5-a2fc-0d6158261992",
+    "EvidenceType": "entra-role-definition",
+    "RawReference": null,
+    "ResourceId": "3edaf663-341e-4475-9f94-5c398ef6c070",
+    "ResourceType": "RoleDefinition",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:01.511419+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DisplayName": "Purview Workload Content Administrator",
+      "IsBuiltIn": true,
+      "IsEnabled": true,
+      "IsPrivileged": false,
+      "RoleId": "3f04f91a-4ad7-4bd3-bcfa-49882ea1a88a"
+    },
+    "Description": "Role: Purview Workload Content Administrator",
+    "EvidenceId": "b213f3f8-663a-56fe-9544-b09dd131f672",
+    "EvidenceType": "entra-role-definition",
+    "RawReference": null,
+    "ResourceId": "3f04f91a-4ad7-4bd3-bcfa-49882ea1a88a",
+    "ResourceType": "RoleDefinition",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:01.510203+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DisplayName": "Edge Administrator",
+      "IsBuiltIn": true,
+      "IsEnabled": true,
+      "IsPrivileged": false,
+      "RoleId": "3f1acade-1e04-4fbc-9b69-f0302cd84aef"
+    },
+    "Description": "Role: Edge Administrator",
+    "EvidenceId": "89206316-d0e3-5557-8e92-3fb0bc5a5c27",
+    "EvidenceType": "entra-role-definition",
+    "RawReference": null,
+    "ResourceId": "3f1acade-1e04-4fbc-9b69-f0302cd84aef",
+    "ResourceType": "RoleDefinition",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:01.510979+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DisplayName": "Attribute Provisioning Reader",
+      "IsBuiltIn": true,
+      "IsEnabled": true,
+      "IsPrivileged": false,
+      "RoleId": "422218e4-db15-4ef9-bbe0-8afb41546d79"
+    },
+    "Description": "Role: Attribute Provisioning Reader",
+    "EvidenceId": "23df840e-4177-58a9-8d11-37142557d568",
+    "EvidenceType": "entra-role-definition",
+    "RawReference": null,
+    "ResourceId": "422218e4-db15-4ef9-bbe0-8afb41546d79",
+    "ResourceType": "RoleDefinition",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:01.509351+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DisplayName": "Dynamics 365 Administrator",
+      "IsBuiltIn": true,
+      "IsEnabled": true,
+      "IsPrivileged": false,
+      "RoleId": "44367163-eba1-44c3-98af-f5787879f96a"
+    },
+    "Description": "Role: Dynamics 365 Administrator",
+    "EvidenceId": "c0892d09-d21a-57e4-a2f3-48ad9e4a56d6",
+    "EvidenceType": "entra-role-definition",
+    "RawReference": null,
+    "ResourceId": "44367163-eba1-44c3-98af-f5787879f96a",
+    "ResourceType": "RoleDefinition",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:01.510136+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DisplayName": "Identity Governance Administrator",
+      "IsBuiltIn": true,
+      "IsEnabled": true,
+      "IsPrivileged": false,
+      "RoleId": "45d8d3c5-c802-45c6-b32a-1d70b5e1e86e"
+    },
+    "Description": "Role: Identity Governance Administrator",
+    "EvidenceId": "e67aa7f4-a402-5ced-8ac0-4454e332168a",
+    "EvidenceType": "entra-role-definition",
+    "RawReference": null,
+    "ResourceId": "45d8d3c5-c802-45c6-b32a-1d70b5e1e86e",
+    "ResourceType": "RoleDefinition",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:01.511186+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DisplayName": "Exchange Backup Administrator",
+      "IsBuiltIn": true,
+      "IsEnabled": true,
+      "IsPrivileged": false,
+      "RoleId": "49eb8f75-97e9-4e37-9b2b-6c3ebfcffa31"
+    },
+    "Description": "Role: Exchange Backup Administrator",
+    "EvidenceId": "659e1b4c-3a30-57e3-bb18-4aee270ea5bd",
+    "EvidenceType": "entra-role-definition",
+    "RawReference": null,
+    "ResourceId": "49eb8f75-97e9-4e37-9b2b-6c3ebfcffa31",
+    "ResourceType": "RoleDefinition",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:01.509395+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DisplayName": "Reports Reader",
+      "IsBuiltIn": true,
+      "IsEnabled": true,
+      "IsPrivileged": false,
+      "RoleId": "4a5d8f65-41da-4de4-8968-e035b65339cf"
+    },
+    "Description": "Role: Reports Reader",
+    "EvidenceId": "42cec496-445f-5499-b124-cff9171708e7",
+    "EvidenceType": "entra-role-definition",
+    "RawReference": null,
+    "ResourceId": "4a5d8f65-41da-4de4-8968-e035b65339cf",
+    "ResourceType": "RoleDefinition",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:01.509013+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DisplayName": "Partner Tier1 Support",
+      "IsBuiltIn": true,
+      "IsEnabled": true,
+      "IsPrivileged": false,
+      "RoleId": "4ba39ca4-527c-499a-b93d-d9b492c50246"
+    },
+    "Description": "Role: Partner Tier1 Support",
+    "EvidenceId": "7f590bde-d15e-5345-9f0f-f78091c04798",
+    "EvidenceType": "entra-role-definition",
+    "RawReference": null,
+    "ResourceId": "4ba39ca4-527c-499a-b93d-d9b492c50246",
+    "ResourceType": "RoleDefinition",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:01.509452+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DisplayName": "License Administrator",
+      "IsBuiltIn": true,
+      "IsEnabled": true,
+      "IsPrivileged": false,
+      "RoleId": "4d6ac14f-3453-41d0-bef9-a3e0c569773a"
+    },
+    "Description": "Role: License Administrator",
+    "EvidenceId": "8ec66aac-f8d9-56cf-851c-a4f8bc1288df",
+    "EvidenceType": "entra-role-definition",
+    "RawReference": null,
+    "ResourceId": "4d6ac14f-3453-41d0-bef9-a3e0c569773a",
+    "ResourceType": "RoleDefinition",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:01.510604+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DisplayName": "Organizational Messages Writer",
+      "IsBuiltIn": true,
+      "IsEnabled": true,
+      "IsPrivileged": false,
+      "RoleId": "507f53e4-4e52-4077-abd3-d2e1558b6ea2"
+    },
+    "Description": "Role: Organizational Messages Writer",
+    "EvidenceId": "e2b753b6-470d-5b96-b596-554bfcc15bfa",
+    "EvidenceType": "entra-role-definition",
+    "RawReference": null,
+    "ResourceId": "507f53e4-4e52-4077-abd3-d2e1558b6ea2",
+    "ResourceType": "RoleDefinition",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:01.510077+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DisplayName": "Attribute Assignment Administrator",
+      "IsBuiltIn": true,
+      "IsEnabled": true,
+      "IsPrivileged": false,
+      "RoleId": "58a13ea3-c632-46ae-9ee0-9c0d43cd7f3d"
+    },
+    "Description": "Role: Attribute Assignment Administrator",
+    "EvidenceId": "9c69f0e6-7747-5115-85eb-05a77a1a5337",
+    "EvidenceType": "entra-role-definition",
+    "RawReference": null,
+    "ResourceId": "58a13ea3-c632-46ae-9ee0-9c0d43cd7f3d",
+    "ResourceType": "RoleDefinition",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:01.510504+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DisplayName": "Lifecycle Workflows Administrator",
+      "IsBuiltIn": true,
+      "IsEnabled": true,
+      "IsPrivileged": false,
+      "RoleId": "59d46f88-662b-457b-bceb-5c3809e5908f"
+    },
+    "Description": "Role: Lifecycle Workflows Administrator",
+    "EvidenceId": "90a78b1e-3e90-5f67-932d-08e19cf9363d",
+    "EvidenceType": "entra-role-definition",
+    "RawReference": null,
+    "ResourceId": "59d46f88-662b-457b-bceb-5c3809e5908f",
+    "ResourceType": "RoleDefinition",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:01.510704+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DisplayName": "Attribute Log Administrator",
+      "IsBuiltIn": true,
+      "IsEnabled": true,
+      "IsPrivileged": false,
+      "RoleId": "5b784334-f94b-471a-a387-e7219fc49ca2"
+    },
+    "Description": "Role: Attribute Log Administrator",
+    "EvidenceId": "84012a38-1f0f-555b-bff7-c642aa2c0c20",
+    "EvidenceType": "entra-role-definition",
+    "RawReference": null,
+    "ResourceId": "5b784334-f94b-471a-a387-e7219fc49ca2",
+    "ResourceType": "RoleDefinition",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:01.509336+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DisplayName": "Customer LockBox Access Approver",
+      "IsBuiltIn": true,
+      "IsEnabled": true,
+      "IsPrivileged": false,
+      "RoleId": "5c4f9dcd-47dc-4cf7-8c9a-9e4207cbfc91"
+    },
+    "Description": "Role: Customer LockBox Access Approver",
+    "EvidenceId": "79f1081d-df05-5336-84e4-2f807d2f6bcd",
+    "EvidenceType": "entra-role-definition",
+    "RawReference": null,
+    "ResourceId": "5c4f9dcd-47dc-4cf7-8c9a-9e4207cbfc91",
+    "ResourceType": "RoleDefinition",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:01.509260+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DisplayName": "Security Reader",
+      "IsBuiltIn": true,
+      "IsEnabled": true,
+      "IsPrivileged": false,
+      "RoleId": "5d6b6bb7-de71-4623-b4af-96380a352509"
+    },
+    "Description": "Role: Security Reader",
+    "EvidenceId": "6d79f21b-6ba7-5c7c-afff-2e159493123f",
+    "EvidenceType": "entra-role-definition",
+    "RawReference": null,
+    "ResourceId": "5d6b6bb7-de71-4623-b4af-96380a352509",
+    "ResourceType": "RoleDefinition",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:01.509694+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DisplayName": "Security Operator",
+      "IsBuiltIn": true,
+      "IsEnabled": true,
+      "IsPrivileged": false,
+      "RoleId": "5f2222b1-57c3-48ba-8ad5-d4759f1fde6f"
+    },
+    "Description": "Role: Security Operator",
+    "EvidenceId": "837140d7-1944-56ef-a5a8-fe61567be402",
+    "EvidenceType": "entra-role-definition",
+    "RawReference": null,
+    "ResourceId": "5f2222b1-57c3-48ba-8ad5-d4759f1fde6f",
+    "ResourceType": "RoleDefinition",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:01.508733+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DisplayName": "Global Administrator",
+      "IsBuiltIn": true,
+      "IsEnabled": true,
+      "IsPrivileged": true,
+      "RoleId": "62e90394-69f5-4237-9190-012177145e10"
+    },
+    "Description": "Role: Global Administrator",
+    "EvidenceId": "376d295a-38d5-5130-85ed-f5e55452604e",
+    "EvidenceType": "entra-role-definition",
+    "RawReference": null,
+    "ResourceId": "62e90394-69f5-4237-9190-012177145e10",
+    "ResourceType": "RoleDefinition",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:01.509781+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DisplayName": "Printer Administrator",
+      "IsBuiltIn": true,
+      "IsEnabled": true,
+      "IsPrivileged": false,
+      "RoleId": "644ef478-e28f-4e28-b9dc-3fdde9aa0b1f"
+    },
+    "Description": "Role: Printer Administrator",
+    "EvidenceId": "721cd143-79c5-5bfd-81ce-09e7a2c9494e",
+    "EvidenceType": "entra-role-definition",
+    "RawReference": null,
+    "ResourceId": "644ef478-e28f-4e28-b9dc-3fdde9aa0b1f",
+    "ResourceType": "RoleDefinition",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:01.509555+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DisplayName": "Teams Administrator",
+      "IsBuiltIn": true,
+      "IsEnabled": true,
+      "IsPrivileged": false,
+      "RoleId": "69091246-20e8-4a56-aa4d-066075b2a7a8"
+    },
+    "Description": "Role: Teams Administrator",
+    "EvidenceId": "1ea99aa6-a495-536c-a597-3a9c715585a4",
+    "EvidenceType": "entra-role-definition",
+    "RawReference": null,
+    "ResourceId": "69091246-20e8-4a56-aa4d-066075b2a7a8",
+    "ResourceType": "RoleDefinition",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:01.511334+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DisplayName": "Agent Registry Administrator",
+      "IsBuiltIn": true,
+      "IsEnabled": true,
+      "IsPrivileged": false,
+      "RoleId": "6b942400-691f-4bf0-9d12-d8a254a2baf5"
+    },
+    "Description": "Role: Agent Registry Administrator",
+    "EvidenceId": "be795784-aa20-52f6-b2d7-ab2a4ab67b4d",
+    "EvidenceType": "entra-role-definition",
+    "RawReference": null,
+    "ResourceId": "6b942400-691f-4bf0-9d12-d8a254a2baf5",
+    "ResourceType": "RoleDefinition",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:01.509601+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DisplayName": "External ID User Flow Administrator",
+      "IsBuiltIn": true,
+      "IsEnabled": true,
+      "IsPrivileged": false,
+      "RoleId": "6e591065-9bad-43ed-90f3-e9424366d2f0"
+    },
+    "Description": "Role: External ID User Flow Administrator",
+    "EvidenceId": "5afd21bc-1d21-57c9-ba9a-4a8f75e9b459",
+    "EvidenceType": "entra-role-definition",
+    "RawReference": null,
+    "ResourceId": "6e591065-9bad-43ed-90f3-e9424366d2f0",
+    "ResourceType": "RoleDefinition",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:01.508938+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DisplayName": "Helpdesk Administrator",
+      "IsBuiltIn": true,
+      "IsEnabled": true,
+      "IsPrivileged": false,
+      "RoleId": "729827e3-9c14-49f7-bb1b-9608f156bbb8"
+    },
+    "Description": "Role: Helpdesk Administrator",
+    "EvidenceId": "25fc86ef-ff78-5df0-96fc-6d1abf90d465",
+    "EvidenceType": "entra-role-definition",
+    "RawReference": null,
+    "ResourceId": "729827e3-9c14-49f7-bb1b-9608f156bbb8",
+    "ResourceType": "RoleDefinition",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:01.509999+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DisplayName": "Knowledge Manager",
+      "IsBuiltIn": true,
+      "IsEnabled": true,
+      "IsPrivileged": false,
+      "RoleId": "744ec460-397e-42ad-a462-8b3f9747a02c"
+    },
+    "Description": "Role: Knowledge Manager",
+    "EvidenceId": "ac58b46e-a378-5b42-88de-da4dc4ae90ce",
+    "EvidenceType": "entra-role-definition",
+    "RawReference": null,
+    "ResourceId": "744ec460-397e-42ad-a462-8b3f9747a02c",
+    "ResourceType": "RoleDefinition",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:01.509424+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DisplayName": "Azure Information Protection Administrator",
+      "IsBuiltIn": true,
+      "IsEnabled": true,
+      "IsPrivileged": false,
+      "RoleId": "7495fdc4-34c4-4d15-a289-98788ce399fd"
+    },
+    "Description": "Role: Azure Information Protection Administrator",
+    "EvidenceId": "6d7a2ce2-2426-587b-a5bd-c10ede1be846",
+    "EvidenceType": "entra-role-definition",
+    "RawReference": null,
+    "ResourceId": "7495fdc4-34c4-4d15-a289-98788ce399fd",
+    "ResourceType": "RoleDefinition",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:01.509709+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DisplayName": "Kaizala Administrator",
+      "IsBuiltIn": true,
+      "IsEnabled": true,
+      "IsPrivileged": false,
+      "RoleId": "74ef975b-6605-40af-a5d2-b9539d836353"
+    },
+    "Description": "Role: Kaizala Administrator",
+    "EvidenceId": "07cad861-9fd2-5f28-8eff-3e39a4552310",
+    "EvidenceType": "entra-role-definition",
+    "RawReference": null,
+    "ResourceId": "74ef975b-6605-40af-a5d2-b9539d836353",
+    "ResourceType": "RoleDefinition",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:01.509971+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DisplayName": "Usage Summary Reports Reader",
+      "IsBuiltIn": true,
+      "IsEnabled": true,
+      "IsPrivileged": false,
+      "RoleId": "75934031-6c7e-415a-99d7-48dbd49e875e"
+    },
+    "Description": "Role: Usage Summary Reports Reader",
+    "EvidenceId": "86ef2fc1-7ec1-5d9b-825e-db4bf57d5300",
+    "EvidenceType": "entra-role-definition",
+    "RawReference": null,
+    "ResourceId": "75934031-6c7e-415a-99d7-48dbd49e875e",
+    "ResourceType": "RoleDefinition",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:01.509103+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DisplayName": "Skype for Business Administrator",
+      "IsBuiltIn": true,
+      "IsEnabled": true,
+      "IsPrivileged": false,
+      "RoleId": "75941009-915a-4869-abe7-691bff18279e"
+    },
+    "Description": "Role: Skype for Business Administrator",
+    "EvidenceId": "b0c89d9d-6379-5fe8-8bab-0e9098c5b333",
+    "EvidenceType": "entra-role-definition",
+    "RawReference": null,
+    "ResourceId": "75941009-915a-4869-abe7-691bff18279e",
+    "ResourceType": "RoleDefinition",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:01.509466+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DisplayName": "Cloud Device Administrator",
+      "IsBuiltIn": true,
+      "IsEnabled": true,
+      "IsPrivileged": false,
+      "RoleId": "7698a772-787b-4ac8-901f-60d6b08affd2"
+    },
+    "Description": "Role: Cloud Device Administrator",
+    "EvidenceId": "8f36db9c-0f3b-5668-8082-4a184da454fe",
+    "EvidenceType": "entra-role-definition",
+    "RawReference": null,
+    "ResourceId": "7698a772-787b-4ac8-901f-60d6b08affd2",
+    "ResourceType": "RoleDefinition",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:01.511141+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DisplayName": "Places Administrator",
+      "IsBuiltIn": true,
+      "IsEnabled": true,
+      "IsPrivileged": false,
+      "RoleId": "78b0ccd1-afc2-4f92-9116-b41aedd09592"
+    },
+    "Description": "Role: Places Administrator",
+    "EvidenceId": "f77b4835-e7bd-5da0-9798-0acdca639064",
+    "EvidenceType": "entra-role-definition",
+    "RawReference": null,
+    "ResourceId": "78b0ccd1-afc2-4f92-9116-b41aedd09592",
+    "ResourceType": "RoleDefinition",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:01.509409+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DisplayName": "Message Center Reader",
+      "IsBuiltIn": true,
+      "IsEnabled": true,
+      "IsPrivileged": false,
+      "RoleId": "790c1fb9-7f7d-4f88-86a1-ef1f95c05c1b"
+    },
+    "Description": "Role: Message Center Reader",
+    "EvidenceId": "6143493f-3e5c-5dbf-82eb-37ee3ffba522",
+    "EvidenceType": "entra-role-definition",
+    "RawReference": null,
+    "ResourceId": "790c1fb9-7f7d-4f88-86a1-ef1f95c05c1b",
+    "ResourceType": "RoleDefinition",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:01.509496+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DisplayName": "Privileged Authentication Administrator",
+      "IsBuiltIn": true,
+      "IsEnabled": true,
+      "IsPrivileged": false,
+      "RoleId": "7be44c8a-adaf-4e2a-84d6-ab2649e08a13"
+    },
+    "Description": "Role: Privileged Authentication Administrator",
+    "EvidenceId": "1d50e396-d842-5342-93ac-f08d1e789720",
+    "EvidenceType": "entra-role-definition",
+    "RawReference": null,
+    "ResourceId": "7be44c8a-adaf-4e2a-84d6-ab2649e08a13",
+    "ResourceType": "RoleDefinition",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:01.510217+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DisplayName": "Yammer Administrator",
+      "IsBuiltIn": true,
+      "IsEnabled": true,
+      "IsPrivileged": false,
+      "RoleId": "810a2642-a034-447f-a5e8-41beaa378541"
+    },
+    "Description": "Role: Yammer Administrator",
+    "EvidenceId": "88f288c1-29e5-5857-b47b-bc2b6dfec7bd",
+    "EvidenceType": "entra-role-definition",
+    "RawReference": null,
+    "ResourceId": "810a2642-a034-447f-a5e8-41beaa378541",
+    "ResourceType": "RoleDefinition",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:01.510014+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DisplayName": "Domain Name Administrator",
+      "IsBuiltIn": true,
+      "IsEnabled": true,
+      "IsPrivileged": false,
+      "RoleId": "8329153b-31d0-4727-b945-745eb3bc5f31"
+    },
+    "Description": "Role: Domain Name Administrator",
+    "EvidenceId": "ec74980a-8d46-5f8e-816a-682c6cc23bdf",
+    "EvidenceType": "entra-role-definition",
+    "RawReference": null,
+    "ResourceId": "8329153b-31d0-4727-b945-745eb3bc5f31",
+    "ResourceType": "RoleDefinition",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:01.510061+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DisplayName": "Attribute Definition Administrator",
+      "IsBuiltIn": true,
+      "IsEnabled": true,
+      "IsPrivileged": false,
+      "RoleId": "8424c6f0-a189-499e-bbd0-26c1753c96d4"
+    },
+    "Description": "Role: Attribute Definition Administrator",
+    "EvidenceId": "35fe6a59-09a3-552c-8f58-6542f2ce6a1a",
+    "EvidenceType": "entra-role-definition",
+    "RawReference": null,
+    "ResourceId": "8424c6f0-a189-499e-bbd0-26c1753c96d4",
+    "ResourceType": "RoleDefinition",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:01.511025+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DisplayName": "Global Secure Access Log Reader",
+      "IsBuiltIn": true,
+      "IsEnabled": true,
+      "IsPrivileged": false,
+      "RoleId": "843318fb-79a6-4168-9e6f-aa9a07481cc4"
+    },
+    "Description": "Role: Global Secure Access Log Reader",
+    "EvidenceId": "3776068e-c5bf-5681-b018-2d1a7a8f2773",
+    "EvidenceType": "entra-role-definition",
+    "RawReference": null,
+    "ResourceId": "843318fb-79a6-4168-9e6f-aa9a07481cc4",
+    "ResourceType": "RoleDefinition",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:01.510657+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DisplayName": "Viva Pulse Administrator",
+      "IsBuiltIn": true,
+      "IsEnabled": true,
+      "IsPrivileged": false,
+      "RoleId": "87761b17-1ed2-4af3-9acd-92a150038160"
+    },
+    "Description": "Role: Viva Pulse Administrator",
+    "EvidenceId": "0d139780-abce-57f8-a182-5b3df7d24418",
+    "EvidenceType": "entra-role-definition",
+    "RawReference": null,
+    "ResourceId": "87761b17-1ed2-4af3-9acd-92a150038160",
+    "ResourceType": "RoleDefinition",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:01.509752+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DisplayName": "Search Editor",
+      "IsBuiltIn": true,
+      "IsEnabled": true,
+      "IsPrivileged": false,
+      "RoleId": "8835291a-918c-4fd7-a9ce-faa49f0cf7d9"
+    },
+    "Description": "Role: Search Editor",
+    "EvidenceId": "0a6c8333-ebae-559c-aa26-448da3a34f39",
+    "EvidenceType": "entra-role-definition",
+    "RawReference": null,
+    "ResourceId": "8835291a-918c-4fd7-a9ce-faa49f0cf7d9",
+    "ResourceType": "RoleDefinition",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:01.509043+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DisplayName": "Directory Readers",
+      "IsBuiltIn": true,
+      "IsEnabled": true,
+      "IsPrivileged": false,
+      "RoleId": "88d8e3e3-8f55-4a1e-953a-9b9898b8876b"
+    },
+    "Description": "Role: Directory Readers",
+    "EvidenceId": "416de79e-4551-5b77-8c26-057237a10f80",
+    "EvidenceType": "entra-role-definition",
+    "RawReference": null,
+    "ResourceId": "88d8e3e3-8f55-4a1e-953a-9b9898b8876b",
+    "ResourceType": "RoleDefinition",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:01.510153+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DisplayName": "Cloud App Security Administrator",
+      "IsBuiltIn": true,
+      "IsEnabled": true,
+      "IsPrivileged": false,
+      "RoleId": "892c5842-a9a6-463a-8041-72aa08ca3cf6"
+    },
+    "Description": "Role: Cloud App Security Administrator",
+    "EvidenceId": "0abfc5ff-1578-5ad2-ac5f-aee4815a41d6",
+    "EvidenceType": "entra-role-definition",
+    "RawReference": null,
+    "ResourceId": "892c5842-a9a6-463a-8041-72aa08ca3cf6",
+    "ResourceType": "RoleDefinition",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:01.509868+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DisplayName": "Hybrid Identity Administrator",
+      "IsBuiltIn": true,
+      "IsEnabled": true,
+      "IsPrivileged": false,
+      "RoleId": "8ac3fc64-6eca-42ea-9e69-59f4c7b60eb2"
+    },
+    "Description": "Role: Hybrid Identity Administrator",
+    "EvidenceId": "9733dc07-9f58-5980-b0a9-50ab8c2e52d5",
+    "EvidenceType": "entra-role-definition",
+    "RawReference": null,
+    "ResourceId": "8ac3fc64-6eca-42ea-9e69-59f4c7b60eb2",
+    "ResourceType": "RoleDefinition",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:01.510823+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DisplayName": "Microsoft 365 Migration Administrator",
+      "IsBuiltIn": true,
+      "IsEnabled": true,
+      "IsPrivileged": false,
+      "RoleId": "8c8b803f-96e1-4129-9349-20738d9f9652"
+    },
+    "Description": "Role: Microsoft 365 Migration Administrator",
+    "EvidenceId": "cf59033a-ee12-5a43-a0c5-51d0903e3324",
+    "EvidenceType": "entra-role-definition",
+    "RawReference": null,
+    "ResourceId": "8c8b803f-96e1-4129-9349-20738d9f9652",
+    "ResourceType": "RoleDefinition",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:01.510528+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DisplayName": "Viva Goals Administrator",
+      "IsBuiltIn": true,
+      "IsEnabled": true,
+      "IsPrivileged": false,
+      "RoleId": "92b086b3-e367-4ef2-b869-1de128fb986e"
+    },
+    "Description": "Role: Viva Goals Administrator",
+    "EvidenceId": "1206b098-3740-5899-8ec9-719cb5130064",
+    "EvidenceType": "entra-role-definition",
+    "RawReference": null,
+    "ResourceId": "92b086b3-e367-4ef2-b869-1de128fb986e",
+    "ResourceType": "RoleDefinition",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:01.510866+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DisplayName": "Organizational Branding Administrator",
+      "IsBuiltIn": true,
+      "IsEnabled": true,
+      "IsPrivileged": false,
+      "RoleId": "92ed04bf-c94a-4b82-9729-b799a7a4c178"
+    },
+    "Description": "Role: Organizational Branding Administrator",
+    "EvidenceId": "cae48613-b625-5200-a7b6-e30567927066",
+    "EvidenceType": "entra-role-definition",
+    "RawReference": null,
+    "ResourceId": "92ed04bf-c94a-4b82-9729-b799a7a4c178",
+    "ResourceType": "RoleDefinition",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:01.509058+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DisplayName": "Directory Writers",
+      "IsBuiltIn": true,
+      "IsEnabled": true,
+      "IsPrivileged": false,
+      "RoleId": "9360feb5-f418-4baa-8175-e2a00bac4301"
+    },
+    "Description": "Role: Directory Writers",
+    "EvidenceId": "7032ee3f-1303-513e-bfbe-379ee8acb273",
+    "EvidenceType": "entra-role-definition",
+    "RawReference": null,
+    "ResourceId": "9360feb5-f418-4baa-8175-e2a00bac4301",
+    "ResourceType": "RoleDefinition",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:01.508898+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DisplayName": "Guest Inviter",
+      "IsBuiltIn": true,
+      "IsEnabled": true,
+      "IsPrivileged": false,
+      "RoleId": "95e79109-95c0-4d8e-aee3-d01accf2d47b"
+    },
+    "Description": "Role: Guest Inviter",
+    "EvidenceId": "1e61be2c-ca5f-5617-b2ae-181449d01e36",
+    "EvidenceType": "entra-role-definition",
+    "RawReference": null,
+    "ResourceId": "95e79109-95c0-4d8e-aee3-d01accf2d47b",
+    "ResourceType": "RoleDefinition",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:01.510801+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DisplayName": "Dynamics 365 Business Central Administrator",
+      "IsBuiltIn": true,
+      "IsEnabled": true,
+      "IsPrivileged": false,
+      "RoleId": "963797fb-eb3b-4cde-8ce3-5878b3f32a3f"
+    },
+    "Description": "Role: Dynamics 365 Business Central Administrator",
+    "EvidenceId": "f188b4d0-5333-5cfe-98da-9d0334975537",
+    "EvidenceType": "entra-role-definition",
+    "RawReference": null,
+    "ResourceId": "963797fb-eb3b-4cde-8ce3-5878b3f32a3f",
+    "ResourceType": "RoleDefinition",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:01.509766+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DisplayName": "Password Administrator",
+      "IsBuiltIn": true,
+      "IsEnabled": true,
+      "IsPrivileged": false,
+      "RoleId": "966707d0-3269-4727-9be2-8c3a10f19b9d"
+    },
+    "Description": "Role: Password Administrator",
+    "EvidenceId": "7d18af2e-94e7-560a-8119-e413319aec0b",
+    "EvidenceType": "entra-role-definition",
+    "RawReference": null,
+    "ResourceId": "966707d0-3269-4727-9be2-8c3a10f19b9d",
+    "ResourceType": "RoleDefinition",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:01.511233+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DisplayName": "SharePoint Advanced Management Administrator",
+      "IsBuiltIn": true,
+      "IsEnabled": true,
+      "IsPrivileged": false,
+      "RoleId": "99009c4a-3b3f-4957-82a9-9d35e12db77e"
+    },
+    "Description": "Role: SharePoint Advanced Management Administrator",
+    "EvidenceId": "f9d67358-7ab4-5ab4-857c-4ccaabfc1851",
+    "EvidenceType": "entra-role-definition",
+    "RawReference": null,
+    "ResourceId": "99009c4a-3b3f-4957-82a9-9d35e12db77e",
+    "ResourceType": "RoleDefinition",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:01.509229+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DisplayName": "Application Administrator",
+      "IsBuiltIn": true,
+      "IsEnabled": true,
+      "IsPrivileged": true,
+      "RoleId": "9b895d92-2cd3-44c7-9d02-a6ac2d5ea5c3"
+    },
+    "Description": "Role: Application Administrator",
+    "EvidenceId": "e7fc6aa6-56a1-50eb-b942-5a320aea674e",
+    "EvidenceType": "entra-role-definition",
+    "RawReference": null,
+    "ResourceId": "9b895d92-2cd3-44c7-9d02-a6ac2d5ea5c3",
+    "ResourceType": "RoleDefinition",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:01.509154+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DisplayName": "Device Join",
+      "IsBuiltIn": true,
+      "IsEnabled": true,
+      "IsPrivileged": false,
+      "RoleId": "9c094953-4995-41c8-84c8-3ebb9b32c93f"
+    },
+    "Description": "Role: Device Join",
+    "EvidenceId": "47869eba-add2-58b2-8b1f-fccca60a06cc",
+    "EvidenceType": "entra-role-definition",
+    "RawReference": null,
+    "ResourceId": "9c094953-4995-41c8-84c8-3ebb9b32c93f",
+    "ResourceType": "RoleDefinition",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:01.509957+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DisplayName": "Attack Payload Author",
+      "IsBuiltIn": true,
+      "IsEnabled": true,
+      "IsPrivileged": false,
+      "RoleId": "9c6df0f2-1e7c-4dc3-b195-66dfbd24aa8f"
+    },
+    "Description": "Role: Attack Payload Author",
+    "EvidenceId": "d1762a7d-45ca-50a8-8d21-0d3802873e5e",
+    "EvidenceType": "entra-role-definition",
+    "RawReference": null,
+    "ResourceId": "9c6df0f2-1e7c-4dc3-b195-66dfbd24aa8f",
+    "ResourceType": "RoleDefinition",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:01.510729+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DisplayName": "Attribute Log Reader",
+      "IsBuiltIn": true,
+      "IsEnabled": true,
+      "IsPrivileged": false,
+      "RoleId": "9c99539d-8186-4804-835f-fd51ef9e2dcd"
+    },
+    "Description": "Role: Attribute Log Reader",
+    "EvidenceId": "ae2e7ab6-f2ae-5bc1-8884-ec817e661c59",
+    "EvidenceType": "entra-role-definition",
+    "RawReference": null,
+    "ResourceId": "9c99539d-8186-4804-835f-fd51ef9e2dcd",
+    "ResourceType": "RoleDefinition",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:01.511165+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DisplayName": "SharePoint Backup Administrator",
+      "IsBuiltIn": true,
+      "IsEnabled": true,
+      "IsPrivileged": false,
+      "RoleId": "9d3e04ba-3ee4-4d1b-a3a7-9aef423a09be"
+    },
+    "Description": "Role: SharePoint Backup Administrator",
+    "EvidenceId": "3154f22f-86f0-579f-9dcb-281464965681",
+    "EvidenceType": "entra-role-definition",
+    "RawReference": null,
+    "ResourceId": "9d3e04ba-3ee4-4d1b-a3a7-9aef423a09be",
+    "ResourceType": "RoleDefinition",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:01.511048+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DisplayName": "Organizational Data Source Administrator",
+      "IsBuiltIn": true,
+      "IsEnabled": true,
+      "IsPrivileged": false,
+      "RoleId": "9d70768a-0cbc-4b4c-aea3-2e124b2477f4"
+    },
+    "Description": "Role: Organizational Data Source Administrator",
+    "EvidenceId": "7fee733c-4893-5f6b-9646-7e2aff26d7ec",
+    "EvidenceType": "entra-role-definition",
+    "RawReference": null,
+    "ResourceId": "9d70768a-0cbc-4b4c-aea3-2e124b2477f4",
+    "ResourceType": "RoleDefinition",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:01.509140+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DisplayName": "Azure AD Joined Device Local Administrator",
+      "IsBuiltIn": true,
+      "IsEnabled": true,
+      "IsPrivileged": false,
+      "RoleId": "9f06204d-73c1-4d4c-880a-6edb90606fd8"
+    },
+    "Description": "Role: Azure AD Joined Device Local Administrator",
+    "EvidenceId": "0a813c99-1a34-561b-b8f5-7195795d2ade",
+    "EvidenceType": "entra-role-definition",
+    "RawReference": null,
+    "ResourceId": "9f06204d-73c1-4d4c-880a-6edb90606fd8",
+    "ResourceType": "RoleDefinition",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:01.508997+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DisplayName": "User",
+      "IsBuiltIn": true,
+      "IsEnabled": true,
+      "IsPrivileged": false,
+      "RoleId": "a0b1b346-4d3e-4e8b-98f8-753987be4970"
+    },
+    "Description": "Role: User",
+    "EvidenceId": "ce6ed426-762c-5952-b180-bb4af8338e57",
+    "EvidenceType": "entra-role-definition",
+    "RawReference": null,
+    "ResourceId": "a0b1b346-4d3e-4e8b-98f8-753987be4970",
+    "ResourceType": "RoleDefinition",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:01.510958+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DisplayName": "On Premises Directory Sync Account",
+      "IsBuiltIn": true,
+      "IsEnabled": true,
+      "IsPrivileged": false,
+      "RoleId": "a92aed5d-d78a-4d16-b381-09adb37eb3b0"
+    },
+    "Description": "Role: On Premises Directory Sync Account",
+    "EvidenceId": "0d649bee-d9cc-5624-b8e3-f25c650069d8",
+    "EvidenceType": "entra-role-definition",
+    "RawReference": null,
+    "ResourceId": "a92aed5d-d78a-4d16-b381-09adb37eb3b0",
+    "ResourceType": "RoleDefinition",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:01.509365+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DisplayName": "Fabric Administrator",
+      "IsBuiltIn": true,
+      "IsEnabled": true,
+      "IsPrivileged": false,
+      "RoleId": "a9ea8996-122f-4c74-9520-8edcd192826c"
+    },
+    "Description": "Role: Fabric Administrator",
+    "EvidenceId": "0098059a-11d9-5ab0-8d4f-82f64e63abec",
+    "EvidenceType": "entra-role-definition",
+    "RawReference": null,
+    "ResourceId": "a9ea8996-122f-4c74-9520-8edcd192826c",
+    "ResourceType": "RoleDefinition",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:01.510777+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DisplayName": "Teams Telephony Administrator",
+      "IsBuiltIn": true,
+      "IsEnabled": true,
+      "IsPrivileged": false,
+      "RoleId": "aa38014f-0993-46e9-9b45-30501a20909d"
+    },
+    "Description": "Role: Teams Telephony Administrator",
+    "EvidenceId": "010d42f1-6d59-5b18-a474-565411cf8d05",
+    "EvidenceType": "entra-role-definition",
+    "RawReference": null,
+    "ResourceId": "aa38014f-0993-46e9-9b45-30501a20909d",
+    "ResourceType": "RoleDefinition",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:01.509631+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DisplayName": "B2C IEF Keyset Administrator",
+      "IsBuiltIn": true,
+      "IsEnabled": true,
+      "IsPrivileged": false,
+      "RoleId": "aaf43236-0c0d-4d5f-883a-6955382ac081"
+    },
+    "Description": "Role: B2C IEF Keyset Administrator",
+    "EvidenceId": "58eaad66-8049-54e1-a1bc-1a96730490e9",
+    "EvidenceType": "entra-role-definition",
+    "RawReference": null,
+    "ResourceId": "aaf43236-0c0d-4d5f-883a-6955382ac081",
+    "ResourceType": "RoleDefinition",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:01.509585+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DisplayName": "Message Center Privacy Reader",
+      "IsBuiltIn": true,
+      "IsEnabled": true,
+      "IsPrivileged": false,
+      "RoleId": "ac16e43d-7b2d-40e0-ac05-243ff356ab5b"
+    },
+    "Description": "Role: Message Center Privacy Reader",
+    "EvidenceId": "63ed6ec8-1677-5591-84b2-ef769482ce68",
+    "EvidenceType": "entra-role-definition",
+    "RawReference": null,
+    "ResourceId": "ac16e43d-7b2d-40e0-ac05-243ff356ab5b",
+    "ResourceType": "RoleDefinition",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:01.510632+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DisplayName": "Global Secure Access Administrator",
+      "IsBuiltIn": true,
+      "IsEnabled": true,
+      "IsPrivileged": false,
+      "RoleId": "ac434307-12b9-4fa1-a708-88bf58caabc1"
+    },
+    "Description": "Role: Global Secure Access Administrator",
+    "EvidenceId": "d02f42e0-362e-5eb4-9e6b-01576737745a",
+    "EvidenceType": "entra-role-definition",
+    "RawReference": null,
+    "ResourceId": "ac434307-12b9-4fa1-a708-88bf58caabc1",
+    "ResourceType": "RoleDefinition",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:01.511277+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DisplayName": "Agent ID Developer",
+      "IsBuiltIn": true,
+      "IsEnabled": true,
+      "IsPrivileged": false,
+      "RoleId": "adb2368d-a9be-41b5-8667-d96778e081b0"
+    },
+    "Description": "Role: Agent ID Developer",
+    "EvidenceId": "78daf1ac-c0c6-5c48-8bbd-50f553c58c47",
+    "EvidenceType": "entra-role-definition",
+    "RawReference": null,
+    "ResourceId": "adb2368d-a9be-41b5-8667-d96778e081b0",
+    "ResourceType": "RoleDefinition",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:01.510574+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DisplayName": "Permissions Management Administrator",
+      "IsBuiltIn": true,
+      "IsEnabled": true,
+      "IsPrivileged": false,
+      "RoleId": "af78dc32-cf4d-46f9-ba4e-4428526346b5"
+    },
+    "Description": "Role: Permissions Management Administrator",
+    "EvidenceId": "ca76a013-db89-55af-808e-9885aee6a2b4",
+    "EvidenceType": "entra-role-definition",
+    "RawReference": null,
+    "ResourceId": "af78dc32-cf4d-46f9-ba4e-4428526346b5",
+    "ResourceType": "RoleDefinition",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:01.508973+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DisplayName": "Billing Administrator",
+      "IsBuiltIn": true,
+      "IsEnabled": true,
+      "IsPrivileged": false,
+      "RoleId": "b0f54661-2d74-4c50-afa3-1ec803f12efe"
+    },
+    "Description": "Role: Billing Administrator",
+    "EvidenceId": "62e3ce2e-6a47-50ee-953b-bdb8e7e87542",
+    "EvidenceType": "entra-role-definition",
+    "RawReference": null,
+    "ResourceId": "b0f54661-2d74-4c50-afa3-1ec803f12efe",
+    "ResourceType": "RoleDefinition",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:01.509380+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DisplayName": "Conditional Access Administrator",
+      "IsBuiltIn": true,
+      "IsEnabled": true,
+      "IsPrivileged": true,
+      "RoleId": "b1be1c3e-b65d-4f19-8427-f6fa0d97feb9"
+    },
+    "Description": "Role: Conditional Access Administrator",
+    "EvidenceId": "271e27ea-974a-5527-9ee4-37702b7d6198",
+    "EvidenceType": "entra-role-definition",
+    "RawReference": null,
+    "ResourceId": "b1be1c3e-b65d-4f19-8427-f6fa0d97feb9",
+    "ResourceType": "RoleDefinition",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:01.509986+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DisplayName": "Knowledge Administrator",
+      "IsBuiltIn": true,
+      "IsEnabled": true,
+      "IsPrivileged": false,
+      "RoleId": "b5a8dcf3-09d5-43a9-a639-8e29ef291470"
+    },
+    "Description": "Role: Knowledge Administrator",
+    "EvidenceId": "39bcb02f-fdd3-5396-aaea-25064e9f935b",
+    "EvidenceType": "entra-role-definition",
+    "RawReference": null,
+    "ResourceId": "b5a8dcf3-09d5-43a9-a639-8e29ef291470",
+    "ResourceType": "RoleDefinition",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:01.511486+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DisplayName": "Entra Backup Administrator",
+      "IsBuiltIn": true,
+      "IsEnabled": true,
+      "IsPrivileged": false,
+      "RoleId": "b6a27b2b-f905-4b2e-81b5-0d90e0ef1fdb"
+    },
+    "Description": "Role: Entra Backup Administrator",
+    "EvidenceId": "78638d99-51ee-5ebd-a291-1ef428ef7bd7",
+    "EvidenceType": "entra-role-definition",
+    "RawReference": null,
+    "ResourceId": "b6a27b2b-f905-4b2e-81b5-0d90e0ef1fdb",
+    "ResourceType": "RoleDefinition",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:01.511553+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DisplayName": "Tenant Governance Relationship Administrator",
+      "IsBuiltIn": true,
+      "IsEnabled": true,
+      "IsPrivileged": false,
+      "RoleId": "b8e31d83-1534-480f-9b10-0338ded51b7e"
+    },
+    "Description": "Role: Tenant Governance Relationship Administrator",
+    "EvidenceId": "2c3e4d5c-96f3-51d1-9bbd-351e1f3c9ed7",
+    "EvidenceType": "entra-role-definition",
+    "RawReference": null,
+    "ResourceId": "b8e31d83-1534-480f-9b10-0338ded51b7e",
+    "ResourceType": "RoleDefinition",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:01.509510+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DisplayName": "Teams Communications Administrator",
+      "IsBuiltIn": true,
+      "IsEnabled": true,
+      "IsPrivileged": false,
+      "RoleId": "baf37b3a-610e-45da-9e62-d9d1e5e8914b"
+    },
+    "Description": "Role: Teams Communications Administrator",
+    "EvidenceId": "54bb946d-9b8a-534c-bb94-d51b5d645540",
+    "EvidenceType": "entra-role-definition",
+    "RawReference": null,
+    "ResourceId": "baf37b3a-610e-45da-9e62-d9d1e5e8914b",
+    "ResourceType": "RoleDefinition",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:01.509660+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DisplayName": "External Identity Provider Administrator",
+      "IsBuiltIn": true,
+      "IsEnabled": true,
+      "IsPrivileged": false,
+      "RoleId": "be2f45a1-457d-42af-a067-6ec1fa63bc45"
+    },
+    "Description": "Role: External Identity Provider Administrator",
+    "EvidenceId": "62b04b6a-4c9f-5039-b17a-43610b25ecee",
+    "EvidenceType": "entra-role-definition",
+    "RawReference": null,
+    "ResourceId": "be2f45a1-457d-42af-a067-6ec1fa63bc45",
+    "ResourceType": "RoleDefinition",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:01.509169+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DisplayName": "Workplace Device Join",
+      "IsBuiltIn": true,
+      "IsEnabled": true,
+      "IsPrivileged": false,
+      "RoleId": "c34f683f-4d5a-4403-affd-6615e00e3a7f"
+    },
+    "Description": "Role: Workplace Device Join",
+    "EvidenceId": "85f5afb6-04cf-5dad-9e60-ddeddc32eed8",
+    "EvidenceType": "entra-role-definition",
+    "RawReference": null,
+    "ResourceId": "c34f683f-4d5a-4403-affd-6615e00e3a7f",
+    "ResourceType": "RoleDefinition",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:01.509942+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DisplayName": "Attack Simulation Administrator",
+      "IsBuiltIn": true,
+      "IsEnabled": true,
+      "IsPrivileged": false,
+      "RoleId": "c430b396-e693-46cc-96f3-db01bf8bb62a"
+    },
+    "Description": "Role: Attack Simulation Administrator",
+    "EvidenceId": "966e9cfb-23e2-5970-a7e7-0b17256dbed6",
+    "EvidenceType": "entra-role-definition",
+    "RawReference": null,
+    "ResourceId": "c430b396-e693-46cc-96f3-db01bf8bb62a",
+    "ResourceType": "RoleDefinition",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:01.509481+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DisplayName": "Authentication Administrator",
+      "IsBuiltIn": true,
+      "IsEnabled": true,
+      "IsPrivileged": true,
+      "RoleId": "c4e39bd9-1100-46d3-8c65-fb160da0071f"
+    },
+    "Description": "Role: Authentication Administrator",
+    "EvidenceId": "f61d4d9a-84e8-5f43-8f1d-1ffc5e22435b",
+    "EvidenceType": "entra-role-definition",
+    "RawReference": null,
+    "ResourceId": "c4e39bd9-1100-46d3-8c65-fb160da0071f",
+    "ResourceType": "RoleDefinition",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:01.509245+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DisplayName": "Application Developer",
+      "IsBuiltIn": true,
+      "IsEnabled": true,
+      "IsPrivileged": false,
+      "RoleId": "cf1c38e5-3621-4004-a7cb-879624dced7c"
+    },
+    "Description": "Role: Application Developer",
+    "EvidenceId": "531f8c12-01d6-5450-bbc2-4ff266155328",
+    "EvidenceType": "entra-role-definition",
+    "RawReference": null,
+    "ResourceId": "cf1c38e5-3621-4004-a7cb-879624dced7c",
+    "ResourceType": "RoleDefinition",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:01.510030+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DisplayName": "AI Administrator",
+      "IsBuiltIn": true,
+      "IsEnabled": true,
+      "IsPrivileged": false,
+      "RoleId": "d2562ede-74db-457e-a7b6-544e236ebb61"
+    },
+    "Description": "Role: AI Administrator",
+    "EvidenceId": "1239092d-a08f-5bf8-9e04-a6407c0cca20",
+    "EvidenceType": "entra-role-definition",
+    "RawReference": null,
+    "ResourceId": "d2562ede-74db-457e-a7b6-544e236ebb61",
+    "ResourceType": "RoleDefinition",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:01.509198+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DisplayName": "Directory Synchronization Accounts",
+      "IsBuiltIn": true,
+      "IsEnabled": true,
+      "IsPrivileged": false,
+      "RoleId": "d29b2b05-8046-44ba-8758-1e26182fcf32"
+    },
+    "Description": "Role: Directory Synchronization Accounts",
+    "EvidenceId": "cf8b6e5d-5611-5946-a355-905d4c829fcf",
+    "EvidenceType": "entra-role-definition",
+    "RawReference": null,
+    "ResourceId": "d29b2b05-8046-44ba-8758-1e26182fcf32",
+    "ResourceType": "RoleDefinition",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:01.509898+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DisplayName": "Network Administrator",
+      "IsBuiltIn": true,
+      "IsEnabled": true,
+      "IsPrivileged": false,
+      "RoleId": "d37c8bed-0711-4417-ba38-b4abe66ce4c2"
+    },
+    "Description": "Role: Network Administrator",
+    "EvidenceId": "52ce81cb-3870-5176-8a95-95f7f5343c45",
+    "EvidenceType": "entra-role-definition",
+    "RawReference": null,
+    "ResourceId": "d37c8bed-0711-4417-ba38-b4abe66ce4c2",
+    "ResourceType": "RoleDefinition",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:01.509123+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DisplayName": "Device Users",
+      "IsBuiltIn": true,
+      "IsEnabled": true,
+      "IsPrivileged": false,
+      "RoleId": "d405c6df-0af8-4e3b-95e4-4d06e542189e"
+    },
+    "Description": "Role: Device Users",
+    "EvidenceId": "8261a627-3af6-5178-9429-1d3f5cdde46a",
+    "EvidenceType": "entra-role-definition",
+    "RawReference": null,
+    "ResourceId": "d405c6df-0af8-4e3b-95e4-4d06e542189e",
+    "ResourceType": "RoleDefinition",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:01.511356+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DisplayName": "Agent ID Administrator",
+      "IsBuiltIn": true,
+      "IsEnabled": true,
+      "IsPrivileged": false,
+      "RoleId": "db506228-d27e-4b7d-95e5-295956d6615f"
+    },
+    "Description": "Role: Agent ID Administrator",
+    "EvidenceId": "e018b2d7-089d-5130-b343-9c7a7fb15418",
+    "EvidenceType": "entra-role-definition",
+    "RawReference": null,
+    "ResourceId": "db506228-d27e-4b7d-95e5-295956d6615f",
+    "ResourceType": "RoleDefinition",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:01.510681+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DisplayName": "Extended Directory User Administrator",
+      "IsBuiltIn": true,
+      "IsEnabled": true,
+      "IsPrivileged": false,
+      "RoleId": "dd13091a-6207-4fc0-82ba-3641e056ab95"
+    },
+    "Description": "Role: Extended Directory User Administrator",
+    "EvidenceId": "8a71cebb-70db-513b-b0de-11d272149ffc",
+    "EvidenceType": "entra-role-definition",
+    "RawReference": null,
+    "ResourceId": "dd13091a-6207-4fc0-82ba-3641e056ab95",
+    "ResourceType": "RoleDefinition",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:01.509028+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DisplayName": "Partner Tier2 Support",
+      "IsBuiltIn": true,
+      "IsEnabled": true,
+      "IsPrivileged": false,
+      "RoleId": "e00e864a-17c5-4a4b-9c06-f5b95a8d5bd8"
+    },
+    "Description": "Role: Partner Tier2 Support",
+    "EvidenceId": "d0d24544-4f63-5edf-bc62-b45524f40ea0",
+    "EvidenceType": "entra-role-definition",
+    "RawReference": null,
+    "ResourceId": "e00e864a-17c5-4a4b-9c06-f5b95a8d5bd8",
+    "ResourceType": "RoleDefinition",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:01.511378+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DisplayName": "Purview Workload Content Reader",
+      "IsBuiltIn": true,
+      "IsEnabled": true,
+      "IsPrivileged": false,
+      "RoleId": "e07494ad-1654-4dd2-922e-6f81a71bf00f"
+    },
+    "Description": "Role: Purview Workload Content Reader",
+    "EvidenceId": "ff8f6da0-94e6-5127-a892-d2a6a373ad6f",
+    "EvidenceType": "entra-role-definition",
+    "RawReference": null,
+    "ResourceId": "e07494ad-1654-4dd2-922e-6f81a71bf00f",
+    "ResourceType": "RoleDefinition",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:01.511530+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DisplayName": "Tenant Governance Reader",
+      "IsBuiltIn": true,
+      "IsEnabled": true,
+      "IsPrivileged": false,
+      "RoleId": "e0a4caa6-fe82-443f-b92f-d87341d17b2e"
+    },
+    "Description": "Role: Tenant Governance Reader",
+    "EvidenceId": "01ada7c0-ab58-5945-ab82-23ce88a014b3",
+    "EvidenceType": "entra-role-definition",
+    "RawReference": null,
+    "ResourceId": "e0a4caa6-fe82-443f-b92f-d87341d17b2e",
+    "ResourceType": "RoleDefinition",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:01.510307+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DisplayName": "Virtual Visits Administrator",
+      "IsBuiltIn": true,
+      "IsEnabled": true,
+      "IsPrivileged": false,
+      "RoleId": "e300d9e7-4a2b-4295-9eff-f1c78b36cc98"
+    },
+    "Description": "Role: Virtual Visits Administrator",
+    "EvidenceId": "3a192ff9-29f0-5fe1-a3b1-c6b6ff7fcf61",
+    "EvidenceType": "entra-role-definition",
+    "RawReference": null,
+    "ResourceId": "e300d9e7-4a2b-4295-9eff-f1c78b36cc98",
+    "ResourceType": "RoleDefinition",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:01.509854+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DisplayName": "Azure DevOps Administrator",
+      "IsBuiltIn": true,
+      "IsEnabled": true,
+      "IsPrivileged": false,
+      "RoleId": "e3973bdf-4987-49ae-837a-ba8e231c7286"
+    },
+    "Description": "Role: Azure DevOps Administrator",
+    "EvidenceId": "7395b94b-455e-52e4-ba82-82edda4677ba",
+    "EvidenceType": "entra-role-definition",
+    "RawReference": null,
+    "ResourceId": "e3973bdf-4987-49ae-837a-ba8e231c7286",
+    "ResourceType": "RoleDefinition",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:01.510890+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DisplayName": "Organizational Messages Approver",
+      "IsBuiltIn": true,
+      "IsEnabled": true,
+      "IsPrivileged": false,
+      "RoleId": "e48398e2-f4bb-4074-8f31-4586725e205b"
+    },
+    "Description": "Role: Organizational Messages Approver",
+    "EvidenceId": "bdbe4723-9224-5508-8dfb-8b5d5e9b5a59",
+    "EvidenceType": "entra-role-definition",
+    "RawReference": null,
+    "ResourceId": "e48398e2-f4bb-4074-8f31-4586725e205b",
+    "ResourceType": "RoleDefinition",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:01.509678+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DisplayName": "Compliance Data Administrator",
+      "IsBuiltIn": true,
+      "IsEnabled": true,
+      "IsPrivileged": false,
+      "RoleId": "e6d1a23a-da11-4be4-9570-befc86d067a7"
+    },
+    "Description": "Role: Compliance Data Administrator",
+    "EvidenceId": "58e9cdb8-ee22-571d-85b9-c03cab6c9a66",
+    "EvidenceType": "entra-role-definition",
+    "RawReference": null,
+    "ResourceId": "e6d1a23a-da11-4be4-9570-befc86d067a7",
+    "ResourceType": "RoleDefinition",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:01.509290+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DisplayName": "Privileged Role Administrator",
+      "IsBuiltIn": true,
+      "IsEnabled": true,
+      "IsPrivileged": true,
+      "RoleId": "e8611ab8-c189-46e8-94e1-60213ab1f814"
+    },
+    "Description": "Role: Privileged Role Administrator",
+    "EvidenceId": "b931510c-e822-5dda-8c29-5ecfd2608daf",
+    "EvidenceType": "entra-role-definition",
+    "RawReference": null,
+    "ResourceId": "e8611ab8-c189-46e8-94e1-60213ab1f814",
+    "ResourceType": "RoleDefinition",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:01.509795+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DisplayName": "Printer Technician",
+      "IsBuiltIn": true,
+      "IsEnabled": true,
+      "IsPrivileged": false,
+      "RoleId": "e8cef6f1-e4bd-4ea8-bc07-4b8d950f4477"
+    },
+    "Description": "Role: Printer Technician",
+    "EvidenceId": "dba3b2ef-1df3-55fa-a57e-01f6e60b2f02",
+    "EvidenceType": "entra-role-definition",
+    "RawReference": null,
+    "ResourceId": "e8cef6f1-e4bd-4ea8-bc07-4b8d950f4477",
+    "ResourceType": "RoleDefinition",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:01.511210+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DisplayName": "Dragon Administrator",
+      "IsBuiltIn": true,
+      "IsEnabled": true,
+      "IsPrivileged": false,
+      "RoleId": "e93e3737-fa85-474a-aee4-7d3fb86510f3"
+    },
+    "Description": "Role: Dragon Administrator",
+    "EvidenceId": "880a8de9-49fc-5edb-ad90-0615c1df11c7",
+    "EvidenceType": "entra-role-definition",
+    "RawReference": null,
+    "ResourceId": "e93e3737-fa85-474a-aee4-7d3fb86510f3",
+    "ResourceType": "RoleDefinition",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:01.509569+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DisplayName": "Insights Administrator",
+      "IsBuiltIn": true,
+      "IsEnabled": true,
+      "IsPrivileged": false,
+      "RoleId": "eb1f4a8d-243a-41f0-9fbd-c7cdf6c5ef7c"
+    },
+    "Description": "Role: Insights Administrator",
+    "EvidenceId": "c565ad12-f551-5115-9180-2f66792b1649",
+    "EvidenceType": "entra-role-definition",
+    "RawReference": null,
+    "ResourceId": "eb1f4a8d-243a-41f0-9fbd-c7cdf6c5ef7c",
+    "ResourceType": "RoleDefinition",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:01.511001+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DisplayName": "Attribute Provisioning Administrator",
+      "IsBuiltIn": true,
+      "IsEnabled": true,
+      "IsPrivileged": false,
+      "RoleId": "ecb2c6bf-0ab6-418e-bd87-7986f8d63bbe"
+    },
+    "Description": "Role: Attribute Provisioning Administrator",
+    "EvidenceId": "63888b9c-d779-56a5-9cdf-2226d9b7758c",
+    "EvidenceType": "entra-role-definition",
+    "RawReference": null,
+    "ResourceId": "ecb2c6bf-0ab6-418e-bd87-7986f8d63bbe",
+    "ResourceType": "RoleDefinition",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:01.510913+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DisplayName": "Microsoft Graph Data Connect Administrator",
+      "IsBuiltIn": true,
+      "IsEnabled": true,
+      "IsPrivileged": false,
+      "RoleId": "ee67aa9c-e510-4759-b906-227085a7fd4d"
+    },
+    "Description": "Role: Microsoft Graph Data Connect Administrator",
+    "EvidenceId": "712e414e-8b2b-59ff-afeb-ac13cda5080d",
+    "EvidenceType": "entra-role-definition",
+    "RawReference": null,
+    "ResourceId": "ee67aa9c-e510-4759-b906-227085a7fd4d",
+    "ResourceType": "RoleDefinition",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:01.508955+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DisplayName": "Service Support Administrator",
+      "IsBuiltIn": true,
+      "IsEnabled": true,
+      "IsPrivileged": false,
+      "RoleId": "f023fd81-a637-4b56-95fd-791ac0226033"
+    },
+    "Description": "Role: Service Support Administrator",
+    "EvidenceId": "9034239a-95d4-5396-8c5e-83d3fc5dca34",
+    "EvidenceType": "entra-role-definition",
+    "RawReference": null,
+    "ResourceId": "f023fd81-a637-4b56-95fd-791ac0226033",
+    "ResourceType": "RoleDefinition",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:01.509089+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DisplayName": "SharePoint Administrator",
+      "IsBuiltIn": true,
+      "IsEnabled": true,
+      "IsPrivileged": true,
+      "RoleId": "f28a1f50-f6e7-4571-818b-6a12f2af6b6c"
+    },
+    "Description": "Role: SharePoint Administrator",
+    "EvidenceId": "5492ea06-cb69-5a52-b36d-4c55c1b2fb85",
+    "EvidenceType": "entra-role-definition",
+    "RawReference": null,
+    "ResourceId": "f28a1f50-f6e7-4571-818b-6a12f2af6b6c",
+    "ResourceType": "RoleDefinition",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:01.509723+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DisplayName": "Global Reader",
+      "IsBuiltIn": true,
+      "IsEnabled": true,
+      "IsPrivileged": false,
+      "RoleId": "f2ef992c-3afb-46b9-b7cf-a126ee74c451"
+    },
+    "Description": "Role: Global Reader",
+    "EvidenceId": "955755c3-54da-56d6-b028-a70decfb475e",
+    "EvidenceType": "entra-role-definition",
+    "RawReference": null,
+    "ResourceId": "f2ef992c-3afb-46b9-b7cf-a126ee74c451",
+    "ResourceType": "RoleDefinition",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:01.511465+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DisplayName": "Entra Backup Reader",
+      "IsBuiltIn": true,
+      "IsEnabled": true,
+      "IsPrivileged": false,
+      "RoleId": "f42252d9-5400-4d7b-b9ef-cc582dbb8577"
+    },
+    "Description": "Role: Entra Backup Reader",
+    "EvidenceId": "80c0632a-4582-563a-bd9f-659294c3b845",
+    "EvidenceType": "entra-role-definition",
+    "RawReference": null,
+    "ResourceId": "f42252d9-5400-4d7b-b9ef-cc582dbb8577",
+    "ResourceType": "RoleDefinition",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:01.509525+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DisplayName": "Teams Communications Support Engineer",
+      "IsBuiltIn": true,
+      "IsEnabled": true,
+      "IsPrivileged": false,
+      "RoleId": "f70938a0-fc10-4177-9e90-2178f8765737"
+    },
+    "Description": "Role: Teams Communications Support Engineer",
+    "EvidenceId": "9c4eb2f6-08ae-5198-b580-471fd45317d2",
+    "EvidenceType": "entra-role-definition",
+    "RawReference": null,
+    "ResourceId": "f70938a0-fc10-4177-9e90-2178f8765737",
+    "ResourceType": "RoleDefinition",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:01.511441+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DisplayName": "Customer Delegated Admin Relationship Administrator",
+      "IsBuiltIn": true,
+      "IsEnabled": true,
+      "IsPrivileged": false,
+      "RoleId": "fc8ad4e2-40e4-4724-8317-bcda7503ecbf"
+    },
+    "Description": "Role: Customer Delegated Admin Relationship Administrator",
+    "EvidenceId": "d02c3bd8-b589-5667-b072-4b9f0dabc662",
+    "EvidenceType": "entra-role-definition",
+    "RawReference": null,
+    "ResourceId": "fc8ad4e2-40e4-4724-8317-bcda7503ecbf",
+    "ResourceType": "RoleDefinition",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:01.509540+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DisplayName": "Teams Communications Support Specialist",
+      "IsBuiltIn": true,
+      "IsEnabled": true,
+      "IsPrivileged": false,
+      "RoleId": "fcf91098-03e3-41a9-b5ba-6f0ec8188a12"
+    },
+    "Description": "Role: Teams Communications Support Specialist",
+    "EvidenceId": "18e72582-522d-5935-ae7c-6a1fd11f54f1",
+    "EvidenceType": "entra-role-definition",
+    "RawReference": null,
+    "ResourceId": "fcf91098-03e3-41a9-b5ba-6f0ec8188a12",
+    "ResourceType": "RoleDefinition",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:01.509824+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DisplayName": "Groups Administrator",
+      "IsBuiltIn": true,
+      "IsEnabled": true,
+      "IsPrivileged": false,
+      "RoleId": "fdd7a751-b60b-444a-984c-02652fe8fa1c"
+    },
+    "Description": "Role: Groups Administrator",
+    "EvidenceId": "fb67f5fb-06b1-5d16-9334-3aebc3717e21",
+    "EvidenceType": "entra-role-definition",
+    "RawReference": null,
+    "ResourceId": "fdd7a751-b60b-444a-984c-02652fe8fa1c",
+    "ResourceType": "RoleDefinition",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:01.508919+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DisplayName": "User Administrator",
+      "IsBuiltIn": true,
+      "IsEnabled": true,
+      "IsPrivileged": true,
+      "RoleId": "fe930be7-5e62-47db-91af-98c3a49a38b1"
+    },
+    "Description": "Role: User Administrator",
+    "EvidenceId": "809b55f3-d323-5933-ab84-316f875277c3",
+    "EvidenceType": "entra-role-definition",
+    "RawReference": null,
+    "ResourceId": "fe930be7-5e62-47db-91af-98c3a49a38b1",
+    "ResourceType": "RoleDefinition",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:01.510106+00:00",
+    "Collector": "EntraRoles",
+    "Data": {
+      "DisplayName": "Attribute Assignment Reader",
+      "IsBuiltIn": true,
+      "IsEnabled": true,
+      "IsPrivileged": false,
+      "RoleId": "ffd52fa5-98dc-465c-991d-fc073eb59f8f"
+    },
+    "Description": "Role: Attribute Assignment Reader",
+    "EvidenceId": "48ccb1a6-eca4-5696-920b-48eb054bd077",
+    "EvidenceType": "entra-role-definition",
+    "RawReference": null,
+    "ResourceId": "ffd52fa5-98dc-465c-991d-fc073eb59f8f",
+    "ResourceType": "RoleDefinition",
+    "Source": "Entra"
+  }
+]

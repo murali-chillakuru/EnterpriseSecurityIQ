@@ -1,0 +1,57 @@
+{
+  "$schema": "https://developer.microsoft.com/en-us/json-schemas/teams/v1.22/MicrosoftTeams.schema.json",
+  "manifestVersion": "1.22",
+  "version": "1.0.6",
+  "id": "ffb6f10d-6991-430e-b3d6-23a0101a92b1",
+  "developer": {
+    "name": "Murali Chillakuru",
+    "websiteUrl": "https://esiqnew-agent.delightfulbush-cc9cf399.northeurope.azurecontainerapps.io/Teams2Web-SecurityComplianceAssessment.html",
+    "privacyUrl": "https://esiqnew-agent.delightfulbush-cc9cf399.northeurope.azurecontainerapps.io/Teams2Web-SecurityComplianceAssessment.html",
+    "termsOfUseUrl": "https://esiqnew-agent.delightfulbush-cc9cf399.northeurope.azurecontainerapps.io/Teams2Web-SecurityComplianceAssessment.html"
+  },
+  "name": {
+    "short": "PostureIQ",
+    "full": "PostureIQ — Enterprise Security Intelligence"
+  },
+  "description": {
+    "short": "Assess your security posture across compliance frameworks with scoring",
+    "full": "Security compliance assessment for Microsoft cloud services. Risk-weighted scoring, attack path analysis, priority ranking, AI fix recommendations across compliance frameworks."
+  },
+  "icons": {
+    "color": "color.png",
+    "outline": "outline.png"
+  },
+  "accentColor": "#0078D4",
+  "showLoadingIndicator": true,
+  "staticTabs": [
+    {
+      "entityId": "postureiq-assessment",
+      "name": "Security Assessment",
+      "contentUrl": "https://esiqnew-agent.delightfulbush-cc9cf399.northeurope.azurecontainerapps.io/Teams-SecurityComplianceAssessment.html",
+      "websiteUrl": "https://esiqnew-agent.delightfulbush-cc9cf399.northeurope.azurecontainerapps.io/Teams2Web-SecurityComplianceAssessment.html",
+      "scopes": ["personal"]
+    }
+  ],
+  "permissions": ["identity", "messageTeamMembers"],
+  "validDomains": [
+    "esiqnew-agent.delightfulbush-cc9cf399.northeurope.azurecontainerapps.io",
+    "login.microsoftonline.com"
+  ],
+  "webApplicationInfo": {
+    "id": "ffb6f10d-6991-430e-b3d6-23a0101a92b1",
+    "resource": "api://esiqnew-agent.delightfulbush-cc9cf399.northeurope.azurecontainerapps.io/ffb6f10d-6991-430e-b3d6-23a0101a92b1",
+    "nestedAppAuthInfo": [
+      {
+        "redirectUri": "brk-multihub://esiqnew-agent.delightfulbush-cc9cf399.northeurope.azurecontainerapps.io",
+        "scopes": ["User.Read", "Directory.Read.All", "Policy.Read.All", "RoleManagement.Read.All", "AuditLog.Read.All", "UserAuthenticationMethod.Read.All", "IdentityRiskyUser.Read.All"],
+        "claims": "{\"access_token\":{\"xms_cc\":{\"values\":[\"CP1\"]}}}"
+      },
+      {
+        "redirectUri": "brk-multihub://esiqnew-agent.delightfulbush-cc9cf399.northeurope.azurecontainerapps.io",
+        "scopes": ["https://management.azure.com/user_impersonation"],
+        "claims": "{\"access_token\":{\"xms_cc\":{\"values\":[\"CP1\"]}}}"
+      }
+    ]
+  }
+}
+

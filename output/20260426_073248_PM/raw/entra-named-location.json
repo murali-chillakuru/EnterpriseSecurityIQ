@@ -1,0 +1,128 @@
+[
+  {
+    "CollectedAt": "2026-04-26T23:33:00.645950+00:00",
+    "Collector": "EntraRiskPolicies",
+    "Data": {
+      "CountriesAndRegions": [],
+      "CreatedDateTime": "2024-09-09 16:47:47.379949+00:00",
+      "DisplayName": "Untrusted IP named location",
+      "IpRangeCount": 168,
+      "IsTrusted": false,
+      "LocationId": "04f89b02-80f6-4aa9-9449-56f16da35d1c",
+      "LocationType": "IpNamedLocation",
+      "ModifiedDateTime": "2024-09-09 16:47:47.379949+00:00"
+    },
+    "Description": "Named location: Untrusted IP named location",
+    "EvidenceId": "ce1beb4f-614a-5149-bd52-77d06dfc6d9a",
+    "EvidenceType": "entra-named-location",
+    "RawReference": null,
+    "ResourceId": "04f89b02-80f6-4aa9-9449-56f16da35d1c",
+    "ResourceType": "NamedLocation",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:00.645600+00:00",
+    "Collector": "EntraRiskPolicies",
+    "Data": {
+      "CountriesAndRegions": [],
+      "CreatedDateTime": "2024-09-04 16:35:58.734730+00:00",
+      "DisplayName": "Provisioning Workers",
+      "IpRangeCount": 1,
+      "IsTrusted": true,
+      "LocationId": "05230544-88be-4ed8-bc40-8e135a44b5f5",
+      "LocationType": "IpNamedLocation",
+      "ModifiedDateTime": "2024-09-04 16:35:58.734730+00:00"
+    },
+    "Description": "Named location: Provisioning Workers",
+    "EvidenceId": "ce153f31-a0e6-5166-b290-4aef4d50ca18",
+    "EvidenceType": "entra-named-location",
+    "RawReference": null,
+    "ResourceId": "05230544-88be-4ed8-bc40-8e135a44b5f5",
+    "ResourceType": "NamedLocation",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:00.645781+00:00",
+    "Collector": "EntraRiskPolicies",
+    "Data": {
+      "CountriesAndRegions": [],
+      "CreatedDateTime": "2024-09-04 16:35:59.569948+00:00",
+      "DisplayName": "Stockpiling Workers",
+      "IpRangeCount": 1,
+      "IsTrusted": true,
+      "LocationId": "05e1e38a-2b77-4de8-be09-ff6e9e0f93cf",
+      "LocationType": "IpNamedLocation",
+      "ModifiedDateTime": "2024-09-04 16:35:59.569948+00:00"
+    },
+    "Description": "Named location: Stockpiling Workers",
+    "EvidenceId": "7b9de3a1-9c5f-5c52-808f-ad417c4ea096",
+    "EvidenceType": "entra-named-location",
+    "RawReference": null,
+    "ResourceId": "05e1e38a-2b77-4de8-be09-ff6e9e0f93cf",
+    "ResourceType": "NamedLocation",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:00.645861+00:00",
+    "Collector": "EntraRiskPolicies",
+    "Data": {
+      "CountriesAndRegions": [],
+      "CreatedDateTime": "2024-09-04 16:36:00.725477+00:00",
+      "DisplayName": "Teams Workers",
+      "IpRangeCount": 1,
+      "IsTrusted": true,
+      "LocationId": "081e0df2-99a9-47a7-8648-6cf97daf1ef7",
+      "LocationType": "IpNamedLocation",
+      "ModifiedDateTime": "2024-09-04 16:36:00.725477+00:00"
+    },
+    "Description": "Named location: Teams Workers",
+    "EvidenceId": "97735c11-bd12-56a2-a0ca-9b130c604ed7",
+    "EvidenceType": "entra-named-location",
+    "RawReference": null,
+    "ResourceId": "081e0df2-99a9-47a7-8648-6cf97daf1ef7",
+    "ResourceType": "NamedLocation",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:00.645987+00:00",
+    "Collector": "EntraRiskPolicies",
+    "Data": {
+      "CountriesAndRegions": [],
+      "CreatedDateTime": "2024-09-27 00:40:19.137259+00:00",
+      "DisplayName": "VPN and SAW IP Ranges",
+      "IpRangeCount": 1455,
+      "IsTrusted": false,
+      "LocationId": "0b45f6ad-f07b-4e61-a312-77c58c12095a",
+      "LocationType": "IpNamedLocation",
+      "ModifiedDateTime": "2026-04-26 01:50:15.064170+00:00"
+    },
+    "Description": "Named location: VPN and SAW IP Ranges",
+    "EvidenceId": "5dd6fce8-43c8-5d52-83ba-c9808cc4313f",
+    "EvidenceType": "entra-named-location",
+    "RawReference": null,
+    "ResourceId": "0b45f6ad-f07b-4e61-a312-77c58c12095a",
+    "ResourceType": "NamedLocation",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:00.645908+00:00",
+    "Collector": "EntraRiskPolicies",
+    "Data": {
+      "CountriesAndRegions": [],
+      "CreatedDateTime": "2024-09-04 16:36:01.572587+00:00",
+      "DisplayName": "ME Services",
+      "IpRangeCount": 31,
+      "IsTrusted": true,
+      "LocationId": "0d28a210-f3e9-433c-9d5d-2c748ad4d879",
+      "LocationType": "IpNamedLocation",
+      "ModifiedDateTime": "2024-09-04 16:36:01.572587+00:00"
+    },
+    "Description": "Named location: ME Services",
+    "EvidenceId": "8cb23983-4fc1-5692-9976-f781d171e45d",
+    "EvidenceType": "entra-named-location",
+    "RawReference": null,
+    "ResourceId": "0d28a210-f3e9-433c-9d5d-2c748ad4d879",
+    "ResourceType": "NamedLocation",
+    "Source": "Entra"
+  }
+]

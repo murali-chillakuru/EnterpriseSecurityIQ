@@ -1,0 +1,94 @@
+{
+  "_description": "Risk scoring parameters per Cloud Explorer result family. SeverityWeight (1-5), Exploitability (1-5), BlastRadius (1-5). Score = (Severity × Exploitability × BlastRadius / 4.0) × 100, capped at 100.",
+  "storage": {
+    "severity": 4,
+    "exploitability": 4,
+    "blast_radius": 5,
+    "top_risks": ["Public blob access", "Missing encryption at rest", "No private endpoints", "Overly permissive SAS tokens", "Missing soft-delete/versioning"],
+    "attack_vectors": ["Data exfiltration via public containers", "Credential theft from exposed connection strings", "Ransomware via unprotected blobs"]
+  },
+  "compute": {
+    "severity": 4,
+    "exploitability": 3,
+    "blast_radius": 4,
+    "top_risks": ["Unencrypted OS/data disks", "Missing endpoint protection", "Open management ports (RDP/SSH)", "No host-based encryption", "Unpatched VMs"],
+    "attack_vectors": ["Lateral movement from compromised VMs", "Cryptomining on exposed instances", "Data theft from unencrypted disk snapshots"]
+  },
+  "network": {
+    "severity": 5,
+    "exploitability": 4,
+    "blast_radius": 5,
+    "top_risks": ["Permissive NSG rules (Any/Any)", "Missing DDoS protection", "No network segmentation", "Public IP exposure", "Missing WAF on internet-facing apps"],
+    "attack_vectors": ["Direct exploitation of exposed services", "Lateral movement across flat networks", "DDoS impact on availability"]
+  },
+  "identity": {
+    "severity": 5,
+    "exploitability": 4,
+    "blast_radius": 5,
+    "top_risks": ["Standing privileged access (no PIM)", "Missing MFA", "Stale guest accounts", "Over-privileged service principals", "No conditional access policies"],
+    "attack_vectors": ["Credential stuffing/spraying", "Token theft and replay", "Privilege escalation via over-permissioned identities"]
+  },
+  "security": {
+    "severity": 4,
+    "exploitability": 3,
+    "blast_radius": 4,
+    "top_risks": ["Disabled Defender plans", "Unresolved high-severity recommendations", "Missing alert rules", "No security contact configured", "Defender score below 70%"],
+    "attack_vectors": ["Undetected breach progression", "Exploitation of known unpatched vulnerabilities", "Missed alerts on active attacks"]
+  },
+  "governance": {
+    "severity": 3,
+    "exploitability": 2,
+    "blast_radius": 4,
+    "top_risks": ["Non-compliant Azure Policy assignments", "Missing resource locks", "No tag enforcement", "Untracked configuration drift", "No management group hierarchy"],
+    "attack_vectors": ["Shadow IT via ungoverned subscriptions", "Config drift enabling security gaps", "Compliance violations from policy gaps"]
+  },
+  "monitoring": {
+    "severity": 3,
+    "exploitability": 2,
+    "blast_radius": 3,
+    "top_risks": ["Missing diagnostic settings", "No activity log alerts", "Log Analytics workspace not configured", "Short retention periods", "No action groups for critical alerts"],
+    "attack_vectors": ["Attacker actions go unlogged", "Delayed incident detection", "Forensic evidence gaps post-breach"]
+  },
+  "database": {
+    "severity": 5,
+    "exploitability": 4,
+    "blast_radius": 5,
+    "top_risks": ["Disabled TDE", "Missing auditing", "Public endpoint exposure", "No Azure AD-only authentication", "Missing long-term backup retention"],
+    "attack_vectors": ["SQL injection via public endpoints", "Data exfiltration from unencrypted backups", "Brute-force attacks on SQL authentication"]
+  },
+  "ai": {
+    "severity": 5,
+    "exploitability": 4,
+    "blast_radius": 4,
+    "top_risks": ["Key-based authentication (no AAD)", "Missing content safety filters", "No DLP policies on AI agents", "Unauthenticated bot endpoints", "Missing network isolation"],
+    "attack_vectors": ["Prompt injection attacks", "Model data exfiltration", "Unauthorized API access via leaked keys", "Data poisoning through unvalidated inputs"]
+  },
+  "app": {
+    "severity": 4,
+    "exploitability": 4,
+    "blast_radius": 4,
+    "top_risks": ["Missing HTTPS enforcement", "Outdated TLS versions", "No managed identity (using connection strings)", "Missing authentication", "Plain-text secrets in app settings"],
+    "attack_vectors": ["Man-in-the-middle on unencrypted traffic", "Credential harvesting from app settings", "Session hijacking via missing auth"]
+  },
+  "containers": {
+    "severity": 4,
+    "exploitability": 3,
+    "blast_radius": 4,
+    "top_risks": ["ACR admin account enabled", "Missing vulnerability scanning", "Privileged containers", "No network policies", "Images from untrusted registries"],
+    "attack_vectors": ["Container escape to host", "Supply chain attacks via compromised images", "Lateral movement across pods"]
+  },
+  "inventory": {
+    "severity": 3,
+    "exploitability": 2,
+    "blast_radius": 3,
+    "top_risks": ["Untagged resources", "Resources in unexpected regions", "Orphaned/unattached resources", "Missing resource locks on critical assets"],
+    "attack_vectors": ["Shadow resources outside governance", "Cost waste from orphaned assets"]
+  },
+  "detail": {
+    "severity": 3,
+    "exploitability": 2,
+    "blast_radius": 2,
+    "top_risks": ["Check resource-specific security configuration", "Verify encryption and access controls", "Review network exposure"],
+    "attack_vectors": ["Resource-specific — review individual configuration"]
+  }
+}

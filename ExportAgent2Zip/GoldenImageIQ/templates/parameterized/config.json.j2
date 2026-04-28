@@ -1,0 +1,10 @@
+{
+    "project_name": "{{ project_name }}",
+    "base_name": "{{ base_name }}",
+    "description": "{{ description }}",
+    "log_level": "INFO",
+    "port": 8088,
+    "thresholds": {{ thresholds | default({}) | tojson(indent=4) }},
+    "domains": {{ _all_domains | tojson }},
+    "reports": {{ reports | tojson }}
+}

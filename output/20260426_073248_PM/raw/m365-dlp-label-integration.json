@@ -1,0 +1,18 @@
+[
+  {
+    "CollectedAt": "2026-04-26T23:40:49.009116+00:00",
+    "Collector": "M365SensitivityLabels",
+    "Data": {
+      "DLPPoliciesWithLabelConditions": 0,
+      "HasLabelBasedDLP": false,
+      "Note": "Purview DLP policies are not accessible via Microsoft Graph. Use Security & Compliance PowerShell for full DLP assessment."
+    },
+    "Description": "DLP policy assessment (Graph API limitation)",
+    "EvidenceId": "cc91b1f1-0215-59a0-bc10-afa552a5c4c4",
+    "EvidenceType": "m365-dlp-label-integration",
+    "RawReference": null,
+    "ResourceId": "m365-dlp-label-integration",
+    "ResourceType": "DLPLabelIntegration",
+    "Source": "Entra"
+  }
+]

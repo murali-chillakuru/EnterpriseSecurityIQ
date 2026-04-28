@@ -1,0 +1,69 @@
+{
+  "_description": "Data security concerns per Cloud Explorer result family — encryption, access controls, classification, and data protection priorities.",
+  "storage": {
+    "encryption": ["Verify encryption at rest (AES-256)", "Check for customer-managed keys (CMK)", "Ensure HTTPS-only transfer"],
+    "access": ["Review shared access signatures (SAS) scope and expiry", "Check for public blob/container access", "Verify private endpoint usage"],
+    "classification": ["Check for sensitive data (PII, PHI, financial) in blob containers", "Review Microsoft Purview scanning coverage"],
+    "priority": "critical"
+  },
+  "compute": {
+    "encryption": ["Check OS and data disk encryption (ADE or host-level)", "Verify temp disk encryption", "Review encryption-at-host status"],
+    "access": ["Review VM admin access and JIT configuration", "Check for Azure Bastion usage", "Verify managed identity vs connection strings"],
+    "classification": ["VMs may process sensitive data in memory and temp storage", "Check data residency compliance for VM regions"],
+    "priority": "high"
+  },
+  "network": {
+    "encryption": ["Verify TLS 1.2+ enforcement on all endpoints", "Check VPN/ExpressRoute encryption for hybrid connectivity"],
+    "access": ["Review NSG rules for data service ports (1433, 5432, 3306, 6379)", "Check private endpoint coverage for data services", "Verify DDoS protection on data-serving endpoints"],
+    "classification": ["Network controls are the perimeter protecting data services", "Review data flow paths through network topology"],
+    "priority": "high"
+  },
+  "identity": {
+    "encryption": ["Verify credential protection (password hash sync, PTA, or federation)", "Check token signing certificate rotation"],
+    "access": ["Review privileged role assignments with data access implications", "Check conditional access policies for data applications", "Verify PIM activation requirements for data roles"],
+    "classification": ["Identity is the control plane for all data access", "Review service principal permissions on data resources"],
+    "priority": "critical"
+  },
+  "database": {
+    "encryption": ["Verify TDE enabled on all SQL databases", "Check CMK vs service-managed keys", "Review connection encryption (TLS enforcement)"],
+    "access": ["Check for Azure AD-only authentication", "Review firewall rules and private endpoint usage", "Verify audit logging is enabled"],
+    "classification": ["Use SQL sensitivity labels for column-level classification", "Check Defender for SQL data discovery and classification", "Review long-term backup retention for regulatory compliance"],
+    "priority": "critical"
+  },
+  "ai": {
+    "encryption": ["Verify CMK for AI model storage and inference data", "Check encryption of training datasets"],
+    "access": ["Review API key vs Azure AD authentication", "Check network isolation for AI endpoints", "Verify content safety filters are active"],
+    "classification": ["AI services process highly sensitive data (documents, speech, images)", "Review data residency for AI processing regions"],
+    "priority": "critical"
+  },
+  "app": {
+    "encryption": ["Verify HTTPS-only enforcement", "Check minimum TLS version (1.2+)", "Review connection string encryption in app settings"],
+    "access": ["Check managed identity usage vs stored credentials", "Review authentication provider configuration", "Verify Key Vault references for secrets"],
+    "classification": ["Applications are the primary interface to sensitive data", "Review data handling in app settings and environment variables"],
+    "priority": "high"
+  },
+  "containers": {
+    "encryption": ["Check ACR encryption (CMK)", "Verify AKS disk encryption", "Review secrets management (Key Vault CSI driver vs env vars)"],
+    "access": ["Review ACR admin account status", "Check AKS RBAC configuration", "Verify network policies for pod-to-pod communication"],
+    "classification": ["Container images may embed credentials or sensitive configs", "Review volume mounts for data service access"],
+    "priority": "high"
+  },
+  "monitoring": {
+    "encryption": ["Verify Log Analytics workspace CMK", "Check diagnostic data encryption in transit"],
+    "access": ["Review workspace access control mode", "Check RBAC on diagnostic settings"],
+    "classification": ["Logs may contain sensitive data (IP addresses, usernames, query parameters)", "Review data retention and purge policies"],
+    "priority": "medium"
+  },
+  "security": {
+    "encryption": ["Review Defender data encryption and export settings"],
+    "access": ["Check security admin role assignments", "Review alert suppression rules"],
+    "classification": ["Security findings reference sensitive resource configurations", "Review Defender data export destinations"],
+    "priority": "high"
+  },
+  "governance": {
+    "encryption": ["Review policy enforcement for encryption standards"],
+    "access": ["Check management group access controls", "Review policy exemptions"],
+    "classification": ["Governance policies enforce data protection standards at scale"],
+    "priority": "medium"
+  }
+}

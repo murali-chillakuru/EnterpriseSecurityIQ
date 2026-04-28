@@ -1,0 +1,495 @@
+[
+  {
+    "CollectedAt": "2026-04-26T23:33:14.698946+00:00",
+    "Collector": "AzureSentinel",
+    "Data": {
+      "ConnectorId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/RG-LogAnalyticsWorkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/dataConnectors/2c09a667-bd12-4427-aec0-da238d4a7fa3",
+      "Kind": "MicrosoftThreatProtection",
+      "Name": "2c09a667-bd12-4427-aec0-da238d4a7fa3",
+      "SubscriptionId": "8054e434-49e0-4a21-bbea-3fee1c872b88"
+    },
+    "Description": "Data Connector: 2c09a667-bd12-4427-aec0-da238d4a7fa3",
+    "EvidenceId": "0091aaf7-dc4d-5053-9e0b-318c68055d22",
+    "EvidenceType": "azure-sentinel-connector",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/RG-LogAnalyticsWorkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/dataConnectors/2c09a667-bd12-4427-aec0-da238d4a7fa3",
+    "ResourceType": "SentinelDataConnector",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:14.698995+00:00",
+    "Collector": "AzureSentinel",
+    "Data": {
+      "ConnectorId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/RG-LogAnalyticsWorkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/dataConnectors/60160857-ec3c-43e3-881c-88c8b7ea4d4b",
+      "Kind": "MicrosoftThreatIntelligence",
+      "Name": "60160857-ec3c-43e3-881c-88c8b7ea4d4b",
+      "SubscriptionId": "8054e434-49e0-4a21-bbea-3fee1c872b88"
+    },
+    "Description": "Data Connector: 60160857-ec3c-43e3-881c-88c8b7ea4d4b",
+    "EvidenceId": "8596c72a-313e-5d63-b90e-0ad8a5a1e4dd",
+    "EvidenceType": "azure-sentinel-connector",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/RG-LogAnalyticsWorkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/dataConnectors/60160857-ec3c-43e3-881c-88c8b7ea4d4b",
+    "ResourceType": "SentinelDataConnector",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:14.697961+00:00",
+    "Collector": "AzureSentinel",
+    "Data": {
+      "ConnectorId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/RG-LogAnalyticsWorkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/dataConnectors/AzureActiveDirectory",
+      "Kind": "",
+      "Name": "AzureActiveDirectory",
+      "SubscriptionId": "8054e434-49e0-4a21-bbea-3fee1c872b88"
+    },
+    "Description": "Data Connector: AzureActiveDirectory",
+    "EvidenceId": "9768d236-cc4d-5ecc-bda8-81e5f92e4ad6",
+    "EvidenceType": "azure-sentinel-connector",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/RG-LogAnalyticsWorkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/dataConnectors/AzureActiveDirectory",
+    "ResourceType": "SentinelDataConnector",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:14.698142+00:00",
+    "Collector": "AzureSentinel",
+    "Data": {
+      "ConnectorId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/RG-LogAnalyticsWorkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/dataConnectors/AzureActiveDirectoryIdentityProtection",
+      "Kind": "",
+      "Name": "AzureActiveDirectoryIdentityProtection",
+      "SubscriptionId": "8054e434-49e0-4a21-bbea-3fee1c872b88"
+    },
+    "Description": "Data Connector: AzureActiveDirectoryIdentityProtection",
+    "EvidenceId": "d0bf660a-f119-53a1-8d79-6760299e26b5",
+    "EvidenceType": "azure-sentinel-connector",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/RG-LogAnalyticsWorkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/dataConnectors/AzureActiveDirectoryIdentityProtection",
+    "ResourceType": "SentinelDataConnector",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:14.697843+00:00",
+    "Collector": "AzureSentinel",
+    "Data": {
+      "ConnectorId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/RG-LogAnalyticsWorkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/dataConnectors/AzureActivity",
+      "Kind": "",
+      "Name": "AzureActivity",
+      "SubscriptionId": "8054e434-49e0-4a21-bbea-3fee1c872b88"
+    },
+    "Description": "Data Connector: AzureActivity",
+    "EvidenceId": "15a31f56-acb8-505e-b564-371926ffe370",
+    "EvidenceType": "azure-sentinel-connector",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/RG-LogAnalyticsWorkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/dataConnectors/AzureActivity",
+    "ResourceType": "SentinelDataConnector",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:14.698244+00:00",
+    "Collector": "AzureSentinel",
+    "Data": {
+      "ConnectorId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/RG-LogAnalyticsWorkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/dataConnectors/AzureAdvancedThreatProtection",
+      "Kind": "",
+      "Name": "AzureAdvancedThreatProtection",
+      "SubscriptionId": "8054e434-49e0-4a21-bbea-3fee1c872b88"
+    },
+    "Description": "Data Connector: AzureAdvancedThreatProtection",
+    "EvidenceId": "751c971e-9802-5316-9957-9669b338346c",
+    "EvidenceType": "azure-sentinel-connector",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/RG-LogAnalyticsWorkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/dataConnectors/AzureAdvancedThreatProtection",
+    "ResourceType": "SentinelDataConnector",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:14.698387+00:00",
+    "Collector": "AzureSentinel",
+    "Data": {
+      "ConnectorId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/RG-LogAnalyticsWorkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/dataConnectors/AzureFirewall",
+      "Kind": "",
+      "Name": "AzureFirewall",
+      "SubscriptionId": "8054e434-49e0-4a21-bbea-3fee1c872b88"
+    },
+    "Description": "Data Connector: AzureFirewall",
+    "EvidenceId": "11fb387e-95b0-5449-903b-1306719017c0",
+    "EvidenceType": "azure-sentinel-connector",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/RG-LogAnalyticsWorkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/dataConnectors/AzureFirewall",
+    "ResourceType": "SentinelDataConnector",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:14.698350+00:00",
+    "Collector": "AzureSentinel",
+    "Data": {
+      "ConnectorId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/RG-LogAnalyticsWorkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/dataConnectors/AzureKeyVault",
+      "Kind": "",
+      "Name": "AzureKeyVault",
+      "SubscriptionId": "8054e434-49e0-4a21-bbea-3fee1c872b88"
+    },
+    "Description": "Data Connector: AzureKeyVault",
+    "EvidenceId": "829f9e7b-9e2a-52b3-a76d-ce8f910550b3",
+    "EvidenceType": "azure-sentinel-connector",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/RG-LogAnalyticsWorkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/dataConnectors/AzureKeyVault",
+    "ResourceType": "SentinelDataConnector",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:14.697786+00:00",
+    "Collector": "AzureSentinel",
+    "Data": {
+      "ConnectorId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/RG-LogAnalyticsWorkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/dataConnectors/AzureNSG",
+      "Kind": "",
+      "Name": "AzureNSG",
+      "SubscriptionId": "8054e434-49e0-4a21-bbea-3fee1c872b88"
+    },
+    "Description": "Data Connector: AzureNSG",
+    "EvidenceId": "0cc34c75-da88-592b-a1dc-945e5fdd51e2",
+    "EvidenceType": "azure-sentinel-connector",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/RG-LogAnalyticsWorkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/dataConnectors/AzureNSG",
+    "ResourceType": "SentinelDataConnector",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:14.698703+00:00",
+    "Collector": "AzureSentinel",
+    "Data": {
+      "ConnectorId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/RG-LogAnalyticsWorkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/dataConnectors/CEF",
+      "Kind": "GenericUI",
+      "Name": "CEF",
+      "SubscriptionId": "8054e434-49e0-4a21-bbea-3fee1c872b88"
+    },
+    "Description": "Data Connector: CEF",
+    "EvidenceId": "580fc5a4-7df9-5c37-a475-db8024521a04",
+    "EvidenceType": "azure-sentinel-connector",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/RG-LogAnalyticsWorkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/dataConnectors/CEF",
+    "ResourceType": "SentinelDataConnector",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:14.698662+00:00",
+    "Collector": "AzureSentinel",
+    "Data": {
+      "ConnectorId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/RG-LogAnalyticsWorkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/dataConnectors/CefAma",
+      "Kind": "",
+      "Name": "CefAma",
+      "SubscriptionId": "8054e434-49e0-4a21-bbea-3fee1c872b88"
+    },
+    "Description": "Data Connector: CefAma",
+    "EvidenceId": "269d3682-e01a-5bca-9740-cc1ecb81cb06",
+    "EvidenceType": "azure-sentinel-connector",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/RG-LogAnalyticsWorkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/dataConnectors/CefAma",
+    "ResourceType": "SentinelDataConnector",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:14.698867+00:00",
+    "Collector": "AzureSentinel",
+    "Data": {
+      "ConnectorId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/RG-LogAnalyticsWorkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/dataConnectors/CiscoUmbrellaDataConnector",
+      "Kind": "GenericUI",
+      "Name": "CiscoUmbrellaDataConnector",
+      "SubscriptionId": "8054e434-49e0-4a21-bbea-3fee1c872b88"
+    },
+    "Description": "Data Connector: CiscoUmbrellaDataConnector",
+    "EvidenceId": "806199e6-f179-5db0-ba2d-9afa7a4c09b2",
+    "EvidenceType": "azure-sentinel-connector",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/RG-LogAnalyticsWorkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/dataConnectors/CiscoUmbrellaDataConnector",
+    "ResourceType": "SentinelDataConnector",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:14.698816+00:00",
+    "Collector": "AzureSentinel",
+    "Data": {
+      "ConnectorId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/RG-LogAnalyticsWorkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/dataConnectors/CiscoUmbrellaDataConnectorelasticpremium",
+      "Kind": "GenericUI",
+      "Name": "CiscoUmbrellaDataConnectorelasticpremium",
+      "SubscriptionId": "8054e434-49e0-4a21-bbea-3fee1c872b88"
+    },
+    "Description": "Data Connector: CiscoUmbrellaDataConnectorelasticpremium",
+    "EvidenceId": "4a5847a3-bf17-5587-a455-c8cbe04c06e6",
+    "EvidenceType": "azure-sentinel-connector",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/RG-LogAnalyticsWorkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/dataConnectors/CiscoUmbrellaDataConnectorelasticpremium",
+    "ResourceType": "SentinelDataConnector",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:14.698197+00:00",
+    "Collector": "AzureSentinel",
+    "Data": {
+      "ConnectorId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/RG-LogAnalyticsWorkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/dataConnectors/MicrosoftCloudAppSecurity",
+      "Kind": "",
+      "Name": "MicrosoftCloudAppSecurity",
+      "SubscriptionId": "8054e434-49e0-4a21-bbea-3fee1c872b88"
+    },
+    "Description": "Data Connector: MicrosoftCloudAppSecurity",
+    "EvidenceId": "e679fd5c-4758-5c08-89b1-56e251baef1e",
+    "EvidenceType": "azure-sentinel-connector",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/RG-LogAnalyticsWorkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/dataConnectors/MicrosoftCloudAppSecurity",
+    "ResourceType": "SentinelDataConnector",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:14.698314+00:00",
+    "Collector": "AzureSentinel",
+    "Data": {
+      "ConnectorId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/RG-LogAnalyticsWorkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/dataConnectors/MicrosoftDefenderAdvancedThreatProtection",
+      "Kind": "",
+      "Name": "MicrosoftDefenderAdvancedThreatProtection",
+      "SubscriptionId": "8054e434-49e0-4a21-bbea-3fee1c872b88"
+    },
+    "Description": "Data Connector: MicrosoftDefenderAdvancedThreatProtection",
+    "EvidenceId": "666dfe91-c549-5bf4-8a9d-9bef32bc33b2",
+    "EvidenceType": "azure-sentinel-connector",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/RG-LogAnalyticsWorkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/dataConnectors/MicrosoftDefenderAdvancedThreatProtection",
+    "ResourceType": "SentinelDataConnector",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:14.697885+00:00",
+    "Collector": "AzureSentinel",
+    "Data": {
+      "ConnectorId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/RG-LogAnalyticsWorkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/dataConnectors/MicrosoftDefenderForCloudTenantBased",
+      "Kind": "GenericUI",
+      "Name": "MicrosoftDefenderForCloudTenantBased",
+      "SubscriptionId": "8054e434-49e0-4a21-bbea-3fee1c872b88"
+    },
+    "Description": "Data Connector: MicrosoftDefenderForCloudTenantBased",
+    "EvidenceId": "a6f6c1ff-0697-53f8-84e7-d54b6831c90b",
+    "EvidenceType": "azure-sentinel-connector",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/RG-LogAnalyticsWorkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/dataConnectors/MicrosoftDefenderForCloudTenantBased",
+    "ResourceType": "SentinelDataConnector",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:14.698108+00:00",
+    "Collector": "AzureSentinel",
+    "Data": {
+      "ConnectorId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/RG-LogAnalyticsWorkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/dataConnectors/MicrosoftDefenderThreatIntelligence",
+      "Kind": "",
+      "Name": "MicrosoftDefenderThreatIntelligence",
+      "SubscriptionId": "8054e434-49e0-4a21-bbea-3fee1c872b88"
+    },
+    "Description": "Data Connector: MicrosoftDefenderThreatIntelligence",
+    "EvidenceId": "519ae3f9-64c1-543c-a2be-d898adf9c911",
+    "EvidenceType": "azure-sentinel-connector",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/RG-LogAnalyticsWorkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/dataConnectors/MicrosoftDefenderThreatIntelligence",
+    "ResourceType": "SentinelDataConnector",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:14.697926+00:00",
+    "Collector": "AzureSentinel",
+    "Data": {
+      "ConnectorId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/RG-LogAnalyticsWorkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/dataConnectors/MicrosoftThreatProtection",
+      "Kind": "",
+      "Name": "MicrosoftThreatProtection",
+      "SubscriptionId": "8054e434-49e0-4a21-bbea-3fee1c872b88"
+    },
+    "Description": "Data Connector: MicrosoftThreatProtection",
+    "EvidenceId": "de950207-74e2-5106-8b2a-f3f8a22f9914",
+    "EvidenceType": "azure-sentinel-connector",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/RG-LogAnalyticsWorkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/dataConnectors/MicrosoftThreatProtection",
+    "ResourceType": "SentinelDataConnector",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:14.698012+00:00",
+    "Collector": "AzureSentinel",
+    "Data": {
+      "ConnectorId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/RG-LogAnalyticsWorkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/dataConnectors/Office365",
+      "Kind": "",
+      "Name": "Office365",
+      "SubscriptionId": "8054e434-49e0-4a21-bbea-3fee1c872b88"
+    },
+    "Description": "Data Connector: Office365",
+    "EvidenceId": "324a09c3-8dbb-5bab-b4a8-5cf999874a73",
+    "EvidenceType": "azure-sentinel-connector",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/RG-LogAnalyticsWorkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/dataConnectors/Office365",
+    "ResourceType": "SentinelDataConnector",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:14.698278+00:00",
+    "Collector": "AzureSentinel",
+    "Data": {
+      "ConnectorId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/RG-LogAnalyticsWorkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/dataConnectors/OfficeATP",
+      "Kind": "",
+      "Name": "OfficeATP",
+      "SubscriptionId": "8054e434-49e0-4a21-bbea-3fee1c872b88"
+    },
+    "Description": "Data Connector: OfficeATP",
+    "EvidenceId": "8080f202-ef98-5849-9f63-768469bfefa5",
+    "EvidenceType": "azure-sentinel-connector",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/RG-LogAnalyticsWorkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/dataConnectors/OfficeATP",
+    "ResourceType": "SentinelDataConnector",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:14.698060+00:00",
+    "Collector": "AzureSentinel",
+    "Data": {
+      "ConnectorId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/RG-LogAnalyticsWorkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/dataConnectors/PremiumMicrosoftDefenderForThreatIntelligence",
+      "Kind": "",
+      "Name": "PremiumMicrosoftDefenderForThreatIntelligence",
+      "SubscriptionId": "8054e434-49e0-4a21-bbea-3fee1c872b88"
+    },
+    "Description": "Data Connector: PremiumMicrosoftDefenderForThreatIntelligence",
+    "EvidenceId": "275fd863-6195-5069-9197-bf73269c4f7d",
+    "EvidenceType": "azure-sentinel-connector",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/RG-LogAnalyticsWorkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/dataConnectors/PremiumMicrosoftDefenderForThreatIntelligence",
+    "ResourceType": "SentinelDataConnector",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:14.698549+00:00",
+    "Collector": "AzureSentinel",
+    "Data": {
+      "ConnectorId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/RG-LogAnalyticsWorkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/dataConnectors/SecurityEvents",
+      "Kind": "",
+      "Name": "SecurityEvents",
+      "SubscriptionId": "8054e434-49e0-4a21-bbea-3fee1c872b88"
+    },
+    "Description": "Data Connector: SecurityEvents",
+    "EvidenceId": "7f4489f7-90ac-5a4d-8ee4-40b3518d04d7",
+    "EvidenceType": "azure-sentinel-connector",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/RG-LogAnalyticsWorkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/dataConnectors/SecurityEvents",
+    "ResourceType": "SentinelDataConnector",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:14.698767+00:00",
+    "Collector": "AzureSentinel",
+    "Data": {
+      "ConnectorId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/RG-LogAnalyticsWorkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/dataConnectors/Syslog",
+      "Kind": "",
+      "Name": "Syslog",
+      "SubscriptionId": "8054e434-49e0-4a21-bbea-3fee1c872b88"
+    },
+    "Description": "Data Connector: Syslog",
+    "EvidenceId": "8d4484e6-9b77-5091-8f74-239988f272c7",
+    "EvidenceType": "azure-sentinel-connector",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/RG-LogAnalyticsWorkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/dataConnectors/Syslog",
+    "ResourceType": "SentinelDataConnector",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:14.698735+00:00",
+    "Collector": "AzureSentinel",
+    "Data": {
+      "ConnectorId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/RG-LogAnalyticsWorkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/dataConnectors/SyslogAma",
+      "Kind": "",
+      "Name": "SyslogAma",
+      "SubscriptionId": "8054e434-49e0-4a21-bbea-3fee1c872b88"
+    },
+    "Description": "Data Connector: SyslogAma",
+    "EvidenceId": "bb507301-685e-5203-ac7e-0042a40a307a",
+    "EvidenceType": "azure-sentinel-connector",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/RG-LogAnalyticsWorkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/dataConnectors/SyslogAma",
+    "ResourceType": "SentinelDataConnector",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:14.698612+00:00",
+    "Collector": "AzureSentinel",
+    "Data": {
+      "ConnectorId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/RG-LogAnalyticsWorkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/dataConnectors/ThreatIntelligence",
+      "Kind": "",
+      "Name": "ThreatIntelligence",
+      "SubscriptionId": "8054e434-49e0-4a21-bbea-3fee1c872b88"
+    },
+    "Description": "Data Connector: ThreatIntelligence",
+    "EvidenceId": "01985b62-28f3-5a76-93ec-9f55c493acf6",
+    "EvidenceType": "azure-sentinel-connector",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/RG-LogAnalyticsWorkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/dataConnectors/ThreatIntelligence",
+    "ResourceType": "SentinelDataConnector",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:14.698581+00:00",
+    "Collector": "AzureSentinel",
+    "Data": {
+      "ConnectorId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/RG-LogAnalyticsWorkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/dataConnectors/ThreatIntelligenceTaxii",
+      "Kind": "",
+      "Name": "ThreatIntelligenceTaxii",
+      "SubscriptionId": "8054e434-49e0-4a21-bbea-3fee1c872b88"
+    },
+    "Description": "Data Connector: ThreatIntelligenceTaxii",
+    "EvidenceId": "969c3bb1-e698-5749-b957-3e3c218a048a",
+    "EvidenceType": "azure-sentinel-connector",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/RG-LogAnalyticsWorkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/dataConnectors/ThreatIntelligenceTaxii",
+    "ResourceType": "SentinelDataConnector",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:14.698435+00:00",
+    "Collector": "AzureSentinel",
+    "Data": {
+      "ConnectorId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/RG-LogAnalyticsWorkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/dataConnectors/WindowsFirewall",
+      "Kind": "",
+      "Name": "WindowsFirewall",
+      "SubscriptionId": "8054e434-49e0-4a21-bbea-3fee1c872b88"
+    },
+    "Description": "Data Connector: WindowsFirewall",
+    "EvidenceId": "3c6457d8-e15e-569a-8ac4-e4a85ade69b2",
+    "EvidenceType": "azure-sentinel-connector",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/RG-LogAnalyticsWorkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/dataConnectors/WindowsFirewall",
+    "ResourceType": "SentinelDataConnector",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:14.698478+00:00",
+    "Collector": "AzureSentinel",
+    "Data": {
+      "ConnectorId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/RG-LogAnalyticsWorkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/dataConnectors/WindowsFirewallAma",
+      "Kind": "",
+      "Name": "WindowsFirewallAma",
+      "SubscriptionId": "8054e434-49e0-4a21-bbea-3fee1c872b88"
+    },
+    "Description": "Data Connector: WindowsFirewallAma",
+    "EvidenceId": "d67e0a93-84cd-5669-bf60-20229dd23699",
+    "EvidenceType": "azure-sentinel-connector",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/RG-LogAnalyticsWorkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/dataConnectors/WindowsFirewallAma",
+    "ResourceType": "SentinelDataConnector",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:14.698514+00:00",
+    "Collector": "AzureSentinel",
+    "Data": {
+      "ConnectorId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/RG-LogAnalyticsWorkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/dataConnectors/WindowsSecurityEvents",
+      "Kind": "",
+      "Name": "WindowsSecurityEvents",
+      "SubscriptionId": "8054e434-49e0-4a21-bbea-3fee1c872b88"
+    },
+    "Description": "Data Connector: WindowsSecurityEvents",
+    "EvidenceId": "685b0bec-131f-5384-ac87-d252e62f8674",
+    "EvidenceType": "azure-sentinel-connector",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/RG-LogAnalyticsWorkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/dataConnectors/WindowsSecurityEvents",
+    "ResourceType": "SentinelDataConnector",
+    "Source": "Azure"
+  }
+]

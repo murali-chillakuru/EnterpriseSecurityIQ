@@ -1,0 +1,1033 @@
+[
+  {
+    "CollectedAt": "2026-04-26T23:33:02.704773+00:00",
+    "Collector": "AzureResources",
+    "Data": {
+      "Location": "eastus2",
+      "Name": "All-PCIDSS-Resources-RG",
+      "ResourceGroup": "All-PCIDSS-Resources-RG",
+      "ResourceId": "/subscriptions/0eb177bd-28b1-44da-b683-1508e1268aee/resourceGroups/All-PCIDSS-Resources-RG",
+      "ResourceType": "ResourceGroup",
+      "SubscriptionId": "0eb177bd-28b1-44da-b683-1508e1268aee",
+      "SubscriptionName": "Prod",
+      "Tags": {}
+    },
+    "Description": "Resource Group: All-PCIDSS-Resources-RG",
+    "EvidenceId": "8cdb3291-7004-5f1d-9fdc-d8175d1d781d",
+    "EvidenceType": "azure-resource-group",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/0eb177bd-28b1-44da-b683-1508e1268aee/resourceGroups/All-PCIDSS-Resources-RG",
+    "ResourceType": "ResourceGroup",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:02.704645+00:00",
+    "Collector": "AzureResources",
+    "Data": {
+      "Location": "eastus",
+      "Name": "Default-ActivityLogAlerts",
+      "ResourceGroup": "Default-ActivityLogAlerts",
+      "ResourceId": "/subscriptions/0eb177bd-28b1-44da-b683-1508e1268aee/resourceGroups/Default-ActivityLogAlerts",
+      "ResourceType": "ResourceGroup",
+      "SubscriptionId": "0eb177bd-28b1-44da-b683-1508e1268aee",
+      "SubscriptionName": "Prod",
+      "Tags": {}
+    },
+    "Description": "Resource Group: Default-ActivityLogAlerts",
+    "EvidenceId": "a1885d58-ebee-5728-8178-286fc872192d",
+    "EvidenceType": "azure-resource-group",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/0eb177bd-28b1-44da-b683-1508e1268aee/resourceGroups/Default-ActivityLogAlerts",
+    "ResourceType": "ResourceGroup",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:02.704870+00:00",
+    "Collector": "AzureResources",
+    "Data": {
+      "Location": "westus2",
+      "Name": "McapsGovernance",
+      "ResourceGroup": "McapsGovernance",
+      "ResourceId": "/subscriptions/0eb177bd-28b1-44da-b683-1508e1268aee/resourceGroups/McapsGovernance",
+      "ResourceType": "ResourceGroup",
+      "SubscriptionId": "0eb177bd-28b1-44da-b683-1508e1268aee",
+      "SubscriptionName": "Prod",
+      "Tags": {
+        "Action": "Do Not Delete",
+        "Contact": "https://aka.ms/mcapsazuresupport",
+        "CreatedByPolicy": "MCAPS Governance Team"
+      }
+    },
+    "Description": "Resource Group: McapsGovernance",
+    "EvidenceId": "52f118d5-e77c-594c-abe0-b6915767dad2",
+    "EvidenceType": "azure-resource-group",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/0eb177bd-28b1-44da-b683-1508e1268aee/resourceGroups/McapsGovernance",
+    "ResourceType": "ResourceGroup",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:02.704829+00:00",
+    "Collector": "AzureResources",
+    "Data": {
+      "Location": "eastus2",
+      "Name": "NetworkWatcherRG",
+      "ResourceGroup": "NetworkWatcherRG",
+      "ResourceId": "/subscriptions/0eb177bd-28b1-44da-b683-1508e1268aee/resourceGroups/NetworkWatcherRG",
+      "ResourceType": "ResourceGroup",
+      "SubscriptionId": "0eb177bd-28b1-44da-b683-1508e1268aee",
+      "SubscriptionName": "Prod",
+      "Tags": {}
+    },
+    "Description": "Resource Group: NetworkWatcherRG",
+    "EvidenceId": "3fa6b0b9-e54e-5734-88b5-436fb7f5cf0e",
+    "EvidenceType": "azure-resource-group",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/0eb177bd-28b1-44da-b683-1508e1268aee/resourceGroups/NetworkWatcherRG",
+    "ResourceType": "ResourceGroup",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:07.845119+00:00",
+    "Collector": "AzureResources",
+    "Data": {
+      "Location": "eastus2",
+      "Name": "Datalake",
+      "ResourceGroup": "Datalake",
+      "ResourceId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/Datalake",
+      "ResourceType": "ResourceGroup",
+      "SubscriptionId": "8054e434-49e0-4a21-bbea-3fee1c872b88",
+      "SubscriptionName": "Security",
+      "Tags": {}
+    },
+    "Description": "Resource Group: Datalake",
+    "EvidenceId": "43e34c2f-bb2b-5c36-96f0-98d508eb77eb",
+    "EvidenceType": "azure-resource-group",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/Datalake",
+    "ResourceType": "ResourceGroup",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:07.844849+00:00",
+    "Collector": "AzureResources",
+    "Data": {
+      "Location": "eastus",
+      "Name": "Default-ActivityLogAlerts",
+      "ResourceGroup": "Default-ActivityLogAlerts",
+      "ResourceId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/Default-ActivityLogAlerts",
+      "ResourceType": "ResourceGroup",
+      "SubscriptionId": "8054e434-49e0-4a21-bbea-3fee1c872b88",
+      "SubscriptionName": "Security",
+      "Tags": {}
+    },
+    "Description": "Resource Group: Default-ActivityLogAlerts",
+    "EvidenceId": "f427f860-0a24-5ea8-85f2-c06cc1bb710c",
+    "EvidenceType": "azure-resource-group",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/Default-ActivityLogAlerts",
+    "ResourceType": "ResourceGroup",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:07.845156+00:00",
+    "Collector": "AzureResources",
+    "Data": {
+      "Location": "westus2",
+      "Name": "McapsGovernance",
+      "ResourceGroup": "McapsGovernance",
+      "ResourceId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/McapsGovernance",
+      "ResourceType": "ResourceGroup",
+      "SubscriptionId": "8054e434-49e0-4a21-bbea-3fee1c872b88",
+      "SubscriptionName": "Security",
+      "Tags": {
+        "Action": "Do Not Delete",
+        "Contact": "https://aka.ms/mcapsazuresupport",
+        "CreatedByPolicy": "MCAPS Governance Team"
+      }
+    },
+    "Description": "Resource Group: McapsGovernance",
+    "EvidenceId": "19110968-b37b-5b63-bb68-f025a34cec7b",
+    "EvidenceType": "azure-resource-group",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/McapsGovernance",
+    "ResourceType": "ResourceGroup",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:07.845042+00:00",
+    "Collector": "AzureResources",
+    "Data": {
+      "Location": "eastus",
+      "Name": "NetworkWatcherRG",
+      "ResourceGroup": "NetworkWatcherRG",
+      "ResourceId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/NetworkWatcherRG",
+      "ResourceType": "ResourceGroup",
+      "SubscriptionId": "8054e434-49e0-4a21-bbea-3fee1c872b88",
+      "SubscriptionName": "Security",
+      "Tags": {}
+    },
+    "Description": "Resource Group: NetworkWatcherRG",
+    "EvidenceId": "2f494bc8-302f-5601-89b4-84dbcf54c021",
+    "EvidenceType": "azure-resource-group",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/NetworkWatcherRG",
+    "ResourceType": "ResourceGroup",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:07.844991+00:00",
+    "Collector": "AzureResources",
+    "Data": {
+      "Location": "eastus",
+      "Name": "RG-LogAnalyticsWorkspace",
+      "ResourceGroup": "RG-LogAnalyticsWorkspace",
+      "ResourceId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/RG-LogAnalyticsWorkspace",
+      "ResourceType": "ResourceGroup",
+      "SubscriptionId": "8054e434-49e0-4a21-bbea-3fee1c872b88",
+      "SubscriptionName": "Security",
+      "Tags": {}
+    },
+    "Description": "Resource Group: RG-LogAnalyticsWorkspace",
+    "EvidenceId": "563c5dc4-73c3-5031-ab3c-04cbe3c4646a",
+    "EvidenceType": "azure-resource-group",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/RG-LogAnalyticsWorkspace",
+    "ResourceType": "ResourceGroup",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:07.845083+00:00",
+    "Collector": "AzureResources",
+    "Data": {
+      "Location": "eastus",
+      "Name": "SecurityCopilot-RG",
+      "ResourceGroup": "SecurityCopilot-RG",
+      "ResourceId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/SecurityCopilot-RG",
+      "ResourceType": "ResourceGroup",
+      "SubscriptionId": "8054e434-49e0-4a21-bbea-3fee1c872b88",
+      "SubscriptionName": "Security",
+      "Tags": {}
+    },
+    "Description": "Resource Group: SecurityCopilot-RG",
+    "EvidenceId": "019dba84-1780-57cd-b692-af71b12f442f",
+    "EvidenceType": "azure-resource-group",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/SecurityCopilot-RG",
+    "ResourceType": "ResourceGroup",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:16.726582+00:00",
+    "Collector": "AzureResources",
+    "Data": {
+      "Location": "eastus2",
+      "Name": "AppProxy-POC-RG",
+      "ResourceGroup": "AppProxy-POC-RG",
+      "ResourceId": "/subscriptions/9154cdcb-5a52-452a-b1e7-483be9eee6d2/resourceGroups/AppProxy-POC-RG",
+      "ResourceType": "ResourceGroup",
+      "SubscriptionId": "9154cdcb-5a52-452a-b1e7-483be9eee6d2",
+      "SubscriptionName": "Infra",
+      "Tags": {}
+    },
+    "Description": "Resource Group: AppProxy-POC-RG",
+    "EvidenceId": "75c516f3-dc48-5cec-acc8-44f81c59f5c5",
+    "EvidenceType": "azure-resource-group",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/9154cdcb-5a52-452a-b1e7-483be9eee6d2/resourceGroups/AppProxy-POC-RG",
+    "ResourceType": "ResourceGroup",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:16.726241+00:00",
+    "Collector": "AzureResources",
+    "Data": {
+      "Location": "eastus",
+      "Name": "Default-ActivityLogAlerts",
+      "ResourceGroup": "Default-ActivityLogAlerts",
+      "ResourceId": "/subscriptions/9154cdcb-5a52-452a-b1e7-483be9eee6d2/resourceGroups/Default-ActivityLogAlerts",
+      "ResourceType": "ResourceGroup",
+      "SubscriptionId": "9154cdcb-5a52-452a-b1e7-483be9eee6d2",
+      "SubscriptionName": "Infra",
+      "Tags": {}
+    },
+    "Description": "Resource Group: Default-ActivityLogAlerts",
+    "EvidenceId": "d3c65cbe-062b-59d5-acc7-7c8e4fe1d5e0",
+    "EvidenceType": "azure-resource-group",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/9154cdcb-5a52-452a-b1e7-483be9eee6d2/resourceGroups/Default-ActivityLogAlerts",
+    "ResourceType": "ResourceGroup",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:16.726464+00:00",
+    "Collector": "AzureResources",
+    "Data": {
+      "Location": "eastus",
+      "Name": "DefaultResourceGroup-EUS",
+      "ResourceGroup": "DefaultResourceGroup-EUS",
+      "ResourceId": "/subscriptions/9154cdcb-5a52-452a-b1e7-483be9eee6d2/resourceGroups/DefaultResourceGroup-EUS",
+      "ResourceType": "ResourceGroup",
+      "SubscriptionId": "9154cdcb-5a52-452a-b1e7-483be9eee6d2",
+      "SubscriptionName": "Infra",
+      "Tags": {}
+    },
+    "Description": "Resource Group: DefaultResourceGroup-EUS",
+    "EvidenceId": "b7c83a51-27a2-55cb-966f-3abff41a02a3",
+    "EvidenceType": "azure-resource-group",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/9154cdcb-5a52-452a-b1e7-483be9eee6d2/resourceGroups/DefaultResourceGroup-EUS",
+    "ResourceType": "ResourceGroup",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:16.726666+00:00",
+    "Collector": "AzureResources",
+    "Data": {
+      "Location": "westus2",
+      "Name": "McapsGovernance",
+      "ResourceGroup": "McapsGovernance",
+      "ResourceId": "/subscriptions/9154cdcb-5a52-452a-b1e7-483be9eee6d2/resourceGroups/McapsGovernance",
+      "ResourceType": "ResourceGroup",
+      "SubscriptionId": "9154cdcb-5a52-452a-b1e7-483be9eee6d2",
+      "SubscriptionName": "Infra",
+      "Tags": {
+        "Action": "Do Not Delete",
+        "Contact": "https://aka.ms/mcapsazuresupport",
+        "CreatedByPolicy": "MCAPS Governance Team"
+      }
+    },
+    "Description": "Resource Group: McapsGovernance",
+    "EvidenceId": "e2720bb5-4989-5a50-8d35-0ef37789c40e",
+    "EvidenceType": "azure-resource-group",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/9154cdcb-5a52-452a-b1e7-483be9eee6d2/resourceGroups/McapsGovernance",
+    "ResourceType": "ResourceGroup",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:16.726420+00:00",
+    "Collector": "AzureResources",
+    "Data": {
+      "Location": "eastus",
+      "Name": "NetworkWatcherRG",
+      "ResourceGroup": "NetworkWatcherRG",
+      "ResourceId": "/subscriptions/9154cdcb-5a52-452a-b1e7-483be9eee6d2/resourceGroups/NetworkWatcherRG",
+      "ResourceType": "ResourceGroup",
+      "SubscriptionId": "9154cdcb-5a52-452a-b1e7-483be9eee6d2",
+      "SubscriptionName": "Infra",
+      "Tags": {}
+    },
+    "Description": "Resource Group: NetworkWatcherRG",
+    "EvidenceId": "6796d3fa-ae2f-57de-ae43-48c293c38ed2",
+    "EvidenceType": "azure-resource-group",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/9154cdcb-5a52-452a-b1e7-483be9eee6d2/resourceGroups/NetworkWatcherRG",
+    "ResourceType": "ResourceGroup",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:16.726704+00:00",
+    "Collector": "AzureResources",
+    "Data": {
+      "Location": "canadacentral",
+      "Name": "RG-ADLS-Governance-Retention",
+      "ResourceGroup": "RG-ADLS-Governance-Retention",
+      "ResourceId": "/subscriptions/9154cdcb-5a52-452a-b1e7-483be9eee6d2/resourceGroups/RG-ADLS-Governance-Retention",
+      "ResourceType": "ResourceGroup",
+      "SubscriptionId": "9154cdcb-5a52-452a-b1e7-483be9eee6d2",
+      "SubscriptionName": "Infra",
+      "Tags": {
+        "azd-env-name": "adls-gov-prod",
+        "managedBy": "bicep",
+        "workload": "adls-gov-poc"
+      }
+    },
+    "Description": "Resource Group: RG-ADLS-Governance-Retention",
+    "EvidenceId": "d7acb132-2494-5e1a-b1c1-a7508683ca68",
+    "EvidenceType": "azure-resource-group",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/9154cdcb-5a52-452a-b1e7-483be9eee6d2/resourceGroups/RG-ADLS-Governance-Retention",
+    "ResourceType": "ResourceGroup",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:16.726362+00:00",
+    "Collector": "AzureResources",
+    "Data": {
+      "Location": "eastus",
+      "Name": "RG-POC-Sentinel",
+      "ResourceGroup": "RG-POC-Sentinel",
+      "ResourceId": "/subscriptions/9154cdcb-5a52-452a-b1e7-483be9eee6d2/resourceGroups/RG-POC-Sentinel",
+      "ResourceType": "ResourceGroup",
+      "SubscriptionId": "9154cdcb-5a52-452a-b1e7-483be9eee6d2",
+      "SubscriptionName": "Infra",
+      "Tags": {}
+    },
+    "Description": "Resource Group: RG-POC-Sentinel",
+    "EvidenceId": "a8ec4171-8eb2-5ce3-a3e9-a79787669c10",
+    "EvidenceType": "azure-resource-group",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/9154cdcb-5a52-452a-b1e7-483be9eee6d2/resourceGroups/RG-POC-Sentinel",
+    "ResourceType": "ResourceGroup",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:16.726505+00:00",
+    "Collector": "AzureResources",
+    "Data": {
+      "Location": "eastus",
+      "Name": "rg-ecma2-poc",
+      "ResourceGroup": "rg-ecma2-poc",
+      "ResourceId": "/subscriptions/9154cdcb-5a52-452a-b1e7-483be9eee6d2/resourceGroups/rg-ecma2-poc",
+      "ResourceType": "ResourceGroup",
+      "SubscriptionId": "9154cdcb-5a52-452a-b1e7-483be9eee6d2",
+      "SubscriptionName": "Infra",
+      "Tags": {}
+    },
+    "Description": "Resource Group: rg-ecma2-poc",
+    "EvidenceId": "5b2a8590-75a0-5d84-88e2-5fc4f1d7f9e7",
+    "EvidenceType": "azure-resource-group",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/9154cdcb-5a52-452a-b1e7-483be9eee6d2/resourceGroups/rg-ecma2-poc",
+    "ResourceType": "ResourceGroup",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:16.726618+00:00",
+    "Collector": "AzureResources",
+    "Data": {
+      "Location": "westus2",
+      "Name": "rg-ecma2-poc-wus2",
+      "ResourceGroup": "rg-ecma2-poc-wus2",
+      "ResourceId": "/subscriptions/9154cdcb-5a52-452a-b1e7-483be9eee6d2/resourceGroups/rg-ecma2-poc-wus2",
+      "ResourceType": "ResourceGroup",
+      "SubscriptionId": "9154cdcb-5a52-452a-b1e7-483be9eee6d2",
+      "SubscriptionName": "Infra",
+      "Tags": {}
+    },
+    "Description": "Resource Group: rg-ecma2-poc-wus2",
+    "EvidenceId": "90d009c2-897a-5b07-94ba-2c21f6df854c",
+    "EvidenceType": "azure-resource-group",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/9154cdcb-5a52-452a-b1e7-483be9eee6d2/resourceGroups/rg-ecma2-poc-wus2",
+    "ResourceType": "ResourceGroup",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:16.726544+00:00",
+    "Collector": "AzureResources",
+    "Data": {
+      "Location": "eastus2",
+      "Name": "vm02_group",
+      "ResourceGroup": "vm02_group",
+      "ResourceId": "/subscriptions/9154cdcb-5a52-452a-b1e7-483be9eee6d2/resourceGroups/vm02_group",
+      "ResourceType": "ResourceGroup",
+      "SubscriptionId": "9154cdcb-5a52-452a-b1e7-483be9eee6d2",
+      "SubscriptionName": "Infra",
+      "Tags": {}
+    },
+    "Description": "Resource Group: vm02_group",
+    "EvidenceId": "ac9c73d0-37d4-5351-87d4-4df3061fa830",
+    "EvidenceType": "azure-resource-group",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/9154cdcb-5a52-452a-b1e7-483be9eee6d2/resourceGroups/vm02_group",
+    "ResourceType": "ResourceGroup",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:22.266690+00:00",
+    "Collector": "AzureResources",
+    "Data": {
+      "Location": "eastus2",
+      "Name": "AzureStorageTestData-RG",
+      "ResourceGroup": "AzureStorageTestData-RG",
+      "ResourceId": "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/resourceGroups/AzureStorageTestData-RG",
+      "ResourceType": "ResourceGroup",
+      "SubscriptionId": "d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0",
+      "SubscriptionName": "AI",
+      "Tags": {}
+    },
+    "Description": "Resource Group: AzureStorageTestData-RG",
+    "EvidenceId": "230a8587-dfb7-588c-8e3f-59e82779c63a",
+    "EvidenceType": "azure-resource-group",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/resourceGroups/AzureStorageTestData-RG",
+    "ResourceType": "ResourceGroup",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:22.267201+00:00",
+    "Collector": "AzureResources",
+    "Data": {
+      "Location": "eastus",
+      "Name": "Default-ActivityLogAlerts",
+      "ResourceGroup": "Default-ActivityLogAlerts",
+      "ResourceId": "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/resourceGroups/Default-ActivityLogAlerts",
+      "ResourceType": "ResourceGroup",
+      "SubscriptionId": "d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0",
+      "SubscriptionName": "AI",
+      "Tags": {}
+    },
+    "Description": "Resource Group: Default-ActivityLogAlerts",
+    "EvidenceId": "58aa9391-0320-59c5-a972-e1fcfc18b2aa",
+    "EvidenceType": "azure-resource-group",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/resourceGroups/Default-ActivityLogAlerts",
+    "ResourceType": "ResourceGroup",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:22.266852+00:00",
+    "Collector": "AzureResources",
+    "Data": {
+      "Location": "centralus",
+      "Name": "DefaultResourceGroup-CUS",
+      "ResourceGroup": "DefaultResourceGroup-CUS",
+      "ResourceId": "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/resourceGroups/DefaultResourceGroup-CUS",
+      "ResourceType": "ResourceGroup",
+      "SubscriptionId": "d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0",
+      "SubscriptionName": "AI",
+      "Tags": {}
+    },
+    "Description": "Resource Group: DefaultResourceGroup-CUS",
+    "EvidenceId": "b11b9ed4-f303-5822-b40c-edd63e239b4d",
+    "EvidenceType": "azure-resource-group",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/resourceGroups/DefaultResourceGroup-CUS",
+    "ResourceType": "ResourceGroup",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:22.267237+00:00",
+    "Collector": "AzureResources",
+    "Data": {
+      "Location": "eastus",
+      "Name": "DefaultResourceGroup-EUS",
+      "ResourceGroup": "DefaultResourceGroup-EUS",
+      "ResourceId": "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/resourceGroups/DefaultResourceGroup-EUS",
+      "ResourceType": "ResourceGroup",
+      "SubscriptionId": "d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0",
+      "SubscriptionName": "AI",
+      "Tags": {}
+    },
+    "Description": "Resource Group: DefaultResourceGroup-EUS",
+    "EvidenceId": "058cd690-b039-5f3b-9288-79cc92c2a875",
+    "EvidenceType": "azure-resource-group",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/resourceGroups/DefaultResourceGroup-EUS",
+    "ResourceType": "ResourceGroup",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:22.266405+00:00",
+    "Collector": "AzureResources",
+    "Data": {
+      "Location": "eastus2",
+      "Name": "DefaultResourceGroup-EUS2",
+      "ResourceGroup": "DefaultResourceGroup-EUS2",
+      "ResourceId": "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/resourceGroups/DefaultResourceGroup-EUS2",
+      "ResourceType": "ResourceGroup",
+      "SubscriptionId": "d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0",
+      "SubscriptionName": "AI",
+      "Tags": {}
+    },
+    "Description": "Resource Group: DefaultResourceGroup-EUS2",
+    "EvidenceId": "a9c2646b-e88b-54b1-9827-59ca03f24941",
+    "EvidenceType": "azure-resource-group",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/resourceGroups/DefaultResourceGroup-EUS2",
+    "ResourceType": "ResourceGroup",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:22.266813+00:00",
+    "Collector": "AzureResources",
+    "Data": {
+      "Location": "swedencentral",
+      "Name": "ESIQNew-RG",
+      "ResourceGroup": "ESIQNew-RG",
+      "ResourceId": "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/resourceGroups/ESIQNew-RG",
+      "ResourceType": "ResourceGroup",
+      "SubscriptionId": "d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0",
+      "SubscriptionName": "AI",
+      "Tags": {}
+    },
+    "Description": "Resource Group: ESIQNew-RG",
+    "EvidenceId": "a1956fe2-0519-5f1d-b329-23e85ac4bee3",
+    "EvidenceType": "azure-resource-group",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/resourceGroups/ESIQNew-RG",
+    "ResourceType": "ResourceGroup",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:22.266115+00:00",
+    "Collector": "AzureResources",
+    "Data": {
+      "Location": "westus2",
+      "Name": "McapsGovernance",
+      "ResourceGroup": "McapsGovernance",
+      "ResourceId": "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/resourceGroups/McapsGovernance",
+      "ResourceType": "ResourceGroup",
+      "SubscriptionId": "d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0",
+      "SubscriptionName": "AI",
+      "Tags": {
+        "Action": "Do Not Delete",
+        "Contact": "https://aka.ms/mcapsazuresupport",
+        "CreatedByPolicy": "MCAPS Governance Team"
+      }
+    },
+    "Description": "Resource Group: McapsGovernance",
+    "EvidenceId": "4396c51c-84c8-5639-8dd9-9dfc6ddbe3f4",
+    "EvidenceType": "azure-resource-group",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/resourceGroups/McapsGovernance",
+    "ResourceType": "ResourceGroup",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:22.267310+00:00",
+    "Collector": "AzureResources",
+    "Data": {
+      "Location": "southafricanorth",
+      "Name": "NetworkWatcherRG",
+      "ResourceGroup": "NetworkWatcherRG",
+      "ResourceId": "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/resourceGroups/NetworkWatcherRG",
+      "ResourceType": "ResourceGroup",
+      "SubscriptionId": "d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0",
+      "SubscriptionName": "AI",
+      "Tags": {}
+    },
+    "Description": "Resource Group: NetworkWatcherRG",
+    "EvidenceId": "714b9c44-d274-542e-851e-828f4794403b",
+    "EvidenceType": "azure-resource-group",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/resourceGroups/NetworkWatcherRG",
+    "ResourceType": "ResourceGroup",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:22.266609+00:00",
+    "Collector": "AzureResources",
+    "Data": {
+      "Location": "eastus2",
+      "Name": "PostureIQ-RG",
+      "ResourceGroup": "PostureIQ-RG",
+      "ResourceId": "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/resourceGroups/PostureIQ-RG",
+      "ResourceType": "ResourceGroup",
+      "SubscriptionId": "d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0",
+      "SubscriptionName": "AI",
+      "Tags": {}
+    },
+    "Description": "Resource Group: PostureIQ-RG",
+    "EvidenceId": "c1bb7899-e8c9-5d5a-b06b-5965018748b2",
+    "EvidenceType": "azure-resource-group",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/resourceGroups/PostureIQ-RG",
+    "ResourceType": "ResourceGroup",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:22.266290+00:00",
+    "Collector": "AzureResources",
+    "Data": {
+      "Location": "eastus2",
+      "Name": "RG-AzureAIFoundary-FedRAMP-High",
+      "ResourceGroup": "RG-AzureAIFoundary-FedRAMP-High",
+      "ResourceId": "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/resourceGroups/RG-AzureAIFoundary-FedRAMP-High",
+      "ResourceType": "ResourceGroup",
+      "SubscriptionId": "d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0",
+      "SubscriptionName": "AI",
+      "Tags": {}
+    },
+    "Description": "Resource Group: RG-AzureAIFoundary-FedRAMP-High",
+    "EvidenceId": "209507ca-d7db-5531-9059-cd36d285570f",
+    "EvidenceType": "azure-resource-group",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/resourceGroups/RG-AzureAIFoundary-FedRAMP-High",
+    "ResourceType": "ResourceGroup",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:22.267347+00:00",
+    "Collector": "AzureResources",
+    "Data": {
+      "Location": "westus3",
+      "Name": "RG-MFabric",
+      "ResourceGroup": "RG-MFabric",
+      "ResourceId": "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/resourceGroups/RG-MFabric",
+      "ResourceType": "ResourceGroup",
+      "SubscriptionId": "d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0",
+      "SubscriptionName": "AI",
+      "Tags": {}
+    },
+    "Description": "Resource Group: RG-MFabric",
+    "EvidenceId": "1b5ec3db-b601-5d7d-af93-52b0d1cfb8e9",
+    "EvidenceType": "azure-resource-group",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/resourceGroups/RG-MFabric",
+    "ResourceType": "ResourceGroup",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:22.266446+00:00",
+    "Collector": "AzureResources",
+    "Data": {
+      "Location": "eastus2",
+      "Name": "RG-SecurityStore-Microsoft-com",
+      "ResourceGroup": "RG-SecurityStore-Microsoft-com",
+      "ResourceId": "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/resourceGroups/RG-SecurityStore-Microsoft-com",
+      "ResourceType": "ResourceGroup",
+      "SubscriptionId": "d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0",
+      "SubscriptionName": "AI",
+      "Tags": {}
+    },
+    "Description": "Resource Group: RG-SecurityStore-Microsoft-com",
+    "EvidenceId": "45b74416-d894-5182-9caf-b7bc0e9dfb25",
+    "EvidenceType": "azure-resource-group",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/resourceGroups/RG-SecurityStore-Microsoft-com",
+    "ResourceType": "ResourceGroup",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:22.266358+00:00",
+    "Collector": "AzureResources",
+    "Data": {
+      "Location": "eastus2",
+      "Name": "RG_Agent_Production_workspace",
+      "ResourceGroup": "RG_Agent_Production_workspace",
+      "ResourceId": "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/resourceGroups/RG_Agent_Production_workspace",
+      "ResourceType": "ResourceGroup",
+      "SubscriptionId": "d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0",
+      "SubscriptionName": "AI",
+      "Tags": {}
+    },
+    "Description": "Resource Group: RG_Agent_Production_workspace",
+    "EvidenceId": "2d13504f-639a-56cd-add9-619cd58ebcf7",
+    "EvidenceType": "azure-resource-group",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/resourceGroups/RG_Agent_Production_workspace",
+    "ResourceType": "ResourceGroup",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:22.266651+00:00",
+    "Collector": "AzureResources",
+    "Data": {
+      "Location": "eastus2",
+      "Name": "SearchIQ-RG",
+      "ResourceGroup": "SearchIQ-RG",
+      "ResourceId": "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/resourceGroups/SearchIQ-RG",
+      "ResourceType": "ResourceGroup",
+      "SubscriptionId": "d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0",
+      "SubscriptionName": "AI",
+      "Tags": {}
+    },
+    "Description": "Resource Group: SearchIQ-RG",
+    "EvidenceId": "f7101af2-53aa-52d9-962b-6cd3b3614841",
+    "EvidenceType": "azure-resource-group",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/resourceGroups/SearchIQ-RG",
+    "ResourceType": "ResourceGroup",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:22.267006+00:00",
+    "Collector": "AzureResources",
+    "Data": {
+      "Location": "centralus",
+      "Name": "VisualStudioOnline-202DBFC87B9B4BDBB7399090BB529FDC",
+      "ResourceGroup": "VisualStudioOnline-202DBFC87B9B4BDBB7399090BB529FDC",
+      "ResourceId": "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/resourceGroups/VisualStudioOnline-202DBFC87B9B4BDBB7399090BB529FDC",
+      "ResourceType": "ResourceGroup",
+      "SubscriptionId": "d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0",
+      "SubscriptionName": "AI",
+      "Tags": {}
+    },
+    "Description": "Resource Group: VisualStudioOnline-202DBFC87B9B4BDBB7399090BB529FDC",
+    "EvidenceId": "aaf9a76a-6dfd-5ace-b0f4-333ef61ff736",
+    "EvidenceType": "azure-resource-group",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/resourceGroups/VisualStudioOnline-202DBFC87B9B4BDBB7399090BB529FDC",
+    "ResourceType": "ResourceGroup",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:22.266891+00:00",
+    "Collector": "AzureResources",
+    "Data": {
+      "Location": "centralus",
+      "Name": "VisualStudioOnline-2D99876C9299450493402BCC306DF513",
+      "ResourceGroup": "VisualStudioOnline-2D99876C9299450493402BCC306DF513",
+      "ResourceId": "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/resourceGroups/VisualStudioOnline-2D99876C9299450493402BCC306DF513",
+      "ResourceType": "ResourceGroup",
+      "SubscriptionId": "d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0",
+      "SubscriptionName": "AI",
+      "Tags": {}
+    },
+    "Description": "Resource Group: VisualStudioOnline-2D99876C9299450493402BCC306DF513",
+    "EvidenceId": "e8e0b0ac-e75f-5522-b5c5-c5218a07fea0",
+    "EvidenceType": "azure-resource-group",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/resourceGroups/VisualStudioOnline-2D99876C9299450493402BCC306DF513",
+    "ResourceType": "ResourceGroup",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:22.267049+00:00",
+    "Collector": "AzureResources",
+    "Data": {
+      "Location": "centralus",
+      "Name": "VisualStudioOnline-5BD10CFB85DD49289FAF4811939BFE73",
+      "ResourceGroup": "VisualStudioOnline-5BD10CFB85DD49289FAF4811939BFE73",
+      "ResourceId": "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/resourceGroups/VisualStudioOnline-5BD10CFB85DD49289FAF4811939BFE73",
+      "ResourceType": "ResourceGroup",
+      "SubscriptionId": "d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0",
+      "SubscriptionName": "AI",
+      "Tags": {}
+    },
+    "Description": "Resource Group: VisualStudioOnline-5BD10CFB85DD49289FAF4811939BFE73",
+    "EvidenceId": "c7146a0c-794e-5f7a-9c6b-9f28e4f8f475",
+    "EvidenceType": "azure-resource-group",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/resourceGroups/VisualStudioOnline-5BD10CFB85DD49289FAF4811939BFE73",
+    "ResourceType": "ResourceGroup",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:22.267087+00:00",
+    "Collector": "AzureResources",
+    "Data": {
+      "Location": "centralus",
+      "Name": "VisualStudioOnline-8DE9C41F85E64DD79AF5C057AFCCDFC1",
+      "ResourceGroup": "VisualStudioOnline-8DE9C41F85E64DD79AF5C057AFCCDFC1",
+      "ResourceId": "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/resourceGroups/VisualStudioOnline-8DE9C41F85E64DD79AF5C057AFCCDFC1",
+      "ResourceType": "ResourceGroup",
+      "SubscriptionId": "d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0",
+      "SubscriptionName": "AI",
+      "Tags": {}
+    },
+    "Description": "Resource Group: VisualStudioOnline-8DE9C41F85E64DD79AF5C057AFCCDFC1",
+    "EvidenceId": "4585f075-ae29-532b-a86d-01d58cfa2efc",
+    "EvidenceType": "azure-resource-group",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/resourceGroups/VisualStudioOnline-8DE9C41F85E64DD79AF5C057AFCCDFC1",
+    "ResourceType": "ResourceGroup",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:22.267162+00:00",
+    "Collector": "AzureResources",
+    "Data": {
+      "Location": "centralus",
+      "Name": "VisualStudioOnline-BCC1732A5B4F4BEFB4CC8734A70537E9",
+      "ResourceGroup": "VisualStudioOnline-BCC1732A5B4F4BEFB4CC8734A70537E9",
+      "ResourceId": "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/resourceGroups/VisualStudioOnline-BCC1732A5B4F4BEFB4CC8734A70537E9",
+      "ResourceType": "ResourceGroup",
+      "SubscriptionId": "d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0",
+      "SubscriptionName": "AI",
+      "Tags": {}
+    },
+    "Description": "Resource Group: VisualStudioOnline-BCC1732A5B4F4BEFB4CC8734A70537E9",
+    "EvidenceId": "be0bcdf7-df1f-5b67-adf6-a2eafe816863",
+    "EvidenceType": "azure-resource-group",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/resourceGroups/VisualStudioOnline-BCC1732A5B4F4BEFB4CC8734A70537E9",
+    "ResourceType": "ResourceGroup",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:22.266967+00:00",
+    "Collector": "AzureResources",
+    "Data": {
+      "Location": "centralus",
+      "Name": "VisualStudioOnline-DC68136D511948EBBE9BA224D46A84A3",
+      "ResourceGroup": "VisualStudioOnline-DC68136D511948EBBE9BA224D46A84A3",
+      "ResourceId": "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/resourceGroups/VisualStudioOnline-DC68136D511948EBBE9BA224D46A84A3",
+      "ResourceType": "ResourceGroup",
+      "SubscriptionId": "d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0",
+      "SubscriptionName": "AI",
+      "Tags": {}
+    },
+    "Description": "Resource Group: VisualStudioOnline-DC68136D511948EBBE9BA224D46A84A3",
+    "EvidenceId": "d86cbd15-e8a3-511c-883e-863ef2c54298",
+    "EvidenceType": "azure-resource-group",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/resourceGroups/VisualStudioOnline-DC68136D511948EBBE9BA224D46A84A3",
+    "ResourceType": "ResourceGroup",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:22.267123+00:00",
+    "Collector": "AzureResources",
+    "Data": {
+      "Location": "centralus",
+      "Name": "VisualStudioOnline-E2760F541A4143F4952C459E95792724",
+      "ResourceGroup": "VisualStudioOnline-E2760F541A4143F4952C459E95792724",
+      "ResourceId": "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/resourceGroups/VisualStudioOnline-E2760F541A4143F4952C459E95792724",
+      "ResourceType": "ResourceGroup",
+      "SubscriptionId": "d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0",
+      "SubscriptionName": "AI",
+      "Tags": {}
+    },
+    "Description": "Resource Group: VisualStudioOnline-E2760F541A4143F4952C459E95792724",
+    "EvidenceId": "09f7053f-a7a6-5e10-84b6-0d36da2b01c9",
+    "EvidenceType": "azure-resource-group",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/resourceGroups/VisualStudioOnline-E2760F541A4143F4952C459E95792724",
+    "ResourceType": "ResourceGroup",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:22.266928+00:00",
+    "Collector": "AzureResources",
+    "Data": {
+      "Location": "centralus",
+      "Name": "VisualStudioOnline-FCAC6E3D98B34B7189CD3AB0AF857368",
+      "ResourceGroup": "VisualStudioOnline-FCAC6E3D98B34B7189CD3AB0AF857368",
+      "ResourceId": "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/resourceGroups/VisualStudioOnline-FCAC6E3D98B34B7189CD3AB0AF857368",
+      "ResourceType": "ResourceGroup",
+      "SubscriptionId": "d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0",
+      "SubscriptionName": "AI",
+      "Tags": {}
+    },
+    "Description": "Resource Group: VisualStudioOnline-FCAC6E3D98B34B7189CD3AB0AF857368",
+    "EvidenceId": "dc8dff8c-5b01-577d-9622-ca71d44b6271",
+    "EvidenceType": "azure-resource-group",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/resourceGroups/VisualStudioOnline-FCAC6E3D98B34B7189CD3AB0AF857368",
+    "ResourceType": "ResourceGroup",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:22.266736+00:00",
+    "Collector": "AzureResources",
+    "Data": {
+      "Location": "eastus2",
+      "Name": "dlg-rg-eus2",
+      "ResourceGroup": "dlg-rg-eus2",
+      "ResourceId": "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/resourceGroups/dlg-rg-eus2",
+      "ResourceType": "ResourceGroup",
+      "SubscriptionId": "d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0",
+      "SubscriptionName": "AI",
+      "Tags": {
+        "project": "ADLS-Snowflake-Governance",
+        "purpose": "DLG"
+      }
+    },
+    "Description": "Resource Group: dlg-rg-eus2",
+    "EvidenceId": "d80dc2f2-182b-5aa5-bfd0-ea274dfdb812",
+    "EvidenceType": "azure-resource-group",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/resourceGroups/dlg-rg-eus2",
+    "ResourceType": "ResourceGroup",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:22.266529+00:00",
+    "Collector": "AzureResources",
+    "Data": {
+      "Location": "eastus2",
+      "Name": "rg-AIFutureInitiative",
+      "ResourceGroup": "rg-AIFutureInitiative",
+      "ResourceId": "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/resourceGroups/rg-AIFutureInitiative",
+      "ResourceType": "ResourceGroup",
+      "SubscriptionId": "d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0",
+      "SubscriptionName": "AI",
+      "Tags": {}
+    },
+    "Description": "Resource Group: rg-AIFutureInitiative",
+    "EvidenceId": "46887557-3a9f-5dbf-bb0e-5097bc30f613",
+    "EvidenceType": "azure-resource-group",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/resourceGroups/rg-AIFutureInitiative",
+    "ResourceType": "ResourceGroup",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:22.266489+00:00",
+    "Collector": "AzureResources",
+    "Data": {
+      "Location": "eastus2",
+      "Name": "rg-CompliSense",
+      "ResourceGroup": "rg-CompliSense",
+      "ResourceId": "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/resourceGroups/rg-CompliSense",
+      "ResourceType": "ResourceGroup",
+      "SubscriptionId": "d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0",
+      "SubscriptionName": "AI",
+      "Tags": {}
+    },
+    "Description": "Resource Group: rg-CompliSense",
+    "EvidenceId": "313c4d4f-1068-50dc-b6e2-04c36f673546",
+    "EvidenceType": "azure-resource-group",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/resourceGroups/rg-CompliSense",
+    "ResourceType": "ResourceGroup",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:22.267274+00:00",
+    "Collector": "AzureResources",
+    "Data": {
+      "Location": "eastus",
+      "Name": "rg-DefenderEASM",
+      "ResourceGroup": "rg-DefenderEASM",
+      "ResourceId": "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/resourceGroups/rg-DefenderEASM",
+      "ResourceType": "ResourceGroup",
+      "SubscriptionId": "d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0",
+      "SubscriptionName": "AI",
+      "Tags": {}
+    },
+    "Description": "Resource Group: rg-DefenderEASM",
+    "EvidenceId": "ec07ac52-c3da-57bb-9a71-16a26ff1086a",
+    "EvidenceType": "azure-resource-group",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/resourceGroups/rg-DefenderEASM",
+    "ResourceType": "ResourceGroup",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:22.266775+00:00",
+    "Collector": "AzureResources",
+    "Data": {
+      "Location": "swedencentral",
+      "Name": "rg-OpenAPI-Demo01",
+      "ResourceGroup": "rg-OpenAPI-Demo01",
+      "ResourceId": "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/resourceGroups/rg-OpenAPI-Demo01",
+      "ResourceType": "ResourceGroup",
+      "SubscriptionId": "d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0",
+      "SubscriptionName": "AI",
+      "Tags": {}
+    },
+    "Description": "Resource Group: rg-OpenAPI-Demo01",
+    "EvidenceId": "8c64326f-7d06-5d25-8898-1bf0516022c4",
+    "EvidenceType": "azure-resource-group",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/resourceGroups/rg-OpenAPI-Demo01",
+    "ResourceType": "ResourceGroup",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:22.266569+00:00",
+    "Collector": "AzureResources",
+    "Data": {
+      "Location": "eastus2",
+      "Name": "rg-TenantCompliance",
+      "ResourceGroup": "rg-TenantCompliance",
+      "ResourceId": "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/resourceGroups/rg-TenantCompliance",
+      "ResourceType": "ResourceGroup",
+      "SubscriptionId": "d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0",
+      "SubscriptionName": "AI",
+      "Tags": {}
+    },
+    "Description": "Resource Group: rg-TenantCompliance",
+    "EvidenceId": "56329e04-81b3-5676-87b7-4557e6abe5e2",
+    "EvidenceType": "azure-resource-group",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/resourceGroups/rg-TenantCompliance",
+    "ResourceType": "ResourceGroup",
+    "Source": "Azure"
+  }
+]

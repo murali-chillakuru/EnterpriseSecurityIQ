@@ -1,0 +1,122 @@
+[
+  {
+    "CollectedAt": "2026-04-26T23:33:00.668890+00:00",
+    "Collector": "AzureSecurity",
+    "Data": {
+      "EnablePurgeProtection": true,
+      "EnableRbacAuthorization": false,
+      "EnableSoftDelete": true,
+      "Location": "eastus2",
+      "NetworkAclsDefaultAction": "Allow",
+      "SkuName": "standard",
+      "SubscriptionId": "0eb177bd-28b1-44da-b683-1508e1268aee",
+      "SubscriptionName": "Prod",
+      "TenantId": "4a3eb5f4-1ec6-4a73-bb03-1ca63cb52d67",
+      "VaultId": "/subscriptions/0eb177bd-28b1-44da-b683-1508e1268aee/resourceGroups/All-PCIDSS-Resources-RG/providers/Microsoft.KeyVault/vaults/pcidsskv",
+      "VaultName": "pcidsskv"
+    },
+    "Description": "Key Vault: pcidsskv",
+    "EvidenceId": "5d932132-688c-55fd-a04f-094d9dcc1338",
+    "EvidenceType": "azure-keyvault",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/0eb177bd-28b1-44da-b683-1508e1268aee/resourceGroups/All-PCIDSS-Resources-RG/providers/Microsoft.KeyVault/vaults/pcidsskv",
+    "ResourceType": "Microsoft.KeyVault/vaults",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:36.414256+00:00",
+    "Collector": "AzureSecurity",
+    "Data": {
+      "EnablePurgeProtection": false,
+      "EnableRbacAuthorization": true,
+      "EnableSoftDelete": true,
+      "Location": "canadacentral",
+      "NetworkAclsDefaultAction": "Allow",
+      "SkuName": "standard",
+      "SubscriptionId": "9154cdcb-5a52-452a-b1e7-483be9eee6d2",
+      "SubscriptionName": "Infra",
+      "TenantId": "4a3eb5f4-1ec6-4a73-bb03-1ca63cb52d67",
+      "VaultId": "/subscriptions/9154cdcb-5a52-452a-b1e7-483be9eee6d2/resourceGroups/RG-ADLS-Governance-Retention/providers/Microsoft.KeyVault/vaults/kv-ia6nebdpvu5bm",
+      "VaultName": "kv-ia6nebdpvu5bm"
+    },
+    "Description": "Key Vault: kv-ia6nebdpvu5bm",
+    "EvidenceId": "b8332640-3d10-55e7-babf-da70d3e12bfa",
+    "EvidenceType": "azure-keyvault",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/9154cdcb-5a52-452a-b1e7-483be9eee6d2/resourceGroups/RG-ADLS-Governance-Retention/providers/Microsoft.KeyVault/vaults/kv-ia6nebdpvu5bm",
+    "ResourceType": "Microsoft.KeyVault/vaults",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:36.414408+00:00",
+    "Collector": "AzureSecurity",
+    "Data": {
+      "EnablePurgeProtection": false,
+      "EnableRbacAuthorization": false,
+      "EnableSoftDelete": true,
+      "Location": "westus2",
+      "NetworkAclsDefaultAction": "Allow",
+      "SkuName": "standard",
+      "SubscriptionId": "9154cdcb-5a52-452a-b1e7-483be9eee6d2",
+      "SubscriptionName": "Infra",
+      "TenantId": "4a3eb5f4-1ec6-4a73-bb03-1ca63cb52d67",
+      "VaultId": "/subscriptions/9154cdcb-5a52-452a-b1e7-483be9eee6d2/resourceGroups/rg-ecma2-poc-wus2/providers/Microsoft.KeyVault/vaults/ecma2pockvlkxer",
+      "VaultName": "ecma2pockvlkxer"
+    },
+    "Description": "Key Vault: ecma2pockvlkxer",
+    "EvidenceId": "c215f837-8aa1-5e5c-8e67-000a89b3f0f4",
+    "EvidenceType": "azure-keyvault",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/9154cdcb-5a52-452a-b1e7-483be9eee6d2/resourceGroups/rg-ecma2-poc-wus2/providers/Microsoft.KeyVault/vaults/ecma2pockvlkxer",
+    "ResourceType": "Microsoft.KeyVault/vaults",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:34:00.047750+00:00",
+    "Collector": "AzureSecurity",
+    "Data": {
+      "EnablePurgeProtection": false,
+      "EnableRbacAuthorization": true,
+      "EnableSoftDelete": true,
+      "Location": "swedencentral",
+      "NetworkAclsDefaultAction": "Allow",
+      "SkuName": "standard",
+      "SubscriptionId": "d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0",
+      "SubscriptionName": "AI",
+      "TenantId": "4a3eb5f4-1ec6-4a73-bb03-1ca63cb52d67",
+      "VaultId": "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/resourceGroups/ESIQNew-RG/providers/Microsoft.KeyVault/vaults/ESIQNew-kv",
+      "VaultName": "ESIQNew-kv"
+    },
+    "Description": "Key Vault: ESIQNew-kv",
+    "EvidenceId": "3109e78f-57bd-5e2b-95ea-5e188535e9d8",
+    "EvidenceType": "azure-keyvault",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/resourceGroups/ESIQNew-RG/providers/Microsoft.KeyVault/vaults/ESIQNew-kv",
+    "ResourceType": "Microsoft.KeyVault/vaults",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:34:00.047678+00:00",
+    "Collector": "AzureSecurity",
+    "Data": {
+      "EnablePurgeProtection": false,
+      "EnableRbacAuthorization": true,
+      "EnableSoftDelete": true,
+      "Location": "eastus2",
+      "NetworkAclsDefaultAction": "Allow",
+      "SkuName": "standard",
+      "SubscriptionId": "d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0",
+      "SubscriptionName": "AI",
+      "TenantId": "4a3eb5f4-1ec6-4a73-bb03-1ca63cb52d67",
+      "VaultId": "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/resourceGroups/rg-AIFutureInitiative/providers/Microsoft.KeyVault/vaults/AIFutureInitiativeKV",
+      "VaultName": "AIFutureInitiativeKV"
+    },
+    "Description": "Key Vault: AIFutureInitiativeKV",
+    "EvidenceId": "fd5a3c32-aa31-5c03-9b88-91c216e5e9de",
+    "EvidenceType": "azure-keyvault",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/resourceGroups/rg-AIFutureInitiative/providers/Microsoft.KeyVault/vaults/AIFutureInitiativeKV",
+    "ResourceType": "Microsoft.KeyVault/vaults",
+    "Source": "Azure"
+  }
+]

@@ -1,0 +1,16 @@
+[
+  {
+    "CollectedAt": "2026-04-26T23:38:59.855015+00:00",
+    "Collector": "M365InsiderRisk",
+    "Data": {
+      "SecurityApiAccessible": true
+    },
+    "Description": "Insider Risk Management settings probe",
+    "EvidenceId": "6fe46cf4-baef-5cc8-846c-027f3db29a55",
+    "EvidenceType": "m365-irm-settings",
+    "RawReference": null,
+    "ResourceId": "",
+    "ResourceType": "InsiderRiskSettings",
+    "Source": "Entra"
+  }
+]

@@ -1,0 +1,49 @@
+{% raw %}{
+    "$schema": "https://developer.microsoft.com/en-us/json-schemas/teams/v1.17/MicrosoftTeams.schema.json",
+    "manifestVersion": "1.17",
+    "version": "1.0.0",
+    "id": "${{TEAMS_APP_ID}}",
+    "developer": {
+        "name": "{% endraw %}{{ project_name }}{% raw %}",
+        "websiteUrl": "https://example.com",
+        "privacyUrl": "https://example.com/privacy",
+        "termsOfUseUrl": "https://example.com/terms"
+    },
+    "name": {
+        "short": "{% endraw %}{{ project_name }}{% raw %}",
+        "full": "{% endraw %}{{ description }}{% raw %}"
+    },
+    "description": {
+        "short": "{% endraw %}{{ project_name }}{% raw %} Assessment Tool",
+        "full": "{% endraw %}{{ description }}{% raw %}"
+    },
+    "icons": {
+        "outline": "outline.png",
+        "color": "color.png"
+    },
+    "accentColor": "#0078D4",
+    "staticTabs": [
+        {
+            "entityId": "home",
+            "name": "Home",
+            "contentUrl": "https://${{APP_FQDN}}/static/index.html",
+            "scopes": ["personal"]
+        }{% endraw %}
+{% for page in spa_pages %}
+        ,{
+            "entityId": "{{ page.name | lower | replace(' ', '-') }}",
+            "name": "{{ page.title | default(page.name) }}",
+            "contentUrl": "https://{% raw %}${{APP_FQDN}}{% endraw %}/static/{{ page.name | replace(' ', '') }}.html",
+            "scopes": ["personal"]
+        }
+{% endfor %}
+{% raw %}    ],
+    "permissions": ["identity", "messageTeamMembers"],
+    "validDomains": [
+        "${{APP_FQDN}}"
+    ],
+    "webApplicationInfo": {
+        "id": "${{ENTRA_CLIENT_ID}}",
+        "resource": "api://${{APP_FQDN}}/${{ENTRA_CLIENT_ID}}"
+    }
+}{% endraw %}

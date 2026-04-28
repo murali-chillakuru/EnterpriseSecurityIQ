@@ -1,0 +1,19 @@
+[
+  {
+    "CollectedAt": "2026-04-26T23:41:30.138371+00:00",
+    "Collector": "SharePointOneDrive",
+    "Data": {
+      "LabelCoverage": 0.0,
+      "LabeledSites": 0,
+      "TotalSites": 6,
+      "UnlabeledSites": 6
+    },
+    "Description": "SharePoint site sensitivity label coverage",
+    "EvidenceId": "9cfecbe7-47b8-5221-a117-c6abfbed6331",
+    "EvidenceType": "spo-label-summary",
+    "RawReference": null,
+    "ResourceId": "spo-label-summary",
+    "ResourceType": "SPOLabelSummary",
+    "Source": "Entra"
+  }
+]

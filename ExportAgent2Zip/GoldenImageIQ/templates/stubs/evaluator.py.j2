@@ -1,0 +1,58 @@
+"""{{ project_name }} — {{ domain }} domain evaluator.
+
+Evaluates controls in the {{ domain }} domain against collected evidence.
+Uses severity-weighted scoring (critical=4, high=3, medium=2, low=1).
+"""
+
+from __future__ import annotations
+
+import logging
+from typing import Any
+
+from app.core.models import FindingRecord
+
+log = logging.getLogger(__name__)
+
+
+def evaluate(evidence: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    """Evaluate all {{ domain }} controls against evidence. Returns list of findings."""
+    findings = []
+
+{% for check in checks %}
+    findings.extend({{ check.evaluation_logic }}(evidence))
+{% endfor %}
+
+    log.info("{{ domain }} evaluation: %d findings", len(findings))
+    return findings
+
+
+# ── Check functions ────────────────────────────────────────────────
+{% for check in checks %}
+
+def {{ check.evaluation_logic }}(evidence: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    """{{ check.title }}
+
+    Control: {{ check.control_id }} | Severity: {{ check.severity }}
+    """
+    findings = []
+
+    # TODO: Implement evaluation logic
+    # Example pattern:
+    # relevant = [e for e in evidence if e.get("EvidenceType") == "xxx"]
+    # for item in relevant:
+    #     if not item["Data"].get("compliant_field"):
+    #         findings.append(FindingRecord(
+    #             control_id="{{ check.control_id }}",
+    #             framework="...",
+    #             status="non_compliant",
+    #             severity="{{ check.severity }}",
+    #             domain="{{ domain }}",
+    #             control_title="{{ check.title }}",
+    #             description="...",
+    #             recommendation="...",
+    #             resource_id=item.get("ResourceId", ""),
+    #         ).to_dict())
+
+    return findings
+
+{% endfor %}

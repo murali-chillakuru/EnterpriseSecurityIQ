@@ -1,0 +1,222 @@
+[
+  {
+    "CollectedAt": "2026-04-26T23:33:14.697614+00:00",
+    "Collector": "AzureSentinel",
+    "Data": {
+      "DataConnectorCount": 29,
+      "Location": "eastus",
+      "Name": "R-LogAnalyticsWorkspace",
+      "ResourceGroup": "RG-LogAnalyticsWorkspace",
+      "RetentionInDays": 30,
+      "Sku": "PerGB2018",
+      "SubscriptionId": "8054e434-49e0-4a21-bbea-3fee1c872b88",
+      "SubscriptionName": "Security",
+      "WorkspaceId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/RG-LogAnalyticsWorkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace"
+    },
+    "Description": "Sentinel Workspace: R-LogAnalyticsWorkspace",
+    "EvidenceId": "ef44902e-17bf-5a35-8241-264069942f4a",
+    "EvidenceType": "azure-sentinel-workspace",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/RG-LogAnalyticsWorkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace",
+    "ResourceType": "SentinelWorkspace",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:25.622527+00:00",
+    "Collector": "AzureSentinel",
+    "Data": {
+      "DataConnectorCount": 0,
+      "Location": "eastus",
+      "Name": "DefaultWorkspace-9154cdcb-5a52-452a-b1e7-483be9eee6d2-EUS",
+      "ResourceGroup": "DefaultResourceGroup-EUS",
+      "RetentionInDays": 30,
+      "Sku": "perGB2018",
+      "SubscriptionId": "9154cdcb-5a52-452a-b1e7-483be9eee6d2",
+      "SubscriptionName": "Infra",
+      "WorkspaceId": "/subscriptions/9154cdcb-5a52-452a-b1e7-483be9eee6d2/resourceGroups/DefaultResourceGroup-EUS/providers/Microsoft.OperationalInsights/workspaces/DefaultWorkspace-9154cdcb-5a52-452a-b1e7-483be9eee6d2-EUS"
+    },
+    "Description": "Sentinel Workspace: DefaultWorkspace-9154cdcb-5a52-452a-b1e7-483be9eee6d2-EUS",
+    "EvidenceId": "73612b7d-29eb-58bc-a3b7-f1a0000533eb",
+    "EvidenceType": "azure-sentinel-workspace",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/9154cdcb-5a52-452a-b1e7-483be9eee6d2/resourceGroups/DefaultResourceGroup-EUS/providers/Microsoft.OperationalInsights/workspaces/DefaultWorkspace-9154cdcb-5a52-452a-b1e7-483be9eee6d2-EUS",
+    "ResourceType": "SentinelWorkspace",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:27.712265+00:00",
+    "Collector": "AzureSentinel",
+    "Data": {
+      "DataConnectorCount": 0,
+      "Location": "canadacentral",
+      "Name": "log-ia6nebdpvu5bm",
+      "ResourceGroup": "RG-ADLS-Governance-Retention",
+      "RetentionInDays": 30,
+      "Sku": "PerGB2018",
+      "SubscriptionId": "9154cdcb-5a52-452a-b1e7-483be9eee6d2",
+      "SubscriptionName": "Infra",
+      "WorkspaceId": "/subscriptions/9154cdcb-5a52-452a-b1e7-483be9eee6d2/resourceGroups/RG-ADLS-Governance-Retention/providers/Microsoft.OperationalInsights/workspaces/log-ia6nebdpvu5bm"
+    },
+    "Description": "Sentinel Workspace: log-ia6nebdpvu5bm",
+    "EvidenceId": "e6943645-351c-5d84-95e3-db42836df7c8",
+    "EvidenceType": "azure-sentinel-workspace",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/9154cdcb-5a52-452a-b1e7-483be9eee6d2/resourceGroups/RG-ADLS-Governance-Retention/providers/Microsoft.OperationalInsights/workspaces/log-ia6nebdpvu5bm",
+    "ResourceType": "SentinelWorkspace",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:29.002105+00:00",
+    "Collector": "AzureSentinel",
+    "Data": {
+      "DataConnectorCount": 0,
+      "Location": "westus2",
+      "Name": "log-ecma2poc",
+      "ResourceGroup": "rg-ecma2-poc-wus2",
+      "RetentionInDays": 30,
+      "Sku": "PerGB2018",
+      "SubscriptionId": "9154cdcb-5a52-452a-b1e7-483be9eee6d2",
+      "SubscriptionName": "Infra",
+      "WorkspaceId": "/subscriptions/9154cdcb-5a52-452a-b1e7-483be9eee6d2/resourceGroups/rg-ecma2-poc-wus2/providers/Microsoft.OperationalInsights/workspaces/log-ecma2poc"
+    },
+    "Description": "Sentinel Workspace: log-ecma2poc",
+    "EvidenceId": "be5d304b-5d7f-54ea-8589-a41fb9db6dc1",
+    "EvidenceType": "azure-sentinel-workspace",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/9154cdcb-5a52-452a-b1e7-483be9eee6d2/resourceGroups/rg-ecma2-poc-wus2/providers/Microsoft.OperationalInsights/workspaces/log-ecma2poc",
+    "ResourceType": "SentinelWorkspace",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:26.277405+00:00",
+    "Collector": "AzureSentinel",
+    "Data": {
+      "DataConnectorCount": 0,
+      "Location": "eastus",
+      "Name": "log-ecma2poc",
+      "ResourceGroup": "rg-ecma2-poc",
+      "RetentionInDays": 30,
+      "Sku": "PerGB2018",
+      "SubscriptionId": "9154cdcb-5a52-452a-b1e7-483be9eee6d2",
+      "SubscriptionName": "Infra",
+      "WorkspaceId": "/subscriptions/9154cdcb-5a52-452a-b1e7-483be9eee6d2/resourceGroups/rg-ecma2-poc/providers/Microsoft.OperationalInsights/workspaces/log-ecma2poc"
+    },
+    "Description": "Sentinel Workspace: log-ecma2poc",
+    "EvidenceId": "d5aaddb0-dd5e-558d-8f4f-2e79601678ba",
+    "EvidenceType": "azure-sentinel-workspace",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/9154cdcb-5a52-452a-b1e7-483be9eee6d2/resourceGroups/rg-ecma2-poc/providers/Microsoft.OperationalInsights/workspaces/log-ecma2poc",
+    "ResourceType": "SentinelWorkspace",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:41.265535+00:00",
+    "Collector": "AzureSentinel",
+    "Data": {
+      "DataConnectorCount": 0,
+      "Location": "centralus",
+      "Name": "DefaultWorkspace-d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0-CUS",
+      "ResourceGroup": "DefaultResourceGroup-CUS",
+      "RetentionInDays": 30,
+      "Sku": "PerGB2018",
+      "SubscriptionId": "d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0",
+      "SubscriptionName": "AI",
+      "WorkspaceId": "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/resourceGroups/DefaultResourceGroup-CUS/providers/Microsoft.OperationalInsights/workspaces/DefaultWorkspace-d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0-CUS"
+    },
+    "Description": "Sentinel Workspace: DefaultWorkspace-d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0-CUS",
+    "EvidenceId": "1ee6d5be-d170-5b1d-af7c-8103b08c4357",
+    "EvidenceType": "azure-sentinel-workspace",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/resourceGroups/DefaultResourceGroup-CUS/providers/Microsoft.OperationalInsights/workspaces/DefaultWorkspace-d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0-CUS",
+    "ResourceType": "SentinelWorkspace",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:39.854207+00:00",
+    "Collector": "AzureSentinel",
+    "Data": {
+      "DataConnectorCount": 0,
+      "Location": "eastus",
+      "Name": "DefaultWorkspace-d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0-EUS",
+      "ResourceGroup": "DefaultResourceGroup-EUS",
+      "RetentionInDays": 30,
+      "Sku": "PerGB2018",
+      "SubscriptionId": "d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0",
+      "SubscriptionName": "AI",
+      "WorkspaceId": "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/resourceGroups/DefaultResourceGroup-EUS/providers/Microsoft.OperationalInsights/workspaces/DefaultWorkspace-d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0-EUS"
+    },
+    "Description": "Sentinel Workspace: DefaultWorkspace-d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0-EUS",
+    "EvidenceId": "a1cc3ac7-d65a-576b-9730-edcee63186b3",
+    "EvidenceType": "azure-sentinel-workspace",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/resourceGroups/DefaultResourceGroup-EUS/providers/Microsoft.OperationalInsights/workspaces/DefaultWorkspace-d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0-EUS",
+    "ResourceType": "SentinelWorkspace",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:42.064649+00:00",
+    "Collector": "AzureSentinel",
+    "Data": {
+      "DataConnectorCount": 0,
+      "Location": "eastus2",
+      "Name": "DefaultWorkspace-d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0-EUS2",
+      "ResourceGroup": "DefaultResourceGroup-EUS2",
+      "RetentionInDays": 30,
+      "Sku": "PerGB2018",
+      "SubscriptionId": "d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0",
+      "SubscriptionName": "AI",
+      "WorkspaceId": "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/resourceGroups/DefaultResourceGroup-EUS2/providers/Microsoft.OperationalInsights/workspaces/DefaultWorkspace-d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0-EUS2"
+    },
+    "Description": "Sentinel Workspace: DefaultWorkspace-d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0-EUS2",
+    "EvidenceId": "1bc3e2bd-c21f-598f-8b03-49a510319afd",
+    "EvidenceType": "azure-sentinel-workspace",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/resourceGroups/DefaultResourceGroup-EUS2/providers/Microsoft.OperationalInsights/workspaces/DefaultWorkspace-d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0-EUS2",
+    "ResourceType": "SentinelWorkspace",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:44.485018+00:00",
+    "Collector": "AzureSentinel",
+    "Data": {
+      "DataConnectorCount": 0,
+      "Location": "swedencentral",
+      "Name": "ESIQNew-law",
+      "ResourceGroup": "ESIQNew-RG",
+      "RetentionInDays": 30,
+      "Sku": "PerGB2018",
+      "SubscriptionId": "d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0",
+      "SubscriptionName": "AI",
+      "WorkspaceId": "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/resourceGroups/ESIQNew-RG/providers/Microsoft.OperationalInsights/workspaces/ESIQNew-law"
+    },
+    "Description": "Sentinel Workspace: ESIQNew-law",
+    "EvidenceId": "b8299f49-bbd6-547b-beba-95009649fa94",
+    "EvidenceType": "azure-sentinel-workspace",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/resourceGroups/ESIQNew-RG/providers/Microsoft.OperationalInsights/workspaces/ESIQNew-law",
+    "ResourceType": "SentinelWorkspace",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:42.841413+00:00",
+    "Collector": "AzureSentinel",
+    "Data": {
+      "DataConnectorCount": 0,
+      "Location": "eastus2",
+      "Name": "law-aifutureinitiative",
+      "ResourceGroup": "rg-AIFutureInitiative",
+      "RetentionInDays": 30,
+      "Sku": "pergb2018",
+      "SubscriptionId": "d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0",
+      "SubscriptionName": "AI",
+      "WorkspaceId": "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/resourceGroups/rg-AIFutureInitiative/providers/Microsoft.OperationalInsights/workspaces/law-aifutureinitiative"
+    },
+    "Description": "Sentinel Workspace: law-aifutureinitiative",
+    "EvidenceId": "35a83521-6c68-5389-af45-3b99870df593",
+    "EvidenceType": "azure-sentinel-workspace",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/resourceGroups/rg-AIFutureInitiative/providers/Microsoft.OperationalInsights/workspaces/law-aifutureinitiative",
+    "ResourceType": "SentinelWorkspace",
+    "Source": "Azure"
+  }
+]

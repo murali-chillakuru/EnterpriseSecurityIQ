@@ -1,0 +1,16 @@
+{
+  "name": "RBACReport",
+  "brand_name": "RBACReportIQ",
+  "description": "RBAC Report — isolated package",
+  "tools": [
+    "generate_rbac_report",
+    "search_exposure",
+    "generate_custom_report"
+  ],
+  "pages": [
+    "RBACReport.html"
+  ],
+  "include_teams_package": true,
+  "include_infra": true,
+  "include_automation": true
+}

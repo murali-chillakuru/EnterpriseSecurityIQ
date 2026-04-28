@@ -1,0 +1,19 @@
+[
+  {
+    "CollectedAt": "2026-04-26T23:41:47.329340+00:00",
+    "Collector": "CopilotStudio",
+    "Data": {
+      "Error": "403 Forbidden",
+      "Reason": "The Graph API endpoint admin/microsoft365Apps/installationOptions requires the OrgSettings.Read.All delegated permission. The Azure CLI first-party app does not include this scope in its pre-consented set.",
+      "RequiredScope": "OrgSettings.Read.All",
+      "Workaround": "Use a custom app registration with OrgSettings.Read.All granted, or verify deployment configuration manually in M365 admin center."
+    },
+    "Description": "M365 Copilot settings inaccessible \u2014 missing OrgSettings.Read.All scope",
+    "EvidenceId": "6bd6aba6-4e64-5fe3-8f57-6af3a93e8ac9",
+    "EvidenceType": "m365-copilot-settings-warning",
+    "RawReference": null,
+    "ResourceId": "m365-copilot-settings-warning",
+    "ResourceType": "CollectionWarning",
+    "Source": "Entra"
+  }
+]

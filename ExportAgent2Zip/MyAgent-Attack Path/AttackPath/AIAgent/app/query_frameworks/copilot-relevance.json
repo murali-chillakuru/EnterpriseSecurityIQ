@@ -1,0 +1,62 @@
+{
+  "_description": "M365 Copilot readiness relevance per Cloud Explorer result family — oversharing, labeling, DLP, and access governance concerns.",
+  "identity": {
+    "relevance": "critical",
+    "concerns": [
+      "Over-permissioned users enable Copilot to surface data beyond need-to-know",
+      "Missing Conditional Access policies allow Copilot access from unmanaged devices",
+      "Stale guest accounts may access Copilot-surfaced content",
+      "PIM not enforced for roles with broad data read access"
+    ],
+    "copilot_risks": ["Copilot inherits the user's full permission set — over-privileged users get over-privileged AI", "External/guest users with Copilot licenses can surface internal content"],
+    "key_checks": ["Review least-privilege access for Copilot-licensed users", "Verify Conditional Access covers Copilot scenarios", "Check external sharing policies"]
+  },
+  "storage": {
+    "relevance": "high",
+    "concerns": [
+      "Public or broadly-shared storage containers may be indexed by Copilot",
+      "Missing sensitivity labels on stored documents affect Copilot content filtering",
+      "SharePoint/OneDrive connected storage inherits sharing permissions"
+    ],
+    "copilot_risks": ["Copilot can surface content from any storage the user has read access to", "Unlabeled sensitive files are treated as unrestricted"],
+    "key_checks": ["Verify sensitivity labels on document libraries", "Review storage sharing policies", "Check Microsoft Purview label coverage"]
+  },
+  "governance": {
+    "relevance": "high",
+    "concerns": [
+      "Missing DLP policies allow sensitive data to flow through Copilot responses",
+      "No information barriers may allow cross-departmental data leakage via Copilot",
+      "Retention policies must cover Copilot interaction logs"
+    ],
+    "copilot_risks": ["Without DLP, Copilot can include regulated data (PII, PHI) in responses", "Missing retention policies create compliance gaps for Copilot audit trails"],
+    "key_checks": ["Verify DLP policies cover Copilot-enabled workloads", "Check information barrier policies", "Review Copilot interaction retention"]
+  },
+  "security": {
+    "relevance": "medium",
+    "concerns": [
+      "Defender for Cloud Apps should monitor Copilot usage patterns",
+      "Alert rules should cover anomalous Copilot data access patterns"
+    ],
+    "copilot_risks": ["Copilot usage bypasses traditional DLP detection if not explicitly configured"],
+    "key_checks": ["Verify Defender for Cloud Apps Copilot integration", "Check for Copilot-specific alert policies"]
+  },
+  "ai": {
+    "relevance": "high",
+    "concerns": [
+      "Custom Copilot plugins and agents inherit user permissions",
+      "Copilot Studio agents may access data beyond intended scope",
+      "Missing DLP policies on Copilot connectors enable data leakage"
+    ],
+    "copilot_risks": ["Custom agents extend Copilot's reach to external data sources", "Plugin permissions are additive to user permissions"],
+    "key_checks": ["Review Copilot plugin permission scopes", "Verify DLP policies on Power Platform connectors", "Check Copilot Studio agent authentication"]
+  },
+  "app": {
+    "relevance": "medium",
+    "concerns": [
+      "Apps with Copilot integrations (Graph connectors) expand searchable content",
+      "M365 app registrations with broad Graph API scopes affect Copilot data access"
+    ],
+    "copilot_risks": ["Graph connectors make external data searchable by Copilot"],
+    "key_checks": ["Review Graph connector permissions", "Check app registration API scopes"]
+  }
+}

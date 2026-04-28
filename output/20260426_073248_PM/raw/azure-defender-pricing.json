@@ -1,0 +1,1298 @@
+[
+  {
+    "CollectedAt": "2026-04-26T23:32:59.184901+00:00",
+    "Collector": "AzureDefenderPlans",
+    "Data": {
+      "IsEnabled": true,
+      "PlanName": "AI",
+      "PricingTier": "Standard",
+      "SubscriptionId": "0eb177bd-28b1-44da-b683-1508e1268aee",
+      "SubscriptionName": "Prod"
+    },
+    "Description": "Defender: AI",
+    "EvidenceId": "2aa2fab7-1474-5aa3-8db1-78c19d1cea14",
+    "EvidenceType": "azure-defender-pricing",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/0eb177bd-28b1-44da-b683-1508e1268aee/providers/Microsoft.Security/pricings/AI",
+    "ResourceType": "DefenderPlan",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:32:59.184886+00:00",
+    "Collector": "AzureDefenderPlans",
+    "Data": {
+      "IsEnabled": true,
+      "PlanName": "Api",
+      "PricingTier": "Standard",
+      "SubscriptionId": "0eb177bd-28b1-44da-b683-1508e1268aee",
+      "SubscriptionName": "Prod"
+    },
+    "Description": "Defender: Api",
+    "EvidenceId": "0586e515-81c1-50f9-b5da-03fc975a69ee",
+    "EvidenceType": "azure-defender-pricing",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/0eb177bd-28b1-44da-b683-1508e1268aee/providers/Microsoft.Security/pricings/Api",
+    "ResourceType": "DefenderPlan",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:32:59.184710+00:00",
+    "Collector": "AzureDefenderPlans",
+    "Data": {
+      "IsEnabled": true,
+      "PlanName": "AppServices",
+      "PricingTier": "Standard",
+      "SubscriptionId": "0eb177bd-28b1-44da-b683-1508e1268aee",
+      "SubscriptionName": "Prod"
+    },
+    "Description": "Defender: AppServices",
+    "EvidenceId": "39fd4a38-0f94-522b-bae8-e4d79ad6e595",
+    "EvidenceType": "azure-defender-pricing",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/0eb177bd-28b1-44da-b683-1508e1268aee/providers/Microsoft.Security/pricings/AppServices",
+    "ResourceType": "DefenderPlan",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:32:59.184819+00:00",
+    "Collector": "AzureDefenderPlans",
+    "Data": {
+      "IsEnabled": true,
+      "PlanName": "Arm",
+      "PricingTier": "Standard",
+      "SubscriptionId": "0eb177bd-28b1-44da-b683-1508e1268aee",
+      "SubscriptionName": "Prod"
+    },
+    "Description": "Defender: Arm",
+    "EvidenceId": "d6b1759e-7d26-5d5f-a08e-2ac090ea8237",
+    "EvidenceType": "azure-defender-pricing",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/0eb177bd-28b1-44da-b683-1508e1268aee/providers/Microsoft.Security/pricings/Arm",
+    "ResourceType": "DefenderPlan",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:32:59.184873+00:00",
+    "Collector": "AzureDefenderPlans",
+    "Data": {
+      "IsEnabled": true,
+      "PlanName": "CloudPosture",
+      "PricingTier": "Standard",
+      "SubscriptionId": "0eb177bd-28b1-44da-b683-1508e1268aee",
+      "SubscriptionName": "Prod"
+    },
+    "Description": "Defender: CloudPosture",
+    "EvidenceId": "2558e2b4-81c4-5a14-9dec-7dbe43c906f0",
+    "EvidenceType": "azure-defender-pricing",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/0eb177bd-28b1-44da-b683-1508e1268aee/providers/Microsoft.Security/pricings/CloudPosture",
+    "ResourceType": "DefenderPlan",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:32:59.184775+00:00",
+    "Collector": "AzureDefenderPlans",
+    "Data": {
+      "IsEnabled": false,
+      "PlanName": "ContainerRegistry",
+      "PricingTier": "Free",
+      "SubscriptionId": "0eb177bd-28b1-44da-b683-1508e1268aee",
+      "SubscriptionName": "Prod"
+    },
+    "Description": "Defender: ContainerRegistry",
+    "EvidenceId": "dfe21757-4240-5b0a-9e4e-47fbd5504c89",
+    "EvidenceType": "azure-defender-pricing",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/0eb177bd-28b1-44da-b683-1508e1268aee/providers/Microsoft.Security/pricings/ContainerRegistry",
+    "ResourceType": "DefenderPlan",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:32:59.184860+00:00",
+    "Collector": "AzureDefenderPlans",
+    "Data": {
+      "IsEnabled": true,
+      "PlanName": "Containers",
+      "PricingTier": "Standard",
+      "SubscriptionId": "0eb177bd-28b1-44da-b683-1508e1268aee",
+      "SubscriptionName": "Prod"
+    },
+    "Description": "Defender: Containers",
+    "EvidenceId": "9e638c7a-7883-55df-9ca4-347af02ce833",
+    "EvidenceType": "azure-defender-pricing",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/0eb177bd-28b1-44da-b683-1508e1268aee/providers/Microsoft.Security/pricings/Containers",
+    "ResourceType": "DefenderPlan",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:32:59.184846+00:00",
+    "Collector": "AzureDefenderPlans",
+    "Data": {
+      "IsEnabled": true,
+      "PlanName": "CosmosDbs",
+      "PricingTier": "Standard",
+      "SubscriptionId": "0eb177bd-28b1-44da-b683-1508e1268aee",
+      "SubscriptionName": "Prod"
+    },
+    "Description": "Defender: CosmosDbs",
+    "EvidenceId": "dc803c87-ed08-5c74-91c4-8e0cba2f380d",
+    "EvidenceType": "azure-defender-pricing",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/0eb177bd-28b1-44da-b683-1508e1268aee/providers/Microsoft.Security/pricings/CosmosDbs",
+    "ResourceType": "DefenderPlan",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:32:59.184914+00:00",
+    "Collector": "AzureDefenderPlans",
+    "Data": {
+      "IsEnabled": true,
+      "PlanName": "Discovery",
+      "PricingTier": "Standard",
+      "SubscriptionId": "0eb177bd-28b1-44da-b683-1508e1268aee",
+      "SubscriptionName": "Prod"
+    },
+    "Description": "Defender: Discovery",
+    "EvidenceId": "387a0311-d662-57e2-b128-678c2fd7139b",
+    "EvidenceType": "azure-defender-pricing",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/0eb177bd-28b1-44da-b683-1508e1268aee/providers/Microsoft.Security/pricings/Discovery",
+    "ResourceType": "DefenderPlan",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:32:59.184804+00:00",
+    "Collector": "AzureDefenderPlans",
+    "Data": {
+      "IsEnabled": false,
+      "PlanName": "Dns",
+      "PricingTier": "Free",
+      "SubscriptionId": "0eb177bd-28b1-44da-b683-1508e1268aee",
+      "SubscriptionName": "Prod"
+    },
+    "Description": "Defender: Dns",
+    "EvidenceId": "bb9172bd-3269-5ebf-9b66-6c2ab02ca03b",
+    "EvidenceType": "azure-defender-pricing",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/0eb177bd-28b1-44da-b683-1508e1268aee/providers/Microsoft.Security/pricings/Dns",
+    "ResourceType": "DefenderPlan",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:32:59.184928+00:00",
+    "Collector": "AzureDefenderPlans",
+    "Data": {
+      "IsEnabled": true,
+      "PlanName": "FoundationalCspm",
+      "PricingTier": "Standard",
+      "SubscriptionId": "0eb177bd-28b1-44da-b683-1508e1268aee",
+      "SubscriptionName": "Prod"
+    },
+    "Description": "Defender: FoundationalCspm",
+    "EvidenceId": "b9f13be5-d800-5c8a-94de-a314c17e08c8",
+    "EvidenceType": "azure-defender-pricing",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/0eb177bd-28b1-44da-b683-1508e1268aee/providers/Microsoft.Security/pricings/FoundationalCspm",
+    "ResourceType": "DefenderPlan",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:32:59.184790+00:00",
+    "Collector": "AzureDefenderPlans",
+    "Data": {
+      "IsEnabled": true,
+      "PlanName": "KeyVaults",
+      "PricingTier": "Standard",
+      "SubscriptionId": "0eb177bd-28b1-44da-b683-1508e1268aee",
+      "SubscriptionName": "Prod"
+    },
+    "Description": "Defender: KeyVaults",
+    "EvidenceId": "a9768273-b987-5995-8d0f-651b83bb6f5e",
+    "EvidenceType": "azure-defender-pricing",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/0eb177bd-28b1-44da-b683-1508e1268aee/providers/Microsoft.Security/pricings/KeyVaults",
+    "ResourceType": "DefenderPlan",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:32:59.184760+00:00",
+    "Collector": "AzureDefenderPlans",
+    "Data": {
+      "IsEnabled": false,
+      "PlanName": "KubernetesService",
+      "PricingTier": "Free",
+      "SubscriptionId": "0eb177bd-28b1-44da-b683-1508e1268aee",
+      "SubscriptionName": "Prod"
+    },
+    "Description": "Defender: KubernetesService",
+    "EvidenceId": "3864176d-16a5-51d6-826f-164e874a86ff",
+    "EvidenceType": "azure-defender-pricing",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/0eb177bd-28b1-44da-b683-1508e1268aee/providers/Microsoft.Security/pricings/KubernetesService",
+    "ResourceType": "DefenderPlan",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:32:59.184833+00:00",
+    "Collector": "AzureDefenderPlans",
+    "Data": {
+      "IsEnabled": true,
+      "PlanName": "OpenSourceRelationalDatabases",
+      "PricingTier": "Standard",
+      "SubscriptionId": "0eb177bd-28b1-44da-b683-1508e1268aee",
+      "SubscriptionName": "Prod"
+    },
+    "Description": "Defender: OpenSourceRelationalDatabases",
+    "EvidenceId": "159d86c4-56ec-5224-bd50-d61c946fbc1f",
+    "EvidenceType": "azure-defender-pricing",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/0eb177bd-28b1-44da-b683-1508e1268aee/providers/Microsoft.Security/pricings/OpenSourceRelationalDatabases",
+    "ResourceType": "DefenderPlan",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:32:59.184743+00:00",
+    "Collector": "AzureDefenderPlans",
+    "Data": {
+      "IsEnabled": true,
+      "PlanName": "SqlServerVirtualMachines",
+      "PricingTier": "Standard",
+      "SubscriptionId": "0eb177bd-28b1-44da-b683-1508e1268aee",
+      "SubscriptionName": "Prod"
+    },
+    "Description": "Defender: SqlServerVirtualMachines",
+    "EvidenceId": "a84be257-30c8-57b1-b539-be331e81c8b8",
+    "EvidenceType": "azure-defender-pricing",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/0eb177bd-28b1-44da-b683-1508e1268aee/providers/Microsoft.Security/pricings/SqlServerVirtualMachines",
+    "ResourceType": "DefenderPlan",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:32:59.184688+00:00",
+    "Collector": "AzureDefenderPlans",
+    "Data": {
+      "IsEnabled": true,
+      "PlanName": "SqlServers",
+      "PricingTier": "Standard",
+      "SubscriptionId": "0eb177bd-28b1-44da-b683-1508e1268aee",
+      "SubscriptionName": "Prod"
+    },
+    "Description": "Defender: SqlServers",
+    "EvidenceId": "9ff191f8-e05c-515a-af64-0e47e0343672",
+    "EvidenceType": "azure-defender-pricing",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/0eb177bd-28b1-44da-b683-1508e1268aee/providers/Microsoft.Security/pricings/SqlServers",
+    "ResourceType": "DefenderPlan",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:32:59.184727+00:00",
+    "Collector": "AzureDefenderPlans",
+    "Data": {
+      "IsEnabled": true,
+      "PlanName": "StorageAccounts",
+      "PricingTier": "Standard",
+      "SubscriptionId": "0eb177bd-28b1-44da-b683-1508e1268aee",
+      "SubscriptionName": "Prod"
+    },
+    "Description": "Defender: StorageAccounts",
+    "EvidenceId": "457983c3-a5b7-5a72-8008-e4e59f75ec7a",
+    "EvidenceType": "azure-defender-pricing",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/0eb177bd-28b1-44da-b683-1508e1268aee/providers/Microsoft.Security/pricings/StorageAccounts",
+    "ResourceType": "DefenderPlan",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:32:59.184631+00:00",
+    "Collector": "AzureDefenderPlans",
+    "Data": {
+      "IsEnabled": true,
+      "PlanName": "VirtualMachines",
+      "PricingTier": "Standard",
+      "SubscriptionId": "0eb177bd-28b1-44da-b683-1508e1268aee",
+      "SubscriptionName": "Prod"
+    },
+    "Description": "Defender: VirtualMachines",
+    "EvidenceId": "55ba1de6-ab7d-58d9-8b00-6474a89fbf1a",
+    "EvidenceType": "azure-defender-pricing",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/0eb177bd-28b1-44da-b683-1508e1268aee/providers/Microsoft.Security/pricings/VirtualMachines",
+    "ResourceType": "DefenderPlan",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:06.758166+00:00",
+    "Collector": "AzureDefenderPlans",
+    "Data": {
+      "IsEnabled": true,
+      "PlanName": "AI",
+      "PricingTier": "Standard",
+      "SubscriptionId": "8054e434-49e0-4a21-bbea-3fee1c872b88",
+      "SubscriptionName": "Security"
+    },
+    "Description": "Defender: AI",
+    "EvidenceId": "1fbf4edf-8dbb-5802-b281-c5871fe0e3dd",
+    "EvidenceType": "azure-defender-pricing",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/providers/Microsoft.Security/pricings/AI",
+    "ResourceType": "DefenderPlan",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:06.758146+00:00",
+    "Collector": "AzureDefenderPlans",
+    "Data": {
+      "IsEnabled": true,
+      "PlanName": "Api",
+      "PricingTier": "Standard",
+      "SubscriptionId": "8054e434-49e0-4a21-bbea-3fee1c872b88",
+      "SubscriptionName": "Security"
+    },
+    "Description": "Defender: Api",
+    "EvidenceId": "b6eb3839-45f8-5845-ab94-65c1fdf58bdd",
+    "EvidenceType": "azure-defender-pricing",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/providers/Microsoft.Security/pricings/Api",
+    "ResourceType": "DefenderPlan",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:06.757872+00:00",
+    "Collector": "AzureDefenderPlans",
+    "Data": {
+      "IsEnabled": true,
+      "PlanName": "AppServices",
+      "PricingTier": "Standard",
+      "SubscriptionId": "8054e434-49e0-4a21-bbea-3fee1c872b88",
+      "SubscriptionName": "Security"
+    },
+    "Description": "Defender: AppServices",
+    "EvidenceId": "36c1ad82-211b-5b30-b319-499612740daf",
+    "EvidenceType": "azure-defender-pricing",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/providers/Microsoft.Security/pricings/AppServices",
+    "ResourceType": "DefenderPlan",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:06.758024+00:00",
+    "Collector": "AzureDefenderPlans",
+    "Data": {
+      "IsEnabled": true,
+      "PlanName": "Arm",
+      "PricingTier": "Standard",
+      "SubscriptionId": "8054e434-49e0-4a21-bbea-3fee1c872b88",
+      "SubscriptionName": "Security"
+    },
+    "Description": "Defender: Arm",
+    "EvidenceId": "ed55f845-b3ed-57a7-a90a-740f283e4474",
+    "EvidenceType": "azure-defender-pricing",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/providers/Microsoft.Security/pricings/Arm",
+    "ResourceType": "DefenderPlan",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:06.758125+00:00",
+    "Collector": "AzureDefenderPlans",
+    "Data": {
+      "IsEnabled": true,
+      "PlanName": "CloudPosture",
+      "PricingTier": "Standard",
+      "SubscriptionId": "8054e434-49e0-4a21-bbea-3fee1c872b88",
+      "SubscriptionName": "Security"
+    },
+    "Description": "Defender: CloudPosture",
+    "EvidenceId": "40fdef8c-b782-5c4b-8b7d-452a9d477d81",
+    "EvidenceType": "azure-defender-pricing",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/providers/Microsoft.Security/pricings/CloudPosture",
+    "ResourceType": "DefenderPlan",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:06.757965+00:00",
+    "Collector": "AzureDefenderPlans",
+    "Data": {
+      "IsEnabled": false,
+      "PlanName": "ContainerRegistry",
+      "PricingTier": "Free",
+      "SubscriptionId": "8054e434-49e0-4a21-bbea-3fee1c872b88",
+      "SubscriptionName": "Security"
+    },
+    "Description": "Defender: ContainerRegistry",
+    "EvidenceId": "201889c4-b179-5f08-8057-02c80cff01c9",
+    "EvidenceType": "azure-defender-pricing",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/providers/Microsoft.Security/pricings/ContainerRegistry",
+    "ResourceType": "DefenderPlan",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:06.758102+00:00",
+    "Collector": "AzureDefenderPlans",
+    "Data": {
+      "IsEnabled": true,
+      "PlanName": "Containers",
+      "PricingTier": "Standard",
+      "SubscriptionId": "8054e434-49e0-4a21-bbea-3fee1c872b88",
+      "SubscriptionName": "Security"
+    },
+    "Description": "Defender: Containers",
+    "EvidenceId": "9ac0fc47-dfd9-5840-8427-05f90c24a995",
+    "EvidenceType": "azure-defender-pricing",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/providers/Microsoft.Security/pricings/Containers",
+    "ResourceType": "DefenderPlan",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:06.758079+00:00",
+    "Collector": "AzureDefenderPlans",
+    "Data": {
+      "IsEnabled": true,
+      "PlanName": "CosmosDbs",
+      "PricingTier": "Standard",
+      "SubscriptionId": "8054e434-49e0-4a21-bbea-3fee1c872b88",
+      "SubscriptionName": "Security"
+    },
+    "Description": "Defender: CosmosDbs",
+    "EvidenceId": "8b85181e-6fd3-5280-99f1-becd8791bf51",
+    "EvidenceType": "azure-defender-pricing",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/providers/Microsoft.Security/pricings/CosmosDbs",
+    "ResourceType": "DefenderPlan",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:06.758187+00:00",
+    "Collector": "AzureDefenderPlans",
+    "Data": {
+      "IsEnabled": true,
+      "PlanName": "Discovery",
+      "PricingTier": "Standard",
+      "SubscriptionId": "8054e434-49e0-4a21-bbea-3fee1c872b88",
+      "SubscriptionName": "Security"
+    },
+    "Description": "Defender: Discovery",
+    "EvidenceId": "2be13485-933e-5207-b98e-f7d2963c8270",
+    "EvidenceType": "azure-defender-pricing",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/providers/Microsoft.Security/pricings/Discovery",
+    "ResourceType": "DefenderPlan",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:06.758005+00:00",
+    "Collector": "AzureDefenderPlans",
+    "Data": {
+      "IsEnabled": true,
+      "PlanName": "Dns",
+      "PricingTier": "Standard",
+      "SubscriptionId": "8054e434-49e0-4a21-bbea-3fee1c872b88",
+      "SubscriptionName": "Security"
+    },
+    "Description": "Defender: Dns",
+    "EvidenceId": "88ae7b0c-3f14-532b-ad38-64709c768122",
+    "EvidenceType": "azure-defender-pricing",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/providers/Microsoft.Security/pricings/Dns",
+    "ResourceType": "DefenderPlan",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:06.758206+00:00",
+    "Collector": "AzureDefenderPlans",
+    "Data": {
+      "IsEnabled": true,
+      "PlanName": "FoundationalCspm",
+      "PricingTier": "Standard",
+      "SubscriptionId": "8054e434-49e0-4a21-bbea-3fee1c872b88",
+      "SubscriptionName": "Security"
+    },
+    "Description": "Defender: FoundationalCspm",
+    "EvidenceId": "0975df9c-97ac-543d-81d3-93ed3b6f1674",
+    "EvidenceType": "azure-defender-pricing",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/providers/Microsoft.Security/pricings/FoundationalCspm",
+    "ResourceType": "DefenderPlan",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:06.757985+00:00",
+    "Collector": "AzureDefenderPlans",
+    "Data": {
+      "IsEnabled": true,
+      "PlanName": "KeyVaults",
+      "PricingTier": "Standard",
+      "SubscriptionId": "8054e434-49e0-4a21-bbea-3fee1c872b88",
+      "SubscriptionName": "Security"
+    },
+    "Description": "Defender: KeyVaults",
+    "EvidenceId": "0d03f3c5-ba8b-5b7f-ab8d-1d0e9cab3b42",
+    "EvidenceType": "azure-defender-pricing",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/providers/Microsoft.Security/pricings/KeyVaults",
+    "ResourceType": "DefenderPlan",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:06.757943+00:00",
+    "Collector": "AzureDefenderPlans",
+    "Data": {
+      "IsEnabled": false,
+      "PlanName": "KubernetesService",
+      "PricingTier": "Free",
+      "SubscriptionId": "8054e434-49e0-4a21-bbea-3fee1c872b88",
+      "SubscriptionName": "Security"
+    },
+    "Description": "Defender: KubernetesService",
+    "EvidenceId": "31db50dd-b654-528b-b18f-ce4a8486a913",
+    "EvidenceType": "azure-defender-pricing",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/providers/Microsoft.Security/pricings/KubernetesService",
+    "ResourceType": "DefenderPlan",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:06.758053+00:00",
+    "Collector": "AzureDefenderPlans",
+    "Data": {
+      "IsEnabled": true,
+      "PlanName": "OpenSourceRelationalDatabases",
+      "PricingTier": "Standard",
+      "SubscriptionId": "8054e434-49e0-4a21-bbea-3fee1c872b88",
+      "SubscriptionName": "Security"
+    },
+    "Description": "Defender: OpenSourceRelationalDatabases",
+    "EvidenceId": "2fef42a8-b37b-5bf1-a714-bb5017c94185",
+    "EvidenceType": "azure-defender-pricing",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/providers/Microsoft.Security/pricings/OpenSourceRelationalDatabases",
+    "ResourceType": "DefenderPlan",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:06.757920+00:00",
+    "Collector": "AzureDefenderPlans",
+    "Data": {
+      "IsEnabled": true,
+      "PlanName": "SqlServerVirtualMachines",
+      "PricingTier": "Standard",
+      "SubscriptionId": "8054e434-49e0-4a21-bbea-3fee1c872b88",
+      "SubscriptionName": "Security"
+    },
+    "Description": "Defender: SqlServerVirtualMachines",
+    "EvidenceId": "3f516fbb-6aa7-5450-8abf-f3cf0c82e826",
+    "EvidenceType": "azure-defender-pricing",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/providers/Microsoft.Security/pricings/SqlServerVirtualMachines",
+    "ResourceType": "DefenderPlan",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:06.757829+00:00",
+    "Collector": "AzureDefenderPlans",
+    "Data": {
+      "IsEnabled": true,
+      "PlanName": "SqlServers",
+      "PricingTier": "Standard",
+      "SubscriptionId": "8054e434-49e0-4a21-bbea-3fee1c872b88",
+      "SubscriptionName": "Security"
+    },
+    "Description": "Defender: SqlServers",
+    "EvidenceId": "936869a2-d129-5ccf-93c0-1bd521834e9b",
+    "EvidenceType": "azure-defender-pricing",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/providers/Microsoft.Security/pricings/SqlServers",
+    "ResourceType": "DefenderPlan",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:06.757898+00:00",
+    "Collector": "AzureDefenderPlans",
+    "Data": {
+      "IsEnabled": true,
+      "PlanName": "StorageAccounts",
+      "PricingTier": "Standard",
+      "SubscriptionId": "8054e434-49e0-4a21-bbea-3fee1c872b88",
+      "SubscriptionName": "Security"
+    },
+    "Description": "Defender: StorageAccounts",
+    "EvidenceId": "b74a92f8-738d-54c7-9411-0658a92f2c87",
+    "EvidenceType": "azure-defender-pricing",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/providers/Microsoft.Security/pricings/StorageAccounts",
+    "ResourceType": "DefenderPlan",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:06.757700+00:00",
+    "Collector": "AzureDefenderPlans",
+    "Data": {
+      "IsEnabled": true,
+      "PlanName": "VirtualMachines",
+      "PricingTier": "Standard",
+      "SubscriptionId": "8054e434-49e0-4a21-bbea-3fee1c872b88",
+      "SubscriptionName": "Security"
+    },
+    "Description": "Defender: VirtualMachines",
+    "EvidenceId": "a8e06dc6-8c5b-5379-a298-716b830ebea6",
+    "EvidenceType": "azure-defender-pricing",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/providers/Microsoft.Security/pricings/VirtualMachines",
+    "ResourceType": "DefenderPlan",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:15.674255+00:00",
+    "Collector": "AzureDefenderPlans",
+    "Data": {
+      "IsEnabled": true,
+      "PlanName": "AI",
+      "PricingTier": "Standard",
+      "SubscriptionId": "9154cdcb-5a52-452a-b1e7-483be9eee6d2",
+      "SubscriptionName": "Infra"
+    },
+    "Description": "Defender: AI",
+    "EvidenceId": "b3f9e610-bb66-5f03-b046-702d76b498db",
+    "EvidenceType": "azure-defender-pricing",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/9154cdcb-5a52-452a-b1e7-483be9eee6d2/providers/Microsoft.Security/pricings/AI",
+    "ResourceType": "DefenderPlan",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:15.674234+00:00",
+    "Collector": "AzureDefenderPlans",
+    "Data": {
+      "IsEnabled": true,
+      "PlanName": "Api",
+      "PricingTier": "Standard",
+      "SubscriptionId": "9154cdcb-5a52-452a-b1e7-483be9eee6d2",
+      "SubscriptionName": "Infra"
+    },
+    "Description": "Defender: Api",
+    "EvidenceId": "4c9406cf-1867-52ab-861b-8a96441e0efa",
+    "EvidenceType": "azure-defender-pricing",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/9154cdcb-5a52-452a-b1e7-483be9eee6d2/providers/Microsoft.Security/pricings/Api",
+    "ResourceType": "DefenderPlan",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:15.673813+00:00",
+    "Collector": "AzureDefenderPlans",
+    "Data": {
+      "IsEnabled": true,
+      "PlanName": "AppServices",
+      "PricingTier": "Standard",
+      "SubscriptionId": "9154cdcb-5a52-452a-b1e7-483be9eee6d2",
+      "SubscriptionName": "Infra"
+    },
+    "Description": "Defender: AppServices",
+    "EvidenceId": "a46a62e5-ebb9-5b64-9108-44a3b2f88f1b",
+    "EvidenceType": "azure-defender-pricing",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/9154cdcb-5a52-452a-b1e7-483be9eee6d2/providers/Microsoft.Security/pricings/AppServices",
+    "ResourceType": "DefenderPlan",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:15.674071+00:00",
+    "Collector": "AzureDefenderPlans",
+    "Data": {
+      "IsEnabled": true,
+      "PlanName": "Arm",
+      "PricingTier": "Standard",
+      "SubscriptionId": "9154cdcb-5a52-452a-b1e7-483be9eee6d2",
+      "SubscriptionName": "Infra"
+    },
+    "Description": "Defender: Arm",
+    "EvidenceId": "7ae3173b-68ea-52d3-87fd-7a256168af11",
+    "EvidenceType": "azure-defender-pricing",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/9154cdcb-5a52-452a-b1e7-483be9eee6d2/providers/Microsoft.Security/pricings/Arm",
+    "ResourceType": "DefenderPlan",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:15.674211+00:00",
+    "Collector": "AzureDefenderPlans",
+    "Data": {
+      "IsEnabled": true,
+      "PlanName": "CloudPosture",
+      "PricingTier": "Standard",
+      "SubscriptionId": "9154cdcb-5a52-452a-b1e7-483be9eee6d2",
+      "SubscriptionName": "Infra"
+    },
+    "Description": "Defender: CloudPosture",
+    "EvidenceId": "51b91fa0-7ac6-5fa8-a743-6f7fa7a0fbae",
+    "EvidenceType": "azure-defender-pricing",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/9154cdcb-5a52-452a-b1e7-483be9eee6d2/providers/Microsoft.Security/pricings/CloudPosture",
+    "ResourceType": "DefenderPlan",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:15.673972+00:00",
+    "Collector": "AzureDefenderPlans",
+    "Data": {
+      "IsEnabled": false,
+      "PlanName": "ContainerRegistry",
+      "PricingTier": "Free",
+      "SubscriptionId": "9154cdcb-5a52-452a-b1e7-483be9eee6d2",
+      "SubscriptionName": "Infra"
+    },
+    "Description": "Defender: ContainerRegistry",
+    "EvidenceId": "e8740cd2-b1d5-59fe-98da-60c5b44db502",
+    "EvidenceType": "azure-defender-pricing",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/9154cdcb-5a52-452a-b1e7-483be9eee6d2/providers/Microsoft.Security/pricings/ContainerRegistry",
+    "ResourceType": "DefenderPlan",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:15.674179+00:00",
+    "Collector": "AzureDefenderPlans",
+    "Data": {
+      "IsEnabled": true,
+      "PlanName": "Containers",
+      "PricingTier": "Standard",
+      "SubscriptionId": "9154cdcb-5a52-452a-b1e7-483be9eee6d2",
+      "SubscriptionName": "Infra"
+    },
+    "Description": "Defender: Containers",
+    "EvidenceId": "a6f1cfbf-04fb-53f6-804d-bc18f1df4de4",
+    "EvidenceType": "azure-defender-pricing",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/9154cdcb-5a52-452a-b1e7-483be9eee6d2/providers/Microsoft.Security/pricings/Containers",
+    "ResourceType": "DefenderPlan",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:15.674146+00:00",
+    "Collector": "AzureDefenderPlans",
+    "Data": {
+      "IsEnabled": true,
+      "PlanName": "CosmosDbs",
+      "PricingTier": "Standard",
+      "SubscriptionId": "9154cdcb-5a52-452a-b1e7-483be9eee6d2",
+      "SubscriptionName": "Infra"
+    },
+    "Description": "Defender: CosmosDbs",
+    "EvidenceId": "58e02234-5565-57d1-ab21-c3a3175698e1",
+    "EvidenceType": "azure-defender-pricing",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/9154cdcb-5a52-452a-b1e7-483be9eee6d2/providers/Microsoft.Security/pricings/CosmosDbs",
+    "ResourceType": "DefenderPlan",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:15.674275+00:00",
+    "Collector": "AzureDefenderPlans",
+    "Data": {
+      "IsEnabled": true,
+      "PlanName": "Discovery",
+      "PricingTier": "Standard",
+      "SubscriptionId": "9154cdcb-5a52-452a-b1e7-483be9eee6d2",
+      "SubscriptionName": "Infra"
+    },
+    "Description": "Defender: Discovery",
+    "EvidenceId": "7f314475-99ef-5516-8108-520284234800",
+    "EvidenceType": "azure-defender-pricing",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/9154cdcb-5a52-452a-b1e7-483be9eee6d2/providers/Microsoft.Security/pricings/Discovery",
+    "ResourceType": "DefenderPlan",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:15.674037+00:00",
+    "Collector": "AzureDefenderPlans",
+    "Data": {
+      "IsEnabled": false,
+      "PlanName": "Dns",
+      "PricingTier": "Free",
+      "SubscriptionId": "9154cdcb-5a52-452a-b1e7-483be9eee6d2",
+      "SubscriptionName": "Infra"
+    },
+    "Description": "Defender: Dns",
+    "EvidenceId": "1c1fff11-cd13-5d34-ba30-19866437919c",
+    "EvidenceType": "azure-defender-pricing",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/9154cdcb-5a52-452a-b1e7-483be9eee6d2/providers/Microsoft.Security/pricings/Dns",
+    "ResourceType": "DefenderPlan",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:15.674306+00:00",
+    "Collector": "AzureDefenderPlans",
+    "Data": {
+      "IsEnabled": true,
+      "PlanName": "FoundationalCspm",
+      "PricingTier": "Standard",
+      "SubscriptionId": "9154cdcb-5a52-452a-b1e7-483be9eee6d2",
+      "SubscriptionName": "Infra"
+    },
+    "Description": "Defender: FoundationalCspm",
+    "EvidenceId": "060d2007-9735-5fb1-847d-5ab2cfc08e05",
+    "EvidenceType": "azure-defender-pricing",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/9154cdcb-5a52-452a-b1e7-483be9eee6d2/providers/Microsoft.Security/pricings/FoundationalCspm",
+    "ResourceType": "DefenderPlan",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:15.674006+00:00",
+    "Collector": "AzureDefenderPlans",
+    "Data": {
+      "IsEnabled": true,
+      "PlanName": "KeyVaults",
+      "PricingTier": "Standard",
+      "SubscriptionId": "9154cdcb-5a52-452a-b1e7-483be9eee6d2",
+      "SubscriptionName": "Infra"
+    },
+    "Description": "Defender: KeyVaults",
+    "EvidenceId": "f53c7758-747a-5e9c-91b6-e8fa0a994fe2",
+    "EvidenceType": "azure-defender-pricing",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/9154cdcb-5a52-452a-b1e7-483be9eee6d2/providers/Microsoft.Security/pricings/KeyVaults",
+    "ResourceType": "DefenderPlan",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:15.673935+00:00",
+    "Collector": "AzureDefenderPlans",
+    "Data": {
+      "IsEnabled": false,
+      "PlanName": "KubernetesService",
+      "PricingTier": "Free",
+      "SubscriptionId": "9154cdcb-5a52-452a-b1e7-483be9eee6d2",
+      "SubscriptionName": "Infra"
+    },
+    "Description": "Defender: KubernetesService",
+    "EvidenceId": "7bdcfc5e-3b81-560b-a10d-2e1c238c988e",
+    "EvidenceType": "azure-defender-pricing",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/9154cdcb-5a52-452a-b1e7-483be9eee6d2/providers/Microsoft.Security/pricings/KubernetesService",
+    "ResourceType": "DefenderPlan",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:15.674109+00:00",
+    "Collector": "AzureDefenderPlans",
+    "Data": {
+      "IsEnabled": true,
+      "PlanName": "OpenSourceRelationalDatabases",
+      "PricingTier": "Standard",
+      "SubscriptionId": "9154cdcb-5a52-452a-b1e7-483be9eee6d2",
+      "SubscriptionName": "Infra"
+    },
+    "Description": "Defender: OpenSourceRelationalDatabases",
+    "EvidenceId": "37df84f6-3833-5f91-97e6-30e5f17686b2",
+    "EvidenceType": "azure-defender-pricing",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/9154cdcb-5a52-452a-b1e7-483be9eee6d2/providers/Microsoft.Security/pricings/OpenSourceRelationalDatabases",
+    "ResourceType": "DefenderPlan",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:15.673899+00:00",
+    "Collector": "AzureDefenderPlans",
+    "Data": {
+      "IsEnabled": true,
+      "PlanName": "SqlServerVirtualMachines",
+      "PricingTier": "Standard",
+      "SubscriptionId": "9154cdcb-5a52-452a-b1e7-483be9eee6d2",
+      "SubscriptionName": "Infra"
+    },
+    "Description": "Defender: SqlServerVirtualMachines",
+    "EvidenceId": "8a8e1b8f-db35-5581-857f-688834e807fb",
+    "EvidenceType": "azure-defender-pricing",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/9154cdcb-5a52-452a-b1e7-483be9eee6d2/providers/Microsoft.Security/pricings/SqlServerVirtualMachines",
+    "ResourceType": "DefenderPlan",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:15.673759+00:00",
+    "Collector": "AzureDefenderPlans",
+    "Data": {
+      "IsEnabled": true,
+      "PlanName": "SqlServers",
+      "PricingTier": "Standard",
+      "SubscriptionId": "9154cdcb-5a52-452a-b1e7-483be9eee6d2",
+      "SubscriptionName": "Infra"
+    },
+    "Description": "Defender: SqlServers",
+    "EvidenceId": "e87557c9-a4d8-5066-a02a-1a01bfec9104",
+    "EvidenceType": "azure-defender-pricing",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/9154cdcb-5a52-452a-b1e7-483be9eee6d2/providers/Microsoft.Security/pricings/SqlServers",
+    "ResourceType": "DefenderPlan",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:15.673857+00:00",
+    "Collector": "AzureDefenderPlans",
+    "Data": {
+      "IsEnabled": true,
+      "PlanName": "StorageAccounts",
+      "PricingTier": "Standard",
+      "SubscriptionId": "9154cdcb-5a52-452a-b1e7-483be9eee6d2",
+      "SubscriptionName": "Infra"
+    },
+    "Description": "Defender: StorageAccounts",
+    "EvidenceId": "5485c34f-da4a-5bbe-a9ca-3df90381634b",
+    "EvidenceType": "azure-defender-pricing",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/9154cdcb-5a52-452a-b1e7-483be9eee6d2/providers/Microsoft.Security/pricings/StorageAccounts",
+    "ResourceType": "DefenderPlan",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:15.673612+00:00",
+    "Collector": "AzureDefenderPlans",
+    "Data": {
+      "IsEnabled": true,
+      "PlanName": "VirtualMachines",
+      "PricingTier": "Standard",
+      "SubscriptionId": "9154cdcb-5a52-452a-b1e7-483be9eee6d2",
+      "SubscriptionName": "Infra"
+    },
+    "Description": "Defender: VirtualMachines",
+    "EvidenceId": "f751e9c7-870c-5198-8881-731a7a7b7f2c",
+    "EvidenceType": "azure-defender-pricing",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/9154cdcb-5a52-452a-b1e7-483be9eee6d2/providers/Microsoft.Security/pricings/VirtualMachines",
+    "ResourceType": "DefenderPlan",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:21.433340+00:00",
+    "Collector": "AzureDefenderPlans",
+    "Data": {
+      "IsEnabled": true,
+      "PlanName": "AI",
+      "PricingTier": "Standard",
+      "SubscriptionId": "d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0",
+      "SubscriptionName": "AI"
+    },
+    "Description": "Defender: AI",
+    "EvidenceId": "24dd6aa8-0de9-538a-ba28-7bf6912e9f8f",
+    "EvidenceType": "azure-defender-pricing",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/providers/Microsoft.Security/pricings/AI",
+    "ResourceType": "DefenderPlan",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:21.433305+00:00",
+    "Collector": "AzureDefenderPlans",
+    "Data": {
+      "IsEnabled": true,
+      "PlanName": "Api",
+      "PricingTier": "Standard",
+      "SubscriptionId": "d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0",
+      "SubscriptionName": "AI"
+    },
+    "Description": "Defender: Api",
+    "EvidenceId": "5a206859-439b-5716-9bad-8f20511c8486",
+    "EvidenceType": "azure-defender-pricing",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/providers/Microsoft.Security/pricings/Api",
+    "ResourceType": "DefenderPlan",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:21.432839+00:00",
+    "Collector": "AzureDefenderPlans",
+    "Data": {
+      "IsEnabled": true,
+      "PlanName": "AppServices",
+      "PricingTier": "Standard",
+      "SubscriptionId": "d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0",
+      "SubscriptionName": "AI"
+    },
+    "Description": "Defender: AppServices",
+    "EvidenceId": "211050b1-64ad-5540-9782-3a8767caa9b9",
+    "EvidenceType": "azure-defender-pricing",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/providers/Microsoft.Security/pricings/AppServices",
+    "ResourceType": "DefenderPlan",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:21.433119+00:00",
+    "Collector": "AzureDefenderPlans",
+    "Data": {
+      "IsEnabled": true,
+      "PlanName": "Arm",
+      "PricingTier": "Standard",
+      "SubscriptionId": "d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0",
+      "SubscriptionName": "AI"
+    },
+    "Description": "Defender: Arm",
+    "EvidenceId": "4f203a50-1364-5211-a891-763bee8d10fd",
+    "EvidenceType": "azure-defender-pricing",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/providers/Microsoft.Security/pricings/Arm",
+    "ResourceType": "DefenderPlan",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:21.433270+00:00",
+    "Collector": "AzureDefenderPlans",
+    "Data": {
+      "IsEnabled": true,
+      "PlanName": "CloudPosture",
+      "PricingTier": "Standard",
+      "SubscriptionId": "d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0",
+      "SubscriptionName": "AI"
+    },
+    "Description": "Defender: CloudPosture",
+    "EvidenceId": "619a57f9-9d5b-5667-8373-faadf8fb3d19",
+    "EvidenceType": "azure-defender-pricing",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/providers/Microsoft.Security/pricings/CloudPosture",
+    "ResourceType": "DefenderPlan",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:21.433005+00:00",
+    "Collector": "AzureDefenderPlans",
+    "Data": {
+      "IsEnabled": false,
+      "PlanName": "ContainerRegistry",
+      "PricingTier": "Free",
+      "SubscriptionId": "d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0",
+      "SubscriptionName": "AI"
+    },
+    "Description": "Defender: ContainerRegistry",
+    "EvidenceId": "224c99c4-aa03-5b3d-a2e2-51546fe4ccc5",
+    "EvidenceType": "azure-defender-pricing",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/providers/Microsoft.Security/pricings/ContainerRegistry",
+    "ResourceType": "DefenderPlan",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:21.433235+00:00",
+    "Collector": "AzureDefenderPlans",
+    "Data": {
+      "IsEnabled": true,
+      "PlanName": "Containers",
+      "PricingTier": "Standard",
+      "SubscriptionId": "d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0",
+      "SubscriptionName": "AI"
+    },
+    "Description": "Defender: Containers",
+    "EvidenceId": "8de09495-2893-53a3-92a0-1dc9c0b60aa0",
+    "EvidenceType": "azure-defender-pricing",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/providers/Microsoft.Security/pricings/Containers",
+    "ResourceType": "DefenderPlan",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:21.433198+00:00",
+    "Collector": "AzureDefenderPlans",
+    "Data": {
+      "IsEnabled": true,
+      "PlanName": "CosmosDbs",
+      "PricingTier": "Standard",
+      "SubscriptionId": "d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0",
+      "SubscriptionName": "AI"
+    },
+    "Description": "Defender: CosmosDbs",
+    "EvidenceId": "020c01c4-cbbb-54e1-ba4f-21743149f153",
+    "EvidenceType": "azure-defender-pricing",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/providers/Microsoft.Security/pricings/CosmosDbs",
+    "ResourceType": "DefenderPlan",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:21.433376+00:00",
+    "Collector": "AzureDefenderPlans",
+    "Data": {
+      "IsEnabled": true,
+      "PlanName": "Discovery",
+      "PricingTier": "Standard",
+      "SubscriptionId": "d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0",
+      "SubscriptionName": "AI"
+    },
+    "Description": "Defender: Discovery",
+    "EvidenceId": "5d88770c-63bb-5e72-90ae-905f9c086147",
+    "EvidenceType": "azure-defender-pricing",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/providers/Microsoft.Security/pricings/Discovery",
+    "ResourceType": "DefenderPlan",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:21.433082+00:00",
+    "Collector": "AzureDefenderPlans",
+    "Data": {
+      "IsEnabled": false,
+      "PlanName": "Dns",
+      "PricingTier": "Free",
+      "SubscriptionId": "d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0",
+      "SubscriptionName": "AI"
+    },
+    "Description": "Defender: Dns",
+    "EvidenceId": "d6d10cf9-fca2-56db-81d6-784d74eeeefd",
+    "EvidenceType": "azure-defender-pricing",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/providers/Microsoft.Security/pricings/Dns",
+    "ResourceType": "DefenderPlan",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:21.433411+00:00",
+    "Collector": "AzureDefenderPlans",
+    "Data": {
+      "IsEnabled": true,
+      "PlanName": "FoundationalCspm",
+      "PricingTier": "Standard",
+      "SubscriptionId": "d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0",
+      "SubscriptionName": "AI"
+    },
+    "Description": "Defender: FoundationalCspm",
+    "EvidenceId": "05b9035c-ada0-5db7-88a9-3657053b9f59",
+    "EvidenceType": "azure-defender-pricing",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/providers/Microsoft.Security/pricings/FoundationalCspm",
+    "ResourceType": "DefenderPlan",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:21.433042+00:00",
+    "Collector": "AzureDefenderPlans",
+    "Data": {
+      "IsEnabled": true,
+      "PlanName": "KeyVaults",
+      "PricingTier": "Standard",
+      "SubscriptionId": "d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0",
+      "SubscriptionName": "AI"
+    },
+    "Description": "Defender: KeyVaults",
+    "EvidenceId": "5d007d6d-5cd4-5842-97e6-9997598ea8b3",
+    "EvidenceType": "azure-defender-pricing",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/providers/Microsoft.Security/pricings/KeyVaults",
+    "ResourceType": "DefenderPlan",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:21.432967+00:00",
+    "Collector": "AzureDefenderPlans",
+    "Data": {
+      "IsEnabled": false,
+      "PlanName": "KubernetesService",
+      "PricingTier": "Free",
+      "SubscriptionId": "d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0",
+      "SubscriptionName": "AI"
+    },
+    "Description": "Defender: KubernetesService",
+    "EvidenceId": "f088a9d4-d255-5c62-90ad-67c936b03bda",
+    "EvidenceType": "azure-defender-pricing",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/providers/Microsoft.Security/pricings/KubernetesService",
+    "ResourceType": "DefenderPlan",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:21.433159+00:00",
+    "Collector": "AzureDefenderPlans",
+    "Data": {
+      "IsEnabled": true,
+      "PlanName": "OpenSourceRelationalDatabases",
+      "PricingTier": "Standard",
+      "SubscriptionId": "d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0",
+      "SubscriptionName": "AI"
+    },
+    "Description": "Defender: OpenSourceRelationalDatabases",
+    "EvidenceId": "595a489a-57f9-5d7e-bd5f-9da84b6c24da",
+    "EvidenceType": "azure-defender-pricing",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/providers/Microsoft.Security/pricings/OpenSourceRelationalDatabases",
+    "ResourceType": "DefenderPlan",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:21.432928+00:00",
+    "Collector": "AzureDefenderPlans",
+    "Data": {
+      "IsEnabled": true,
+      "PlanName": "SqlServerVirtualMachines",
+      "PricingTier": "Standard",
+      "SubscriptionId": "d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0",
+      "SubscriptionName": "AI"
+    },
+    "Description": "Defender: SqlServerVirtualMachines",
+    "EvidenceId": "f7b01ed9-5d3b-55c0-b9e7-51c751947212",
+    "EvidenceType": "azure-defender-pricing",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/providers/Microsoft.Security/pricings/SqlServerVirtualMachines",
+    "ResourceType": "DefenderPlan",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:21.432764+00:00",
+    "Collector": "AzureDefenderPlans",
+    "Data": {
+      "IsEnabled": true,
+      "PlanName": "SqlServers",
+      "PricingTier": "Standard",
+      "SubscriptionId": "d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0",
+      "SubscriptionName": "AI"
+    },
+    "Description": "Defender: SqlServers",
+    "EvidenceId": "6db7a76d-acf3-59a9-ba89-9670a9cfbb34",
+    "EvidenceType": "azure-defender-pricing",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/providers/Microsoft.Security/pricings/SqlServers",
+    "ResourceType": "DefenderPlan",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:21.432887+00:00",
+    "Collector": "AzureDefenderPlans",
+    "Data": {
+      "IsEnabled": true,
+      "PlanName": "StorageAccounts",
+      "PricingTier": "Standard",
+      "SubscriptionId": "d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0",
+      "SubscriptionName": "AI"
+    },
+    "Description": "Defender: StorageAccounts",
+    "EvidenceId": "62f89bc6-02b1-5191-95d8-6b8b8a920601",
+    "EvidenceType": "azure-defender-pricing",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/providers/Microsoft.Security/pricings/StorageAccounts",
+    "ResourceType": "DefenderPlan",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:21.432521+00:00",
+    "Collector": "AzureDefenderPlans",
+    "Data": {
+      "IsEnabled": true,
+      "PlanName": "VirtualMachines",
+      "PricingTier": "Standard",
+      "SubscriptionId": "d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0",
+      "SubscriptionName": "AI"
+    },
+    "Description": "Defender: VirtualMachines",
+    "EvidenceId": "988f262d-72cd-5a30-82f8-4dbfd6ac9b7a",
+    "EvidenceType": "azure-defender-pricing",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/providers/Microsoft.Security/pricings/VirtualMachines",
+    "ResourceType": "DefenderPlan",
+    "Source": "Azure"
+  }
+]

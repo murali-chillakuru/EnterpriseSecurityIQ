@@ -1,0 +1,22 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "{{ project_name }} Configuration",
+    "type": "object",
+    "required": ["project_name", "base_name"],
+    "properties": {
+        "project_name": { "type": "string" },
+        "base_name": { "type": "string" },
+        "description": { "type": "string" },
+        "log_level": { "type": "string", "enum": ["DEBUG", "INFO", "WARNING", "ERROR"] },
+        "port": { "type": "integer", "minimum": 1024, "maximum": 65535 },
+        "thresholds": { "type": "object" },
+        "domains": {
+            "type": "array",
+            "items": { "type": "string" }
+        },
+        "reports": {
+            "type": "array",
+            "items": { "type": "string", "enum": ["html", "pdf", "xlsx", "sarif", "oscal", "csv", "markdown"] }
+        }
+    }
+}

@@ -1,0 +1,22 @@
+[
+  {
+    "CollectedAt": "2026-04-26T23:41:55.045600+00:00",
+    "Collector": "CopilotStudio",
+    "Data": {
+      "DLPPolicies": 1,
+      "HasDLPPolicies": true,
+      "ManagedEnvironments": 0,
+      "TotalBots": 0,
+      "TotalCustomConnectors": 0,
+      "TotalEnvironments": 2,
+      "UnmanagedEnvironments": 2
+    },
+    "Description": "Copilot Studio & Power Platform summary",
+    "EvidenceId": "44afbbc3-3602-5571-a149-63cf260f7765",
+    "EvidenceType": "copilot-studio-summary",
+    "RawReference": null,
+    "ResourceId": "copilot-studio-summary",
+    "ResourceType": "CopilotStudioSummary",
+    "Source": "Entra"
+  }
+]

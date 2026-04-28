@@ -1,0 +1,16 @@
+{
+  "name": "CopilotReadiness",
+  "brand_name": "CopilotReadinessIQ",
+  "description": "Copilot Readiness assessment — isolated package",
+  "tools": [
+    "assess_copilot_readiness",
+    "search_exposure",
+    "generate_custom_report"
+  ],
+  "pages": [
+    "CopilotReadiness.html"
+  ],
+  "include_teams_package": true,
+  "include_infra": true,
+  "include_automation": true
+}

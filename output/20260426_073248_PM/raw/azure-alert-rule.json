@@ -1,0 +1,42 @@
+[
+  {
+    "CollectedAt": "2026-04-26T23:39:47.688258+00:00",
+    "Collector": "AzureMonitoring",
+    "Data": {
+      "AlertId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/rg-loganalyticsworkspace/providers/microsoft.insights/scheduledqueryrules/[Azure Security Center] New Security Alert",
+      "AlertType": "ScheduledQueryRule",
+      "Enabled": "true",
+      "Name": "[Azure Security Center] New Security Alert",
+      "Severity": null,
+      "SubscriptionId": "8054e434-49e0-4a21-bbea-3fee1c872b88",
+      "SubscriptionName": "Security"
+    },
+    "Description": "Query alert: [Azure Security Center] New Security Alert",
+    "EvidenceId": "c5cf00b5-8ec2-5e7e-b8e2-edace4f050a3",
+    "EvidenceType": "azure-alert-rule",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/rg-loganalyticsworkspace/providers/microsoft.insights/scheduledqueryrules/[Azure Security Center] New Security Alert",
+    "ResourceType": "AlertRule",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:39:47.688066+00:00",
+    "Collector": "AzureMonitoring",
+    "Data": {
+      "AlertId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/rg-loganalyticsworkspace/providers/microsoft.insights/scheduledqueryrules/[Azure Security Center] New Security Recommendation",
+      "AlertType": "ScheduledQueryRule",
+      "Enabled": "true",
+      "Name": "[Azure Security Center] New Security Recommendation",
+      "Severity": null,
+      "SubscriptionId": "8054e434-49e0-4a21-bbea-3fee1c872b88",
+      "SubscriptionName": "Security"
+    },
+    "Description": "Query alert: [Azure Security Center] New Security Recommendation",
+    "EvidenceId": "9b0f0d04-5260-5571-bdd0-2cd8016d999f",
+    "EvidenceType": "azure-alert-rule",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/rg-loganalyticsworkspace/providers/microsoft.insights/scheduledqueryrules/[Azure Security Center] New Security Recommendation",
+    "ResourceType": "AlertRule",
+    "Source": "Azure"
+  }
+]

@@ -1,0 +1,74 @@
+{
+  "_description": "RBAC risk indicators per Cloud Explorer result family — privilege risk patterns, excessive permissions, and role hygiene concerns.",
+  "identity": {
+    "risk_level": "critical",
+    "patterns": [
+      {"pattern": "Standing Owner at management group/subscription scope", "severity": "critical", "controls": {"CIS": ["1.22", "1.23"], "NIST-800-53": ["AC-6(5)"]}},
+      {"pattern": "Service principals with Owner/Contributor at broad scope", "severity": "critical", "controls": {"CIS": ["1.22"], "NIST-800-53": ["AC-6", "IA-5"]}},
+      {"pattern": "Large privileged groups (>10 members)", "severity": "high", "controls": {"CIS": ["1.22"], "NIST-800-53": ["AC-2", "AC-6(7)"]}},
+      {"pattern": "Custom roles with high-scope wildcard actions", "severity": "high", "controls": {"CIS": ["1.24"], "NIST-800-53": ["AC-3", "AC-6(2)"]}},
+      {"pattern": "Stale role assignments (unused >90 days)", "severity": "medium", "controls": {"NIST-800-53": ["AC-2(3)"], "ISO-27001": ["A.5.18"]}}
+    ],
+    "key_checks": ["Review standing privileged access — use PIM for JIT activation", "Audit service principal permissions and credential expiry", "Check for over-sized security groups with elevated roles"]
+  },
+  "storage": {
+    "risk_level": "high",
+    "patterns": [
+      {"pattern": "Storage Account Contributor/Owner at subscription scope", "severity": "high", "controls": {"NIST-800-53": ["AC-6"]}},
+      {"pattern": "Storage Blob Data Contributor granted too broadly", "severity": "high", "controls": {"CIS": ["3.7"], "NIST-800-53": ["AC-3"]}},
+      {"pattern": "Classic storage account key operators", "severity": "medium", "controls": {"NIST-800-53": ["IA-5"]}}
+    ],
+    "key_checks": ["Prefer data-plane RBAC roles over account-level access", "Use private endpoints to complement RBAC", "Rotate storage account keys regularly"]
+  },
+  "compute": {
+    "risk_level": "high",
+    "patterns": [
+      {"pattern": "Virtual Machine Contributor with no scope limitation", "severity": "high", "controls": {"NIST-800-53": ["AC-6"]}},
+      {"pattern": "VM admin login roles without MFA enforcement", "severity": "high", "controls": {"CIS": ["1.2"], "NIST-800-53": ["IA-2"]}},
+      {"pattern": "Disk snapshot permissions without data classification review", "severity": "medium", "controls": {"NIST-800-53": ["SC-28"]}}
+    ],
+    "key_checks": ["Scope VM roles to resource groups, not subscriptions", "Require MFA for VM admin login roles", "Review disk snapshot and export permissions"]
+  },
+  "database": {
+    "risk_level": "critical",
+    "patterns": [
+      {"pattern": "SQL Server Contributor at subscription scope", "severity": "critical", "controls": {"NIST-800-53": ["AC-6"]}},
+      {"pattern": "SQL DB Contributor without Azure AD-only auth", "severity": "high", "controls": {"CIS": ["4.1"], "NIST-800-53": ["IA-2"]}},
+      {"pattern": "Cosmos DB Account Contributor with key access", "severity": "high", "controls": {"NIST-800-53": ["AC-3", "IA-5"]}}
+    ],
+    "key_checks": ["Enforce Azure AD-only authentication for SQL", "Use database-scoped roles, not server-level Contributor", "Disable Cosmos DB key-based access in favor of RBAC"]
+  },
+  "ai": {
+    "risk_level": "high",
+    "patterns": [
+      {"pattern": "Cognitive Services Contributor at broad scope", "severity": "high", "controls": {"NIST-800-53": ["AC-6"], "NIST-AI-RMF": ["GOVERN 1.4"]}},
+      {"pattern": "AI service key access without Azure AD enforcement", "severity": "high", "controls": {"OWASP-LLM": ["LLM06"]}},
+      {"pattern": "Copilot Studio environment maker without DLP", "severity": "medium", "controls": {"NIST-AI-RMF": ["MANAGE 2.2"]}}
+    ],
+    "key_checks": ["Enforce Azure AD auth for all AI endpoints", "Scope AI roles to specific resource groups", "Apply DLP policies to AI agent environments"]
+  },
+  "network": {
+    "risk_level": "high",
+    "patterns": [
+      {"pattern": "Network Contributor at subscription scope", "severity": "high", "controls": {"NIST-800-53": ["AC-6"]}},
+      {"pattern": "NSG write permissions without change tracking", "severity": "medium", "controls": {"NIST-800-53": ["CM-3"]}}
+    ],
+    "key_checks": ["Network changes should require approval workflows", "Review NSG modification permissions"]
+  },
+  "security": {
+    "risk_level": "high",
+    "patterns": [
+      {"pattern": "Security Admin role with alert suppression capability", "severity": "high", "controls": {"NIST-800-53": ["AU-6"]}},
+      {"pattern": "Security Reader granted too broadly", "severity": "low", "controls": {"NIST-800-53": ["AC-6"]}}
+    ],
+    "key_checks": ["Separate security admin from security reader roles", "Review alert suppression and policy exemption permissions"]
+  },
+  "governance": {
+    "risk_level": "medium",
+    "patterns": [
+      {"pattern": "Resource Policy Contributor at management group scope", "severity": "high", "controls": {"NIST-800-53": ["AC-6(5)"]}},
+      {"pattern": "Subscription-level Owner without PIM", "severity": "critical", "controls": {"CIS": ["1.22"], "NIST-800-53": ["AC-6(5)"]}}
+    ],
+    "key_checks": ["Governance roles should use PIM with justification", "Review policy exemption approvers"]
+  }
+}

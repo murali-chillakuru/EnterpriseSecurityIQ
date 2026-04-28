@@ -1,0 +1,68 @@
+[
+  {
+    "CollectedAt": "2026-04-26T23:42:07.345297+00:00",
+    "Collector": "AcrDataPlane",
+    "Data": {
+      "LoginServer": "acrwebia6nebdpvu5bm.azurecr.io",
+      "RegistryId": "/subscriptions/9154cdcb-5a52-452a-b1e7-483be9eee6d2/resourceGroups/RG-ADLS-Governance-Retention/providers/Microsoft.ContainerRegistry/registries/acrwebia6nebdpvu5bm",
+      "RegistryName": "acrwebia6nebdpvu5bm",
+      "ReposWithoutTagImmutability": 2,
+      "RepositoryCount": 2,
+      "StaleRepositories": 0,
+      "SubscriptionId": "9154cdcb-5a52-452a-b1e7-483be9eee6d2",
+      "SubscriptionName": "Infra",
+      "TotalTags": 2
+    },
+    "Description": "ACR repos: acrwebia6nebdpvu5bm",
+    "EvidenceId": "a006edd1-0b74-5711-a941-a46cd37b4200",
+    "EvidenceType": "azure-acr-repository",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/9154cdcb-5a52-452a-b1e7-483be9eee6d2/resourceGroups/RG-ADLS-Governance-Retention/providers/Microsoft.ContainerRegistry/registries/acrwebia6nebdpvu5bm",
+    "ResourceType": "Microsoft.ContainerRegistry/registries",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:42:26.677003+00:00",
+    "Collector": "AcrDataPlane",
+    "Data": {
+      "LoginServer": "esiqnewacr.azurecr.io",
+      "RegistryId": "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/resourceGroups/ESIQNew-RG/providers/Microsoft.ContainerRegistry/registries/esiqnewacr",
+      "RegistryName": "esiqnewacr",
+      "ReposWithoutTagImmutability": 2,
+      "RepositoryCount": 2,
+      "StaleRepositories": 0,
+      "SubscriptionId": "d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0",
+      "SubscriptionName": "AI",
+      "TotalTags": 128
+    },
+    "Description": "ACR repos: esiqnewacr",
+    "EvidenceId": "cc193b33-994f-57ca-8be8-cbb6433807a8",
+    "EvidenceType": "azure-acr-repository",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/resourceGroups/ESIQNew-RG/providers/Microsoft.ContainerRegistry/registries/esiqnewacr",
+    "ResourceType": "Microsoft.ContainerRegistry/registries",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:42:16.813906+00:00",
+    "Collector": "AcrDataPlane",
+    "Data": {
+      "LoginServer": "d33fc1aaifutureinitiative1f50acr.azurecr.io",
+      "RegistryId": "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/resourceGroups/rg-AIFutureInitiative/providers/Microsoft.ContainerRegistry/registries/d33fc1aaifutureinitiative1f50acr",
+      "RegistryName": "d33fc1aaifutureinitiative1f50acr",
+      "ReposWithoutTagImmutability": 0,
+      "RepositoryCount": 0,
+      "StaleRepositories": 0,
+      "SubscriptionId": "d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0",
+      "SubscriptionName": "AI",
+      "TotalTags": 0
+    },
+    "Description": "ACR repos: d33fc1aaifutureinitiative1f50acr",
+    "EvidenceId": "0686c4a0-a7ed-526c-a66d-6fe00a850f91",
+    "EvidenceType": "azure-acr-repository",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/resourceGroups/rg-AIFutureInitiative/providers/Microsoft.ContainerRegistry/registries/d33fc1aaifutureinitiative1f50acr",
+    "ResourceType": "Microsoft.ContainerRegistry/registries",
+    "Source": "Azure"
+  }
+]

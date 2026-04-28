@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PostureIQ — Teams App Deployment Guide</title>
+  <style>
+    :root {
+      --bg: #ffffff; --bg-card: #f8f9fa; --bg-accent: #0078d4;
+      --text: #1a1a1a; --text-muted: #6c757d; --text-on-accent: #ffffff;
+      --border: #dee2e6; --success: #28a745; --warning: #ffc107;
+      --info: #17a2b8; --danger: #dc3545; --code-bg: #f1f3f5;
+      --shadow: 0 2px 8px rgba(0,0,0,0.08);
+      --path-a: #0078d4; --path-b: #8764b8;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #1e1e1e; --bg-card: #2d2d2d; --text: #e0e0e0;
+        --text-muted: #999; --border: #444; --code-bg: #2d2d2d;
+        --shadow: 0 2px 8px rgba(0,0,0,0.3);
+      }
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; max-width: 960px; margin: 0 auto; padding: 2rem 1.5rem; }
+    h1 { font-size: 1.8rem; margin-bottom: 0.25rem; }
+    h2 { font-size: 1.35rem; margin-top: 2rem; margin-bottom: 0.75rem; color: var(--bg-accent); border-bottom: 2px solid var(--bg-accent); padding-bottom: 0.3rem; }
+    h3 { font-size: 1.1rem; margin-top: 1.25rem; margin-bottom: 0.5rem; }
+    p { margin-bottom: 0.75rem; }
+    .subtitle { color: var(--text-muted); font-size: 1rem; margin-bottom: 1.5rem; }
+    .badge { display: inline-block; padding: 0.15rem 0.5rem; border-radius: 4px; font-size: 0.75rem; font-weight: 600; }
+    .placeholder { background: #fff3cd; color: #856404; border: 1px dashed #ffc107; padding: 0.1rem 0.35rem; border-radius: 3px; font-family: monospace; font-size: 0.85rem; }
+
+    .pkg-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px; padding: 1.25rem; margin: 1rem 0; box-shadow: var(--shadow); }
+    .pkg-card h3 { margin-top: 0; }
+
+    .path-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1.25rem 0; }
+    .path-card { border: 2px solid var(--border); border-radius: 10px; padding: 1.25rem; background: var(--bg-card); }
+    .path-card h3 { margin-top: 0; display: flex; align-items: center; gap: 0.5rem; }
+    .path-card p { font-size: 0.88rem; color: var(--text-muted); margin-bottom: 0.5rem; }
+    .path-card .audience { font-size: 0.8rem; font-weight: 600; }
+    .path-a { border-color: var(--path-a); }
+    .path-a h3, .path-a .audience { color: var(--path-a); }
+    .path-b { border-color: var(--path-b); }
+    .path-b h3, .path-b .audience { color: var(--path-b); }
+
+    .steps { counter-reset: step; list-style: none; padding: 0; }
+    .steps li { counter-increment: step; position: relative; padding: 1rem 1rem 1rem 3.5rem; margin-bottom: 0.75rem; background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px; }
+    .steps li::before { content: counter(step); position: absolute; left: 1rem; top: 1rem; width: 1.75rem; height: 1.75rem; border-radius: 50%; background: var(--bg-accent); color: var(--text-on-accent); font-weight: 700; font-size: 0.9rem; display: flex; align-items: center; justify-content: center; }
+    .steps li strong { display: block; margin-bottom: 0.25rem; }
+    .steps-path-a li::before { background: var(--path-a); }
+    .steps-path-b li::before { background: var(--path-b); }
+
+    table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.9rem; }
+    th, td { text-align: left; padding: 0.5rem 0.75rem; border: 1px solid var(--border); }
+    th { background: var(--bg-accent); color: var(--text-on-accent); font-weight: 600; }
+    tr:nth-child(even) { background: var(--bg-card); }
+    .compare-th-a { background: var(--path-a) !important; }
+    .compare-th-b { background: var(--path-b) !important; }
+
+    code { background: var(--code-bg); padding: 0.15rem 0.35rem; border-radius: 4px; font-size: 0.85rem; font-family: 'Cascadia Code', Consolas, monospace; }
+    pre { background: var(--code-bg); padding: 1rem; border-radius: 6px; overflow-x: auto; margin: 0.75rem 0; }
+    pre code { background: none; padding: 0; }
+
+    .callout { border-left: 4px solid; border-radius: 4px; padding: 0.75rem 1rem; margin: 1rem 0; font-size: 0.9rem; }
+    .callout-info { border-color: var(--info); background: rgba(23,162,184,0.08); }
+    .callout-warning { border-color: var(--warning); background: rgba(255,193,7,0.08); }
+    .callout-success { border-color: var(--success); background: rgba(40,167,69,0.08); }
+    .callout strong { display: block; margin-bottom: 0.25rem; }
+
+    .tabs-preview { display: flex; gap: 0; margin: 1rem 0; border-bottom: 2px solid var(--bg-accent); }
+    .tabs-preview .tab { padding: 0.5rem 1rem; font-size: 0.85rem; font-weight: 600; border: 1px solid var(--border); border-bottom: none; border-radius: 6px 6px 0 0; background: var(--bg-card); color: var(--text-muted); }
+    .tabs-preview .tab.active { background: var(--bg-accent); color: var(--text-on-accent); border-color: var(--bg-accent); }
+
+    .script-box { background: var(--code-bg); border: 1px solid var(--border); border-radius: 8px; padding: 1rem; margin: 0.75rem 0; }
+    .script-box .label { font-size: 0.75rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.4rem; }
+
+    .toc { background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px; padding: 1rem 1.25rem; margin: 1rem 0; }
+    .toc h3 { margin: 0 0 0.5rem; font-size: 0.95rem; color: var(--text-muted); }
+    .toc ul { list-style: none; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 0.25rem 1.5rem; }
+    .toc a { text-decoration: none; color: var(--bg-accent); font-size: 0.88rem; }
+    .toc a:hover { text-decoration: underline; }
+
+    footer { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--border); font-size: 0.8rem; color: var(--text-muted); text-align: center; }
+    @media (max-width: 700px) { .path-cards, .toc ul { grid-template-columns: 1fr; } }
+    @media print { body { max-width: 100%; padding: 0.5rem; } .steps li { break-inside: avoid; } }
+  </style>
+</head>
+<body>
+
+  <h1>PostureIQ — Teams App Deployment Guide</h1>
+  <p class="subtitle">Generic, multi-tenant deployment guide. Works for any PostureIQ instance — just supply your Entra App ID and backend FQDN.</p>
+
+  <nav class="toc">
+    <h3>On This Page</h3>
+    <ul>
+      <li><a href="#quick-start">Quick Start</a></li>
+      <li><a href="#choose-path">Choose Your Deployment Path</a></li>
+      <li><a href="#prerequisites">Prerequisites</a></li>
+      <li><a href="#script">Deployment Script</a></li>
+      <li><a href="#tabs">App Tabs</a></li>
+      <li><a href="#common-steps">Common Manual Steps</a></li>
+      <li><a href="#path-a">Path A — Upload a Custom App</a></li>
+      <li><a href="#path-a-approval">Path A — Approval &amp; Consent Flow</a></li>
+      <li><a href="#path-b">Path B — Submit to Your Org</a></li>
+      <li><a href="#app-id">Understanding the App ID</a></li>
+      <li><a href="#troubleshooting">Troubleshooting</a></li>
+    </ul>
+  </nav>
+
+  <!-- ══════════════════════════════════════════════════════════════════════ -->
+  <!--  QUICK START                                                          -->
+  <!-- ══════════════════════════════════════════════════════════════════════ -->
+  <h2 id="quick-start">Quick Start</h2>
+  <p>You need <strong>two values</strong> from your environment:</p>
+  <table>
+    <thead><tr><th>Value</th><th>Where to Find It</th><th>Example</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><strong>Entra App ID</strong></td>
+        <td>Azure Portal &rarr; Entra ID &rarr; App registrations &rarr; your PostureIQ app &rarr; <em>Application (client) ID</em></td>
+        <td><code>ffb6f10d-6991-430e-b3d6-23a0101a92b1</code></td>
+      </tr>
+      <tr>
+        <td><strong>Backend FQDN</strong></td>
+        <td>Azure Portal &rarr; Container Apps &rarr; your app &rarr; <em>Application Url</em> (without <code>https://</code>)</td>
+        <td><code>myapp.delightfulbush-cc9cf399.northeurope.azurecontainerapps.io</code></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>Then run:</p>
+  <pre><code># Build the package (resolves placeholders, validates, creates PostureIQ.zip)
+.\Deploy-TeamsApp.ps1 -EntraAppId "&lt;YOUR_APP_ID&gt;" -BackendFqdn "&lt;YOUR_FQDN&gt;" -Mode Build
+
+# Deploy — pick one:
+.\Deploy-TeamsApp.ps1 -EntraAppId "&lt;YOUR_APP_ID&gt;" -BackendFqdn "&lt;YOUR_FQDN&gt;" -Mode Sideload     # personal
+.\Deploy-TeamsApp.ps1 -EntraAppId "&lt;YOUR_APP_ID&gt;" -BackendFqdn "&lt;YOUR_FQDN&gt;" -Mode OrgPublish   # org-wide</code></pre>
+
+  <div class="callout callout-info">
+    <strong>Template Manifest</strong>
+    The <code>manifest.json</code> in this folder uses placeholders <span class="placeholder">{{TEAMS_APP_ID}}</span> and
+    <span class="placeholder">{{BACKEND_FQDN}}</span>. The deployment script resolves them automatically into a <code>build/</code> subfolder — the template is never modified.
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════════════════════ -->
+  <!--  CHOOSE PATH                                                          -->
+  <!-- ══════════════════════════════════════════════════════════════════════ -->
+  <h2 id="choose-path">Choose Your Deployment Path</h2>
+  <p>When you click <strong>"Upload an app"</strong> in Teams, you see two options:</p>
+
+  <div class="path-cards">
+    <div class="path-card path-a">
+      <h3><span style="font-size:1.5rem">&#x2B06;&#xFE0F;</span> Upload a Custom App</h3>
+      <p>Upload an app package (.zip) for yourself or a team. Great for testing during development.</p>
+      <div class="audience">Audience: You only (or a specific team)</div>
+      <div style="margin-top:0.5rem"><a href="#path-a" style="color:var(--path-a);font-weight:600">Go to Path A &darr;</a></div>
+    </div>
+    <div class="path-card path-b">
+      <h3><span style="font-size:1.5rem">&#x1F4E4;</span> Submit an App to Your Org</h3>
+      <p>Submit to your IT admin for approval. Once approved, available to all users.</p>
+      <div class="audience">Audience: Entire organization (after admin approval)</div>
+      <div style="margin-top:0.5rem"><a href="#path-b" style="color:var(--path-b);font-weight:600">Go to Path B &darr;</a></div>
+    </div>
+  </div>
+
+  <table>
+    <thead><tr><th style="width:30%">Aspect</th><th class="compare-th-a" style="width:35%">Path A — Custom App</th><th class="compare-th-b" style="width:35%">Path B — Submit to Org</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Who can do it</strong></td><td>Any user (if sideloading enabled)</td><td>Any user (submits to admin queue)</td></tr>
+      <tr><td><strong>Admin approval</strong></td><td>Not required</td><td>Required</td></tr>
+      <tr><td><strong>Visibility</strong></td><td>Only the installer</td><td>All users in the tenant</td></tr>
+      <tr><td><strong>Best for</strong></td><td>Dev, testing, demos</td><td>Production rollout</td></tr>
+      <tr><td><strong>Can be pinned</strong></td><td>No</td><td>Yes — via Setup Policy</td></tr>
+      <tr><td><strong>Script mode</strong></td><td><code>-Mode Sideload</code></td><td><code>-Mode OrgPublish</code></td></tr>
+    </tbody>
+  </table>
+
+  <!-- ── Prerequisites ── -->
+  <h2 id="prerequisites">Prerequisites</h2>
+  <ol class="steps">
+    <li>
+      <strong>Entra App Registration</strong>
+      A registered app in Entra ID with correct redirect URIs for your PostureIQ backend.
+      Note the <strong>Application (client) ID</strong> — this is your <span class="placeholder">{{TEAMS_APP_ID}}</span>.
+    </li>
+    <li>
+      <strong>Backend Running</strong>
+      Your PostureIQ Container App must be deployed and healthy. Test:
+      <pre><code>curl https://&lt;YOUR_FQDN&gt;/health   # expect 200 OK</code></pre>
+    </li>
+    <li>
+      <strong>Custom App Uploads Enabled (Path A only)</strong>
+      Teams Admin Center &rarr; <strong>Teams apps</strong> &rarr; <strong>Permission policies</strong> &rarr; <em>"Upload custom apps"</em> = <strong>On</strong>.<br>
+      <span style="font-size:0.85rem;color:var(--text-muted)">Path B works even if sideloading is disabled.</span>
+    </li>
+    <li>
+      <strong>PowerShell 5.1+ (for script)</strong>
+      Optionally install <code>Microsoft.Graph.Teams</code> for automated deployment:
+      <pre><code>Install-Module Microsoft.Graph.Teams -Scope CurrentUser</code></pre>
+      Without it, the script builds the zip and prints manual upload steps.
+    </li>
+  </ol>
+
+  <!-- ── Deployment Script ── -->
+  <h2 id="script">Deployment Script</h2>
+  <p>The included <code>Deploy-TeamsApp.ps1</code> handles everything: resolves placeholders, validates, builds, and deploys.</p>
+
+  <div class="script-box">
+    <div class="label">Step 1 — Validate (dry run, no changes)</div>
+    <pre><code>.\Deploy-TeamsApp.ps1 `
+    -EntraAppId "&lt;YOUR_APP_ID&gt;" `
+    -BackendFqdn "&lt;YOUR_FQDN&gt;" `
+    -Mode Validate</code></pre>
+  </div>
+  <div class="script-box">
+    <div class="label">Step 2 — Build PostureIQ.zip</div>
+    <pre><code>.\Deploy-TeamsApp.ps1 `
+    -EntraAppId "&lt;YOUR_APP_ID&gt;" `
+    -BackendFqdn "&lt;YOUR_FQDN&gt;" `
+    -Mode Build</code></pre>
+  </div>
+  <div class="script-box">
+    <div class="label">Step 3 — Deploy (choose one)</div>
+    <pre><code># Path A — personal sideload
+.\Deploy-TeamsApp.ps1 -EntraAppId "&lt;YOUR_APP_ID&gt;" -BackendFqdn "&lt;YOUR_FQDN&gt;" -Mode Sideload
+
+# Path B — submit to org
+.\Deploy-TeamsApp.ps1 -EntraAppId "&lt;YOUR_APP_ID&gt;" -BackendFqdn "&lt;YOUR_FQDN&gt;" -Mode OrgPublish</code></pre>
+  </div>
+
+  <h3>What the Script Does</h3>
+  <table>
+    <thead><tr><th>Phase</th><th>Action</th></tr></thead>
+    <tbody>
+      <tr><td><strong>0. Resolve</strong></td><td>Reads template <code>manifest.json</code>, replaces <span class="placeholder">{{TEAMS_APP_ID}}</span> and <span class="placeholder">{{BACKEND_FQDN}}</span>, writes resolved files to <code>build/</code> — template stays untouched</td></tr>
+      <tr><td><strong>1. Validate</strong></td><td>Checks JSON validity, no leftover placeholders, App ID match, icon files, backend health</td></tr>
+      <tr><td><strong>2. Build</strong></td><td>Creates <code>build/PostureIQ.zip</code> from resolved manifest + icons, verifies zip contents</td></tr>
+      <tr><td><strong>3a. Sideload</strong></td><td>Graph API install for current user, or manual steps</td></tr>
+      <tr><td><strong>3b. OrgPublish</strong></td><td>Graph API submit with <code>requiresReview=true</code>, or manual steps</td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout callout-success">
+    <strong>Custom Output Directory</strong>
+    Use <code>-OutputDir "C:\my\path"</code> to place the built zip elsewhere. Defaults to <code>teams/appPackage/build/</code>.
+  </div>
+
+  <!-- ── Tabs ── -->
+  <h2 id="tabs">App Tabs</h2>
+  <p>Once installed, PostureIQ shows <strong>5 personal tabs</strong>:</p>
+  <div class="tabs-preview">
+    <div class="tab active">Portal</div>
+    <div class="tab">Security Assessment</div>
+    <div class="tab">Risk Analysis</div>
+    <div class="tab">Data Security</div>
+    <div class="tab">Cloud Explorer</div>
+  </div>
+  <table>
+    <thead><tr><th>Tab</th><th>Page</th><th>Description</th></tr></thead>
+    <tbody>
+      <tr><td>Portal</td><td><code>/index.html</code></td><td>Main dashboard with AI chat and all assessment launchers</td></tr>
+      <tr><td>Security Assessment</td><td><code>/SecurityComplianceAssessment.html</code></td><td>CIS / NIST / ISO compliance engine</td></tr>
+      <tr><td>Risk Analysis</td><td><code>/RiskAnalysis.html</code></td><td>Risk scoring, threat modelling, control gaps</td></tr>
+      <tr><td>Data Security</td><td><code>/DataSecurity.html</code></td><td>DLP, sensitivity labels, information protection</td></tr>
+      <tr><td>Cloud Explorer</td><td><code>/CloudExplorer.html</code></td><td>Azure resource discovery and security review</td></tr>
+    </tbody>
+  </table>
+
+  <!-- ── Common Steps ── -->
+  <h2 id="common-steps">Common Manual Steps (Both Paths)</h2>
+  <p>If you prefer to upload manually (or if the Graph module is not installed), steps 1–4 are the same for both paths:</p>
+  <ol class="steps">
+    <li><strong>Open Microsoft Teams</strong> — Desktop app or <a href="https://teams.microsoft.com" target="_blank" rel="noopener">teams.microsoft.com</a>.</li>
+    <li><strong>Navigate to Apps</strong> — Click <strong>Apps</strong> in the left sidebar.</li>
+    <li><strong>Manage Your Apps</strong> — Click <strong>"Manage your apps"</strong> (bottom-left).</li>
+    <li><strong>Click "Upload an app"</strong> — In the toolbar. You'll see two options — choose based on your path.</li>
+  </ol>
+
+  <!-- ── Path A ── -->
+  <h2 id="path-a" style="color:var(--path-a);border-color:var(--path-a)">Path A — Upload a Custom App</h2>
+  <p><span class="badge" style="background:var(--path-a);color:#fff">Personal / Testing</span> Install for <strong>your account only</strong>. No admin approval needed.</p>
+
+  <h3>Step-by-Step Walkthrough</h3>
+  <ol class="steps steps-path-a">
+    <li>
+      <strong>Open Microsoft Teams</strong>
+      Launch the Teams desktop app or go to <a href="https://teams.microsoft.com" target="_blank" rel="noopener">teams.microsoft.com</a>.
+    </li>
+    <li>
+      <strong>Navigate to Apps</strong>
+      Click <strong>Apps</strong> in the left sidebar (the grid/store icon near the bottom).
+    </li>
+    <li>
+      <strong>Open "Manage your apps"</strong>
+      At the bottom-left of the Apps page, click <strong>"Manage your apps"</strong>. This opens the "Installed apps" management view.
+    </li>
+    <li>
+      <strong>Click "Upload an app"</strong>
+      In the toolbar (top area), click the <strong>"Upload an app"</strong> button. A dropdown appears with two options.
+    </li>
+    <li>
+      <strong>Select "Upload a custom app"</strong>
+      Click the <strong>first option</strong> — "Upload a custom app". A file browser dialog opens.
+    </li>
+    <li>
+      <strong>Select PostureIQ.zip</strong>
+      Browse to <code>build/PostureIQ.zip</code> (generated by the deployment script) and click <strong>Open</strong>.
+    </li>
+  </ol>
+
+  <h2 id="path-a-approval" style="color:var(--path-a);border-color:var(--path-a)">Path A — Approval &amp; Consent Flow</h2>
+  <p>After selecting PostureIQ.zip, Teams processes the package and shows an <strong>App Review Card</strong>. Here's what to expect:</p>
+
+  <h3>App Review Card</h3>
+  <div class="pkg-card" style="border-left: 4px solid var(--path-a);">
+    <p>Teams displays a preview with the following details from your manifest:</p>
+    <table>
+      <thead><tr><th style="width:35%">Field</th><th>What You Should See</th></tr></thead>
+      <tbody>
+        <tr><td><strong>App name</strong></td><td>PostureIQ</td></tr>
+        <tr><td><strong>Short description</strong></td><td>Enterprise Security Intelligence — AI-driven security posture management</td></tr>
+        <tr><td><strong>Developer name</strong></td><td>PostureIQ Security Team</td></tr>
+        <tr><td><strong>App icon</strong></td><td>Your <code>color.png</code> icon (192&times;192)</td></tr>
+        <tr><td><strong>Version</strong></td><td>1.0.0</td></tr>
+        <tr><td><strong>Permissions</strong></td><td>Personal tab access (no additional Graph permissions requested at install)</td></tr>
+      </tbody>
+    </table>
+    <div class="callout callout-warning" style="margin-top: 0.75rem; margin-bottom: 0;">
+      <strong>Verify Before Proceeding</strong>
+      If any fields look wrong (e.g., unresolved <code>{{BACKEND_FQDN}}</code> in descriptions, or wrong app name), click <strong>Cancel</strong> and re-run <code>-Mode Validate</code> to diagnose.
+    </div>
+  </div>
+
+  <h3>Click "Add"</h3>
+  <ol class="steps steps-path-a" style="counter-reset: step 6;">
+    <li>
+      <strong>Review the card</strong>
+      Verify the app name is <strong>PostureIQ</strong>. Check the icon and description match expectations.
+    </li>
+    <li>
+      <strong>Click "Add"</strong>
+      At the bottom of the review card, click the blue <strong>"Add"</strong> button. This installs the app for your account only — no org-wide impact.
+    </li>
+  </ol>
+
+  <h3>Post-Install: First Launch &amp; Authentication</h3>
+  <ol class="steps steps-path-a" style="counter-reset: step 8;">
+    <li>
+      <strong>PostureIQ opens automatically</strong>
+      Teams navigates to PostureIQ. You'll see the 5 personal tabs in the header:
+      <div class="tabs-preview" style="margin-top: 0.5rem;">
+        <div class="tab active">Portal</div>
+        <div class="tab">Security Assessment</div>
+        <div class="tab">Risk Analysis</div>
+        <div class="tab">Data Security</div>
+        <div class="tab">Cloud Explorer</div>
+      </div>
+    </li>
+    <li>
+      <strong>MSAL sign-in popup</strong>
+      On first launch, MSAL.js triggers a sign-in popup window. Sign in with your <strong>organizational account</strong> (the same tenant as the Entra app registration).
+      <div class="callout callout-info" style="margin-top: 0.5rem; margin-bottom: 0;">
+        <strong>Consent Prompt</strong>
+        If this is the first user to use the app, you may see a <strong>permissions consent dialog</strong> listing the scopes your PostureIQ backend requires (e.g., <code>User.Read</code>, Microsoft Graph API scopes). Click <strong>"Accept"</strong> to grant consent. If your admin requires admin consent, contact your Teams/Global Administrator.
+      </div>
+    </li>
+    <li>
+      <strong>Verify functionality</strong>
+      After sign-in, the Portal tab should load your PostureIQ dashboard. Verify:
+      <ul style="margin-top: 0.4rem; padding-left: 1.25rem; list-style: disc;">
+        <li>Dashboard loads without blank/white screen</li>
+        <li>AI chat widget is responsive</li>
+        <li>Each tab navigates to the correct backend page</li>
+        <li>No CORS errors in the browser console (F12)</li>
+      </ul>
+    </li>
+  </ol>
+
+  <h3>Managing Your Custom App</h3>
+  <div class="pkg-card">
+    <table>
+      <thead><tr><th>Action</th><th>How</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Find PostureIQ later</strong></td><td>Click <strong>Apps</strong> &rarr; <strong>"Manage your apps"</strong>. PostureIQ appears in the <strong>"Installed apps"</strong> list with status <em>Personal app</em>.</td></tr>
+        <tr><td><strong>Update the app</strong></td><td>Re-run <code>-Mode Build</code> with updated manifest/code. Then repeat the upload process — Teams detects the same <code>id</code> and offers <strong>"Update"</strong> instead of "Add".</td></tr>
+        <tr><td><strong>Remove the app</strong></td><td>In "Manage your apps", click the <strong>&hellip;</strong> menu next to PostureIQ &rarr; <strong>"Remove"</strong>. Only removes it from your personal view.</td></tr>
+        <tr><td><strong>Pin to sidebar</strong></td><td>Right-click PostureIQ in the left sidebar &rarr; <strong>"Pin"</strong>. This is user-level only; org-wide pinning requires Setup Policy (Path B).</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout callout-info">
+    <strong>First-Time Auth</strong>
+    MSAL.js will pop up a sign-in window on first launch. Sign in with your org account.
+    If the popup is blocked, allow popups for <code>login.microsoftonline.com</code> and your backend FQDN.
+  </div>
+
+  <!-- ── Path B ── -->
+  <h2 id="path-b" style="color:var(--path-b);border-color:var(--path-b)">Path B — Submit an App to Your Org</h2>
+  <p><span class="badge" style="background:var(--path-b);color:#fff">Organization-Wide</span> Submit for admin approval, then available to <strong>all users</strong>.</p>
+
+  <h3>Part 1 — Submit (Any User)</h3>
+  <ol class="steps steps-path-b">
+    <li><strong>Select "Submit an app to your org"</strong> — The second option in the dialog.</li>
+    <li><strong>Select the zip file</strong> — Browse to <code>build/PostureIQ.zip</code>.</li>
+    <li><strong>Confirm</strong> — App enters <strong>Pending approval</strong>. Check status under <strong>"Pending requests"</strong>.</li>
+  </ol>
+
+  <h3>Part 2 — Admin Approval (Teams Admin)</h3>
+  <ol class="steps steps-path-b" style="counter-reset: step 3;">
+    <li><strong>Open Teams Admin Center</strong> — <a href="https://admin.teams.microsoft.com" target="_blank" rel="noopener">admin.teams.microsoft.com</a></li>
+    <li><strong>Manage apps</strong> — <strong>Teams apps</strong> &rarr; <strong>Manage apps</strong>. Find PostureIQ (status: <em>Submitted</em>).</li>
+    <li><strong>Publish</strong> — Click PostureIQ, review, click <strong>"Publish"</strong>.</li>
+    <li><strong>Pin (optional)</strong> — <strong>Setup policies</strong> &rarr; Global policy &rarr; <strong>Pinned apps</strong> &rarr; add PostureIQ.</li>
+  </ol>
+
+  <div class="callout callout-warning">
+    <strong>Admin Role Required</strong>
+    Steps 4–7 require <strong>Teams Administrator</strong> or <strong>Global Administrator</strong>.
+  </div>
+
+  <!-- ── App ID ── -->
+  <h2 id="app-id">Understanding the App ID</h2>
+  <p>The Teams manifest <code>id</code> is the <strong>same GUID</strong> as your Entra App Registration client ID:</p>
+  <table>
+    <thead><tr><th>Context</th><th>Field</th><th>Value</th></tr></thead>
+    <tbody>
+      <tr><td>Entra ID Portal</td><td>Application (client) ID</td><td rowspan="3"><em>Your Entra App GUID</em></td></tr>
+      <tr><td>Teams Manifest</td><td><code>"id"</code></td></tr>
+      <tr><td>Teams Manifest</td><td><code>"webApplicationInfo.id"</code></td></tr>
+    </tbody>
+  </table>
+  <p>To look up your app's ID:</p>
+  <pre><code>az ad app show --id "&lt;app-display-name-or-id&gt;" --query "{appId: appId, name: displayName}" -o json</code></pre>
+
+  <!-- ── Troubleshooting ── -->
+  <h2 id="troubleshooting">Troubleshooting</h2>
+  <table>
+    <thead><tr><th>Problem</th><th>Applies To</th><th>Fix</th></tr></thead>
+    <tbody>
+      <tr><td>"Upload a custom app" greyed out</td><td>Path A</td><td>Teams Admin must enable "Upload custom apps" in Permission policies. Or use Path B.</td></tr>
+      <tr><td>App stuck in "Pending approval"</td><td>Path B</td><td>Admin must publish in Teams Admin Center &rarr; Manage apps.</td></tr>
+      <tr><td>Blank white page</td><td>Both</td><td>Backend down or CORS missing <code>teams.microsoft.com</code>.</td></tr>
+      <tr><td>Sign-in popup blocked</td><td>Both</td><td>Allow popups for <code>login.microsoftonline.com</code> and your FQDN.</td></tr>
+      <tr><td>"App not found" after upload</td><td>Both</td><td>Manifest <code>id</code> doesn't match an Entra app in this tenant. Run <code>-Mode Validate</code>.</td></tr>
+      <tr><td>API calls fail</td><td>Both</td><td>Add <code>https://teams.microsoft.com</code> and <code>https://*.microsoft365.com</code> to CORS allowed origins.</td></tr>
+      <tr><td>Unresolved placeholders</td><td>Build</td><td>You used the template manifest directly. Run the script — it resolves placeholders into <code>build/</code>.</td></tr>
+    </tbody>
+  </table>
+
+  <!-- ── File Inventory ── -->
+  <h2>File Inventory</h2>
+  <table>
+    <thead><tr><th>File</th><th>Description</th></tr></thead>
+    <tbody>
+      <tr><td><code>manifest.json</code></td><td>Template with <span class="placeholder">{{TEAMS_APP_ID}}</span> and <span class="placeholder">{{BACKEND_FQDN}}</span> placeholders</td></tr>
+      <tr><td><code>color.png</code></td><td>192&times;192 app icon</td></tr>
+      <tr><td><code>outline.png</code></td><td>32&times;32 transparent outline icon</td></tr>
+      <tr><td><code>Deploy-TeamsApp.ps1</code></td><td>Multi-mode deployment script (Validate / Build / Sideload / OrgPublish)</td></tr>
+      <tr><td><code>deployment-guide.html</code></td><td>This document</td></tr>
+      <tr><td><code>build/</code></td><td>Output directory — resolved manifest + <code>PostureIQ.zip</code> (created by script, gitignored)</td></tr>
+    </tbody>
+  </table>
+
+  <footer>
+    PostureIQ — Enterprise Security Intelligence &bull; Generic Multi-Tenant Deployment
+  </footer>
+
+</body>
+</html>

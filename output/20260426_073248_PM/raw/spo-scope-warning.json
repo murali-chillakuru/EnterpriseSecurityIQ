@@ -1,0 +1,21 @@
+[
+  {
+    "CollectedAt": "2026-04-26T23:41:15.911804+00:00",
+    "Collector": "SharePointOneDrive",
+    "Data": {
+      "DiscoveryMethod": "fallback",
+      "Explanation": "The Azure CLI first-party app does not include Sites.Read.All in its pre-consented scope set. Use a custom app registration with Sites.Read.All granted, or run with application-level credentials.",
+      "Impact": "Only the root site and M365-group-connected sites were discovered. Standalone sites created outside groups are not included. Oversharing analysis is partial.",
+      "RequiredScope": "Sites.Read.All",
+      "SitesDiscovered": 6,
+      "Warning": "SitesReadAllScopeMissing"
+    },
+    "Description": "SharePoint site discovery used fallback \u2014 Sites.Read.All scope not available in the current token",
+    "EvidenceId": "cc863f64-9c99-5ba0-8215-6feb61788d20",
+    "EvidenceType": "spo-scope-warning",
+    "RawReference": null,
+    "ResourceId": "spo-scope-warning",
+    "ResourceType": "CollectionWarning",
+    "Source": "Entra"
+  }
+]

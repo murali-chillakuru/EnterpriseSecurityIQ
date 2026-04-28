@@ -1,0 +1,82 @@
+"""{{ project_name }} — {{ source | title }} collector: {{ collector.name }}
+
+Collects evidence types: {{ collector.evidence_types | join(', ') }}
+{% if collector.description is defined %}
+{{ collector.description }}
+{% endif %}
+"""
+
+from __future__ import annotations
+
+import logging
+from typing import Any
+
+from app.collectors import register_collector
+from app.collectors.base import make_evidence
+
+log = logging.getLogger(__name__)
+
+
+@register_collector(
+    name="{{ collector.name }}",
+    plane="data",
+    source="{{ source }}",
+    priority={{ collector.priority | default(100) }},
+)
+{% if source == "azure" %}
+async def collect(creds, subscriptions: list[str]) -> list[dict[str, Any]]:
+    """Collect {{ collector.name }} evidence from Azure subscriptions."""
+    evidence = []
+
+    for sub_id in subscriptions:
+        try:
+            # TODO: Implement Azure API calls for {{ collector.name }}
+            # Example:
+            # from azure.mgmt.xxx import XxxManagementClient
+            # client = XxxManagementClient(creds, sub_id)
+            # items = client.xxx.list()
+            # for item in items:
+            #     evidence.append(make_evidence(
+            #         evidence_type="{{ collector.evidence_types[0] }}",
+            #         source="azure",
+            #         collector="{{ collector.name }}",
+            #         data=item.as_dict(),
+            #         resource_id=item.id,
+            #     ))
+            pass
+        except Exception:
+            log.exception("Failed to collect {{ collector.name }} from subscription %s", sub_id)
+
+    log.info("Collected %d {{ collector.name }} evidence items", len(evidence))
+    return evidence
+{% elif source == "graph" %}
+async def collect(creds) -> list[dict[str, Any]]:
+    """Collect {{ collector.name }} evidence from Microsoft Graph."""
+    evidence = []
+
+    try:
+        # TODO: Implement Graph API calls for {{ collector.name }}
+        # Example:
+        # from msgraph import GraphServiceClient
+        # client = GraphServiceClient(creds)
+        # result = await client.xxx.get()
+        pass
+    except Exception:
+        log.exception("Failed to collect {{ collector.name }} from Graph")
+
+    log.info("Collected %d {{ collector.name }} evidence items", len(evidence))
+    return evidence
+{% else %}
+async def collect(**kwargs) -> list[dict[str, Any]]:
+    """Collect {{ collector.name }} evidence from custom source."""
+    evidence = []
+
+    try:
+        # TODO: Implement custom collection logic for {{ collector.name }}
+        pass
+    except Exception:
+        log.exception("Failed to collect {{ collector.name }}")
+
+    log.info("Collected %d {{ collector.name }} evidence items", len(evidence))
+    return evidence
+{% endif %}

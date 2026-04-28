@@ -1,0 +1,24 @@
+{
+    "framework": {
+        "id": "{{ framework.id }}",
+        "name": "{{ framework.name }}",
+        "version": "{{ framework.version }}"
+    },
+    "domains": {{ framework.domains | tojson }},
+    "controls": [
+{% for ctrl in framework.controls %}
+        {
+            "id": "{{ ctrl.id }}",
+            "title": "{{ ctrl.title }}",
+            "domain": "{{ ctrl.domain }}",
+            "severity": "{{ ctrl.severity }}",
+            "evaluation_logic": "{{ ctrl.evaluation_logic }}",
+            "evidence_types": {{ ctrl.evidence_types | tojson }}{% if ctrl.description is defined %},
+            "description": "{{ ctrl.description }}"{% endif %}{% if ctrl.recommendation is defined %},
+            "recommendation": "{{ ctrl.recommendation }}"{% endif %}
+
+        }{% if not loop.last %},{% endif %}
+
+{% endfor %}
+    ]
+}

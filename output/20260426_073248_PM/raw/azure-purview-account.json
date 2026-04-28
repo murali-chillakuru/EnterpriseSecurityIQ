@@ -1,0 +1,31 @@
+[
+  {
+    "CollectedAt": "2026-04-26T23:41:04.531098+00:00",
+    "Collector": "AzurePurviewDLP",
+    "Data": {
+      "AccountId": "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/resourceGroups/rg-AIFutureInitiative/providers/Microsoft.Purview/accounts/AiFutureInititativePurview",
+      "CatalogEndpoint": "https://4a3eb5f4-1ec6-4a73-bb03-1ca63cb52d67-api.purview-service.microsoft.com/catalog",
+      "GuardianEndpoint": "",
+      "IdentityType": "SystemAssigned, UserAssigned",
+      "Location": "westus",
+      "ManagedEventHubNamespace": "",
+      "ManagedResourceGroup": "",
+      "ManagedStorageAccount": "",
+      "Name": "AiFutureInititativePurview",
+      "PrivateEndpoints": 0,
+      "ProvisioningState": "Succeeded",
+      "PublicNetworkAccess": "Enabled",
+      "ResourceGroup": "rg-AIFutureInitiative",
+      "ScanEndpoint": "https://4a3eb5f4-1ec6-4a73-bb03-1ca63cb52d67-api.purview-service.microsoft.com/scan",
+      "SubscriptionId": "d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0",
+      "SubscriptionName": "AI"
+    },
+    "Description": "Purview account: AiFutureInititativePurview",
+    "EvidenceId": "1e05090e-e8ef-515e-95a1-8e7d0be30f40",
+    "EvidenceType": "azure-purview-account",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/resourceGroups/rg-AIFutureInitiative/providers/Microsoft.Purview/accounts/AiFutureInititativePurview",
+    "ResourceType": "PurviewAccount",
+    "Source": "Azure"
+  }
+]

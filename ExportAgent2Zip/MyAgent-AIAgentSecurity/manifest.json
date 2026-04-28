@@ -1,0 +1,16 @@
+{
+  "name": "AIAgentSecurity",
+  "brand_name": "AIAgentSecurityIQ",
+  "description": "AI Agent Security assessment — isolated package",
+  "tools": [
+    "assess_ai_agent_security",
+    "search_exposure",
+    "generate_custom_report"
+  ],
+  "pages": [
+    "AIAgentSecurity.html"
+  ],
+  "include_teams_package": true,
+  "include_infra": true,
+  "include_automation": true
+}

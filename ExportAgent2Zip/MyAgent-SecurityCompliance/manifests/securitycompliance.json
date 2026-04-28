@@ -1,0 +1,20 @@
+{
+  "name": "SecurityComplianceAssessment",
+  "brand_name": "PostureIQ",
+  "description": "Security Compliance Assessment agent — full SCA + Teams experience",
+  "tools": [
+    "run_postureiq_assessment",
+    "generate_rbac_report",
+    "analyze_risk",
+    "search_exposure",
+    "generate_custom_report"
+  ],
+  "pages": [
+    "SecurityComplianceAssessment.html",
+    "Teams-SecurityComplianceAssessment.html",
+    "Teams2Web-SecurityComplianceAssessment.html"
+  ],
+  "include_teams_package": true,
+  "include_infra": true,
+  "include_automation": true
+}

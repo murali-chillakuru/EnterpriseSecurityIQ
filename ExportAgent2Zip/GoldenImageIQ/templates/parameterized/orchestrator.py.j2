@@ -1,0 +1,140 @@
+"""{{ project_name }} — Assessment orchestrator.
+
+Coordinates: collectors → evaluators → report generation for each domain.
+"""
+
+from __future__ import annotations
+
+import logging
+from datetime import datetime, timezone
+from pathlib import Path
+from typing import Any
+
+from app.collectors import discover_collectors, get_collectors
+from app.core.models import AssessmentResult
+from app.reports.data_exports import save_raw_evidence
+
+log = logging.getLogger(__name__)
+
+
+# Domain → evaluator function mapping
+DOMAIN_EVALUATORS: dict[str, Any] = {
+{% for domain in _all_domains %}
+    "{{ domain }}": None,  # Populated at import time below
+{% endfor %}
+}
+
+# Lazy-import evaluators
+def _load_evaluators():
+{% for domain in _all_domains %}
+    from app.{{ _project_snake }}_evaluators.{{ domain }} import evaluate as eval_{{ domain }}
+    DOMAIN_EVALUATORS["{{ domain }}"] = eval_{{ domain }}
+{% endfor %}
+
+try:
+    _load_evaluators()
+except ImportError as e:
+    log.warning("Some evaluators not yet implemented: %s", e)
+
+
+async def run_assessment(domain: str, **kwargs) -> dict[str, Any]:
+    """Run a full assessment for the given domain."""
+    run_id = datetime.now(timezone.utc).strftime("%Y%m%d_%H%M%S_%p")
+    run_dir = Path("output") / run_id
+    run_dir.mkdir(parents=True, exist_ok=True)
+
+    log.info("Starting %s assessment, run_id=%s", domain, run_id)
+
+    # 1. Collect evidence
+    discover_collectors()
+    collectors = get_collectors()
+    evidence: list[dict] = []
+    for coll in collectors:
+        try:
+            result = await coll["fn"]()
+            if isinstance(result, list):
+                evidence.extend(result)
+            elif isinstance(result, dict):
+                evidence.append(result)
+        except Exception:
+            log.exception("Collector %s failed", coll["name"])
+
+    # 2. Evaluate
+    evaluator = DOMAIN_EVALUATORS.get(domain)
+    findings: list[dict] = []
+    if evaluator:
+        findings = evaluator(evidence)
+    else:
+        log.warning("No evaluator for domain: %s", domain)
+
+    # 3. Score
+    result = AssessmentResult(
+        project_name="{{ project_name }}",
+        run_id=run_id,
+        evidence=evidence,
+        findings=findings,
+    )
+    result.compute_score()
+
+    # 4. Save raw data
+    save_raw_evidence(evidence, findings, run_dir)
+
+    # 5. Generate reports
+    report_paths = await _generate_reports(result, run_dir, kwargs.get("format", "html"))
+
+    log.info("Assessment complete: score=%.1f grade=%s", result.score, result.grade)
+
+    return {
+        "run_id": run_id,
+        "domain": domain,
+        "score": result.score,
+        "grade": result.grade,
+        "evidence_count": len(evidence),
+        "finding_count": len(findings),
+        "findings": findings[:20],  # Truncate for SSE
+        "reports": report_paths,
+    }
+
+
+async def _generate_reports(result: AssessmentResult, run_dir: Path, fmt: str) -> list[str]:
+    """Generate reports in the requested format(s)."""
+    paths = []
+
+{% if "html" in reports %}
+    if fmt in ("html", "all"):
+        from app.reports.shared_theme import wrap_html
+        html = wrap_html(
+            f"{result.project_name} — {result.grade}",
+            f"<h1>{result.project_name} Assessment</h1>"
+            f"<p>Score: {result.score:.1f} | Grade: {result.grade}</p>"
+            f"<p>Evidence: {len(result.evidence)} | Findings: {len(result.findings)}</p>",
+        )
+        p = run_dir / "report.html"
+        p.write_text(html, encoding="utf-8")
+        paths.append(str(p))
+{% endif %}
+
+{% if "pdf" in reports %}
+    if fmt in ("pdf", "all"):
+        html_path = run_dir / "report.html"
+        if html_path.exists():
+            from app.reports.pdf_export import html_to_pdf
+            pdf_path = await html_to_pdf(html_path, run_dir / "report.pdf")
+            paths.append(str(pdf_path))
+{% endif %}
+
+{% if "xlsx" in reports %}
+    if fmt in ("xlsx", "all"):
+        from app.reports.excel_export import export_excel
+        xlsx_path = export_excel(result.findings, result.evidence, run_dir / "report.xlsx")
+        paths.append(str(xlsx_path))
+{% endif %}
+
+{% if "sarif" in reports %}
+    if fmt in ("sarif", "all"):
+        from app.reports.sarif_export import export_sarif
+        sarif_path = export_sarif(result.findings, "{{ project_name }}", output_path=run_dir / "results.sarif")
+        paths.append(str(sarif_path))
+{% endif %}
+
+    return paths

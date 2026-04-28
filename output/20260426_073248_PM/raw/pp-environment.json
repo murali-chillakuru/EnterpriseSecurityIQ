@@ -1,0 +1,52 @@
+[
+  {
+    "CollectedAt": "2026-04-26T23:41:40.249553+00:00",
+    "Collector": "CopilotStudio",
+    "Data": {
+      "CrossTenantIsolation": "",
+      "DLPEnforcement": "",
+      "DisplayName": "Contoso (default)",
+      "EnvironmentId": "Default-4a3eb5f4-1ec6-4a73-bb03-1ca63cb52d67",
+      "EnvironmentSku": "Default",
+      "GovernanceMode": "Standard",
+      "HasSecurityGroup": false,
+      "IsDefault": true,
+      "IsManagedEnvironment": false,
+      "Region": "westus",
+      "SecurityGroupId": "",
+      "State": "Enabled"
+    },
+    "Description": "Power Platform environment: Contoso (default)",
+    "EvidenceId": "3aa90c20-d08c-5a63-8da8-12cfc51d85ec",
+    "EvidenceType": "pp-environment",
+    "RawReference": null,
+    "ResourceId": "Default-4a3eb5f4-1ec6-4a73-bb03-1ca63cb52d67",
+    "ResourceType": "PowerPlatformEnvironment",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:41:40.249399+00:00",
+    "Collector": "CopilotStudio",
+    "Data": {
+      "CrossTenantIsolation": "",
+      "DLPEnforcement": "",
+      "DisplayName": "Agent Dev Workspace",
+      "EnvironmentId": "d0085a8b-02df-eaf4-8b86-c27f08ac6c18",
+      "EnvironmentSku": "Developer",
+      "GovernanceMode": "Standard",
+      "HasSecurityGroup": false,
+      "IsDefault": false,
+      "IsManagedEnvironment": false,
+      "Region": "westus",
+      "SecurityGroupId": "",
+      "State": "Enabled"
+    },
+    "Description": "Power Platform environment: Agent Dev Workspace",
+    "EvidenceId": "d5106f70-882a-5530-9003-347e3a6bc493",
+    "EvidenceType": "pp-environment",
+    "RawReference": null,
+    "ResourceId": "d0085a8b-02df-eaf4-8b86-c27f08ac6c18",
+    "ResourceType": "PowerPlatformEnvironment",
+    "Source": "Entra"
+  }
+]

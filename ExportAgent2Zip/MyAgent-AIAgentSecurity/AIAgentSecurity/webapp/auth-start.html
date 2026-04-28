@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>PostureIQ — Signing In</title>
+</head>
+<body>
+  <p id="msg" style="font-family:Segoe UI,sans-serif;text-align:center;margin-top:40vh">Redirecting to sign-in&hellip;</p>
+  <script>
+    // Teams SDK auth popup: redirect directly to Azure AD authorize endpoint.
+    // After auth, Azure AD redirects back to auth-end.html which notifies Teams.
+    //
+    // Query params:
+    //   tenant  — Azure AD tenant (default: "common")
+    //   scope   — space-separated scopes (default: "openid profile User.Read")
+    //   mode    — "login" (id_token, default) or "token" (access_token for API calls)
+    //   prompt  — Azure AD prompt value (default: "select_account", use "none" for silent)
+    var params = new URLSearchParams(window.location.search);
+    var tenant = params.get("tenant") || "common";
+    var clientId = "ffb6f10d-6991-430e-b3d6-23a0101a92b1";
+    var redirectUri = window.location.origin + "/auth-end.html";
+    var scope = params.get("scope") || "openid profile User.Read";
+    var mode = params.get("mode") || "login";
+    // For login mode default to account picker; for token mode default to no prompt (Azure AD decides)
+    var promptVal = params.get("prompt");
+    if (promptVal === null) {
+      promptVal = (mode === "token") ? "" : "select_account";
+    }
+    var nonce = Math.random().toString(36).substring(2) + Date.now().toString(36);
+
+    // Store nonce for validation in auth-end
+    sessionStorage.setItem("esiq_auth_nonce", nonce);
+
+    // "token" mode = access_token for API scopes; "login" mode = id_token for sign-in
+    var responseType = (mode === "token") ? "token" : "id_token";
+
+    var authUrl = "https://login.microsoftonline.com/" + tenant + "/oauth2/v2.0/authorize"
+      + "?client_id=" + encodeURIComponent(clientId)
+      + "&response_type=" + encodeURIComponent(responseType)
+      + "&redirect_uri=" + encodeURIComponent(redirectUri)
+      + "&scope=" + encodeURIComponent(scope)
+      + "&response_mode=fragment"
+      + "&nonce=" + encodeURIComponent(nonce);
+
+    // Add prompt parameter if specified (including "none" for silent token acquisition)
+    if (promptVal) {
+      authUrl += "&prompt=" + encodeURIComponent(promptVal);
+    }
+
+    // Direct navigation — no MSAL dependency, works in Teams Desktop popup
+    window.location.assign(authUrl);
+  </script>
+</body>
+</html>

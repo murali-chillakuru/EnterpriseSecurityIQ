@@ -1,0 +1,84 @@
+"""{{ project_name }} — FastAPI application with SSE streaming."""
+
+from __future__ import annotations
+
+import json
+import logging
+import os
+import re
+from pathlib import Path
+from typing import AsyncGenerator
+
+from fastapi import FastAPI, Request
+from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import FileResponse, StreamingResponse
+from fastapi.staticfiles import StaticFiles
+
+from app.logger import setup_logging
+
+setup_logging(os.getenv("LOG_LEVEL", "INFO"))
+log = logging.getLogger(__name__)
+
+app = FastAPI(
+    title="{{ project_name }}",
+    description="{{ description }}",
+    version="1.0.0",
+)
+
+# CORS
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=os.getenv("ALLOWED_ORIGINS", "*").split(","),
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+# Static files
+WEBAPP_DIR = Path(__file__).parent.parent / "webapp"
+if WEBAPP_DIR.exists():
+    app.mount("/static", StaticFiles(directory=str(WEBAPP_DIR)), name="static")
+
+
+@app.get("/health")
+async def health():
+    return {"status": "healthy", "service": "{{ _project_snake }}"}
+
+
+@app.get("/")
+async def root():
+    index = WEBAPP_DIR / "index.html"
+    if index.exists():
+        return FileResponse(str(index))
+    return {"message": "{{ project_name }} API is running"}
+
+
+@app.post("/api/chat")
+async def chat(request: Request):
+    """SSE streaming endpoint for agent chat interactions."""
+    body = await request.json()
+    message = body.get("message", "")
+
+    # Import the agent module
+    from app.agent import handle_message
+
+    async def event_stream() -> AsyncGenerator[str, None]:
+        async for event in handle_message(message):
+            yield f"data: {json.dumps(event)}\n\n"
+
+    return StreamingResponse(event_stream(), media_type="text/event-stream")
+
+
+@app.get("/api/reports/{run_id}/{filename:path}")
+async def get_report(run_id: str, filename: str):
+    """Serve generated report files with path traversal protection."""
+    # Validate run_id format (timestamp or UUID only)
+    if not re.match(r'^[\w\-]+$', run_id):
+        return {"error": "Invalid run_id"}
+
+    report_path = Path("output") / run_id / filename
+    if not report_path.resolve().is_relative_to(Path("output").resolve()):
+        return {"error": "Access denied"}
+    if report_path.exists():
+        return FileResponse(str(report_path))
+    return {"error": "Report not found"}

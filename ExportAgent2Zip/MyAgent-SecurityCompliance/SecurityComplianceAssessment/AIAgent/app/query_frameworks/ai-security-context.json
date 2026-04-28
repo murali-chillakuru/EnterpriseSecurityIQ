@@ -1,0 +1,54 @@
+{
+  "_description": "AI-specific security context for Cloud Explorer. Maps AI-related resource families to NIST AI RMF and OWASP LLM Top 10 controls.",
+  "ai": {
+    "nist_ai_rmf": {
+      "controls": [
+        {"id": "GOVERN 1.4", "title": "AI risk management process aligned with org risk tolerance", "relevance": "Ensure AI services have proper authentication and authorization governance"},
+        {"id": "MAP 1.1", "title": "Intended purpose and context of use documented", "relevance": "AI endpoints without authentication may be used outside intended scope"},
+        {"id": "MAP 1.5", "title": "Organizational risk tolerance determined", "relevance": "Unrestricted HTTP connectors or AI skills expand attack surface beyond tolerance"},
+        {"id": "MANAGE 2.2", "title": "Mechanisms to mitigate AI risks are in place", "relevance": "DLP policies, content safety filters, and access controls mitigate AI-specific risks"},
+        {"id": "GOVERN 1.5", "title": "Ongoing monitoring processes in place", "relevance": "AI services require continuous monitoring for misuse, drift, and adversarial inputs"}
+      ],
+      "key_concerns": ["Authentication and authorization on AI endpoints", "DLP and content safety enforcement", "Network isolation for AI services", "Monitoring for adversarial inputs and model abuse"]
+    },
+    "owasp_llm": {
+      "controls": [
+        {"id": "LLM01", "title": "Prompt Injection", "relevance": "AI services without input validation are vulnerable to direct and indirect prompt injection"},
+        {"id": "LLM02", "title": "Insecure Output Handling", "relevance": "AI outputs consumed by downstream systems without sanitization enable injection chains"},
+        {"id": "LLM06", "title": "Excessive Agency", "relevance": "AI agents with broad permissions or unauthenticated endpoints can perform unintended actions"},
+        {"id": "LLM08", "title": "Excessive Agency / Insufficient Sandboxing", "relevance": "Unmanaged environments and unrestricted AI skills without DLP create excessive agency risks"},
+        {"id": "LLM09", "title": "Overreliance", "relevance": "AI-generated content must be validated — missing content safety filters increase hallucination risk"}
+      ],
+      "key_concerns": ["Prompt injection protection", "Output sanitization", "Least-privilege for AI agent actions", "Content safety and responsible AI filters"]
+    }
+  },
+  "app": {
+    "nist_ai_rmf": {
+      "controls": [
+        {"id": "GOVERN 1.4", "title": "AI risk management aligned with org policy", "relevance": "Apps hosting AI features should follow AI governance standards"}
+      ],
+      "key_concerns": ["Apps may embed AI features requiring AI-specific security review"]
+    },
+    "owasp_llm": {
+      "controls": [
+        {"id": "LLM01", "title": "Prompt Injection", "relevance": "Web apps with AI chat features need input validation"},
+        {"id": "LLM06", "title": "Excessive Agency", "relevance": "App-hosted AI agents must enforce least-privilege tool access"}
+      ],
+      "key_concerns": ["Validate AI inputs at the application layer", "Enforce tool-level permissions for AI features"]
+    }
+  },
+  "identity": {
+    "nist_ai_rmf": {
+      "controls": [
+        {"id": "GOVERN 1.4", "title": "AI risk management process", "relevance": "Service principals for AI services need proper privilege scoping"}
+      ],
+      "key_concerns": ["AI service identities should use managed identity with minimal permissions"]
+    },
+    "owasp_llm": {
+      "controls": [
+        {"id": "LLM06", "title": "Excessive Agency", "relevance": "Over-permissioned AI service identities enable excessive agency"}
+      ],
+      "key_concerns": ["Enforce least-privilege for all AI-related service principals and managed identities"]
+    }
+  }
+}

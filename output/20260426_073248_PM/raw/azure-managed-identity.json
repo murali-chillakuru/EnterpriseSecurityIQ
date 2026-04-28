@@ -1,0 +1,92 @@
+[
+  {
+    "CollectedAt": "2026-04-26T23:33:56.228368+00:00",
+    "Collector": "AzureSecurity",
+    "Data": {
+      "Location": "canadacentral",
+      "Name": "id-aca-ia6nebdpvu5bm",
+      "ResourceId": "/subscriptions/9154cdcb-5a52-452a-b1e7-483be9eee6d2/resourceGroups/RG-ADLS-Governance-Retention/providers/Microsoft.ManagedIdentity/userAssignedIdentities/id-aca-ia6nebdpvu5bm",
+      "SubscriptionId": "9154cdcb-5a52-452a-b1e7-483be9eee6d2",
+      "SubscriptionName": "Infra"
+    },
+    "Description": "Managed Identity: id-aca-ia6nebdpvu5bm",
+    "EvidenceId": "e7a8b840-0b59-5a2a-8141-39ed7dd31808",
+    "EvidenceType": "azure-managed-identity",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/9154cdcb-5a52-452a-b1e7-483be9eee6d2/resourceGroups/RG-ADLS-Governance-Retention/providers/Microsoft.ManagedIdentity/userAssignedIdentities/id-aca-ia6nebdpvu5bm",
+    "ResourceType": "ManagedIdentity",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:56.228160+00:00",
+    "Collector": "AzureSecurity",
+    "Data": {
+      "Location": "canadacentral",
+      "Name": "id-purview-scan-ia6nebdpvu5bm",
+      "ResourceId": "/subscriptions/9154cdcb-5a52-452a-b1e7-483be9eee6d2/resourceGroups/RG-ADLS-Governance-Retention/providers/Microsoft.ManagedIdentity/userAssignedIdentities/id-purview-scan-ia6nebdpvu5bm",
+      "SubscriptionId": "9154cdcb-5a52-452a-b1e7-483be9eee6d2",
+      "SubscriptionName": "Infra"
+    },
+    "Description": "Managed Identity: id-purview-scan-ia6nebdpvu5bm",
+    "EvidenceId": "299c2123-403b-5cca-a6e8-d4297f083674",
+    "EvidenceType": "azure-managed-identity",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/9154cdcb-5a52-452a-b1e7-483be9eee6d2/resourceGroups/RG-ADLS-Governance-Retention/providers/Microsoft.ManagedIdentity/userAssignedIdentities/id-purview-scan-ia6nebdpvu5bm",
+    "ResourceType": "ManagedIdentity",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:34:18.403228+00:00",
+    "Collector": "AzureSecurity",
+    "Data": {
+      "Location": "swedencentral",
+      "Name": "ESIQNew-identity",
+      "ResourceId": "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/resourceGroups/ESIQNew-RG/providers/Microsoft.ManagedIdentity/userAssignedIdentities/ESIQNew-identity",
+      "SubscriptionId": "d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0",
+      "SubscriptionName": "AI"
+    },
+    "Description": "Managed Identity: ESIQNew-identity",
+    "EvidenceId": "f995d3e2-21d9-5ae3-a9e7-d97b43d02f62",
+    "EvidenceType": "azure-managed-identity",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/resourceGroups/ESIQNew-RG/providers/Microsoft.ManagedIdentity/userAssignedIdentities/ESIQNew-identity",
+    "ResourceType": "ManagedIdentity",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:34:18.403053+00:00",
+    "Collector": "AzureSecurity",
+    "Data": {
+      "Location": "eastus2",
+      "Name": "aisearch-tenantcompliance-uami",
+      "ResourceId": "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/resourceGroups/rg-AIFutureInitiative/providers/Microsoft.ManagedIdentity/userAssignedIdentities/aisearch-tenantcompliance-uami",
+      "SubscriptionId": "d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0",
+      "SubscriptionName": "AI"
+    },
+    "Description": "Managed Identity: aisearch-tenantcompliance-uami",
+    "EvidenceId": "9b9b43f9-48c4-5ae9-8fa3-377f2430962f",
+    "EvidenceType": "azure-managed-identity",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/resourceGroups/rg-AIFutureInitiative/providers/Microsoft.ManagedIdentity/userAssignedIdentities/aisearch-tenantcompliance-uami",
+    "ResourceType": "ManagedIdentity",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:34:18.403179+00:00",
+    "Collector": "AzureSecurity",
+    "Data": {
+      "Location": "eastus2",
+      "Name": "umai-AiFutureInititativePurview",
+      "ResourceId": "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/resourceGroups/rg-AIFutureInitiative/providers/Microsoft.ManagedIdentity/userAssignedIdentities/umai-AiFutureInititativePurview",
+      "SubscriptionId": "d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0",
+      "SubscriptionName": "AI"
+    },
+    "Description": "Managed Identity: umai-AiFutureInititativePurview",
+    "EvidenceId": "2e5c9778-f0e5-5b98-9719-fa0b90c32d8d",
+    "EvidenceType": "azure-managed-identity",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/resourceGroups/rg-AIFutureInitiative/providers/Microsoft.ManagedIdentity/userAssignedIdentities/umai-AiFutureInititativePurview",
+    "ResourceType": "ManagedIdentity",
+    "Source": "Azure"
+  }
+]

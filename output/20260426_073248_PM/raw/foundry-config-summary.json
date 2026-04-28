@@ -1,0 +1,35 @@
+[
+  {
+    "CollectedAt": "2026-04-26T23:44:36.976302+00:00",
+    "Collector": "FoundryConfig",
+    "Data": {
+      "AIWorkspaces": 0,
+      "AccessDeniedErrors": 0,
+      "AgentApplications": 0,
+      "AgentDeployments": 0,
+      "CapabilityHosts": 1,
+      "ClassicHubs": 0,
+      "ClassicProjects": 0,
+      "ComputeInstances": 0,
+      "Connections": 0,
+      "ContentFilterPolicies": 2,
+      "Datastores": 0,
+      "Endpoints": 0,
+      "FoundryProjects": 0,
+      "FoundryProjectsNew": 22,
+      "OpenAIAccounts": 1,
+      "OpenAIDeployments": 5,
+      "Registries": 0,
+      "ServerlessEndpoints": 0,
+      "StandaloneML": 0,
+      "TotalAIServices": 10
+    },
+    "Description": "Microsoft Foundry & OpenAI configuration summary",
+    "EvidenceId": "e66a7140-08bd-586c-a4f2-975474c9d66f",
+    "EvidenceType": "foundry-config-summary",
+    "RawReference": null,
+    "ResourceId": "foundry-config-summary",
+    "ResourceType": "FoundryConfigSummary",
+    "Source": "Azure"
+  }
+]

@@ -1,0 +1,16 @@
+{
+  "name": "AttackPath",
+  "brand_name": "AttackPathIQ",
+  "description": "Attack Path detection — isolated package",
+  "tools": [
+    "run_attack_path_detection",
+    "search_exposure",
+    "generate_custom_report"
+  ],
+  "pages": [
+    "AttackPath.html"
+  ],
+  "include_teams_package": true,
+  "include_infra": true,
+  "include_automation": true
+}

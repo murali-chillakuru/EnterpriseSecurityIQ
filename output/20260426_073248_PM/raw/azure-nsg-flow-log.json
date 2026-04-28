@@ -1,0 +1,107 @@
+[
+  {
+    "CollectedAt": "2026-04-26T23:33:16.936216+00:00",
+    "Collector": "AzureNetworkExpanded",
+    "Data": {
+      "Enabled": true,
+      "FlowLogId": "/subscriptions/9154cdcb-5a52-452a-b1e7-483be9eee6d2/resourceGroups/NetworkWatcherRG/providers/Microsoft.Network/networkWatchers/NetworkWatcher_eastus/flowLogs/VNet1-rg-poc-sentinel-flowlog",
+      "Name": "VNet1-rg-poc-sentinel-flowlog",
+      "RetentionDays": 0,
+      "RetentionEnabled": false,
+      "SubscriptionId": "9154cdcb-5a52-452a-b1e7-483be9eee6d2",
+      "SubscriptionName": "Infra",
+      "TrafficAnalyticsEnabled": true
+    },
+    "Description": "Flow log: VNet1-rg-poc-sentinel-flowlog",
+    "EvidenceId": "85c5e8ee-bf8e-52fd-9e21-7ccbde9a24d9",
+    "EvidenceType": "azure-nsg-flow-log",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/9154cdcb-5a52-452a-b1e7-483be9eee6d2/resourceGroups/NetworkWatcherRG/providers/Microsoft.Network/networkWatchers/NetworkWatcher_eastus/flowLogs/VNet1-rg-poc-sentinel-flowlog",
+    "ResourceType": "FlowLog",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:16.936098+00:00",
+    "Collector": "AzureNetworkExpanded",
+    "Data": {
+      "Enabled": true,
+      "FlowLogId": "/subscriptions/9154cdcb-5a52-452a-b1e7-483be9eee6d2/resourceGroups/NetworkWatcherRG/providers/Microsoft.Network/networkWatchers/NetworkWatcher_eastus/flowLogs/new-nsg_flowlog",
+      "Name": "new-nsg_flowlog",
+      "RetentionDays": 60,
+      "RetentionEnabled": true,
+      "SubscriptionId": "9154cdcb-5a52-452a-b1e7-483be9eee6d2",
+      "SubscriptionName": "Infra",
+      "TrafficAnalyticsEnabled": true
+    },
+    "Description": "Flow log: new-nsg_flowlog",
+    "EvidenceId": "14787a8a-63e1-5ab0-b636-b5ae1480e038",
+    "EvidenceType": "azure-nsg-flow-log",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/9154cdcb-5a52-452a-b1e7-483be9eee6d2/resourceGroups/NetworkWatcherRG/providers/Microsoft.Network/networkWatchers/NetworkWatcher_eastus/flowLogs/new-nsg_flowlog",
+    "ResourceType": "FlowLog",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:17.951940+00:00",
+    "Collector": "AzureNetworkExpanded",
+    "Data": {
+      "Enabled": true,
+      "FlowLogId": "/subscriptions/9154cdcb-5a52-452a-b1e7-483be9eee6d2/resourceGroups/NetworkWatcherRG/providers/Microsoft.Network/networkWatchers/NetworkWatcher_eastus2/flowLogs/vm01-vnet-rg-poc-sentinel-flowlog",
+      "Name": "vm01-vnet-rg-poc-sentinel-flowlog",
+      "RetentionDays": 0,
+      "RetentionEnabled": false,
+      "SubscriptionId": "9154cdcb-5a52-452a-b1e7-483be9eee6d2",
+      "SubscriptionName": "Infra",
+      "TrafficAnalyticsEnabled": true
+    },
+    "Description": "Flow log: vm01-vnet-rg-poc-sentinel-flowlog",
+    "EvidenceId": "19081c9b-84ed-52dd-8ab3-c751ae0a6f7f",
+    "EvidenceType": "azure-nsg-flow-log",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/9154cdcb-5a52-452a-b1e7-483be9eee6d2/resourceGroups/NetworkWatcherRG/providers/Microsoft.Network/networkWatchers/NetworkWatcher_eastus2/flowLogs/vm01-vnet-rg-poc-sentinel-flowlog",
+    "ResourceType": "FlowLog",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:17.951808+00:00",
+    "Collector": "AzureNetworkExpanded",
+    "Data": {
+      "Enabled": true,
+      "FlowLogId": "/subscriptions/9154cdcb-5a52-452a-b1e7-483be9eee6d2/resourceGroups/NetworkWatcherRG/providers/Microsoft.Network/networkWatchers/NetworkWatcher_eastus2/flowLogs/vm02-vnet-vm02_group-flowlog",
+      "Name": "vm02-vnet-vm02_group-flowlog",
+      "RetentionDays": 0,
+      "RetentionEnabled": false,
+      "SubscriptionId": "9154cdcb-5a52-452a-b1e7-483be9eee6d2",
+      "SubscriptionName": "Infra",
+      "TrafficAnalyticsEnabled": true
+    },
+    "Description": "Flow log: vm02-vnet-vm02_group-flowlog",
+    "EvidenceId": "ec9706ab-b706-50b9-838e-e2164f3be7a4",
+    "EvidenceType": "azure-nsg-flow-log",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/9154cdcb-5a52-452a-b1e7-483be9eee6d2/resourceGroups/NetworkWatcherRG/providers/Microsoft.Network/networkWatchers/NetworkWatcher_eastus2/flowLogs/vm02-vnet-vm02_group-flowlog",
+    "ResourceType": "FlowLog",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:16.936257+00:00",
+    "Collector": "AzureNetworkExpanded",
+    "Data": {
+      "Enabled": true,
+      "FlowLogId": "/subscriptions/9154cdcb-5a52-452a-b1e7-483be9eee6d2/resourceGroups/NetworkWatcherRG/providers/Microsoft.Network/networkWatchers/networkwatcher_eastus/flowLogs/vnet-ecma2poc-rg-ecma2-poc-flowlog",
+      "Name": "vnet-ecma2poc-rg-ecma2-poc-flowlog",
+      "RetentionDays": 30,
+      "RetentionEnabled": true,
+      "SubscriptionId": "9154cdcb-5a52-452a-b1e7-483be9eee6d2",
+      "SubscriptionName": "Infra",
+      "TrafficAnalyticsEnabled": true
+    },
+    "Description": "Flow log: vnet-ecma2poc-rg-ecma2-poc-flowlog",
+    "EvidenceId": "ca47cecd-2ad4-53ad-bd3a-1cd91d8929a1",
+    "EvidenceType": "azure-nsg-flow-log",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/9154cdcb-5a52-452a-b1e7-483be9eee6d2/resourceGroups/NetworkWatcherRG/providers/Microsoft.Network/networkWatchers/networkwatcher_eastus/flowLogs/vnet-ecma2poc-rg-ecma2-poc-flowlog",
+    "ResourceType": "FlowLog",
+    "Source": "Azure"
+  }
+]

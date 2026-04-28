@@ -1,0 +1,71 @@
+[
+  {
+    "CollectedAt": "2026-04-26T23:42:40.863131+00:00",
+    "Collector": "FoundryConfig",
+    "Data": {
+      "AccountId": "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/resourceGroups/RG-AzureAIFoundary-FedRAMP-High/providers/Microsoft.CognitiveServices/accounts/fedramp-high-openai",
+      "AccountName": "fedramp-high-openai",
+      "AllFiltersBlocking": true,
+      "BlockingFilters": 8,
+      "CustomBlocklistCount": 0,
+      "FilterCategories": [
+        "Hate",
+        "Hate",
+        "Sexual",
+        "Sexual",
+        "Violence",
+        "Violence",
+        "Selfharm",
+        "Selfharm"
+      ],
+      "HasJailbreakFilter": false,
+      "HasPromptShield": true,
+      "PolicyId": "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/resourceGroups/RG-AzureAIFoundary-FedRAMP-High/providers/Microsoft.CognitiveServices/accounts/fedramp-high-openai/raiPolicies/Microsoft.Default",
+      "PolicyName": "Microsoft.Default",
+      "TotalFilters": 8
+    },
+    "Description": "Content filter: Microsoft.Default on fedramp-high-openai",
+    "EvidenceId": "06d958dc-a98a-5fe5-bcd2-43ab5a214b70",
+    "EvidenceType": "azure-openai-content-filter",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/resourceGroups/RG-AzureAIFoundary-FedRAMP-High/providers/Microsoft.CognitiveServices/accounts/fedramp-high-openai/raiPolicies/Microsoft.Default",
+    "ResourceType": "ContentFilter",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:42:40.863228+00:00",
+    "Collector": "FoundryConfig",
+    "Data": {
+      "AccountId": "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/resourceGroups/RG-AzureAIFoundary-FedRAMP-High/providers/Microsoft.CognitiveServices/accounts/fedramp-high-openai",
+      "AccountName": "fedramp-high-openai",
+      "AllFiltersBlocking": false,
+      "BlockingFilters": 10,
+      "CustomBlocklistCount": 0,
+      "FilterCategories": [
+        "Hate",
+        "Hate",
+        "Sexual",
+        "Sexual",
+        "Violence",
+        "Violence",
+        "Selfharm",
+        "Selfharm",
+        "Jailbreak",
+        "Protected Material Text",
+        "Protected Material Code"
+      ],
+      "HasJailbreakFilter": true,
+      "HasPromptShield": true,
+      "PolicyId": "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/resourceGroups/RG-AzureAIFoundary-FedRAMP-High/providers/Microsoft.CognitiveServices/accounts/fedramp-high-openai/raiPolicies/Microsoft.DefaultV2",
+      "PolicyName": "Microsoft.DefaultV2",
+      "TotalFilters": 11
+    },
+    "Description": "Content filter: Microsoft.DefaultV2 on fedramp-high-openai",
+    "EvidenceId": "de68bca6-cf3f-5495-9082-069749134060",
+    "EvidenceType": "azure-openai-content-filter",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/resourceGroups/RG-AzureAIFoundary-FedRAMP-High/providers/Microsoft.CognitiveServices/accounts/fedramp-high-openai/raiPolicies/Microsoft.DefaultV2",
+    "ResourceType": "ContentFilter",
+    "Source": "Azure"
+  }
+]

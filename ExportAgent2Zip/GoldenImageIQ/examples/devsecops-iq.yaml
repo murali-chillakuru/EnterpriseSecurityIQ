@@ -1,0 +1,113 @@
+# DevSecOpsIQ — Development security operations assessment
+# Example: security-focused but for CI/CD pipelines and code supply chain.
+
+project_name: DevSecOpsIQ
+base_name: DevSecOpsIQ
+description: >
+  AI-powered DevSecOps assessment platform. Evaluates CI/CD pipeline security,
+  supply chain integrity, secret management, and code security practices
+  across Azure DevOps and GitHub environments.
+
+data_sources:
+  azure:
+    - name: container_registries
+      evidence_types: [acr_config, image_vulnerabilities, signing_status]
+      azure_sdk: azure-mgmt-containerregistry>=10.0.0
+    - name: key_vaults
+      evidence_types: [kv_secrets_metadata, kv_access_policies, kv_rotation]
+      azure_sdk: azure-mgmt-keyvault>=10.0.0
+    - name: defender_for_devops
+      evidence_types: [devops_posture, code_scanning_results, iac_scanning]
+      azure_sdk: azure-mgmt-security>=7.0.0
+
+  graph:
+    - name: entra_app_credentials
+      evidence_types: [service_principal_secrets, credential_expiry, federated_credentials]
+
+  custom:
+    - name: pipeline_config
+      evidence_types: [pipeline_security, branch_protection, approval_gates]
+    - name: dependency_scanning
+      evidence_types: [vulnerable_dependencies, sbom, license_compliance]
+    - name: secret_scanning
+      evidence_types: [exposed_secrets, secret_rotation_status]
+
+frameworks:
+  - id: SLSA-1.0
+    name: Supply chain Levels for Software Artifacts
+    version: "1.0"
+    domains: [source, build, provenance, dependencies]
+    controls:
+      - id: SLSA-SRC-01
+        title: Version controlled source
+        domain: source
+        severity: high
+        evaluation_logic: check_version_control
+        evidence_types: [branch_protection, pipeline_security]
+      - id: SLSA-BLD-01
+        title: Scripted build process
+        domain: build
+        severity: high
+        evaluation_logic: check_scripted_build
+        evidence_types: [pipeline_security]
+      - id: SLSA-PRV-01
+        title: Provenance generated
+        domain: provenance
+        severity: medium
+        evaluation_logic: check_provenance
+        evidence_types: [signing_status, sbom]
+      - id: SLSA-DEP-01
+        title: Dependencies scanned
+        domain: dependencies
+        severity: critical
+        evaluation_logic: check_dependency_scanning
+        evidence_types: [vulnerable_dependencies, sbom]
+
+  - id: OWASP-CICD-TOP10
+    name: OWASP CI/CD Top 10
+    version: "2024"
+    domains: [pipeline, secrets, supply_chain, access]
+    controls:
+      - id: CICD-01
+        title: Insufficient flow control mechanisms
+        domain: pipeline
+        severity: critical
+        evaluation_logic: check_flow_control
+        evidence_types: [branch_protection, approval_gates]
+      - id: CICD-03
+        title: Dependency chain abuse
+        domain: supply_chain
+        severity: critical
+        evaluation_logic: check_dependency_chain
+        evidence_types: [vulnerable_dependencies, license_compliance]
+      - id: CICD-06
+        title: Insufficient credential hygiene
+        domain: secrets
+        severity: critical
+        evaluation_logic: check_credential_hygiene
+        evidence_types: [exposed_secrets, secret_rotation_status, credential_expiry]
+
+reports:
+  - html
+  - pdf
+  - sarif
+
+azure:
+  location: westeurope
+  container_apps_location: westeurope
+  models:
+    primary: gpt-4.1
+    fallback: gpt-4.1
+
+spa_pages:
+  - name: PipelineSecurity
+    title: Pipeline Security Assessment
+  - name: SupplyChain
+    title: Supply Chain Integrity
+  - name: SecretManagement
+    title: Secret Management
+
+thresholds:
+  critical_vulnerabilities_max: 0
+  secret_exposure_max: 0
+  dependency_age_max_days: 90

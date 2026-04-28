@@ -1,0 +1,16 @@
+{
+  "name": "CloudExplorer",
+  "brand_name": "CloudExplorerIQ",
+  "description": "Cloud Explorer — tenant search + permissions check",
+  "tools": [
+    "search_tenant",
+    "check_permissions",
+    "query_results"
+  ],
+  "pages": [
+    "CloudExplorer.html"
+  ],
+  "include_teams_package": true,
+  "include_infra": true,
+  "include_automation": true
+}

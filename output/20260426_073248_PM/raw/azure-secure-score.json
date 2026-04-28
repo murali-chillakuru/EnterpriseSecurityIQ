@@ -1,0 +1,86 @@
+[
+  {
+    "CollectedAt": "2026-04-26T23:33:00.416740+00:00",
+    "Collector": "AzureDefenderAdvanced",
+    "Data": {
+      "CurrentScore": 0,
+      "MaxScore": 0,
+      "Name": "ascScore",
+      "Percentage": 0.4615,
+      "ScoreId": "/subscriptions/0eb177bd-28b1-44da-b683-1508e1268aee/providers/Microsoft.Security/secureScores/ascScore",
+      "SubscriptionId": "0eb177bd-28b1-44da-b683-1508e1268aee",
+      "SubscriptionName": "Prod",
+      "Weight": 25
+    },
+    "Description": "Secure Score: ascScore",
+    "EvidenceId": "0414a02d-6b7a-55b6-b8c2-61106a7ebf33",
+    "EvidenceType": "azure-secure-score",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/0eb177bd-28b1-44da-b683-1508e1268aee/providers/Microsoft.Security/secureScores/ascScore",
+    "ResourceType": "SecureScore",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:20.409258+00:00",
+    "Collector": "AzureDefenderAdvanced",
+    "Data": {
+      "CurrentScore": 0,
+      "MaxScore": 0,
+      "Name": "ascScore",
+      "Percentage": 0.4869,
+      "ScoreId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/providers/Microsoft.Security/secureScores/ascScore",
+      "SubscriptionId": "8054e434-49e0-4a21-bbea-3fee1c872b88",
+      "SubscriptionName": "Security",
+      "Weight": 42
+    },
+    "Description": "Secure Score: ascScore",
+    "EvidenceId": "a130d6fd-c8b6-5f1c-913d-8546027f151c",
+    "EvidenceType": "azure-secure-score",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/providers/Microsoft.Security/secureScores/ascScore",
+    "ResourceType": "SecureScore",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:34:06.875660+00:00",
+    "Collector": "AzureDefenderAdvanced",
+    "Data": {
+      "CurrentScore": 0,
+      "MaxScore": 0,
+      "Name": "ascScore",
+      "Percentage": 0.5632,
+      "ScoreId": "/subscriptions/9154cdcb-5a52-452a-b1e7-483be9eee6d2/providers/Microsoft.Security/secureScores/ascScore",
+      "SubscriptionId": "9154cdcb-5a52-452a-b1e7-483be9eee6d2",
+      "SubscriptionName": "Infra",
+      "Weight": 329
+    },
+    "Description": "Secure Score: ascScore",
+    "EvidenceId": "7ba0b03b-4252-5a0a-8a26-717931207e10",
+    "EvidenceType": "azure-secure-score",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/9154cdcb-5a52-452a-b1e7-483be9eee6d2/providers/Microsoft.Security/secureScores/ascScore",
+    "ResourceType": "SecureScore",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:34:19.275845+00:00",
+    "Collector": "AzureDefenderAdvanced",
+    "Data": {
+      "CurrentScore": 0,
+      "MaxScore": 0,
+      "Name": "ascScore",
+      "Percentage": 0.4347,
+      "ScoreId": "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/providers/Microsoft.Security/secureScores/ascScore",
+      "SubscriptionId": "d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0",
+      "SubscriptionName": "AI",
+      "Weight": 211
+    },
+    "Description": "Secure Score: ascScore",
+    "EvidenceId": "d0d1a78c-0cb9-5ff8-905d-730fb635fd08",
+    "EvidenceType": "azure-secure-score",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/providers/Microsoft.Security/secureScores/ascScore",
+    "ResourceType": "SecureScore",
+    "Source": "Azure"
+  }
+]

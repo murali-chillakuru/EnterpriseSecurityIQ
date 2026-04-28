@@ -1,0 +1,95 @@
+"""{{ project_name }} — Evaluation engine.
+
+Severity-weighted scoring: critical=4, high=3, medium=2, low=1.
+Cross-domain fallback via _CROSS_DOMAIN_MAP.
+"""
+
+from __future__ import annotations
+
+import logging
+from typing import Any
+
+from app.core.models import FindingRecord, SEVERITY_WEIGHTS
+
+log = logging.getLogger(__name__)
+
+# Cross-domain fallback: if a control's domain evaluator is missing,
+# try the fallback domain instead.
+_CROSS_DOMAIN_MAP: dict[str, str] = {
+    # "subdomain": "parent_domain",
+}
+
+
+def evaluate_control(
+    control: dict[str, Any],
+    evidence: list[dict[str, Any]],
+    framework_id: str,
+) -> dict[str, Any]:
+    """Evaluate a single control against collected evidence.
+
+    The control dict must have:
+        - id, title, domain, severity, evaluation_logic, evidence_types
+    """
+    ctrl_id = control["id"]
+    evidence_types = set(control.get("evidence_types", []))
+
+    # Filter relevant evidence
+    relevant = [e for e in evidence if e.get("EvidenceType") in evidence_types]
+
+    if not relevant:
+        finding = FindingRecord(
+            control_id=ctrl_id,
+            framework=framework_id,
+            status="missing_evidence",
+            severity=control.get("severity", "medium"),
+            domain=control.get("domain", ""),
+            control_title=control.get("title", ""),
+            description=f"No evidence found for types: {sorted(evidence_types)}",
+            recommendation="Ensure collectors for this evidence type are configured and running.",
+        )
+        return finding.to_dict()
+
+    # Dispatch to the check function named in evaluation_logic
+    logic_name = control.get("evaluation_logic", "")
+    check_fn = _get_check_function(logic_name, control.get("domain", ""))
+
+    if check_fn:
+        return check_fn(control, relevant, framework_id)
+
+    # Default: if we have evidence, mark as assessed but not evaluated
+    finding = FindingRecord(
+        control_id=ctrl_id,
+        framework=framework_id,
+        status="not_assessed",
+        severity=control.get("severity", "medium"),
+        domain=control.get("domain", ""),
+        control_title=control.get("title", ""),
+        description=f"No evaluation logic implemented for: {logic_name}",
+        recommendation="Implement the check function for this control.",
+    )
+    return finding.to_dict()
+
+
+def _get_check_function(logic_name: str, domain: str):
+    """Look up a check function by name, with cross-domain fallback."""
+    # Try importing from the domain's evaluator module
+    try:
+        import importlib
+        mod = importlib.import_module(f"app.{{ _project_snake }}_evaluators.{domain}")
+        fn = getattr(mod, logic_name, None)
+        if fn:
+            return fn
+    except ImportError:
+        pass
+
+    # Cross-domain fallback
+    fallback = _CROSS_DOMAIN_MAP.get(domain)
+    if fallback:
+        try:
+            import importlib
+            mod = importlib.import_module(f"app.{{ _project_snake }}_evaluators.{fallback}")
+            return getattr(mod, logic_name, None)
+        except ImportError:
+            pass
+
+    return None

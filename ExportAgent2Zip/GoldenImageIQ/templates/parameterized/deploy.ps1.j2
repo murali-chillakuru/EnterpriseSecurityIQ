@@ -1,0 +1,177 @@
+<#
+.SYNOPSIS
+    Deploy {{ project_name }} to Azure.
+.DESCRIPTION
+    16-step deployment: RG → Foundry → Models → Storage → KV → LAW → AppInsights →
+    ACR → Identity → RBAC → CAE → ContainerApp → EntraApp → Patch+Rebuild
+#>
+
+param(
+    [string]$ResourceGroup = "{{ base_name }}-RG",
+    [string]$Location      = "{{ azure.location | default('swedencentral') }}",
+    [string]$CALocation     = "{{ azure.container_apps_location | default('northeurope') }}",
+    [string]$BaseName       = "{{ base_name | lower }}"
+)
+
+$ErrorActionPreference = "Stop"
+Set-StrictMode -Version Latest
+
+Write-Host "`n=== {{ project_name }} — Azure Deployment ===" -ForegroundColor Cyan
+
+# ── Step 1: Resource Group ─────────────────────────────────────────
+Write-Host "`n[1/16] Resource Group..." -ForegroundColor Yellow
+az group create --name $ResourceGroup --location $Location --output none
+
+# ── Step 2: AI Foundry Hub + Project ──────────────────────────────
+Write-Host "`n[2/16] AI Foundry..." -ForegroundColor Yellow
+# TODO: Create AI Foundry hub and project
+# az ml workspace create --kind hub ...
+# az ml workspace create --kind project ...
+
+# ── Step 3: Model Deployments ─────────────────────────────────────
+Write-Host "`n[3/16] Model Deployments..." -ForegroundColor Yellow
+# TODO: Deploy {{ azure.models.primary | default('gpt-4.1') }} and {{ azure.models.fallback | default('gpt-5.1') }}
+
+# ── Step 4: Storage Account ──────────────────────────────────────
+Write-Host "`n[4/16] Storage Account..." -ForegroundColor Yellow
+$StorageName = "${BaseName}storage"
+az storage account create `
+    --name $StorageName `
+    --resource-group $ResourceGroup `
+    --location $Location `
+    --sku Standard_LRS `
+    --kind StorageV2 `
+    --output none
+
+az storage container create `
+    --account-name $StorageName `
+    --name reports `
+    --auth-mode login `
+    --output none 2>$null
+
+# ── Step 5: Key Vault ────────────────────────────────────────────
+Write-Host "`n[5/16] Key Vault..." -ForegroundColor Yellow
+$KVName = "${BaseName}kv"
+az keyvault create `
+    --name $KVName `
+    --resource-group $ResourceGroup `
+    --location $Location `
+    --output none
+
+# ── Step 6: Log Analytics Workspace ──────────────────────────────
+Write-Host "`n[6/16] Log Analytics..." -ForegroundColor Yellow
+$LAWName = "${BaseName}-law"
+az monitor log-analytics workspace create `
+    --resource-group $ResourceGroup `
+    --workspace-name $LAWName `
+    --location $Location `
+    --output none
+
+# ── Step 7: Application Insights ─────────────────────────────────
+Write-Host "`n[7/16] Application Insights..." -ForegroundColor Yellow
+$AIName = "${BaseName}-appinsights"
+$LAWId = az monitor log-analytics workspace show `
+    --resource-group $ResourceGroup `
+    --workspace-name $LAWName `
+    --query id -o tsv
+az monitor app-insights component create `
+    --app $AIName `
+    --resource-group $ResourceGroup `
+    --location $Location `
+    --workspace $LAWId `
+    --output none
+
+# ── Step 8: Azure Container Registry ────────────────────────────
+Write-Host "`n[8/16] Container Registry..." -ForegroundColor Yellow
+$ACRName = "${BaseName}acr"
+az acr create `
+    --name $ACRName `
+    --resource-group $ResourceGroup `
+    --sku Basic `
+    --admin-enabled true `
+    --output none
+
+# ── Step 9: Managed Identity ─────────────────────────────────────
+Write-Host "`n[9/16] Managed Identity..." -ForegroundColor Yellow
+$IdentityName = "${BaseName}-identity"
+az identity create `
+    --name $IdentityName `
+    --resource-group $ResourceGroup `
+    --location $Location `
+    --output none
+
+$IdentityId = az identity show `
+    --name $IdentityName `
+    --resource-group $ResourceGroup `
+    --query principalId -o tsv
+
+# ── Step 10: RBAC Assignments ────────────────────────────────────
+Write-Host "`n[10/16] RBAC..." -ForegroundColor Yellow
+$SubId = az account show --query id -o tsv
+
+# Storage Blob Data Contributor
+az role assignment create `
+    --assignee $IdentityId `
+    --role "Storage Blob Data Contributor" `
+    --scope "/subscriptions/$SubId/resourceGroups/$ResourceGroup/providers/Microsoft.Storage/storageAccounts/$StorageName" `
+    --output none 2>$null
+
+# Key Vault Secrets User
+az role assignment create `
+    --assignee $IdentityId `
+    --role "Key Vault Secrets User" `
+    --scope "/subscriptions/$SubId/resourceGroups/$ResourceGroup/providers/Microsoft.KeyVault/vaults/$KVName" `
+    --output none 2>$null
+
+# ── Step 11: Container Apps Environment ──────────────────────────
+Write-Host "`n[11/16] Container Apps Environment..." -ForegroundColor Yellow
+$CAEName = "${BaseName}-cae"
+az containerapp env create `
+    --name $CAEName `
+    --resource-group $ResourceGroup `
+    --location $CALocation `
+    --logs-workspace-id $LAWId `
+    --output none
+
+# ── Step 12: Build + Push Image ──────────────────────────────────
+Write-Host "`n[12/16] Building container image..." -ForegroundColor Yellow
+$ImageTag = "${ACRName}.azurecr.io/${BaseName}-agent:v1"
+az acr build `
+    --registry $ACRName `
+    --image "${BaseName}-agent:v1" `
+    --file AIAgent/Dockerfile . `
+    --no-logs
+
+# ── Step 13: Container App ──────────────────────────────────────
+Write-Host "`n[13/16] Container App..." -ForegroundColor Yellow
+$AppName = "${BaseName}-agent"
+az containerapp create `
+    --name $AppName `
+    --resource-group $ResourceGroup `
+    --environment $CAEName `
+    --image $ImageTag `
+    --target-port 8088 `
+    --ingress external `
+    --min-replicas 0 `
+    --max-replicas 3 `
+    --cpu 2 --memory 4Gi `
+    --registry-server "${ACRName}.azurecr.io" `
+    --user-assigned $IdentityId `
+    --output none
+
+# ── Step 14: Entra App Registration ─────────────────────────────
+Write-Host "`n[14/16] Entra App Registration..." -ForegroundColor Yellow
+# TODO: az ad app create ...
+
+# ── Step 15: Environment variables ───────────────────────────────
+Write-Host "`n[15/16] Setting env vars..." -ForegroundColor Yellow
+# TODO: az containerapp update --set-env-vars ...
+
+# ── Step 16: Final validation ────────────────────────────────────
+Write-Host "`n[16/16] Validating deployment..." -ForegroundColor Yellow
+$FQDN = az containerapp show `
+    --name $AppName `
+    --resource-group $ResourceGroup `
+    --query "properties.configuration.ingress.fqdn" -o tsv
+Write-Host "`n  Deployed! https://$FQDN" -ForegroundColor Green
+Write-Host "  {{ project_name }} is ready.`n" -ForegroundColor Green

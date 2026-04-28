@@ -1,0 +1,262 @@
+[
+  {
+    "CollectedAt": "2026-04-26T23:33:15.778057+00:00",
+    "Collector": "AzureSentinel",
+    "Data": {
+      "DisplayName": "NetworkSession Monitor Configuration",
+      "ItemsSearchKey": "Ports",
+      "Name": "NetworkSession_Monitor_Configuration",
+      "NumberOfLinesToSkip": 0,
+      "Provider": "Microsoft",
+      "SubscriptionId": "8054e434-49e0-4a21-bbea-3fee1c872b88",
+      "WatchlistId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/RG-LogAnalyticsWorkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/Watchlists/NetworkSession_Monitor_Configuration"
+    },
+    "Description": "Watchlist: NetworkSession_Monitor_Configuration",
+    "EvidenceId": "1aa10206-6706-589a-bb2a-bd36dff18041",
+    "EvidenceType": "azure-sentinel-watchlist",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/RG-LogAnalyticsWorkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/Watchlists/NetworkSession_Monitor_Configuration",
+    "ResourceType": "SentinelWatchlist",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:15.778461+00:00",
+    "Collector": "AzureSentinel",
+    "Data": {
+      "DisplayName": "SOC Departmental",
+      "ItemsSearchKey": "Department",
+      "Name": "SOCDepartmental",
+      "NumberOfLinesToSkip": 0,
+      "Provider": "Microsoft",
+      "SubscriptionId": "8054e434-49e0-4a21-bbea-3fee1c872b88",
+      "WatchlistId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/RG-LogAnalyticsWorkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/Watchlists/SOCDepartmental"
+    },
+    "Description": "Watchlist: SOCDepartmental",
+    "EvidenceId": "83337ebe-b707-5958-978b-ab97c9c7e16f",
+    "EvidenceType": "azure-sentinel-watchlist",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/RG-LogAnalyticsWorkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/Watchlists/SOCDepartmental",
+    "ResourceType": "SentinelWatchlist",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:15.778207+00:00",
+    "Collector": "AzureSentinel",
+    "Data": {
+      "DisplayName": "SOC Email Distribution",
+      "ItemsSearchKey": "Team Name",
+      "Name": "SOCEmailDistribution",
+      "NumberOfLinesToSkip": 0,
+      "Provider": "Microsoft",
+      "SubscriptionId": "8054e434-49e0-4a21-bbea-3fee1c872b88",
+      "WatchlistId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/RG-LogAnalyticsWorkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/Watchlists/SOCEmailDistribution"
+    },
+    "Description": "Watchlist: SOCEmailDistribution",
+    "EvidenceId": "988528bd-1588-5106-984b-c9371f5fa332",
+    "EvidenceType": "azure-sentinel-watchlist",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/RG-LogAnalyticsWorkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/Watchlists/SOCEmailDistribution",
+    "ResourceType": "SentinelWatchlist",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:15.778546+00:00",
+    "Collector": "AzureSentinel",
+    "Data": {
+      "DisplayName": "SOC External Contacts",
+      "ItemsSearchKey": "Vendor",
+      "Name": "SOCExternalContacts",
+      "NumberOfLinesToSkip": 0,
+      "Provider": "Microsoft",
+      "SubscriptionId": "8054e434-49e0-4a21-bbea-3fee1c872b88",
+      "WatchlistId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/RG-LogAnalyticsWorkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/Watchlists/SOCExternalContacts"
+    },
+    "Description": "Watchlist: SOCExternalContacts",
+    "EvidenceId": "0ccb9708-cc3e-519b-b525-c52e2ad6f885",
+    "EvidenceType": "azure-sentinel-watchlist",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/RG-LogAnalyticsWorkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/Watchlists/SOCExternalContacts",
+    "ResourceType": "SentinelWatchlist",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:15.778617+00:00",
+    "Collector": "AzureSentinel",
+    "Data": {
+      "DisplayName": "SOC Incident Response Planning",
+      "ItemsSearchKey": "Status",
+      "Name": "SOCIRP",
+      "NumberOfLinesToSkip": 0,
+      "Provider": "Microsoft",
+      "SubscriptionId": "8054e434-49e0-4a21-bbea-3fee1c872b88",
+      "WatchlistId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/RG-LogAnalyticsWorkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/Watchlists/SOCIRP"
+    },
+    "Description": "Watchlist: SOCIRP",
+    "EvidenceId": "4d7f3ad3-beda-5932-a443-dae560e8a11c",
+    "EvidenceType": "azure-sentinel-watchlist",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/RG-LogAnalyticsWorkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/Watchlists/SOCIRP",
+    "ResourceType": "SentinelWatchlist",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:15.778683+00:00",
+    "Collector": "AzureSentinel",
+    "Data": {
+      "DisplayName": "SOC Internal Contacts",
+      "ItemsSearchKey": "Vendor",
+      "Name": "SOCInternalContacts",
+      "NumberOfLinesToSkip": 0,
+      "Provider": "Microsoft",
+      "SubscriptionId": "8054e434-49e0-4a21-bbea-3fee1c872b88",
+      "WatchlistId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/RG-LogAnalyticsWorkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/Watchlists/SOCInternalContacts"
+    },
+    "Description": "Watchlist: SOCInternalContacts",
+    "EvidenceId": "3f2d19e9-4fde-5a78-94f9-52ce958d4d12",
+    "EvidenceType": "azure-sentinel-watchlist",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/RG-LogAnalyticsWorkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/Watchlists/SOCInternalContacts",
+    "ResourceType": "SentinelWatchlist",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:15.778378+00:00",
+    "Collector": "AzureSentinel",
+    "Data": {
+      "DisplayName": "SOC Maturity Assessment",
+      "ItemsSearchKey": "Number",
+      "Name": "SOCMA",
+      "NumberOfLinesToSkip": 0,
+      "Provider": "Microsoft",
+      "SubscriptionId": "8054e434-49e0-4a21-bbea-3fee1c872b88",
+      "WatchlistId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/RG-LogAnalyticsWorkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/Watchlists/SOCMA"
+    },
+    "Description": "Watchlist: SOCMA",
+    "EvidenceId": "42370093-ebf5-5b81-8b61-b5a19c14c36d",
+    "EvidenceType": "azure-sentinel-watchlist",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/RG-LogAnalyticsWorkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/Watchlists/SOCMA",
+    "ResourceType": "SentinelWatchlist",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:15.778335+00:00",
+    "Collector": "AzureSentinel",
+    "Data": {
+      "DisplayName": "SOC Pager Contacts",
+      "ItemsSearchKey": "Team Name",
+      "Name": "SOCPager",
+      "NumberOfLinesToSkip": 0,
+      "Provider": "Microsoft",
+      "SubscriptionId": "8054e434-49e0-4a21-bbea-3fee1c872b88",
+      "WatchlistId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/RG-LogAnalyticsWorkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/Watchlists/SOCPager"
+    },
+    "Description": "Watchlist: SOCPager",
+    "EvidenceId": "8c9a8b7c-a130-5a64-9378-f9a79276dea3",
+    "EvidenceType": "azure-sentinel-watchlist",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/RG-LogAnalyticsWorkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/Watchlists/SOCPager",
+    "ResourceType": "SentinelWatchlist",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:15.778283+00:00",
+    "Collector": "AzureSentinel",
+    "Data": {
+      "DisplayName": "SOC Use Cases",
+      "ItemsSearchKey": "Onboard Status",
+      "Name": "SOCUseCase",
+      "NumberOfLinesToSkip": 0,
+      "Provider": "Microsoft",
+      "SubscriptionId": "8054e434-49e0-4a21-bbea-3fee1c872b88",
+      "WatchlistId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/RG-LogAnalyticsWorkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/Watchlists/SOCUseCase"
+    },
+    "Description": "Watchlist: SOCUseCase",
+    "EvidenceId": "b4d8e1ac-4523-50bb-8107-e6b0489e91a1",
+    "EvidenceType": "azure-sentinel-watchlist",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/RG-LogAnalyticsWorkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/Watchlists/SOCUseCase",
+    "ResourceType": "SentinelWatchlist",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:15.778504+00:00",
+    "Collector": "AzureSentinel",
+    "Data": {
+      "DisplayName": "SOC Contacts",
+      "ItemsSearchKey": "Name",
+      "Name": "SOCcontacts",
+      "NumberOfLinesToSkip": 0,
+      "Provider": "Microsoft",
+      "SubscriptionId": "8054e434-49e0-4a21-bbea-3fee1c872b88",
+      "WatchlistId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/RG-LogAnalyticsWorkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/Watchlists/SOCcontacts"
+    },
+    "Description": "Watchlist: SOCcontacts",
+    "EvidenceId": "643780f5-2de4-5404-b7e4-8bc131e886ef",
+    "EvidenceType": "azure-sentinel-watchlist",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/RG-LogAnalyticsWorkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/Watchlists/SOCcontacts",
+    "ResourceType": "SentinelWatchlist",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:15.778649+00:00",
+    "Collector": "AzureSentinel",
+    "Data": {
+      "DisplayName": "SOC General IT",
+      "ItemsSearchKey": "Team Name",
+      "Name": "SOCgeneralIT",
+      "NumberOfLinesToSkip": 0,
+      "Provider": "Microsoft",
+      "SubscriptionId": "8054e434-49e0-4a21-bbea-3fee1c872b88",
+      "WatchlistId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/RG-LogAnalyticsWorkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/Watchlists/SOCgeneralIT"
+    },
+    "Description": "Watchlist: SOCgeneralIT",
+    "EvidenceId": "4a4e7a49-d3ad-5c5d-894a-cc3af954c871",
+    "EvidenceType": "azure-sentinel-watchlist",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/RG-LogAnalyticsWorkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/Watchlists/SOCgeneralIT",
+    "ResourceType": "SentinelWatchlist",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:15.778587+00:00",
+    "Collector": "AzureSentinel",
+    "Data": {
+      "DisplayName": "SOC Workstations",
+      "ItemsSearchKey": "User",
+      "Name": "SOCworkstations",
+      "NumberOfLinesToSkip": 0,
+      "Provider": "Microsoft",
+      "SubscriptionId": "8054e434-49e0-4a21-bbea-3fee1c872b88",
+      "WatchlistId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/RG-LogAnalyticsWorkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/Watchlists/SOCworkstations"
+    },
+    "Description": "Watchlist: SOCworkstations",
+    "EvidenceId": "2181683a-a795-5936-b777-a9f7e0d736b8",
+    "EvidenceType": "azure-sentinel-watchlist",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/RG-LogAnalyticsWorkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/Watchlists/SOCworkstations",
+    "ResourceType": "SentinelWatchlist",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:15.778419+00:00",
+    "Collector": "AzureSentinel",
+    "Data": {
+      "DisplayName": "SOC Recommended Actions",
+      "ItemsSearchKey": "Alert",
+      "Name": "SocRA",
+      "NumberOfLinesToSkip": 0,
+      "Provider": "Microsoft",
+      "SubscriptionId": "8054e434-49e0-4a21-bbea-3fee1c872b88",
+      "WatchlistId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/RG-LogAnalyticsWorkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/Watchlists/SocRA"
+    },
+    "Description": "Watchlist: SocRA",
+    "EvidenceId": "25e0f61b-2a37-510d-9427-9ad16c7f917c",
+    "EvidenceType": "azure-sentinel-watchlist",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/RG-LogAnalyticsWorkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/Watchlists/SocRA",
+    "ResourceType": "SentinelWatchlist",
+    "Source": "Azure"
+  }
+]

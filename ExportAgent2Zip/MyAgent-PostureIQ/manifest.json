@@ -1,0 +1,18 @@
+{
+  "name": "PostureIQ",
+  "brand_name": "PostureIQ",
+  "description": "Standalone PostureIQ assessment + history",
+  "tools": [
+    "run_postureiq_assessment",
+    "query_assessment_history",
+    "generate_report",
+    "generate_custom_report"
+  ],
+  "pages": [
+    "PostureIQ.html",
+    "PostureIQHomePage.html"
+  ],
+  "include_teams_package": true,
+  "include_infra": true,
+  "include_automation": true
+}

@@ -1,0 +1,103 @@
+# FinOpsIQ — Cloud financial operations assessment
+# Example: same architecture, completely different domain.
+
+project_name: FinOpsIQ
+base_name: FinOpsIQ
+description: >
+  AI-powered FinOps assessment platform. Evaluates cloud cost optimization,
+  governance, and financial accountability across Azure subscriptions using
+  cost management, advisor, and resource graph evidence.
+
+data_sources:
+  azure:
+    - name: cost_management
+      evidence_types: [cost_data, budget_alerts, cost_anomalies]
+      azure_sdk: azure-mgmt-costmanagement>=4.0.0
+    - name: advisor_recommendations
+      evidence_types: [advisor_cost, advisor_performance, advisor_reliability]
+      azure_sdk: azure-mgmt-advisor>=9.0.0
+    - name: resource_graph
+      evidence_types: [resource_inventory, orphaned_resources, idle_resources]
+      azure_sdk: azure-mgmt-resourcegraph>=8.0.0
+    - name: reservations
+      evidence_types: [reservation_utilization, reservation_recommendations]
+      azure_sdk: azure-mgmt-reservations>=2.0.0
+    - name: compute_usage
+      evidence_types: [vm_utilization, vm_rightsizing, spot_candidates]
+      azure_sdk: azure-mgmt-compute>=33.0.0
+    - name: storage_usage
+      evidence_types: [storage_metrics, tier_recommendations, lifecycle_policies]
+      azure_sdk: azure-mgmt-storage>=21.0.0
+
+  custom:
+    - name: tagging_compliance
+      evidence_types: [tag_coverage, tag_consistency, required_tags]
+
+frameworks:
+  - id: FinOps-Framework-1.0
+    name: FinOps Foundation Framework
+    version: "1.0"
+    domains: [inform, optimize, operate]
+    controls:
+      - id: FO-INF-01
+        title: Cost allocation and showback
+        domain: inform
+        severity: high
+        evaluation_logic: check_cost_allocation
+        evidence_types: [cost_data, tag_coverage]
+      - id: FO-INF-02
+        title: Budget alerts configured
+        domain: inform
+        severity: medium
+        evaluation_logic: check_budget_alerts
+        evidence_types: [budget_alerts]
+      - id: FO-OPT-01
+        title: Rightsizing recommendations addressed
+        domain: optimize
+        severity: high
+        evaluation_logic: check_rightsizing
+        evidence_types: [advisor_cost, vm_rightsizing]
+      - id: FO-OPT-02
+        title: Reservation utilization above 80%
+        domain: optimize
+        severity: medium
+        evaluation_logic: check_reservation_utilization
+        evidence_types: [reservation_utilization]
+      - id: FO-OPT-03
+        title: Orphaned resources identified
+        domain: optimize
+        severity: medium
+        evaluation_logic: check_orphaned_resources
+        evidence_types: [orphaned_resources, idle_resources]
+      - id: FO-OPR-01
+        title: Tagging policy enforced
+        domain: operate
+        severity: high
+        evaluation_logic: check_tagging_policy
+        evidence_types: [tag_coverage, tag_consistency, required_tags]
+
+reports:
+  - html
+  - pdf
+  - xlsx
+  - csv
+
+azure:
+  location: eastus2
+  container_apps_location: eastus
+  models:
+    primary: gpt-4.1
+    fallback: gpt-4.1
+
+spa_pages:
+  - name: CostOverview
+    title: Cost Overview Dashboard
+  - name: Optimization
+    title: Optimization Opportunities
+  - name: TaggingCompliance
+    title: Tagging Compliance
+
+thresholds:
+  reservation_utilization_min: 80
+  orphaned_resource_max: 0
+  tag_coverage_min: 95

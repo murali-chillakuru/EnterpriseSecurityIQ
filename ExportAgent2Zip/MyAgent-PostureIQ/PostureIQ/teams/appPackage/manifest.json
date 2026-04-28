@@ -1,0 +1,56 @@
+{
+  "$schema": "https://developer.microsoft.com/en-us/json-schemas/teams/v1.22/MicrosoftTeams.schema.json",
+  "manifestVersion": "1.22",
+  "version": "1.0.6",
+  "id": "{{TEAMS_APP_ID}}",
+  "developer": {
+    "name": "Murali Chillakuru",
+    "websiteUrl": "https://{{BACKEND_FQDN}}/Teams2Web-SecurityComplianceAssessment.html",
+    "privacyUrl": "https://{{BACKEND_FQDN}}/Teams2Web-SecurityComplianceAssessment.html",
+    "termsOfUseUrl": "https://{{BACKEND_FQDN}}/Teams2Web-SecurityComplianceAssessment.html"
+  },
+  "name": {
+    "short": "PostureIQ",
+    "full": "PostureIQ — Enterprise Security Intelligence"
+  },
+  "description": {
+    "short": "Assess your security posture across compliance frameworks with scoring",
+    "full": "Security compliance assessment for Microsoft cloud services. Risk-weighted scoring, attack path analysis, priority ranking, AI fix recommendations across compliance frameworks."
+  },
+  "icons": {
+    "color": "color.png",
+    "outline": "outline.png"
+  },
+  "accentColor": "#0078D4",
+  "showLoadingIndicator": true,
+  "staticTabs": [
+    {
+      "entityId": "postureiq-assessment",
+      "name": "Security Assessment",
+      "contentUrl": "https://{{BACKEND_FQDN}}/Teams-SecurityComplianceAssessment.html",
+      "websiteUrl": "https://{{BACKEND_FQDN}}/Teams2Web-SecurityComplianceAssessment.html",
+      "scopes": ["personal"]
+    }
+  ],
+  "permissions": ["identity", "messageTeamMembers"],
+  "validDomains": [
+    "{{BACKEND_FQDN}}",
+    "login.microsoftonline.com"
+  ],
+  "webApplicationInfo": {
+    "id": "{{TEAMS_APP_ID}}",
+    "resource": "api://{{BACKEND_FQDN}}/{{TEAMS_APP_ID}}",
+    "nestedAppAuthInfo": [
+      {
+        "redirectUri": "brk-multihub://{{BACKEND_FQDN}}",
+        "scopes": ["User.Read", "Directory.Read.All", "Policy.Read.All", "RoleManagement.Read.All", "AuditLog.Read.All", "UserAuthenticationMethod.Read.All", "IdentityRiskyUser.Read.All"],
+        "claims": "{\"access_token\":{\"xms_cc\":{\"values\":[\"CP1\"]}}}"
+      },
+      {
+        "redirectUri": "brk-multihub://{{BACKEND_FQDN}}",
+        "scopes": ["https://management.azure.com/user_impersonation"],
+        "claims": "{\"access_token\":{\"xms_cc\":{\"values\":[\"CP1\"]}}}"
+      }
+    ]
+  }
+}

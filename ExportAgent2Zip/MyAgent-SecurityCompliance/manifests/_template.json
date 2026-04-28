@@ -1,0 +1,24 @@
+{
+  "_comment_name": "Output zip basename + staged folder name (no spaces)",
+  "name": "MyToolName",
+
+  "_comment_brand": "Display brand for the new repo (used in HTML titles, manifest, deploy script)",
+  "brand_name": "MyBrand",
+
+  "description": "Short description shown in README of generated zip",
+
+  "_comment_tools": "List of tool function names from AIAgent/app/api.py TOOL_SCHEMAS. Determines which engine modules are included.",
+  "tools": [
+    "run_postureiq_assessment"
+  ],
+
+  "_comment_pages": "List of HTML files under webapp/ to ship",
+  "pages": [
+    "SecurityComplianceAssessment.html"
+  ],
+
+  "_comment_flags": "Optional include flags",
+  "include_teams_package": false,
+  "include_infra": true,
+  "include_automation": true
+}

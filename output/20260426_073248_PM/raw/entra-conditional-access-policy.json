@@ -1,0 +1,223 @@
+[
+  {
+    "CollectedAt": "2026-04-26T23:32:59.267629+00:00",
+    "Collector": "EntraConditionalAccess",
+    "Data": {
+      "AuthenticationStrength": "",
+      "BlocksLegacyAuth": false,
+      "ClientAppTypes": [
+        "all"
+      ],
+      "DisplayName": "Block all high risk agents from accessing all resources",
+      "ExcludeUsers": [],
+      "GrantControls": [
+        "block"
+      ],
+      "HasLocationCondition": false,
+      "IncludeGroups": [],
+      "IncludeRoles": [],
+      "IncludeUsers": [
+        "None"
+      ],
+      "PolicyId": "1593fcbf-5b75-42ce-a6ab-e312538a10bf",
+      "RequiresCompliantDevice": false,
+      "RequiresMFA": false,
+      "SessionControls": "",
+      "State": "enabled",
+      "TargetsAdmins": false,
+      "TargetsAllUsers": false
+    },
+    "Description": "CA: Block all high risk agents from accessing all resources",
+    "EvidenceId": "b68a5eca-f680-5c7e-8464-51b52a6a913c",
+    "EvidenceType": "entra-conditional-access-policy",
+    "RawReference": null,
+    "ResourceId": "1593fcbf-5b75-42ce-a6ab-e312538a10bf",
+    "ResourceType": "ConditionalAccessPolicy",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:32:59.267581+00:00",
+    "Collector": "EntraConditionalAccess",
+    "Data": {
+      "AuthenticationStrength": "",
+      "BlocksLegacyAuth": false,
+      "ClientAppTypes": [
+        "all"
+      ],
+      "DisplayName": "Security info registration for Microsoft partners and vendors",
+      "ExcludeUsers": [
+        "27583dc5-4afe-43f6-854f-a5564c115003"
+      ],
+      "GrantControls": [
+        "block"
+      ],
+      "HasLocationCondition": true,
+      "IncludeGroups": [],
+      "IncludeRoles": [],
+      "IncludeUsers": [
+        "All"
+      ],
+      "PolicyId": "5abce751-e9d7-4a54-a293-f25e20ea3496",
+      "RequiresCompliantDevice": false,
+      "RequiresMFA": false,
+      "SessionControls": "",
+      "State": "enabled",
+      "TargetsAdmins": false,
+      "TargetsAllUsers": true
+    },
+    "Description": "CA: Security info registration for Microsoft partners and vendors",
+    "EvidenceId": "31a808cf-3aba-57e6-803c-8f3a0e471bb9",
+    "EvidenceType": "entra-conditional-access-policy",
+    "RawReference": null,
+    "ResourceId": "5abce751-e9d7-4a54-a293-f25e20ea3496",
+    "ResourceType": "ConditionalAccessPolicy",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:32:59.267258+00:00",
+    "Collector": "EntraConditionalAccess",
+    "Data": {
+      "AuthenticationStrength": "",
+      "BlocksLegacyAuth": false,
+      "ClientAppTypes": [
+        "all"
+      ],
+      "DisplayName": "Multifactor authentication for Microsoft partners and vendors",
+      "ExcludeUsers": [
+        "27583dc5-4afe-43f6-854f-a5564c115003"
+      ],
+      "GrantControls": [
+        "mfa"
+      ],
+      "HasLocationCondition": false,
+      "IncludeGroups": [],
+      "IncludeRoles": [],
+      "IncludeUsers": [
+        "All"
+      ],
+      "PolicyId": "5b1c2a2b-e49b-4635-bb12-fdc56e6f6049",
+      "RequiresCompliantDevice": false,
+      "RequiresMFA": true,
+      "SessionControls": "",
+      "State": "enabled",
+      "TargetsAdmins": false,
+      "TargetsAllUsers": true
+    },
+    "Description": "CA: Multifactor authentication for Microsoft partners and vendors",
+    "EvidenceId": "9b1b1242-f924-5699-9e83-e4aef7c53f9c",
+    "EvidenceType": "entra-conditional-access-policy",
+    "RawReference": null,
+    "ResourceId": "5b1c2a2b-e49b-4635-bb12-fdc56e6f6049",
+    "ResourceType": "ConditionalAccessPolicy",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:32:59.267451+00:00",
+    "Collector": "EntraConditionalAccess",
+    "Data": {
+      "AuthenticationStrength": "",
+      "BlocksLegacyAuth": false,
+      "ClientAppTypes": [
+        "all"
+      ],
+      "DisplayName": "Reauthentication on signin risk for Microsoft partners and vendors",
+      "ExcludeUsers": [],
+      "GrantControls": [
+        "mfa"
+      ],
+      "HasLocationCondition": false,
+      "IncludeGroups": [],
+      "IncludeRoles": [],
+      "IncludeUsers": [
+        "All"
+      ],
+      "PolicyId": "6d63622e-884b-4574-b5e1-657ca30f0251",
+      "RequiresCompliantDevice": false,
+      "RequiresMFA": true,
+      "SessionControls": "ConditionalAccessSessionControls(additional_data={'secureSignInSession': None}, application_enforced_restrictions=None, cloud_app_security=None, disable_resilience_defaults=None, odata_type=None, persistent_browser=None, sign_in_frequency=SignInFrequencySessionControl(additional_data={}, is_enabled=True, odata_type='#microsoft.graph.signInFrequencySessionControl', authentication_type=<SignInFrequencyAuthenticationType.PrimaryAndSecondaryAuthentication: 'primaryAndSecondaryAuthentication'>, frequency_interval=<SignInFrequencyInterval.EveryTime: 'everyTime'>, type=None, value=None))",
+      "State": "enabled",
+      "TargetsAdmins": false,
+      "TargetsAllUsers": true
+    },
+    "Description": "CA: Reauthentication on signin risk for Microsoft partners and vendors",
+    "EvidenceId": "e81f50ba-bf4f-5177-ba49-bb4c2a715be3",
+    "EvidenceType": "entra-conditional-access-policy",
+    "RawReference": null,
+    "ResourceId": "6d63622e-884b-4574-b5e1-657ca30f0251",
+    "ResourceType": "ConditionalAccessPolicy",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:32:59.267670+00:00",
+    "Collector": "EntraConditionalAccess",
+    "Data": {
+      "AuthenticationStrength": "",
+      "BlocksLegacyAuth": false,
+      "ClientAppTypes": [
+        "all"
+      ],
+      "DisplayName": "Required Azure MFA",
+      "ExcludeUsers": [],
+      "GrantControls": [
+        "mfa"
+      ],
+      "HasLocationCondition": false,
+      "IncludeGroups": [
+        "eca01c4f-7cd4-4d71-88b8-422bb43e7444"
+      ],
+      "IncludeRoles": [],
+      "IncludeUsers": [],
+      "PolicyId": "7648192a-e57e-4e1b-884e-ef7dadc2ed69",
+      "RequiresCompliantDevice": false,
+      "RequiresMFA": true,
+      "SessionControls": "",
+      "State": "enabled",
+      "TargetsAdmins": false,
+      "TargetsAllUsers": false
+    },
+    "Description": "CA: Required Azure MFA",
+    "EvidenceId": "dbc787f6-4adc-5a4f-b1bd-9ec5222657e2",
+    "EvidenceType": "entra-conditional-access-policy",
+    "RawReference": null,
+    "ResourceId": "7648192a-e57e-4e1b-884e-ef7dadc2ed69",
+    "ResourceType": "ConditionalAccessPolicy",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:32:59.267520+00:00",
+    "Collector": "EntraConditionalAccess",
+    "Data": {
+      "AuthenticationStrength": "",
+      "BlocksLegacyAuth": false,
+      "ClientAppTypes": [
+        "all"
+      ],
+      "DisplayName": "Secure password change on high user risk for Microsoft partners and vendors",
+      "ExcludeUsers": [],
+      "GrantControls": [
+        "mfa",
+        "passwordChange"
+      ],
+      "HasLocationCondition": false,
+      "IncludeGroups": [],
+      "IncludeRoles": [],
+      "IncludeUsers": [
+        "All"
+      ],
+      "PolicyId": "ec626688-75c8-4ac0-b808-25387b4a86da",
+      "RequiresCompliantDevice": false,
+      "RequiresMFA": true,
+      "SessionControls": "",
+      "State": "enabled",
+      "TargetsAdmins": false,
+      "TargetsAllUsers": true
+    },
+    "Description": "CA: Secure password change on high user risk for Microsoft partners and vendors",
+    "EvidenceId": "c7d44e58-ca42-518a-a190-6a4426a45af7",
+    "EvidenceType": "entra-conditional-access-policy",
+    "RawReference": null,
+    "ResourceId": "ec626688-75c8-4ac0-b808-25387b4a86da",
+    "ResourceType": "ConditionalAccessPolicy",
+    "Source": "Entra"
+  }
+]

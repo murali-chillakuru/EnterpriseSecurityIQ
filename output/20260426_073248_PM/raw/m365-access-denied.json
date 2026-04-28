@@ -1,0 +1,50 @@
+[
+  {
+    "CollectedAt": "2026-04-26T23:38:43.874658+00:00",
+    "Collector": "M365Compliance",
+    "Data": {
+      "AccessDenied": true,
+      "Api": "SensitivityLabelAnalytics",
+      "StatusCode": 403
+    },
+    "Description": "SensitivityLabelAnalytics: Access Denied (403)",
+    "EvidenceId": "f9f67536-ce40-569f-a28f-56a029ebc30e",
+    "EvidenceType": "m365-access-denied",
+    "RawReference": null,
+    "ResourceId": "",
+    "ResourceType": "AccessDenied",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:38:45.262835+00:00",
+    "Collector": "M365Compliance",
+    "Data": {
+      "AccessDenied": true,
+      "Api": "SecurityAlertsV2",
+      "StatusCode": 403
+    },
+    "Description": "SecurityAlertsV2: Access Denied (403)",
+    "EvidenceId": "f9f67536-ce40-569f-a28f-56a029ebc30e",
+    "EvidenceType": "m365-access-denied",
+    "RawReference": null,
+    "ResourceId": "",
+    "ResourceType": "AccessDenied",
+    "Source": "Entra"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:38:50.054784+00:00",
+    "Collector": "M365Compliance",
+    "Data": {
+      "AccessDenied": true,
+      "Api": "InsiderRiskAlerts",
+      "StatusCode": 403
+    },
+    "Description": "InsiderRiskAlerts: Access Denied (403)",
+    "EvidenceId": "f9f67536-ce40-569f-a28f-56a029ebc30e",
+    "EvidenceType": "m365-access-denied",
+    "RawReference": null,
+    "ResourceId": "",
+    "ResourceType": "AccessDenied",
+    "Source": "Entra"
+  }
+]

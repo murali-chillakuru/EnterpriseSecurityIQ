@@ -1,0 +1,22 @@
+[
+  {
+    "CollectedAt": "2026-04-26T23:40:48.901584+00:00",
+    "Collector": "M365SensitivityLabels",
+    "Data": {
+      "AutoLabelingPolicies": 0,
+      "DefaultLabelPolicies": 0,
+      "HasAutoLabeling": false,
+      "HasDefaultLabel": false,
+      "HasMandatoryLabeling": false,
+      "MandatoryLabelingPolicies": 0,
+      "TotalPolicies": 0
+    },
+    "Description": "Label policy configuration summary (inferred from labels)",
+    "EvidenceId": "c53cc332-cc49-5d60-a4af-4174afb52de7",
+    "EvidenceType": "m365-label-policy-summary",
+    "RawReference": null,
+    "ResourceId": "m365-label-policy-summary",
+    "ResourceType": "LabelPolicySummary",
+    "Source": "Entra"
+  }
+]

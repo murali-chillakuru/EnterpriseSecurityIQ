@@ -1,0 +1,27 @@
+[
+  {
+    "CollectedAt": "2026-04-26T23:44:23.733678+00:00",
+    "Collector": "FoundryConfig",
+    "Data": {
+      "AccountId": "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/resourceGroups/rg-AIFutureInitiative/providers/Microsoft.CognitiveServices/accounts/ai-futureinitiative-resource",
+      "AccountName": "ai-futureinitiative-resource",
+      "AcrRegistryName": "",
+      "CapabilityHostId": "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/resourceGroups/rg-AIFutureInitiative/providers/Microsoft.CognitiveServices/accounts/ai-futureinitiative-resource/capabilityHosts/accountcaphost",
+      "ComputeType": "",
+      "ContainerRegistryId": "",
+      "HasVNetConfig": false,
+      "Name": "accountcaphost",
+      "ProvisioningState": "Failed",
+      "ReplicaCount": null,
+      "StorageAccountId": "",
+      "SubscriptionId": "d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0"
+    },
+    "Description": "Capability host: accountcaphost in ai-futureinitiative-resource",
+    "EvidenceId": "af79c0d1-d82f-56b2-af01-8e095c37a036",
+    "EvidenceType": "foundry-capability-host",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/resourceGroups/rg-AIFutureInitiative/providers/Microsoft.CognitiveServices/accounts/ai-futureinitiative-resource/capabilityHosts/accountcaphost",
+    "ResourceType": "CapabilityHost",
+    "Source": "Azure"
+  }
+]

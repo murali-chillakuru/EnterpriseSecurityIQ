@@ -1,0 +1,15 @@
+{
+  "name": "ReadOnlyExplorer",
+  "brand_name": "ReadOnlyExplorerIQ",
+  "description": "Read-only tenant explorer — search + permissions only (no assessments)",
+  "tools": [
+    "search_tenant",
+    "check_permissions"
+  ],
+  "pages": [
+    "CloudExplorer.html"
+  ],
+  "include_teams_package": true,
+  "include_infra": true,
+  "include_automation": true
+}

@@ -1,0 +1,137 @@
+# EnterpriseSecurityIQ — IQForge domain definition
+# This recreates the original ESIQ platform from a declarative YAML.
+
+project_name: EnterpriseSecurityIQ
+base_name: ESIQ
+description: >
+  AI-powered enterprise security assessment platform. Evaluates security posture
+  across identity, network, data protection, compliance, and cloud infrastructure
+  using Azure and Microsoft Graph evidence.
+
+data_sources:
+  azure:
+    - name: network_security_groups
+      evidence_types: [nsg_rules, nsg_flow_logs]
+      azure_sdk: azure-mgmt-network>=28.0.0
+    - name: virtual_machines
+      evidence_types: [vm_config, vm_extensions, disk_encryption]
+      azure_sdk: azure-mgmt-compute>=33.0.0
+    - name: storage_accounts
+      evidence_types: [storage_config, storage_encryption, public_access]
+      azure_sdk: azure-mgmt-storage>=21.0.0
+    - name: key_vaults
+      evidence_types: [kv_config, kv_access_policies, kv_keys, kv_secrets_metadata]
+      azure_sdk: azure-mgmt-keyvault>=10.0.0
+    - name: sql_databases
+      evidence_types: [sql_config, sql_tde, sql_auditing, sql_firewall]
+      azure_sdk: azure-mgmt-sql>=4.0.0
+    - name: app_services
+      evidence_types: [webapp_config, webapp_tls, webapp_auth]
+      azure_sdk: azure-mgmt-web>=7.0.0
+    - name: policy_assignments
+      evidence_types: [policy_assignment, policy_compliance]
+      azure_sdk: azure-mgmt-policyinsights>=1.1.0
+    - name: security_center
+      evidence_types: [defender_alerts, secure_score, recommendations]
+      azure_sdk: azure-mgmt-security>=7.0.0
+    - name: monitor_diagnostics
+      evidence_types: [diagnostic_settings, activity_logs]
+      azure_sdk: azure-mgmt-monitor>=6.0.0
+    - name: rbac_assignments
+      evidence_types: [role_assignments, role_definitions, pim_eligible]
+      azure_sdk: azure-mgmt-authorization>=4.0.0
+
+  graph:
+    - name: entra_users
+      evidence_types: [user_mfa_status, user_risk, guest_accounts]
+    - name: entra_groups
+      evidence_types: [group_membership, privileged_groups, dynamic_groups]
+    - name: conditional_access
+      evidence_types: [ca_policies, named_locations, authentication_strengths]
+    - name: entra_applications
+      evidence_types: [app_registrations, service_principals, credential_expiry]
+
+frameworks:
+  - id: NIST-CSF-2.0
+    name: NIST Cybersecurity Framework
+    version: "2.0"
+    domains: [identity, protect, detect, respond, recover, govern]
+    controls:
+      - id: ID.AM-1
+        title: Physical devices and systems inventoried
+        domain: identity
+        severity: medium
+        evaluation_logic: check_asset_inventory
+        evidence_types: [vm_config, storage_config]
+      - id: PR.AC-1
+        title: Identities and credentials managed
+        domain: protect
+        severity: high
+        evaluation_logic: check_identity_management
+        evidence_types: [user_mfa_status, ca_policies, credential_expiry]
+      - id: PR.DS-1
+        title: Data at rest protected
+        domain: protect
+        severity: critical
+        evaluation_logic: check_data_at_rest_encryption
+        evidence_types: [disk_encryption, storage_encryption, sql_tde]
+      - id: DE.CM-1
+        title: Network monitoring
+        domain: detect
+        severity: high
+        evaluation_logic: check_network_monitoring
+        evidence_types: [nsg_flow_logs, diagnostic_settings]
+
+  - id: CIS-Azure-3.0
+    name: CIS Microsoft Azure Foundations Benchmark
+    version: "3.0"
+    domains: [identity, networking, storage, database, logging, monitoring]
+    controls:
+      - id: CIS-1.1
+        title: Ensure MFA is enabled for all privileged users
+        domain: identity
+        severity: critical
+        evaluation_logic: check_privileged_mfa
+        evidence_types: [user_mfa_status, privileged_groups, ca_policies]
+      - id: CIS-4.1
+        title: Ensure storage account has secure transfer enabled
+        domain: storage
+        severity: high
+        evaluation_logic: check_secure_transfer
+        evidence_types: [storage_config]
+      - id: CIS-6.1
+        title: Ensure NSG flow logs are enabled
+        domain: networking
+        severity: medium
+        evaluation_logic: check_nsg_flow_logs
+        evidence_types: [nsg_flow_logs, nsg_rules]
+
+reports:
+  - html
+  - pdf
+  - xlsx
+  - sarif
+
+azure:
+  location: swedencentral
+  container_apps_location: northeurope
+  models:
+    primary: gpt-4.1
+    fallback: gpt-4.1
+
+spa_pages:
+  - name: SecurityPosture
+    title: Security Posture Assessment
+  - name: RBAC
+    title: RBAC & Identity Analysis
+  - name: DataSecurity
+    title: Data Security Assessment
+  - name: AttackPath
+    title: Attack Path Analysis
+  - name: CopilotReadiness
+    title: Copilot Readiness
+
+thresholds:
+  critical_max: 0
+  high_max: 5
+  overall_min_score: 75

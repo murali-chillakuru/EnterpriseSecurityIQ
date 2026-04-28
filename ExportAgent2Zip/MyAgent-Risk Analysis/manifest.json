@@ -1,0 +1,16 @@
+{
+  "name": "RiskAnalysis",
+  "brand_name": "RiskAnalysisIQ",
+  "description": "Risk Analysis — isolated package",
+  "tools": [
+    "analyze_risk",
+    "search_exposure",
+    "generate_custom_report"
+  ],
+  "pages": [
+    "RiskAnalysis.html"
+  ],
+  "include_teams_package": true,
+  "include_infra": true,
+  "include_automation": true
+}

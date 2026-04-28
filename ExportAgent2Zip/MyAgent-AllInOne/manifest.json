@@ -1,0 +1,39 @@
+{
+  "name": "AllInOne",
+  "brand_name": "EnterpriseSecurityIQ",
+  "description": "All-in-one — every tool, every page",
+  "tools": [
+    "run_postureiq_assessment",
+    "generate_rbac_report",
+    "analyze_risk",
+    "search_exposure",
+    "generate_custom_report",
+    "assess_data_security",
+    "assess_copilot_readiness",
+    "assess_ai_agent_security",
+    "run_attack_path_detection",
+    "search_tenant",
+    "check_permissions",
+    "query_results",
+    "compare_runs",
+    "generate_report",
+    "query_assessment_history"
+  ],
+  "pages": [
+    "PostureIQHomePage.html",
+    "PostureIQ.html",
+    "SecurityComplianceAssessment.html",
+    "Teams-SecurityComplianceAssessment.html",
+    "Teams2Web-SecurityComplianceAssessment.html",
+    "DataSecurity.html",
+    "CopilotReadiness.html",
+    "AIAgentSecurity.html",
+    "AttackPath.html",
+    "RBACReport.html",
+    "RiskAnalysis.html",
+    "CloudExplorer.html"
+  ],
+  "include_teams_package": true,
+  "include_infra": true,
+  "include_automation": true
+}

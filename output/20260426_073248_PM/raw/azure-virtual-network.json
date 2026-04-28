@@ -1,0 +1,221 @@
+[
+  {
+    "CollectedAt": "2026-04-26T23:32:59.240833+00:00",
+    "Collector": "AzureNetwork",
+    "Data": {
+      "AddressSpace": [
+        "10.0.0.0/16"
+      ],
+      "DdosProtectionEnabled": false,
+      "Location": "eastus2",
+      "Name": "pcidssnvet",
+      "SubnetCount": 1,
+      "Subnets": [
+        {
+          "AddressPrefix": "10.0.0.0/24",
+          "Name": "pcidss-default-subnet"
+        }
+      ],
+      "SubscriptionId": "0eb177bd-28b1-44da-b683-1508e1268aee",
+      "SubscriptionName": "Prod",
+      "VNetId": "/subscriptions/0eb177bd-28b1-44da-b683-1508e1268aee/resourceGroups/all-pcidss-resources-rg/providers/Microsoft.Network/virtualNetworks/pcidssnvet"
+    },
+    "Description": "VNet: pcidssnvet",
+    "EvidenceId": "17e40b59-7ecf-51eb-8d2c-b923d22b065d",
+    "EvidenceType": "azure-virtual-network",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/0eb177bd-28b1-44da-b683-1508e1268aee/resourceGroups/all-pcidss-resources-rg/providers/Microsoft.Network/virtualNetworks/pcidssnvet",
+    "ResourceType": "VirtualNetwork",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:24.966015+00:00",
+    "Collector": "AzureNetwork",
+    "Data": {
+      "AddressSpace": [
+        "10.0.0.0/16"
+      ],
+      "DdosProtectionEnabled": false,
+      "Location": "eastus2",
+      "Name": "AppProxy-POC-VNet",
+      "SubnetCount": 2,
+      "Subnets": [
+        {
+          "AddressPrefix": "10.0.1.0/24",
+          "Name": "default"
+        },
+        {
+          "AddressPrefix": "10.0.0.0/26",
+          "Name": "AzureBastionSubnet"
+        }
+      ],
+      "SubscriptionId": "9154cdcb-5a52-452a-b1e7-483be9eee6d2",
+      "SubscriptionName": "Infra",
+      "VNetId": "/subscriptions/9154cdcb-5a52-452a-b1e7-483be9eee6d2/resourceGroups/appproxy-poc-rg/providers/Microsoft.Network/virtualNetworks/AppProxy-POC-VNet"
+    },
+    "Description": "VNet: AppProxy-POC-VNet",
+    "EvidenceId": "8444f616-d0bc-5fef-8575-dff27486105e",
+    "EvidenceType": "azure-virtual-network",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/9154cdcb-5a52-452a-b1e7-483be9eee6d2/resourceGroups/appproxy-poc-rg/providers/Microsoft.Network/virtualNetworks/AppProxy-POC-VNet",
+    "ResourceType": "VirtualNetwork",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:24.966122+00:00",
+    "Collector": "AzureNetwork",
+    "Data": {
+      "AddressSpace": [
+        "10.0.0.0/16"
+      ],
+      "DdosProtectionEnabled": false,
+      "Location": "westus2",
+      "Name": "vnet-ecma2poc",
+      "SubnetCount": 2,
+      "Subnets": [
+        {
+          "AddressPrefix": "10.0.1.0/24",
+          "Name": "snet-vm"
+        },
+        {
+          "AddressPrefix": "10.0.2.0/26",
+          "Name": "AzureBastionSubnet"
+        }
+      ],
+      "SubscriptionId": "9154cdcb-5a52-452a-b1e7-483be9eee6d2",
+      "SubscriptionName": "Infra",
+      "VNetId": "/subscriptions/9154cdcb-5a52-452a-b1e7-483be9eee6d2/resourceGroups/rg-ecma2-poc-wus2/providers/Microsoft.Network/virtualNetworks/vnet-ecma2poc"
+    },
+    "Description": "VNet: vnet-ecma2poc",
+    "EvidenceId": "226c902e-f81b-53f1-a7de-242a06d8141c",
+    "EvidenceType": "azure-virtual-network",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/9154cdcb-5a52-452a-b1e7-483be9eee6d2/resourceGroups/rg-ecma2-poc-wus2/providers/Microsoft.Network/virtualNetworks/vnet-ecma2poc",
+    "ResourceType": "VirtualNetwork",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:24.965805+00:00",
+    "Collector": "AzureNetwork",
+    "Data": {
+      "AddressSpace": [
+        "10.0.0.0/16"
+      ],
+      "DdosProtectionEnabled": false,
+      "Location": "eastus",
+      "Name": "vnet-ecma2poc",
+      "SubnetCount": 1,
+      "Subnets": [
+        {
+          "AddressPrefix": "10.0.1.0/24",
+          "Name": "snet-vm"
+        }
+      ],
+      "SubscriptionId": "9154cdcb-5a52-452a-b1e7-483be9eee6d2",
+      "SubscriptionName": "Infra",
+      "VNetId": "/subscriptions/9154cdcb-5a52-452a-b1e7-483be9eee6d2/resourceGroups/rg-ecma2-poc/providers/Microsoft.Network/virtualNetworks/vnet-ecma2poc"
+    },
+    "Description": "VNet: vnet-ecma2poc",
+    "EvidenceId": "78fc533b-baeb-5545-97e9-215e8b480bbe",
+    "EvidenceType": "azure-virtual-network",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/9154cdcb-5a52-452a-b1e7-483be9eee6d2/resourceGroups/rg-ecma2-poc/providers/Microsoft.Network/virtualNetworks/vnet-ecma2poc",
+    "ResourceType": "VirtualNetwork",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:24.965965+00:00",
+    "Collector": "AzureNetwork",
+    "Data": {
+      "AddressSpace": [
+        "10.0.0.0/16"
+      ],
+      "DdosProtectionEnabled": false,
+      "Location": "eastus",
+      "Name": "VNet1",
+      "SubnetCount": 2,
+      "Subnets": [
+        {
+          "AddressPrefix": "10.0.1.0/24",
+          "Name": "Subnet2"
+        },
+        {
+          "AddressPrefix": "10.0.0.0/24",
+          "Name": "Subnet1"
+        }
+      ],
+      "SubscriptionId": "9154cdcb-5a52-452a-b1e7-483be9eee6d2",
+      "SubscriptionName": "Infra",
+      "VNetId": "/subscriptions/9154cdcb-5a52-452a-b1e7-483be9eee6d2/resourceGroups/rg-poc-sentinel/providers/Microsoft.Network/virtualNetworks/VNet1"
+    },
+    "Description": "VNet: VNet1",
+    "EvidenceId": "88c3d507-aab9-5206-8819-ea9079aa02b4",
+    "EvidenceType": "azure-virtual-network",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/9154cdcb-5a52-452a-b1e7-483be9eee6d2/resourceGroups/rg-poc-sentinel/providers/Microsoft.Network/virtualNetworks/VNet1",
+    "ResourceType": "VirtualNetwork",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:24.966055+00:00",
+    "Collector": "AzureNetwork",
+    "Data": {
+      "AddressSpace": [
+        "10.0.0.0/16"
+      ],
+      "DdosProtectionEnabled": false,
+      "Location": "eastus2",
+      "Name": "vm01-vnet",
+      "SubnetCount": 2,
+      "Subnets": [
+        {
+          "AddressPrefix": "10.0.0.0/24",
+          "Name": "default"
+        },
+        {
+          "AddressPrefix": "10.0.1.0/26",
+          "Name": "AzureBastionSubnet"
+        }
+      ],
+      "SubscriptionId": "9154cdcb-5a52-452a-b1e7-483be9eee6d2",
+      "SubscriptionName": "Infra",
+      "VNetId": "/subscriptions/9154cdcb-5a52-452a-b1e7-483be9eee6d2/resourceGroups/rg-poc-sentinel/providers/Microsoft.Network/virtualNetworks/vm01-vnet"
+    },
+    "Description": "VNet: vm01-vnet",
+    "EvidenceId": "fff3e92d-b01e-5927-af1a-1ad97b239609",
+    "EvidenceType": "azure-virtual-network",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/9154cdcb-5a52-452a-b1e7-483be9eee6d2/resourceGroups/rg-poc-sentinel/providers/Microsoft.Network/virtualNetworks/vm01-vnet",
+    "ResourceType": "VirtualNetwork",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:24.966090+00:00",
+    "Collector": "AzureNetwork",
+    "Data": {
+      "AddressSpace": [
+        "10.0.0.0/16"
+      ],
+      "DdosProtectionEnabled": false,
+      "Location": "eastus2",
+      "Name": "vm02-vnet",
+      "SubnetCount": 1,
+      "Subnets": [
+        {
+          "AddressPrefix": "10.0.0.0/24",
+          "Name": "default"
+        }
+      ],
+      "SubscriptionId": "9154cdcb-5a52-452a-b1e7-483be9eee6d2",
+      "SubscriptionName": "Infra",
+      "VNetId": "/subscriptions/9154cdcb-5a52-452a-b1e7-483be9eee6d2/resourceGroups/vm02_group/providers/Microsoft.Network/virtualNetworks/vm02-vnet"
+    },
+    "Description": "VNet: vm02-vnet",
+    "EvidenceId": "4f87c772-0e73-596c-a3fd-2b8b81ea246e",
+    "EvidenceType": "azure-virtual-network",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/9154cdcb-5a52-452a-b1e7-483be9eee6d2/resourceGroups/vm02_group/providers/Microsoft.Network/virtualNetworks/vm02-vnet",
+    "ResourceType": "VirtualNetwork",
+    "Source": "Azure"
+  }
+]

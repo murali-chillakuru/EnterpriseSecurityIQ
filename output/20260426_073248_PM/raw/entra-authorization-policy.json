@@ -1,0 +1,20 @@
+[
+  {
+    "CollectedAt": "2026-04-26T23:33:05.542947+00:00",
+    "Collector": "EntraSecurityPolicies",
+    "Data": {
+      "AllowEmailVerifiedUsersToJoinOrganization": true,
+      "AllowInvitesFrom": "AllowInvitesFrom.AdminsAndGuestInviters",
+      "AllowedToSignUpEmailBasedSubscriptions": true,
+      "BlockMsolPowerShell": false,
+      "GuestUserRoleId": "2af84b1e-32c8-42b7-82bc-daa82404023b"
+    },
+    "Description": "Authorization policy",
+    "EvidenceId": "7010163e-f9dd-5ad1-8702-508a4d943250",
+    "EvidenceType": "entra-authorization-policy",
+    "RawReference": null,
+    "ResourceId": "",
+    "ResourceType": "AuthorizationPolicy",
+    "Source": "Entra"
+  }
+]

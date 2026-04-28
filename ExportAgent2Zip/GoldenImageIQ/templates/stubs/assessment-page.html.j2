@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title | default(page.name) }} — {{ project_name }}</title>
+    <style>
+        :root {
+            --bg: #ffffff; --fg: #242424; --accent: #0078d4;
+            --card-bg: #fff; --border: #e0e0e0;
+            --font: 'Segoe UI', -apple-system, sans-serif;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root { --bg: #1b1b1b; --fg: #fff; --card-bg: #292929; --border: #404040; }
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: var(--font); background: var(--bg); color: var(--fg); padding: 24px; }
+        .container { max-width: 1200px; margin: 0 auto; }
+        h1 { font-size: 24px; margin-bottom: 20px; }
+        .card { background: var(--card-bg); border: 1px solid var(--border);
+            border-radius: 8px; padding: 20px; margin-bottom: 16px; }
+        .card h2 { font-size: 18px; margin-bottom: 8px; }
+        .run-btn { padding: 10px 24px; background: var(--accent); color: #fff;
+            border: none; border-radius: 6px; cursor: pointer; font-size: 14px; }
+        .run-btn:hover { opacity: 0.9; }
+        #results { margin-top: 24px; }
+        table { width: 100%; border-collapse: collapse; margin-top: 12px; }
+        th, td { text-align: left; padding: 10px 14px; border-bottom: 1px solid var(--border); }
+        th { background: var(--bg); font-weight: 600; font-size: 13px; text-transform: uppercase; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>{{ page.title | default(page.name) }}</h1>
+        <div class="card">
+            <h2>Run Assessment</h2>
+            <p>Click below to run the {{ page.name }} assessment pipeline.</p>
+            <br>
+            <button class="run-btn" onclick="runAssessment()">Run {{ page.name }} Assessment</button>
+        </div>
+        <div id="results"></div>
+    </div>
+    <script>
+        async function runAssessment() {
+            const resultsEl = document.getElementById('results');
+            resultsEl.innerHTML = '<div class="card"><p>Running assessment...</p></div>';
+
+            try {
+                const res = await fetch('/api/chat', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({message: 'Run {{ page.name }} assessment'}),
+                });
+                const reader = res.body.getReader();
+                const decoder = new TextDecoder();
+                let buffer = '';
+                while (true) {
+                    const {done, value} = await reader.read();
+                    if (done) break;
+                    buffer += decoder.decode(value, {stream: true});
+                    const lines = buffer.split('\n');
+                    buffer = lines.pop();
+                    for (const line of lines) {
+                        if (line.startsWith('data: ')) {
+                            const event = JSON.parse(line.slice(6));
+                            if (event.type === 'report_table') {
+                                resultsEl.innerHTML = renderTable(event.data);
+                            } else if (event.type === 'response') {
+                                resultsEl.innerHTML += `<div class="card"><p>${event.content}</p></div>`;
+                            }
+                        }
+                    }
+                }
+            } catch (e) {
+                resultsEl.innerHTML = `<div class="card"><p>Error: ${e.message}</p></div>`;
+            }
+        }
+
+        function renderTable(data) {
+            if (!data.findings || !data.findings.length) {
+                return `<div class="card"><h2>Results</h2><p>Score: ${data.score} | Grade: ${data.grade} | No findings.</p></div>`;
+            }
+            let html = `<div class="card"><h2>Results — Score: ${data.score} (${data.grade})</h2>`;
+            html += '<table><tr><th>Control</th><th>Status</th><th>Severity</th><th>Description</th></tr>';
+            for (const f of data.findings) {
+                html += `<tr><td>${f.ControlId}</td><td>${f.Status}</td><td>${f.Severity}</td><td>${f.Description || ''}</td></tr>`;
+            }
+            html += '</table></div>';
+            return html;
+        }
+    </script>
+</body>
+</html>

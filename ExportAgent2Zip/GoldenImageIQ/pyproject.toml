@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.backends._legacy:_Backend"
+
+[project]
+name = "iqforge"
+version = "1.0.0"
+description = "Golden-image scaffolder — generate production-ready IQ assessment platforms from a YAML domain definition."
+requires-python = ">=3.11"
+license = {text = "MIT"}
+dependencies = [
+    "jinja2>=3.1",
+    "pyyaml>=6.0",
+]
+
+[project.scripts]
+iqforge = "iqforge.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["iqforge*"]
+
+[tool.setuptools.package-data]
+iqforge = ["../templates/**/*", "../examples/**/*"]

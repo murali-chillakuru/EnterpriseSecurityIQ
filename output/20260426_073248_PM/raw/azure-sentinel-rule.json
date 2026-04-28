@@ -1,0 +1,1002 @@
+[
+  {
+    "CollectedAt": "2026-04-26T23:33:15.143647+00:00",
+    "Collector": "AzureSentinel",
+    "Data": {
+      "DisplayName": "[Murali] Any activity of creating role for Azure Resource",
+      "Enabled": true,
+      "Kind": "NRT",
+      "Name": "12cc1f6e-2cd5-4da3-9d7e-81d7aa94e7c7",
+      "RuleId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/rg-loganalyticsworkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/alertRules/12cc1f6e-2cd5-4da3-9d7e-81d7aa94e7c7",
+      "Severity": "Medium",
+      "SubscriptionId": "8054e434-49e0-4a21-bbea-3fee1c872b88"
+    },
+    "Description": "Analytics Rule: 12cc1f6e-2cd5-4da3-9d7e-81d7aa94e7c7",
+    "EvidenceId": "c4553bb6-a150-5b17-9234-051cb973151e",
+    "EvidenceType": "azure-sentinel-rule",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/rg-loganalyticsworkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/alertRules/12cc1f6e-2cd5-4da3-9d7e-81d7aa94e7c7",
+    "ResourceType": "SentinelAnalyticsRule",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:15.144474+00:00",
+    "Collector": "AzureSentinel",
+    "Data": {
+      "DisplayName": "Attempt to bypass conditional access rule in Microsoft Entra ID",
+      "Enabled": true,
+      "Kind": "Scheduled",
+      "Name": "1e89516b-934f-49c6-a4f7-787c300bbd09",
+      "RuleId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/rg-loganalyticsworkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/alertRules/1e89516b-934f-49c6-a4f7-787c300bbd09",
+      "Severity": "Low",
+      "SubscriptionId": "8054e434-49e0-4a21-bbea-3fee1c872b88"
+    },
+    "Description": "Analytics Rule: 1e89516b-934f-49c6-a4f7-787c300bbd09",
+    "EvidenceId": "064938e4-1a17-5ed5-b5cc-1d9f9fe99727",
+    "EvidenceType": "azure-sentinel-rule",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/rg-loganalyticsworkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/alertRules/1e89516b-934f-49c6-a4f7-787c300bbd09",
+    "ResourceType": "SentinelAnalyticsRule",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:15.144684+00:00",
+    "Collector": "AzureSentinel",
+    "Data": {
+      "DisplayName": "Privileged Accounts - Sign in Failure Spikes",
+      "Enabled": true,
+      "Kind": "Scheduled",
+      "Name": "232a3f45-7106-4b3d-b3b6-1bd35295acfa",
+      "RuleId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/rg-loganalyticsworkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/alertRules/232a3f45-7106-4b3d-b3b6-1bd35295acfa",
+      "Severity": "High",
+      "SubscriptionId": "8054e434-49e0-4a21-bbea-3fee1c872b88"
+    },
+    "Description": "Analytics Rule: 232a3f45-7106-4b3d-b3b6-1bd35295acfa",
+    "EvidenceId": "6445675d-f9b4-5b01-8d7a-390896efc84f",
+    "EvidenceType": "azure-sentinel-rule",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/rg-loganalyticsworkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/alertRules/232a3f45-7106-4b3d-b3b6-1bd35295acfa",
+    "ResourceType": "SentinelAnalyticsRule",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:15.144568+00:00",
+    "Collector": "AzureSentinel",
+    "Data": {
+      "DisplayName": "NRT PIM Elevation Request Rejected",
+      "Enabled": true,
+      "Kind": "NRT",
+      "Name": "2a463773-e5d4-4a66-977a-b9ab4d3d8547",
+      "RuleId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/rg-loganalyticsworkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/alertRules/2a463773-e5d4-4a66-977a-b9ab4d3d8547",
+      "Severity": "High",
+      "SubscriptionId": "8054e434-49e0-4a21-bbea-3fee1c872b88"
+    },
+    "Description": "Analytics Rule: 2a463773-e5d4-4a66-977a-b9ab4d3d8547",
+    "EvidenceId": "24d2b9bb-778d-52c4-a84f-7b18ece83e2d",
+    "EvidenceType": "azure-sentinel-rule",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/rg-loganalyticsworkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/alertRules/2a463773-e5d4-4a66-977a-b9ab4d3d8547",
+    "ResourceType": "SentinelAnalyticsRule",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:15.144381+00:00",
+    "Collector": "AzureSentinel",
+    "Data": {
+      "DisplayName": "Account Created and Deleted in Short Timeframe",
+      "Enabled": true,
+      "Kind": "Scheduled",
+      "Name": "2c120a6a-38c1-462c-9018-b4cbe08cd60d",
+      "RuleId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/rg-loganalyticsworkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/alertRules/2c120a6a-38c1-462c-9018-b4cbe08cd60d",
+      "Severity": "High",
+      "SubscriptionId": "8054e434-49e0-4a21-bbea-3fee1c872b88"
+    },
+    "Description": "Analytics Rule: 2c120a6a-38c1-462c-9018-b4cbe08cd60d",
+    "EvidenceId": "9825ee8d-3842-5bfd-8288-48de61d9370b",
+    "EvidenceType": "azure-sentinel-rule",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/rg-loganalyticsworkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/alertRules/2c120a6a-38c1-462c-9018-b4cbe08cd60d",
+    "ResourceType": "SentinelAnalyticsRule",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:15.144322+00:00",
+    "Collector": "AzureSentinel",
+    "Data": {
+      "DisplayName": "New onmicrosoft domain added to tenant",
+      "Enabled": true,
+      "Kind": "Scheduled",
+      "Name": "2ead3767-b9a0-479e-af0c-722817dcbaf2",
+      "RuleId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/rg-loganalyticsworkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/alertRules/2ead3767-b9a0-479e-af0c-722817dcbaf2",
+      "Severity": "Medium",
+      "SubscriptionId": "8054e434-49e0-4a21-bbea-3fee1c872b88"
+    },
+    "Description": "Analytics Rule: 2ead3767-b9a0-479e-af0c-722817dcbaf2",
+    "EvidenceId": "ce0d8a5d-36a7-58ef-a6e2-01468a0a5ab1",
+    "EvidenceType": "azure-sentinel-rule",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/rg-loganalyticsworkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/alertRules/2ead3767-b9a0-479e-af0c-722817dcbaf2",
+    "ResourceType": "SentinelAnalyticsRule",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:15.144631+00:00",
+    "Collector": "AzureSentinel",
+    "Data": {
+      "DisplayName": "Microsoft Entra ID Role Management Permission Grant",
+      "Enabled": true,
+      "Kind": "Scheduled",
+      "Name": "2ef7e486-2963-43a0-b25b-9efb79fcc9ce",
+      "RuleId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/rg-loganalyticsworkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/alertRules/2ef7e486-2963-43a0-b25b-9efb79fcc9ce",
+      "Severity": "High",
+      "SubscriptionId": "8054e434-49e0-4a21-bbea-3fee1c872b88"
+    },
+    "Description": "Analytics Rule: 2ef7e486-2963-43a0-b25b-9efb79fcc9ce",
+    "EvidenceId": "31b06ed0-6c99-5a49-bab1-91b1a28c58d0",
+    "EvidenceType": "azure-sentinel-rule",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/rg-loganalyticsworkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/alertRules/2ef7e486-2963-43a0-b25b-9efb79fcc9ce",
+    "ResourceType": "SentinelAnalyticsRule",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:15.143921+00:00",
+    "Collector": "AzureSentinel",
+    "Data": {
+      "DisplayName": "New User Assigned to Privileged Role",
+      "Enabled": true,
+      "Kind": "Scheduled",
+      "Name": "312a9994-3267-4636-b885-2f8f07ce5961",
+      "RuleId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/rg-loganalyticsworkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/alertRules/312a9994-3267-4636-b885-2f8f07ce5961",
+      "Severity": "High",
+      "SubscriptionId": "8054e434-49e0-4a21-bbea-3fee1c872b88"
+    },
+    "Description": "Analytics Rule: 312a9994-3267-4636-b885-2f8f07ce5961",
+    "EvidenceId": "76a80087-a58c-563c-bbeb-9b40da9a9606",
+    "EvidenceType": "azure-sentinel-rule",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/rg-loganalyticsworkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/alertRules/312a9994-3267-4636-b885-2f8f07ce5961",
+    "ResourceType": "SentinelAnalyticsRule",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:15.143983+00:00",
+    "Collector": "AzureSentinel",
+    "Data": {
+      "DisplayName": "PIM Elevation Request Rejected",
+      "Enabled": true,
+      "Kind": "Scheduled",
+      "Name": "31dbec7c-e348-4b52-ae49-2d55be7106bb",
+      "RuleId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/rg-loganalyticsworkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/alertRules/31dbec7c-e348-4b52-ae49-2d55be7106bb",
+      "Severity": "High",
+      "SubscriptionId": "8054e434-49e0-4a21-bbea-3fee1c872b88"
+    },
+    "Description": "Analytics Rule: 31dbec7c-e348-4b52-ae49-2d55be7106bb",
+    "EvidenceId": "90329c79-030f-58cb-a66c-5c70cb9be6ef",
+    "EvidenceType": "azure-sentinel-rule",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/rg-loganalyticsworkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/alertRules/31dbec7c-e348-4b52-ae49-2d55be7106bb",
+    "ResourceType": "SentinelAnalyticsRule",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:15.144209+00:00",
+    "Collector": "AzureSentinel",
+    "Data": {
+      "DisplayName": "Account created or deleted by non-approved user",
+      "Enabled": true,
+      "Kind": "Scheduled",
+      "Name": "32ab8dee-6107-4ec9-9ca1-d325749f2f27",
+      "RuleId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/rg-loganalyticsworkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/alertRules/32ab8dee-6107-4ec9-9ca1-d325749f2f27",
+      "Severity": "Medium",
+      "SubscriptionId": "8054e434-49e0-4a21-bbea-3fee1c872b88"
+    },
+    "Description": "Analytics Rule: 32ab8dee-6107-4ec9-9ca1-d325749f2f27",
+    "EvidenceId": "0b57a9e1-2062-5329-aaaf-5829e383ead1",
+    "EvidenceType": "azure-sentinel-rule",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/rg-loganalyticsworkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/alertRules/32ab8dee-6107-4ec9-9ca1-d325749f2f27",
+    "ResourceType": "SentinelAnalyticsRule",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:15.143724+00:00",
+    "Collector": "AzureSentinel",
+    "Data": {
+      "DisplayName": "Authentication Methods Changed for Privileged Account",
+      "Enabled": true,
+      "Kind": "Scheduled",
+      "Name": "3577cd78-966a-4705-bcd9-24bdb00434b7",
+      "RuleId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/rg-loganalyticsworkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/alertRules/3577cd78-966a-4705-bcd9-24bdb00434b7",
+      "Severity": "High",
+      "SubscriptionId": "8054e434-49e0-4a21-bbea-3fee1c872b88"
+    },
+    "Description": "Analytics Rule: 3577cd78-966a-4705-bcd9-24bdb00434b7",
+    "EvidenceId": "cc94f47f-b451-5487-884e-5e2e57203a43",
+    "EvidenceType": "azure-sentinel-rule",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/rg-loganalyticsworkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/alertRules/3577cd78-966a-4705-bcd9-24bdb00434b7",
+    "ResourceType": "SentinelAnalyticsRule",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:15.144837+00:00",
+    "Collector": "AzureSentinel",
+    "Data": {
+      "DisplayName": "New access credential added to Application or Service Principal",
+      "Enabled": true,
+      "Kind": "Scheduled",
+      "Name": "47ca450b-6f9e-483d-85f5-7ee6a7b6b4d3",
+      "RuleId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/rg-loganalyticsworkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/alertRules/47ca450b-6f9e-483d-85f5-7ee6a7b6b4d3",
+      "Severity": "Medium",
+      "SubscriptionId": "8054e434-49e0-4a21-bbea-3fee1c872b88"
+    },
+    "Description": "Analytics Rule: 47ca450b-6f9e-483d-85f5-7ee6a7b6b4d3",
+    "EvidenceId": "0cbaa023-38a0-55d0-aa28-011ad9981621",
+    "EvidenceType": "azure-sentinel-rule",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/rg-loganalyticsworkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/alertRules/47ca450b-6f9e-483d-85f5-7ee6a7b6b4d3",
+    "ResourceType": "SentinelAnalyticsRule",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:15.144443+00:00",
+    "Collector": "AzureSentinel",
+    "Data": {
+      "DisplayName": "Anomalous sign-in location by user account and authenticating application",
+      "Enabled": true,
+      "Kind": "Scheduled",
+      "Name": "4b5e1ecb-ebed-40b4-a2f3-1d71b79122ec",
+      "RuleId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/rg-loganalyticsworkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/alertRules/4b5e1ecb-ebed-40b4-a2f3-1d71b79122ec",
+      "Severity": "Medium",
+      "SubscriptionId": "8054e434-49e0-4a21-bbea-3fee1c872b88"
+    },
+    "Description": "Analytics Rule: 4b5e1ecb-ebed-40b4-a2f3-1d71b79122ec",
+    "EvidenceId": "1e189272-74fa-5b32-b161-a143e3c7b46a",
+    "EvidenceType": "azure-sentinel-rule",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/rg-loganalyticsworkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/alertRules/4b5e1ecb-ebed-40b4-a2f3-1d71b79122ec",
+    "ResourceType": "SentinelAnalyticsRule",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:15.143820+00:00",
+    "Collector": "AzureSentinel",
+    "Data": {
+      "DisplayName": "MFA Spamming followed by Successful login",
+      "Enabled": true,
+      "Kind": "Scheduled",
+      "Name": "5c7b7b77-bc0d-4d99-bf73-9b197e1a9c00",
+      "RuleId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/rg-loganalyticsworkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/alertRules/5c7b7b77-bc0d-4d99-bf73-9b197e1a9c00",
+      "Severity": "High",
+      "SubscriptionId": "8054e434-49e0-4a21-bbea-3fee1c872b88"
+    },
+    "Description": "Analytics Rule: 5c7b7b77-bc0d-4d99-bf73-9b197e1a9c00",
+    "EvidenceId": "5d6c3600-ca1d-5494-a5e1-78b46feff385",
+    "EvidenceType": "azure-sentinel-rule",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/rg-loganalyticsworkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/alertRules/5c7b7b77-bc0d-4d99-bf73-9b197e1a9c00",
+    "ResourceType": "SentinelAnalyticsRule",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:15.144265+00:00",
+    "Collector": "AzureSentinel",
+    "Data": {
+      "DisplayName": "Bulk Changes to Privileged Account Permissions",
+      "Enabled": true,
+      "Kind": "Scheduled",
+      "Name": "61948812-ab77-4d21-bb23-b215ea3e68db",
+      "RuleId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/rg-loganalyticsworkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/alertRules/61948812-ab77-4d21-bb23-b215ea3e68db",
+      "Severity": "High",
+      "SubscriptionId": "8054e434-49e0-4a21-bbea-3fee1c872b88"
+    },
+    "Description": "Analytics Rule: 61948812-ab77-4d21-bb23-b215ea3e68db",
+    "EvidenceId": "b2314bfd-ff90-5f1f-a2eb-bb3d3527900f",
+    "EvidenceType": "azure-sentinel-rule",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/rg-loganalyticsworkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/alertRules/61948812-ab77-4d21-bb23-b215ea3e68db",
+    "ResourceType": "SentinelAnalyticsRule",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:15.144412+00:00",
+    "Collector": "AzureSentinel",
+    "Data": {
+      "DisplayName": "Password spray attack against ADFSSignInLogs",
+      "Enabled": true,
+      "Kind": "Scheduled",
+      "Name": "66912f72-18ac-4e66-9f73-ed2c48692d06",
+      "RuleId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/rg-loganalyticsworkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/alertRules/66912f72-18ac-4e66-9f73-ed2c48692d06",
+      "Severity": "Medium",
+      "SubscriptionId": "8054e434-49e0-4a21-bbea-3fee1c872b88"
+    },
+    "Description": "Analytics Rule: 66912f72-18ac-4e66-9f73-ed2c48692d06",
+    "EvidenceId": "b5221972-45bd-5ed8-b1d0-3cf5685e8faf",
+    "EvidenceType": "azure-sentinel-rule",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/rg-loganalyticsworkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/alertRules/66912f72-18ac-4e66-9f73-ed2c48692d06",
+    "ResourceType": "SentinelAnalyticsRule",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:15.144144+00:00",
+    "Collector": "AzureSentinel",
+    "Data": {
+      "DisplayName": "Cross-tenant Access Settings Organization Deleted",
+      "Enabled": true,
+      "Kind": "Scheduled",
+      "Name": "70220c84-dc90-47b7-bd63-1de538721b29",
+      "RuleId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/rg-loganalyticsworkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/alertRules/70220c84-dc90-47b7-bd63-1de538721b29",
+      "Severity": "Medium",
+      "SubscriptionId": "8054e434-49e0-4a21-bbea-3fee1c872b88"
+    },
+    "Description": "Analytics Rule: 70220c84-dc90-47b7-bd63-1de538721b29",
+    "EvidenceId": "e5efdd33-a704-5320-b7f9-806c1cd9323f",
+    "EvidenceType": "azure-sentinel-rule",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/rg-loganalyticsworkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/alertRules/70220c84-dc90-47b7-bd63-1de538721b29",
+    "ResourceType": "SentinelAnalyticsRule",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:15.144114+00:00",
+    "Collector": "AzureSentinel",
+    "Data": {
+      "DisplayName": "Microsoft Entra ID PowerShell accessing non-Entra ID resources",
+      "Enabled": true,
+      "Kind": "Scheduled",
+      "Name": "7155f2f5-9355-43d8-abc7-a45f40321c81",
+      "RuleId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/rg-loganalyticsworkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/alertRules/7155f2f5-9355-43d8-abc7-a45f40321c81",
+      "Severity": "Low",
+      "SubscriptionId": "8054e434-49e0-4a21-bbea-3fee1c872b88"
+    },
+    "Description": "Analytics Rule: 7155f2f5-9355-43d8-abc7-a45f40321c81",
+    "EvidenceId": "3cd86ca2-757f-51dd-bfaf-dab8a9459fe0",
+    "EvidenceType": "azure-sentinel-rule",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/rg-loganalyticsworkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/alertRules/7155f2f5-9355-43d8-abc7-a45f40321c81",
+    "ResourceType": "SentinelAnalyticsRule",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:15.144745+00:00",
+    "Collector": "AzureSentinel",
+    "Data": {
+      "DisplayName": "First access credential added to Application or Service Principal where no credential was present",
+      "Enabled": true,
+      "Kind": "Scheduled",
+      "Name": "75b16a10-da03-46f0-ae85-f32c05d92ae6",
+      "RuleId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/rg-loganalyticsworkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/alertRules/75b16a10-da03-46f0-ae85-f32c05d92ae6",
+      "Severity": "High",
+      "SubscriptionId": "8054e434-49e0-4a21-bbea-3fee1c872b88"
+    },
+    "Description": "Analytics Rule: 75b16a10-da03-46f0-ae85-f32c05d92ae6",
+    "EvidenceId": "22fbf65c-c113-5e41-9022-2186e0a21dc9",
+    "EvidenceType": "azure-sentinel-rule",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/rg-loganalyticsworkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/alertRules/75b16a10-da03-46f0-ae85-f32c05d92ae6",
+    "ResourceType": "SentinelAnalyticsRule",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:15.143678+00:00",
+    "Collector": "AzureSentinel",
+    "Data": {
+      "DisplayName": "Cross-tenant Access Settings Organization Inbound Collaboration Settings Changed",
+      "Enabled": true,
+      "Kind": "Scheduled",
+      "Name": "76622c6a-8282-44a7-aa96-e0c890ebfdf4",
+      "RuleId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/rg-loganalyticsworkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/alertRules/76622c6a-8282-44a7-aa96-e0c890ebfdf4",
+      "Severity": "Medium",
+      "SubscriptionId": "8054e434-49e0-4a21-bbea-3fee1c872b88"
+    },
+    "Description": "Analytics Rule: 76622c6a-8282-44a7-aa96-e0c890ebfdf4",
+    "EvidenceId": "d1099adb-1efa-57ce-b849-cb1d7d712179",
+    "EvidenceType": "azure-sentinel-rule",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/rg-loganalyticsworkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/alertRules/76622c6a-8282-44a7-aa96-e0c890ebfdf4",
+    "ResourceType": "SentinelAnalyticsRule",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:15.143885+00:00",
+    "Collector": "AzureSentinel",
+    "Data": {
+      "DisplayName": "Threat Essentials - NRT User added to Microsoft Entra ID Privileged Groups",
+      "Enabled": true,
+      "Kind": "NRT",
+      "Name": "79666f14-8947-4846-b5f4-61c6bdedb28f",
+      "RuleId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/rg-loganalyticsworkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/alertRules/79666f14-8947-4846-b5f4-61c6bdedb28f",
+      "Severity": "Medium",
+      "SubscriptionId": "8054e434-49e0-4a21-bbea-3fee1c872b88"
+    },
+    "Description": "Analytics Rule: 79666f14-8947-4846-b5f4-61c6bdedb28f",
+    "EvidenceId": "287c10eb-611c-531c-aaf1-202b87796830",
+    "EvidenceType": "azure-sentinel-rule",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/rg-loganalyticsworkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/alertRules/79666f14-8947-4846-b5f4-61c6bdedb28f",
+    "ResourceType": "SentinelAnalyticsRule",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:15.144236+00:00",
+    "Collector": "AzureSentinel",
+    "Data": {
+      "DisplayName": "Modified domain federation trust settings",
+      "Enabled": true,
+      "Kind": "Scheduled",
+      "Name": "8322d619-161e-4856-86ee-fb168f19bdab",
+      "RuleId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/rg-loganalyticsworkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/alertRules/8322d619-161e-4856-86ee-fb168f19bdab",
+      "Severity": "High",
+      "SubscriptionId": "8054e434-49e0-4a21-bbea-3fee1c872b88"
+    },
+    "Description": "Analytics Rule: 8322d619-161e-4856-86ee-fb168f19bdab",
+    "EvidenceId": "43041217-53ea-5214-90fc-962cc26442d7",
+    "EvidenceType": "azure-sentinel-rule",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/rg-loganalyticsworkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/alertRules/8322d619-161e-4856-86ee-fb168f19bdab",
+    "ResourceType": "SentinelAnalyticsRule",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:15.144956+00:00",
+    "Collector": "AzureSentinel",
+    "Data": {
+      "DisplayName": "Password spray attack against Microsoft Entra ID Seamless SSO",
+      "Enabled": true,
+      "Kind": "Scheduled",
+      "Name": "8c51e69b-45de-4837-adae-9dede175a79a",
+      "RuleId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/rg-loganalyticsworkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/alertRules/8c51e69b-45de-4837-adae-9dede175a79a",
+      "Severity": "Medium",
+      "SubscriptionId": "8054e434-49e0-4a21-bbea-3fee1c872b88"
+    },
+    "Description": "Analytics Rule: 8c51e69b-45de-4837-adae-9dede175a79a",
+    "EvidenceId": "f2bc38b3-5668-5dd0-8f8b-bf125b1dea04",
+    "EvidenceType": "azure-sentinel-rule",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/rg-loganalyticsworkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/alertRules/8c51e69b-45de-4837-adae-9dede175a79a",
+    "ResourceType": "SentinelAnalyticsRule",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:15.144178+00:00",
+    "Collector": "AzureSentinel",
+    "Data": {
+      "DisplayName": "NRT First access credential added to Application or Service Principal where no credential was present",
+      "Enabled": true,
+      "Kind": "NRT",
+      "Name": "933fc5db-64b3-4f62-b413-2eee85a5a2ba",
+      "RuleId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/rg-loganalyticsworkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/alertRules/933fc5db-64b3-4f62-b413-2eee85a5a2ba",
+      "Severity": "Medium",
+      "SubscriptionId": "8054e434-49e0-4a21-bbea-3fee1c872b88"
+    },
+    "Description": "Analytics Rule: 933fc5db-64b3-4f62-b413-2eee85a5a2ba",
+    "EvidenceId": "1c3f7c06-a653-593a-ac45-e5d36268d721",
+    "EvidenceType": "azure-sentinel-rule",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/rg-loganalyticsworkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/alertRules/933fc5db-64b3-4f62-b413-2eee85a5a2ba",
+    "ResourceType": "SentinelAnalyticsRule",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:15.143951+00:00",
+    "Collector": "AzureSentinel",
+    "Data": {
+      "DisplayName": "NRT Privileged Role Assigned Outside PIM",
+      "Enabled": true,
+      "Kind": "NRT",
+      "Name": "a07dc461-caf8-4645-b77f-335cfd69ffaf",
+      "RuleId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/rg-loganalyticsworkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/alertRules/a07dc461-caf8-4645-b77f-335cfd69ffaf",
+      "Severity": "Low",
+      "SubscriptionId": "8054e434-49e0-4a21-bbea-3fee1c872b88"
+    },
+    "Description": "Analytics Rule: a07dc461-caf8-4645-b77f-335cfd69ffaf",
+    "EvidenceId": "33dc06cd-b116-5aa3-aefe-3c894516088e",
+    "EvidenceType": "azure-sentinel-rule",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/rg-loganalyticsworkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/alertRules/a07dc461-caf8-4645-b77f-335cfd69ffaf",
+    "ResourceType": "SentinelAnalyticsRule",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:15.145016+00:00",
+    "Collector": "AzureSentinel",
+    "Data": {
+      "DisplayName": "Brute Force Attack against GitHub Account",
+      "Enabled": true,
+      "Kind": "Scheduled",
+      "Name": "aac1b33d-1de6-4650-a681-196132439388",
+      "RuleId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/rg-loganalyticsworkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/alertRules/aac1b33d-1de6-4650-a681-196132439388",
+      "Severity": "Medium",
+      "SubscriptionId": "8054e434-49e0-4a21-bbea-3fee1c872b88"
+    },
+    "Description": "Analytics Rule: aac1b33d-1de6-4650-a681-196132439388",
+    "EvidenceId": "8dff0e10-d3d0-52bc-9105-32cd40428f71",
+    "EvidenceType": "azure-sentinel-rule",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/rg-loganalyticsworkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/alertRules/aac1b33d-1de6-4650-a681-196132439388",
+    "ResourceType": "SentinelAnalyticsRule",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:15.144053+00:00",
+    "Collector": "AzureSentinel",
+    "Data": {
+      "DisplayName": "User Assigned New Privileged Role",
+      "Enabled": true,
+      "Kind": "Scheduled",
+      "Name": "b1caf543-7085-440a-9234-6f3c426f34e0",
+      "RuleId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/rg-loganalyticsworkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/alertRules/b1caf543-7085-440a-9234-6f3c426f34e0",
+      "Severity": "High",
+      "SubscriptionId": "8054e434-49e0-4a21-bbea-3fee1c872b88"
+    },
+    "Description": "Analytics Rule: b1caf543-7085-440a-9234-6f3c426f34e0",
+    "EvidenceId": "a3394a22-7988-58a3-9a2e-7ef88c2f9dcf",
+    "EvidenceType": "azure-sentinel-rule",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/rg-loganalyticsworkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/alertRules/b1caf543-7085-440a-9234-6f3c426f34e0",
+    "ResourceType": "SentinelAnalyticsRule",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:15.144807+00:00",
+    "Collector": "AzureSentinel",
+    "Data": {
+      "DisplayName": "Rare application consent",
+      "Enabled": true,
+      "Kind": "Scheduled",
+      "Name": "ba807931-fa80-4b0a-8db2-fe2ef71cd8b9",
+      "RuleId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/rg-loganalyticsworkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/alertRules/ba807931-fa80-4b0a-8db2-fe2ef71cd8b9",
+      "Severity": "Medium",
+      "SubscriptionId": "8054e434-49e0-4a21-bbea-3fee1c872b88"
+    },
+    "Description": "Analytics Rule: ba807931-fa80-4b0a-8db2-fe2ef71cd8b9",
+    "EvidenceId": "64a7655e-4d37-53eb-a23f-bb8ec3da7c20",
+    "EvidenceType": "azure-sentinel-rule",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/rg-loganalyticsworkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/alertRules/ba807931-fa80-4b0a-8db2-fe2ef71cd8b9",
+    "ResourceType": "SentinelAnalyticsRule",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:15.144024+00:00",
+    "Collector": "AzureSentinel",
+    "Data": {
+      "DisplayName": "Threat Essentials - User Assigned Privileged Role",
+      "Enabled": true,
+      "Kind": "Scheduled",
+      "Name": "bbade60c-a31d-4b47-b983-bb8a02d00c37",
+      "RuleId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/rg-loganalyticsworkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/alertRules/bbade60c-a31d-4b47-b983-bb8a02d00c37",
+      "Severity": "High",
+      "SubscriptionId": "8054e434-49e0-4a21-bbea-3fee1c872b88"
+    },
+    "Description": "Analytics Rule: bbade60c-a31d-4b47-b983-bb8a02d00c37",
+    "EvidenceId": "8329393a-1378-55ab-9035-588ebb31ac92",
+    "EvidenceType": "azure-sentinel-rule",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/rg-loganalyticsworkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/alertRules/bbade60c-a31d-4b47-b983-bb8a02d00c37",
+    "ResourceType": "SentinelAnalyticsRule",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:15.143759+00:00",
+    "Collector": "AzureSentinel",
+    "Data": {
+      "DisplayName": "Attempts to sign in to disabled accounts",
+      "Enabled": true,
+      "Kind": "Scheduled",
+      "Name": "bd909175-14ae-4626-9eaa-c96e3f99366f",
+      "RuleId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/rg-loganalyticsworkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/alertRules/bd909175-14ae-4626-9eaa-c96e3f99366f",
+      "Severity": "Medium",
+      "SubscriptionId": "8054e434-49e0-4a21-bbea-3fee1c872b88"
+    },
+    "Description": "Analytics Rule: bd909175-14ae-4626-9eaa-c96e3f99366f",
+    "EvidenceId": "685300c0-9d80-5dd8-968f-6d1c1e09e26a",
+    "EvidenceType": "azure-sentinel-rule",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/rg-loganalyticsworkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/alertRules/bd909175-14ae-4626-9eaa-c96e3f99366f",
+    "ResourceType": "SentinelAnalyticsRule",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:15.144777+00:00",
+    "Collector": "AzureSentinel",
+    "Data": {
+      "DisplayName": "NRT User added to Microsoft Entra ID Privileged Groups",
+      "Enabled": true,
+      "Kind": "NRT",
+      "Name": "c6cea2f8-594d-46cf-9a95-7b10c64e6d07",
+      "RuleId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/rg-loganalyticsworkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/alertRules/c6cea2f8-594d-46cf-9a95-7b10c64e6d07",
+      "Severity": "Medium",
+      "SubscriptionId": "8054e434-49e0-4a21-bbea-3fee1c872b88"
+    },
+    "Description": "Analytics Rule: c6cea2f8-594d-46cf-9a95-7b10c64e6d07",
+    "EvidenceId": "0c7cb226-4001-57d2-b282-885d4b69455a",
+    "EvidenceType": "azure-sentinel-rule",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/rg-loganalyticsworkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/alertRules/c6cea2f8-594d-46cf-9a95-7b10c64e6d07",
+    "ResourceType": "SentinelAnalyticsRule",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:15.144292+00:00",
+    "Collector": "AzureSentinel",
+    "Data": {
+      "DisplayName": "NRT Modified domain federation trust settings",
+      "Enabled": true,
+      "Kind": "NRT",
+      "Name": "c81e5be9-7870-417b-9262-5c197d38e815",
+      "RuleId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/rg-loganalyticsworkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/alertRules/c81e5be9-7870-417b-9262-5c197d38e815",
+      "Severity": "High",
+      "SubscriptionId": "8054e434-49e0-4a21-bbea-3fee1c872b88"
+    },
+    "Description": "Analytics Rule: c81e5be9-7870-417b-9262-5c197d38e815",
+    "EvidenceId": "88ac19ef-2848-5dfe-9cb7-44c302c89402",
+    "EvidenceType": "azure-sentinel-rule",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/rg-loganalyticsworkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/alertRules/c81e5be9-7870-417b-9262-5c197d38e815",
+    "ResourceType": "SentinelAnalyticsRule",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:15.144710+00:00",
+    "Collector": "AzureSentinel",
+    "Data": {
+      "DisplayName": "Admin promotion after Role Management Application Permission Grant",
+      "Enabled": true,
+      "Kind": "Scheduled",
+      "Name": "ca309408-7a6e-428c-8fb3-b6c6bae7b4f2",
+      "RuleId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/rg-loganalyticsworkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/alertRules/ca309408-7a6e-428c-8fb3-b6c6bae7b4f2",
+      "Severity": "High",
+      "SubscriptionId": "8054e434-49e0-4a21-bbea-3fee1c872b88"
+    },
+    "Description": "Analytics Rule: ca309408-7a6e-428c-8fb3-b6c6bae7b4f2",
+    "EvidenceId": "fd22b80a-0c61-534a-bd41-71251f88dd1b",
+    "EvidenceType": "azure-sentinel-rule",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/rg-loganalyticsworkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/alertRules/ca309408-7a6e-428c-8fb3-b6c6bae7b4f2",
+    "ResourceType": "SentinelAnalyticsRule",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:15.144659+00:00",
+    "Collector": "AzureSentinel",
+    "Data": {
+      "DisplayName": "Guest accounts added in Entra ID Groups other than the ones specified",
+      "Enabled": true,
+      "Kind": "Scheduled",
+      "Name": "cfb0e3e8-9ff1-436c-b77f-63a8e37b0481",
+      "RuleId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/rg-loganalyticsworkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/alertRules/cfb0e3e8-9ff1-436c-b77f-63a8e37b0481",
+      "Severity": "High",
+      "SubscriptionId": "8054e434-49e0-4a21-bbea-3fee1c872b88"
+    },
+    "Description": "Analytics Rule: cfb0e3e8-9ff1-436c-b77f-63a8e37b0481",
+    "EvidenceId": "4a9344bd-0f4f-502d-a4d8-8d4c371ef7bb",
+    "EvidenceType": "azure-sentinel-rule",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/rg-loganalyticsworkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/alertRules/cfb0e3e8-9ff1-436c-b77f-63a8e37b0481",
+    "ResourceType": "SentinelAnalyticsRule",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:15.144989+00:00",
+    "Collector": "AzureSentinel",
+    "Data": {
+      "DisplayName": "Suspicious application consent similar to PwnAuth",
+      "Enabled": true,
+      "Kind": "Scheduled",
+      "Name": "d6c21b6d-bff7-4865-9a87-838914684b60",
+      "RuleId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/rg-loganalyticsworkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/alertRules/d6c21b6d-bff7-4865-9a87-838914684b60",
+      "Severity": "Medium",
+      "SubscriptionId": "8054e434-49e0-4a21-bbea-3fee1c872b88"
+    },
+    "Description": "Analytics Rule: d6c21b6d-bff7-4865-9a87-838914684b60",
+    "EvidenceId": "2696cac4-90fb-5452-b0c3-34ae4636cb8b",
+    "EvidenceType": "azure-sentinel-rule",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/rg-loganalyticsworkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/alertRules/d6c21b6d-bff7-4865-9a87-838914684b60",
+    "ResourceType": "SentinelAnalyticsRule",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:15.143613+00:00",
+    "Collector": "AzureSentinel",
+    "Data": {
+      "DisplayName": "[Murali]-attempts to assign the Contributor, Owner, or User Access Administrator roles at the scope of the selected subscription",
+      "Enabled": true,
+      "Kind": "NRT",
+      "Name": "dcd0eb28-f84a-45f5-acf5-066b4c5642ce",
+      "RuleId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/rg-loganalyticsworkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/alertRules/dcd0eb28-f84a-45f5-acf5-066b4c5642ce",
+      "Severity": "Medium",
+      "SubscriptionId": "8054e434-49e0-4a21-bbea-3fee1c872b88"
+    },
+    "Description": "Analytics Rule: dcd0eb28-f84a-45f5-acf5-066b4c5642ce",
+    "EvidenceId": "645beeb8-b7d5-5aa4-97f2-5b4607b14705",
+    "EvidenceType": "azure-sentinel-rule",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/rg-loganalyticsworkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/alertRules/dcd0eb28-f84a-45f5-acf5-066b4c5642ce",
+    "ResourceType": "SentinelAnalyticsRule",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:15.145049+00:00",
+    "Collector": "AzureSentinel",
+    "Data": {
+      "DisplayName": "Sign-ins from IPs that attempt sign-ins to disabled accounts",
+      "Enabled": true,
+      "Kind": "Scheduled",
+      "Name": "e48ce3c5-4e94-471a-a64f-f30764a5ae27",
+      "RuleId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/rg-loganalyticsworkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/alertRules/e48ce3c5-4e94-471a-a64f-f30764a5ae27",
+      "Severity": "Medium",
+      "SubscriptionId": "8054e434-49e0-4a21-bbea-3fee1c872b88"
+    },
+    "Description": "Analytics Rule: e48ce3c5-4e94-471a-a64f-f30764a5ae27",
+    "EvidenceId": "a0b2a988-bc28-50ff-b52e-f9bd219d7703",
+    "EvidenceType": "azure-sentinel-rule",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/rg-loganalyticsworkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/alertRules/e48ce3c5-4e94-471a-a64f-f30764a5ae27",
+    "ResourceType": "SentinelAnalyticsRule",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:15.144351+00:00",
+    "Collector": "AzureSentinel",
+    "Data": {
+      "DisplayName": "Multiple admin membership removals from newly created admin.",
+      "Enabled": true,
+      "Kind": "Scheduled",
+      "Name": "e53b4b76-c945-4cec-a334-661393c51dd7",
+      "RuleId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/rg-loganalyticsworkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/alertRules/e53b4b76-c945-4cec-a334-661393c51dd7",
+      "Severity": "Medium",
+      "SubscriptionId": "8054e434-49e0-4a21-bbea-3fee1c872b88"
+    },
+    "Description": "Analytics Rule: e53b4b76-c945-4cec-a334-661393c51dd7",
+    "EvidenceId": "1d6a1714-f62a-59d3-91d4-173152549067",
+    "EvidenceType": "azure-sentinel-rule",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/rg-loganalyticsworkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/alertRules/e53b4b76-c945-4cec-a334-661393c51dd7",
+    "ResourceType": "SentinelAnalyticsRule",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:15.144084+00:00",
+    "Collector": "AzureSentinel",
+    "Data": {
+      "DisplayName": "Brute force attack against a Cloud PC",
+      "Enabled": true,
+      "Kind": "Scheduled",
+      "Name": "e5f4d071-19d2-45e3-a43f-02ce2429f314",
+      "RuleId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/rg-loganalyticsworkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/alertRules/e5f4d071-19d2-45e3-a43f-02ce2429f314",
+      "Severity": "Medium",
+      "SubscriptionId": "8054e434-49e0-4a21-bbea-3fee1c872b88"
+    },
+    "Description": "Analytics Rule: e5f4d071-19d2-45e3-a43f-02ce2429f314",
+    "EvidenceId": "bd0b3e1a-411f-5bc2-91a0-95155e2ef1cc",
+    "EvidenceType": "azure-sentinel-rule",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/rg-loganalyticsworkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/alertRules/e5f4d071-19d2-45e3-a43f-02ce2429f314",
+    "ResourceType": "SentinelAnalyticsRule",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:15.143791+00:00",
+    "Collector": "AzureSentinel",
+    "Data": {
+      "DisplayName": "Suspicious application consent for offline access",
+      "Enabled": true,
+      "Kind": "Scheduled",
+      "Name": "ea38df57-3e89-4fe9-9f2b-d6be685226be",
+      "RuleId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/rg-loganalyticsworkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/alertRules/ea38df57-3e89-4fe9-9f2b-d6be685226be",
+      "Severity": "Low",
+      "SubscriptionId": "8054e434-49e0-4a21-bbea-3fee1c872b88"
+    },
+    "Description": "Analytics Rule: ea38df57-3e89-4fe9-9f2b-d6be685226be",
+    "EvidenceId": "5c2f014e-501c-54c1-a274-4f1c3d286c0d",
+    "EvidenceType": "azure-sentinel-rule",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/rg-loganalyticsworkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/alertRules/ea38df57-3e89-4fe9-9f2b-d6be685226be",
+    "ResourceType": "SentinelAnalyticsRule",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:15.144601+00:00",
+    "Collector": "AzureSentinel",
+    "Data": {
+      "DisplayName": "Azure RBAC (Elevate Access)",
+      "Enabled": true,
+      "Kind": "Scheduled",
+      "Name": "eaea4deb-84c2-4953-9ea8-7f7f6c2c85ed",
+      "RuleId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/rg-loganalyticsworkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/alertRules/eaea4deb-84c2-4953-9ea8-7f7f6c2c85ed",
+      "Severity": "High",
+      "SubscriptionId": "8054e434-49e0-4a21-bbea-3fee1c872b88"
+    },
+    "Description": "Analytics Rule: eaea4deb-84c2-4953-9ea8-7f7f6c2c85ed",
+    "EvidenceId": "b250b038-8a3c-52e0-bef7-a0b6e1797f10",
+    "EvidenceType": "azure-sentinel-rule",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/rg-loganalyticsworkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/alertRules/eaea4deb-84c2-4953-9ea8-7f7f6c2c85ed",
+    "ResourceType": "SentinelAnalyticsRule",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:15.144504+00:00",
+    "Collector": "AzureSentinel",
+    "Data": {
+      "DisplayName": "Privileged Role Assigned Outside PIM",
+      "Enabled": true,
+      "Kind": "Scheduled",
+      "Name": "ee13dcc3-c564-4875-88a1-aa56653228f9",
+      "RuleId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/rg-loganalyticsworkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/alertRules/ee13dcc3-c564-4875-88a1-aa56653228f9",
+      "Severity": "Low",
+      "SubscriptionId": "8054e434-49e0-4a21-bbea-3fee1c872b88"
+    },
+    "Description": "Analytics Rule: ee13dcc3-c564-4875-88a1-aa56653228f9",
+    "EvidenceId": "c365f8db-2cb4-528b-aa07-af7649c6de4e",
+    "EvidenceType": "azure-sentinel-rule",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/rg-loganalyticsworkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/alertRules/ee13dcc3-c564-4875-88a1-aa56653228f9",
+    "ResourceType": "SentinelAnalyticsRule",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:15.144535+00:00",
+    "Collector": "AzureSentinel",
+    "Data": {
+      "DisplayName": "External guest invitation followed by Microsoft Entra ID PowerShell signin",
+      "Enabled": true,
+      "Kind": "Scheduled",
+      "Name": "f412f21f-6c0e-421d-8aa9-eaddb2422aa3",
+      "RuleId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/rg-loganalyticsworkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/alertRules/f412f21f-6c0e-421d-8aa9-eaddb2422aa3",
+      "Severity": "Medium",
+      "SubscriptionId": "8054e434-49e0-4a21-bbea-3fee1c872b88"
+    },
+    "Description": "Analytics Rule: f412f21f-6c0e-421d-8aa9-eaddb2422aa3",
+    "EvidenceId": "fe007282-19a2-5ac5-8b78-740f57715147",
+    "EvidenceType": "azure-sentinel-rule",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/rg-loganalyticsworkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/alertRules/f412f21f-6c0e-421d-8aa9-eaddb2422aa3",
+    "ResourceType": "SentinelAnalyticsRule",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:15.144910+00:00",
+    "Collector": "AzureSentinel",
+    "Data": {
+      "DisplayName": "Successful logon from IP and failure from a different IP",
+      "Enabled": true,
+      "Kind": "Scheduled",
+      "Name": "fd7b6c7d-0517-471f-8621-df606559544f",
+      "RuleId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/rg-loganalyticsworkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/alertRules/fd7b6c7d-0517-471f-8621-df606559544f",
+      "Severity": "Medium",
+      "SubscriptionId": "8054e434-49e0-4a21-bbea-3fee1c872b88"
+    },
+    "Description": "Analytics Rule: fd7b6c7d-0517-471f-8621-df606559544f",
+    "EvidenceId": "9e5ea0e4-3b2d-5b61-8351-f2fa20007f0d",
+    "EvidenceType": "azure-sentinel-rule",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/rg-loganalyticsworkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/alertRules/fd7b6c7d-0517-471f-8621-df606559544f",
+    "ResourceType": "SentinelAnalyticsRule",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:15.143849+00:00",
+    "Collector": "AzureSentinel",
+    "Data": {
+      "DisplayName": "User added to Microsoft Entra ID Privileged Groups",
+      "Enabled": true,
+      "Kind": "Scheduled",
+      "Name": "fefef9dc-6e05-498d-a5d0-977cc74f2033",
+      "RuleId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/rg-loganalyticsworkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/alertRules/fefef9dc-6e05-498d-a5d0-977cc74f2033",
+      "Severity": "Medium",
+      "SubscriptionId": "8054e434-49e0-4a21-bbea-3fee1c872b88"
+    },
+    "Description": "Analytics Rule: fefef9dc-6e05-498d-a5d0-977cc74f2033",
+    "EvidenceId": "8bdba7d6-edbd-5934-8bc1-7dfe3d7b054c",
+    "EvidenceType": "azure-sentinel-rule",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/rg-loganalyticsworkspace/providers/Microsoft.OperationalInsights/workspaces/R-LogAnalyticsWorkspace/providers/Microsoft.SecurityInsights/alertRules/fefef9dc-6e05-498d-a5d0-977cc74f2033",
+    "ResourceType": "SentinelAnalyticsRule",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:15.143443+00:00",
+    "Collector": "AzureSentinel",
+    "Data": {
+      "DisplayName": "Detect port misuse by static threshold (ASIM Network Session schema)",
+      "Enabled": true,
+      "Kind": "Scheduled",
+      "Name": "4ef96051-d488-462c-ade5-51491fe21073",
+      "RuleId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/rg-loganalyticsworkspace/providers/Microsoft.OperationalInsights/workspaces/r-loganalyticsworkspace/providers/Microsoft.SecurityInsights/alertRules/4ef96051-d488-462c-ade5-51491fe21073",
+      "Severity": "Medium",
+      "SubscriptionId": "8054e434-49e0-4a21-bbea-3fee1c872b88"
+    },
+    "Description": "Analytics Rule: 4ef96051-d488-462c-ade5-51491fe21073",
+    "EvidenceId": "b8979d06-184c-5b31-aed4-8aa145b6ff73",
+    "EvidenceType": "azure-sentinel-rule",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/rg-loganalyticsworkspace/providers/Microsoft.OperationalInsights/workspaces/r-loganalyticsworkspace/providers/Microsoft.SecurityInsights/alertRules/4ef96051-d488-462c-ade5-51491fe21073",
+    "ResourceType": "SentinelAnalyticsRule",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:15.143495+00:00",
+    "Collector": "AzureSentinel",
+    "Data": {
+      "DisplayName": "Detect port misuse by static threshold (ASIM Network Session schema)",
+      "Enabled": true,
+      "Kind": "Scheduled",
+      "Name": "7f3d3f9b-f50f-4639-aff5-761eb10a9e16",
+      "RuleId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/rg-loganalyticsworkspace/providers/Microsoft.OperationalInsights/workspaces/r-loganalyticsworkspace/providers/Microsoft.SecurityInsights/alertRules/7f3d3f9b-f50f-4639-aff5-761eb10a9e16",
+      "Severity": "Medium",
+      "SubscriptionId": "8054e434-49e0-4a21-bbea-3fee1c872b88"
+    },
+    "Description": "Analytics Rule: 7f3d3f9b-f50f-4639-aff5-761eb10a9e16",
+    "EvidenceId": "e61cd3c3-df02-5550-9659-2f0bb5bdf9a7",
+    "EvidenceType": "azure-sentinel-rule",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/rg-loganalyticsworkspace/providers/Microsoft.OperationalInsights/workspaces/r-loganalyticsworkspace/providers/Microsoft.SecurityInsights/alertRules/7f3d3f9b-f50f-4639-aff5-761eb10a9e16",
+    "ResourceType": "SentinelAnalyticsRule",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:15.143537+00:00",
+    "Collector": "AzureSentinel",
+    "Data": {
+      "DisplayName": "Detect port misuse by anomaly based detection (ASIM Network Session schema)",
+      "Enabled": true,
+      "Kind": "Scheduled",
+      "Name": "8f9fa954-beb1-41b2-bd55-5034b4ded7a3",
+      "RuleId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/rg-loganalyticsworkspace/providers/Microsoft.OperationalInsights/workspaces/r-loganalyticsworkspace/providers/Microsoft.SecurityInsights/alertRules/8f9fa954-beb1-41b2-bd55-5034b4ded7a3",
+      "Severity": "Medium",
+      "SubscriptionId": "8054e434-49e0-4a21-bbea-3fee1c872b88"
+    },
+    "Description": "Analytics Rule: 8f9fa954-beb1-41b2-bd55-5034b4ded7a3",
+    "EvidenceId": "6d2cd9f3-88c0-5163-b004-1147f9d367c6",
+    "EvidenceType": "azure-sentinel-rule",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/rg-loganalyticsworkspace/providers/Microsoft.OperationalInsights/workspaces/r-loganalyticsworkspace/providers/Microsoft.SecurityInsights/alertRules/8f9fa954-beb1-41b2-bd55-5034b4ded7a3",
+    "ResourceType": "SentinelAnalyticsRule",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:15.143303+00:00",
+    "Collector": "AzureSentinel",
+    "Data": {
+      "DisplayName": "Advanced Multistage Attack Detection",
+      "Enabled": true,
+      "Kind": "Fusion",
+      "Name": "BuiltInFusion",
+      "RuleId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/rg-loganalyticsworkspace/providers/Microsoft.OperationalInsights/workspaces/r-loganalyticsworkspace/providers/Microsoft.SecurityInsights/alertRules/BuiltInFusion",
+      "Severity": "High",
+      "SubscriptionId": "8054e434-49e0-4a21-bbea-3fee1c872b88"
+    },
+    "Description": "Analytics Rule: BuiltInFusion",
+    "EvidenceId": "57494174-62b7-5058-89bd-182aabdc301e",
+    "EvidenceType": "azure-sentinel-rule",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/rg-loganalyticsworkspace/providers/Microsoft.OperationalInsights/workspaces/r-loganalyticsworkspace/providers/Microsoft.SecurityInsights/alertRules/BuiltInFusion",
+    "ResourceType": "SentinelAnalyticsRule",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:33:15.143579+00:00",
+    "Collector": "AzureSentinel",
+    "Data": {
+      "DisplayName": "NRT Creation of expensive computes in Azure",
+      "Enabled": true,
+      "Kind": "NRT",
+      "Name": "e86c38aa-3d75-442e-98fb-b843062f41f3",
+      "RuleId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/rg-loganalyticsworkspace/providers/Microsoft.OperationalInsights/workspaces/r-loganalyticsworkspace/providers/Microsoft.SecurityInsights/alertRules/e86c38aa-3d75-442e-98fb-b843062f41f3",
+      "Severity": "Medium",
+      "SubscriptionId": "8054e434-49e0-4a21-bbea-3fee1c872b88"
+    },
+    "Description": "Analytics Rule: e86c38aa-3d75-442e-98fb-b843062f41f3",
+    "EvidenceId": "d311c5a0-ac73-59c8-b4fa-62810bba8977",
+    "EvidenceType": "azure-sentinel-rule",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/8054e434-49e0-4a21-bbea-3fee1c872b88/resourceGroups/rg-loganalyticsworkspace/providers/Microsoft.OperationalInsights/workspaces/r-loganalyticsworkspace/providers/Microsoft.SecurityInsights/alertRules/e86c38aa-3d75-442e-98fb-b843062f41f3",
+    "ResourceType": "SentinelAnalyticsRule",
+    "Source": "Azure"
+  }
+]

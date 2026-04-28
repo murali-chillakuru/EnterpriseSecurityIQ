@@ -1,0 +1,24 @@
+[
+  {
+    "CollectedAt": "2026-04-26T23:41:40.386597+00:00",
+    "Collector": "CopilotStudio",
+    "Data": {
+      "BlockedConnectorNames": [],
+      "BlockedConnectors": 0,
+      "BusinessDataConnectors": 0,
+      "CreatedTime": "2025-09-08T02:03:55.8941269Z",
+      "DisplayName": "Contoso Env Policy",
+      "EnvironmentType": "",
+      "HasBlockedConnectors": false,
+      "NonBusinessConnectors": 0,
+      "PolicyId": "b994f21b-916f-4b10-90a9-b955653dc41c"
+    },
+    "Description": "Power Platform DLP policy: Contoso Env Policy",
+    "EvidenceId": "4e7179db-e876-5d72-8aa6-333889c09e71",
+    "EvidenceType": "pp-dlp-policy",
+    "RawReference": null,
+    "ResourceId": "b994f21b-916f-4b10-90a9-b955653dc41c",
+    "ResourceType": "PPDLPPolicy",
+    "Source": "Entra"
+  }
+]

@@ -1,0 +1,17 @@
+[
+  {
+    "CollectedAt": "2026-04-26T23:41:55.045078+00:00",
+    "Collector": "CopilotStudio",
+    "Data": {
+      "Note": "Security Reader role is required to probe the audit log endpoint. Assign the role and re-run the assessment.",
+      "UnifiedAuditLogEnabled": "unknown"
+    },
+    "Description": "M365 audit log configuration (access denied)",
+    "EvidenceId": "e8b377fb-b205-54c9-b7e6-cab4f047d887",
+    "EvidenceType": "m365-audit-config",
+    "RawReference": null,
+    "ResourceId": "m365-audit-config",
+    "ResourceType": "AuditConfig",
+    "Source": "Entra"
+  }
+]

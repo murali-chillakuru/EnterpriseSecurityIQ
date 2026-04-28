@@ -1,0 +1,58 @@
+[
+  {
+    "CollectedAt": "2026-04-26T23:41:56.719075+00:00",
+    "Collector": "WebAppDetailed",
+    "Data": {
+      "AlwaysOn": false,
+      "AppId": "/subscriptions/9154cdcb-5a52-452a-b1e7-483be9eee6d2/resourceGroups/rg-ecma2-poc-wus2/providers/Microsoft.Web/sites/func-ecma2poc-lkxerbapuxyv2",
+      "ApplicationLogsEnabled": false,
+      "AuthEnabled": false,
+      "AuthProvider": "None",
+      "CorsAllowAll": false,
+      "CorsAllowedOrigins": 0,
+      "Http20Enabled": false,
+      "HttpLogsEnabled": false,
+      "IpRestrictionCount": 1,
+      "Location": "West US 2",
+      "Name": "func-ecma2poc-lkxerbapuxyv2",
+      "ScmIpRestrictionCount": 1,
+      "SubscriptionId": "9154cdcb-5a52-452a-b1e7-483be9eee6d2",
+      "SubscriptionName": "Infra"
+    },
+    "Description": "Web App detail: func-ecma2poc-lkxerbapuxyv2",
+    "EvidenceId": "df07efb5-9e9f-5355-9348-a827f386bd6b",
+    "EvidenceType": "azure-webapp-detailed",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/9154cdcb-5a52-452a-b1e7-483be9eee6d2/resourceGroups/rg-ecma2-poc-wus2/providers/Microsoft.Web/sites/func-ecma2poc-lkxerbapuxyv2",
+    "ResourceType": "Microsoft.Web/sites",
+    "Source": "Azure"
+  },
+  {
+    "CollectedAt": "2026-04-26T23:42:02.459305+00:00",
+    "Collector": "WebAppDetailed",
+    "Data": {
+      "AlwaysOn": false,
+      "AppId": "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/resourceGroups/rg-AIFutureInitiative/providers/Microsoft.Web/sites/aifutureinitiative",
+      "ApplicationLogsEnabled": false,
+      "AuthEnabled": true,
+      "AuthProvider": "AzureAD,Google",
+      "CorsAllowAll": false,
+      "CorsAllowedOrigins": 1,
+      "Http20Enabled": false,
+      "HttpLogsEnabled": false,
+      "IpRestrictionCount": 1,
+      "Location": "East US 2",
+      "Name": "aifutureinitiative",
+      "ScmIpRestrictionCount": 1,
+      "SubscriptionId": "d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0",
+      "SubscriptionName": "AI"
+    },
+    "Description": "Web App detail: aifutureinitiative",
+    "EvidenceId": "5b2a8b07-83e3-53bb-9cb8-682ee7576c34",
+    "EvidenceType": "azure-webapp-detailed",
+    "RawReference": null,
+    "ResourceId": "/subscriptions/d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0/resourceGroups/rg-AIFutureInitiative/providers/Microsoft.Web/sites/aifutureinitiative",
+    "ResourceType": "Microsoft.Web/sites",
+    "Source": "Azure"
+  }
+]
