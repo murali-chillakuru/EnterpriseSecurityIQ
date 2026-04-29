@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Infrastructure Overview — PostureIQ Technical Docs</title>
+  <link rel="stylesheet" href="../docs/theme.css">
+  <link rel="stylesheet" href="../docs/print.css">
+  <script src="../docs/theme.js"></script>
+</head>
+<body>
+
+<header class="doc-header">
+  <a href="index-of-tech-docs.html" class="doc-header-brand">
+    <svg viewBox="0 0 28 28" fill="none"><rect width="28" height="28" rx="6" fill="var(--bg-accent)"/><path d="M8 8h4v12H8V8zm8 4h4v8h-4v-8z" fill="var(--text-on-accent)"/></svg>
+    <span>PostureIQ Technical Docs</span>
+  </a>
+  <nav class="doc-header-nav">
+    <a href="index-of-tech-docs.html">Home</a>
+    <a href="01-infrastructure-overview.html" class="active">Infrastructure</a>
+    <a href="02-assessment-guide.html">Assessments</a>
+    <a href="03-report-lifecycle.html">Reports</a>
+    <a href="04-manual-setup-guide.html">Setup</a>
+    <a href="05-authentication-flow.html">Auth</a>
+    <a href="06-api-reference.html">API</a>
+    <a href="07-teams-integration.html">Teams</a>
+    <a href="08-troubleshooting.html">Troubleshoot</a>
+    <button class="theme-toggle" aria-label="Toggle theme"></button>
+  </nav>
+</header>
+
+<main class="doc-container">
+<h1 id="infrastructure-overview">Infrastructure Overview</h1>
+<blockquote><p>How PostureIQ is built, deployed, and runs in Azure.</p></blockquote>
+<p><strong>Navigation:</strong> <a href="index-of-tech-docs.html">Index</a> · <a href="02-assessment-guide.html">Assessments</a> · <a href="03-report-lifecycle.html">Reports</a> · <a href="04-manual-setup-guide.html">Manual Setup</a> · <a href="05-authentication-flow.html">Authentication</a> · <a href="06-api-reference.html">API Reference</a> · <a href="07-teams-integration.html">Teams Integration</a> · <a href="08-troubleshooting.html">Troubleshooting</a></p>
+<hr>
+<h2 id="what-is-postureiq">What Is PostureIQ?</h2>
+<p>PostureIQ is an AI-powered security posture assessment platform. It connects to your Microsoft Azure and Entra ID environment, collects security evidence from 64 data collectors, evaluates that evidence against 11 compliance frameworks (525 controls), and produces risk-scored reports with attack path analysis and AI-generated remediation recommendations.</p>
+<p>It runs as a single containerised application on Azure Container Apps, backed by Azure OpenAI for intelligent analysis.</p>
+<hr>
+<h2 id="azure-resources-14-components">Azure Resources (14 Components)</h2>
+<p>The following diagram shows how the resources relate to each other:</p>
+<pre><code>┌───────────────────────────────────────────────────────────────────┐
+│                        ESIQNew-RG (Resource Group)                │
+│                                                                   │
+│  ┌─────────────────┐    ┌─────────────────┐                      │
+│  │  ESIQNew-AI      │    │  ESIQNew-project │                     │
+│  │  (Foundry/       │◄───│  (Foundry        │                     │
+│  │   AIServices)    │    │   Project)       │                     │
+│  │                  │    └─────────────────┘                      │
+│  │  ┌──────────┐   │                                             │
+│  │  │ gpt-4.1  │   │   ┌──────────────────┐                     │
+│  │  │ gpt-5.1  │   │   │  esiqnewacr       │                    │
+│  │  └──────────┘   │   │  (Container       │                    │
+│  └─────────────────┘   │   Registry)       │                    │
+│                         └────────┬─────────┘                     │
+│                                  │ pulls image                   │
+│  ┌──────────────────┐   ┌───────▼──────────┐                    │
+│  │  ESIQNew-env      │◄──│  esiqnew-agent   │                    │
+│  │  (Container Apps  │   │  (Container App) │                    │
+│  │   Environment)    │   │  1 CPU, 2 GiB    │                    │
+│  └──────────────────┘   │  Port 8088        │                    │
+│                          └──┬───┬───┬───────┘                    │
+│                  uses       │   │   │   uploads reports           │
+│         ┌───────────────────┘   │   └────────┐                   │
+│         ▼                       ▼            ▼                   │
+│  ┌──────────────┐  ┌──────────────┐  ┌──────────────────┐       │
+│  │ ESIQNew-     │  │ ESIQNew-kv   │  │ esiqnewstorage   │       │
+│  │ identity     │  │ (Key Vault)  │  │ (Storage Account)│       │
+│  │ (Managed ID) │  └──────────────┘  │  └─ reports (blob)│       │
+│  └──────────────┘                    └──────────────────┘       │
+│                                                                   │
+│  ┌──────────────────┐  ┌──────────────────┐                      │
+│  │ ESIQNew-law      │  │ ESIQNew-         │                      │
+│  │ (Log Analytics)  │◄─│ appinsights      │                      │
+│  └──────────────────┘  │ (App Insights)   │                      │
+│                         └──────────────────┘                      │
+└───────────────────────────────────────────────────────────────────┘</code></pre>
+<h3 id="resource-details">Resource Details</h3>
+<table>
+<thead><tr><th>#</th><th>Resource</th><th>Name</th><th>SKU / Config</th><th>Purpose</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>Resource Group</td><td><code>ESIQNew-RG</code></td><td>swedencentral</td><td>Container for all resources</td></tr>
+<tr><td>2</td><td>Foundry Resource</td><td><code>ESIQNew-AI</code></td><td>AIServices, S0</td><td>Azure OpenAI + AI Services host</td></tr>
+<tr><td>3</td><td>Foundry Project</td><td><code>ESIQNew-project</code></td><td>Child of ESIQNew-AI</td><td>Project container for models and agents</td></tr>
+<tr><td>4</td><td>Primary Model</td><td><code>gpt-4.1</code></td><td>Standard, 30K TPM</td><td>Main LLM for agent reasoning</td></tr>
+<tr><td>5</td><td>Fallback Model</td><td><code>gpt-5.1</code></td><td>Standard, 30K TPM</td><td>Used when primary fails or context overflows</td></tr>
+<tr><td>6</td><td>Storage Account</td><td><code>esiqnewstorage</code></td><td>Standard_LRS</td><td>Report blob storage (container: <code>reports</code>)</td></tr>
+<tr><td>7</td><td>Key Vault</td><td><code>ESIQNew-kv</code></td><td>Standard, RBAC auth</td><td>Secrets management</td></tr>
+<tr><td>8</td><td>Log Analytics</td><td><code>ESIQNew-law</code></td><td>PerGB2018</td><td>Central log collection</td></tr>
+<tr><td>9</td><td>App Insights</td><td><code>ESIQNew-appinsights</code></td><td>Workspace-based</td><td>Application performance monitoring</td></tr>
+<tr><td>10</td><td>Container Registry</td><td><code>esiqnewacr</code></td><td>Basic</td><td>Docker image storage</td></tr>
+<tr><td>11</td><td>Managed Identity</td><td><code>ESIQNew-identity</code></td><td>User-assigned</td><td>Service authentication to Azure</td></tr>
+<tr><td>12</td><td>Container Apps Env</td><td><code>ESIQNew-env</code></td><td>Consumption, northeurope</td><td>Hosting environment for container</td></tr>
+<tr><td>13</td><td>Container App</td><td><code>esiqnew-agent</code></td><td>1 vCPU, 2 GiB, port 8088</td><td>The running application</td></tr>
+<tr><td>14</td><td>Foundry Agent</td><td><code>EnterpriseSecurityIQ</code></td><td>Assistants API</td><td>Registered AI agent with 14 tools</td></tr>
+</tbody></table>
+<hr>
+<h2 id="rbac-role-assignments">RBAC Role Assignments</h2>
+<p>The managed identity (<code>ESIQNew-identity</code>) is assigned these roles so the container can access Azure resources:</p>
+<table>
+<thead><tr><th>Role</th><th>Scope</th><th>Why</th></tr></thead>
+<tbody>
+<tr><td><code>AcrPull</code></td><td>Container Registry</td><td>Pull Docker images</td></tr>
+<tr><td><code>Reader</code></td><td>Subscription</td><td>Read Azure resource metadata</td></tr>
+<tr><td><code>Security Reader</code></td><td>Subscription</td><td>Read Defender, Security Center data</td></tr>
+<tr><td><code>Cognitive Services OpenAI User</code></td><td>AI Services</td><td>Call Azure OpenAI models</td></tr>
+<tr><td><code>Azure AI Developer</code></td><td>AI Services</td><td>Register and manage Foundry agents</td></tr>
+<tr><td><code>Storage Blob Data Contributor</code></td><td>Storage Account</td><td>Upload and download report files</td></tr>
+</tbody></table>
+<p>Additionally, 8 Microsoft Graph API permissions are granted (application-level):</p>
+<table>
+<thead><tr><th>Permission</th><th>Why</th></tr></thead>
+<tbody>
+<tr><td><code>Directory.Read.All</code></td><td>Read users, groups, org structure</td></tr>
+<tr><td><code>Policy.Read.All</code></td><td>Read conditional access, auth policies</td></tr>
+<tr><td><code>RoleManagement.Read.All</code></td><td>Read directory role assignments</td></tr>
+<tr><td><code>User.Read.All</code></td><td>Read user profiles and properties</td></tr>
+<tr><td><code>AuditLog.Read.All</code></td><td>Read audit log entries</td></tr>
+<tr><td><code>UserAuthenticationMethod.Read.All</code></td><td>Check MFA registration status</td></tr>
+<tr><td><code>IdentityRiskyUser.Read.All</code></td><td>Read identity risk detections</td></tr>
+<tr><td><code>Application.Read.All</code></td><td>Read app registrations and service principals</td></tr>
+</tbody></table>
+<hr>
+<h2 id="container-app-configuration">Container App Configuration</h2>
+<p>The container app runs with these settings:</p>
+<pre><code class="language-yaml">Image:      esiqnewacr.azurecr.io/esiqnew-agent:&lt;tag&gt;
+Port:       8088
+CPU:        1 vCPU
+Memory:     2 GiB
+Replicas:   min=1, max=1
+Ingress:    External, HTTPS only
+FQDN:       esiqnew-agent.delightfulbush-cc9cf399.northeurope.azurecontainerapps.io</code></pre>
+<h3 id="environment-variables">Environment Variables</h3>
+<table>
+<thead><tr><th>Variable</th><th>Value</th><th>Purpose</th></tr></thead>
+<tbody>
+<tr><td><code>AZURE_OPENAI_ENDPOINT</code></td><td><code>https://esiqnew-ai.cognitiveservices.azure.com/</code></td><td>AI Services endpoint</td></tr>
+<tr><td><code>AZURE_OPENAI_API_VERSION</code></td><td><code>2025-01-01-preview</code></td><td>API version</td></tr>
+<tr><td><code>PRIMARY_MODEL</code></td><td><code>gpt-4.1</code></td><td>Primary LLM model</td></tr>
+<tr><td><code>FALLBACK_MODEL</code></td><td><code>gpt-5.1</code></td><td>Fallback LLM model</td></tr>
+<tr><td><code>AZURE_CLIENT_ID</code></td><td><code>d5d10273-...</code></td><td>Managed identity client ID</td></tr>
+<tr><td><code>AZURE_TENANT_ID</code></td><td><code>4a3eb5f4-...</code></td><td>Azure AD tenant ID</td></tr>
+<tr><td><code>FOUNDRY_PROJECT_ENDPOINT</code></td><td><code>https://esiqnew-ai.services.ai.azure.com/...</code></td><td>Foundry project endpoint</td></tr>
+<tr><td><code>REPORT_STORAGE_ACCOUNT</code></td><td><code>esiqnewstorage</code></td><td>Blob storage account name</td></tr>
+<tr><td><code>REPORT_STORAGE_CONTAINER</code></td><td><code>reports</code></td><td>Blob container name</td></tr>
+</tbody></table>
+<hr>
+<h2 id="dockerfile">Dockerfile</h2>
+<p>The Docker image is built from <code>AIAgent/Dockerfile</code>:</p>
+<pre><code>Step 1: Start from Python 3.12 slim (cached in ACR)
+Step 2: Install system dependencies (Chromium for PDF generation)
+Step 3: Install Playwright browsers
+Step 4: Copy requirements.txt and install Python packages (40+ Azure SDKs)
+Step 5: Copy application code (AIAgent/app/, AIAgent/main.py)
+Step 6: Copy webapp files (all HTML/JS/CSS)
+Step 7: Create non-root user (appuser)
+Step 8: Set healthcheck (GET /health)
+Step 9: CMD: uvicorn app.api:app --host 0.0.0.0 --port 8088</code></pre>
+<p>Key details:</p>
+<ul>
+<li><strong>Playwright Chromium</strong> is installed inside the container for server-side HTML→PDF conversion</li>
+<li>Runs as non-root user <code>appuser</code> for security</li>
+<li>Working directory: <code>/agent</code></li>
+<li>Reports are written to <code>/agent/output/</code> inside the container</li>
+</ul>
+<hr>
+<h2 id="build-and-deploy-process">Build and Deploy Process</h2>
+<h3 id="full-deployment-first-time">Full Deployment (First Time)</h3>
+<p>The script <code>Infra-Foundary-New/deploy.ps1</code> performs a 16-step idempotent deployment:</p>
+<pre><code>Step  1/16: Create Resource Group
+Step  2/16: Create Foundry Resource (AIServices)
+Step  3/16: Create Foundry Project
+Step  4/16: Deploy Primary Model (gpt-4.1)
+Step  5/16: Deploy Fallback Model (gpt-5.1)
+Step  6/16: Create Storage Account + &quot;reports&quot; container
+Step  7/16: Create Key Vault
+Step  8/16: Create Log Analytics Workspace
+Step  9/16: Create Application Insights
+Step 10/16: Create Container Registry
+Step 11/16: Create User-Assigned Managed Identity
+Step 12/16: Assign RBAC Roles (6 Azure + 8 Graph permissions)
+Step 13/16: Create Container Apps Environment
+Step 14/16: Build image + Create Container App
+Step 15/16: Create Entra App Registration (SPA)
+Step 16/16: Patch webapp with MSAL config, rebuild, update container</code></pre>
+<p>Each step checks if the resource already exists before creating, making it safe to re-run.</p>
+<h3 id="quick-redeployment-code-changes-only">Quick Redeployment (Code Changes Only)</h3>
+<p>The script <code>Infra-Foundary-New/redeploy-image.ps1</code> performs a 3-step update:</p>
+<pre><code>Step 1/3: Build new image via ACR Tasks
+           az acr build --registry esiqnewacr --image esiqnew-agent:&lt;tag&gt; ...
+Step 2/3: Update container app image reference
+           az containerapp update --image esiqnewacr.azurecr.io/esiqnew-agent:&lt;tag&gt;
+Step 3/3: Restart active revision
+           az containerapp revision restart ...</code></pre>
+<h3 id="manual-build-commands">Manual Build Commands</h3>
+<pre><code class="language-powershell"># 1. Prepare build context
+if (Test-Path C:\Temp\esiq-ctx) { Remove-Item -Recurse -Force C:\Temp\esiq-ctx }
+New-Item -ItemType Directory -Path C:\Temp\esiq-ctx\AIAgent -Force
+New-Item -ItemType Directory -Path C:\Temp\esiq-ctx\webapp -Force
+Copy-Item -Recurse -Force &quot;AIAgent\app&quot; C:\Temp\esiq-ctx\AIAgent\
+Copy-Item -Force &quot;AIAgent\main.py&quot; C:\Temp\esiq-ctx\AIAgent\
+Copy-Item -Force &quot;AIAgent\requirements.txt&quot; C:\Temp\esiq-ctx\AIAgent\
+Copy-Item -Force &quot;AIAgent\Dockerfile&quot; C:\Temp\esiq-ctx\AIAgent\
+Copy-Item -Recurse -Force &quot;webapp\*&quot; C:\Temp\esiq-ctx\webapp\
+
+# 2. Build image in ACR
+az acr build --registry esiqnewacr --image esiqnew-agent:v94 `
+  --file AIAgent/Dockerfile C:\Temp\esiq-ctx `
+  --build-arg CACHEBUST=$(Get-Date -Format &#x27;yyyyMMddHHmmss&#x27;) --no-logs
+
+# 3. Deploy new image
+az containerapp update --name esiqnew-agent --resource-group ESIQNew-RG `
+  --image esiqnewacr.azurecr.io/esiqnew-agent:v94 -o table</code></pre>
+<hr>
+<h2 id="network-architecture">Network Architecture</h2>
+<pre><code>Internet ──► Azure Container Apps (HTTPS, port 443)
+              │
+              ├── Envoy proxy (TLS termination)
+              │     │
+              │     └── Container: esiqnew-agent (port 8088)
+              │           │
+              │           ├──► Azure OpenAI (HTTPS)
+              │           ├──► Azure Blob Storage (HTTPS)
+              │           ├──► Microsoft Graph API (HTTPS)
+              │           └──► Azure Resource Manager (HTTPS)
+              │
+              └── CORS: teams.microsoft.com, *.office.com,
+                        *.cloud.microsoft, *.microsoft365.com</code></pre>
+<ul>
+<li>External ingress with HTTPS only</li>
+<li>No VNet integration (public network)</li>
+<li>CORS restricted to Microsoft Teams and Office domains</li>
+<li>Content Security Policy allows Teams iframe embedding</li>
+</ul>
+<hr>
+<h2 id="storage-architecture">Storage Architecture</h2>
+<p>Reports are stored in two places:</p>
+<ol>
+<li><strong>Local filesystem</strong> (<code>/agent/output/</code> inside the container) — fast, ephemeral</li>
+<li><strong>Azure Blob Storage</strong> (<code>esiqnewstorage/reports</code>) — persistent across restarts</li>
+</ol>
+<pre><code>Assessment completes
+    │
+    ├── Write to /agent/output/20260422_023002_PM/FedRAMP/
+    │     ├── fedramp-compliance-report.html
+    │     ├── fedramp-compliance-report.pdf
+    │     ├── fedramp-compliance-report.xlsx
+    │     └── fedramp-compliance.json
+    │
+    └── Upload to blob storage (same relative path)
+          └── reports/20260422_023002_PM/FedRAMP/...
+
+User requests report:
+    │
+    ├── Check local filesystem first (fast)
+    │     └── Found? → Serve directly
+    │
+    └── Not found? → Download from blob storage → Serve
+          └── Not in blob either? → 404 &quot;Report not found&quot;</code></pre>
+<hr>
+<p><strong>Next:</strong> <a href="02-assessment-guide.html">Assessment Guide →</a></p>
+</main>
+
+</body>
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Configuration — PostureIQ</title>
+  <link rel="stylesheet" href="theme.css">
+  <link rel="stylesheet" href="print.css">
+  <script src="theme.js"></script>
+</head>
+<body>
+
+<header class="doc-header">
+  <a href="overview.html" class="doc-header-brand">
+    <svg viewBox="0 0 28 28" fill="none"><rect width="28" height="28" rx="6" fill="var(--bg-accent)"/><path d="M8 8h4v12H8V8zm8 4h4v8h-4v-8z" fill="var(--text-on-accent)"/></svg>
+    <span>PostureIQ Docs</span>
+  </a>
+  <nav class="doc-header-nav">
+    <a href="overview.html">Home</a>
+    <a href="getting-started.html">Get Started</a>
+    <a href="architecture.html">Architecture</a>
+    <a href="deployment.html">Deploy</a>
+    <a href="configuration.html" class="active">Config</a>
+    <a href="assessment-engines.html">Engines</a>
+    <a href="extending.html">Extend</a>
+    <a href="coverage-matrix.html">Coverage</a>
+    <button class="theme-toggle" aria-label="Toggle theme"></button>
+  </nav>
+</header>
+
+<main class="doc-container">
+  <h1>Configuration</h1>
+  <p class="subtitle">Environment variables, JSON config, thresholds, suppressions, and troubleshooting.</p>
+
+  <h2>Configuration Sources</h2>
+  <p>PostureIQ loads from two sources (environment variables take precedence):</p>
+  <ol>
+    <li><strong>Environment variables</strong> — prefixed with <code>ENTERPRISESECURITYIQ_</code></li>
+    <li><strong>JSON config file</strong> — pointed to by <code>ENTERPRISESECURITYIQ_CONFIG</code></li>
+  </ol>
+
+  <h2>Core Environment Variables</h2>
+  <table>
+    <thead><tr><th>Variable</th><th>Default</th><th>Description</th></tr></thead>
+    <tbody>
+      <tr><td><code>AZURE_TENANT_ID</code></td><td>&mdash;</td><td>Target Azure AD tenant ID</td></tr>
+      <tr><td><code>AZURE_SUBSCRIPTION_ID</code></td><td>&mdash;</td><td>Filter to a specific subscription</td></tr>
+      <tr><td><code>AZURE_CLIENT_ID</code></td><td>&mdash;</td><td>Service principal client ID (SP mode)</td></tr>
+      <tr><td><code>AZURE_CLIENT_SECRET</code></td><td>&mdash;</td><td>Service principal secret (SP mode)</td></tr>
+      <tr><td><code>ENTERPRISESECURITYIQ_CONFIG</code></td><td>&mdash;</td><td>Path to JSON config file</td></tr>
+      <tr><td><code>ENTERPRISESECURITYIQ_FRAMEWORKS</code></td><td>All</td><td>Comma-separated framework list</td></tr>
+      <tr><td><code>ENTERPRISESECURITYIQ_LOG_LEVEL</code></td><td><code>INFO</code></td><td>Logging level</td></tr>
+      <tr><td><code>ENTERPRISESECURITYIQ_OUTPUT_DIR</code></td><td><code>./output</code></td><td>Output directory for reports</td></tr>
+      <tr><td><code>ENTERPRISESECURITYIQ_OUTPUT_FORMATS</code></td><td><code>json,html</code></td><td>Comma-separated output formats</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Foundry Agent Settings</h2>
+  <table>
+    <thead><tr><th>Variable</th><th>Default</th><th>Description</th></tr></thead>
+    <tbody>
+      <tr><td><code>FOUNDRY_PROJECT_ENDPOINT</code></td><td>&mdash;</td><td>Foundry project endpoint URL</td></tr>
+      <tr><td><code>FOUNDRY_MODEL_DEPLOYMENT_NAME</code></td><td><code>gpt-4.1</code></td><td>Deployed model name</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Collector Settings</h2>
+  <table>
+    <thead><tr><th>Variable</th><th>Default</th><th>Description</th></tr></thead>
+    <tbody>
+      <tr><td><code>ENTERPRISESECURITYIQ_AZURE_ENABLED</code></td><td><code>true</code></td><td>Enable Azure ARM collectors</td></tr>
+      <tr><td><code>ENTERPRISESECURITYIQ_ENTRA_ENABLED</code></td><td><code>true</code></td><td>Enable Entra ID (Graph) collectors</td></tr>
+      <tr><td><code>ENTERPRISESECURITYIQ_AZURE_BATCH_SIZE</code></td><td><code>4</code></td><td>Concurrent Azure collector limit</td></tr>
+      <tr><td><code>ENTERPRISESECURITYIQ_ENTRA_BATCH_SIZE</code></td><td><code>3</code></td><td>Concurrent Entra collector limit</td></tr>
+      <tr><td><code>ENTERPRISESECURITYIQ_COLLECTOR_TIMEOUT</code></td><td><code>300</code></td><td>Per-collector timeout (seconds)</td></tr>
+      <tr><td><code>ENTERPRISESECURITYIQ_USER_SAMPLE_LIMIT</code></td><td><code>0</code></td><td>Max users to sample (0 = all)</td></tr>
+      <tr><td><code>ENTERPRISESECURITYIQ_CHECKPOINT_ENABLED</code></td><td><code>true</code></td><td>Enable checkpoint/resume</td></tr>
+    </tbody>
+  </table>
+
+  <h2>JSON Config File</h2>
+  <pre><code>export ENTERPRISESECURITYIQ_CONFIG="config/enterprisesecurityiq.config.json"</code></pre>
+  <pre><code>{
+  "$schema": "config.schema.json",
+  "name": "PostureIQ Assessment",
+  "frameworks": ["FedRAMP", "CIS", "NIST-800-53"],
+  "logLevel": "INFO",
+  "outputFormats": ["json", "html", "md"],
+  "outputDir": "./output",
+  "checkpointEnabled": true,
+  "auth": {
+    "tenantId": "your-tenant-id",
+    "authMode": "auto",
+    "subscriptionFilter": []
+  },
+  "collectors": {
+    "azureEnabled": true,
+    "entraEnabled": true,
+    "azureBatchSize": 4,
+    "entraBatchSize": 3,
+    "collectorTimeout": 300,
+    "userSampleLimit": 0
+  }
+}</code></pre>
+  <p>A JSON Schema is available at <code>config/config.schema.json</code> for editor validation.</p>
+
+  <h2>Framework Selection</h2>
+  <table>
+    <thead><tr><th>Short Name</th><th>Framework</th><th>Controls</th></tr></thead>
+    <tbody>
+      <tr><td><code>NIST-800-53</code></td><td>NIST 800-53 Rev 5</td><td>83</td></tr>
+      <tr><td><code>FedRAMP</code></td><td>FedRAMP Moderate</td><td>69</td></tr>
+      <tr><td><code>CIS</code></td><td>CIS Azure Benchmark v2.0</td><td>53</td></tr>
+      <tr><td><code>MCSB</code></td><td>Microsoft Cloud Security Benchmark</td><td>53</td></tr>
+      <tr><td><code>PCI-DSS</code></td><td>PCI DSS v4.0</td><td>51</td></tr>
+      <tr><td><code>ISO-27001</code></td><td>ISO 27001:2022</td><td>51</td></tr>
+      <tr><td><code>SOC2</code></td><td>SOC 2 Type II</td><td>47</td></tr>
+      <tr><td><code>HIPAA</code></td><td>HIPAA Security Rule</td><td>43</td></tr>
+      <tr><td><code>NIST-CSF</code></td><td>NIST Cybersecurity Framework</td><td>29</td></tr>
+      <tr><td><code>CSA-CCM</code></td><td>CSA Cloud Controls Matrix</td><td>24</td></tr>
+      <tr><td><code>GDPR</code></td><td>GDPR</td><td>22</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Suppressions</h2>
+  <p>Suppress specific findings for accepted risks or compensating controls. Each suppression requires:</p>
+  <ul>
+    <li><strong>Rule ID</strong> — unique identifier</li>
+    <li><strong>Match criteria</strong> — control ID pattern, resource name, or domain</li>
+    <li><strong>Justification</strong> — reason for suppression (required for audit trail)</li>
+    <li><strong>Expiry</strong> — optional date when the suppression expires</li>
+  </ul>
+  <div class="callout">
+    Suppressed findings are still collected and evaluated but marked as suppressed in reports with justification attached.
+  </div>
+
+  <h2>Authentication Modes</h2>
+  <table>
+    <thead><tr><th>Mode</th><th>When Used</th><th>Configuration</th></tr></thead>
+    <tbody>
+      <tr><td>Auto</td><td>Default</td><td><code>DefaultAzureCredential</code> chain — picks up <code>az login</code>, managed identity, or env vars</td></tr>
+      <tr><td>ServicePrincipal</td><td>CI/CD, automation</td><td>Set <code>AZURE_CLIENT_ID</code>, <code>AZURE_CLIENT_SECRET</code>, <code>AZURE_TENANT_ID</code></td></tr>
+      <tr><td>ManagedIdentity</td><td>Container Apps</td><td>Assign system or user-assigned managed identity</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Troubleshooting</h2>
+  <table>
+    <thead><tr><th>Issue</th><th>Resolution</th></tr></thead>
+    <tbody>
+      <tr><td><code>DefaultAzureCredential failed</code></td><td>Run <code>az login</code> or set service principal env vars</td></tr>
+      <tr><td><code>Insufficient privileges</code></td><td>Ensure Reader + Security Reader roles and Graph read permissions</td></tr>
+      <tr><td><code>Module not found</code></td><td>Run <code>pip install -r AIAgent/requirements.txt</code></td></tr>
+      <tr><td><code>Partial collection</code></td><td>Orchestrator continues on partial failures; check logs</td></tr>
+      <tr><td><code>Key Vault access denied</code></td><td>Ensure Key Vault RBAC grants List permissions</td></tr>
+      <tr><td><code>Collector timeout</code></td><td>Increase <code>ENTERPRISESECURITYIQ_COLLECTOR_TIMEOUT</code></td></tr>
+      <tr><td><code>Rate limiting</code></td><td>Reduce batch sizes</td></tr>
+      <tr><td><code>Large tenant slow</code></td><td>Set <code>ENTERPRISESECURITYIQ_USER_SAMPLE_LIMIT</code></td></tr>
+    </tbody>
+  </table>
+
+  <h2>Report Integrity</h2>
+  <p>Every report includes a SHA-256 hash. Verify with:</p>
+  <pre><code>Get-FileHash "output\&lt;timestamp&gt;\compliance-report.html" -Algorithm SHA256</code></pre>
+  <p>If the computed hash matches the hash in the report, the report is untampered.</p>
+</main>
+
+<footer class="doc-footer">
+  PostureIQ &mdash; AI-Powered Compliance Intelligence &mdash; Author: Murali Chillakuru
+</footer>
+
+</body>
+</html>

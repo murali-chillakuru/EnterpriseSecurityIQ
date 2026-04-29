@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Assessment Engines — PostureIQ</title>
+  <link rel="stylesheet" href="theme.css">
+  <link rel="stylesheet" href="print.css">
+  <script src="theme.js"></script>
+</head>
+<body>
+
+<header class="doc-header">
+  <a href="overview.html" class="doc-header-brand">
+    <svg viewBox="0 0 28 28" fill="none"><rect width="28" height="28" rx="6" fill="var(--bg-accent)"/><path d="M8 8h4v12H8V8zm8 4h4v8h-4v-8z" fill="var(--text-on-accent)"/></svg>
+    <span>PostureIQ Docs</span>
+  </a>
+  <nav class="doc-header-nav">
+    <a href="overview.html">Home</a>
+    <a href="getting-started.html">Get Started</a>
+    <a href="architecture.html">Architecture</a>
+    <a href="deployment.html">Deploy</a>
+    <a href="configuration.html">Config</a>
+    <a href="assessment-engines.html" class="active">Engines</a>
+    <a href="extending.html">Extend</a>
+    <a href="coverage-matrix.html">Coverage</a>
+    <button class="theme-toggle" aria-label="Toggle theme"></button>
+  </nav>
+</header>
+
+<main class="doc-container">
+  <h1>Assessment Engines</h1>
+  <p class="subtitle">All 7 standalone assessment engines — capabilities, categories, and usage.</p>
+
+  <div class="stat-bar">
+    <div class="stat-item"><span class="stat-value">7</span><span class="stat-label">Engines</span></div>
+    <div class="stat-item"><span class="stat-value">14</span><span class="stat-label">Agent Tools</span></div>
+    <div class="stat-item"><span class="stat-value">7</span><span class="stat-label">CLI Scripts</span></div>
+    <div class="stat-item"><span class="stat-value">6</span><span class="stat-label">Support Modules</span></div>
+  </div>
+
+  <!-- Engine 1 -->
+  <h2>1. Security Compliance Assessment</h2>
+  <div class="card">
+    <p><span class="badge">Agent: run_assessment</span> <span class="badge">CLI: run_assessment.py</span></p>
+    <p>Full multi-framework compliance assessment across all 10 evaluation domains with 68 collectors, 113 check functions, and up to 11 frameworks (525 controls).</p>
+  </div>
+  <p><strong>What it does:</strong></p>
+  <ul>
+    <li>Discovers all Azure subscriptions and Entra ID configuration</li>
+    <li>Runs 68 collectors concurrently to gather 218 evidence types</li>
+    <li>Evaluates against 113 check functions across 10 domains</li>
+    <li>Maps findings to selected compliance frameworks</li>
+    <li>Generates reports in up to 8 formats</li>
+  </ul>
+  <pre><code>python run_assessment.py --tenant &lt;id&gt; --framework NIST-800-53 CIS FedRAMP</code></pre>
+
+  <!-- Engine 2 -->
+  <h2>2. Risk Assessment</h2>
+  <div class="card">
+    <p><span class="badge">Agent: analyze_risk</span> <span class="badge">CLI: run_risk_analysis.py</span></p>
+    <p>Security risk gap analysis across 4 categories: Identity, Network, Defender, and Configuration.</p>
+  </div>
+  <p><strong>What it does:</strong></p>
+  <ul>
+    <li>Identity risks: MFA gaps, stale accounts, risky users, privilege escalation paths</li>
+    <li>Network exposure: open NSGs, public storage, missing firewalls</li>
+    <li>Defender coverage: missing plans, disabled auto-provisioning</li>
+    <li>Config hygiene: unpatched resources, missing encryption, policy drift</li>
+  </ul>
+  <pre><code>python run_risk_analysis.py --tenant &lt;id&gt;</code></pre>
+
+  <!-- Engine 3 -->
+  <h2>3. Data Security Assessment</h2>
+  <div class="card">
+    <p><span class="badge">Agent: assess_data_security</span> <span class="badge">CLI: run_data_security.py</span></p>
+    <p>Data-layer posture assessment covering 12 categories.</p>
+  </div>
+  <p><strong>What it does:</strong></p>
+  <ul>
+    <li>Storage exposure (public containers, blob access, SAS tokens)</li>
+    <li>Database security (SQL audit, TDE, firewalls, Cosmos DB)</li>
+    <li>Encryption posture (in-transit, at-rest, Key Vault expiry)</li>
+    <li>Data classification (Purview labels, sensitivity coverage)</li>
+    <li>Messaging security (Service Bus, Event Hub)</li>
+    <li>Cache security (Redis access, TLS)</li>
+  </ul>
+  <pre><code>python run_data_security.py --tenant &lt;id&gt;</code></pre>
+
+  <!-- Engine 4 -->
+  <h2>4. RBAC Assessment</h2>
+  <div class="card">
+    <p><span class="badge">Agent: generate_rbac_report</span> <span class="badge">CLI: run_rbac_report.py</span></p>
+    <p>Interactive RBAC hierarchy visualization with PIM and risk analysis.</p>
+  </div>
+  <p><strong>What it does:</strong></p>
+  <ul>
+    <li>Builds full hierarchy: Management Groups &rarr; Subscriptions &rarr; Resource Groups</li>
+    <li>Shows all role assignments with scope, principal, and role definition</li>
+    <li>Expands group memberships to show effective access</li>
+    <li>Identifies PIM-eligible vs. active assignments</li>
+    <li>Flags high-risk assignments</li>
+  </ul>
+  <pre><code>python run_rbac_report.py --tenant &lt;id&gt;</code></pre>
+
+  <!-- Engine 5 -->
+  <h2>5. Copilot Readiness Assessment</h2>
+  <div class="card">
+    <p><span class="badge">Agent: assess_copilot_readiness</span> <span class="badge">CLI: run_copilot_readiness.py</span></p>
+    <p>M365 Copilot readiness assessment with 9+ categories.</p>
+  </div>
+  <p><strong>What it does:</strong></p>
+  <ul>
+    <li>Oversharing analysis (broad SharePoint/OneDrive access)</li>
+    <li>Sensitivity label coverage</li>
+    <li>DLP policy coverage and gaps</li>
+    <li>Restricted SharePoint search configuration</li>
+    <li>Access governance (reviews, entitlement, guest policies)</li>
+    <li>Conditional access readiness</li>
+    <li>Information barriers</li>
+    <li>Audit and compliance</li>
+  </ul>
+  <pre><code>python run_copilot_readiness.py --tenant &lt;id&gt;</code></pre>
+
+  <!-- Engine 6 -->
+  <h2>6. AI Agent Security Assessment</h2>
+  <div class="card">
+    <p><span class="badge">Agent: assess_ai_agent_security</span> <span class="badge">CLI: run_ai_agent_security.py</span></p>
+    <p>Security posture for 6 AI platforms across 23+ assessment areas.</p>
+  </div>
+  <p><strong>What it does:</strong></p>
+  <ul>
+    <li>Copilot Studio (bot auth, DLP connectors, tenant isolation)</li>
+    <li>Azure AI Foundry (model deployment, endpoint auth, network isolation)</li>
+    <li>Custom agents (API auth, rate limiting, input validation)</li>
+    <li>AI model governance (registry, approvals, version control)</li>
+    <li>Data handling (training data, inference logging, PII)</li>
+    <li>Responsible AI (content filtering, grounding, prompt injection)</li>
+  </ul>
+  <pre><code>python run_ai_agent_security.py --tenant &lt;id&gt;</code></pre>
+
+  <!-- Engine 7 -->
+  <h2>7. PostureIQ Assessment</h2>
+  <div class="card">
+    <p><span class="badge">Agent: run_postureiq_assessment</span> <span class="badge badge-green">AI-Powered</span></p>
+    <p>Risk-weighted posture assessment with attack path analysis and AI fix recommendations.</p>
+  </div>
+  <p><strong>What it does:</strong></p>
+  <ul>
+    <li>Applies risk-weighted scoring (severity, exploitability, blast radius)</li>
+    <li>Identifies attack paths (chains of findings that create exploitable paths)</li>
+    <li>Ranks findings by fix priority for maximum risk reduction</li>
+    <li>Generates AI-powered remediation with step-by-step instructions</li>
+  </ul>
+
+  <!-- Supporting -->
+  <h2>Supporting Modules</h2>
+  <table>
+    <thead><tr><th>Module</th><th>Purpose</th></tr></thead>
+    <tbody>
+      <tr><td>Cloud Explorer</td><td>Live Azure Resource Graph (KQL) and MS Graph queries with natural language support</td></tr>
+      <tr><td>Data Residency Engine</td><td>Data residency compliance checks (5 checks)</td></tr>
+      <tr><td>Remediation Engine</td><td>Automated remediation plan generation</td></tr>
+      <tr><td>Continuous Monitor</td><td>Scheduled re-assessments with drift detection</td></tr>
+      <tr><td>SIEM Integration</td><td>Export to Sentinel, Splunk, or generic webhooks</td></tr>
+      <tr><td>Operational Integrations</td><td>ServiceNow, Jira, and Azure DevOps connectors</td></tr>
+    </tbody>
+  </table>
+</main>
+
+<footer class="doc-footer">
+  PostureIQ &mdash; AI-Powered Compliance Intelligence &mdash; Author: Murali Chillakuru
+</footer>
+
+</body>
+</html>

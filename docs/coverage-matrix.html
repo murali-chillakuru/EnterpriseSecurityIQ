@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coverage Matrix — PostureIQ</title>
+  <link rel="stylesheet" href="theme.css">
+  <link rel="stylesheet" href="print.css">
+  <script src="theme.js"></script>
+  <style>
+    .matrix-table { font-size: 0.75rem; overflow-x: auto; display: block; }
+    .matrix-table th { position: sticky; top: 0; z-index: 10; font-size: 0.6875rem; white-space: nowrap; }
+    .matrix-table td { text-align: center; padding: 0.375rem 0.5rem; min-width: 45px; }
+    .matrix-table td:first-child { text-align: left; font-weight: 600; white-space: nowrap; position: sticky; left: 0; background: var(--bg-primary); z-index: 5; }
+    .matrix-table th:first-child { position: sticky; left: 0; z-index: 15; }
+    .dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; }
+    .dot-full { background: var(--bg-accent); }
+    .dot-partial { background: #c87000; }
+    .dot-none { background: var(--border-default); }
+    .legend { display: flex; gap: 1.5rem; margin: 1rem 0; font-size: 0.8125rem; align-items: center; }
+    .legend-item { display: flex; align-items: center; gap: 0.375rem; }
+    .filter-bar { display: flex; gap: 0.75rem; margin: 1rem 0; flex-wrap: wrap; }
+    .filter-btn { padding: 0.25rem 0.75rem; border: 1px solid var(--border-default); border-radius: 999px; background: var(--bg-card); color: var(--text-secondary); cursor: pointer; font-size: 0.75rem; transition: all 0.15s; }
+    .filter-btn:hover, .filter-btn.active { border-color: var(--border-accent); background: var(--bg-badge); color: var(--text-accent); }
+  </style>
+</head>
+<body>
+
+<header class="doc-header">
+  <a href="overview.html" class="doc-header-brand">
+    <svg viewBox="0 0 28 28" fill="none"><rect width="28" height="28" rx="6" fill="var(--bg-accent)"/><path d="M8 8h4v12H8V8zm8 4h4v8h-4v-8z" fill="var(--text-on-accent)"/></svg>
+    <span>PostureIQ Docs</span>
+  </a>
+  <nav class="doc-header-nav">
+    <a href="overview.html">Home</a>
+    <a href="getting-started.html">Get Started</a>
+    <a href="architecture.html">Architecture</a>
+    <a href="deployment.html">Deploy</a>
+    <a href="configuration.html">Config</a>
+    <a href="assessment-engines.html">Engines</a>
+    <a href="extending.html">Extend</a>
+    <a href="coverage-matrix.html" class="active">Coverage</a>
+    <button class="theme-toggle" aria-label="Toggle theme"></button>
+  </nav>
+</header>
+
+<main class="doc-container">
+  <h1>Coverage Matrix</h1>
+  <p class="subtitle">11 compliance frameworks × 10 evaluation domains — 525 total controls.</p>
+
+  <div class="stat-bar">
+    <div class="stat-item"><span class="stat-value">11</span><span class="stat-label">Frameworks</span></div>
+    <div class="stat-item"><span class="stat-value">10</span><span class="stat-label">Domains</span></div>
+    <div class="stat-item"><span class="stat-value">525</span><span class="stat-label">Controls</span></div>
+    <div class="stat-item"><span class="stat-value">113</span><span class="stat-label">Check Functions</span></div>
+  </div>
+
+  <div class="legend">
+    <div class="legend-item"><span class="dot dot-full"></span> Full coverage</div>
+    <div class="legend-item"><span class="dot dot-partial"></span> Partial coverage</div>
+    <div class="legend-item"><span class="dot dot-none"></span> Not in scope</div>
+  </div>
+
+  <h2>Framework × Domain Matrix</h2>
+  <table class="matrix-table" id="matrix">
+    <thead>
+      <tr>
+        <th>Framework</th>
+        <th>Controls</th>
+        <th>Access</th>
+        <th>Identity</th>
+        <th>Data Prot.</th>
+        <th>Logging</th>
+        <th>Network</th>
+        <th>Governance</th>
+        <th>Incident</th>
+        <th>Change</th>
+        <th>BCP</th>
+        <th>Assets</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>NIST 800-53 Rev 5</td><td>83</td>
+        <td><span class="dot dot-full"></span></td>
+        <td><span class="dot dot-full"></span></td>
+        <td><span class="dot dot-full"></span></td>
+        <td><span class="dot dot-full"></span></td>
+        <td><span class="dot dot-full"></span></td>
+        <td><span class="dot dot-full"></span></td>
+        <td><span class="dot dot-full"></span></td>
+        <td><span class="dot dot-full"></span></td>
+        <td><span class="dot dot-full"></span></td>
+        <td><span class="dot dot-full"></span></td>
+      </tr>
+      <tr>
+        <td>FedRAMP Moderate</td><td>69</td>
+        <td><span class="dot dot-full"></span></td>
+        <td><span class="dot dot-full"></span></td>
+        <td><span class="dot dot-full"></span></td>
+        <td><span class="dot dot-full"></span></td>
+        <td><span class="dot dot-full"></span></td>
+        <td><span class="dot dot-full"></span></td>
+        <td><span class="dot dot-full"></span></td>
+        <td><span class="dot dot-full"></span></td>
+        <td><span class="dot dot-full"></span></td>
+        <td><span class="dot dot-full"></span></td>
+      </tr>
+      <tr>
+        <td>CIS Azure v2.0</td><td>53</td>
+        <td><span class="dot dot-full"></span></td>
+        <td><span class="dot dot-full"></span></td>
+        <td><span class="dot dot-full"></span></td>
+        <td><span class="dot dot-full"></span></td>
+        <td><span class="dot dot-full"></span></td>
+        <td><span class="dot dot-full"></span></td>
+        <td><span class="dot dot-partial"></span></td>
+        <td><span class="dot dot-partial"></span></td>
+        <td><span class="dot dot-partial"></span></td>
+        <td><span class="dot dot-partial"></span></td>
+      </tr>
+      <tr>
+        <td>MCSB</td><td>53</td>
+        <td><span class="dot dot-full"></span></td>
+        <td><span class="dot dot-full"></span></td>
+        <td><span class="dot dot-full"></span></td>
+        <td><span class="dot dot-full"></span></td>
+        <td><span class="dot dot-full"></span></td>
+        <td><span class="dot dot-full"></span></td>
+        <td><span class="dot dot-partial"></span></td>
+        <td><span class="dot dot-partial"></span></td>
+        <td><span class="dot dot-partial"></span></td>
+        <td><span class="dot dot-full"></span></td>
+      </tr>
+      <tr>
+        <td>PCI DSS v4.0</td><td>51</td>
+        <td><span class="dot dot-full"></span></td>
+        <td><span class="dot dot-full"></span></td>
+        <td><span class="dot dot-full"></span></td>
+        <td><span class="dot dot-full"></span></td>
+        <td><span class="dot dot-full"></span></td>
+        <td><span class="dot dot-full"></span></td>
+        <td><span class="dot dot-full"></span></td>
+        <td><span class="dot dot-partial"></span></td>
+        <td><span class="dot dot-partial"></span></td>
+        <td><span class="dot dot-partial"></span></td>
+      </tr>
+      <tr>
+        <td>ISO 27001:2022</td><td>51</td>
+        <td><span class="dot dot-full"></span></td>
+        <td><span class="dot dot-full"></span></td>
+        <td><span class="dot dot-full"></span></td>
+        <td><span class="dot dot-full"></span></td>
+        <td><span class="dot dot-full"></span></td>
+        <td><span class="dot dot-full"></span></td>
+        <td><span class="dot dot-full"></span></td>
+        <td><span class="dot dot-full"></span></td>
+        <td><span class="dot dot-full"></span></td>
+        <td><span class="dot dot-full"></span></td>
+      </tr>
+      <tr>
+        <td>SOC 2 Type II</td><td>47</td>
+        <td><span class="dot dot-full"></span></td>
+        <td><span class="dot dot-full"></span></td>
+        <td><span class="dot dot-full"></span></td>
+        <td><span class="dot dot-full"></span></td>
+        <td><span class="dot dot-partial"></span></td>
+        <td><span class="dot dot-full"></span></td>
+        <td><span class="dot dot-full"></span></td>
+        <td><span class="dot dot-full"></span></td>
+        <td><span class="dot dot-full"></span></td>
+        <td><span class="dot dot-partial"></span></td>
+      </tr>
+      <tr>
+        <td>HIPAA</td><td>43</td>
+        <td><span class="dot dot-full"></span></td>
+        <td><span class="dot dot-full"></span></td>
+        <td><span class="dot dot-full"></span></td>
+        <td><span class="dot dot-full"></span></td>
+        <td><span class="dot dot-partial"></span></td>
+        <td><span class="dot dot-full"></span></td>
+        <td><span class="dot dot-full"></span></td>
+        <td><span class="dot dot-partial"></span></td>
+        <td><span class="dot dot-full"></span></td>
+        <td><span class="dot dot-partial"></span></td>
+      </tr>
+      <tr>
+        <td>NIST CSF</td><td>29</td>
+        <td><span class="dot dot-full"></span></td>
+        <td><span class="dot dot-full"></span></td>
+        <td><span class="dot dot-full"></span></td>
+        <td><span class="dot dot-full"></span></td>
+        <td><span class="dot dot-full"></span></td>
+        <td><span class="dot dot-full"></span></td>
+        <td><span class="dot dot-full"></span></td>
+        <td><span class="dot dot-partial"></span></td>
+        <td><span class="dot dot-partial"></span></td>
+        <td><span class="dot dot-partial"></span></td>
+      </tr>
+      <tr>
+        <td>CSA CCM</td><td>24</td>
+        <td><span class="dot dot-full"></span></td>
+        <td><span class="dot dot-full"></span></td>
+        <td><span class="dot dot-full"></span></td>
+        <td><span class="dot dot-partial"></span></td>
+        <td><span class="dot dot-partial"></span></td>
+        <td><span class="dot dot-full"></span></td>
+        <td><span class="dot dot-partial"></span></td>
+        <td><span class="dot dot-partial"></span></td>
+        <td><span class="dot dot-partial"></span></td>
+        <td><span class="dot dot-partial"></span></td>
+      </tr>
+      <tr>
+        <td>GDPR</td><td>22</td>
+        <td><span class="dot dot-full"></span></td>
+        <td><span class="dot dot-full"></span></td>
+        <td><span class="dot dot-full"></span></td>
+        <td><span class="dot dot-full"></span></td>
+        <td><span class="dot dot-partial"></span></td>
+        <td><span class="dot dot-full"></span></td>
+        <td><span class="dot dot-partial"></span></td>
+        <td><span class="dot dot-none"></span></td>
+        <td><span class="dot dot-partial"></span></td>
+        <td><span class="dot dot-partial"></span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>Domain Check Functions</h2>
+  <table>
+    <thead><tr><th>Domain</th><th>Checks</th><th>Key Areas</th></tr></thead>
+    <tbody>
+      <tr><td>Access Control</td><td>8</td><td>RBAC separation, least privilege, conditional access, custom roles, managed identity</td></tr>
+      <tr><td>Identity &amp; Auth</td><td>22</td><td>MFA coverage, app credentials, user lifecycle, risky users, OAuth2, workload identity</td></tr>
+      <tr><td>Data Protection</td><td>22</td><td>Encryption (transit/rest), Key Vault expiry, VM/SQL/AKS/CosmosDB/Functions hardening</td></tr>
+      <tr><td>Logging &amp; Monitoring</td><td>13</td><td>Diagnostic &ge;80%, threat detection, flow logs, sign-in monitoring, audit logging</td></tr>
+      <tr><td>Network Security</td><td>16</td><td>NSG rules, storage firewalls, Azure Firewall, route tables, AKS network, WAF</td></tr>
+      <tr><td>Governance &amp; Risk</td><td>21</td><td>Policy compliance &ge;80%, Defender plans, PIM, access reviews, resource locks</td></tr>
+      <tr><td>Incident Response</td><td>6</td><td>Security contacts, detection, alerting, Sentinel, alert response coverage</td></tr>
+      <tr><td>Change Management</td><td>4</td><td>Change control policies, resource lock governance, policy enforcement</td></tr>
+      <tr><td>Business Continuity</td><td>4</td><td>Backup, geo-redundancy, VM availability, database resilience</td></tr>
+      <tr><td>Asset Management</td><td>4</td><td>Inventory, classification/tagging, authorized software, application inventory</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Collector Coverage</h2>
+  <table>
+    <thead><tr><th>Source</th><th>Collectors</th><th>Categories</th></tr></thead>
+    <tbody>
+      <tr><td>Azure ARM</td><td>50</td><td>VMs, Storage, Key Vault, SQL, AKS, App Service, Functions, Cosmos DB, NSGs, Firewalls, Policy, Defender, and 17+ more</td></tr>
+      <tr><td>Entra ID (Graph)</td><td>18</td><td>Users, Groups, Apps, SPs, CA Policies, Roles, PIM, Named Locations, Auth Methods, Sign-ins, Risk, Reviews</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Report Format Coverage</h2>
+  <table>
+    <thead><tr><th>Format</th><th>Compliance</th><th>Risk</th><th>Data Sec</th><th>RBAC</th><th>Copilot</th><th>AI Agent</th></tr></thead>
+    <tbody>
+      <tr><td>HTML</td><td><span class="dot dot-full"></span></td><td><span class="dot dot-full"></span></td><td><span class="dot dot-full"></span></td><td><span class="dot dot-full"></span></td><td><span class="dot dot-full"></span></td><td><span class="dot dot-full"></span></td></tr>
+      <tr><td>JSON</td><td><span class="dot dot-full"></span></td><td><span class="dot dot-full"></span></td><td><span class="dot dot-full"></span></td><td><span class="dot dot-full"></span></td><td><span class="dot dot-full"></span></td><td><span class="dot dot-full"></span></td></tr>
+      <tr><td>Markdown</td><td><span class="dot dot-full"></span></td><td><span class="dot dot-full"></span></td><td><span class="dot dot-full"></span></td><td><span class="dot dot-partial"></span></td><td><span class="dot dot-full"></span></td><td><span class="dot dot-full"></span></td></tr>
+      <tr><td>Excel</td><td><span class="dot dot-full"></span></td><td><span class="dot dot-partial"></span></td><td><span class="dot dot-partial"></span></td><td><span class="dot dot-none"></span></td><td><span class="dot dot-partial"></span></td><td><span class="dot dot-partial"></span></td></tr>
+      <tr><td>OSCAL</td><td><span class="dot dot-full"></span></td><td><span class="dot dot-none"></span></td><td><span class="dot dot-none"></span></td><td><span class="dot dot-none"></span></td><td><span class="dot dot-none"></span></td><td><span class="dot dot-none"></span></td></tr>
+      <tr><td>SARIF</td><td><span class="dot dot-full"></span></td><td><span class="dot dot-none"></span></td><td><span class="dot dot-none"></span></td><td><span class="dot dot-none"></span></td><td><span class="dot dot-none"></span></td><td><span class="dot dot-none"></span></td></tr>
+      <tr><td>PDF</td><td><span class="dot dot-full"></span></td><td><span class="dot dot-full"></span></td><td><span class="dot dot-full"></span></td><td><span class="dot dot-full"></span></td><td><span class="dot dot-full"></span></td><td><span class="dot dot-full"></span></td></tr>
+      <tr><td>Webhook</td><td><span class="dot dot-full"></span></td><td><span class="dot dot-full"></span></td><td><span class="dot dot-full"></span></td><td><span class="dot dot-partial"></span></td><td><span class="dot dot-full"></span></td><td><span class="dot dot-full"></span></td></tr>
+    </tbody>
+  </table>
+</main>
+
+<footer class="doc-footer">
+  PostureIQ &mdash; AI-Powered Compliance Intelligence &mdash; Author: Murali Chillakuru
+</footer>
+
+</body>
+</html>

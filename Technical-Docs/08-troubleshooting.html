@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Troubleshooting — PostureIQ Technical Docs</title>
+  <link rel="stylesheet" href="../docs/theme.css">
+  <link rel="stylesheet" href="../docs/print.css">
+  <script src="../docs/theme.js"></script>
+</head>
+<body>
+
+<header class="doc-header">
+  <a href="index-of-tech-docs.html" class="doc-header-brand">
+    <svg viewBox="0 0 28 28" fill="none"><rect width="28" height="28" rx="6" fill="var(--bg-accent)"/><path d="M8 8h4v12H8V8zm8 4h4v8h-4v-8z" fill="var(--text-on-accent)"/></svg>
+    <span>PostureIQ Technical Docs</span>
+  </a>
+  <nav class="doc-header-nav">
+    <a href="index-of-tech-docs.html">Home</a>
+    <a href="01-infrastructure-overview.html">Infrastructure</a>
+    <a href="02-assessment-guide.html">Assessments</a>
+    <a href="03-report-lifecycle.html">Reports</a>
+    <a href="04-manual-setup-guide.html">Setup</a>
+    <a href="05-authentication-flow.html">Auth</a>
+    <a href="06-api-reference.html">API</a>
+    <a href="07-teams-integration.html">Teams</a>
+    <a href="08-troubleshooting.html" class="active">Troubleshoot</a>
+    <button class="theme-toggle" aria-label="Toggle theme"></button>
+  </nav>
+</header>
+
+<main class="doc-container">
+<h1 id="troubleshooting">Troubleshooting</h1>
+<blockquote><p>Common issues, their causes, and how to fix them.</p></blockquote>
+<p><strong>Navigation:</strong> <a href="index-of-tech-docs.html">Index</a> · <a href="01-infrastructure-overview.html">Infrastructure</a> · <a href="02-assessment-guide.html">Assessments</a> · <a href="03-report-lifecycle.html">Reports</a> · <a href="04-manual-setup-guide.html">Manual Setup</a> · <a href="05-authentication-flow.html">Authentication</a> · <a href="06-api-reference.html">API Reference</a> · <a href="07-teams-integration.html">Teams Integration</a> · <strong>Troubleshooting</strong></p>
+<hr>
+<h2 id="authentication-issues">Authentication Issues</h2>
+<h3 id="login-failed-or-aadsts-errors">"Login failed" or AADSTS errors</h3>
+<table>
+<thead><tr><th>Error Code</th><th>Meaning</th><th>Fix</th></tr></thead>
+<tbody>
+<tr><td><code>AADSTS65001</code></td><td>Admin consent not granted for permissions</td><td>Go to Entra ID → App registrations → <code>ESIQNew-Dashboard</code> → API Permissions → Grant admin consent</td></tr>
+<tr><td><code>AADSTS700054</code></td><td>Redirect URI mismatch</td><td>Check that the Container App FQDN exactly matches the registered redirect URI in the app registration</td></tr>
+<tr><td><code>AADSTS50011</code></td><td>Reply URL does not match</td><td>Same as above — ensure <code>https://your-fqdn</code> is registered as a SPA redirect URI</td></tr>
+<tr><td><code>AADSTS90002</code></td><td>Tenant not found</td><td>Verify <code>AZURE_TENANT_ID</code> environment variable on the container</td></tr>
+<tr><td><code>AADSTS7000218</code></td><td>Missing <code>client_assertion</code> or <code>client_secret</code></td><td>The app registration must be configured as SPA (not web/confidential). Check platform configuration</td></tr>
+</tbody></table>
+<h3 id="interaction-required-in-teams">"interaction_required" in Teams</h3>
+<p><strong>Cause:</strong> Teams SSO (NAA) failed silently and needs user interaction.</p>
+<p><strong>Fix:</strong></p>
+<ol>
+<li>Clear Teams cache: Settings → About → Clear Cache</li>
+<li>Sign out and back into Teams</li>
+<li>If persists, check that the Entra app has <code>User.Read</code> delegated permission with admin consent</li>
+</ol>
+<h3 id="401-unauthorized-on-chat">401 Unauthorized on /chat</h3>
+<p><strong>Cause:</strong> The <code>graph_token</code> or <code>arm_token</code> in the request is missing, expired, or malformed.</p>
+<p><strong>Fix:</strong></p>
+<ol>
+<li>Open browser DevTools → Network → find the <code>/chat</code> request</li>
+<li>Check the request body has both <code>graph_token</code> and <code>arm_token</code></li>
+<li>If tokens are present, they may be expired — refresh the page (MSAL will acquire new tokens)</li>
+<li>Check for JavaScript console errors related to <code>acquireTokenSilent</code></li>
+</ol>
+<hr>
+<h2 id="report-and-storage-issues">Report and Storage Issues</h2>
+<h3 id="reports-fail-to-download-404">Reports Fail to Download (404)</h3>
+<p><strong>Symptoms:</strong> Clicking a report link returns "Report not found".</p>
+<p><strong>Causes and fixes:</strong></p>
+<table>
+<thead><tr><th>Cause</th><th>How to Check</th><th>Fix</th></tr></thead>
+<tbody>
+<tr><td>Container restarted (local files lost)</td><td><code>az containerapp revision list --name esiqnew-agent --resource-group ESIQNew-RG</code></td><td>Reports should auto-download from blob. If blob upload also failed, re-run the assessment</td></tr>
+<tr><td>Blob upload failed</td><td>Check container logs for <code>upload_directory</code> errors</td><td>See "Blob Upload Failures" below</td></tr>
+<tr><td>Path encoding issue</td><td>Check if the URL has special characters</td><td>URL-encode the path</td></tr>
+</tbody></table>
+<h3 id="blob-upload-failures-authorizationfailure">Blob Upload Failures (AuthorizationFailure)</h3>
+<p><strong>Symptoms:</strong> Container logs show <code>AuthorizationFailure</code> when uploading to blob storage.</p>
+<p><strong>Most common causes:</strong></p>
+<ol>
+<li><strong>publicNetworkAccess disabled on storage account</strong></li>
+</ol>
+<p>   ```powershell<br>
+   # Check current setting<br>
+   az storage account show --name esiqnewstorage --resource-group ESIQNew-RG `<br>
+       --query "properties.publicNetworkAccess" -o tsv</p>
+<p>   # Fix: enable public access (required — container has no VNet)<br>
+   az storage account update --name esiqnewstorage --resource-group ESIQNew-RG `<br>
+       --public-network-access Enabled -o none<br>
+   ```</p>
+<ol>
+<li><strong>RBAC role not assigned</strong></li>
+</ol>
+<p>   ```powershell<br>
+   # Verify the managed identity has Storage Blob Data Contributor<br>
+   $PrincipalId = az identity show --name ESIQNew-identity --resource-group ESIQNew-RG `<br>
+       --query "principalId" -o tsv<br>
+   az role assignment list --assignee $PrincipalId --scope $(<br>
+       az storage account show --name esiqnewstorage --resource-group ESIQNew-RG --query "id" -o tsv<br>
+   ) -o table</p>
+<p>   # If missing, assign it<br>
+   az role assignment create --assignee $PrincipalId `<br>
+       --role "Storage Blob Data Contributor" `<br>
+       --scope $(az storage account show --name esiqnewstorage --resource-group ESIQNew-RG --query "id" -o tsv) -o none<br>
+   ```</p>
+<ol>
+<li><strong>Managed identity not configured on container</strong></li>
+</ol>
+<p>   ```powershell<br>
+   az containerapp show --name esiqnew-agent --resource-group ESIQNew-RG `<br>
+       --query "identity.userAssignedIdentities" -o json<br>
+   ```<br>
+   Should show the <code>ESIQNew-identity</code> resource ID.</p>
+<ol>
+<li><strong>RBAC propagation delay</strong></li>
+</ol>
+<p>   After assigning a new RBAC role, wait 5–10 minutes for propagation.</p>
+<hr>
+<h2 id="container-issues">Container Issues</h2>
+<h3 id="container-won-t-start-crashloopbackoff">Container Won't Start (CrashLoopBackOff)</h3>
+<p><strong>Check logs:</strong></p>
+<pre><code class="language-powershell">az containerapp logs show --name esiqnew-agent --resource-group ESIQNew-RG --follow</code></pre>
+<p><strong>Common causes:</strong></p>
+<table>
+<thead><tr><th>Error in Logs</th><th>Cause</th><th>Fix</th></tr></thead>
+<tbody>
+<tr><td><code>ModuleNotFoundError</code></td><td>Missing Python package</td><td>Check <code>requirements.txt</code> includes all dependencies, rebuild image</td></tr>
+<tr><td><code>Port 8088 already in use</code></td><td>Port conflict</td><td>Should not happen in Container Apps — restart the revision</td></tr>
+<tr><td><code>playwright install chromium</code> errors</td><td>Chromium not installed in image</td><td>The Dockerfile should include <code>RUN playwright install chromium</code>. Rebuild</td></tr>
+<tr><td><code>AZURE_OPENAI_ENDPOINT not set</code></td><td>Missing environment variable</td><td>Set env var on the container app</td></tr>
+<tr><td><code>uvicorn.error</code></td><td>App code syntax error</td><td>Read the full traceback in logs</td></tr>
+</tbody></table>
+<h3 id="container-restarts-frequently">Container Restarts Frequently</h3>
+<p><strong>Check:</strong></p>
+<pre><code class="language-powershell">az containerapp revision list --name esiqnew-agent --resource-group ESIQNew-RG -o table</code></pre>
+<p><strong>Common causes:</strong></p>
+<ul>
+<li>Memory limit exceeded (2 GiB) — happens during large assessments with many collectors + PDF generation running simultaneously</li>
+<li>Liveness probe failure — the <code>/health</code> endpoint must respond within the timeout</li>
+<li>Unhandled exception in a background task</li>
+</ul>
+<p><strong>Fix:</strong> If memory is the issue, increase memory:</p>
+<pre><code class="language-powershell">az containerapp update --name esiqnew-agent --resource-group ESIQNew-RG `
+    --cpu 1 --memory &quot;4Gi&quot; -o none</code></pre>
+<h3 id="how-to-view-container-logs">How to View Container Logs</h3>
+<pre><code class="language-powershell"># Recent logs
+az containerapp logs show --name esiqnew-agent --resource-group ESIQNew-RG --tail 100
+
+# Follow logs in real-time
+az containerapp logs show --name esiqnew-agent --resource-group ESIQNew-RG --follow
+
+# Query via Log Analytics (more powerful)
+az monitor log-analytics query --workspace ESIQNew-law `
+    --analytics-query &quot;ContainerAppConsoleLogs_CL | where ContainerAppName_s == &#x27;esiqnew-agent&#x27; | order by TimeGenerated desc | take 50&quot; `
+    -o table</code></pre>
+<hr>
+<h2 id="assessment-issues">Assessment Issues</h2>
+<h3 id="assessment-takes-too-long-5-minutes">Assessment Takes Too Long (> 5 Minutes)</h3>
+<p><strong>Normal duration:</strong> 2–5 minutes for PostureIQ with 11 frameworks.</p>
+<p><strong>If it takes longer:</strong></p>
+<ol>
+<li>Check if the Azure OpenAI models are throttled (429 responses)</li>
+<li>Check if Graph API calls are being rate-limited</li>
+<li>Check network latency between Container Apps region and AI Services region</li>
+</ol>
+<p><strong>Monitoring:</strong></p>
+<pre><code class="language-powershell"># Check Azure OpenAI rate limits
+az cognitiveservices account deployment show --name ESIQNew-AI --resource-group ESIQNew-RG `
+    --deployment-name gpt-4.1 --query &quot;properties.rateLimits&quot; -o json</code></pre>
+<h3 id="assessment-returns-no-findings">Assessment Returns No Findings</h3>
+<p><strong>Possible causes:</strong></p>
+<ol>
+<li><strong>Insufficient permissions</strong> — the user's tokens don't have access to read Azure/Entra data</li>
+</ol>
+<p>   - The <code>check_permissions</code> tool can probe what the user can access</p>
+<ol>
+<li><strong>No resources in subscription</strong> — the assessed subscription has no resources</li>
+<li><strong>Wrong tenant</strong> — the tokens are for a different tenant than expected</li>
+</ol>
+<h3 id="tool-execution-failed-error">"Tool execution failed" Error</h3>
+<p><strong>Check container logs</strong> for the full stack trace:</p>
+<pre><code class="language-powershell">az containerapp logs show --name esiqnew-agent --resource-group ESIQNew-RG --tail 200</code></pre>
+<p><strong>Common causes:</strong></p>
+<ul>
+<li>Azure OpenAI model deployment deleted or renamed</li>
+<li>Graph API permission revoked</li>
+<li>Token expired during a long-running tool (rare — tokens are validated at the start)</li>
+</ul>
+<hr>
+<h2 id="azure-openai-issues">Azure OpenAI Issues</h2>
+<h3 id="model-returns-empty-responses">Model Returns Empty Responses</h3>
+<p><strong>Cause:</strong> The model deployment may be throttled or the API version may be incorrect.</p>
+<p><strong>Check:</strong></p>
+<pre><code class="language-powershell"># Test the model endpoint directly
+$endpoint = &quot;https://esiqnew-ai.cognitiveservices.azure.com&quot;
+$token = az account get-access-token --resource &quot;https://cognitiveservices.azure.com&quot; --query &quot;accessToken&quot; -o tsv
+
+Invoke-RestMethod -Uri &quot;$endpoint/openai/deployments/gpt-5.1/chat/completions?api-version=2025-01-01-preview&quot; `
+    -Method POST -Headers @{ Authorization = &quot;Bearer $token&quot;; &quot;Content-Type&quot; = &quot;application/json&quot; } `
+    -Body &#x27;{&quot;messages&quot;:[{&quot;role&quot;:&quot;user&quot;,&quot;content&quot;:&quot;Hello&quot;}]}&#x27;</code></pre>
+<h3 id="429-too-many-requests">429 Too Many Requests</h3>
+<p><strong>Cause:</strong> Token rate limit exceeded (30K TPM per model).</p>
+<p><strong>Fix options:</strong></p>
+<ol>
+<li>Wait for the rate limit window to reset (usually 60 seconds)</li>
+<li>Increase TPM capacity:</li>
+</ol>
+<p>   ```powershell<br>
+   az cognitiveservices account deployment create `<br>
+       --name ESIQNew-AI --resource-group ESIQNew-RG `<br>
+       --deployment-name gpt-5.1 `<br>
+       --model-name gpt-5.1 --model-version "2025-11-13" `<br>
+       --model-format "OpenAI" --sku-name Standard --sku-capacity 60 -o none<br>
+   ```</p>
+<ol>
+<li>The app has built-in retry logic with <code>Retry-After</code> header handling</li>
+</ol>
+<hr>
+<h2 id="deployment-issues">Deployment Issues</h2>
+<h3 id="acr-build-fails">ACR Build Fails</h3>
+<pre><code class="language-powershell"># Check build logs
+az acr task logs --registry esiqnewacr</code></pre>
+<p><strong>Common causes:</strong></p>
+<ul>
+<li>Dockerfile syntax error</li>
+<li>Python package installation failure (network issues in ACR build environment)</li>
+<li>File not found (ensure the build context includes all required files)</li>
+</ul>
+<h3 id="container-app-update-fails">Container App Update Fails</h3>
+<pre><code class="language-powershell"># Check the container app status
+az containerapp show --name esiqnew-agent --resource-group ESIQNew-RG `
+    --query &quot;{name:name, provisioningState:properties.provisioningState, runningStatus:properties.runningStatus}&quot; -o json</code></pre>
+<h3 id="image-pull-failure">Image Pull Failure</h3>
+<p><strong>Symptoms:</strong> Container shows <code>ImagePullBackOff</code>.</p>
+<p><strong>Fix:</strong></p>
+<ol>
+<li>Verify the managed identity has <code>AcrPull</code> role:</li>
+</ol>
+<p>   ```powershell<br>
+   $PrincipalId = az identity show --name ESIQNew-identity --resource-group ESIQNew-RG --query "principalId" -o tsv<br>
+   az role assignment list --assignee $PrincipalId --scope $(az acr show --name esiqnewacr --resource-group ESIQNew-RG --query "id" -o tsv) -o table<br>
+   ```</p>
+<ol>
+<li>Verify the image exists in the registry:</li>
+</ol>
+<p>   ```powershell<br>
+   az acr repository show-tags --name esiqnewacr --repository esiqnew-agent -o table<br>
+   ```</p>
+<hr>
+<h2 id="teams-specific-issues">Teams-Specific Issues</h2>
+<h3 id="postureiq-tab-shows-blank-page">PostureIQ Tab Shows Blank Page</h3>
+<ol>
+<li><strong>Check <code>validDomains</code></strong> in <code>manifest.json</code> — must include the container app FQDN</li>
+<li><strong>Check CSP headers</strong> — the container must send <code>frame-ancestors</code> allowing Teams domains</li>
+<li><strong>Check browser console</strong> — look for <code>Refused to display ... in a frame</code> errors</li>
+</ol>
+<h3 id="teams-sso-fails">Teams SSO Fails</h3>
+<ol>
+<li>Verify <code>webApplicationInfo.id</code> in manifest matches the Entra app registration</li>
+<li>Verify <code>webApplicationInfo.resource</code> matches <code>api://{clientId}</code></li>
+<li>Ensure the Entra app has <code>User.Read</code> delegated permission with admin consent</li>
+<li>Try clearing Teams cache: Settings → About → Clear Cache</li>
+</ol>
+<h3 id="reports-don-t-open-from-teams">Reports Don't Open from Teams</h3>
+<p>In Teams, report links should open in a new browser tab (<code>target="_blank"</code>). If they open inside the iframe:</p>
+<ol>
+<li>Check that the HTML page uses <code>target="_blank"</code> on all report links</li>
+<li>Check that <code>download</code> attribute is set</li>
+</ol>
+<hr>
+<h2 id="diagnostic-commands-quick-reference">Diagnostic Commands Quick Reference</h2>
+<pre><code class="language-powershell"># ── Container ──
+az containerapp logs show --name esiqnew-agent --resource-group ESIQNew-RG --tail 50
+az containerapp show --name esiqnew-agent --resource-group ESIQNew-RG -o json
+az containerapp revision list --name esiqnew-agent --resource-group ESIQNew-RG -o table
+
+# ── Storage ──
+az storage blob list --container-name reports --account-name esiqnewstorage --auth-mode login -o table
+az storage account show --name esiqnewstorage --resource-group ESIQNew-RG --query &quot;properties.publicNetworkAccess&quot;
+
+# ── AI Services ──
+az cognitiveservices account show --name ESIQNew-AI --resource-group ESIQNew-RG -o json
+az cognitiveservices account deployment list --name ESIQNew-AI --resource-group ESIQNew-RG -o table
+
+# ── RBAC ──
+$pid = az identity show --name ESIQNew-identity --resource-group ESIQNew-RG --query &quot;principalId&quot; -o tsv
+az role assignment list --assignee $pid --all -o table
+
+# ── Health ──
+$fqdn = az containerapp show --name esiqnew-agent --resource-group ESIQNew-RG --query &quot;properties.configuration.ingress.fqdn&quot; -o tsv
+Invoke-RestMethod &quot;https://$fqdn/health&quot;</code></pre>
+<hr>
+<p><strong>Back to:</strong> <a href="index-of-tech-docs.html">Index →</a></p>
+</main>
+
+</body>
+</html>

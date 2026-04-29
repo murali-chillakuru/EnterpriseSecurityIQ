@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>PostureIQ — Sign-In Complete</title>
+  <script src="https://res.cdn.office.net/teams-js/2.31.1/js/MicrosoftTeams.min.js"></script>
+</head>
+<body>
+  <p id="msg" style="font-family:Segoe UI,sans-serif;text-align:center;margin-top:40vh">Completing sign-in&hellip;</p>
+  <script>
+    // Teams SDK auth popup callback.
+    // Azure AD returns tokens in the URL fragment (response_mode=fragment).
+    // Handles both id_token (login) and access_token (API token acquisition).
+    try {
+      var hash = window.location.hash.substring(1);
+      var params = new URLSearchParams(hash);
+      var idToken = params.get("id_token");
+      var accessToken = params.get("access_token");
+      var error = params.get("error");
+      var errorDesc = params.get("error_description");
+
+      if (error) {
+        throw new Error(error + ": " + (errorDesc || ""));
+      }
+
+      if (accessToken) {
+        // Token mode — return the access_token to the Teams parent via notifySuccess
+        // The parent (getGraphToken/getArmToken) will receive this as the result string
+        microsoftTeams.app.initialize().then(function () {
+          microsoftTeams.authentication.notifySuccess(accessToken);
+        });
+      } else if (idToken) {
+        // Login mode — store user info and notify success
+        var parts = idToken.split(".");
+        var payload = JSON.parse(atob(parts[1].replace(/-/g, "+").replace(/_/g, "/")));
+
+        localStorage.setItem("esiq_id_token", idToken);
+        localStorage.setItem("esiq_user", JSON.stringify({
+          name: payload.name || payload.preferred_username || "",
+          email: payload.preferred_username || payload.upn || "",
+          oid: payload.oid || "",
+          tid: payload.tid || "",
+          exp: payload.exp || 0
+        }));
+
+        microsoftTeams.app.initialize().then(function () {
+          microsoftTeams.authentication.notifySuccess("login_success");
+        });
+      } else {
+        throw new Error("no_token_in_response");
+      }
+    } catch (e) {
+      console.error("Auth callback failed:", e);
+      document.getElementById("msg").textContent = "Sign-in failed: " + e.message;
+      microsoftTeams.app.initialize().then(function () {
+        microsoftTeams.authentication.notifyFailure(e.message || "auth_failed");
+      });
+    }
+  </script>
+</body>
+</html>

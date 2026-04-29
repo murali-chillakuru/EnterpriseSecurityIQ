@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Getting Started — PostureIQ</title>
+  <link rel="stylesheet" href="theme.css">
+  <link rel="stylesheet" href="print.css">
+  <script src="theme.js"></script>
+</head>
+<body>
+
+<header class="doc-header">
+  <a href="overview.html" class="doc-header-brand">
+    <svg viewBox="0 0 28 28" fill="none"><rect width="28" height="28" rx="6" fill="var(--bg-accent)"/><path d="M8 8h4v12H8V8zm8 4h4v8h-4v-8z" fill="var(--text-on-accent)"/></svg>
+    <span>PostureIQ Docs</span>
+  </a>
+  <nav class="doc-header-nav">
+    <a href="overview.html">Home</a>
+    <a href="getting-started.html" class="active">Get Started</a>
+    <a href="architecture.html">Architecture</a>
+    <a href="deployment.html">Deploy</a>
+    <a href="configuration.html">Config</a>
+    <a href="assessment-engines.html">Engines</a>
+    <a href="extending.html">Extend</a>
+    <a href="coverage-matrix.html">Coverage</a>
+    <button class="theme-toggle" aria-label="Toggle theme"></button>
+  </nav>
+</header>
+
+<main class="doc-container">
+  <h1>Getting Started</h1>
+  <p class="subtitle">Prerequisites, installation, authentication, and running your first assessment.</p>
+
+  <h2>Prerequisites</h2>
+  <ul>
+    <li><strong>Python 3.10+</strong></li>
+    <li>Azure subscription with <strong>Reader</strong> + <strong>Security Reader</strong> roles</li>
+    <li>Entra ID directory read permissions (for Graph collectors)</li>
+    <li>Microsoft Foundry project with a deployed model (agent mode only)</li>
+  </ul>
+
+  <h2>Required Azure Permissions</h2>
+  <div class="callout">
+    All operations are <strong>read-only</strong>. PostureIQ never modifies any tenant resource.
+  </div>
+  <table>
+    <thead><tr><th>Role</th><th>Scope</th><th>Purpose</th></tr></thead>
+    <tbody>
+      <tr><td>Reader</td><td>Subscription</td><td>ARM resource enumeration and configuration reads</td></tr>
+      <tr><td>Security Reader</td><td>Subscription</td><td>Defender plans, security contacts, auto-provisioning</td></tr>
+      <tr><td>Key Vault Secrets User</td><td>Key Vault</td><td>Secret expiry data-plane audit</td></tr>
+      <tr><td>Key Vault Certificates Officer</td><td>Key Vault</td><td>Certificate expiry data-plane audit</td></tr>
+      <tr><td>Key Vault Crypto User</td><td>Key Vault</td><td>Key expiry data-plane audit</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Required Microsoft Graph Permissions</h2>
+  <table>
+    <thead><tr><th>Permission</th><th>Purpose</th></tr></thead>
+    <tbody>
+      <tr><td><code>Directory.Read.All</code></td><td>Tenant info, OAuth2 grants, directory roles</td></tr>
+      <tr><td><code>User.Read.All</code></td><td>Users, group membership</td></tr>
+      <tr><td><code>Group.Read.All</code></td><td>Groups</td></tr>
+      <tr><td><code>Application.Read.All</code></td><td>App registrations, service principals</td></tr>
+      <tr><td><code>RoleManagement.Read.All</code></td><td>Role assignments, PIM eligibility</td></tr>
+      <tr><td><code>Policy.Read.All</code></td><td>CA policies, auth methods, named locations</td></tr>
+      <tr><td><code>AuditLog.Read.All</code></td><td>Sign-in logs, directory audits (Entra ID P1/P2)</td></tr>
+      <tr><td><code>UserAuthenticationMethod.Read.All</code></td><td>MFA registration details</td></tr>
+      <tr><td><code>IdentityRiskEvent.Read.All</code></td><td>Risk detections (Entra ID P2)</td></tr>
+      <tr><td><code>IdentityRiskyUser.Read.All</code></td><td>Risky users</td></tr>
+      <tr><td><code>IdentityRiskyServicePrincipal.Read.All</code></td><td>Risky service principals</td></tr>
+      <tr><td><code>AccessReview.Read.All</code></td><td>Access review definitions</td></tr>
+      <tr><td><code>EntitlementManagement.Read.All</code></td><td>Access packages</td></tr>
+      <tr><td><code>Agreement.Read.All</code></td><td>Terms of use</td></tr>
+      <tr><td><code>InformationProtection.Read</code></td><td>Sensitivity labels (Purview)</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Installation</h2>
+  <pre><code>cd AIAgent
+pip install -r requirements.txt</code></pre>
+
+  <h2>Authentication</h2>
+  <p>PostureIQ uses a unified <code>DefaultAzureCredential</code> for both ARM and Graph operations.</p>
+  <pre><code>az login</code></pre>
+  <table>
+    <thead><tr><th>Mode</th><th>Configuration</th></tr></thead>
+    <tbody>
+      <tr><td>Auto (default)</td><td><code>az login</code> &mdash; used for both ARM and Graph</td></tr>
+      <tr><td>ServicePrincipal</td><td>Set <code>AZURE_CLIENT_ID</code>, <code>AZURE_CLIENT_SECRET</code>, <code>AZURE_TENANT_ID</code></td></tr>
+    </tbody>
+  </table>
+  <p>A preflight permissions check verifies ARM access, Graph connectivity, and Entra directory roles before each assessment.</p>
+
+  <h2>Run Your First Assessment</h2>
+  <h3>Option 1 — CLI</h3>
+  <pre><code>cd AIAgent
+python run_assessment.py --tenant &lt;your-tenant-id&gt; --framework NIST-800-53 CIS</code></pre>
+
+  <h3>Option 2 — AI Agent (Foundry)</h3>
+  <pre><code>cd AIAgent
+python main.py
+# Agent server starts on http://localhost:8088</code></pre>
+
+  <h3>Option 3 — GitHub Copilot Chat</h3>
+  <pre><code>provide Assessment on tenant "&lt;TenantID&gt;", using account "&lt;UPN&gt;" based on NIST, CIS, HIPAA, PCI-DSS, FedRAMP, SOC</code></pre>
+  <div class="callout">
+    Ensure you have already authenticated with <code>az login --tenant &lt;TenantID&gt;</code> before running the prompt.
+  </div>
+
+  <h2>Review Output</h2>
+  <p>Assessment results are written to <code>output/&lt;timestamp&gt;/</code>:</p>
+  <table>
+    <thead><tr><th>File</th><th>Description</th></tr></thead>
+    <tbody>
+      <tr><td><code>compliance-report.html</code></td><td>Interactive HTML report with sidebar nav, score ring, domain cards, framework summaries</td></tr>
+      <tr><td><code>compliance-report.json</code></td><td>Structured JSON with all findings, evidence, and framework metadata</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Available CLI Scripts</h2>
+  <table>
+    <thead><tr><th>Script</th><th>Purpose</th><th>Example</th></tr></thead>
+    <tbody>
+      <tr><td><code>run_assessment.py</code></td><td>Full compliance assessment</td><td><code>python run_assessment.py --tenant &lt;id&gt; --framework PCI-DSS HIPAA</code></td></tr>
+      <tr><td><code>run_query.py</code></td><td>Interactive ARG/Graph query REPL</td><td><code>python run_query.py --tenant &lt;id&gt;</code></td></tr>
+      <tr><td><code>run_risk_analysis.py</code></td><td>Security risk gap analysis</td><td><code>python run_risk_analysis.py --tenant &lt;id&gt;</code></td></tr>
+      <tr><td><code>run_data_security.py</code></td><td>Data security assessment</td><td><code>python run_data_security.py --tenant &lt;id&gt;</code></td></tr>
+      <tr><td><code>run_rbac_report.py</code></td><td>RBAC hierarchy report</td><td><code>python run_rbac_report.py --tenant &lt;id&gt;</code></td></tr>
+      <tr><td><code>run_copilot_readiness.py</code></td><td>M365 Copilot readiness</td><td><code>python run_copilot_readiness.py --tenant &lt;id&gt;</code></td></tr>
+      <tr><td><code>run_ai_agent_security.py</code></td><td>AI agent security assessment</td><td><code>python run_ai_agent_security.py --tenant &lt;id&gt;</code></td></tr>
+    </tbody>
+  </table>
+
+  <h2>Determinism Validators</h2>
+  <p>Run the same assessment twice with identical inputs and verify byte-identical outputs:</p>
+  <table>
+    <thead><tr><th>Script</th><th>Validates</th></tr></thead>
+    <tbody>
+      <tr><td><code>run_assessment_determinism_check.py</code></td><td>Full assessment pipeline</td></tr>
+      <tr><td><code>run_rbac_determinism_check.py</code></td><td>RBAC report pipeline</td></tr>
+      <tr><td><code>run_cr_determinism_check.py</code></td><td>Copilot readiness pipeline</td></tr>
+      <tr><td><code>run_aias_determinism_check.py</code></td><td>AI agent security pipeline</td></tr>
+      <tr><td><code>run_postureiq_determinism_check.py</code></td><td>PostureIQ engine pipeline</td></tr>
+      <tr><td><code>run_risk_determinism_check.py</code></td><td>Risk analysis pipeline</td></tr>
+      <tr><td><code>run_ds_determinism_check.py</code></td><td>Data security pipeline</td></tr>
+    </tbody>
+  </table>
+</main>
+
+<footer class="doc-footer">
+  PostureIQ &mdash; AI-Powered Compliance Intelligence &mdash; Author: Murali Chillakuru
+</footer>
+
+</body>
+</html>

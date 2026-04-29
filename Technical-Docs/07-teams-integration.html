@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teams Integration — PostureIQ Technical Docs</title>
+  <link rel="stylesheet" href="../docs/theme.css">
+  <link rel="stylesheet" href="../docs/print.css">
+  <script src="../docs/theme.js"></script>
+</head>
+<body>
+
+<header class="doc-header">
+  <a href="index-of-tech-docs.html" class="doc-header-brand">
+    <svg viewBox="0 0 28 28" fill="none"><rect width="28" height="28" rx="6" fill="var(--bg-accent)"/><path d="M8 8h4v12H8V8zm8 4h4v8h-4v-8z" fill="var(--text-on-accent)"/></svg>
+    <span>PostureIQ Technical Docs</span>
+  </a>
+  <nav class="doc-header-nav">
+    <a href="index-of-tech-docs.html">Home</a>
+    <a href="01-infrastructure-overview.html">Infrastructure</a>
+    <a href="02-assessment-guide.html">Assessments</a>
+    <a href="03-report-lifecycle.html">Reports</a>
+    <a href="04-manual-setup-guide.html">Setup</a>
+    <a href="05-authentication-flow.html">Auth</a>
+    <a href="06-api-reference.html">API</a>
+    <a href="07-teams-integration.html" class="active">Teams</a>
+    <a href="08-troubleshooting.html">Troubleshoot</a>
+    <button class="theme-toggle" aria-label="Toggle theme"></button>
+  </nav>
+</header>
+
+<main class="doc-container">
+<h1 id="teams-integration">Teams Integration</h1>
+<blockquote><p>How PostureIQ runs as a Microsoft Teams tab — manifest, NAA, and iframe behaviour.</p></blockquote>
+<p><strong>Navigation:</strong> <a href="index-of-tech-docs.html">Index</a> · <a href="01-infrastructure-overview.html">Infrastructure</a> · <a href="02-assessment-guide.html">Assessments</a> · <a href="03-report-lifecycle.html">Reports</a> · <a href="04-manual-setup-guide.html">Manual Setup</a> · <a href="05-authentication-flow.html">Authentication</a> · <a href="06-api-reference.html">API Reference</a> · <strong>Teams Integration</strong> · <a href="08-troubleshooting.html">Troubleshooting</a></p>
+<hr>
+<h2 id="overview">Overview</h2>
+<p>PostureIQ can run inside Microsoft Teams as a personal tab. The Teams version is a separate HTML page (<code>Teams-SecurityComplianceAssessment.html</code>) that uses the same backend API but includes Teams-specific JavaScript for SSO and iframe handling.</p>
+<hr>
+<h2 id="teams-app-package">Teams App Package</h2>
+<p>The Teams app package is located at <code>teams/appPackage/build/PostureIQ.zip</code>.</p>
+<h3 id="manifest-structure">Manifest Structure</h3>
+<pre><code>PostureIQ.zip
+  ├── manifest.json      ← App definition (v1.22)
+  ├── color.png          ← 192×192 full-color icon
+  └── outline.png        ← 32×32 outline icon</code></pre>
+<h3 id="manifest-key-fields">Manifest Key Fields</h3>
+<pre><code class="language-json">{
+  &quot;$schema&quot;: &quot;https://developer.microsoft.com/en-us/json-schemas/teams/v1.22/MicrosoftTeams.schema.json&quot;,
+  &quot;manifestVersion&quot;: &quot;1.22&quot;,
+  &quot;version&quot;: &quot;1.0.6&quot;,
+  &quot;id&quot;: &quot;{app-registration-id}&quot;,
+  &quot;name&quot;: {
+    &quot;short&quot;: &quot;PostureIQ&quot;,
+    &quot;full&quot;: &quot;PostureIQ — Security Posture Assessment&quot;
+  },
+  &quot;staticTabs&quot;: [
+    {
+      &quot;entityId&quot;: &quot;posture&quot;,
+      &quot;name&quot;: &quot;PostureIQ&quot;,
+      &quot;contentUrl&quot;: &quot;https://esiqnew-agent.....azurecontainerapps.io/Teams-SecurityComplianceAssessment.html&quot;,
+      &quot;websiteUrl&quot;: &quot;https://esiqnew-agent.....azurecontainerapps.io/SecurityComplianceAssessment.html&quot;,
+      &quot;scopes&quot;: [&quot;personal&quot;]
+    }
+  ],
+  &quot;permissions&quot;: [&quot;identity&quot;, &quot;messageTeamMembers&quot;],
+  &quot;validDomains&quot;: [
+    &quot;esiqnew-agent.delightfulbush-cc9cf399.northeurope.azurecontainerapps.io&quot;
+  ],
+  &quot;webApplicationInfo&quot;: {
+    &quot;id&quot;: &quot;{app-registration-client-id}&quot;,
+    &quot;resource&quot;: &quot;api://{app-registration-client-id}&quot;
+  },
+  &quot;authorization&quot;: {
+    &quot;permissions&quot;: {
+      &quot;resourceSpecific&quot;: [
+        {
+          &quot;name&quot;: &quot;TeamsActivity.Send.User&quot;,
+          &quot;type&quot;: &quot;Application&quot;
+        }
+      ]
+    }
+  }
+}</code></pre>
+<h3 id="key-points">Key Points</h3>
+<table>
+<thead><tr><th>Field</th><th>Purpose</th></tr></thead>
+<tbody>
+<tr><td><code>staticTabs[].contentUrl</code></td><td>The Teams-specific HTML page loaded in the iframe</td></tr>
+<tr><td><code>staticTabs[].websiteUrl</code></td><td>Fallback URL when opening outside Teams</td></tr>
+<tr><td><code>validDomains</code></td><td>Container App FQDN — Teams only allows content from listed domains</td></tr>
+<tr><td><code>webApplicationInfo.id</code></td><td>Same Entra App Registration client ID used by MSAL</td></tr>
+<tr><td><code>authorization</code></td><td>Resource-specific consent for Teams features</td></tr>
+</tbody></table>
+<hr>
+<h2 id="teams-specific-html-page">Teams-Specific HTML Page</h2>
+<p><code>Teams-SecurityComplianceAssessment.html</code> is a modified version of the standalone page with these differences:</p>
+<table>
+<thead><tr><th>Feature</th><th>Standalone</th><th>Teams</th></tr></thead>
+<tbody>
+<tr><td>Authentication</td><td>MSAL popup/redirect</td><td>Teams SSO (NAA)</td></tr>
+<tr><td>Login button</td><td>Shown</td><td>Hidden (auto-SSO)</td></tr>
+<tr><td>Page chrome</td><td>Full navigation</td><td>Minimal (no sidebar, no theme toggle)</td></tr>
+<tr><td>Theme</td><td>User-selected (light/dark)</td><td>Matches Teams theme (auto-detected)</td></tr>
+<tr><td>Links</td><td>Open in same window</td><td>Open in browser (<code>target="_blank"</code>)</td></tr>
+<tr><td>Report downloads</td><td>Direct download</td><td>Open in new browser tab</td></tr>
+<tr><td>iframe embedding</td><td>Not embedded</td><td>Runs inside Teams iframe</td></tr>
+</tbody></table>
+<hr>
+<h2 id="nested-app-authentication-naa-flow">Nested App Authentication (NAA) Flow</h2>
+<p>NAA is the authentication mechanism for Teams tabs. It allows MSAL.js to leverage the user's existing Teams session:</p>
+<pre><code>Teams loads PostureIQ tab (iframe)
+    │
+    ├── 1. teams-init.js runs
+    │      await microsoftTeams.app.initialize()
+    │      context = await microsoftTeams.app.getContext()
+    │
+    ├── 2. Detect Teams theme
+    │      microsoftTeams.app.registerOnThemeChangeHandler(handler)
+    │      └── Apply &#x27;dark&#x27; or &#x27;default&#x27; theme to document
+    │
+    ├── 3. Create NAA MSAL instance
+    │      createNestablePublicClientApplication({
+    │        auth: {
+    │          clientId: &quot;ffb6f10d-...&quot;,
+    │          authority: &quot;https://login.microsoftonline.com/{tenantId}&quot;,
+    │          supportsNestedAppAuth: true
+    │        }
+    │      })
+    │
+    ├── 4. Silent SSO
+    │      ssoSilent({
+    │        loginHint: context.user.loginHint,
+    │        scopes: [&quot;User.Read&quot;]
+    │      })
+    │      └── Returns: MSAL account (no user interaction)
+    │
+    ├── 5. Acquire API tokens
+    │      acquireTokenSilent({ scopes: [&quot;https://graph.microsoft.com/.default&quot;] })
+    │      acquireTokenSilent({ scopes: [&quot;https://management.azure.com/.default&quot;] })
+    │
+    └── 6. Ready — user can run assessments</code></pre>
+<h3 id="fallback-to-popup">Fallback to Popup</h3>
+<p>If silent SSO fails (unlikely in Teams, but possible with consent issues):</p>
+<pre><code>ssoSilent() fails with interaction_required
+    │
+    └── loginPopup({
+          scopes: [&quot;User.Read&quot;],
+          loginHint: context.user.loginHint
+        })
+        └── Teams opens auth popup
+            └── User consents → returns account</code></pre>
+<hr>
+<h2 id="theme-synchronisation">Theme Synchronisation</h2>
+<p>Teams provides its current theme to embedded tabs. PostureIQ synchronises:</p>
+<pre><code class="language-javascript">// teams-init.js
+microsoftTeams.app.registerOnThemeChangeHandler((theme) =&gt; {
+  if (theme === &#x27;dark&#x27;) {
+    document.documentElement.setAttribute(&#x27;data-theme&#x27;, &#x27;dark&#x27;);
+  } else {
+    document.documentElement.setAttribute(&#x27;data-theme&#x27;, &#x27;light&#x27;);
+  }
+});</code></pre>
+<p>The Fluent 2 CSS theme system (<code>theme.css</code>) uses CSS custom properties that respond to <code>data-theme</code>:</p>
+<ul>
+<li><code>data-theme="light"</code> → Light mode colours</li>
+<li><code>data-theme="dark"</code> → Dark mode colours</li>
+</ul>
+<hr>
+<h2 id="iframe-security">iframe Security</h2>
+<h3 id="content-security-policy">Content Security Policy</h3>
+<p>The Container App sends CSP headers allowing Teams to embed the page:</p>
+<pre><code>Content-Security-Policy:
+  frame-ancestors https://teams.microsoft.com
+                  https://*.office.com
+                  https://*.cloud.microsoft
+                  https://*.microsoft365.com</code></pre>
+<h3 id="cors-headers">CORS Headers</h3>
+<p>The API allows cross-origin requests from Teams domains:</p>
+<pre><code>Access-Control-Allow-Origin: https://teams.microsoft.com
+Access-Control-Allow-Credentials: true
+Access-Control-Allow-Methods: GET, POST, OPTIONS
+Access-Control-Allow-Headers: *</code></pre>
+<hr>
+<h2 id="installing-the-teams-app">Installing the Teams App</h2>
+<h3 id="method-1-teams-admin-center-organisation-wide">Method 1: Teams Admin Center (Organisation-Wide)</h3>
+<ol>
+<li>Go to <strong>Teams Admin Center</strong> → Manage apps → Upload new app</li>
+<li>Upload <code>PostureIQ.zip</code> from <code>teams/appPackage/build/</code></li>
+<li>Review app settings and approve</li>
+<li>Set availability policy (all users, specific groups, etc.)</li>
+<li>Users will see PostureIQ in their Teams app list</li>
+</ol>
+<h3 id="method-2-sideload-development-testing">Method 2: Sideload (Development/Testing)</h3>
+<ol>
+<li>In Teams, go to Apps → Manage your apps → Upload a custom app</li>
+<li>Select <code>PostureIQ.zip</code></li>
+<li>Click Add — the tab appears in your personal app list</li>
+</ol>
+<h3 id="method-3-teams-toolkit-vs-code">Method 3: Teams Toolkit (VS Code)</h3>
+<p>If you have Teams Toolkit installed in VS Code:</p>
+<ol>
+<li>Open the <code>teams/</code> directory</li>
+<li>Use Teams Toolkit → Provision → Deploy</li>
+<li>Preview in Teams</li>
+</ol>
+<hr>
+<h2 id="building-the-teams-app-package">Building the Teams App Package</h2>
+<h3 id="update-manifest-json">Update manifest.json</h3>
+<pre><code class="language-powershell"># In teams/appPackage/manifest.json, replace:
+# - {app-registration-id} with your Entra app registration ID
+# - contentUrl with your container app FQDN
+# - validDomains with your container app FQDN</code></pre>
+<h3 id="create-the-zip">Create the ZIP</h3>
+<pre><code class="language-powershell">cd teams/appPackage
+Compress-Archive -Path manifest.json, color.png, outline.png -DestinationPath build/PostureIQ.zip -Force</code></pre>
+<h3 id="validate">Validate</h3>
+<p>Use the <a href="https://dev.teams.microsoft.com/appvalidation.html">Teams App Validation Tool</a> to check the manifest before uploading.</p>
+<hr>
+<h2 id="differences-from-standalone">Differences from Standalone</h2>
+<h3 id="report-downloads">Report Downloads</h3>
+<p>In Teams, report links use <code>target="_blank"</code> with a <code>download</code> attribute to open in the user's default browser instead of navigating within the Teams iframe:</p>
+<pre><code class="language-html">&lt;a href=&quot;/reports/20260422/.../report.html&quot;
+   target=&quot;_blank&quot;
+   download=&quot;fedramp-compliance-report.html&quot;&gt;
+  📄 HTML
+&lt;/a&gt;</code></pre>
+<h3 id="navigation">Navigation</h3>
+<p>The Teams version hides the sidebar navigation and assessment-type selector. The user interacts only through the chat interface. The page name is fixed to <code>SecurityComplianceAssessment</code> (PostureIQ) in the Teams manifest.</p>
+<h3 id="session-storage">Session Storage</h3>
+<p>Both versions use <code>localStorage</code> for session persistence. In Teams, <code>localStorage</code> is scoped to the iframe origin, so sessions are separate from the standalone version.</p>
+<hr>
+<p><strong>Next:</strong> <a href="08-troubleshooting.html">Troubleshooting →</a></p>
+</main>
+
+</body>
+</html>

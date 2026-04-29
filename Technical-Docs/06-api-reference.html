@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>API Reference — PostureIQ Technical Docs</title>
+  <link rel="stylesheet" href="../docs/theme.css">
+  <link rel="stylesheet" href="../docs/print.css">
+  <script src="../docs/theme.js"></script>
+</head>
+<body>
+
+<header class="doc-header">
+  <a href="index-of-tech-docs.html" class="doc-header-brand">
+    <svg viewBox="0 0 28 28" fill="none"><rect width="28" height="28" rx="6" fill="var(--bg-accent)"/><path d="M8 8h4v12H8V8zm8 4h4v8h-4v-8z" fill="var(--text-on-accent)"/></svg>
+    <span>PostureIQ Technical Docs</span>
+  </a>
+  <nav class="doc-header-nav">
+    <a href="index-of-tech-docs.html">Home</a>
+    <a href="01-infrastructure-overview.html">Infrastructure</a>
+    <a href="02-assessment-guide.html">Assessments</a>
+    <a href="03-report-lifecycle.html">Reports</a>
+    <a href="04-manual-setup-guide.html">Setup</a>
+    <a href="05-authentication-flow.html">Auth</a>
+    <a href="06-api-reference.html" class="active">API</a>
+    <a href="07-teams-integration.html">Teams</a>
+    <a href="08-troubleshooting.html">Troubleshoot</a>
+    <button class="theme-toggle" aria-label="Toggle theme"></button>
+  </nav>
+</header>
+
+<main class="doc-container">
+<h1 id="api-reference">API Reference</h1>
+<blockquote><p>All HTTP endpoints, request/response formats, and Server-Sent Events protocol.</p></blockquote>
+<p><strong>Navigation:</strong> <a href="index-of-tech-docs.html">Index</a> · <a href="01-infrastructure-overview.html">Infrastructure</a> · <a href="02-assessment-guide.html">Assessments</a> · <a href="03-report-lifecycle.html">Reports</a> · <a href="04-manual-setup-guide.html">Manual Setup</a> · <a href="05-authentication-flow.html">Authentication</a> · <strong>API Reference</strong> · <a href="07-teams-integration.html">Teams Integration</a> · <a href="08-troubleshooting.html">Troubleshooting</a></p>
+<hr>
+<h2 id="base-url">Base URL</h2>
+<pre><code>https://esiqnew-agent.delightfulbush-cc9cf399.northeurope.azurecontainerapps.io</code></pre>
+<p>All endpoints require HTTPS. HTTP requests are redirected to HTTPS by the Container Apps ingress.</p>
+<hr>
+<h2 id="endpoints">Endpoints</h2>
+<table>
+<thead><tr><th>#</th><th>Method</th><th>Path</th><th>Auth</th><th>Purpose</th></tr></thead>
+<tbody>
+<tr><td>1</td><td><code>GET</code></td><td><code>/</code></td><td>None</td><td>Serve the SPA dashboard</td></tr>
+<tr><td>2</td><td><code>POST</code></td><td><code>/chat</code></td><td>Required</td><td>Agent chat with SSE streaming</td></tr>
+<tr><td>3</td><td><code>POST</code></td><td><code>/assessments</code></td><td>Required</td><td>Start background assessment</td></tr>
+<tr><td>4</td><td><code>GET</code></td><td><code>/assessments/{id}</code></td><td>Required</td><td>Poll assessment status</td></tr>
+<tr><td>5</td><td><code>GET</code></td><td><code>/reports</code></td><td>None</td><td>List all available reports</td></tr>
+<tr><td>6</td><td><code>GET</code></td><td><code>/reports/{file_path}</code></td><td>None</td><td>Download a specific report</td></tr>
+<tr><td>7</td><td><code>GET</code></td><td><code>/health</code></td><td>None</td><td>Health check</td></tr>
+</tbody></table>
+<hr>
+<h2 id="1-get-spa-dashboard">1. GET / — SPA Dashboard</h2>
+<p>Serves the main single-page application.</p>
+<p><strong>Request:</strong></p>
+<pre><code class="language-http">GET / HTTP/1.1
+Host: esiqnew-agent.....azurecontainerapps.io</code></pre>
+<p><strong>Response:</strong> HTML page (the assessment dashboard)</p>
+<p>The SPA JavaScript handles all routing client-side. Different assessment pages (<code>SecurityComplianceAssessment.html</code>, <code>DataSecurity.html</code>, etc.) are served as separate HTML files from the <code>/</code> mount.</p>
+<hr>
+<h2 id="2-post-chat-agent-chat-sse">2. POST /chat — Agent Chat (SSE)</h2>
+<p>The primary endpoint. Sends a message to the AI agent and receives a streaming response with tool execution updates and report URLs.</p>
+<h3 id="request">Request</h3>
+<pre><code class="language-http">POST /chat HTTP/1.1
+Content-Type: application/json
+
+{
+  &quot;message&quot;: &quot;Run PostureIQ assessment for FedRAMP and CIS&quot;,
+  &quot;graph_token&quot;: &quot;eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIs...&quot;,
+  &quot;arm_token&quot;: &quot;eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIs...&quot;,
+  &quot;page&quot;: &quot;SecurityComplianceAssessment&quot;,
+  &quot;conversation_id&quot;: &quot;abc123-def456&quot;
+}</code></pre>
+<table>
+<thead><tr><th>Field</th><th>Type</th><th>Required</th><th>Description</th></tr></thead>
+<tbody>
+<tr><td><code>message</code></td><td>string</td><td>Yes</td><td>User's message or assessment request</td></tr>
+<tr><td><code>graph_token</code></td><td>string</td><td>Yes</td><td>Microsoft Graph access token (delegated)</td></tr>
+<tr><td><code>arm_token</code></td><td>string</td><td>Yes</td><td>Azure Resource Manager access token (delegated)</td></tr>
+<tr><td><code>page</code></td><td>string</td><td>No</td><td>Current page name (controls which tools are available)</td></tr>
+<tr><td><code>conversation_id</code></td><td>string</td><td>No</td><td>Session ID for multi-turn conversations</td></tr>
+</tbody></table>
+<h3 id="response-server-sent-events">Response (Server-Sent Events)</h3>
+<p>The response is a stream of SSE events:</p>
+<pre><code class="language-http">HTTP/1.1 200 OK
+Content-Type: text/event-stream
+Cache-Control: no-cache
+X-Accel-Buffering: no
+
+: keepalive
+
+data: {&quot;type&quot;:&quot;tool&quot;,&quot;name&quot;:&quot;run_postureiq_assessment&quot;,&quot;status&quot;:&quot;running&quot;}
+
+: keepalive
+
+: keepalive
+
+data: {&quot;type&quot;:&quot;tool&quot;,&quot;name&quot;:&quot;run_postureiq_assessment&quot;,&quot;status&quot;:&quot;done&quot;}
+
+data: {&quot;type&quot;:&quot;report_table&quot;,&quot;rows&quot;:[{&quot;framework&quot;:&quot;FedRAMP&quot;,&quot;html&quot;:&quot;/reports/20260422/.../fedramp-compliance-report.html&quot;,&quot;pdf&quot;:&quot;/reports/20260422/.../fedramp-compliance-report.pdf&quot;,&quot;xlsx&quot;:&quot;/reports/20260422/.../fedramp-compliance-report.xlsx&quot;,&quot;json&quot;:&quot;/reports/20260422/.../fedramp-compliance.json&quot;}],&quot;shared&quot;:[{&quot;name&quot;:&quot;Data Exports&quot;,&quot;url&quot;:&quot;/reports/20260422/.../data_exports/&quot;}],&quot;zip&quot;:&quot;/reports/20260422/.../all-postureiq-reports.zip&quot;}
+
+data: {&quot;type&quot;:&quot;token_usage&quot;,&quot;prompt_tokens&quot;:15234,&quot;completion_tokens&quot;:2841,&quot;total_tokens&quot;:18075,&quot;estimated_cost_usd&quot;:0.0642}
+
+data: {&quot;response&quot;:&quot;## PostureIQ Assessment Complete\n\n### Executive Summary\nYour FedRAMP compliance score is **78.5%**...\n\n&quot;,&quot;tools_used&quot;:[&quot;run_postureiq_assessment&quot;]}
+</code></pre>
+<h3 id="sse-event-types">SSE Event Types</h3>
+<table>
+<thead><tr><th>Event Type</th><th>Format</th><th>When</th></tr></thead>
+<tbody>
+<tr><td><code>keepalive</code></td><td><code>: keepalive\n\n</code></td><td>Every 15 seconds during tool execution</td></tr>
+<tr><td><code>tool</code></td><td>`{"type":"tool","name":"...","status":"running\</td><td>done"}`</td><td>When a tool starts or finishes</td></tr>
+<tr><td><code>report</code></td><td><code>{"type":"report","name":"...","url":"..."}</code></td><td>Individual report file URL</td></tr>
+<tr><td><code>report_table</code></td><td><code>{"type":"report_table","rows":[...],"shared":[...],"zip":"..."}</code></td><td>Structured table of all reports</td></tr>
+<tr><td><code>token_usage</code></td><td><code>{"type":"token_usage","prompt_tokens":...,"estimated_cost_usd":...}</code></td><td>Token usage and cost</td></tr>
+<tr><td><code>response</code></td><td><code>{"response":"...","tools_used":[...]}</code></td><td>Final LLM response (Markdown)</td></tr>
+<tr><td><code>error</code></td><td><code>{"error":"..."}</code></td><td>On failure</td></tr>
+</tbody></table>
+<h3 id="error-responses">Error Responses</h3>
+<table>
+<thead><tr><th>Status</th><th>When</th></tr></thead>
+<tbody>
+<tr><td><code>401</code></td><td>Missing or invalid <code>graph_token</code> / <code>arm_token</code></td></tr>
+<tr><td><code>400</code></td><td>Missing <code>message</code> field</td></tr>
+<tr><td><code>500</code></td><td>Internal server error (LLM failure, tool crash)</td></tr>
+</tbody></table>
+<h3 id="tool-isolation-by-page">Tool Isolation by Page</h3>
+<p>The <code>page</code> field controls which tools the agent can use. This prevents irrelevant tool calls:</p>
+<table>
+<thead><tr><th>Page</th><th>Available Tools</th></tr></thead>
+<tbody>
+<tr><td><code>SecurityComplianceAssessment</code></td><td><code>run_postureiq_assessment</code>, <code>query_results</code>, <code>compare_runs</code>, <code>query_assessment_history</code>, <code>generate_report</code>, <code>generate_custom_report</code></td></tr>
+<tr><td><code>DataSecurity</code></td><td><code>assess_data_security</code>, <code>query_results</code>, <code>generate_report</code></td></tr>
+<tr><td><code>RiskAnalysis</code></td><td><code>analyze_risk</code>, <code>query_results</code>, <code>generate_report</code></td></tr>
+<tr><td><code>CopilotReadiness</code></td><td><code>assess_copilot_readiness</code>, <code>query_results</code>, <code>generate_report</code></td></tr>
+<tr><td><code>AIAgentSecurity</code></td><td><code>assess_ai_agent_security</code>, <code>query_results</code>, <code>generate_report</code></td></tr>
+<tr><td><code>RBACReport</code></td><td><code>generate_rbac_report</code>, <code>query_results</code></td></tr>
+<tr><td><code>CloudExplorer</code></td><td><code>search_tenant</code>, <code>search_exposure</code>, <code>check_permissions</code></td></tr>
+</tbody></table>
+<h3 id="keepalive-mechanism">Keepalive Mechanism</h3>
+<p>Long-running assessments (2–5 minutes) would normally trigger a 504 Gateway Timeout from the Envoy proxy. The keepalive mechanism prevents this:</p>
+<pre><code>Tool starts executing (in background coroutine)
+    │
+    while tool is running:
+    │   ├── Wait 15 seconds
+    │   ├── Send &quot;: keepalive\n\n&quot; (SSE comment)
+    │   └── Repeat
+    │
+    Tool finishes
+    └── Send tool results, report table, response</code></pre>
+<p>The <code>: keepalive</code> lines are SSE comments — they're ignored by <code>EventSource</code> clients but keep the HTTP connection alive.</p>
+<h3 id="max-tool-rounds">Max Tool Rounds</h3>
+<p>The agent can call up to <strong>10 tools</strong> per chat request. Each tool call is a separate LLM round:</p>
+<pre><code>Round 1: LLM decides to call tool A → execute → return results
+Round 2: LLM decides to call tool B → execute → return results
+...
+Round 10: Max reached → LLM forced to produce final response</code></pre>
+<h3 id="tool-result-truncation">Tool Result Truncation</h3>
+<p>Tool results are truncated to <strong>4,000 characters</strong> before being fed back to the LLM. This prevents context overflow. The full results are kept in session state for <code>query_results</code>.</p>
+<p>Report table JSON (<code><!--REPORT_TABLE:...--></code>) is stripped from the LLM context after being emitted via SSE, saving tokens.</p>
+<hr>
+<h2 id="3-post-assessments-start-background-assessment">3. POST /assessments — Start Background Assessment</h2>
+<p>Starts an assessment in the background and returns an ID for polling.</p>
+<h3 id="request">Request</h3>
+<pre><code class="language-http">POST /assessments HTTP/1.1
+Content-Type: application/json
+
+{
+  &quot;type&quot;: &quot;postureiq&quot;,
+  &quot;frameworks&quot;: [&quot;FedRAMP&quot;, &quot;CIS&quot;],
+  &quot;graph_token&quot;: &quot;eyJ...&quot;,
+  &quot;arm_token&quot;: &quot;eyJ...&quot;
+}</code></pre>
+<h3 id="response">Response</h3>
+<pre><code class="language-json">{
+  &quot;assessment_id&quot;: &quot;a1b2c3d4-e5f6-7890-abcd-ef1234567890&quot;,
+  &quot;status&quot;: &quot;started&quot;,
+  &quot;type&quot;: &quot;postureiq&quot;
+}</code></pre>
+<hr>
+<h2 id="4-get-assessments-id-poll-assessment-status">4. GET /assessments/{id} — Poll Assessment Status</h2>
+<h3 id="request">Request</h3>
+<pre><code class="language-http">GET /assessments/a1b2c3d4-e5f6-7890-abcd-ef1234567890 HTTP/1.1</code></pre>
+<h3 id="response-in-progress">Response (In Progress)</h3>
+<pre><code class="language-json">{
+  &quot;assessment_id&quot;: &quot;a1b2c3d4...&quot;,
+  &quot;status&quot;: &quot;running&quot;,
+  &quot;progress&quot;: {
+    &quot;stage&quot;: &quot;collecting&quot;,
+    &quot;completed_collectors&quot;: 42,
+    &quot;total_collectors&quot;: 64
+  }
+}</code></pre>
+<h3 id="response-complete">Response (Complete)</h3>
+<pre><code class="language-json">{
+  &quot;assessment_id&quot;: &quot;a1b2c3d4...&quot;,
+  &quot;status&quot;: &quot;completed&quot;,
+  &quot;results&quot;: {
+    &quot;score&quot;: 78.5,
+    &quot;findings_count&quot;: 47,
+    &quot;reports&quot;: [...]
+  }
+}</code></pre>
+<hr>
+<h2 id="5-get-reports-list-all-reports">5. GET /reports — List All Reports</h2>
+<p>Returns a list of all available report files from both local filesystem and blob storage.</p>
+<h3 id="request">Request</h3>
+<pre><code class="language-http">GET /reports HTTP/1.1</code></pre>
+<h3 id="response">Response</h3>
+<pre><code class="language-json">[
+  {
+    &quot;name&quot;: &quot;fedramp-compliance-report.html&quot;,
+    &quot;path&quot;: &quot;20260422_023002_PM/FedRAMP/fedramp-compliance-report.html&quot;,
+    &quot;url&quot;: &quot;/reports/20260422_023002_PM/FedRAMP/fedramp-compliance-report.html&quot;,
+    &quot;size&quot;: 245760
+  },
+  {
+    &quot;name&quot;: &quot;fedramp-compliance-report.pdf&quot;,
+    &quot;path&quot;: &quot;20260422_023002_PM/FedRAMP/fedramp-compliance-report.pdf&quot;,
+    &quot;url&quot;: &quot;/reports/20260422_023002_PM/FedRAMP/fedramp-compliance-report.pdf&quot;,
+    &quot;size&quot;: 512000
+  }
+]</code></pre>
+<p><strong>Filters:</strong> Only returns files with extensions: <code>.html</code>, <code>.json</code>, <code>.xlsx</code>, <code>.pdf</code>, <code>.csv</code>, <code>.zip</code></p>
+<hr>
+<h2 id="6-get-reports-file-path-download-report">6. GET /reports/{file_path} — Download Report</h2>
+<p>Serves a specific report file. Uses a local-first, blob-fallback strategy.</p>
+<h3 id="request">Request</h3>
+<pre><code class="language-http">GET /reports/20260422_023002_PM/FedRAMP/fedramp-compliance-report.html HTTP/1.1</code></pre>
+<h3 id="response">Response</h3>
+<p>The raw file content with appropriate MIME type.</p>
+<h3 id="path-traversal-protection">Path Traversal Protection</h3>
+<p>The endpoint includes path traversal protection:</p>
+<ol>
+<li><code>resolve()</code> the requested path to an absolute path</li>
+<li><code>relative_to()</code> check ensures it's under the output directory</li>
+<li>Rejects any path containing <code>..</code> or pointing outside the allowed directory</li>
+</ol>
+<h3 id="fallback-logic">Fallback Logic</h3>
+<pre><code>1. Check /agent/output/{file_path}
+   └── Found? → Serve with correct MIME type
+
+2. Not found locally?
+   └── Download from blob: esiqnewstorage/reports/{file_path}
+       └── Save to local filesystem
+           └── Serve from local
+
+3. Not in blob either?
+   └── 404 {&quot;detail&quot;: &quot;Report not found&quot;}</code></pre>
+<hr>
+<h2 id="7-get-health-health-check">7. GET /health — Health Check</h2>
+<h3 id="request">Request</h3>
+<pre><code class="language-http">GET /health HTTP/1.1</code></pre>
+<h3 id="response">Response</h3>
+<pre><code class="language-json">{
+  &quot;status&quot;: &quot;healthy&quot;
+}</code></pre>
+<p>Used by Container Apps as a liveness/readiness probe. The Dockerfile sets:</p>
+<pre><code class="language-dockerfile">HEALTHCHECK CMD curl -f http://localhost:8088/health || exit 1</code></pre>
+<hr>
+<h2 id="cors-configuration">CORS Configuration</h2>
+<pre><code class="language-python">ALLOWED_ORIGINS = [
+    &quot;https://teams.microsoft.com&quot;,
+    &quot;https://*.office.com&quot;,
+    &quot;https://*.cloud.microsoft&quot;,
+    &quot;https://*.microsoft365.com&quot;,
+    &quot;http://localhost:8080&quot;
+]</code></pre>
+<p>All origins receive full CORS support (credentials, all methods, all headers).</p>
+<hr>
+<h2 id="content-security-policy">Content Security Policy</h2>
+<p>The container app is configured with CSP headers for Teams iframe embedding:</p>
+<pre><code>frame-ancestors: https://teams.microsoft.com https://*.office.com https://*.cloud.microsoft</code></pre>
+<p>This allows the SPA to be embedded in a Teams tab while preventing embedding from unknown origins.</p>
+<hr>
+<h2 id="token-cost-tracking">Token Cost Tracking</h2>
+<p>Each chat request tracks token usage and returns an estimated cost:</p>
+<table>
+<thead><tr><th>Metric</th><th>Source</th></tr></thead>
+<tbody>
+<tr><td><code>prompt_tokens</code></td><td>Azure OpenAI response</td></tr>
+<tr><td><code>completion_tokens</code></td><td>Azure OpenAI response</td></tr>
+<tr><td><code>total_tokens</code></td><td>Sum of prompt + completion</td></tr>
+<tr><td><code>estimated_cost_usd</code></td><td><code>prompt_tokens × TOKEN_COST_INPUT_PER_M / 1M + completion_tokens × TOKEN_COST_OUTPUT_PER_M / 1M</code></td></tr>
+</tbody></table>
+<p>The cost rates are configurable via environment variables:</p>
+<ul>
+<li><code>TOKEN_COST_INPUT_PER_M</code> — Cost per million input tokens (default depends on model)</li>
+<li><code>TOKEN_COST_OUTPUT_PER_M</code> — Cost per million output tokens</li>
+</ul>
+<hr>
+<p><strong>Next:</strong> <a href="07-teams-integration.html">Teams Integration →</a></p>
+</main>
+
+</body>
+</html>

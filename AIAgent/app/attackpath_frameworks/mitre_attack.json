@@ -1,0 +1,107 @@
+{
+  "framework": "MITRE ATT&CK for Enterprise v14",
+  "techniques": {
+    "T1078": {
+      "name": "Valid Accounts",
+      "tactic": ["Defense Evasion", "Persistence", "Privilege Escalation", "Initial Access"],
+      "url": "https://attack.mitre.org/techniques/T1078/",
+      "description": "Adversaries may obtain and abuse credentials of existing accounts."
+    },
+    "T1078.004": {
+      "name": "Valid Accounts: Cloud Accounts",
+      "tactic": ["Defense Evasion", "Persistence", "Privilege Escalation", "Initial Access"],
+      "url": "https://attack.mitre.org/techniques/T1078/004/",
+      "description": "Adversaries may obtain and abuse cloud credentials for initial access or privilege escalation."
+    },
+    "T1098": {
+      "name": "Account Manipulation",
+      "tactic": ["Persistence", "Privilege Escalation"],
+      "url": "https://attack.mitre.org/techniques/T1098/",
+      "description": "Adversaries may manipulate accounts to maintain and/or elevate access."
+    },
+    "T1098.003": {
+      "name": "Account Manipulation: Additional Cloud Roles",
+      "tactic": ["Persistence", "Privilege Escalation"],
+      "url": "https://attack.mitre.org/techniques/T1098/003/",
+      "description": "Adversaries may add additional roles to cloud accounts to maintain persistent access."
+    },
+    "T1190": {
+      "name": "Exploit Public-Facing Application",
+      "tactic": ["Initial Access"],
+      "url": "https://attack.mitre.org/techniques/T1190/",
+      "description": "Adversaries may exploit a public-facing application to gain initial access."
+    },
+    "T1199": {
+      "name": "Trusted Relationship",
+      "tactic": ["Initial Access"],
+      "url": "https://attack.mitre.org/techniques/T1199/",
+      "description": "Adversaries may breach trusted third-party relationships to gain initial access."
+    },
+    "T1021": {
+      "name": "Remote Services",
+      "tactic": ["Lateral Movement"],
+      "url": "https://attack.mitre.org/techniques/T1021/",
+      "description": "Adversaries may use remote services to move laterally within the network."
+    },
+    "T1040": {
+      "name": "Network Sniffing",
+      "tactic": ["Credential Access", "Discovery"],
+      "url": "https://attack.mitre.org/techniques/T1040/",
+      "description": "Adversaries may sniff network traffic to capture credentials or data."
+    },
+    "T1213.002": {
+      "name": "Data from Information Repositories: SharePoint",
+      "tactic": ["Collection"],
+      "url": "https://attack.mitre.org/techniques/T1213/002/",
+      "description": "Adversaries may collect data from SharePoint repositories."
+    },
+    "T1525": {
+      "name": "Implant Internal Image",
+      "tactic": ["Persistence"],
+      "url": "https://attack.mitre.org/techniques/T1525/",
+      "description": "Adversaries may implant container images to establish persistence."
+    },
+    "T1530": {
+      "name": "Data from Cloud Storage",
+      "tactic": ["Collection"],
+      "url": "https://attack.mitre.org/techniques/T1530/",
+      "description": "Adversaries may access data from improperly secured cloud storage."
+    },
+    "T1537": {
+      "name": "Transfer Data to Cloud Account",
+      "tactic": ["Exfiltration"],
+      "url": "https://attack.mitre.org/techniques/T1537/",
+      "description": "Adversaries may exfiltrate data to a cloud account they control."
+    },
+    "T1550.001": {
+      "name": "Use Alternate Authentication Material: Application Access Token",
+      "tactic": ["Defense Evasion", "Lateral Movement"],
+      "url": "https://attack.mitre.org/techniques/T1550/001/",
+      "description": "Adversaries may use application access tokens to bypass authentication."
+    },
+    "T1552.001": {
+      "name": "Unsecured Credentials: Credentials In Files",
+      "tactic": ["Credential Access"],
+      "url": "https://attack.mitre.org/techniques/T1552/001/",
+      "description": "Adversaries may search for credentials stored in files."
+    },
+    "T1610": {
+      "name": "Deploy Container",
+      "tactic": ["Defense Evasion", "Execution"],
+      "url": "https://attack.mitre.org/techniques/T1610/",
+      "description": "Adversaries may deploy containers to execute malicious workloads."
+    }
+  },
+  "tactics": {
+    "Initial Access": "TA0001",
+    "Execution": "TA0002",
+    "Persistence": "TA0003",
+    "Privilege Escalation": "TA0004",
+    "Defense Evasion": "TA0005",
+    "Credential Access": "TA0006",
+    "Discovery": "TA0007",
+    "Lateral Movement": "TA0008",
+    "Collection": "TA0009",
+    "Exfiltration": "TA0010"
+  }
+}

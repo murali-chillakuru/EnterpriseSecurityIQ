@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>PostureIQ - Portal</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  /* Light-first Fluent 2 / Viva tokens */
+  --bg:#ffffff;--bg2:#ffffff;--bg3:#ffffff;--bg4:#f5f5f5;
+  --tx:#242424;--tx2:#424242;--tx3:#616161;
+  --bd:#e0e0e0;
+  --blue:#0078d4;--blue-hover:#115ea3;--blue-press:#0f548c;
+  --purple:#5c2e91;--green:#107c10;--orange:#ca5010;--cyan:#038387;--red:#d13438;
+  --shadow-2:0 1px 2px rgba(0,0,0,.12),0 0 2px rgba(0,0,0,.08);
+  --shadow-4:0 2px 4px rgba(0,0,0,.12),0 0 2px rgba(0,0,0,.08);
+  --shadow-8:0 4px 8px rgba(0,0,0,.14),0 0 2px rgba(0,0,0,.12);
+  --shadow-16:0 8px 16px rgba(0,0,0,.14),0 0 2px rgba(0,0,0,.12);
+  --r:8px;
+  --portal-width-target:1200px;
+  --font:'Segoe UI Variable','Segoe UI',system-ui,-apple-system,sans-serif;
+  --mono:'Cascadia Code','Fira Code',Consolas,monospace;
+  color-scheme:light;
+}
+[data-theme="dark"]{
+  --bg:#1b1a19;--bg2:#292827;--bg3:#252423;--bg4:#323130;
+  --tx:#f5f5f5;--tx2:#d1d1d1;--tx3:#a8a8a8;
+  --bd:#474747;
+  --blue:#479ef5;--blue-hover:#62abf5;--blue-press:#2886de;
+  --purple:#b4a0ff;--green:#6bb700;--orange:#f7894a;--cyan:#4db8b1;--red:#f1707b;
+  --shadow-2:0 1px 2px rgba(0,0,0,.48),0 0 2px rgba(0,0,0,.24);
+  --shadow-4:0 2px 4px rgba(0,0,0,.48),0 0 2px rgba(0,0,0,.24);
+  --shadow-8:0 4px 8px rgba(0,0,0,.48),0 0 2px rgba(0,0,0,.24);
+  --shadow-16:0 8px 16px rgba(0,0,0,.48),0 0 2px rgba(0,0,0,.24);
+  color-scheme:dark
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);background:var(--bg);color:var(--tx);line-height:1.6;min-height:100vh}
+a{color:var(--blue);text-decoration:none}
+button{font-family:inherit;cursor:pointer}
+
+/* ── Login Page ── */
+.login-page{min-height:100vh;display:flex;align-items:center;justify-content:center;background:linear-gradient(160deg,#ffffff 0%,#ebf3fc 40%,#e8f0fe 70%,#f0eafa 100%);position:relative;overflow:hidden}
+.login-page::before{content:'';position:absolute;width:700px;height:700px;background:radial-gradient(circle,rgba(0,120,212,.12),transparent 65%);top:-250px;right:-200px;pointer-events:none;border-radius:50%}
+.login-page::after{content:'';position:absolute;width:500px;height:500px;background:radial-gradient(circle,rgba(92,46,145,.08),transparent 65%);bottom:-180px;left:-120px;pointer-events:none;border-radius:50%}
+.login-card{position:relative;z-index:1;background:#ffffff;border:none;border-radius:12px;padding:3rem 2.5rem;max-width:460px;width:90%;text-align:center;box-shadow:0 2px 4px rgba(0,0,0,.04),0 8px 32px rgba(0,0,0,.12)}
+[data-theme="dark"] .login-page{background:linear-gradient(160deg,#1b1a19 0%,#252423 50%,#1e2a36 100%)}
+[data-theme="dark"] .login-page::before{background:radial-gradient(circle,rgba(71,158,245,.08),transparent 65%)}
+[data-theme="dark"] .login-page::after{background:radial-gradient(circle,rgba(180,160,255,.06),transparent 65%)}
+[data-theme="dark"] .login-card{background:var(--bg3);border:1px solid var(--bd);box-shadow:var(--shadow-16)}
+.login-card .logo{font-size:3rem;margin-bottom:1rem}
+.login-card h1{font-size:1.6rem;font-weight:700;margin-bottom:.5rem;color:var(--blue)}
+.login-card .desc{color:var(--tx2);font-size:.92rem;margin-bottom:2rem;line-height:1.6}
+.login-btn{display:flex;align-items:center;justify-content:center;gap:.6rem;width:100%;padding:.85rem 1.5rem;font-size:1rem;font-weight:600;border:none;border-radius:8px;background:var(--blue);color:#fff;transition:background .2s}
+.login-btn:hover{background:var(--blue-hover)}
+.login-btn svg{width:20px;height:20px;fill:currentColor}
+.login-note{margin-top:1.5rem;font-size:.78rem;color:var(--tx3);line-height:1.5}
+.login-note strong{color:var(--tx2)}
+
+/* ── Portal Shell ── */
+.portal{display:none;flex-direction:column;min-height:100vh}
+
+/* ── Header ── */
+.hdr{background:var(--bg);border-bottom:1px solid var(--bd);padding:0 1.5rem;display:flex;align-items:center;gap:0;flex-shrink:0;min-height:48px;box-shadow:0 1px 0 rgba(0,0,0,.06)}
+[data-theme="dark"] .hdr{background:var(--bg2);border-bottom-color:var(--bd);box-shadow:var(--shadow-2)}
+.hdr-logo{display:flex;align-items:center;gap:.5rem;text-decoration:none;cursor:default;padding:.5rem 0;margin-right:.8rem;background:none;border:none;font-family:inherit}
+.hdr-logo-icon{font-size:1.1rem}
+.hdr-title{font-size:.95rem;font-weight:700;color:var(--blue);white-space:nowrap}
+.hdr-right{margin-left:auto;display:flex;align-items:center;gap:.6rem}
+
+/* Theme toggle */
+.theme-toggle{display:flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:50%;border:1px solid var(--bd);background:var(--bg4);color:var(--tx2);cursor:pointer;font-size:.85rem;transition:all .18s;padding:0;line-height:1}
+.theme-toggle:hover{border-color:var(--blue);color:var(--blue);background:var(--bg3)}
+
+/* Width slider */
+.width-slider-wrap{display:flex;align-items:center;gap:.4rem;padding:.15rem 0}
+.width-slider-wrap .slider-icon{font-size:.75rem;color:var(--tx3);line-height:1}
+.width-slider{-webkit-appearance:none;appearance:none;width:84px;height:4px;border-radius:2px;background:var(--bd);outline:none;cursor:pointer;transition:background .15s}
+.width-slider::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:14px;height:14px;border-radius:50%;background:var(--blue);cursor:pointer;border:2px solid #fff;box-shadow:0 1px 3px rgba(0,0,0,.2);transition:transform .12s}
+.width-slider::-webkit-slider-thumb:hover{transform:scale(1.15)}
+.width-slider::-moz-range-thumb{width:14px;height:14px;border-radius:50%;background:var(--blue);cursor:pointer;border:2px solid #fff;box-shadow:0 1px 3px rgba(0,0,0,.2)}
+
+/* User dropdown */
+.user-menu-wrap{position:relative}
+.user-menu-trigger{display:flex;align-items:center;gap:.45rem;padding:.3rem .7rem;background:transparent;border:1px solid transparent;border-radius:20px;font-size:.78rem;color:var(--tx2);cursor:pointer;transition:all .15s;user-select:none}
+.user-menu-trigger:hover{background:var(--bg4)}
+.user-menu-trigger .avatar{width:28px;height:28px;border-radius:50%;background:linear-gradient(135deg,#0078d4,#479ef5);display:flex;align-items:center;justify-content:center;font-size:.72rem;color:#fff;font-weight:600;flex-shrink:0}
+.user-menu-trigger .uname{font-weight:500;color:var(--tx);font-size:.8rem}
+.user-menu-trigger .chevron{font-size:.55rem;color:var(--tx3);transition:transform .2s}
+.user-menu-trigger.open .chevron{transform:rotate(180deg)}
+.user-dropdown{position:absolute;top:calc(100% + 6px);right:0;min-width:200px;background:var(--bg2);border:1px solid var(--bd);border-radius:8px;box-shadow:var(--shadow-16);z-index:200;overflow:hidden;opacity:0;transform:translateY(-4px);pointer-events:none;transition:opacity .15s,transform .15s}
+.user-dropdown.open{opacity:1;transform:translateY(0);pointer-events:auto}
+.user-dropdown-tenant{display:flex;align-items:center;gap:.5rem;padding:.6rem .9rem;font-size:.72rem;color:var(--tx2)}
+.user-dropdown-tenant .tenant-icon{font-size:.8rem}
+.user-dropdown-tenant .tenant-info{display:flex;flex-direction:column;line-height:1.2}
+.user-dropdown-tenant .tenant-name{color:var(--tx);font-weight:500;font-size:.72rem}
+.user-dropdown-tenant .tenant-id{color:var(--tx3);font-size:.62rem;font-family:var(--mono)}
+.user-dropdown-sep{height:1px;background:var(--bd);margin:.2rem 0}
+.user-dropdown-item{display:flex;align-items:center;gap:.5rem;padding:.55rem .9rem;font-size:.8rem;color:var(--tx);cursor:pointer;transition:background .12s;border:none;background:none;width:100%;text-align:left;font-family:inherit}
+.user-dropdown-item:hover{background:var(--bg4)}
+
+/* ── Content Area ── */
+.portal-body{flex:1;padding:1.2rem 1.5rem 1rem;max-width:var(--portal-width-target);width:100%;margin:0 auto;background:linear-gradient(180deg,#ebf3fc 0%,#ffffff 12%)}
+[data-theme="dark"] .portal-body{background:none}
+.portal-hero{text-align:center;margin-bottom:1rem}
+.portal-hero .icon{font-size:2.2rem;margin-bottom:.3rem}
+.portal-hero h2{font-size:1.25rem;font-weight:700;margin-bottom:.25rem;color:var(--blue)}
+.portal-hero p{color:var(--tx2);font-size:.82rem;max-width:600px;margin:0 auto;line-height:1.5}
+
+/* ── Section Headers ── */
+.section-label{font-size:.68rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--tx3);margin:.8rem 0 .5rem;padding-left:.2rem}
+
+/* ── Card Grid ── */
+.card-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
+.card{background:#ffffff;border:none;border-radius:10px;padding:0;cursor:pointer;transition:all .25s;position:relative;overflow:hidden;text-decoration:none;color:inherit;display:flex;flex-direction:column;box-shadow:0 2px 4px rgba(0,0,0,.06),0 4px 12px rgba(0,0,0,.06)}
+[data-theme="dark"] .card{background:var(--bg3);border:1px solid var(--bd);box-shadow:var(--shadow-4)}
+.card:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,.10),0 8px 24px rgba(0,0,0,.08)}
+[data-theme="dark"] .card:hover{box-shadow:var(--shadow-16);border-color:var(--blue)}
+.card-accent{height:3px;width:100%;flex-shrink:0}
+.card-content{padding:1.5rem 1.2rem 1.4rem}
+.card-icon{font-size:1.4rem;margin-bottom:.3rem}
+.card h3{font-size:.88rem;font-weight:600;margin-bottom:.2rem;color:var(--tx)}
+.card p{font-size:.75rem;color:var(--tx2);line-height:1.4}
+.card .card-tag{display:inline-block;margin-top:.4rem;padding:.1rem .4rem;border-radius:4px;font-size:.62rem;font-weight:500;background:var(--bg4);color:var(--tx3)}
+
+/* Card accent colors */
+.card-posture .card-accent{background:var(--blue)}
+.card-risk .card-accent{background:var(--orange)}
+.card-data .card-accent{background:var(--cyan)}
+.card-rbac .card-accent{background:var(--green)}
+.card-copilot .card-accent{background:var(--purple)}
+.card-ai .card-accent{background:#8661c1}
+
+/* ── Footer ── */
+.portal-footer{text-align:center;padding:.75rem 1rem;font-size:.68rem;color:var(--tx3);border-top:1px solid var(--bd)}
+
+@media(max-width:768px){
+  .card-grid{grid-template-columns:repeat(2,1fr)}
+  .width-slider-wrap{display:none!important}
+}
+@media(max-width:520px){
+  .portal-body{padding:1rem .8rem}
+  .card-grid{grid-template-columns:1fr}
+  .hdr{padding:0 1rem}
+}
+@media(prefers-reduced-motion:reduce){*{transition-duration:0s!important;animation-duration:0s!important}}
+</style>
+</head>
+<body>
+
+<!-- ═════════ LOGIN PAGE ═════════ -->
+<div id="loginPage" class="login-page">
+  <div class="login-card">
+    <div class="logo">🛡️</div>
+    <h1>PostureIQ</h1>
+    <p class="desc">Security assessment platform for Microsoft cloud. Sign in with your organizational account to get started.</p>
+    <button class="login-btn" onclick="signIn()">
+      <svg viewBox="0 0 21 21"><path d="M0 0h10v10H0zM11 0h10v10H11zM0 11h10v10H0zM11 11h10v10H11z"/></svg>
+      Sign in with Microsoft
+    </button>
+    <div class="login-note">
+      PostureIQ uses your signed-in credentials to query Microsoft cloud services. Results reflect your permission level.
+    </div>
+  </div>
+</div>
+
+<!-- ═════════ PORTAL ═════════ -->
+<div id="portal" class="portal">
+
+  <!-- Header -->
+  <header class="hdr">
+    <div class="hdr-logo"></div>
+    <div class="hdr-right">
+      <div class="width-slider-wrap" title="Content area width">
+        <span class="slider-icon"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 8h12M6 4l-4 4 4 4M10 4l4 4-4 4"/></svg></span>
+        <input type="range" class="width-slider" id="widthSlider" min="0" max="100" step="1" value="0" oninput="setWidthFromSlider(this.value)" aria-label="Content area width">
+      </div>
+      <button class="theme-toggle" onclick="toggleTheme()" title="Toggle theme" id="themeBtn">☀️</button>
+      <div class="user-menu-wrap" id="userMenuWrap">
+        <button class="user-menu-trigger" id="userMenuTrigger" onclick="toggleUserMenu()">
+          <div class="avatar" id="userAvatar">?</div>
+          <span class="uname" id="userName">—</span>
+          <span class="chevron">▾</span>
+        </button>
+        <div class="user-dropdown" id="userDropdown">
+          <div class="user-dropdown-tenant" id="tenantSection">
+            <span class="tenant-icon">🏢</span>
+            <div class="tenant-info">
+              <span class="tenant-name" id="tenantName">—</span>
+              <span class="tenant-id" id="tenantId">—</span>
+            </div>
+          </div>
+          <div class="user-dropdown-sep"></div>
+          <button class="user-dropdown-item" onclick="signOut()">🚪 Sign out</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Body -->
+  <div class="portal-body">
+
+    <!-- Back-link / wrong-place notice (visible) -->
+    <div id="indexNotice" style="max-width:600px;margin:3rem auto;padding:2rem 2.2rem;background:#fff;border:1px solid var(--bd);border-radius:10px;box-shadow:var(--shadow-4);text-align:center">
+      <div style="font-size:2.4rem;margin-bottom:.6rem">🛡️</div>
+      <h2 id="indexNoticeTitle" style="font-size:1.25rem;font-weight:700;color:var(--blue);margin-bottom:.6rem">PostureIQ</h2>
+      <p id="indexNoticeMsg" style="color:var(--tx2);font-size:.9rem;line-height:1.55;margin-bottom:1.2rem">Loading…</p>
+      <a id="indexNoticeBack" href="#" style="display:inline-block;padding:.6rem 1.4rem;background:var(--blue);color:#fff;border-radius:6px;font-size:.85rem;font-weight:600;text-decoration:none">← Go back</a>
+    </div>
+
+    <!-- Original assessment content (hidden from view; logic preserved) -->
+    <div class="portal-hero" style="display:none">
+      <div class="icon">🛡️</div>
+      <h2>PostureIQ</h2>
+      <p>Select an assessment agent below to evaluate your Azure tenant's security posture, compliance, or AI readiness.</p>
+    </div>
+
+    <!-- Assessments -->
+    <div class="section-label" style="display:none">Assessments :</div>
+    <div class="card-grid" style="display:none">
+      <a class="card card-posture" href="/SecurityComplianceAssessment.html">
+        <div class="card-accent"></div>
+        <div class="card-content">
+          <div class="card-icon">🏛️</div>
+          <h3>Security Compliance Assessment</h3>
+          <p>Security compliance assessment for Microsoft cloud services. Risk-weighted scoring, attack path analysis, priority ranking, AI fix recommendations across compliance frameworks.</p>
+        </div>
+      </a>
+      <a class="card card-risk" href="/RiskAnalysis.html">
+        <div class="card-accent"></div>
+        <div class="card-content">
+          <div class="card-icon">⚡</div>
+          <h3>Risk Assessment</h3>
+          <p>Comprehensive risk assessment for Microsoft cloud environments. Evaluate identity, network, defender, configuration, and insider risk controls.</p>
+        </div>
+      </a>
+      <a class="card card-data" href="/DataSecurity.html">
+        <div class="card-accent"></div>
+        <div class="card-content">
+          <div class="card-icon">🔒</div>
+          <h3>Data Security Assessment</h3>
+          <p>Data security posture assessment for Microsoft cloud. Audit storage, databases, Key Vault, encryption, classification, and data lifecycle controls.</p>
+        </div>
+      </a>
+      <a class="card card-rbac" href="/RBACReport.html">
+        <div class="card-accent"></div>
+        <div class="card-content">
+          <div class="card-icon">🌳</div>
+          <h3>RBAC Assessment</h3>
+          <p>RBAC role assignment hierarchy assessment for Azure. Enumerate management groups, subscriptions, resource groups, and role assignments.</p>
+        </div>
+      </a>
+      <a class="card card-copilot" href="/CopilotReadiness.html">
+        <div class="card-accent"></div>
+        <div class="card-content">
+          <div class="card-icon">🤖</div>
+          <h3>Copilot Readiness Assessment</h3>
+          <p>Microsoft 365 Copilot readiness assessment. Evaluate oversharing risk, label coverage, DLP readiness, access governance, and content lifecycle.</p>
+        </div>
+      </a>
+      <a class="card card-ai" href="/AIAgentSecurity.html">
+        <div class="card-accent"></div>
+        <div class="card-content">
+          <div class="card-icon">🤝</div>
+          <h3>AI Agent Security Assessment</h3>
+          <p>AI agent security assessment for Microsoft cloud. Evaluate Copilot Studio, Azure AI Foundry, custom AI agents, and Entra AI identity security.</p>
+        </div>
+      </a>
+      <a class="card card-attack" href="/AttackPath.html">
+        <div class="card-accent"></div>
+        <div class="card-content">
+          <div class="card-icon">🎯</div>
+          <h3>Attack Path Detection</h3>
+          <p>Detect cross-domain attack paths — consent abuse, privilege escalation, lateral movement, credential chains, and exposed high-value resources — with MITRE ATT&amp;CK mapping and per-step playbooks.</p>
+        </div>
+      </a>
+    </div>
+
+  </div>
+
+  <div class="portal-footer" style="display:none">
+    PostureIQ uses your signed-in credentials to query Microsoft cloud services. Results reflect your permission level.
+  </div>
+</div>
+
+<!-- Back-link / wrong-place notice logic (visual-only; does not affect MSAL/portal logic) -->
+<script>
+(function(){
+  function setupIndexNotice(){
+    var msg  = document.getElementById('indexNoticeMsg');
+    var back = document.getElementById('indexNoticeBack');
+    if (!msg || !back) return;
+    var ref = document.referrer || '';
+    var sameOrigin = false;
+    try { sameOrigin = ref && new URL(ref).origin === window.location.origin; } catch(e){}
+    if (sameOrigin) {
+      msg.textContent = 'This is the PostureIQ portal entry point. Return to the page you came from.';
+      back.textContent = '← Go back';
+      back.href = ref;
+      back.onclick = function(ev){ ev.preventDefault(); if (history.length > 1) history.back(); else window.location.href = ref; };
+    } else {
+      msg.innerHTML = '<strong style="color:var(--red)">You are at the wrong place.</strong><br>This page is the internal portal entry. Please navigate to a PostureIQ assessment page instead.';
+      back.style.display = 'none';
+    }
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', setupIndexNotice);
+  else setupIndexNotice();
+})();
+</script>
+
+<!-- ═════════ Teams SDK (Tab integration) ═════════ -->
+<script src="https://res.cdn.office.net/teams-js/2.31.1/js/MicrosoftTeams.min.js"></script>
+<script src="/teams-init.js"></script>
+<!-- ═════════ MSAL.js ═════════ -->
+<script src="/msal-browser.min.js"></script>
+
+<script>
+const MSAL_CONFIG = {
+  auth: {
+    clientId: "ffb6f10d-6991-430e-b3d6-23a0101a92b1",
+    authority: "https://login.microsoftonline.com/common",
+    redirectUri: window.location.origin,
+    navigateToLoginRequestUrl: false,
+  },
+  cache: { cacheLocation: "localStorage" }
+};
+
+const GRAPH_SCOPES = ["User.Read"];
+
+let msalInstance = null;
+let currentAccount = null;
+
+async function initMsal() {
+  if (MSAL_CONFIG.auth.clientId === "YOUR-CLIENT-ID-HERE") {
+    document.getElementById("loginPage").style.display = "none";
+    document.getElementById("portal").style.display = "flex";
+    document.getElementById("userName").textContent = "Demo Mode";
+    document.getElementById("tenantName").textContent = "Demo Tenant";
+    document.getElementById("tenantId").textContent = "not-configured";
+    document.getElementById("userAvatar").textContent = "D";
+    return;
+  }
+  if (typeof msal === "undefined") {
+    document.querySelector(".login-note").innerHTML =
+      '<strong style="color:var(--red)">MSAL library failed to load.</strong>';
+    return;
+  }
+  try {
+    msalInstance = new msal.PublicClientApplication(MSAL_CONFIG);
+    await msalInstance.initialize();
+    const resp = await msalInstance.handleRedirectPromise();
+    if (resp && resp.account) {
+      currentAccount = resp.account;
+      msalInstance.setActiveAccount(currentAccount);
+      var _returnPage = localStorage.getItem("esiq_return_page");
+      if (_returnPage) { localStorage.removeItem("esiq_return_page"); window.location.href = _returnPage; return; }
+      showPortal();
+      return;
+    }
+    const accounts = msalInstance.getAllAccounts();
+    if (accounts.length > 0) {
+      currentAccount = accounts[0];
+      msalInstance.setActiveAccount(currentAccount);
+      showPortal();
+    }
+  } catch (err) {
+    console.error("MSAL init error:", err);
+  }
+}
+
+function signIn() {
+  if (!msalInstance) { alert("Auth library not loaded."); return; }
+  if (window.__esiqInTeams && typeof microsoftTeams !== "undefined") {
+    // Teams: use SDK auth popup (guaranteed to work in Teams Desktop + Web)
+    microsoftTeams.authentication.authenticate({
+      url: window.location.origin + "/auth-start.html",
+      width: 600, height: 535, isExternal: false
+    }).then(function () { location.reload(); })
+    .catch(function (err) { alert("Sign-in failed: " + (typeof err === "string" ? err : JSON.stringify(err))); });
+  } else {
+    // Standalone browser — redirect as before
+    var loginRequest = { scopes: GRAPH_SCOPES, prompt: "select_account" };
+    msalInstance.loginRedirect(loginRequest);
+  }
+}
+
+function signOut() {
+  if (msalInstance && currentAccount) {
+    if (window.__esiqInTeams) {
+      try { msalInstance.clearCache(); } catch(e) {}
+      sessionStorage.clear();
+      location.reload();
+    } else {
+      msalInstance.logoutRedirect({ account: currentAccount });
+    }
+  } else {
+    sessionStorage.clear();
+    location.reload();
+  }
+}
+
+function showPortal() {
+  document.getElementById("loginPage").style.display = "none";
+  document.getElementById("portal").style.display = "flex";
+  if (currentAccount) {
+    var name = currentAccount.name || currentAccount.username || "User";
+    document.getElementById("userName").textContent = name;
+    document.getElementById("userAvatar").textContent = name.charAt(0).toUpperCase();
+    var tid = currentAccount.tenantId || "";
+    var upn = currentAccount.username || "";
+    var domain = upn.includes("@") ? upn.split("@")[1] : "Tenant";
+    document.getElementById("tenantName").textContent = domain;
+    document.getElementById("tenantId").textContent = tid ? tid.slice(0, 8) + "\u2026" : "\u2014";
+    document.getElementById("tenantSection").title = "Tenant ID: " + tid;
+  }
+}
+
+/* ── Theme toggle ── */
+function toggleTheme() {
+  var isDark = document.documentElement.getAttribute("data-theme") === "dark";
+  if (isDark) {
+    document.documentElement.removeAttribute("data-theme");
+    localStorage.setItem("esiq-theme", "light");
+    document.getElementById("themeBtn").textContent = "☀️";
+  } else {
+    document.documentElement.setAttribute("data-theme", "dark");
+    localStorage.setItem("esiq-theme", "dark");
+    document.getElementById("themeBtn").textContent = "🌙";
+  }
+}
+(function(){
+  var s = localStorage.getItem("esiq-theme");
+  if (s === "dark") {
+    document.documentElement.setAttribute("data-theme", "dark");
+    document.addEventListener("DOMContentLoaded", function(){ document.getElementById("themeBtn").textContent = "🌙"; });
+  }
+})();
+
+/* ── User menu dropdown ── */
+function toggleUserMenu() {
+  var trigger = document.getElementById("userMenuTrigger");
+  var dd = document.getElementById("userDropdown");
+  var isOpen = dd.classList.contains("open");
+  if (isOpen) {
+    dd.classList.remove("open");
+    trigger.classList.remove("open");
+  } else {
+    dd.classList.add("open");
+    trigger.classList.add("open");
+  }
+}
+document.addEventListener("click", function(e) {
+  var wrap = document.getElementById("userMenuWrap");
+  if (wrap && !wrap.contains(e.target)) {
+    document.getElementById("userDropdown").classList.remove("open");
+    document.getElementById("userMenuTrigger").classList.remove("open");
+  }
+});
+
+window.addEventListener("DOMContentLoaded", initMsal);
+
+/* ── Width slider ── */
+const PORTAL_WIDTH_STORAGE_KEY = 'esiq-portal-width-pct';
+const PORTAL_WIDTH_MIN_PX = 860;
+const PORTAL_WIDTH_MAX_PX = 1600;
+let currentWidthPct = 0;
+
+function clampWidthPct(val) {
+  var parsed = parseInt(val, 10);
+  if (Number.isNaN(parsed)) return 0;
+  return Math.max(0, Math.min(100, parsed));
+}
+
+function syncWidth(widthPct) {
+  currentWidthPct = clampWidthPct(widthPct);
+  var targetWidth = PORTAL_WIDTH_MIN_PX + ((PORTAL_WIDTH_MAX_PX - PORTAL_WIDTH_MIN_PX) * (currentWidthPct / 100));
+  document.documentElement.style.setProperty('--portal-width-target', targetWidth + 'px');
+}
+
+function setWidthFromSlider(val) {
+  syncWidth(val);
+  localStorage.setItem(PORTAL_WIDTH_STORAGE_KEY, currentWidthPct);
+}
+
+(function(){
+  var saved = localStorage.getItem(PORTAL_WIDTH_STORAGE_KEY);
+  if (saved !== null) currentWidthPct = clampWidthPct(saved);
+})();
+
+document.addEventListener('DOMContentLoaded', function() {
+  syncWidth(currentWidthPct);
+  var slider = document.getElementById('widthSlider');
+  if (slider) slider.value = currentWidthPct;
+});
+</script>
+</body>
+</html>

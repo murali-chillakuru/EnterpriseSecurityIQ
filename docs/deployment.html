@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Deployment — PostureIQ</title>
+  <link rel="stylesheet" href="theme.css">
+  <link rel="stylesheet" href="print.css">
+  <script src="theme.js"></script>
+</head>
+<body>
+
+<header class="doc-header">
+  <a href="overview.html" class="doc-header-brand">
+    <svg viewBox="0 0 28 28" fill="none"><rect width="28" height="28" rx="6" fill="var(--bg-accent)"/><path d="M8 8h4v12H8V8zm8 4h4v8h-4v-8z" fill="var(--text-on-accent)"/></svg>
+    <span>PostureIQ Docs</span>
+  </a>
+  <nav class="doc-header-nav">
+    <a href="overview.html">Home</a>
+    <a href="getting-started.html">Get Started</a>
+    <a href="architecture.html">Architecture</a>
+    <a href="deployment.html" class="active">Deploy</a>
+    <a href="configuration.html">Config</a>
+    <a href="assessment-engines.html">Engines</a>
+    <a href="extending.html">Extend</a>
+    <a href="coverage-matrix.html">Coverage</a>
+    <button class="theme-toggle" aria-label="Toggle theme"></button>
+  </nav>
+</header>
+
+<main class="doc-container">
+  <h1>Deployment</h1>
+  <p class="subtitle">Container build, Azure deployment, CI/CD pipelines, and infrastructure setup.</p>
+
+  <h2>Deployment Options</h2>
+  <div class="card-grid">
+    <div class="card">
+      <h3>Azure Container Apps</h3>
+      <p>Production deployment via ACR build and Container App revision updates.</p>
+    </div>
+    <div class="card">
+      <h3>Microsoft Foundry</h3>
+      <p>Hosted AI agent via container image on Foundry with responses protocol v1.</p>
+    </div>
+    <div class="card">
+      <h3>Local Development</h3>
+      <p>Direct Python execution for testing, debugging, and development.</p>
+    </div>
+  </div>
+
+  <h2>Container Build</h2>
+  <p>PostureIQ ships as a Docker container based on <code>python:3.12-slim</code> with Playwright Chromium for PDF rendering.</p>
+
+  <h3>Build locally</h3>
+  <pre><code>docker build --platform linux/amd64 -t postureiq-agent -f AIAgent/Dockerfile .</code></pre>
+
+  <h3>Build via Azure Container Registry</h3>
+  <pre><code>az acr build --registry &lt;your-acr&gt; --image postureiq-agent:v&lt;version&gt; --file AIAgent/Dockerfile .</code></pre>
+
+  <h2>Azure Container Apps</h2>
+  <h3>Prerequisites</h3>
+  <ul>
+    <li>Azure Container Registry (ACR) with the built image</li>
+    <li>Azure Container App environment</li>
+    <li>Managed Identity with required permissions (see <a href="getting-started.html">Getting Started</a>)</li>
+  </ul>
+
+  <h3>Deploy a new revision</h3>
+  <pre><code>az containerapp update \
+  --name &lt;app-name&gt; \
+  --resource-group &lt;rg-name&gt; \
+  --image &lt;acr-name&gt;.azurecr.io/postureiq-agent:v&lt;version&gt;</code></pre>
+
+  <h3>Environment Variables</h3>
+  <table>
+    <thead><tr><th>Variable</th><th>Required</th><th>Description</th></tr></thead>
+    <tbody>
+      <tr><td><code>AZURE_TENANT_ID</code></td><td>Yes</td><td>Target Azure AD tenant</td></tr>
+      <tr><td><code>AZURE_CLIENT_ID</code></td><td>If SP</td><td>Service principal client ID</td></tr>
+      <tr><td><code>AZURE_CLIENT_SECRET</code></td><td>If SP</td><td>Service principal secret</td></tr>
+      <tr><td><code>FOUNDRY_PROJECT_ENDPOINT</code></td><td>Agent mode</td><td>Foundry project endpoint URL</td></tr>
+      <tr><td><code>FOUNDRY_MODEL_DEPLOYMENT_NAME</code></td><td>Agent mode</td><td>Deployed model name (default: <code>gpt-4.1</code>)</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Health Check</h3>
+  <p>The container exposes a health endpoint at <code>/health</code> on port 8088.</p>
+
+  <h2>Foundry Deployment</h2>
+  <ol>
+    <li>Build and push the container image to ACR</li>
+    <li>Create a hosted agent in Foundry pointing to the container image</li>
+    <li>The agent exposes port 8088 using the <code>responses</code> protocol v1</li>
+    <li>Configure the Foundry project endpoint and model deployment name</li>
+  </ol>
+
+  <h2>Local Development</h2>
+  <pre><code>cd AIAgent
+pip install -r requirements.txt
+az login
+
+# Run as agent server
+python main.py  # port 8088
+
+# Or run as API server
+python -m uvicorn app.api:app --host 0.0.0.0 --port 8090</code></pre>
+
+  <h3>Debug with AI Toolkit Inspector</h3>
+  <p>In VS Code, press <strong>F5</strong> and select <strong>Debug PostureIQ Agent (HTTP Server)</strong> to launch with <code>agentdev</code> instrumentation.</p>
+
+  <h2>CI/CD Integration</h2>
+  <h3>GitHub Actions</h3>
+  <ol>
+    <li>Run an assessment in CI with <code>--format sarif</code></li>
+    <li>Upload the SARIF file to GitHub Code Scanning</li>
+    <li>Findings appear as security alerts in the repository</li>
+  </ol>
+
+  <h3>Azure DevOps</h3>
+  <ol>
+    <li>Run an assessment as a pipeline task</li>
+    <li>Publish the HTML report as a pipeline artifact</li>
+    <li>Use webhook output to push results to Azure Boards or ServiceNow</li>
+  </ol>
+
+  <h2>Container Security</h2>
+  <ul>
+    <li>Runs as non-root user (<code>appuser</code>)</li>
+    <li>No secrets stored in the image — all sensitive values from env vars or managed identity</li>
+    <li>Health check enabled with 30-second intervals</li>
+    <li>Playwright installed only for PDF rendering (Chromium sandbox)</li>
+  </ul>
+</main>
+
+<footer class="doc-footer">
+  PostureIQ &mdash; AI-Powered Compliance Intelligence &mdash; Author: Murali Chillakuru
+</footer>
+
+</body>
+</html>

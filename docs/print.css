@@ -1,0 +1,16 @@
+/* PostureIQ Documentation — Print Styles */
+
+@media print {
+  .doc-header,
+  .theme-toggle,
+  .doc-footer { display: none !important; }
+  body { background: #fff; color: #000; font-size: 11pt; }
+  .doc-container { max-width: 100%; padding: 0; }
+  .card { break-inside: avoid; box-shadow: none; border: 1px solid #ccc; }
+  table { page-break-inside: auto; }
+  tr { page-break-inside: avoid; page-break-after: auto; }
+  a { color: #000; text-decoration: underline; }
+  a[href]::after { content: " (" attr(href) ")"; font-size: 0.8em; color: #666; }
+  a[href^="#"]::after { content: ""; }
+  pre, .diagram { border: 1px solid #ccc; background: #f9f9f9; }
+}

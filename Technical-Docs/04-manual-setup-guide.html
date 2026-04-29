@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manual Setup Guide — PostureIQ Technical Docs</title>
+  <link rel="stylesheet" href="../docs/theme.css">
+  <link rel="stylesheet" href="../docs/print.css">
+  <script src="../docs/theme.js"></script>
+</head>
+<body>
+
+<header class="doc-header">
+  <a href="index-of-tech-docs.html" class="doc-header-brand">
+    <svg viewBox="0 0 28 28" fill="none"><rect width="28" height="28" rx="6" fill="var(--bg-accent)"/><path d="M8 8h4v12H8V8zm8 4h4v8h-4v-8z" fill="var(--text-on-accent)"/></svg>
+    <span>PostureIQ Technical Docs</span>
+  </a>
+  <nav class="doc-header-nav">
+    <a href="index-of-tech-docs.html">Home</a>
+    <a href="01-infrastructure-overview.html">Infrastructure</a>
+    <a href="02-assessment-guide.html">Assessments</a>
+    <a href="03-report-lifecycle.html">Reports</a>
+    <a href="04-manual-setup-guide.html" class="active">Setup</a>
+    <a href="05-authentication-flow.html">Auth</a>
+    <a href="06-api-reference.html">API</a>
+    <a href="07-teams-integration.html">Teams</a>
+    <a href="08-troubleshooting.html">Troubleshoot</a>
+    <button class="theme-toggle" aria-label="Toggle theme"></button>
+  </nav>
+</header>
+
+<main class="doc-container">
+<h1 id="manual-setup-guide">Manual Setup Guide</h1>
+<blockquote><p>Step-by-step instructions to manually recreate the entire PostureIQ infrastructure from scratch.</p></blockquote>
+<p><strong>Navigation:</strong> <a href="index-of-tech-docs.html">Index</a> · <a href="01-infrastructure-overview.html">Infrastructure</a> · <a href="02-assessment-guide.html">Assessments</a> · <a href="03-report-lifecycle.html">Reports</a> · <strong>Manual Setup</strong> · <a href="05-authentication-flow.html">Authentication</a> · <a href="06-api-reference.html">API Reference</a> · <a href="07-teams-integration.html">Teams Integration</a> · <a href="08-troubleshooting.html">Troubleshooting</a></p>
+<hr>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>Before you begin, ensure you have:</p>
+<table>
+<thead><tr><th>Requirement</th><th>Version / Details</th></tr></thead>
+<tbody>
+<tr><td>Azure CLI</td><td>2.67+ (<code>az --version</code>)</td></tr>
+<tr><td>Azure Subscription</td><td>With permissions to create resources</td></tr>
+<tr><td>Global Administrator</td><td>Required for Graph API permissions (Step 12)</td></tr>
+<tr><td>PowerShell</td><td>7+ (or Windows PowerShell 5.1)</td></tr>
+<tr><td>Git</td><td>For cloning the repository</td></tr>
+</tbody></table>
+<h3 id="verify-azure-cli">Verify Azure CLI</h3>
+<pre><code class="language-powershell">az --version
+az login
+az account set --subscription &quot;AI&quot;   # Replace with your subscription name</code></pre>
+<hr>
+<h2 id="variables">Variables</h2>
+<p>Set these variables in your PowerShell session. Change the values to match your environment:</p>
+<pre><code class="language-powershell">$BaseName              = &quot;ESIQNew&quot;
+$Location              = &quot;swedencentral&quot;        # AI Services region
+$ContainerAppsLocation = &quot;northeurope&quot;          # Container Apps region
+$SubscriptionName      = &quot;AI&quot;
+$PrimaryModel          = &quot;gpt-4.1&quot;
+$FallbackModel         = &quot;gpt-5.1&quot;
+$ModelSku              = &quot;Standard&quot;
+$ModelCapacity         = 30                     # 30K TPM
+
+# Derived names (do not change these unless you change BaseName)
+$RG           = &quot;$BaseName-RG&quot;
+$AIName       = &quot;$BaseName-AI&quot;
+$CustomDomain = $AIName.ToLower()
+$ProjectName  = &quot;$BaseName-project&quot;
+$StorageName  = &quot;$($BaseName.ToLower())storage&quot;
+$KVName       = &quot;$BaseName-kv&quot;
+$AppInsights  = &quot;$BaseName-appinsights&quot;
+$LAWName      = &quot;$BaseName-law&quot;
+$ACRName      = &quot;$($BaseName.ToLower())acr&quot;
+$IDName       = &quot;$BaseName-identity&quot;
+$EnvName      = &quot;$BaseName-env&quot;
+$AppName      = &quot;$($BaseName.ToLower())-agent&quot;
+
+$SubId    = az account show --query &quot;id&quot; -o tsv
+$TenantId = az account show --query &quot;tenantId&quot; -o tsv</code></pre>
+<hr>
+<h2 id="step-1-create-resource-group">Step 1: Create Resource Group</h2>
+<pre><code class="language-powershell">az group create --name $RG --location $Location -o none</code></pre>
+<p><strong>What this does:</strong> Creates a container that holds all your resources. All subsequent resources are placed inside this group.</p>
+<p><strong>Verify:</strong></p>
+<pre><code class="language-powershell">az group show --name $RG --query &quot;{name:name, location:location}&quot; -o table</code></pre>
+<hr>
+<h2 id="step-2-create-foundry-resource-ai-services">Step 2: Create Foundry Resource (AI Services)</h2>
+<pre><code class="language-powershell"># Create the AI Services resource
+az cognitiveservices account create `
+    --name $AIName --resource-group $RG `
+    --kind &quot;AIServices&quot; --sku &quot;S0&quot; `
+    --location $Location --yes -o none
+
+# Set custom domain (required for project management)
+az cognitiveservices account update `
+    --name $AIName --resource-group $RG `
+    --custom-domain $CustomDomain -o none
+
+# Enable project management via REST API
+$aiUri = &quot;https://management.azure.com/subscriptions/$SubId/resourceGroups/$RG/providers/Microsoft.CognitiveServices/accounts/${AIName}?api-version=2025-04-01-preview&quot;
+$bodyFile = [System.IO.Path]::GetTempPath() + &quot;esiq-allow-pm.json&quot;
+[System.IO.File]::WriteAllText($bodyFile, &#x27;{&quot;properties&quot;:{&quot;allowProjectManagement&quot;:true}}&#x27;, [System.Text.Encoding]::UTF8)
+az rest --method PATCH --uri $aiUri --body &quot;@$bodyFile&quot; -o none
+Remove-Item -Force $bodyFile</code></pre>
+<p><strong>What this does:</strong> Creates an Azure AI Services resource with a custom domain name. The <code>allowProjectManagement</code> setting enables the new Foundry project model (visible at ai.azure.com).</p>
+<p><strong>Wait for provisioning:</strong></p>
+<pre><code class="language-powershell">do {
+    $state = az cognitiveservices account show --name $AIName --resource-group $RG `
+        --query &quot;properties.provisioningState&quot; -o tsv
+    if ($state -ne &quot;Succeeded&quot;) { Start-Sleep -Seconds 5 }
+} while ($state -ne &quot;Succeeded&quot;)
+
+# Save endpoint for later
+$AIEndpoint = az cognitiveservices account show --name $AIName --resource-group $RG `
+    --query &quot;properties.endpoint&quot; -o tsv
+$AIId = az cognitiveservices account show --name $AIName --resource-group $RG `
+    --query &quot;id&quot; -o tsv</code></pre>
+<hr>
+<h2 id="step-3-create-foundry-project">Step 3: Create Foundry Project</h2>
+<pre><code class="language-powershell">$ApiVersion = &quot;2025-06-01&quot;
+$projUri = &quot;https://management.azure.com${AIId}/projects/${ProjectName}?api-version=$ApiVersion&quot;
+
+$projBodyFile = [System.IO.Path]::GetTempPath() + &quot;esiq-project.json&quot;
+$projBody = @&quot;
+{&quot;location&quot;:&quot;$Location&quot;,&quot;identity&quot;:{&quot;type&quot;:&quot;SystemAssigned&quot;},&quot;properties&quot;:{}}
+&quot;@
+[System.IO.File]::WriteAllText($projBodyFile, $projBody, [System.Text.Encoding]::UTF8)
+az rest --method PUT --uri $projUri --body &quot;@$projBodyFile&quot; -o none
+Remove-Item -Force $projBodyFile</code></pre>
+<p><strong>What this does:</strong> Creates a Foundry Project as a child resource of the AI Services account. This project is visible in the ai.azure.com portal under the "New Foundry" toggle.</p>
+<p><strong>Wait and save endpoint:</strong></p>
+<pre><code class="language-powershell">do {
+    $state = az rest --method GET --uri $projUri `
+        --query &quot;properties.provisioningState&quot; -o tsv 2&gt;$null
+    if ($state -ne &quot;Succeeded&quot;) { Start-Sleep -Seconds 5 }
+} while ($state -ne &quot;Succeeded&quot;)
+
+$ProjectEndpoint = az rest --method GET --uri $projUri `
+    --query &quot;properties.endpoints.\&quot;AI Foundry API\&quot;&quot; -o tsv</code></pre>
+<hr>
+<h2 id="step-4-deploy-primary-model-gpt-4-1">Step 4: Deploy Primary Model (gpt-4.1)</h2>
+<pre><code class="language-powershell">az cognitiveservices account deployment create `
+    --name $AIName --resource-group $RG `
+    --deployment-name $PrimaryModel `
+    --model-name $PrimaryModel --model-version &quot;2025-04-14&quot; `
+    --model-format &quot;OpenAI&quot; --sku-name $ModelSku --sku-capacity $ModelCapacity -o none</code></pre>
+<p><strong>What this does:</strong> Deploys the GPT-4.1 model with 30K tokens per minute (TPM) throughput. This is the primary model used for agent reasoning.</p>
+<hr>
+<h2 id="step-5-deploy-fallback-model-gpt-5-1">Step 5: Deploy Fallback Model (gpt-5.1)</h2>
+<pre><code class="language-powershell">az cognitiveservices account deployment create `
+    --name $AIName --resource-group $RG `
+    --deployment-name $FallbackModel `
+    --model-name $FallbackModel --model-version &quot;2025-11-13&quot; `
+    --model-format &quot;OpenAI&quot; --sku-name $ModelSku --sku-capacity $ModelCapacity -o none</code></pre>
+<p><strong>What this does:</strong> Deploys GPT-5.1 as a fallback. Used when the primary model fails, is throttled, or when the context window exceeds 4.1's limits.</p>
+<hr>
+<h2 id="step-6-create-storage-account">Step 6: Create Storage Account</h2>
+<pre><code class="language-powershell"># Create account
+az storage account create `
+    --name $StorageName --resource-group $RG `
+    --location $Location --sku &quot;Standard_LRS&quot; `
+    --kind &quot;StorageV2&quot; --min-tls-version &quot;TLS1_2&quot; -o none
+
+# Create blob container for reports
+az storage container create --name &quot;reports&quot; `
+    --account-name $StorageName --auth-mode login -o none</code></pre>
+<p><strong>What this does:</strong> Creates a storage account with a <code>reports</code> blob container. Reports are uploaded here for persistence across container restarts.</p>
+<p><strong>Important notes:</strong></p>
+<ul>
+<li><code>Standard_LRS</code> = locally redundant (cheapest). Use <code>Standard_GRS</code> for geo-redundancy.</li>
+<li><code>TLS1_2</code> enforces minimum TLS version.</li>
+<li>The <code>reports</code> container is created via <code>--auth-mode login</code> (uses your Azure AD identity, not shared keys).</li>
+</ul>
+<hr>
+<h2 id="step-7-create-key-vault">Step 7: Create Key Vault</h2>
+<pre><code class="language-powershell">az keyvault create `
+    --name $KVName --resource-group $RG `
+    --location $Location `
+    --enable-rbac-authorization true `
+    --enable-purge-protection true -o none</code></pre>
+<p><strong>What this does:</strong> Creates a Key Vault for secrets management with RBAC authorization (no access policies) and purge protection enabled.</p>
+<hr>
+<h2 id="step-8-create-log-analytics-workspace">Step 8: Create Log Analytics Workspace</h2>
+<pre><code class="language-powershell">az monitor log-analytics workspace create `
+    --resource-group $RG --workspace-name $LAWName -o none
+
+# Save for later
+$LAWId = az monitor log-analytics workspace show `
+    --resource-group $RG --workspace-name $LAWName --query &quot;id&quot; -o tsv
+$LAWCustomerId = az monitor log-analytics workspace show `
+    --resource-group $RG --workspace-name $LAWName --query &quot;customerId&quot; -o tsv</code></pre>
+<p><strong>What this does:</strong> Creates a Log Analytics workspace that collects container logs, AI Services logs, and Application Insights telemetry.</p>
+<hr>
+<h2 id="step-9-create-application-insights">Step 9: Create Application Insights</h2>
+<pre><code class="language-powershell">az monitor app-insights component create `
+    --app $AppInsights --resource-group $RG `
+    --location $Location `
+    --workspace $LAWId -o none</code></pre>
+<p><strong>What this does:</strong> Creates an Application Insights instance linked to the Log Analytics workspace. Provides request tracking, dependency tracing, and performance monitoring.</p>
+<hr>
+<h2 id="step-10-create-container-registry">Step 10: Create Container Registry</h2>
+<pre><code class="language-powershell">az acr create --name $ACRName --resource-group $RG --sku &quot;Basic&quot; -o none</code></pre>
+<p><strong>What this does:</strong> Creates a Basic-tier container registry to store Docker images. The <code>Basic</code> SKU is sufficient for single-image deployments.</p>
+<p>Save the registry ID:</p>
+<pre><code class="language-powershell">$ACRId = az acr show --name $ACRName --resource-group $RG --query &quot;id&quot; -o tsv</code></pre>
+<hr>
+<h2 id="step-11-create-managed-identity">Step 11: Create Managed Identity</h2>
+<pre><code class="language-powershell">az identity create --name $IDName --resource-group $RG -o none
+
+# Save IDs for later
+$PrincipalId = az identity show --name $IDName --resource-group $RG --query &quot;principalId&quot; -o tsv
+$ClientId    = az identity show --name $IDName --resource-group $RG --query &quot;clientId&quot; -o tsv
+$IdentityId  = az identity show --name $IDName --resource-group $RG --query &quot;id&quot; -o tsv</code></pre>
+<p><strong>What this does:</strong> Creates a user-assigned managed identity. The container app uses this identity to authenticate to all other Azure services (OpenAI, Storage, ACR) without any passwords or keys.</p>
+<hr>
+<h2 id="step-12-assign-rbac-roles">Step 12: Assign RBAC Roles</h2>
+<h3 id="azure-rbac-roles">Azure RBAC Roles</h3>
+<pre><code class="language-powershell">$StorageId = az storage account show --name $StorageName --resource-group $RG --query &quot;id&quot; -o tsv
+
+# ACR Pull — lets the container pull Docker images
+az role assignment create --assignee $PrincipalId --role &quot;AcrPull&quot; --scope $ACRId -o none
+
+# Reader — lets the container enumerate Azure resources
+az role assignment create --assignee $PrincipalId --role &quot;Reader&quot; `
+    --scope &quot;/subscriptions/$SubId&quot; -o none
+
+# Security Reader — lets the container read Defender and Security Center data
+az role assignment create --assignee $PrincipalId --role &quot;Security Reader&quot; `
+    --scope &quot;/subscriptions/$SubId&quot; -o none
+
+# OpenAI User — lets the container call Azure OpenAI models
+az role assignment create --assignee $PrincipalId --role &quot;Cognitive Services OpenAI User&quot; `
+    --scope $AIId -o none
+
+# AI Developer — lets the container register/manage Foundry agents
+az role assignment create --assignee $PrincipalId --role &quot;Azure AI Developer&quot; `
+    --scope $AIId -o none
+
+# Storage Blob Data Contributor — lets the container upload/download reports
+az role assignment create --assignee $PrincipalId --role &quot;Storage Blob Data Contributor&quot; `
+    --scope $StorageId -o none</code></pre>
+<h3 id="microsoft-graph-api-permissions-requires-global-admin">Microsoft Graph API Permissions (Requires Global Admin)</h3>
+<pre><code class="language-powershell">$GraphAppId = &quot;00000003-0000-0000-c000-000000000000&quot;
+$graphSpResp = az rest --method GET `
+    --uri &quot;https://graph.microsoft.com/v1.0/servicePrincipals?`$filter=appId eq &#x27;$GraphAppId&#x27;&amp;`$select=id,appRoles&quot;
+$graphSpParsed = ($graphSpResp | Out-String | ConvertFrom-Json).value[0]
+$GraphSpId = $graphSpParsed.id
+$graphRoles = $graphSpParsed.appRoles
+
+$permissions = @(
+    &quot;Directory.Read.All&quot;,
+    &quot;Policy.Read.All&quot;,
+    &quot;RoleManagement.Read.All&quot;,
+    &quot;User.Read.All&quot;,
+    &quot;AuditLog.Read.All&quot;,
+    &quot;UserAuthenticationMethod.Read.All&quot;,
+    &quot;IdentityRiskyUser.Read.All&quot;,
+    &quot;Application.Read.All&quot;
+)
+
+foreach ($perm in $permissions) {
+    $role = $graphRoles | Where-Object { $_.value -eq $perm }
+    if ($role) {
+        $body = @{
+            principalId = $PrincipalId
+            resourceId  = $GraphSpId
+            appRoleId   = $role.id
+        } | ConvertTo-Json -Compress
+
+        az rest --method POST `
+            --uri &quot;https://graph.microsoft.com/v1.0/servicePrincipals/$PrincipalId/appRoleAssignments&quot; `
+            --body $body --headers &quot;Content-Type=application/json&quot; -o none 2&gt;$null
+        Write-Host &quot;Granted $perm&quot;
+    }
+}</code></pre>
+<p><strong>Why each Graph permission is needed:</strong></p>
+<table>
+<thead><tr><th>Permission</th><th>Assessments That Use It</th></tr></thead>
+<tbody>
+<tr><td><code>Directory.Read.All</code></td><td>PostureIQ, RBAC, Copilot Readiness</td></tr>
+<tr><td><code>Policy.Read.All</code></td><td>PostureIQ (conditional access), Copilot Readiness</td></tr>
+<tr><td><code>RoleManagement.Read.All</code></td><td>RBAC, PostureIQ (privileged roles)</td></tr>
+<tr><td><code>User.Read.All</code></td><td>PostureIQ (user security), Copilot Readiness</td></tr>
+<tr><td><code>AuditLog.Read.All</code></td><td>PostureIQ (audit trail), AI Agent Security</td></tr>
+<tr><td><code>UserAuthenticationMethod.Read.All</code></td><td>PostureIQ (MFA status)</td></tr>
+<tr><td><code>IdentityRiskyUser.Read.All</code></td><td>Risk Analysis, PostureIQ</td></tr>
+<tr><td><code>Application.Read.All</code></td><td>AI Agent Security, PostureIQ</td></tr>
+</tbody></table>
+<hr>
+<h2 id="step-13-create-container-apps-environment">Step 13: Create Container Apps Environment</h2>
+<pre><code class="language-powershell">az containerapp env create `
+    --name $EnvName --resource-group $RG `
+    --logs-workspace-id $LAWCustomerId `
+    --location $ContainerAppsLocation -o none</code></pre>
+<p><strong>What this does:</strong> Creates a Container Apps environment that hosts your container. This step can take 5–10 minutes.</p>
+<p><strong>Why a different region?</strong> The AI Services region (<code>swedencentral</code>) may not support Container Apps. <code>northeurope</code> is a common alternative.</p>
+<hr>
+<h2 id="step-14-build-image-and-create-container-app">Step 14: Build Image and Create Container App</h2>
+<h3 id="14a-build-the-docker-image">14a: Build the Docker Image</h3>
+<pre><code class="language-powershell"># Navigate to repository root
+cd C:\path\to\EnterpriseSecurityIQ
+
+# Build via ACR Tasks (runs in the cloud, no local Docker needed)
+az acr build --registry $ACRName --image &quot;${AppName}:v1&quot; `
+    --file &quot;AIAgent/Dockerfile&quot; &quot;.&quot; --no-logs</code></pre>
+<h3 id="14b-create-the-container-app">14b: Create the Container App</h3>
+<pre><code class="language-powershell">az containerapp create `
+    --name $AppName --resource-group $RG `
+    --environment $EnvName `
+    --image &quot;${ACRName}.azurecr.io/${AppName}:v1&quot; `
+    --registry-server &quot;${ACRName}.azurecr.io&quot; `
+    --registry-identity $IdentityId `
+    --user-assigned $IdentityId `
+    --cpu 1 --memory &quot;2Gi&quot; `
+    --min-replicas 0 --max-replicas 3 `
+    --target-port 8088 --ingress external `
+    --env-vars &quot;AZURE_OPENAI_ENDPOINT=$AIEndpoint&quot; `
+               &quot;AZURE_OPENAI_DEPLOYMENT=$PrimaryModel&quot; `
+               &quot;AZURE_OPENAI_FALLBACK_DEPLOYMENT=$FallbackModel&quot; `
+               &quot;AZURE_OPENAI_API_VERSION=2025-01-01-preview&quot; `
+               &quot;FOUNDRY_PROJECT_ENDPOINT=$ProjectEndpoint&quot; `
+               &quot;AZURE_CLIENT_ID=$ClientId&quot; `
+               &quot;AZURE_TENANT_ID=$TenantId&quot; `
+               &quot;REPORT_STORAGE_ACCOUNT=$StorageName&quot; `
+               &quot;REPORT_STORAGE_CONTAINER=reports&quot; `
+    -o none</code></pre>
+<h3 id="14c-get-the-fqdn">14c: Get the FQDN</h3>
+<pre><code class="language-powershell">$FQDN = az containerapp show --name $AppName --resource-group $RG `
+    --query &quot;properties.configuration.ingress.fqdn&quot; -o tsv
+Write-Host &quot;App URL: https://$FQDN&quot;</code></pre>
+<hr>
+<h2 id="step-15-create-entra-app-registration">Step 15: Create Entra App Registration</h2>
+<pre><code class="language-powershell"># Create the SPA app registration
+$appJson = az ad app create `
+    --display-name &quot;$BaseName-Dashboard&quot; `
+    --sign-in-audience &quot;AzureADMyOrg&quot; `
+    --enable-access-token-issuance true `
+    --enable-id-token-issuance true `
+    -o json
+$AppClientId = ($appJson | ConvertFrom-Json).appId
+
+# Set SPA redirect URIs
+az ad app update --id $AppClientId `
+    --spa-redirect-uris &quot;http://localhost:8080&quot; &quot;https://$FQDN&quot; -o none</code></pre>
+<p><strong>What this does:</strong> Registers a Single Page Application in Entra ID so the web UI can authenticate users and obtain tokens for Microsoft Graph and Azure Resource Manager.</p>
+<p><strong>API Permissions to add manually (Azure Portal):</strong></p>
+<ol>
+<li>Go to Entra ID → App Registrations → <code>ESIQNew-Dashboard</code></li>
+<li>API Permissions → Add a permission</li>
+<li>Add these <strong>delegated</strong> permissions:</li>
+</ol>
+<p>   - Microsoft Graph: <code>User.Read</code>, <code>Directory.Read.All</code>, <code>Policy.Read.All</code><br>
+   - Azure Service Management: <code>user_impersonation</code></p>
+<ol>
+<li>Click "Grant admin consent"</li>
+</ol>
+<hr>
+<h2 id="step-16-patch-webapp-and-redeploy">Step 16: Patch Webapp and Redeploy</h2>
+<pre><code class="language-powershell"># Update the webapp HTML files with live MSAL config
+$webappFile = &quot;webapp\index.html&quot;
+$html = Get-Content $webappFile -Raw -Encoding UTF8
+$html = $html.Replace(&#x27;clientId: &quot;YOUR-CLIENT-ID-HERE&quot;&#x27;, &quot;clientId: `&quot;$AppClientId`&quot;&quot;)
+$html = $html.Replace(&#x27;YOUR-TENANT-ID-HERE&#x27;, $TenantId)
+$html = $html.Replace(&#x27;const AGENT_URL = &quot;https://YOUR-AGENT-URL-HERE&quot;&#x27;, &#x27;const AGENT_URL = &quot;&quot;&#x27;)
+Set-Content $webappFile -Value $html -Encoding UTF8
+
+# Rebuild and deploy with the patched webapp
+az acr build --registry $ACRName --image &quot;${AppName}:v1&quot; `
+    --file &quot;AIAgent/Dockerfile&quot; &quot;.&quot; --no-logs
+az containerapp update --name $AppName --resource-group $RG `
+    --image &quot;${ACRName}.azurecr.io/${AppName}:v1&quot; -o none</code></pre>
+<hr>
+<h2 id="post-deployment-manual-steps">Post-Deployment Manual Steps</h2>
+<p>These steps cannot be automated and require manual action in the Azure Portal or Entra admin center:</p>
+<h3 id="1-entra-id-directory-roles-requires-global-admin">1. Entra ID Directory Roles (Requires Global Admin)</h3>
+<p>Go to <strong>entra.microsoft.com</strong> → Enterprise applications → <code>ESIQNew-identity</code> → Assign roles:</p>
+<ul>
+<li><code>Directory Reader</code> — Needed for Entra collectors to read tenant data</li>
+<li><code>Global Reader</code> — Needed for comprehensive posture assessment</li>
+</ul>
+<h3 id="2-admin-consent-for-graph-permissions">2. Admin Consent for Graph Permissions</h3>
+<p>Go to <strong>entra.microsoft.com</strong> → App registrations → <code>ESIQNew-Dashboard</code>:</p>
+<ol>
+<li>API Permissions → Add delegated permissions</li>
+<li>Grant admin consent for the tenant</li>
+</ol>
+<h3 id="3-teams-app-setup-if-using-teams">3. Teams App Setup (If Using Teams)</h3>
+<p>See <a href="07-teams-integration.html">Teams Integration Guide</a> for complete instructions.</p>
+<p>Summary:</p>
+<ol>
+<li>Update <code>teams/appPackage/manifest.json</code> with your app registration client ID</li>
+<li>Build the Teams app package (ZIP)</li>
+<li>Upload to Teams Admin Center → Manage apps → Upload custom app</li>
+<li>Publish to your organisation's app store</li>
+</ol>
+<h3 id="4-dns-custom-domain-optional">4. DNS / Custom Domain (Optional)</h3>
+<p>If you want a custom domain instead of <code>*.azurecontainerapps.io</code>:</p>
+<ol>
+<li>Container Apps Environment → Custom domains → Add</li>
+<li>Create a CNAME record pointing to the FQDN</li>
+<li>Upload or generate a TLS certificate</li>
+</ol>
+<hr>
+<h2 id="verification-checklist">Verification Checklist</h2>
+<p>After deployment, verify each component:</p>
+<pre><code class="language-powershell"># 1. Resource group exists
+az group show --name $RG -o table
+
+# 2. AI Services is running
+az cognitiveservices account show --name $AIName --resource-group $RG `
+    --query &quot;{name:name, state:properties.provisioningState}&quot; -o table
+
+# 3. Models are deployed
+az cognitiveservices account deployment list --name $AIName --resource-group $RG -o table
+
+# 4. Container app is running
+az containerapp show --name $AppName --resource-group $RG `
+    --query &quot;{name:name, fqdn:properties.configuration.ingress.fqdn, status:properties.runningStatus}&quot; -o table
+
+# 5. Health check
+$FQDN = az containerapp show --name $AppName --resource-group $RG `
+    --query &quot;properties.configuration.ingress.fqdn&quot; -o tsv
+Invoke-RestMethod &quot;https://$FQDN/health&quot;
+
+# 6. Storage container exists
+az storage container show --name &quot;reports&quot; --account-name $StorageName --auth-mode login -o table
+
+# 7. RBAC roles assigned
+az role assignment list --assignee $PrincipalId --all -o table</code></pre>
+<hr>
+<h2 id="quick-redeployment-code-changes-only">Quick Redeployment (Code Changes Only)</h2>
+<p>When you only need to update the application code (not infrastructure):</p>
+<pre><code class="language-powershell">$Tag = &quot;v&quot; + (Get-Date -Format &quot;yyyyMMddHHmm&quot;)
+
+# 1. Build new image
+az acr build --registry $ACRName --image &quot;${AppName}:$Tag&quot; `
+    --file &quot;AIAgent/Dockerfile&quot; &quot;.&quot; `
+    --build-arg CACHEBUST=$(Get-Date -Format &#x27;yyyyMMddHHmmss&#x27;) --no-logs
+
+# 2. Update container
+az containerapp update --name $AppName --resource-group $RG `
+    --image &quot;${ACRName}.azurecr.io/${AppName}:$Tag&quot; -o table
+
+# 3. Restart active revision
+$rev = az containerapp revision list --name $AppName --resource-group $RG `
+    --query &quot;[?properties.active].name&quot; -o tsv
+az containerapp revision restart --name $AppName --resource-group $RG --revision $rev</code></pre>
+<hr>
+<p><strong>Next:</strong> <a href="05-authentication-flow.html">Authentication Flow →</a></p>
+</main>
+
+</body>
+</html>

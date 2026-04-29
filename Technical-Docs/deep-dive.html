@@ -1,0 +1,3555 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PostureIQ — Deep-Dive Technical Reference &mdash; Presentation</title>
+<style>
+/* ══════════════════════════════════════════
+   CSS VARIABLES — LIGHT THEME (default)
+══════════════════════════════════════════ */
+:root {
+  --bg: #f6f8fa; --bg-alt: #eef1f5; --bg-card: #ffffff;
+  --text: #1f2328; --text-muted: #656d76;
+  --border: #d0d7de; --shadow: rgba(31,35,40,.08);
+  --sidebar-w: 190px;
+  --connector: #8b949e; --arrow: #0078d4;
+  --accent-primary: #0078d4; --accent-secondary: #8250df; --accent-tertiary: #bf8700;
+  --lane-primary: #dbeafe; --lane-secondary: #f3e8ff; --lane-tertiary: #fef3c7;
+  --phase-bg: #f0f6ff;
+  --code-bg: rgba(175,184,193,.2);
+  --seq-highlight: rgba(0,120,212,.08);
+  --seq-lifeline: #b0b8c4;
+  --seq-arrow-active: #0078d4;
+}
+[data-theme="dark"] {
+  --bg: #0d1117; --bg-alt: #161b22; --bg-card: #161b22;
+  --text: #e6edf3; --text-muted: #8b949e;
+  --border: #30363d; --shadow: rgba(0,0,0,.3);
+  --connector: #484f58; --arrow: #58a6ff;
+  --accent-primary: #58a6ff; --accent-secondary: #d2a8ff; --accent-tertiary: #e3b341;
+  --lane-primary: rgba(56,139,253,.1); --lane-secondary: rgba(210,168,255,.1);
+  --lane-tertiary: rgba(227,179,65,.1);
+  --phase-bg: #161b22;
+  --code-bg: rgba(110,118,129,.2);
+  --seq-highlight: rgba(88,166,255,.1);
+  --seq-lifeline: #30363d;
+  --seq-arrow-active: #58a6ff;
+}
+
+/* ══════════════════════════════════════════
+   BASE RESET + SLIDE ENGINE
+══════════════════════════════════════════ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html, body {
+  height: 100vh; overflow: hidden;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  font-size: 15px; line-height: 1.55;
+  color: var(--text); background: var(--bg);
+  transition: background 0.3s, color 0.3s;
+}
+
+/* ── Top Bar ── */
+.top-bar {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  height: 48px; display: flex; align-items: center;
+  justify-content: space-between; padding: 0 24px;
+  background: var(--bg-card); border-bottom: 1px solid var(--border);
+  box-shadow: 0 1px 3px var(--shadow);
+}
+.top-bar-title { font-size: 15px; font-weight: 700; }
+.top-bar-controls { display: flex; align-items: center; gap: 12px; }
+
+/* ── Theme toggle ── */
+.theme-toggle {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 12px; font-weight: 600; color: var(--text-muted);
+}
+.theme-toggle button {
+  width: 40px; height: 22px; border-radius: 11px;
+  border: 1px solid var(--border); background: var(--bg-alt);
+  cursor: pointer; position: relative; transition: all .3s;
+}
+.theme-toggle button::after {
+  content: ''; position: absolute; top: 2px; left: 2px;
+  width: 18px; height: 18px; border-radius: 50%;
+  background: var(--accent-primary); transition: transform .3s;
+}
+.theme-toggle button[aria-checked="true"]::after {
+  transform: translateX(18px);
+}
+
+/* ── Slide Viewport ── */
+.slides-viewport {
+  position: fixed; top: 48px; left: var(--sidebar-w); right: 0;
+  bottom: 52px; overflow: hidden;
+}
+.slide {
+  position: absolute; inset: 0;
+  overflow-y: auto; overflow-x: hidden;
+  padding: 12px 24px 16px;
+  display: none;
+  background: var(--bg);
+}
+.slide.active { display: block; }
+.slide::-webkit-scrollbar { width: 6px; }
+.slide::-webkit-scrollbar-thumb { background: var(--connector); border-radius: 6px; }
+.slide-inner { max-width: 1200px; margin: 0 auto; }
+
+/* ── Bottom Navigation Bar ── */
+.slide-nav {
+  position: fixed; bottom: 0; left: var(--sidebar-w); right: 0; z-index: 100;
+  height: 52px; display: flex; align-items: center;
+  justify-content: center; gap: 16px;
+  padding: 0 24px;
+  background: var(--bg-card); border-top: 1px solid var(--border);
+  box-shadow: 0 -1px 3px var(--shadow);
+}
+.nav-btn {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 7px 18px; border-radius: 6px;
+  font-size: 13px; font-weight: 600;
+  font-family: inherit; cursor: pointer;
+  border: 1px solid var(--border);
+  background: var(--bg-card); color: var(--text);
+  transition: all .2s;
+}
+.nav-btn:hover:not(:disabled) {
+  background: var(--accent-primary); color: #fff; border-color: var(--accent-primary);
+}
+.nav-btn:disabled { opacity: .4; cursor: not-allowed; }
+.nav-btn.primary {
+  background: var(--accent-primary); color: #fff; border-color: var(--accent-primary);
+}
+.nav-btn.primary:hover:not(:disabled) { opacity: .85; }
+.slide-counter {
+  font-size: 13px; font-weight: 600; color: var(--text-muted);
+  min-width: 80px; text-align: center;
+}
+.slide-progress {
+  position: fixed; bottom: 52px; left: var(--sidebar-w); right: 0;
+  height: 3px; background: var(--bg-alt); z-index: 101;
+}
+.slide-progress-bar {
+  height: 100%; background: var(--accent-primary);
+  transition: width 0.4s ease;
+}
+
+/* ── TOC Sidebar ── */
+.toc-sidebar {
+  position: fixed; top: 48px; left: 0; bottom: 52px;
+  width: var(--sidebar-w); background: var(--bg-card);
+  border-right: 1px solid var(--border);
+  overflow-y: auto; overflow-x: hidden;
+  z-index: 50; padding: 6px 0;
+  font-size: 11px; scrollbar-width: thin;
+}
+.toc-sidebar::-webkit-scrollbar { width: 4px; }
+.toc-sidebar::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+.toc-sidebar-title {
+  padding: 4px 12px 6px; font-size: 10px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: .8px;
+  color: var(--text-muted); border-bottom: 1px solid var(--border);
+  margin-bottom: 2px;
+}
+.toc-group-label {
+  padding: 6px 12px 2px; font-size: 9.5px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: .5px;
+  color: var(--text-muted); margin-top: 2px;
+}
+.toc-item {
+  display: flex; align-items: center; gap: 6px;
+  width: 100%; padding: 3px 12px; border: none;
+  background: none; color: var(--text); font-size: 11px;
+  text-align: left; cursor: pointer; transition: background .15s;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  font-family: inherit;
+}
+.toc-item:hover { background: var(--bg-alt); }
+.toc-item.active {
+  background: var(--seq-highlight); color: var(--accent-primary);
+  font-weight: 600; border-left: 3px solid var(--accent-primary);
+  padding-left: 9px;
+}
+.toc-item .toc-dot {
+  width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0;
+}
+.toc-dot.primary { background: var(--accent-primary); }
+.toc-dot.secondary { background: var(--accent-secondary); }
+.toc-dot.tertiary { background: var(--accent-tertiary); }
+.toc-dot.diagram { background: var(--arrow); }
+.toc-dot.ref { background: var(--text-muted); }
+.toc-sep { height: 1px; background: var(--border); margin: 4px 16px; }
+
+/* ══════════════════════════════════════════
+   TOC SUBSECTIONS
+══════════════════════════════════════════ */
+.toc-sub-items { overflow: hidden; max-height: 0; transition: max-height .3s ease; }
+.toc-sub-items.expanded { max-height: 600px; }
+.toc-sub-item {
+  display: flex; align-items: center; gap: 5px;
+  width: 100%; padding: 2px 12px 2px 28px; border: none;
+  background: none; color: var(--text-muted); font-size: 10px;
+  text-align: left; cursor: pointer; transition: background .15s, color .15s;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  font-family: inherit;
+}
+.toc-sub-item:hover { background: var(--bg-alt); color: var(--text); }
+.toc-sub-item .sub-num {
+  font-size: 9px; font-weight: 700; min-width: 14px; color: var(--text-muted);
+}
+.toc-item .toc-expand {
+  margin-left: auto; font-size: 9px; transition: transform .2s;
+  flex-shrink: 0; padding-right: 4px;
+}
+.toc-item .toc-expand.open { transform: rotate(90deg); }
+
+/* ══════════════════════════════════════════
+   TITLE SLIDE
+══════════════════════════════════════════ */
+.title-slide {
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  height: 100%; text-align: center;
+}
+.title-slide h1 {
+  font-size: 28px; font-weight: 800; margin-bottom: 8px;
+  background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.title-slide .subtitle {
+  font-size: 18px; color: var(--text-muted); margin-bottom: 32px;
+}
+.title-toc {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 10px; text-align: left; max-width: 700px; width: 100%;
+}
+.title-toc-item {
+  display: flex; align-items: center; gap: 10px;
+  padding: 10px 14px; border-radius: 6px;
+  background: var(--bg-card); border: 1px solid var(--border);
+  font-size: 13px; cursor: pointer; transition: all .2s;
+}
+.title-toc-item:hover {
+  border-color: var(--accent-primary); background: var(--seq-highlight);
+}
+.title-toc-icon {
+  width: 26px; height: 26px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 11px; font-weight: 700; color: #fff; flex-shrink: 0;
+}
+.title-toc-icon.primary { background: var(--accent-primary); }
+.title-toc-icon.secondary { background: var(--accent-secondary); }
+.title-toc-icon.tertiary { background: var(--accent-tertiary); }
+.title-toc-icon.diagram { background: var(--arrow); }
+.title-toc-icon.ref { background: var(--text-muted); }
+
+/* ── Terminology Cards ── */
+.title-extras { margin-top: 28px; display: flex; flex-direction: column; gap: 24px; width: 100%; max-width: 800px; }
+.title-extras h3 { font-size: 16px; font-weight: 700; margin: 0 0 10px; border-bottom: 2px solid var(--accent-primary); padding-bottom: 4px; }
+.term-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+@media (max-width: 600px) { .term-grid { grid-template-columns: 1fr; } }
+.term-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px; padding: 12px 14px; display: flex; flex-direction: column; gap: 2px; }
+.term-card .term-abbr { font-size: 18px; font-weight: 800; letter-spacing: .5px; }
+.term-card .term-abbr.primary { color: var(--accent-primary); }
+.term-card .term-abbr.secondary { color: var(--accent-secondary); }
+.term-card .term-abbr.tertiary { color: var(--accent-tertiary); }
+.term-card .term-full { font-size: 13px; font-weight: 600; color: var(--text); }
+.term-card .term-role { font-size: 12px; color: var(--text-muted); line-height: 1.4; }
+
+/* ── Responsibility Matrix ── */
+.resp-matrix { width: 100%; border-collapse: collapse; font-size: 12px; }
+.resp-matrix th { background: var(--bg-card); font-size: 11px; text-transform: uppercase; letter-spacing: .4px; padding: 6px 8px; text-align: left; border-bottom: 2px solid var(--border); }
+.resp-matrix td { padding: 5px 8px; border-bottom: 1px solid var(--border); vertical-align: top; }
+.resp-matrix tr:hover td { background: var(--bg-card); }
+.resp-matrix .owner-primary { font-weight: 700; color: var(--accent-primary); }
+.resp-matrix .owner-secondary { font-weight: 700; color: var(--accent-secondary); }
+.resp-matrix .owner-tertiary { font-weight: 700; color: var(--accent-tertiary); }
+
+/* ══════════════════════════════════════════
+   SLIDE HEADER (phase + step indicator)
+══════════════════════════════════════════ */
+.slide-header {
+  display: flex; align-items: center; gap: 12px;
+  margin-bottom: 6px; flex-wrap: wrap;
+}
+.slide-phase-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 5px 16px; border-radius: 16px;
+  font-size: 12px; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.5px; box-shadow: 0 1px 3px var(--shadow);
+}
+.slide-phase-badge.primary { background: var(--lane-primary); color: var(--accent-primary); }
+.slide-phase-badge.secondary { background: var(--lane-secondary); color: var(--accent-secondary); }
+.slide-phase-badge.tertiary { background: var(--lane-tertiary); color: var(--accent-tertiary); }
+.slide-step-title { font-size: 16px; font-weight: 700; }
+
+/* ══════════════════════════════════════════
+   SEQUENCE DIAGRAM
+══════════════════════════════════════════ */
+.seq-section h2 { font-size: 17px; font-weight: 700; margin-bottom: 4px; }
+.seq-subtitle { font-size: 12px; color: var(--text-muted); margin-bottom: 4px; }
+.seq-controls {
+  display: flex; align-items: center; gap: 4px; flex-wrap: wrap; margin-bottom: 4px;
+}
+.seq-btn {
+  border: 1px solid var(--border); background: var(--bg-card);
+  color: var(--text); padding: 4px 10px; border-radius: 4px;
+  font-size: 11px; font-weight: 600; cursor: pointer;
+  font-family: inherit; transition: all .2s;
+}
+.seq-btn:hover { border-color: var(--accent-primary); color: var(--accent-primary); }
+.seq-btn:disabled { opacity: .4; cursor: not-allowed; }
+.seq-btn.primary { background: var(--accent-primary); color: #fff; border-color: var(--accent-primary); }
+.seq-btn.primary:hover { opacity: .85; }
+.seq-step-indicator { font-size: 11px; color: var(--text-muted); margin-left: 6px; }
+
+.seq-layout { display: flex; gap: 10px; align-items: stretch; height: calc(100vh - 195px); }
+.seq-diagram-col { flex: 0 0 68%; min-width: 0; overflow-y: auto; overflow-x: hidden; scrollbar-width: thin; }
+.seq-diagram-col::-webkit-scrollbar { width: 4px; }
+.seq-diagram-col::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+.seq-explain-col { flex: 0 0 calc(32% - 10px); overflow-y: auto; scrollbar-width: thin; }
+.seq-explain-col::-webkit-scrollbar { width: 4px; }
+.seq-explain-col::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+@media (max-width: 900px) {
+  .seq-layout { flex-direction: column; }
+  .seq-diagram-col, .seq-explain-col { flex: 1 1 100%; }
+}
+
+.seq-actors {
+  display: grid; gap: 2px; position: sticky; top: 0;
+  background: var(--bg); z-index: 3; padding: 3px 0;
+  border-bottom: 1px solid var(--border);
+}
+.seq-actor { text-align: center; }
+.seq-actor-icon { font-size: 24px; margin-bottom: 1px; }
+.seq-actor-name { font-size: 12px; font-weight: 700; }
+.seq-actor-sub { font-size: 10px; color: var(--text-muted); }
+.seq-actor-tag {
+  display: inline-block; font-size: 9px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: .5px;
+  padding: 1px 6px; border-radius: 8px; margin-top: 2px;
+}
+.seq-actor-tag.external { background: #fee2e2; color: #dc2626; }
+.seq-actor-tag.cloud { background: #dbeafe; color: #2563eb; }
+.seq-actor-tag.onprem { background: #dcfce7; color: #16a34a; }
+.seq-actor-tag.admin { background: #f3e8ff; color: #7c3aed; }
+.seq-actor-tag.builder { background: #dcfce7; color: #16a34a; }
+[data-theme="dark"] .seq-actor-tag.external { background: #3b0a0a; color: #f87171; }
+[data-theme="dark"] .seq-actor-tag.cloud { background: #0d2240; color: #60a5fa; }
+[data-theme="dark"] .seq-actor-tag.onprem { background: #052e16; color: #4ade80; }
+[data-theme="dark"] .seq-actor-tag.admin { background: #2e1065; color: #c4b5fd; }
+[data-theme="dark"] .seq-actor-tag.builder { background: #052e16; color: #4ade80; }
+
+.seq-body { display: grid; position: relative; min-height: 200px; }
+.seq-lifeline { position: relative; }
+.seq-lifeline::before {
+  content: ''; position: absolute; left: 50%; top: 0; bottom: 0;
+  width: 2px;
+  background: repeating-linear-gradient(to bottom, var(--seq-lifeline) 0px, var(--seq-lifeline) 6px, transparent 6px, transparent 12px);
+  transform: translateX(-1px);
+}
+.seq-messages { position: absolute; top: 0; left: 0; right: 0; z-index: 5; }
+.seq-msg {
+  position: relative; padding: 6px 0;
+  opacity: 0; transform: translateY(8px);
+  transition: opacity .5s ease, transform .5s ease;
+}
+.seq-msg.visible { opacity: 1; transform: translateY(0); }
+.seq-msg.active { background: var(--seq-highlight); border-radius: 6px; }
+.seq-arrow {
+  position: absolute; height: 2px; top: 14px;
+  background: var(--connector); transition: background .4s;
+}
+.seq-msg.active .seq-arrow, .seq-msg.visible .seq-arrow { background: var(--seq-arrow-active); }
+.seq-arrow::after {
+  content: ''; position: absolute; right: -1px; top: -5px;
+  border: 6px solid transparent; border-left-color: var(--connector);
+  transition: border-color .4s;
+}
+.seq-msg.active .seq-arrow::after, .seq-msg.visible .seq-arrow::after { border-left-color: var(--seq-arrow-active); }
+.seq-arrow.reverse::after { right: auto; left: -1px; border-left-color: transparent; border-right-color: var(--connector); }
+.seq-msg.active .seq-arrow.reverse::after, .seq-msg.visible .seq-arrow.reverse::after { border-left-color: transparent; border-right-color: var(--seq-arrow-active); }
+.seq-arrow-label {
+  position: absolute; top: -12px; left: 50%;
+  transform: translateX(-50%);
+  font-size: 10px; font-weight: 600; color: var(--text-muted);
+  white-space: nowrap; background: var(--bg); padding: 0 4px;
+  transition: color .4s;
+}
+.seq-msg.active .seq-arrow-label { color: var(--seq-arrow-active); }
+.seq-msg-num {
+  position: absolute; left: 4px; top: 6px;
+  width: 16px; height: 16px; border-radius: 50%;
+  background: var(--connector); color: #fff;
+  font-size: 10px; font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+  transition: background .4s;
+}
+.seq-msg.active .seq-msg-num { background: var(--seq-arrow-active); }
+@keyframes dashFlow { to { background-position: 20px 0; } }
+.seq-msg.active .seq-arrow {
+  background: repeating-linear-gradient(90deg, var(--seq-arrow-active) 0px, var(--seq-arrow-active) 8px, transparent 8px, transparent 14px);
+  background-size: 20px 2px; animation: dashFlow .6s linear infinite;
+}
+.seq-msg.active .seq-arrow.reverse { animation-direction: reverse; }
+
+.seq-explain {
+  padding: 6px 10px; background: var(--bg-card);
+  border: 1px solid var(--border); border-left: 3px solid var(--seq-arrow-active);
+  border-radius: 0 6px 6px 0; box-shadow: 0 1px 4px var(--shadow);
+  min-height: 40px; transition: all .3s;
+}
+.seq-explain-num { font-size: 11px; font-weight: 700; color: var(--seq-arrow-active); text-transform: uppercase; letter-spacing: .5px; margin-bottom: 1px; }
+.seq-explain-title { font-size: 14px; font-weight: 700; margin-bottom: 2px; }
+.seq-explain-desc { font-size: 13px; color: var(--text-muted); line-height: 1.4; }
+.seq-explain-desc code { background: var(--code-bg); padding: 1px 3px; border-radius: 3px; font-size: 10px; }
+.seq-explain-flow { display: flex; align-items: center; gap: 4px; margin-top: 3px; font-size: 11px; color: var(--text-muted); }
+.seq-explain-flow .from, .seq-explain-flow .to { font-weight: 600; color: var(--text); }
+.seq-explain-flow .arrow-icon { color: var(--seq-arrow-active); }
+.seq-more-btn { display:inline-flex; align-items:center; gap:4px; margin-top:8px; padding:5px 14px; font-size:12px; font-weight:600; color:#fff; background:var(--accent-primary); border:none; border-radius:6px; cursor:pointer; transition:background .2s, transform .15s; }
+.seq-more-btn:hover { background:var(--accent-secondary); transform:translateY(-1px); }
+.seq-more-btn:active { transform:translateY(0); }
+.seq-more-btn::after { content:'\2192'; font-size:13px; }
+.seq-explain-all-item .seq-more-btn { margin-top:6px; }
+.seq-explain-link { margin-top: 8px; }
+.seq-explain-link a { display: inline-flex; align-items: center; gap: 4px; font-size: 12px; font-weight: 600; color: var(--accent-primary); text-decoration: none; cursor: pointer; padding: 4px 10px; border: 1px solid var(--accent-primary); border-radius: 4px; transition: background .15s, color .15s; }
+.seq-explain-link a:hover { background: var(--accent-primary); color: #fff; }
+
+.seq-explain-all { display: flex; flex-direction: column; gap: 4px; }
+.seq-explain-all-item {
+  padding: 6px 10px; background: var(--bg-card);
+  border: 1px solid var(--border); border-left: 3px solid var(--seq-arrow-active);
+  border-radius: 0 6px 6px 0;
+}
+.seq-explain-all-item .step-num { font-size: 10px; font-weight: 700; color: var(--seq-arrow-active); text-transform: uppercase; letter-spacing: .5px; margin-bottom: 1px; }
+.seq-explain-all-item .step-title { font-size: 12px; font-weight: 700; margin-bottom: 1px; }
+.seq-explain-all-item .step-desc { font-size: 11px; color: var(--text-muted); line-height: 1.35; }
+.seq-explain-all-item .step-desc code { background: var(--code-bg); padding: 0 3px; border-radius: 2px; font-size: 8px; }
+.seq-explain-all-item .step-flow { display: flex; align-items: center; gap: 4px; margin-top: 2px; font-size: 8px; color: var(--text-muted); }
+.seq-explain-all-item .step-flow .from, .seq-explain-all-item .step-flow .to { font-weight: 600; color: var(--text); }
+.seq-explain-all-item .step-flow .arrow-icon { color: var(--seq-arrow-active); }
+
+/* ══════════════════════════════════════════
+   STEP CONTENT COMPONENTS
+══════════════════════════════════════════ */
+.step-section {
+  margin-bottom: 14px; padding: 10px 14px 12px;
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: 8px; box-shadow: 0 1px 3px var(--shadow);
+}
+.step-section:last-child { margin-bottom: 4px; }
+.step-section-title {
+  font-size: 15px; font-weight: 700; display: flex;
+  align-items: center; gap: 10px; margin-bottom: 8px; color: var(--text);
+  padding-bottom: 6px; border-bottom: 1px solid var(--border);
+}
+.step-badge {
+  width: 26px; height: 26px; border-radius: 50%;
+  background: var(--accent-primary); color: #fff;
+  display: inline-flex; align-items: center; justify-content: center;
+  font-size: 12px; font-weight: 700; flex-shrink: 0;
+  box-shadow: 0 1px 3px rgba(0,0,0,.15);
+}
+.step-badge.secondary { background: var(--accent-secondary); }
+.step-badge.tertiary { background: var(--accent-tertiary); }
+
+.step-table {
+  width: 100%; border-collapse: collapse;
+  margin: 8px 0; font-size: 13px; border: 1px solid var(--border);
+}
+.step-table th, .step-table td {
+  padding: 6px 10px; border: 1px solid var(--border);
+  text-align: left; vertical-align: top;
+}
+.step-table thead th {
+  background: var(--accent-primary); color: #fff;
+  font-weight: 600; font-size: 11px;
+  text-transform: uppercase; letter-spacing: .3px;
+}
+.step-table tbody tr:nth-child(even) { background: var(--bg-alt); }
+.step-table tbody tr:hover { background: var(--seq-highlight); }
+[data-theme="dark"] .step-table thead th { background: #1a3a5c; color: #e6edf3; }
+
+.callout {
+  padding: 8px 12px; margin: 8px 0;
+  border-radius: 0 6px 6px 0; font-size: 13px; border-left: 4px solid;
+  line-height: 1.5;
+}
+.callout-info { background: #f0f6ff; border-left-color: #0078d4; }
+.callout-warning { background: #fff8e1; border-left-color: #ffb900; }
+.callout-danger { background: #fde7e9; border-left-color: #e81123; }
+.callout-success { background: #dff6dd; border-left-color: #107c10; }
+[data-theme="dark"] .callout-info { background: #0d2240; border-left-color: #58a6ff; }
+[data-theme="dark"] .callout-warning { background: #2d2000; border-left-color: #ffb900; }
+[data-theme="dark"] .callout-danger { background: #3b0a0a; border-left-color: #f85149; }
+[data-theme="dark"] .callout-success { background: #0d2818; border-left-color: #3fb950; }
+
+.code-block {
+  font-size: 12px; background: #1e1e1e; color: #d4d4d4;
+  padding: 10px 14px; border-radius: 6px;
+  overflow-x: auto; margin: 8px 0; line-height: 1.5;
+}
+[data-theme="dark"] .code-block { background: #0d1117; border: 1px solid var(--border); }
+
+.handoff {
+  margin: 14px 0 8px; padding: 12px 16px;
+  background: var(--phase-bg);
+  border: 1px solid var(--border); border-left: 4px solid var(--accent-tertiary);
+  border-radius: 0 8px 8px 0; font-size: 13.5px; color: var(--text-muted);
+  box-shadow: 0 1px 3px var(--shadow);
+}
+.handoff strong { color: var(--text); }
+.handoff ol { margin: 6px 0 0 20px; }
+.handoff li { margin-bottom: 3px; }
+
+.legend { display: flex; gap: 20px; flex-wrap: wrap; margin: 10px 0; font-size: 13px; }
+.legend-item { display: flex; align-items: center; gap: 6px; }
+.legend-swatch { width: 12px; height: 12px; border-radius: 3px; flex-shrink: 0; border: 1px solid var(--border); }
+.legend-swatch.primary { background: var(--accent-primary); }
+.legend-swatch.secondary { background: var(--accent-secondary); }
+.legend-swatch.tertiary { background: var(--accent-tertiary); }
+
+.references-list {
+  list-style: none; padding: 0;
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 8px;
+}
+.references-list li {
+  padding: 8px 12px; border-radius: 4px;
+  background: var(--bg-alt); border: 1px solid var(--border);
+  font-size: 13px; transition: background .2s;
+}
+.references-list li:hover { background: var(--seq-highlight); }
+.references-list a { text-decoration: none; }
+.references-list a:hover { text-decoration: underline; }
+.ref-desc { display: block; font-size: 11px; color: var(--text-muted); margin-top: 2px; }
+
+.step-desc { font-size: 13.5px; color: var(--text-muted); line-height: 1.55; }
+.step-desc ul { margin: 6px 0 4px 20px; }
+.step-desc ol { margin: 6px 0 4px 20px; font-size: 13.5px; }
+.step-desc li { margin-bottom: 4px; }
+.step-desc p { margin: 4px 0; }
+.step-desc a { color: var(--accent-primary); }
+
+/* ── Page Width Toggle ── */
+.slide-inner.wide { max-width: 100%; }
+.width-toggle {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 12px; font-weight: 600; color: var(--text-muted);
+}
+.width-toggle button {
+  padding: 3px 10px; border-radius: 4px; border: 1px solid var(--border);
+  background: var(--bg-alt); color: var(--text); cursor: pointer;
+  font-size: 11px; font-weight: 600; font-family: inherit; transition: all .2s;
+}
+.width-toggle button:hover { border-color: var(--accent-primary); color: var(--accent-primary); }
+.width-toggle button.active { background: var(--accent-primary); color: #fff; border-color: var(--accent-primary); }
+
+/* ── Collapsible Sidebar ── */
+.sidebar-toggle {
+  position: fixed; top: 53px; left: calc(var(--sidebar-w) - 12px);
+  z-index: 60; width: 24px; height: 24px; border-radius: 50%;
+  border: 1px solid var(--border); background: var(--bg-card);
+  color: var(--text-muted); cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 12px; box-shadow: 0 1px 3px var(--shadow);
+  transition: left .3s ease, transform .3s ease;
+}
+.sidebar-toggle:hover { color: var(--accent-primary); border-color: var(--accent-primary); }
+body.sidebar-collapsed .toc-sidebar { transform: translateX(-100%); }
+body.sidebar-collapsed .slides-viewport { left: 0; }
+body.sidebar-collapsed .slide-nav { left: 0; }
+body.sidebar-collapsed .slide-progress { left: 0; }
+body.sidebar-collapsed .sidebar-toggle { left: -1px; transform: rotate(180deg); }
+.toc-sidebar { transition: transform .3s ease; }
+.slides-viewport { transition: left .3s ease; }
+.slide-nav { transition: left .3s ease; }
+.slide-progress { transition: left .3s ease; }
+
+/* ── Step Detail Modal ── */
+.step-modal-overlay { display:none; position:fixed; inset:0; z-index:9999; background:rgba(0,0,0,.55); align-items:center; justify-content:center; }
+.step-modal-overlay.open { display:flex; }
+.step-modal { background:var(--bg-card); color:var(--text); border:1px solid var(--border); border-radius:12px; width:min(720px,90vw); max-height:82vh; overflow-y:auto; padding:0; border-top:3px solid var(--accent-primary); box-shadow: 0 2px 4px rgba(0,0,0,.12), 0 8px 16px rgba(0,0,0,.16), 0 20px 48px rgba(0,0,0,.24); }
+[data-theme="dark"] .step-modal { border-color: #58a6ff; border-top-color: #58a6ff; background: #1c2129; box-shadow: 0 0 0 1px rgba(88,166,255,.25), 0 4px 8px rgba(0,0,0,.4), 0 12px 28px rgba(0,0,0,.55), 0 24px 56px rgba(0,0,0,.65), inset 0 1px 0 rgba(255,255,255,.06); }
+[data-theme="dark"] .step-modal-overlay { background:rgba(0,0,0,.72); }
+.step-modal-header { display:flex; align-items:center; justify-content:space-between; padding:12px 18px; border-bottom:1px solid var(--border); position:sticky; top:0; background:var(--bg-card); z-index:1; border-radius:12px 12px 0 0; }
+[data-theme="dark"] .step-modal-header { background:#1c2129; border-bottom-color:#30363d; }
+.step-modal-header h3 { margin:0; font-size:15px; font-weight:700; }
+.step-modal-close { background:none; border:none; font-size:22px; cursor:pointer; color:var(--text-muted); padding:0 4px; line-height:1; }
+.step-modal-close:hover { color:var(--text); }
+.step-modal-body { padding:16px 18px; }
+[data-theme="dark"] .step-modal-body { color:#e6edf3; }
+.step-modal-body .step-section-title { font-size:14px; }
+.step-modal-body .step-desc { font-size:13px; line-height:1.5; }
+.step-modal-body .step-table { width:100%; font-size:12px; }
+.step-modal-body .callout { font-size:12px; }
+.step-modal-body ul { margin:6px 0; padding-left:18px; }
+.step-modal-body li { margin-bottom:4px; }
+.step-modal-body code { font-size:11px; }
+.step-modal-footer { padding:10px 18px; border-top:1px solid var(--border); text-align:right; }
+[data-theme="dark"] .step-modal-footer { border-top-color:#30363d; }
+.step-modal-footer a { font-size:12px; font-weight:600; color:var(--accent-primary); text-decoration:none; cursor:pointer; }
+.step-modal-footer a:hover { text-decoration:underline; }
+
+/* ── Print / a11y ── */
+@media print {
+  .top-bar, .slide-nav, .slide-progress, .seq-controls, .toc-sidebar { display: none; }
+  .slides-viewport { position: static; left: 0; }
+  .slide { display: block !important; position: static; page-break-after: always; }
+  .seq-msg { opacity: 1 !important; transform: none !important; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition: none !important; animation: none !important; }
+  .seq-msg { opacity: 1 !important; transform: none !important; }
+}
+
+/* ── Clickable Diagram Rows ── */
+.seq-msg.clickable { cursor: pointer; }
+.seq-msg.clickable:hover { background: var(--seq-highlight); border-radius: 4px; }
+
+</style>
+</head>
+<body data-theme="light">
+
+<!-- Step Detail Modal -->
+<div class="step-modal-overlay" id="stepModal">
+  <div class="step-modal">
+    <div class="step-modal-header">
+      <h3 id="stepModalTitle">Step Details</h3>
+      <button class="step-modal-close" id="stepModalClose" title="Close">&times;</button>
+    </div>
+    <div class="step-modal-body" id="stepModalBody"></div>
+    <div class="step-modal-footer">
+      <a id="stepModalNav" style="display:none;">Go to Phase &rarr;</a>
+    </div>
+  </div>
+</div>
+
+<!-- Top Bar -->
+<div class="top-bar">
+  <span class="top-bar-title">PostureIQ / Deep-Dive Technical Reference</span>
+  <div class="top-bar-controls">
+    <div class="width-toggle">
+      <button type="button" id="widthBtn" title="Toggle page width">&#8596; Wide</button>
+    </div>
+    <div class="theme-toggle">
+      <span id="theme-label">Light</span>
+      <button type="button" role="switch" aria-checked="false" id="themeBtn" title="Toggle dark / light theme"></button>
+    </div>
+  </div>
+</div>
+
+<!-- Progress Bar -->
+<div class="slide-progress"><div class="slide-progress-bar" id="progressBar" style="width:0%"></div></div>
+
+<!-- Sidebar Collapse Toggle -->
+<button class="sidebar-toggle" id="sidebarToggle" title="Collapse / expand sidebar">&#9664;</button>
+
+<!-- TOC Sidebar -->
+
+<nav class="toc-sidebar" id="tocSidebar">
+  <div class="toc-sidebar-title">Contents</div>
+  <button class="toc-item" data-slide="0" onclick="goSlide(0)"><span class="toc-dot diagram"></span>Title &amp; Overview</button>
+  <div class="toc-group-label">Understanding PostureIQ</div>
+  <button class="toc-item" data-slide="1" onclick="goSlide(1)"><span class="toc-dot primary"></span>What Is This Repo</button>
+  <button class="toc-item" data-slide="2" onclick="goSlide(2)"><span class="toc-dot primary"></span>How It Helps<span class="toc-expand" data-phase="2">&#9654;</span></button>
+  <div class="toc-sub-items" data-phase-sub="2">
+    <button class="toc-sub-item" onclick="goSlideStep(2,'step-1')"><span class="sub-num">1</span>Automated Audits</button>
+    <button class="toc-sub-item" onclick="goSlideStep(2,'step-2')"><span class="sub-num">2</span>Multi-Framework</button>
+    <button class="toc-sub-item" onclick="goSlideStep(2,'step-3')"><span class="sub-num">3</span>AI Remediation</button>
+    <button class="toc-sub-item" onclick="goSlideStep(2,'step-4')"><span class="sub-num">4</span>Attack Paths</button>
+    <button class="toc-sub-item" onclick="goSlideStep(2,'step-5')"><span class="sub-num">5</span>Reporting</button>
+  </div>
+  <button class="toc-item" data-slide="3" onclick="goSlide(3)"><span class="toc-dot primary"></span>Capabilities &amp; Features</button>
+  <button class="toc-item" data-slide="4" onclick="goSlide(4)"><span class="toc-dot primary"></span>End User Experience</button>
+  <div class="toc-group-label">Behind the Scenes</div>
+  <button class="toc-item" data-slide="5" onclick="goSlide(5)"><span class="toc-dot diagram"></span>▶ Report Generation Flow</button>
+  <button class="toc-item" data-slide="6" onclick="goSlide(6)"><span class="toc-dot diagram"></span>▶ Infra Deployment Flow</button>
+  <div class="toc-group-label">Infrastructure</div>
+  <button class="toc-item" data-slide="7" onclick="goSlide(7)"><span class="toc-dot secondary"></span>Azure Resources<span class="toc-expand" data-phase="7">&#9654;</span></button>
+  <div class="toc-sub-items" data-phase-sub="7">
+    <button class="toc-sub-item" onclick="goSlideStep(7,'step-1')"><span class="sub-num">1</span>Resource Group</button>
+    <button class="toc-sub-item" onclick="goSlideStep(7,'step-2')"><span class="sub-num">2</span>AI Foundry</button>
+    <button class="toc-sub-item" onclick="goSlideStep(7,'step-3')"><span class="sub-num">3</span>Storage</button>
+    <button class="toc-sub-item" onclick="goSlideStep(7,'step-7')"><span class="sub-num">7</span>Managed Identity</button>
+    <button class="toc-sub-item" onclick="goSlideStep(7,'step-8')"><span class="sub-num">8</span>Container App</button>
+  </div>
+  <button class="toc-item" data-slide="8" onclick="goSlide(8)"><span class="toc-dot secondary"></span>Container App Config</button>
+  <button class="toc-item" data-slide="9" onclick="goSlide(9)"><span class="toc-dot secondary"></span>Auth &amp; Security</button>
+  <div class="toc-group-label">Engines &amp; Code</div>
+  <button class="toc-item" data-slide="10" onclick="goSlide(10)"><span class="toc-dot tertiary"></span>Assessment Engines</button>
+  <button class="toc-item" data-slide="11" onclick="goSlide(11)"><span class="toc-dot tertiary"></span>Collectors &amp; Evaluators</button>
+  <button class="toc-item" data-slide="12" onclick="goSlide(12)"><span class="toc-dot tertiary"></span>Webapp &amp; Teams</button>
+  <button class="toc-item" data-slide="13" onclick="goSlide(13)"><span class="toc-dot tertiary"></span>Config &amp; Schemas</button>
+  <button class="toc-item" data-slide="14" onclick="goSlide(14)"><span class="toc-dot tertiary"></span>Determinism &amp; Quality</button>
+  <div class="toc-group-label">Recommendations</div>
+  <button class="toc-item" data-slide="15" onclick="goSlide(15)"><span class="toc-dot ref"></span>Gaps &amp; Fixes (12)<span class="toc-expand" data-phase="15">&#9654;</span></button>
+  <div class="toc-sub-items" data-phase-sub="15">
+    <button class="toc-sub-item" onclick="goSlideStep(15,'step-1')"><span class="sub-num">1</span>No CI/CD</button>
+    <button class="toc-sub-item" onclick="goSlideStep(15,'step-2')"><span class="sub-num">2</span>No .env.template</button>
+    <button class="toc-sub-item" onclick="goSlideStep(15,'step-3')"><span class="sub-num">3</span>No Auto-Scaling</button>
+    <button class="toc-sub-item" onclick="goSlideStep(15,'step-4')"><span class="sub-num">4</span>No VNet</button>
+    <button class="toc-sub-item" onclick="goSlideStep(15,'step-5')"><span class="sub-num">5</span>No WAF/DDoS</button>
+    <button class="toc-sub-item" onclick="goSlideStep(15,'step-6')"><span class="sub-num">6</span>Graph Consent</button>
+    <button class="toc-sub-item" onclick="goSlideStep(15,'step-7')"><span class="sub-num">7</span>No Blob Backup</button>
+    <button class="toc-sub-item" onclick="goSlideStep(15,'step-8')"><span class="sub-num">8</span>No DR Plan</button>
+    <button class="toc-sub-item" onclick="goSlideStep(15,'step-9')"><span class="sub-num">9</span>No Custom Domain</button>
+    <button class="toc-sub-item" onclick="goSlideStep(15,'step-10')"><span class="sub-num">10</span>No Diagnostics</button>
+    <button class="toc-sub-item" onclick="goSlideStep(15,'step-11')"><span class="sub-num">11</span>Test Coverage</button>
+    <button class="toc-sub-item" onclick="goSlideStep(15,'step-12')"><span class="sub-num">12</span>Missing PROMPTS.md</button>
+  </div>
+</nav>
+
+<!-- Slides Viewport -->
+<div class="slides-viewport">
+
+<div class="slide active" data-slide="0">
+  <div class="title-slide">
+    <h1>PostureIQ — Deep-Dive Technical Reference</h1>
+    <div class="subtitle">Complete architecture, infrastructure, and operational documentation — April 2026</div>
+    <div class="title-toc">
+      <div class="title-toc-item" onclick="goSlide(1)">
+        <span class="title-toc-icon primary">1</span>
+        <span>What Is This Repo</span>
+      </div>
+      <div class="title-toc-item" onclick="goSlide(2)">
+        <span class="title-toc-icon primary">2</span>
+        <span>How It Helps</span>
+      </div>
+      <div class="title-toc-item" onclick="goSlide(5)">
+        <span class="title-toc-icon diagram">▶</span>
+        <span>Report Generation Flow</span>
+      </div>
+      <div class="title-toc-item" onclick="goSlide(6)">
+        <span class="title-toc-icon diagram">▶</span>
+        <span>Infra Deployment Flow</span>
+      </div>
+      <div class="title-toc-item" onclick="goSlide(7)">
+        <span class="title-toc-icon secondary">☁</span>
+        <span>Azure Resources Deep-Dive</span>
+      </div>
+      <div class="title-toc-item" onclick="goSlide(10)">
+        <span class="title-toc-icon tertiary">🔍</span>
+        <span>Assessment Engines</span>
+      </div>
+      <div class="title-toc-item" onclick="goSlide(11)">
+        <span class="title-toc-icon tertiary">⚙</span>
+        <span>Collectors &amp; Evaluators</span>
+      </div>
+      <div class="title-toc-item" onclick="goSlide(15)">
+        <span class="title-toc-icon ref">⚠</span>
+        <span>Gaps &amp; Fixes (12)</span>
+      </div>
+    </div>
+    
+    <div class="title-extras">
+      <div>
+        <h3>Terminology</h3>
+        <div class="term-grid">
+          <div class="term-card">
+            <div class="term-abbr primary">PostureIQ</div>
+            <div class="term-full">AI Security Posture Assessment Platform</div>
+            <div class="term-role">The overall platform — 7 assessment engines, 68 collectors, 11 compliance frameworks</div>
+          </div>
+          <div class="term-card">
+            <div class="term-abbr secondary">AI Agent</div>
+            <div class="term-full">FastAPI + OpenAI Function-Calling Agent</div>
+            <div class="term-role">Orchestrates assessments via GPT-4.1/5.1 with 14 tool functions</div>
+          </div>
+          <div class="term-card">
+            <div class="term-abbr tertiary">Collectors</div>
+            <div class="term-full">Azure ARM + MS Graph Evidence Gatherers</div>
+            <div class="term-role">68 async collectors harvest 218 evidence types from Azure &amp; Entra ID</div>
+          </div>
+          <div class="term-card">
+            <div class="term-abbr primary">Evaluators</div>
+            <div class="term-full">Domain-Specific Assessment Engines</div>
+            <div class="term-role">10 domain evaluators analyze evidence against 525 compliance controls</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="slide" data-slide="1">
+  <div class="slide-inner">
+    <div class="slide-step-title" style="margin-bottom:10px;">What Is This Repo?</div>
+    
+<p><strong>PostureIQ</strong> (repo name: <code>EnterpriseSecurityIQ</code>) is an
+<strong>AI-powered security posture assessment platform</strong> for Microsoft Azure
+and Microsoft Entra ID. It performs <em>strictly read-only</em> audits of your entire
+tenant — subscriptions, Entra directory, Microsoft 365 services — and maps every
+finding to one or more compliance frameworks.</p>
+
+<p>The platform ships as a <strong>containerized FastAPI application</strong> that
+embeds an OpenAI function-calling agent (GPT-4.1 / GPT-5.1), 68 async evidence
+collectors, 10 domain evaluators, and multi-format report generators. It can be
+accessed through a web dashboard, Microsoft Teams personal tab, or CLI scripts.</p>
+
+<table class="step-table">
+<thead><tr>
+<th>Dimension</th>
+<th>Detail</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Language</td>
+<td>Python 3.12 — ~50,000 lines across 70+ modules</td>
+</tr>
+<tr>
+<td>Agent Framework</td>
+<td>Microsoft Agent Framework SDK (responses v1 protocol)</td>
+</tr>
+<tr>
+<td>LLM</td>
+<td>Azure OpenAI — GPT-4.1 (primary), GPT-5.1 (fallback)</td>
+</tr>
+<tr>
+<td>Evidence Sources</td>
+<td>49 Azure ARM/data-plane collectors + 18 Entra/Graph collectors + 1 standalone RBAC</td>
+</tr>
+<tr>
+<td>Compliance Frameworks</td>
+<td>11 frameworks, 525 controls</td>
+</tr>
+<tr>
+<td>Assessment Domains</td>
+<td>7 engines: PostureIQ, Risk, Data Security, RBAC, Copilot Readiness, AI Agent Security, Cloud Explorer</td>
+</tr>
+<tr>
+<td>Report Formats</td>
+<td>HTML, PDF (Chromium), Excel, JSON, Markdown, SARIF, OSCAL</td>
+</tr>
+<tr>
+<td>Deployment</td>
+<td>Azure Container App on managed identity — fully idempotent PowerShell deploy</td>
+</tr>
+<tr>
+<td>UI</td>
+<td>11 SPA pages (vanilla JS + MSAL.js v5.6.3) + Teams personal tab with NAA</td>
+</tr>
+<tr>
+<td>Security</td>
+<td>Read-only (zero write APIs), non-root container, PII summarized, SHA-256 report integrity</td>
+</tr>
+</tbody></table>
+
+<div class="callout callout-info"><strong>Key principle:</strong> PostureIQ never modifies your tenant. All Azure ARM and MS Graph calls are GET/LIST only. No PUT, POST, PATCH, or DELETE operations are ever issued against customer resources.</div>
+
+  </div>
+</div>
+<div class="slide" data-slide="2">
+  <div class="slide-inner">
+    <div class="slide-header">
+      <span class="slide-phase-badge primary">How PostureIQ Helps</span>
+    </div>
+    
+    <div class="step-section" id="step-1">
+      <div class="step-section-title"><span class="step-badge primary">1</span> Eliminates Manual Security Audits</div>
+      <div class="step-desc">
+<p>Traditional security assessments require weeks of manual evidence gathering across Azure Portal,
+Entra admin center, and Defender dashboards. PostureIQ automates this entirely — 68 collectors
+harvest <strong>218 evidence types</strong> in under 5 minutes, covering resources you might miss manually.</p>
+<table class="step-table">
+<thead><tr>
+<th>Manual Approach</th>
+<th>PostureIQ Approach</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Weeks of portal navigation</td>
+<td>Automated collection in &lt;5 minutes</td>
+</tr>
+<tr>
+<td>Inconsistent evidence gathering</td>
+<td>218 standardized evidence types</td>
+</tr>
+<tr>
+<td>Point-in-time snapshots</td>
+<td>Repeatable, deterministic assessments</td>
+</tr>
+<tr>
+<td>Subjective severity ratings</td>
+<td>Algorithmic risk scoring (0–100)</td>
+</tr>
+</tbody></table></div>
+    </div>
+    <div class="step-section" id="step-2">
+      <div class="step-section-title"><span class="step-badge primary">2</span> Multi-Framework Compliance Mapping</div>
+      <div class="step-desc">
+<p>A single assessment run maps findings to <strong>all 11 compliance frameworks simultaneously</strong>.
+No need to run separate audits for FedRAMP, PCI-DSS, and ISO 27001 — PostureIQ evaluates once
+and cross-references 525 controls across all frameworks.</p>
+<table class="step-table">
+<thead><tr>
+<th>Framework</th>
+<th>Controls</th>
+<th>Focus</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>NIST 800-53 Rev 5</td>
+<td>83</td>
+<td>Federal information systems</td>
+</tr>
+<tr>
+<td>FedRAMP Moderate</td>
+<td>69</td>
+<td>Cloud services for US government</td>
+</tr>
+<tr>
+<td>CIS Azure Benchmark v2.0</td>
+<td>53</td>
+<td>Azure-specific hardening</td>
+</tr>
+<tr>
+<td>MCSB (Microsoft Cloud Security Benchmark)</td>
+<td>53</td>
+<td>Microsoft cloud best practices</td>
+</tr>
+<tr>
+<td>PCI DSS v4.0</td>
+<td>51</td>
+<td>Payment card data security</td>
+</tr>
+<tr>
+<td>ISO 27001:2022</td>
+<td>51</td>
+<td>International information security</td>
+</tr>
+<tr>
+<td>SOC 2 Type II</td>
+<td>47</td>
+<td>Service organization controls</td>
+</tr>
+<tr>
+<td>HIPAA Security Rule</td>
+<td>43</td>
+<td>Healthcare data protection</td>
+</tr>
+<tr>
+<td>NIST CSF</td>
+<td>29</td>
+<td>Cybersecurity framework</td>
+</tr>
+<tr>
+<td>CSA CCM</td>
+<td>24</td>
+<td>Cloud controls matrix</td>
+</tr>
+<tr>
+<td>GDPR</td>
+<td>22</td>
+<td>EU data protection</td>
+</tr>
+</tbody></table></div>
+    </div>
+    <div class="step-section" id="step-3">
+      <div class="step-section-title"><span class="step-badge primary">3</span> Prioritized, AI-Powered Remediation</div>
+      <div class="step-desc">
+<p>Every finding is scored using <code>severity × exploitability × blast_radius</code> to produce
+a <strong>RiskScore (0–100)</strong>. Findings are then ranked by ROI = risk / √effort, surfacing
+<strong>quick wins</strong> that deliver maximum security improvement for minimum effort.</p>
+<p>For the top-15 highest-risk findings, the AI agent generates <strong>ready-to-run remediation scripts</strong>
+(Azure CLI / PowerShell / Terraform) tailored to your specific resource configuration.</p>
+</div>
+    </div>
+    <div class="step-section" id="step-4">
+      <div class="step-section-title"><span class="step-badge primary">4</span> Attack Path Detection</div>
+      <div class="step-desc">
+<p>PostureIQ detects <strong>9 cross-domain attack path patterns</strong> that individual findings alone
+would not reveal:</p>
+<ul>
+<li>Privilege escalation chains (e.g., over-permissioned SP → Key Vault → production secrets)</li>
+<li>Lateral movement paths (e.g., weak NSG → compute → managed identity → storage)</li>
+<li>Conditional Access bypass routes</li>
+<li>Network pivot opportunities</li>
+<li>Credential theft chains</li>
+</ul>
+</div>
+    </div>
+    <div class="step-section" id="step-5">
+      <div class="step-section-title"><span class="step-badge primary">5</span> Executive &amp; Technical Reporting</div>
+      <div class="step-desc">
+<p>Reports are generated in <strong>7 formats</strong> for different audiences:</p>
+<table class="step-table">
+<thead><tr>
+<th>Format</th>
+<th>Audience</th>
+<th>Content</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>HTML Dashboard</td>
+<td>Security team</td>
+<td>Interactive charts, drill-down findings, remediation scripts</td>
+</tr>
+<tr>
+<td>PDF</td>
+<td>Executives / auditors</td>
+<td>Print-ready compliance report via Playwright Chromium</td>
+</tr>
+<tr>
+<td>Excel</td>
+<td>Analysts</td>
+<td>Filterable worksheets with all findings and evidence</td>
+</tr>
+<tr>
+<td>JSON</td>
+<td>Automation / CI-CD</td>
+<td>Machine-readable for pipeline gates (<code>--fail-on-severity</code>)</td>
+</tr>
+<tr>
+<td>SARIF</td>
+<td>DevSecOps</td>
+<td>Static analysis format for IDE integration</td>
+</tr>
+<tr>
+<td>OSCAL</td>
+<td>Federal compliance</td>
+<td>NIST Open Security Controls Assessment Language</td>
+</tr>
+<tr>
+<td>Markdown</td>
+<td>Documentation</td>
+<td>Embeddable in wikis and READMEs</td>
+</tr>
+</tbody></table></div>
+    </div>
+    
+  </div>
+</div>
+<div class="slide" data-slide="3">
+  <div class="slide-inner">
+    <div class="slide-header">
+      <span class="slide-phase-badge primary">Capabilities &amp; Features</span>
+    </div>
+    
+    <div class="step-section" id="step-1">
+      <div class="step-section-title"><span class="step-badge primary">1</span> 7 Assessment Engines</div>
+      <div class="step-desc"><table class="step-table">
+<thead><tr>
+<th>#</th>
+<th>Engine</th>
+<th>Agent Tool</th>
+<th>CLI Script</th>
+<th>Evaluators</th>
+<th>Key Focus</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><strong>PostureIQ</strong></td>
+<td><code>run_postureiq_assessment</code></td>
+<td>—</td>
+<td>18 modules</td>
+<td>10 security domains, 113 checks, attack paths, AI fixes</td>
+</tr>
+<tr>
+<td>2</td>
+<td><strong>Risk Analysis</strong></td>
+<td><code>analyze_risk</code></td>
+<td><code>run_risk_analysis.py</code></td>
+<td>8 modules</td>
+<td>Identity, Network, Defender, Config, Insider Risk</td>
+</tr>
+<tr>
+<td>3</td>
+<td><strong>Data Security</strong></td>
+<td><code>assess_data_security</code></td>
+<td><code>run_data_security.py</code></td>
+<td>32 modules</td>
+<td>39 categories, ~140 checks (storage, DB, encryption)</td>
+</tr>
+<tr>
+<td>4</td>
+<td><strong>RBAC</strong></td>
+<td><code>generate_rbac_report</code></td>
+<td><code>run_rbac_report.py</code></td>
+<td>8 modules</td>
+<td>Hierarchy tree, PIM, group expansion, risk flags</td>
+</tr>
+<tr>
+<td>5</td>
+<td><strong>Copilot Readiness</strong></td>
+<td><code>assess_copilot_readiness</code></td>
+<td><code>run_copilot_readiness.py</code></td>
+<td>16 modules</td>
+<td>Oversharing, labels, DLP, access governance, shadow AI</td>
+</tr>
+<tr>
+<td>6</td>
+<td><strong>AI Agent Security</strong></td>
+<td><code>assess_ai_agent_security</code></td>
+<td><code>run_ai_agent_security.py</code></td>
+<td>14 modules</td>
+<td>Copilot Studio, Foundry, Custom AI, Entra AI</td>
+</tr>
+<tr>
+<td>7</td>
+<td><strong>Cloud Explorer</strong></td>
+<td><code>search_tenant</code></td>
+<td><code>run_query.py</code></td>
+<td>8 modules</td>
+<td>NL→KQL, 50+ ARG templates, Entra queries</td>
+</tr>
+</tbody></table></div>
+    </div>
+    <div class="step-section" id="step-2">
+      <div class="step-section-title"><span class="step-badge primary">2</span> 14 AI Agent Tools</div>
+      <div class="step-desc">
+<p>The OpenAI function-calling agent exposes 14 tools, each dispatched via <code>TOOL_MAP</code> in <code>agent.py</code>:</p>
+<table class="step-table">
+<thead><tr>
+<th>Tool</th>
+<th>Category</th>
+<th>Purpose</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><code>run_postureiq_assessment</code></td>
+<td>Assessment</td>
+<td>Full posture assessment with framework selection</td>
+</tr>
+<tr>
+<td><code>analyze_risk</code></td>
+<td>Assessment</td>
+<td>Risk gap analysis across 5 domains</td>
+</tr>
+<tr>
+<td><code>assess_data_security</code></td>
+<td>Assessment</td>
+<td>Data security evaluation (39 categories)</td>
+</tr>
+<tr>
+<td><code>generate_rbac_report</code></td>
+<td>Assessment</td>
+<td>RBAC hierarchy and risk analysis</td>
+</tr>
+<tr>
+<td><code>assess_copilot_readiness</code></td>
+<td>Assessment</td>
+<td>M365 Copilot readiness evaluation</td>
+</tr>
+<tr>
+<td><code>assess_ai_agent_security</code></td>
+<td>Assessment</td>
+<td>AI agent security across 6 platforms</td>
+</tr>
+<tr>
+<td><code>search_tenant</code></td>
+<td>Query</td>
+<td>NL→KQL against Azure Resource Graph + Entra</td>
+</tr>
+<tr>
+<td><code>query_results</code></td>
+<td>Query</td>
+<td>Query previous assessment results</td>
+</tr>
+<tr>
+<td><code>search_exposure</code></td>
+<td>Query</td>
+<td>Search for specific exposure patterns</td>
+</tr>
+<tr>
+<td><code>check_permissions</code></td>
+<td>Utility</td>
+<td>Verify ARM + Graph access before assessment</td>
+</tr>
+<tr>
+<td><code>compare_runs</code></td>
+<td>Analysis</td>
+<td>Delta comparison between assessment runs</td>
+</tr>
+<tr>
+<td><code>query_assessment_history</code></td>
+<td>History</td>
+<td>Browse historical assessment data</td>
+</tr>
+<tr>
+<td><code>generate_report</code></td>
+<td>Report</td>
+<td>Generate reports from existing results</td>
+</tr>
+<tr>
+<td><code>generate_custom_report</code></td>
+<td>Report</td>
+<td>Custom report with user-specified sections</td>
+</tr>
+</tbody></table></div>
+    </div>
+    <div class="step-section" id="step-3">
+      <div class="step-section-title"><span class="step-badge primary">3</span> 68 Async Evidence Collectors</div>
+      <div class="step-desc">
+<p>Collectors are auto-discovered via a <code>@register_collector</code> decorator pattern in <code>collectors/registry.py</code>.
+They run in parallel batches (Azure: 12 concurrent, Entra: 9 concurrent) with retry, pagination, and graceful
+<code>AccessDenied</code> handling.</p>
+<table class="step-table">
+<thead><tr>
+<th>Source</th>
+<th>Count</th>
+<th>Examples</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Azure ARM (control plane)</td>
+<td>~40</td>
+<td>compute, network, storage, databases, AKS, Key Vault, Defender, policy, diagnostics, monitoring</td>
+</tr>
+<tr>
+<td>Azure Data Plane</td>
+<td>~9</td>
+<td>ACR repos, Cosmos DB collections, APIM backends, Key Vault secrets/certificates, Storage blob configs</td>
+</tr>
+<tr>
+<td>Entra / MS Graph</td>
+<td>~13</td>
+<td>Users, groups, roles, conditional access, PIM, risk policies, applications, workload identity</td>
+</tr>
+<tr>
+<td>M365 Compliance</td>
+<td>~5</td>
+<td>Sensitivity labels, DLP policies, SharePoint/OneDrive, Purview</td>
+</tr>
+<tr>
+<td>Standalone</td>
+<td>~1</td>
+<td>RBAC assignment collector (separate pipeline)</td>
+</tr>
+</tbody></table><div class="callout callout-info"><strong>Evidence types:</strong> Each collector produces typed evidence records indexed by <code>EvidenceType</code> enum — total of 218 distinct evidence types across all collectors.</div></div>
+    </div>
+    
+  </div>
+</div>
+<div class="slide" data-slide="4">
+  <div class="slide-inner">
+    <div class="slide-header">
+      <span class="slide-phase-badge primary">End User Experience — By Persona</span>
+    </div>
+    
+    <div class="step-section" id="step-1">
+      <div class="step-section-title"><span class="step-badge primary">1</span> Security Administrator / Engineer</div>
+      <div class="step-desc">
+<p>The primary user. Opens the web dashboard or Teams tab, authenticates via Microsoft SSO, and runs assessments through the chat interface.</p>
+<ul>
+<li><strong>Run assessments</strong> — type "Run a PostureIQ assessment against FedRAMP" → full automated audit</li>
+<li><strong>Explore findings</strong> — drill into specific domains, view attack paths, read remediation scripts</li>
+<li><strong>Query the tenant</strong> — "Show me all storage accounts without private endpoints" → NL→KQL via Cloud Explorer</li>
+<li><strong>Compare runs</strong> — "Compare this assessment with last week's" → delta report showing drift</li>
+<li><strong>Download reports</strong> — HTML, PDF, Excel, SARIF for integration with existing workflows</li>
+</ul>
+</div>
+    </div>
+    <div class="step-section" id="step-2">
+      <div class="step-section-title"><span class="step-badge primary">2</span> CISO / Security Leadership</div>
+      <div class="step-desc">
+<p>Receives executive-level reports with compliance percentages, maturity levels, and trend analysis.</p>
+<ul>
+<li><strong>Executive dashboard</strong> — compliance % per framework, domain maturity radar chart</li>
+<li><strong>PDF reports</strong> — print-ready for board presentations and audit committees</li>
+<li><strong>Trend tracking</strong> — score history across assessment runs shows improvement trajectory</li>
+<li><strong>Attack path summary</strong> — high-level view of critical cross-domain risks</li>
+</ul>
+</div>
+    </div>
+    <div class="step-section" id="step-3">
+      <div class="step-section-title"><span class="step-badge primary">3</span> Compliance Officer / Auditor</div>
+      <div class="step-desc">
+<p>Uses PostureIQ to prepare for audits and demonstrate framework compliance.</p>
+<ul>
+<li><strong>Framework-specific reports</strong> — select FedRAMP, PCI-DSS, HIPAA, etc. for targeted assessment</li>
+<li><strong>Evidence catalog</strong> — complete inventory of collected evidence with SHA-256 integrity hashes</li>
+<li><strong>OSCAL export</strong> — NIST-standard format accepted by federal audit tools</li>
+<li><strong>SARIF export</strong> — integrates with compliance scanning pipelines</li>
+<li><strong>Methodology report</strong> — documents the assessment approach for auditor review</li>
+</ul>
+</div>
+    </div>
+    <div class="step-section" id="step-4">
+      <div class="step-section-title"><span class="step-badge primary">4</span> DevOps / Platform Engineer</div>
+      <div class="step-desc">
+<p>Integrates PostureIQ into CI/CD pipelines and manages the platform infrastructure.</p>
+<ul>
+<li><strong>CI/CD gate mode</strong> — <code>--fail-on-severity critical</code> blocks deployment on critical findings</li>
+<li><strong>JSON output</strong> — machine-readable results for automated processing</li>
+<li><strong>CLI scripts</strong> — <code>run_*.py</code> scripts for headless execution in pipelines</li>
+<li><strong>Infrastructure management</strong> — <code>deploy.ps1</code> and <code>redeploy-image.ps1</code> for updates</li>
+</ul>
+</div>
+    </div>
+    
+  </div>
+</div>
+<div class="slide" data-slide="5">
+  <div class="slide-inner">
+    <section class="seq-section">
+      <h2>Report Generation Flow — Behind the Scenes</h2>
+      <p class="seq-subtitle">What happens when a user clicks &#x27;Run Assessment&#x27; in the dashboard</p>
+      <div class="seq-controls" role="toolbar" aria-label="Report Generation Flow — Behind the Scenes playback">
+        <button class="seq-btn primary" id="reportFlowPlay">&#9654; Play</button>
+        <button class="seq-btn" id="reportFlowPrev" disabled>&larr; Prev</button>
+        <button class="seq-btn" id="reportFlowNext">&rarr; Next</button>
+        <button class="seq-btn" id="reportFlowReset">Reset</button>
+        <button class="seq-btn" id="reportFlowShowAll">Show All</button>
+        <span class="seq-step-indicator" id="reportFlowIndicator" aria-live="polite">Step 0 / 15</span>
+      </div>
+      <div class="seq-layout">
+        <div class="seq-diagram-col">
+          <div class="seq-actors seq-actors-7" style="grid-template-columns: repeat(7, 1fr);" role="img" aria-label="Report Generation Flow — Behind the Scenes actors">
+            <div class="seq-actor"><div class="seq-actor-icon">👤</div><div class="seq-actor-name">User</div><div class="seq-actor-sub">Browser</div><span class="seq-actor-tag external">External</span></div>
+            <div class="seq-actor"><div class="seq-actor-icon">🖥️</div><div class="seq-actor-name">SPA</div><div class="seq-actor-sub">MSAL.js</div><span class="seq-actor-tag onprem">Client</span></div>
+            <div class="seq-actor"><div class="seq-actor-icon">⚙️</div><div class="seq-actor-name">FastAPI</div><div class="seq-actor-sub">Port 8088</div><span class="seq-actor-tag cloud">Cloud</span></div>
+            <div class="seq-actor"><div class="seq-actor-icon">🧠</div><div class="seq-actor-name">OpenAI</div><div class="seq-actor-sub">GPT-4.1</div><span class="seq-actor-tag cloud">Cloud</span></div>
+            <div class="seq-actor"><div class="seq-actor-icon">🔍</div><div class="seq-actor-name">Engine</div><div class="seq-actor-sub">Evaluators</div><span class="seq-actor-tag cloud">Cloud</span></div>
+            <div class="seq-actor"><div class="seq-actor-icon">☁️</div><div class="seq-actor-name">Azure</div><div class="seq-actor-sub">ARM+Graph</div><span class="seq-actor-tag cloud">Cloud</span></div>
+            <div class="seq-actor"><div class="seq-actor-icon">💾</div><div class="seq-actor-name">Blob</div><div class="seq-actor-sub">Storage</div><span class="seq-actor-tag cloud">Cloud</span></div>
+          </div>
+          <div class="seq-body seq-body-7" style="grid-template-columns: repeat(7, 1fr);" id="reportFlowBody">
+            <div class="seq-lifeline"></div>
+            <div class="seq-lifeline"></div>
+            <div class="seq-lifeline"></div>
+            <div class="seq-lifeline"></div>
+            <div class="seq-lifeline"></div>
+            <div class="seq-lifeline"></div>
+            <div class="seq-lifeline"></div>
+            <div class="seq-messages" id="reportFlowMessages"></div>
+          </div>
+        </div>
+        <div class="seq-explain-col" id="reportFlowExplainCol">
+          <div class="seq-explain" id="reportFlowExplain" aria-live="polite">
+            <div class="seq-explain-num" id="reportFlowExNum">Getting Started</div>
+            <div class="seq-explain-title" id="reportFlowExTitle">Click Play or Next to begin</div>
+            <div class="seq-explain-desc" id="reportFlowExDesc">This animated sequence shows the complete end-to-end flow from user click through evidence collection, evaluation, report generation, and delivery.</div>
+            <div class="seq-explain-flow" id="reportFlowExFlow"></div>
+          </div>
+        </div>
+      </div>
+      <nav class="legend" aria-label="Diagram legend" style="margin:6px 0 4px;"><div class="legend-item"><span class="legend-swatch primary"></span> Client-side</div>
+<div class="legend-item"><span class="legend-swatch secondary"></span> Server-side</div>
+<div class="legend-item"><span class="legend-swatch tertiary"></span> External APIs</div>
+</nav>
+    </section>
+  </div>
+</div>
+<div class="slide" data-slide="6">
+  <div class="slide-inner">
+    <section class="seq-section">
+      <h2>Infrastructure Deployment Flow — Behind the Scenes</h2>
+      <p class="seq-subtitle">What happens when an admin runs deploy.ps1 to create the PostureIQ infrastructure</p>
+      <div class="seq-controls" role="toolbar" aria-label="Infrastructure Deployment Flow — Behind the Scenes playback">
+        <button class="seq-btn primary" id="infraFlowPlay">&#9654; Play</button>
+        <button class="seq-btn" id="infraFlowPrev" disabled>&larr; Prev</button>
+        <button class="seq-btn" id="infraFlowNext">&rarr; Next</button>
+        <button class="seq-btn" id="infraFlowReset">Reset</button>
+        <button class="seq-btn" id="infraFlowShowAll">Show All</button>
+        <span class="seq-step-indicator" id="infraFlowIndicator" aria-live="polite">Step 0 / 12</span>
+      </div>
+      <div class="seq-layout">
+        <div class="seq-diagram-col">
+          <div class="seq-actors" style="grid-template-columns: repeat(5, 1fr);" role="img" aria-label="Infrastructure Deployment Flow — Behind the Scenes actors">
+            <div class="seq-actor"><div class="seq-actor-icon">👤</div><div class="seq-actor-name">Admin</div><div class="seq-actor-sub">PowerShell</div><span class="seq-actor-tag admin">Operator</span></div>
+            <div class="seq-actor"><div class="seq-actor-icon">📜</div><div class="seq-actor-name">deploy.ps1</div><div class="seq-actor-sub">16 Steps</div><span class="seq-actor-tag builder">Script</span></div>
+            <div class="seq-actor"><div class="seq-actor-icon">⌨️</div><div class="seq-actor-name">Azure CLI</div><div class="seq-actor-sub">az commands</div><span class="seq-actor-tag onprem">Tool</span></div>
+            <div class="seq-actor"><div class="seq-actor-icon">☁️</div><div class="seq-actor-name">Azure ARM</div><div class="seq-actor-sub">Resource Mgr</div><span class="seq-actor-tag cloud">Cloud</span></div>
+            <div class="seq-actor"><div class="seq-actor-icon">🐳</div><div class="seq-actor-name">Container</div><div class="seq-actor-sub">App Runtime</div><span class="seq-actor-tag cloud">Cloud</span></div>
+          </div>
+          <div class="seq-body" style="grid-template-columns: repeat(5, 1fr);" id="infraFlowBody">
+            <div class="seq-lifeline"></div>
+            <div class="seq-lifeline"></div>
+            <div class="seq-lifeline"></div>
+            <div class="seq-lifeline"></div>
+            <div class="seq-lifeline"></div>
+            <div class="seq-messages" id="infraFlowMessages"></div>
+          </div>
+        </div>
+        <div class="seq-explain-col" id="infraFlowExplainCol">
+          <div class="seq-explain" id="infraFlowExplain" aria-live="polite">
+            <div class="seq-explain-num" id="infraFlowExNum">Getting Started</div>
+            <div class="seq-explain-title" id="infraFlowExTitle">Click Play or Next to begin</div>
+            <div class="seq-explain-desc" id="infraFlowExDesc">This animated sequence shows the 16-step idempotent deployment from bare Azure subscription to a running PostureIQ instance.</div>
+            <div class="seq-explain-flow" id="infraFlowExFlow"></div>
+          </div>
+        </div>
+      </div>
+      <nav class="legend" aria-label="Diagram legend" style="margin:6px 0 4px;"><div class="legend-item"><span class="legend-swatch primary"></span> Admin / Script</div>
+<div class="legend-item"><span class="legend-swatch secondary"></span> Azure Resources</div>
+<div class="legend-item"><span class="legend-swatch tertiary"></span> Container Runtime</div>
+</nav>
+    </section>
+  </div>
+</div>
+<div class="slide" data-slide="7">
+  <div class="slide-inner">
+    <div class="slide-header">
+      <span class="slide-phase-badge secondary">Azure Infrastructure — All 14 Resources</span>
+    </div>
+    
+    <div class="step-section" id="step-1">
+      <div class="step-section-title"><span class="step-badge secondary">1</span> Resource Group — ESIQNew-RG</div>
+      <div class="step-desc"><table class="step-table">
+<thead><tr>
+<th>Property</th>
+<th>Value</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td><code>ESIQNew-RG</code></td>
+</tr>
+<tr>
+<td>Location</td>
+<td><code>swedencentral</code></td>
+</tr>
+<tr>
+<td>Subscription</td>
+<td>AI (<code>d33fc1a7-56aa-4c30-a4a0-98b1e04fafd0</code>)</td>
+</tr>
+<tr>
+<td>Purpose</td>
+<td>Logical container for all PostureIQ resources</td>
+</tr>
+<tr>
+<td>Resource Count</td>
+<td>14 resources</td>
+</tr>
+</tbody></table></div>
+    </div>
+    <div class="step-section" id="step-2">
+      <div class="step-section-title"><span class="step-badge secondary">2</span> AI Foundry Resource — ESIQNew-AI</div>
+      <div class="step-desc"><table class="step-table">
+<thead><tr>
+<th>Property</th>
+<th>Value</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Type</td>
+<td><code>Microsoft.CognitiveServices/accounts</code></td>
+</tr>
+<tr>
+<td>Kind</td>
+<td><code>AIServices</code> (S0 tier)</td>
+</tr>
+<tr>
+<td>Custom Domain</td>
+<td><code>esiqnew-ai</code> → <code>https://esiqnew-ai.cognitiveservices.azure.com/</code></td>
+</tr>
+<tr>
+<td>Features</td>
+<td>allowProjectManagement enabled, OpenAI model hosting</td>
+</tr>
+<tr>
+<td>Models Hosted</td>
+<td>gpt-4.1 (Standard, 30K TPM) + gpt-5.1 (Standard, 30K TPM)</td>
+</tr>
+<tr>
+<td>Used By</td>
+<td>Container App via managed identity for chat completions + Assistants API</td>
+</tr>
+</tbody></table><div class="callout callout-info">The AI resource also hosts the <strong>Foundry Project</strong> (<code>ESIQNew-project</code>), making the agent visible in the AI Foundry portal at <code>ai.azure.com</code>.</div></div>
+    </div>
+    <div class="step-section" id="step-3">
+      <div class="step-section-title"><span class="step-badge secondary">3</span> Storage Account — esiqnewstorage</div>
+      <div class="step-desc"><table class="step-table">
+<thead><tr>
+<th>Property</th>
+<th>Value</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Type</td>
+<td><code>Microsoft.Storage/storageAccounts</code></td>
+</tr>
+<tr>
+<td>SKU</td>
+<td>Standard_LRS (locally redundant)</td>
+</tr>
+<tr>
+<td>Kind</td>
+<td>StorageV2</td>
+</tr>
+<tr>
+<td>TLS</td>
+<td>1.2 minimum</td>
+</tr>
+<tr>
+<td>Containers</td>
+<td><code>reports</code> — stores all generated assessment reports</td>
+</tr>
+<tr>
+<td>Auth</td>
+<td>Managed identity with <code>Storage Blob Data Contributor</code> role</td>
+</tr>
+<tr>
+<td>Used By</td>
+<td><code>blob_store.py</code> for report persistence, <code>evidence_history.py</code> for assessment history</td>
+</tr>
+</tbody></table></div>
+    </div>
+    <div class="step-section" id="step-4">
+      <div class="step-section-title"><span class="step-badge secondary">4</span> Key Vault — ESIQNew-kv</div>
+      <div class="step-desc"><table class="step-table">
+<thead><tr>
+<th>Property</th>
+<th>Value</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Type</td>
+<td><code>Microsoft.KeyVault/vaults</code></td>
+</tr>
+<tr>
+<td>Auth Model</td>
+<td>RBAC (not access policies)</td>
+</tr>
+<tr>
+<td>Purge Protection</td>
+<td>Enabled</td>
+</tr>
+<tr>
+<td>Purpose</td>
+<td>Secure storage for secrets and certificates (future use)</td>
+</tr>
+</tbody></table></div>
+    </div>
+    <div class="step-section" id="step-5">
+      <div class="step-section-title"><span class="step-badge secondary">5</span> Observability — Log Analytics + Application Insights</div>
+      <div class="step-desc"><table class="step-table">
+<thead><tr>
+<th>Resource</th>
+<th>Name</th>
+<th>Configuration</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Log Analytics Workspace</td>
+<td><code>ESIQNew-law</code></td>
+<td>PerGB2018 pricing, retention: 30 days (default)</td>
+</tr>
+<tr>
+<td>Application Insights</td>
+<td><code>ESIQNew-appinsights</code></td>
+<td>Workspace-based (linked to LAW)</td>
+</tr>
+</tbody></table><p>Container Apps Environment is linked to Log Analytics for automatic container log collection.
+Application Insights provides application-level telemetry, request tracing, and dependency tracking.</p></div>
+    </div>
+    <div class="step-section" id="step-6">
+      <div class="step-section-title"><span class="step-badge secondary">6</span> Container Registry — esiqnewacr</div>
+      <div class="step-desc"><table class="step-table">
+<thead><tr>
+<th>Property</th>
+<th>Value</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Type</td>
+<td><code>Microsoft.ContainerRegistry/registries</code></td>
+</tr>
+<tr>
+<td>SKU</td>
+<td>Basic</td>
+</tr>
+<tr>
+<td>Purpose</td>
+<td>Hosts PostureIQ Docker images (<code>esiqnew-agent:vNN</code>)</td>
+</tr>
+<tr>
+<td>Build</td>
+<td>ACR Tasks (<code>az acr build</code>) — builds run in Azure, not locally</td>
+</tr>
+<tr>
+<td>Auth</td>
+<td>Managed identity with <code>AcrPull</code> role for Container App</td>
+</tr>
+</tbody></table></div>
+    </div>
+    <div class="step-section" id="step-7">
+      <div class="step-section-title"><span class="step-badge secondary">7</span> Managed Identity — ESIQNew-identity</div>
+      <div class="step-desc">
+<p>User-assigned managed identity used by the Container App for all Azure and Graph API operations.</p>
+<table class="step-table">
+<thead><tr>
+<th>Attribute</th>
+<th>Value</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Client ID</td>
+<td><code>d5d10273-4a8b-4251-9b9d-00fe035df97a</code></td>
+</tr>
+<tr>
+<td>Principal ID</td>
+<td><code>d742617c-...</code></td>
+</tr>
+</tbody></table><p><strong>RBAC Roles:</strong></p><table class="step-table">
+<thead><tr>
+<th>Role</th>
+<th>Scope</th>
+<th>Purpose</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>AcrPull</td>
+<td>Container Registry</td>
+<td>Pull container images</td>
+</tr>
+<tr>
+<td>Reader</td>
+<td>Subscription</td>
+<td>List resources across subscriptions</td>
+</tr>
+<tr>
+<td>Security Reader</td>
+<td>Subscription</td>
+<td>Access Defender and security data</td>
+</tr>
+<tr>
+<td>Cognitive Services OpenAI User</td>
+<td>AI Resource</td>
+<td>Call OpenAI chat completions</td>
+</tr>
+<tr>
+<td>Azure AI Developer</td>
+<td>AI Resource</td>
+<td>Register Foundry agents</td>
+</tr>
+<tr>
+<td>Storage Blob Data Contributor</td>
+<td>Storage Account</td>
+<td>Upload/download reports</td>
+</tr>
+</tbody></table><p><strong>MS Graph API Permissions (Application):</strong></p>
+<p><code>Directory.Read.All</code>, <code>Policy.Read.All</code>, <code>RoleManagement.Read.All</code>,
+<code>User.Read.All</code>, <code>AuditLog.Read.All</code>, <code>UserAuthenticationMethod.Read.All</code>,
+<code>IdentityRiskyUser.Read.All</code>, <code>Application.Read.All</code></p></div>
+    </div>
+    <div class="step-section" id="step-8">
+      <div class="step-section-title"><span class="step-badge secondary">8</span> Container Apps Environment &amp; Application</div>
+      <div class="step-desc"><table class="step-table">
+<thead><tr>
+<th>Property</th>
+<th>Value</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Environment</td>
+<td><code>ESIQNew-env</code> (northeurope)</td>
+</tr>
+<tr>
+<td>App Name</td>
+<td><code>esiqnew-agent</code></td>
+</tr>
+<tr>
+<td>FQDN</td>
+<td><code>esiqnew-agent.delightfulbush-cc9cf399.northeurope.azurecontainerapps.io</code></td>
+</tr>
+<tr>
+<td>CPU / Memory</td>
+<td>1.0 vCPU / 2 GiB RAM / 4 GiB ephemeral storage</td>
+</tr>
+<tr>
+<td>Port</td>
+<td>8088 (external HTTPS ingress)</td>
+</tr>
+<tr>
+<td>Replicas</td>
+<td>min: 1, max: 1 (no auto-scale currently)</td>
+</tr>
+<tr>
+<td>Identity</td>
+<td><code>ESIQNew-identity</code> (user-assigned)</td>
+</tr>
+<tr>
+<td>Registry</td>
+<td><code>esiqnewacr.azurecr.io</code> (managed identity auth)</td>
+</tr>
+<tr>
+<td>Volume</td>
+<td><code>/agent/output</code> → Azure File share <code>esiqreports</code></td>
+</tr>
+<tr>
+<td>Region</td>
+<td>northeurope (swedencentral failed — AKS capacity issue)</td>
+</tr>
+</tbody></table><div class="callout callout-warning"><strong>Note:</strong> Container Apps are in <code>northeurope</code> while other resources are in <code>swedencentral</code> due to an <code>AKSCapacityHeavyUsage</code> limitation during initial deployment.</div></div>
+    </div>
+    <div class="step-section" id="step-9">
+      <div class="step-section-title"><span class="step-badge secondary">9</span> App Registration — ESIQNew-Dashboard</div>
+      <div class="step-desc"><table class="step-table">
+<thead><tr>
+<th>Property</th>
+<th>Value</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Type</td>
+<td>Entra App Registration (SPA platform)</td>
+</tr>
+<tr>
+<td>Audience</td>
+<td>Multi-organization (<code>AzureADMultipleOrgs</code>)</td>
+</tr>
+<tr>
+<td>Redirect URIs</td>
+<td><code>http://localhost:8088</code>, <code>https://{FQDN}</code></td>
+</tr>
+<tr>
+<td>API Scope</td>
+<td><code>api://{appId}/access_as_user</code></td>
+</tr>
+<tr>
+<td>Pre-authorized Clients</td>
+<td>7 Microsoft first-party clients (Teams, Office, Outlook)</td>
+</tr>
+<tr>
+<td>Purpose</td>
+<td>Enables MSAL.js SSO in the web dashboard and Teams personal tab</td>
+</tr>
+</tbody></table></div>
+    </div>
+    
+  </div>
+</div>
+<div class="slide" data-slide="8">
+  <div class="slide-inner">
+    <div class="slide-header">
+      <span class="slide-phase-badge secondary">Container App Configuration</span>
+    </div>
+    
+    <div class="step-section" id="step-1">
+      <div class="step-section-title"><span class="step-badge secondary">1</span> Environment Variables</div>
+      <div class="step-desc"><table class="step-table">
+<thead><tr>
+<th>Variable</th>
+<th>Value</th>
+<th>Purpose</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><code>AZURE_OPENAI_ENDPOINT</code></td>
+<td><code>https://esiqnew-ai.cognitiveservices.azure.com/</code></td>
+<td>AI Foundry endpoint for chat completions</td>
+</tr>
+<tr>
+<td><code>AZURE_OPENAI_DEPLOYMENT</code></td>
+<td><code>gpt-4.1</code></td>
+<td>Primary model deployment name</td>
+</tr>
+<tr>
+<td><code>AZURE_OPENAI_FALLBACK_DEPLOYMENT</code></td>
+<td><code>gpt-5.1</code></td>
+<td>Fallback model on rate limit</td>
+</tr>
+<tr>
+<td><code>AZURE_OPENAI_API_VERSION</code></td>
+<td><code>2025-01-01-preview</code></td>
+<td>API version for OpenAI calls</td>
+</tr>
+<tr>
+<td><code>FOUNDRY_PROJECT_ENDPOINT</code></td>
+<td><code>https://esiqnew-ai.services.ai.azure.com/api/projects/ESIQNew-project</code></td>
+<td>Foundry project for agent registration</td>
+</tr>
+<tr>
+<td><code>AZURE_CLIENT_ID</code></td>
+<td><code>d5d10273-...</code></td>
+<td>Managed identity client ID</td>
+</tr>
+<tr>
+<td><code>AZURE_TENANT_ID</code></td>
+<td><code>4a3eb5f4-...</code></td>
+<td>Entra tenant ID</td>
+</tr>
+<tr>
+<td><code>REPORT_STORAGE_ACCOUNT</code></td>
+<td><code>esiqnewstorage</code></td>
+<td>Blob storage for report persistence</td>
+</tr>
+<tr>
+<td><code>REPORT_STORAGE_CONTAINER</code></td>
+<td><code>reports</code></td>
+<td>Blob container name</td>
+</tr>
+</tbody></table></div>
+    </div>
+    <div class="step-section" id="step-2">
+      <div class="step-section-title"><span class="step-badge secondary">2</span> Dockerfile &amp; Container Security</div>
+      <div class="step-desc">
+<ul>
+<li><strong>Base image:</strong> Python 3.12 slim</li>
+<li><strong>Non-root user:</strong> Runs as <code>appuser</code> (not root)</li>
+<li><strong>No secrets in image:</strong> All credentials via managed identity at runtime</li>
+<li><strong>Playwright Chromium:</strong> Installed for PDF report generation via headless browser</li>
+<li><strong>Multi-stage build:</strong> Dependencies installed in builder stage, copied to runtime</li>
+</ul>
+</div>
+    </div>
+    <div class="step-section" id="step-3">
+      <div class="step-section-title"><span class="step-badge secondary">3</span> API Endpoints</div>
+      <div class="step-desc"><table class="step-table">
+<thead><tr>
+<th>Method</th>
+<th>Path</th>
+<th>Auth</th>
+<th>Purpose</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td><code>/</code></td>
+<td>None</td>
+<td>Serves webapp SPA (static files from <code>webapp/</code>)</td>
+</tr>
+<tr>
+<td>POST</td>
+<td><code>/chat</code></td>
+<td>graph_token + arm_token</td>
+<td>SSE-streamed agent chat with function-calling loop</td>
+</tr>
+<tr>
+<td>POST</td>
+<td><code>/assessments</code></td>
+<td>graph_token + arm_token</td>
+<td>Background assessment execution</td>
+</tr>
+<tr>
+<td>GET</td>
+<td><code>/assessments/{id}</code></td>
+<td>None</td>
+<td>Poll assessment status</td>
+</tr>
+<tr>
+<td>GET</td>
+<td><code>/health</code></td>
+<td>None</td>
+<td>Health check (liveness/readiness)</td>
+</tr>
+<tr>
+<td>GET</td>
+<td><code>/reports/{path}</code></td>
+<td>None</td>
+<td>Serve generated report files</td>
+</tr>
+</tbody></table><div class="callout callout-info"><strong>Rate limiting:</strong> 20 <code>/chat</code> requests per 60s per IP, 5 <code>/assessments</code> per 60s per IP.</div></div>
+    </div>
+    
+  </div>
+</div>
+<div class="slide" data-slide="9">
+  <div class="slide-inner">
+    <div class="slide-header">
+      <span class="slide-phase-badge secondary">Authentication &amp; Security</span>
+    </div>
+    
+    <div class="step-section" id="step-1">
+      <div class="step-section-title"><span class="step-badge secondary">1</span> User Authentication (MSAL.js SSO)</div>
+      <div class="step-desc">
+<p>The web dashboard uses <strong>MSAL.js v5.6.3</strong> for Microsoft SSO authentication. On page load, it attempts silent token acquisition; on failure, presents a login button.</p>
+<p>Two tokens are acquired per session:</p>
+<table class="step-table">
+<thead><tr>
+<th>Token</th>
+<th>Scopes</th>
+<th>Used For</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Graph Token</td>
+<td><code>User.Read, Directory.Read.All, Policy.Read.All, RoleManagement.Read.All, AuditLog.Read.All, UserAuthenticationMethod.Read.All, IdentityRiskyUser.Read.All</code></td>
+<td>Entra/Graph data collection</td>
+</tr>
+<tr>
+<td>ARM Token</td>
+<td><code>https://management.azure.com/user_impersonation</code></td>
+<td>Azure resource data collection</td>
+</tr>
+</tbody></table><p>Both tokens are sent with every <code>/chat</code> request. The backend wraps them in a <code>UserTokenCredential</code> that routes
+each SDK call to the appropriate token based on the requested scope.</p></div>
+    </div>
+    <div class="step-section" id="step-2">
+      <div class="step-section-title"><span class="step-badge secondary">2</span> Managed Identity Authentication</div>
+      <div class="step-desc">
+<p>The Container App uses <code>DefaultAzureCredential</code> with the user-assigned managed identity for:</p>
+<ul>
+<li>OpenAI API calls (via <code>get_bearer_token_provider</code> for <code>cognitiveservices.azure.com</code>)</li>
+<li>Blob Storage operations (upload/download reports)</li>
+<li>Foundry Agent registration (Assistants API)</li>
+</ul>
+<p>For assessments, the system uses <strong>user-delegated tokens</strong> (from the SPA) rather than the managed identity.
+This ensures assessments run with the <em>user's actual permissions</em>, not elevated service-level access.</p>
+</div>
+    </div>
+    <div class="step-section" id="step-3">
+      <div class="step-section-title"><span class="step-badge secondary">3</span> Security Controls</div>
+      <div class="step-desc"><table class="step-table">
+<thead><tr>
+<th>Control</th>
+<th>Implementation</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Read-only operations</td>
+<td>All ARM and Graph calls are GET/LIST only — no write APIs</td>
+</tr>
+<tr>
+<td>Rate limiting</td>
+<td>20 chat + 5 assessment requests per minute per IP</td>
+</tr>
+<tr>
+<td>CORS whitelist</td>
+<td>Only <code>teams.microsoft.com</code>, <code>*.cloud.microsoft</code>, <code>*.office.com</code>, <code>localhost</code></td>
+</tr>
+<tr>
+<td>CSP frame-ancestors</td>
+<td>Allows Teams iframe embedding only from Microsoft domains</td>
+</tr>
+<tr>
+<td>Token validation</td>
+<td>ARM JWT decoded to extract <code>tid</code> (tenant) and <code>oid</code> (user)</td>
+</tr>
+<tr>
+<td>SSRF protection</td>
+<td><code>_validate_webhook_url()</code> rejects private/loopback/link-local IPs, enforces HTTPS</td>
+</tr>
+<tr>
+<td>PII handling</td>
+<td>User data summarized as counts only — never exported in full</td>
+</tr>
+<tr>
+<td>Non-root container</td>
+<td>Runs as <code>appuser</code>, no secrets baked into image</td>
+</tr>
+<tr>
+<td>Report integrity</td>
+<td>SHA-256 hashes on all generated reports</td>
+</tr>
+<tr>
+<td>Session isolation</td>
+<td>Per-conversation state via <code>contextvars.ContextVar</code></td>
+</tr>
+<tr>
+<td>Page-level tool isolation</td>
+<td>Each SPA page can only invoke its relevant assessment tools</td>
+</tr>
+<tr>
+<td>Session-duplicate guard</td>
+<td>Prevents re-running assessments on follow-up questions in same session</td>
+</tr>
+</tbody></table></div>
+    </div>
+    
+  </div>
+</div>
+<div class="slide" data-slide="10">
+  <div class="slide-inner">
+    <div class="slide-header">
+      <span class="slide-phase-badge tertiary">Assessment Engines — All 7 Engines</span>
+    </div>
+    
+    <div class="step-section" id="step-1">
+      <div class="step-section-title"><span class="step-badge tertiary">1</span> PostureIQ Engine (Core)</div>
+      <div class="step-desc">
+<p>The flagship engine — performs a comprehensive security posture assessment across 10 domains, mapping findings to all 11 compliance frameworks.</p>
+<table class="step-table">
+<thead><tr>
+<th>Component</th>
+<th>Detail</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Evaluator Modules</td>
+<td>18 (10 domain evaluators + engine, plugins, suppressions, remediation, attack_paths, priority_ranking, ai_fix_recommendations)</td>
+</tr>
+<tr>
+<td>Check Functions</td>
+<td>113 individual security checks</td>
+</tr>
+<tr>
+<td>Domains</td>
+<td>Access, Identity, Data Protection, Logging, Network, Governance, Incident Response, Change Management, Business Continuity, Asset Management</td>
+</tr>
+<tr>
+<td>Scoring</td>
+<td>Severity-weighted: critical=4, high=3, medium=2, low=1 — with partial credit</td>
+</tr>
+<tr>
+<td>Risk Formula</td>
+<td><code>severity_weight × exploitability × blast_radius × 100 / max</code></td>
+</tr>
+<tr>
+<td>Attack Paths</td>
+<td>9 cross-domain patterns (privilege escalation, lateral movement, CA bypass, network pivot, etc.)</td>
+</tr>
+<tr>
+<td>AI Fixes</td>
+<td>GPT-generated remediation scripts for top-15 findings</td>
+</tr>
+<tr>
+<td>Reports</td>
+<td>19 generators (HTML dashboard, PDF, Excel, JSON, MD, SARIF, OSCAL, executive dashboard, evidence catalog, methodology, delta, drift)</td>
+</tr>
+</tbody></table></div>
+    </div>
+    <div class="step-section" id="step-2">
+      <div class="step-section-title"><span class="step-badge tertiary">2</span> Risk Analysis Engine</div>
+      <div class="step-desc">
+<p>Gap analysis focused on 5 risk domains with actionable remediation plans.</p>
+<table class="step-table">
+<thead><tr>
+<th>Domain</th>
+<th>Focus Areas</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Identity Risk</td>
+<td>MFA gaps, stale accounts, privileged role sprawl, risky sign-ins</td>
+</tr>
+<tr>
+<td>Network Risk</td>
+<td>NSG misconfigurations, missing private endpoints, public-facing services</td>
+</tr>
+<tr>
+<td>Defender Risk</td>
+<td>Disabled Defender plans, unmonitored resources, alert suppression</td>
+</tr>
+<tr>
+<td>Configuration Risk</td>
+<td>Policy non-compliance, missing diagnostics, untagged resources</td>
+</tr>
+<tr>
+<td>Insider Risk</td>
+<td>Oversharing, excessive permissions, audit log gaps</td>
+</tr>
+</tbody></table></div>
+    </div>
+    <div class="step-section" id="step-3">
+      <div class="step-section-title"><span class="step-badge tertiary">3</span> Data Security Engine</div>
+      <div class="step-desc">
+<p>The most comprehensive engine with 32 evaluator modules covering 39 data security categories.</p>
+<table class="step-table">
+<thead><tr>
+<th>Category Group</th>
+<th>Modules</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Storage & Encryption</td>
+<td>storage, encryption, keyvault, backup_dr</td>
+</tr>
+<tr>
+<td>Databases</td>
+<td>database, cosmosdb, postgres_mysql, redis, sql_detailed</td>
+</tr>
+<tr>
+<td>Network & Access</td>
+<td>private_endpoints, network_segmentation, data_access, identity_access, managed_identity</td>
+</tr>
+<tr>
+<td>M365 & Compliance</td>
+<td>m365_dlp, m365_lifecycle, dlp_alerts, sharepoint, purview, data_classification</td>
+</tr>
+<tr>
+<td>Platform Services</td>
+<td>containers, messaging, ai_services, data_factory, file_sync, platform_services</td>
+</tr>
+<tr>
+<td>Advanced</td>
+<td>advanced_analytics, threat_detection, data_residency</td>
+</tr>
+</tbody></table></div>
+    </div>
+    <div class="step-section" id="step-4">
+      <div class="step-section-title"><span class="step-badge tertiary">4</span> RBAC Analysis Engine</div>
+      <div class="step-desc">
+<p>Builds a complete hierarchy tree of Azure RBAC assignments with risk analysis.</p>
+<ul>
+<li><strong>Tree Builder:</strong> Constructs management group → subscription → resource group → resource hierarchy</li>
+<li><strong>Principal Resolver:</strong> Resolves users, groups (with nested member expansion), service principals</li>
+<li><strong>Risk Detection:</strong> Flags over-privileged accounts, stale assignments, Owner/Contributor sprawl, missing PIM activation</li>
+<li><strong>Deterministic IDs:</strong> UUID5-based finding IDs for repeatable output</li>
+</ul>
+</div>
+    </div>
+    <div class="step-section" id="step-5">
+      <div class="step-section-title"><span class="step-badge tertiary">5</span> Copilot Readiness Engine</div>
+      <div class="step-desc">
+<p>Evaluates organizational readiness for Microsoft 365 Copilot deployment across 10 categories:</p>
+<table class="step-table">
+<thead><tr>
+<th>Category</th>
+<th>What It Checks</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Oversharing</td>
+<td>Broadly shared sites, open permissions, guest access to sensitive content</td>
+</tr>
+<tr>
+<td>Sensitivity Labels</td>
+<td>Label coverage, auto-labeling policies, DLP integration</td>
+</tr>
+<tr>
+<td>DLP Policies</td>
+<td>Policy coverage, rule effectiveness, endpoint DLP</td>
+</tr>
+<tr>
+<td>Restricted Search</td>
+<td>SharePoint restricted content discoverability settings</td>
+</tr>
+<tr>
+<td>Access Governance</td>
+<td>Access reviews, lifecycle policies, entitlement management</td>
+</tr>
+<tr>
+<td>Content Lifecycle</td>
+<td>Retention policies, disposition review, records management</td>
+</tr>
+<tr>
+<td>Audit & Monitoring</td>
+<td>Unified audit log, alert policies, compliance center</td>
+</tr>
+<tr>
+<td>Zero Trust</td>
+<td>Conditional Access, device compliance, identity protection</td>
+</tr>
+<tr>
+<td>Shadow AI</td>
+<td>Unsanctioned AI tool usage, data leakage risks</td>
+</tr>
+<tr>
+<td>Copilot Security</td>
+<td>Copilot-specific security settings, plugin governance</td>
+</tr>
+</tbody></table></div>
+    </div>
+    <div class="step-section" id="step-6">
+      <div class="step-section-title"><span class="step-badge tertiary">6</span> AI Agent Security Engine</div>
+      <div class="step-desc">
+<p>Assesses security posture of AI agent deployments across 6 platforms:</p>
+<table class="step-table">
+<thead><tr>
+<th>Platform</th>
+<th>Evaluator Modules</th>
+<th>Focus</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Copilot Studio</td>
+<td>copilot_studio, copilot_studio_ext, copilot_studio_dlp</td>
+<td>Bot security, DLP policies, connector governance</td>
+</tr>
+<tr>
+<td>AI Foundry</td>
+<td>foundry_infra, foundry_ext, foundry_new</td>
+<td>Model security, endpoint auth, data handling</td>
+</tr>
+<tr>
+<td>Custom AI</td>
+<td>custom_ai</td>
+<td>Custom-built AI applications and endpoints</td>
+</tr>
+<tr>
+<td>Entra AI</td>
+<td>entra_ai</td>
+<td>AI identity and access management</td>
+</tr>
+<tr>
+<td>AI Infrastructure</td>
+<td>ai_infra</td>
+<td>GPU clusters, model serving, network isolation</td>
+</tr>
+<tr>
+<td>AI Defense</td>
+<td>ai_defense</td>
+<td>Prompt injection protection, content safety, jailbreak detection</td>
+</tr>
+</tbody></table></div>
+    </div>
+    <div class="step-section" id="step-7">
+      <div class="step-section-title"><span class="step-badge tertiary">7</span> Cloud Explorer Engine</div>
+      <div class="step-desc">
+<p>Natural language query interface for Azure Resource Graph and Entra ID.</p>
+<ul>
+<li><strong>NL → KQL Dispatcher:</strong> Translates natural language to Azure Resource Graph KQL queries</li>
+<li><strong>50+ ARG Templates:</strong> Pre-built queries for common resource searches (grouped by family: storage, compute, network, identity, security, etc.)</li>
+<li><strong>Entra Queries:</strong> User, group, role, application, and conditional access lookups</li>
+<li><strong>Evidence Search:</strong> Search previously collected evidence by keyword or type</li>
+<li><strong>Cross-Reference:</strong> Correlate resources across subscriptions and resource types</li>
+</ul>
+</div>
+    </div>
+    
+  </div>
+</div>
+<div class="slide" data-slide="11">
+  <div class="slide-inner">
+    <div class="slide-header">
+      <span class="slide-phase-badge tertiary">Collector &amp; Evaluator Architecture</span>
+    </div>
+    
+    <div class="step-section" id="step-1">
+      <div class="step-section-title"><span class="step-badge tertiary">1</span> Collector Architecture</div>
+      <div class="step-desc">
+<p>Collectors follow a <strong>plugin auto-discovery pattern</strong> using decorators and module scanning.</p>
+<pre class="code-block">@register_collector(name=&quot;cosmos_db&quot;, plane=&quot;control&quot;, source=&quot;azure&quot;)
+async def collect_azure_cosmos(creds, subscriptions):
+    # ... collect Cosmos DB configuration evidence
+    return [make_evidence(&quot;CosmosDB&quot;, &quot;cosmos_accounts&quot;, data)]</pre>
+<p><strong>Registry mechanism:</strong> <code>registry.py</code> uses <code>pkgutil.iter_modules</code> to auto-import
+all modules under <code>collectors/azure/</code> and <code>collectors/entra/</code>. Each <code>@register_collector</code>
+decorator registers the function with metadata (name, plane, source, priority).</p>
+<p><strong>Base collector features</strong> (<code>base.py</code>):</p>
+<ul>
+<li>3 retries with exponential backoff (2s, 4s, 8s)</li>
+<li><code>AccessDeniedError</code> — captures 401/403 as missing-permission findings (doesn't fail)</li>
+<li><code>paginate_graph()</code> — pages through MS Graph collections with 429 throttling</li>
+<li><code>paginate_arm()</code> — iterates ARM async pagers with 429 handling</li>
+<li>Shared resource inventory cache (<code>inventory.py</code>) to avoid duplicate ARM calls</li>
+</ul>
+</div>
+    </div>
+    <div class="step-section" id="step-2">
+      <div class="step-section-title"><span class="step-badge tertiary">2</span> Azure Collectors (49 Modules)</div>
+      <div class="step-desc"><table class="step-table">
+<thead><tr>
+<th>Category</th>
+<th>Modules</th>
+<th>Evidence Types</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Core Resources</td>
+<td>resources, compute, network, storage</td>
+<td>Resource inventory, VMs, NICs, NSGs, Storage Accounts</td>
+</tr>
+<tr>
+<td>Security</td>
+<td>security, defender_plans, defender_advanced, sentinel</td>
+<td>Defender plans, alerts, Sentinel workspaces</td>
+</tr>
+<tr>
+<td>Identity & Access</td>
+<td>rbac, rbac_collector, policy, policy_compliance</td>
+<td>Role assignments, Azure Policy, compliance states</td>
+</tr>
+<tr>
+<td>Databases</td>
+<td>databases, sql_detailed, rdbms_detailed, cosmosdb_data_plane</td>
+<td>SQL/Cosmos/PostgreSQL/MySQL configurations</td>
+</tr>
+<tr>
+<td>Networking</td>
+<td>network_expanded, app_gateway, frontdoor_cdn, dns</td>
+<td>Load balancers, Front Door, DNS zones</td>
+</tr>
+<tr>
+<td>Containers & Apps</td>
+<td>containers, functions, webapp_detailed, aks_in_cluster</td>
+<td>AKS, App Service, Functions, ACR</td>
+</tr>
+<tr>
+<td>Monitoring</td>
+<td>monitoring, diagnostics, activity_logs, cost_billing</td>
+<td>Log Analytics, diagnostic settings, activity logs</td>
+</tr>
+<tr>
+<td>AI & ML</td>
+<td>ai_services, ai_content_safety, ml_cognitive, copilot_studio, foundry_config</td>
+<td>AI model deployments, content safety policies</td>
+</tr>
+<tr>
+<td>Data Platform</td>
+<td>data_analytics, messaging, managed_disks, redis_iot_logic, batch_aci</td>
+<td>Event Hubs, Service Bus, Data Factory</td>
+</tr>
+<tr>
+<td>Compliance</td>
+<td>m365_compliance, m365_sensitivity_labels, purview_dlp, sharepoint_onedrive</td>
+<td>DLP policies, sensitivity labels, SharePoint</td>
+</tr>
+<tr>
+<td>Data Plane</td>
+<td>storage_data_plane, acr_data_plane, apim_data_plane</td>
+<td>Blob configs, ACR repos, APIM backends</td>
+</tr>
+</tbody></table></div>
+    </div>
+    <div class="step-section" id="step-3">
+      <div class="step-section-title"><span class="step-badge tertiary">3</span> Entra / Graph Collectors (18 Modules)</div>
+      <div class="step-desc"><table class="step-table">
+<thead><tr>
+<th>Module</th>
+<th>MS Graph Scopes</th>
+<th>Evidence Types</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>users, user_details</td>
+<td><code>User.Read.All</code></td>
+<td>User profiles, MFA status, last sign-in</td>
+</tr>
+<tr>
+<td>roles</td>
+<td><code>RoleManagement.Read.All</code></td>
+<td>Directory roles, role assignments, PIM eligible</td>
+</tr>
+<tr>
+<td>conditional_access</td>
+<td><code>Policy.Read.All</code></td>
+<td>CA policies, named locations, auth strengths</td>
+</tr>
+<tr>
+<td>applications, workload_identity</td>
+<td><code>Application.Read.All</code></td>
+<td>App registrations, service principals, federated creds</td>
+</tr>
+<tr>
+<td>identity_protection, risk_policies</td>
+<td><code>IdentityRiskyUser.Read.All</code></td>
+<td>Risky users, risk detections, risk policies</td>
+</tr>
+<tr>
+<td>governance</td>
+<td><code>Directory.Read.All</code></td>
+<td>Access reviews, entitlement management, lifecycle</td>
+</tr>
+<tr>
+<td>audit_logs</td>
+<td><code>AuditLog.Read.All</code></td>
+<td>Sign-in logs, audit events, suspicious activity</td>
+</tr>
+<tr>
+<td>security_policies, tenant</td>
+<td><code>Policy.Read.All</code></td>
+<td>Security defaults, cross-tenant, org settings</td>
+</tr>
+<tr>
+<td>ai_identity</td>
+<td><code>Application.Read.All</code></td>
+<td>AI-related service principals and app configs</td>
+</tr>
+</tbody></table></div>
+    </div>
+    <div class="step-section" id="step-4">
+      <div class="step-section-title"><span class="step-badge tertiary">4</span> Evaluator Scoring Algorithm</div>
+      <div class="step-desc">
+<p>The PostureIQ evaluator uses a <strong>severity-weighted scoring algorithm</strong> with partial credit:</p>
+<pre class="code-block"># Severity weights
+WEIGHTS = {&quot;critical&quot;: 4, &quot;high&quot;: 3, &quot;medium&quot;: 2, &quot;low&quot;: 1}
+
+# Compliance scoring (per framework)
+for control in framework_controls:
+    if status == &quot;compliant&quot;:     score += WEIGHTS[severity]     # Full credit
+    elif status == &quot;partial&quot;:     score += WEIGHTS[severity] * 0.5  # Half credit
+    elif status == &quot;non_compliant&quot;: score += 0                     # Zero
+    # missing_evidence / not_assessed → excluded from denominator
+
+compliance_pct = (score / max_possible_score) * 100</pre>
+<p><strong>Risk scoring</strong> per finding:</p>
+<pre class="code-block">risk_score = severity_weight * exploitability * blast_radius * 100 / max_score
+
+# Exploitability factors (0.3 - 1.0):
+#   check_mfa_enforcement = 0.95 (very exploitable)
+#   check_private_endpoint_adoption = 1.0 (fully exposed)
+
+# Blast radius by domain (0.3 - 1.0):
+#   identity = 1.0, access = 0.9, network = 0.8, data_protection = 0.7
+
+# Risk tiers: Critical (≥75), High (≥50), Medium (≥25), Low (&lt;25)</pre>
+<p><strong>Priority ranking:</strong> <code>ROI = risk_score / √effort</code> — surfaces quick wins with maximum security impact for minimum remediation effort.</p>
+</div>
+    </div>
+    
+  </div>
+</div>
+<div class="slide" data-slide="12">
+  <div class="slide-inner">
+    <div class="slide-header">
+      <span class="slide-phase-badge tertiary">Webapp &amp; Teams Integration</span>
+    </div>
+    
+    <div class="step-section" id="step-1">
+      <div class="step-section-title"><span class="step-badge tertiary">1</span> Web Dashboard — 11 SPA Pages</div>
+      <div class="step-desc"><table class="step-table">
+<thead><tr>
+<th>Page</th>
+<th>File</th>
+<th>Purpose</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Portal</td>
+<td><code>index.html</code></td>
+<td>Card-grid launcher linking to all assessment SPAs</td>
+</tr>
+<tr>
+<td>PostureIQ</td>
+<td><code>SecurityComplianceAssessment.html</code></td>
+<td>Full posture assessment with framework picker</td>
+</tr>
+<tr>
+<td>Risk Analysis</td>
+<td><code>RiskAnalysis.html</code></td>
+<td>Risk gap analysis interface</td>
+</tr>
+<tr>
+<td>Data Security</td>
+<td><code>DataSecurity.html</code></td>
+<td>Data security assessment</td>
+</tr>
+<tr>
+<td>RBAC Report</td>
+<td><code>RBACReport.html</code></td>
+<td>RBAC hierarchy analysis</td>
+</tr>
+<tr>
+<td>Copilot Readiness</td>
+<td><code>CopilotReadiness.html</code></td>
+<td>M365 Copilot readiness evaluation</td>
+</tr>
+<tr>
+<td>AI Agent Security</td>
+<td><code>AIAgentSecurity.html</code></td>
+<td>AI agent security assessment</td>
+</tr>
+<tr>
+<td>Cloud Explorer</td>
+<td><code>CloudExplorer.html</code></td>
+<td>NL→KQL query interface</td>
+</tr>
+<tr>
+<td>PostureIQ Standalone</td>
+<td><code>PostureIQ.html</code></td>
+<td>Dedicated PostureIQ page</td>
+</tr>
+<tr>
+<td>Teams Tab</td>
+<td><code>Teams-SecurityComplianceAssessment.html</code></td>
+<td>Teams-embedded version with NAA auth</td>
+</tr>
+<tr>
+<td>Auth Callbacks</td>
+<td><code>auth-start.html</code>, <code>auth-end.html</code></td>
+<td>MSAL authentication flow handlers</td>
+</tr>
+</tbody></table>
+<p><strong>UI stack:</strong> Vanilla JavaScript + CSS (no React/Vue/Angular), Fluent 2 / Viva design tokens,
+MSAL.js v5.6.3, SSE streaming for real-time chat, sidebar nav with draggable resizer, multi-phase progress
+indicator, follow-up chip buttons.</p>
+</div>
+    </div>
+    <div class="step-section" id="step-2">
+      <div class="step-section-title"><span class="step-badge tertiary">2</span> Microsoft Teams Integration</div>
+      <div class="step-desc">
+<p>PostureIQ integrates as a <strong>Teams Personal Tab</strong> using manifest version 1.22 with Nested App Authentication (NAA).</p>
+<table class="step-table">
+<thead><tr>
+<th>Component</th>
+<th>Detail</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Manifest Version</td>
+<td>1.22 (required for NAA)</td>
+</tr>
+<tr>
+<td>App Type</td>
+<td>Personal Tab (static tab, <code>personal</code> scope)</td>
+</tr>
+<tr>
+<td>Auth Method</td>
+<td>Nested App Auth — cookie-less token brokering through Teams client</td>
+</tr>
+<tr>
+<td>MSAL Variant</td>
+<td><code>createNestablePublicClientApplication()</code> — special Teams-aware MSAL client</td>
+</tr>
+<tr>
+<td>Cache Storage</td>
+<td><code>localStorage</code> (required — <code>sessionStorage</code> fails on Teams Desktop)</td>
+</tr>
+<tr>
+<td>Theme Sync</td>
+<td>TeamsJS SDK detects dark/light/high-contrast → maps to <code>data-theme</code> attribute</td>
+</tr>
+<tr>
+<td>TeamsJS SDK</td>
+<td>v2.31.1</td>
+</tr>
+<tr>
+<td>Pre-authorized Clients</td>
+<td>7 Microsoft first-party client IDs (Teams, Office, Outlook desktop/web/mobile)</td>
+</tr>
+</tbody></table>
+<p><strong>NAA scopes</strong> declared in manifest:</p>
+<ul>
+<li>Graph: <code>User.Read, Directory.Read.All, Policy.Read.All, RoleManagement.Read.All, AuditLog.Read.All, UserAuthenticationMethod.Read.All, IdentityRiskyUser.Read.All</code></li>
+<li>ARM: <code>https://management.azure.com/user_impersonation</code></li>
+</ul>
+</div>
+    </div>
+    <div class="step-section" id="step-3">
+      <div class="step-section-title"><span class="step-badge tertiary">3</span> Teams App Deployment</div>
+      <div class="step-desc">
+<p><code>Deploy-TeamsApp.ps1</code> handles the complete Teams app lifecycle:</p>
+<table class="step-table">
+<thead><tr>
+<th>Mode</th>
+<th>What It Does</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><code>Validate</code></td>
+<td>Parses manifest JSON, checks for unresolved <code>{{placeholders}}</code>, validates required fields and manifest version ≥ 1.17</td>
+</tr>
+<tr>
+<td><code>Build</code></td>
+<td>Resolves <code>{{TEAMS_APP_ID}}</code> and <code>{{BACKEND_FQDN}}</code> placeholders, creates <code>PostureIQ.zip</code> with manifest + icons</td>
+</tr>
+<tr>
+<td><code>Sideload</code></td>
+<td>Uploads the zip to Teams for development testing</td>
+</tr>
+<tr>
+<td><code>OrgPublish</code></td>
+<td>Publishes to the organization's Teams app catalog</td>
+</tr>
+<tr>
+<td><code>EntraConfig</code></td>
+<td>Configures API scope, SPA redirects, pre-authorized clients on the Entra app registration</td>
+</tr>
+<tr>
+<td><code>Full</code></td>
+<td>Runs all phases sequentially</td>
+</tr>
+</tbody></table></div>
+    </div>
+    
+  </div>
+</div>
+<div class="slide" data-slide="13">
+  <div class="slide-inner">
+    <div class="slide-header">
+      <span class="slide-phase-badge tertiary">Configuration &amp; Schemas</span>
+    </div>
+    
+    <div class="step-section" id="step-1">
+      <div class="step-section-title"><span class="step-badge tertiary">1</span> Assessment Configuration</div>
+      <div class="step-desc">
+<p>Configuration is loaded from environment variable <code>ENTERPRISESECURITYIQ_CONFIG</code> (path to JSON file),
+with environment variable overrides taking precedence.</p>
+<table class="step-table">
+<thead><tr>
+<th>Section</th>
+<th>Key Settings</th>
+<th>Defaults</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><code>auth</code></td>
+<td>tenant_id, auth_mode, subscription_filter</td>
+<td>auto mode, all subscriptions</td>
+</tr>
+<tr>
+<td><code>collectors</code></td>
+<td>azure_enabled, entra_enabled, azure_batch_size, entra_batch_size, collector_timeout, user_sample_limit</td>
+<td>true, true, 12, 9, 600s, 200</td>
+</tr>
+<tr>
+<td><code>thresholds</code></td>
+<td>max_subscription_owners, max_privileged_percent, max_global_admins, min_mfa_percent, max_stale_percent, diagnostic_coverage_target</td>
+<td>3, 20%, 5, 90%, 20%, 80%</td>
+</tr>
+<tr>
+<td><code>output</code></td>
+<td>output_formats, output_dir</td>
+<td>[json, html], output/</td>
+</tr>
+<tr>
+<td><code>frameworks</code></td>
+<td>List of frameworks to evaluate</td>
+<td>[FedRAMP]</td>
+</tr>
+<tr>
+<td><code>checkpoint</code></td>
+<td>checkpoint_enabled</td>
+<td>true (resume interrupted assessments)</td>
+</tr>
+</tbody></table></div>
+    </div>
+    <div class="step-section" id="step-2">
+      <div class="step-section-title"><span class="step-badge tertiary">2</span> JSON Schemas</div>
+      <div class="step-desc">
+<p>Four JSON schemas (draft-07) define the data model:</p>
+<table class="step-table">
+<thead><tr>
+<th>Schema</th>
+<th>Purpose</th>
+<th>Key Fields</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><code>evidence-record.json</code></td>
+<td>Evidence collected from Azure/Entra</td>
+<td>source, collector, evidence_type, description, data, resource_id</td>
+</tr>
+<tr>
+<td><code>finding-record.json</code></td>
+<td>Individual security finding</td>
+<td>control_id, framework, status, severity, domain, description, recommendation</td>
+</tr>
+<tr>
+<td><code>compliance-control.json</code></td>
+<td>Framework control result</td>
+<td>control_id, overall_status, compliant/non_compliant counts, findings</td>
+</tr>
+<tr>
+<td><code>report-summary.json</code></td>
+<td>Assessment summary</td>
+<td>assessment_id, tenant_id, frameworks, compliance_percentage, domain_summaries</td>
+</tr>
+</tbody></table>
+<p>All data models use <strong>deterministic UUID5 identifiers</strong> (namespace: <code>c0a80164-dead-beef-cafe-000000000001</code>)
+ensuring the same input always produces the same finding ID — critical for delta comparisons and drift detection.</p>
+</div>
+    </div>
+    <div class="step-section" id="step-3">
+      <div class="step-section-title"><span class="step-badge tertiary">3</span> Data Security Relevance Descriptors</div>
+      <div class="step-desc">
+<p><code>config/data-security-relevance.json</code> contains 39 detailed descriptions explaining <em>why</em> each
+data security category matters. These are used by the AI agent to provide context-aware explanations in reports.</p>
+<p>Example categories: <code>storage_encryption</code>, <code>database_tde</code>, <code>keyvault_access</code>,
+<code>private_endpoints</code>, <code>purview_classification</code>, <code>dlp_policies</code>, etc.</p>
+</div>
+    </div>
+    
+  </div>
+</div>
+<div class="slide" data-slide="14">
+  <div class="slide-inner">
+    <div class="slide-step-title" style="margin-bottom:10px;">Determinism &amp; Quality Assurance</div>
+    
+<p>PostureIQ includes <strong>6 determinism validation scripts</strong> that prove the evaluation pipeline produces
+<strong>byte-identical outputs</strong> from the same evidence input — critical for compliance audits and delta comparisons.</p>
+
+<table class="step-table">
+<thead><tr>
+<th>Script</th>
+<th>Engine Tested</th>
+<th>Method</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><code>run_postureiq_determinism_check.py</code></td>
+<td>PostureIQ (full compliance)</td>
+<td>Collect once → run <code>evaluate_all()</code> 3× → compare FindingIds, scores, controls</td>
+</tr>
+<tr>
+<td><code>run_aias_determinism_check.py</code></td>
+<td>AI Agent Security</td>
+<td>Collect once → run all 50+ analyzers 3× → compare by composite key</td>
+</tr>
+<tr>
+<td><code>run_cr_determinism_check.py</code></td>
+<td>Copilot Readiness</td>
+<td>Same pattern</td>
+</tr>
+<tr>
+<td><code>run_ds_determinism_check.py</code></td>
+<td>Data Security</td>
+<td>Same pattern</td>
+</tr>
+<tr>
+<td><code>run_rbac_determinism_check.py</code></td>
+<td>RBAC</td>
+<td>Same pattern</td>
+</tr>
+<tr>
+<td><code>run_risk_determinism_check.py</code></td>
+<td>Risk Analysis</td>
+<td>Same pattern</td>
+</tr>
+</tbody></table>
+
+<h3 style="margin-top:16px;">Why Determinism Matters</h3>
+<ul>
+<li><strong>Compliance audits:</strong> Auditors need to verify that re-running the same assessment produces identical results</li>
+<li><strong>Delta comparisons:</strong> The <code>compare_runs</code> tool relies on stable FindingIds to detect actual changes vs. noise</li>
+<li><strong>Drift detection:</strong> Only real configuration changes should trigger drift alerts, not evaluation randomness</li>
+<li><strong>CI/CD gates:</strong> Pipeline gates (<code>--fail-on-severity</code>) must be deterministic to avoid flaky builds</li>
+</ul>
+
+<h3 style="margin-top:16px;">How It Works</h3>
+<ol>
+<li>Evidence is collected <strong>once</strong> and saved to a snapshot</li>
+<li>The evaluation pipeline runs <strong>3 times</strong> against the same snapshot</li>
+<li>Volatile fields are stripped (<code>EvaluatedAt</code>, timestamps, UUIDs that should be random)</li>
+<li>Findings are deterministically sorted by composite key</li>
+<li>Full JSON serializations are compared byte-for-byte</li>
+<li>Verdict: <strong>PASS ✓</strong> (all runs identical) or <strong>FAIL ✗</strong> (with field-level diff report)</li>
+</ol>
+
+<div class="callout callout-success"><strong>All 6 engines pass determinism validation</strong> — confirmed across multiple tenant configurations.</div>
+
+  </div>
+</div>
+<div class="slide" data-slide="15">
+  <div class="slide-inner">
+    <div class="slide-header">
+      <span class="slide-phase-badge secondary">Gaps &amp; Recommended Fixes — With Microsoft Learn References</span>
+    </div>
+    
+    <div class="step-section" id="step-1">
+      <div class="step-section-title"><span class="step-badge secondary">1</span> GAP: No CI/CD Pipeline</div>
+      <div class="step-desc">
+<p><strong>Current state:</strong> No <code>.github/workflows/</code> or <code>azure-pipelines.yml</code> in the repo.
+Deployment is entirely manual via <code>deploy.ps1</code> and <code>redeploy-image.ps1</code>.</p>
+
+<div class="callout callout-danger"><strong>Risk:</strong> Manual deployments are error-prone, lack audit trails, and don't enforce quality gates (tests, linting, security scanning) before production.</div>
+
+<h4>Recommended Fix</h4>
+<p>Create a <strong>GitHub Actions workflow</strong> with three stages:</p>
+<pre class="code-block"># .github/workflows/deploy.yml
+name: Build &amp; Deploy PostureIQ
+on:
+  push:
+    branches: [main]
+    paths: [&#x27;AIAgent/**&#x27;, &#x27;webapp/**&#x27;]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: &#x27;3.12&#x27; }
+      - run: pip install -r AIAgent/requirements.txt
+      - run: python -m pytest AIAgent/tests/ -v
+
+  build-and-push:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: azure/login@v2
+        with: { creds: ${{{{ secrets.AZURE_CREDENTIALS }}}} }
+      - run: az acr build --registry esiqnewacr --image esiqnew-agent:${{{{ github.sha }}}} --file AIAgent/Dockerfile .
+
+  deploy:
+    needs: build-and-push
+    runs-on: ubuntu-latest
+    steps:
+      - uses: azure/login@v2
+        with: { creds: ${{{{ secrets.AZURE_CREDENTIALS }}}} }
+      - run: |
+          az containerapp update -n esiqnew-agent -g ESIQNew-RG \
+            --image esiqnewacr.azurecr.io/esiqnew-agent:${{{{ github.sha }}}}
+          az containerapp revision restart -n esiqnew-agent -g ESIQNew-RG</pre>
+
+<p><strong>Microsoft Learn references:</strong></p>
+<ul>
+<li><a href="https://learn.microsoft.com/en-us/azure/container-apps/github-actions" target="_blank">Deploy to Azure Container Apps with GitHub Actions</a></li>
+<li><a href="https://learn.microsoft.com/en-us/azure/container-registry/container-registry-github-action" target="_blank">Build container images with GitHub Actions and ACR</a></li>
+<li><a href="https://learn.microsoft.com/en-us/azure/developer/github/connect-from-azure" target="_blank">Connect GitHub and Azure (OIDC / service principal)</a></li>
+</ul>
+</div>
+    </div>
+    <div class="step-section" id="step-2">
+      <div class="step-section-title"><span class="step-badge secondary">2</span> GAP: No .env.template File</div>
+      <div class="step-desc">
+<p><strong>Current state:</strong> The README references <code>cp .env.template .env</code> but no template file exists.
+New developers must guess which environment variables are required.</p>
+
+<h4>Recommended Fix</h4>
+<p>Create <code>.env.template</code> in the repo root with all required variables documented:</p>
+<pre class="code-block"># .env.template — Copy to .env and fill in values
+# === Azure OpenAI ===
+AZURE_OPENAI_ENDPOINT=https://your-resource.cognitiveservices.azure.com/
+AZURE_OPENAI_DEPLOYMENT=gpt-4.1
+AZURE_OPENAI_FALLBACK_DEPLOYMENT=gpt-5.1
+AZURE_OPENAI_API_VERSION=2025-01-01-preview
+
+# === Foundry Project ===
+FOUNDRY_PROJECT_ENDPOINT=https://your-resource.services.ai.azure.com/api/projects/your-project
+
+# === Identity ===
+AZURE_TENANT_ID=your-tenant-id
+AZURE_CLIENT_ID=your-managed-identity-client-id
+
+# === Storage ===
+REPORT_STORAGE_ACCOUNT=your-storage-account
+REPORT_STORAGE_CONTAINER=reports
+
+# === Optional ===
+ENTERPRISESECURITYIQ_CONFIG=config/enterprisesecurityiq.config.json
+ENTERPRISESECURITYIQ_AUTH_MODE=auto
+ALLOWED_ORIGINS=http://localhost:8088</pre>
+</div>
+    </div>
+    <div class="step-section" id="step-3">
+      <div class="step-section-title"><span class="step-badge secondary">3</span> GAP: Single Replica — No Auto-Scaling</div>
+      <div class="step-desc">
+<p><strong>Current state:</strong> Container App runs with <code>minReplicas: 1, maxReplicas: 1</code>.
+No auto-scaling under load; single point of failure if the instance crashes.</p>
+
+<div class="callout callout-danger"><strong>Risk:</strong> Long-running assessments (5+ minutes) block the single instance. Concurrent users will experience timeouts.</div>
+
+<h4>Recommended Fix</h4>
+<pre class="code-block"># Update scaling rules
+az containerapp update -n esiqnew-agent -g ESIQNew-RG \
+  --min-replicas 1 --max-replicas 3 \
+  --scale-rule-name http-scaling \
+  --scale-rule-type http \
+  --scale-rule-http-concurrency 10</pre>
+
+<p>This configures:</p>
+<ul>
+<li><strong>Minimum 1 replica</strong> — always available, no cold start</li>
+<li><strong>Maximum 3 replicas</strong> — scales out under concurrent load</li>
+<li><strong>HTTP concurrency trigger</strong> — scales when &gt;10 concurrent requests per replica</li>
+</ul>
+
+<p><strong>Microsoft Learn references:</strong></p>
+<ul>
+<li><a href="https://learn.microsoft.com/en-us/azure/container-apps/scale-app" target="_blank">Set scaling rules in Azure Container Apps</a></li>
+<li><a href="https://learn.microsoft.com/en-us/azure/container-apps/scale-app#http" target="_blank">HTTP scaling rule reference</a></li>
+</ul>
+</div>
+    </div>
+    <div class="step-section" id="step-4">
+      <div class="step-section-title"><span class="step-badge secondary">4</span> GAP: No VNet Integration</div>
+      <div class="step-desc">
+<p><strong>Current state:</strong> Container App has external ingress with no VNet. Storage account uses public network access.
+All traffic flows over the public internet.</p>
+
+<div class="callout callout-danger"><strong>Risk:</strong> Sensitive assessment data (tenant configurations, security findings) traverses the public internet between the Container App and Storage/Key Vault/AI services.</div>
+
+<h4>Recommended Fix</h4>
+<ol>
+<li><strong>Create a VNet</strong> with dedicated subnets for Container Apps, private endpoints, and services</li>
+<li><strong>Deploy Container Apps Environment with internal VNet</strong></li>
+<li><strong>Add Private Endpoints</strong> for Storage Account, Key Vault, ACR, and AI Services</li>
+<li><strong>Disable public network access</strong> on Storage and Key Vault</li>
+<li><strong>Add Azure Front Door</strong> as the public-facing entry point (see Gap #7)</li>
+</ol>
+
+<pre class="code-block"># Create VNet and subnets
+az network vnet create -n esiq-vnet -g ESIQNew-RG --address-prefix 10.0.0.0/16
+az network vnet subnet create -n container-apps-subnet --vnet-name esiq-vnet \
+  -g ESIQNew-RG --address-prefix 10.0.0.0/23
+az network vnet subnet create -n private-endpoints-subnet --vnet-name esiq-vnet \
+  -g ESIQNew-RG --address-prefix 10.0.2.0/24
+
+# Create Container Apps Environment with VNet
+az containerapp env create -n ESIQNew-env -g ESIQNew-RG \
+  --infrastructure-subnet-resource-id /subscriptions/.../container-apps-subnet \
+  --internal-only false  # or true if using Front Door
+
+# Add private endpoint for Storage
+az network private-endpoint create -n esiq-storage-pe -g ESIQNew-RG \
+  --vnet-name esiq-vnet --subnet private-endpoints-subnet \
+  --private-connection-resource-id /subscriptions/.../esiqnewstorage \
+  --group-id blob --connection-name storage-connection</pre>
+
+<p><strong>Microsoft Learn references:</strong></p>
+<ul>
+<li><a href="https://learn.microsoft.com/en-us/azure/container-apps/vnet-custom-internal" target="_blank">Provide a virtual network to an internal Container Apps environment</a></li>
+<li><a href="https://learn.microsoft.com/en-us/azure/container-apps/networking" target="_blank">Networking in Azure Container Apps</a></li>
+<li><a href="https://learn.microsoft.com/en-us/azure/private-link/private-endpoint-overview" target="_blank">What is Azure Private Endpoint?</a></li>
+<li><a href="https://learn.microsoft.com/en-us/azure/storage/common/storage-private-endpoints" target="_blank">Use private endpoints for Azure Storage</a></li>
+</ul>
+</div>
+    </div>
+    <div class="step-section" id="step-5">
+      <div class="step-section-title"><span class="step-badge secondary">5</span> GAP: No WAF / DDoS Protection</div>
+      <div class="step-desc">
+<p><strong>Current state:</strong> The Container App is directly exposed to the internet with only built-in rate limiting (20 req/min).
+No Web Application Firewall or DDoS protection.</p>
+
+<h4>Recommended Fix</h4>
+<p>Deploy <strong>Azure Front Door Premium</strong> with a WAF policy in front of the Container App:</p>
+<pre class="code-block"># Create Front Door profile
+az afd profile create -n esiq-frontdoor -g ESIQNew-RG --sku Premium_AzureFrontDoor
+
+# Create WAF policy
+az network front-door waf-policy create -n esiqwafpolicy -g ESIQNew-RG \
+  --mode Prevention --sku Premium_AzureFrontDoor
+
+# Configure managed rule sets (OWASP + Bot protection)
+az network front-door waf-policy managed-rules add -g ESIQNew-RG \
+  --policy-name esiqwafpolicy \
+  --type Microsoft_DefaultRuleSet --version 2.1
+
+# Add origin (Container App)
+az afd origin create -n esiq-origin --origin-group-name esiq-origins \
+  --profile-name esiq-frontdoor -g ESIQNew-RG \
+  --host-name esiqnew-agent.delightfulbush-cc9cf399.northeurope.azurecontainerapps.io \
+  --origin-host-header esiqnew-agent...northeurope.azurecontainerapps.io \
+  --http-port 80 --https-port 443</pre>
+
+<p><strong>Microsoft Learn references:</strong></p>
+<ul>
+<li><a href="https://learn.microsoft.com/en-us/azure/frontdoor/front-door-overview" target="_blank">What is Azure Front Door?</a></li>
+<li><a href="https://learn.microsoft.com/en-us/azure/web-application-firewall/afds/afds-overview" target="_blank">Azure WAF on Azure Front Door</a></li>
+<li><a href="https://learn.microsoft.com/en-us/azure/container-apps/waf" target="_blank">Protect Azure Container Apps with WAF on Front Door</a></li>
+<li><a href="https://learn.microsoft.com/en-us/azure/ddos-protection/ddos-protection-overview" target="_blank">Azure DDoS Protection overview</a></li>
+</ul>
+</div>
+    </div>
+    <div class="step-section" id="step-6">
+      <div class="step-section-title"><span class="step-badge secondary">6</span> GAP: Graph Admin Consent May Be Pending</div>
+      <div class="step-desc">
+<p><strong>Current state:</strong> The deploy script assigns MS Graph application permissions to the managed identity,
+but <strong>Global Admin consent</strong> may not have been granted. Without consent, Entra collectors will fail with 403 errors.</p>
+
+<h4>Recommended Fix</h4>
+<p>Grant admin consent via the Entra admin center or Azure CLI:</p>
+<pre class="code-block"># Option 1: Via Azure CLI
+# Get the managed identity&#x27;s service principal object ID
+$spId = az identity show -n ESIQNew-identity -g ESIQNew-RG --query principalId -o tsv
+
+# Grant admin consent for all assigned Graph permissions
+# (Navigate to Entra admin center → Enterprise apps → ESIQNew-identity → Permissions → Grant admin consent)
+
+# Option 2: Via Entra Portal
+# 1. Go to https://entra.microsoft.com
+# 2. Navigate to: Identity → Applications → Enterprise applications
+# 3. Search for the managed identity name or client ID
+# 4. Click Permissions → Grant admin consent for [tenant]
+# 5. Sign in as Global Administrator and approve</pre>
+
+<div class="callout callout-warning"><strong>Requires:</strong> Global Administrator or Privileged Role Administrator role in Entra ID.</div>
+
+<p><strong>Microsoft Learn references:</strong></p>
+<ul>
+<li><a href="https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/grant-admin-consent" target="_blank">Grant tenant-wide admin consent to an application</a></li>
+<li><a href="https://learn.microsoft.com/en-us/graph/permissions-overview" target="_blank">Overview of Microsoft Graph permissions</a></li>
+<li><a href="https://learn.microsoft.com/en-us/entra/identity/managed-identities-azure-resources/how-to-assign-app-role-managed-identity" target="_blank">Assign app roles to managed identities</a></li>
+</ul>
+</div>
+    </div>
+    <div class="step-section" id="step-7">
+      <div class="step-section-title"><span class="step-badge secondary">7</span> GAP: No Backup Strategy for Blob Storage</div>
+      <div class="step-desc">
+<p><strong>Current state:</strong> Storage account <code>esiqnewstorage</code> uses Standard_LRS with no soft delete,
+versioning, or lifecycle management configured. Report data could be permanently lost on accidental deletion.</p>
+
+<h4>Recommended Fix</h4>
+<pre class="code-block"># Enable blob soft delete (14-day retention)
+az storage account blob-service-properties update \
+  --account-name esiqnewstorage -g ESIQNew-RG \
+  --enable-delete-retention true --delete-retention-days 14
+
+# Enable container soft delete
+az storage account blob-service-properties update \
+  --account-name esiqnewstorage -g ESIQNew-RG \
+  --enable-container-delete-retention true --container-delete-retention-days 14
+
+# Enable blob versioning
+az storage account blob-service-properties update \
+  --account-name esiqnewstorage -g ESIQNew-RG \
+  --enable-versioning true
+
+# Create lifecycle management policy (move to cool after 90 days, archive after 365)
+az storage account management-policy create --account-name esiqnewstorage -g ESIQNew-RG \
+  --policy @lifecycle-policy.json</pre>
+
+<p><strong>Microsoft Learn references:</strong></p>
+<ul>
+<li><a href="https://learn.microsoft.com/en-us/azure/storage/blobs/soft-delete-blob-overview" target="_blank">Soft delete for blobs</a></li>
+<li><a href="https://learn.microsoft.com/en-us/azure/storage/blobs/versioning-overview" target="_blank">Blob versioning</a></li>
+<li><a href="https://learn.microsoft.com/en-us/azure/storage/blobs/lifecycle-management-overview" target="_blank">Blob storage lifecycle management</a></li>
+<li><a href="https://learn.microsoft.com/en-us/azure/storage/blobs/storage-blob-backup-and-restore" target="_blank">Operational backup for Azure Blobs</a></li>
+</ul>
+</div>
+    </div>
+    <div class="step-section" id="step-8">
+      <div class="step-section-title"><span class="step-badge secondary">8</span> GAP: No Disaster Recovery Plan</div>
+      <div class="step-desc">
+<p><strong>Current state:</strong> Single-region deployment (northeurope for Container App, swedencentral for other resources).
+No secondary region, no geo-redundant storage, no failover plan.</p>
+
+<h4>Recommended Fix</h4>
+<ol>
+<li><strong>Upgrade storage to GRS</strong> (Geo-Redundant Storage) for automatic cross-region replication</li>
+<li><strong>Deploy secondary Container App</strong> in a paired region (e.g., westeurope)</li>
+<li><strong>Use Azure Front Door</strong> for active-passive traffic routing with health probes</li>
+<li><strong>Replicate ACR</strong> using geo-replication (requires Premium SKU)</li>
+<li><strong>Document RTO/RPO targets</strong> and test the failover process</li>
+</ol>
+
+<pre class="code-block"># Upgrade storage to GRS
+az storage account update -n esiqnewstorage -g ESIQNew-RG --sku Standard_GRS
+
+# Upgrade ACR to Premium for geo-replication
+az acr update -n esiqnewacr -g ESIQNew-RG --sku Premium
+az acr replication create -r esiqnewacr -l westeurope</pre>
+
+<p><strong>Microsoft Learn references:</strong></p>
+<ul>
+<li><a href="https://learn.microsoft.com/en-us/azure/container-apps/disaster-recovery" target="_blank">Disaster recovery guidance for Azure Container Apps</a></li>
+<li><a href="https://learn.microsoft.com/en-us/azure/storage/common/storage-redundancy" target="_blank">Azure Storage redundancy</a></li>
+<li><a href="https://learn.microsoft.com/en-us/azure/container-registry/container-registry-geo-replication" target="_blank">Geo-replication in Azure Container Registry</a></li>
+<li><a href="https://learn.microsoft.com/en-us/azure/reliability/reliability-azure-container-apps" target="_blank">Reliability in Azure Container Apps</a></li>
+</ul>
+</div>
+    </div>
+    <div class="step-section" id="step-9">
+      <div class="step-section-title"><span class="step-badge secondary">9</span> GAP: No Custom Domain / Managed Certificate</div>
+      <div class="step-desc">
+<p><strong>Current state:</strong> The Container App uses the auto-generated FQDN
+<code>esiqnew-agent.delightfulbush-cc9cf399.northeurope.azurecontainerapps.io</code>.
+No custom domain or branded certificate.</p>
+
+<h4>Recommended Fix</h4>
+<pre class="code-block"># Add custom domain with managed certificate
+az containerapp hostname add -n esiqnew-agent -g ESIQNew-RG \
+  --hostname postureiq.yourdomain.com
+
+# Bind managed certificate (free, auto-renewed)
+az containerapp hostname bind -n esiqnew-agent -g ESIQNew-RG \
+  --hostname postureiq.yourdomain.com \
+  --environment ESIQNew-env \
+  --validation-method CNAME</pre>
+
+<p><strong>Also update:</strong></p>
+<ul>
+<li>App Registration redirect URIs → add the custom domain</li>
+<li>Teams manifest <code>{{BACKEND_FQDN}}</code> → custom domain</li>
+<li>CORS allowed origins → add custom domain</li>
+</ul>
+
+<p><strong>Microsoft Learn references:</strong></p>
+<ul>
+<li><a href="https://learn.microsoft.com/en-us/azure/container-apps/custom-domains-managed-certificates" target="_blank">Custom domain names and managed certificates in Azure Container Apps</a></li>
+<li><a href="https://learn.microsoft.com/en-us/azure/container-apps/custom-domains-certificates" target="_blank">Custom domain names and certificates in Azure Container Apps</a></li>
+</ul>
+</div>
+    </div>
+    <div class="step-section" id="step-10">
+      <div class="step-section-title"><span class="step-badge secondary">10</span> GAP: No Diagnostic Settings on All Resources</div>
+      <div class="step-desc">
+<p><strong>Current state:</strong> Log Analytics and Application Insights are deployed, but not all resources
+have diagnostic settings configured to send logs to the workspace.</p>
+
+<h4>Recommended Fix</h4>
+<p>Enable diagnostic settings for <strong>every resource</strong> to route logs to Log Analytics:</p>
+<pre class="code-block"># Enable diagnostics on Key Vault
+az monitor diagnostic-settings create -n kv-diag \
+  --resource /subscriptions/.../ESIQNew-kv \
+  --workspace /subscriptions/.../ESIQNew-law \
+  --logs &#x27;[{{&quot;category&quot;:&quot;AuditEvent&quot;,&quot;enabled&quot;:true}}]&#x27; \
+  --metrics &#x27;[{{&quot;category&quot;:&quot;AllMetrics&quot;,&quot;enabled&quot;:true}}]&#x27;
+
+# Enable diagnostics on Storage Account
+az monitor diagnostic-settings create -n storage-diag \
+  --resource /subscriptions/.../esiqnewstorage/blobServices/default \
+  --workspace /subscriptions/.../ESIQNew-law \
+  --logs &#x27;[{{&quot;category&quot;:&quot;StorageRead&quot;,&quot;enabled&quot;:true}},{{&quot;category&quot;:&quot;StorageWrite&quot;,&quot;enabled&quot;:true}}]&#x27;
+
+# Enable diagnostics on AI Services
+az monitor diagnostic-settings create -n ai-diag \
+  --resource /subscriptions/.../ESIQNew-AI \
+  --workspace /subscriptions/.../ESIQNew-law \
+  --logs &#x27;[{{&quot;category&quot;:&quot;Audit&quot;,&quot;enabled&quot;:true}},{{&quot;category&quot;:&quot;RequestResponse&quot;,&quot;enabled&quot;:true}}]&#x27;</pre>
+
+<p><strong>Microsoft Learn references:</strong></p>
+<ul>
+<li><a href="https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/diagnostic-settings" target="_blank">Diagnostic settings in Azure Monitor</a></li>
+<li><a href="https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/resource-logs" target="_blank">Azure resource logs</a></li>
+<li><a href="https://learn.microsoft.com/en-us/azure/key-vault/general/logging" target="_blank">Azure Key Vault logging</a></li>
+</ul>
+</div>
+    </div>
+    <div class="step-section" id="step-11">
+      <div class="step-section-title"><span class="step-badge secondary">11</span> GAP: Sparse Test Coverage</div>
+      <div class="step-desc">
+<p><strong>Current state:</strong> Only 5 test files visible in <code>AIAgent/tests/</code> (determinism checks and dry-run tests).
+The README claims 15 files / 1,357 functions but these are not in the current workspace.</p>
+
+<h4>Recommended Fix</h4>
+<p>Implement a comprehensive <code>pytest</code> test suite with:</p>
+<ul>
+<li><strong>Unit tests</strong> for each evaluator module — mock evidence → verify findings</li>
+<li><strong>Integration tests</strong> for the collector → evaluator → report pipeline</li>
+<li><strong>Snapshot tests</strong> for HTML/JSON report outputs (detect unintended format changes)</li>
+<li><strong>API tests</strong> for FastAPI endpoints using <code>httpx.AsyncClient</code></li>
+<li><strong>Coverage target:</strong> 80% line coverage with <code>pytest-cov</code></li>
+</ul>
+<pre class="code-block"># Install test dependencies
+pip install pytest pytest-asyncio pytest-cov httpx
+
+# Run tests with coverage
+python -m pytest AIAgent/tests/ -v --cov=AIAgent/app --cov-report=html
+
+# Fail CI if coverage drops below 80%
+python -m pytest AIAgent/tests/ --cov=AIAgent/app --cov-fail-under=80</pre>
+
+<p><strong>Microsoft Learn references:</strong></p>
+<ul>
+<li><a href="https://learn.microsoft.com/en-us/azure/developer/python/testing-tools" target="_blank">Testing tools for Python in Azure</a></li>
+</ul>
+</div>
+    </div>
+    <div class="step-section" id="step-12">
+      <div class="step-section-title"><span class="step-badge secondary">12</span> GAP: Missing docs/PROMPTS.md Usage Guide</div>
+      <div class="step-desc">
+<p><strong>Current state:</strong> Multiple documentation pages reference <code>docs/PROMPTS.md</code> as a usage guide
+with example prompts for each assessment tool, but the file does not exist.</p>
+
+<h4>Recommended Fix</h4>
+<p>Create <code>docs/PROMPTS.md</code> with example prompts for each tool:</p>
+<pre class="code-block"># PostureIQ Usage Guide — Example Prompts
+
+## PostureIQ Assessment
+- &quot;Run a PostureIQ assessment against FedRAMP and NIST 800-53&quot;
+- &quot;Assess my security posture using CIS Azure Benchmark&quot;
+- &quot;Run a full compliance assessment against all frameworks&quot;
+
+## Risk Analysis
+- &quot;Analyze risk gaps in my Azure environment&quot;
+- &quot;What are my top identity risks?&quot;
+
+## Data Security
+- &quot;Assess data security for my storage accounts and databases&quot;
+- &quot;Check if my Key Vaults are properly secured&quot;
+
+## RBAC Report
+- &quot;Generate an RBAC report for my subscriptions&quot;
+- &quot;Show me over-privileged accounts&quot;
+
+## Copilot Readiness
+- &quot;Assess my organization&#x27;s readiness for M365 Copilot&quot;
+- &quot;Check for oversharing risks before Copilot deployment&quot;
+
+## AI Agent Security
+- &quot;Assess security of our Copilot Studio bots&quot;
+- &quot;Check AI agent security across all platforms&quot;
+
+## Cloud Explorer
+- &quot;Show me all storage accounts without private endpoints&quot;
+- &quot;List VMs that are not using managed disks&quot;
+- &quot;Find all resources in eastus without tags&quot; </pre>
+</div>
+    </div>
+    
+  </div>
+</div>
+</div>
+
+<!-- Bottom Navigation Bar -->
+<nav class="slide-nav">
+  <button class="nav-btn" id="prevBtn" disabled>&larr; Previous</button>
+  <span class="slide-counter" id="slideCounter">1 / 16</span>
+  <button class="nav-btn primary" id="nextBtn">Next &rarr;</button>
+</nav>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+
+/* ══════════════════════════════════════════
+   SLIDE ENGINE
+══════════════════════════════════════════ */
+var slides = document.querySelectorAll('.slide');
+var TOTAL = slides.length;
+var current = 0;
+var prevBtn = document.getElementById('prevBtn');
+var nextBtn = document.getElementById('nextBtn');
+var counter = document.getElementById('slideCounter');
+var progressBar = document.getElementById('progressBar');
+var tocSidebar = document.getElementById('tocSidebar');
+var sidebarItems = tocSidebar.querySelectorAll('.toc-item');
+
+function showSlide(n) {
+  slides[current].classList.remove('active');
+  current = Math.max(0, Math.min(TOTAL - 1, n));
+  slides[current].classList.add('active');
+  slides[current].scrollTop = 0;
+  prevBtn.disabled = current === 0;
+  nextBtn.disabled = current === TOTAL - 1;
+  counter.textContent = (current + 1) + ' / ' + TOTAL;
+  progressBar.style.width = ((current / (TOTAL - 1)) * 100) + '%';
+  sidebarItems.forEach(function (item, i) {
+    item.classList.toggle('active', i === current);
+  });
+  var activeItem = tocSidebar.querySelector('.toc-item.active');
+  if (activeItem) activeItem.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  /* Auto-expand matching subsection */
+  document.querySelectorAll('.toc-sub-items').forEach(function (sub) {
+    var phaseNum = sub.getAttribute('data-phase-sub');
+    if (parseInt(phaseNum) === current) {
+      sub.classList.add('expanded');
+      var arrow = document.querySelector('.toc-expand[data-phase="' + phaseNum + '"]');
+      if (arrow) arrow.classList.add('open');
+    }
+  });
+  var allTocItems = tocSidebar.querySelectorAll('.toc-item');
+  allTocItems.forEach(function (item) {
+    var slideNum = parseInt(item.getAttribute('data-slide'));
+    item.classList.toggle('active', slideNum === current);
+  });
+}
+window.goSlide = function (n) { showSlide(n); };
+
+prevBtn.addEventListener('click', function () { showSlide(current - 1); });
+nextBtn.addEventListener('click', function () { showSlide(current + 1); });
+
+document.addEventListener('keydown', function (e) {
+  if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+  if (e.key === 'ArrowRight' || e.key === 'PageDown') { e.preventDefault(); showSlide(current + 1); }
+  else if (e.key === 'ArrowLeft' || e.key === 'PageUp') { e.preventDefault(); showSlide(current - 1); }
+  else if (e.key === 'Home') { e.preventDefault(); showSlide(0); }
+  else if (e.key === 'End') { e.preventDefault(); showSlide(TOTAL - 1); }
+});
+
+showSlide(0);
+
+/* ── Theme toggle ── */
+var themeBtn = document.getElementById('themeBtn');
+var themeLabel = document.getElementById('theme-label');
+var root = document.documentElement;
+var storedTheme = localStorage.getItem('theme');
+if (storedTheme) applyTheme(storedTheme);
+else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) applyTheme('dark');
+themeBtn.onclick = function () {
+  var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+  applyTheme(next); localStorage.setItem('theme', next);
+};
+function applyTheme(t) {
+  root.setAttribute('data-theme', t);
+  document.body.setAttribute('data-theme', t);
+  var d = t === 'dark';
+  themeBtn.setAttribute('aria-checked', String(d));
+  themeLabel.textContent = d ? 'Dark' : 'Light';
+}
+
+/* ══════════════════════════════════════════
+   REUSABLE ANIMATED SEQUENCE DIAGRAM ENGINE
+══════════════════════════════════════════ */
+function initSeqDiagram(cfg) {
+  var COL = cfg.colCenters;
+  var ACTORS = cfg.actors;
+  var STEPS = cfg.steps;
+
+  var msgContainer = document.getElementById(cfg.messagesId);
+  var seqBody = document.getElementById(cfg.bodyId);
+  var indicator = document.getElementById(cfg.indicatorId);
+  var explainCol = document.getElementById(cfg.explainColId);
+  var explainPanel = document.getElementById(cfg.explainId);
+  var explainNum = document.getElementById(cfg.exNumId);
+  var explainTitle = document.getElementById(cfg.exTitleId);
+  var explainDesc = document.getElementById(cfg.exDescId);
+  var explainFlow = document.getElementById(cfg.exFlowId);
+  var btnPlay = document.getElementById(cfg.playId);
+  var btnPrev = document.getElementById(cfg.prevId);
+  var btnNext = document.getElementById(cfg.nextId);
+  var btnReset = document.getElementById(cfg.resetId);
+  var btnShowAll = document.getElementById(cfg.showAllId);
+
+  var currentStep = 0;
+  var playInterval = null;
+  var ROW_HEIGHT = 34;
+  var allContainer = null;
+
+  function buildMessages() {
+    msgContainer.innerHTML = '';
+    STEPS.forEach(function (s, i) {
+      var row = document.createElement('div');
+      row.className = 'seq-msg';
+      row.setAttribute('data-step', i + 1);
+      row.style.height = ROW_HEIGHT + 'px';
+      row.style.position = 'relative';
+
+      var num = document.createElement('div');
+      num.className = 'seq-msg-num';
+      num.textContent = i + 1;
+      row.appendChild(num);
+
+      var arrow = document.createElement('div');
+      arrow.className = 'seq-arrow';
+      var fromPct = COL[s.from];
+      var toPct = COL[s.to];
+      var isReverse = s.to < s.from;
+      var isSelf = s.from === s.to;
+
+      if (isSelf) {
+        arrow.style.left = fromPct + '%';
+        arrow.style.width = '8%';
+        arrow.style.borderTop = '2px solid var(--connector)';
+        arrow.style.borderRight = '2px solid var(--connector)';
+        arrow.style.borderBottom = '2px solid var(--connector)';
+        arrow.style.height = '16px';
+        arrow.style.borderRadius = '0 4px 4px 0';
+        arrow.style.background = 'none';
+        arrow.style.top = '6px';
+      } else if (isReverse) {
+        arrow.classList.add('reverse');
+        arrow.style.left = toPct + '%';
+        arrow.style.width = (fromPct - toPct) + '%';
+      } else {
+        arrow.style.left = fromPct + '%';
+        arrow.style.width = (toPct - fromPct) + '%';
+      }
+
+      var lbl = document.createElement('div');
+      lbl.className = 'seq-arrow-label';
+      lbl.textContent = s.label;
+      if (isSelf) {
+        lbl.style.left = (fromPct + 10) + '%';
+        lbl.style.transform = 'translateX(-50%)';
+        lbl.style.top = '4px';
+      }
+      arrow.appendChild(lbl);
+      row.appendChild(arrow);
+      msgContainer.appendChild(row);
+    });
+    seqBody.style.minHeight = (STEPS.length * ROW_HEIGHT + 20) + 'px';
+  }
+
+  function updateExplain(stepIdx) {
+    /* Remove any leftover More Details button */
+    var oldBtn = explainDesc.parentNode.querySelector('.seq-more-btn');
+    if (oldBtn) oldBtn.remove();
+    if (stepIdx <= 0) {
+      explainNum.textContent = 'Getting Started';
+      explainTitle.textContent = 'Click Play or Next to begin';
+      explainDesc.innerHTML = cfg.defaultDesc;
+      explainFlow.innerHTML = '';
+      return;
+    }
+    var s = STEPS[stepIdx - 1];
+    explainNum.textContent = 'Step ' + stepIdx + ' of ' + STEPS.length;
+    explainTitle.textContent = s.title;
+    explainDesc.innerHTML = s.desc;
+    explainFlow.innerHTML =
+      '<span class="from">' + ACTORS[s.from] + '</span>' +
+      '<span class="arrow-icon">' + (s.from === s.to ? ' &#8635; ' : (s.to > s.from ? ' &#8594; ' : ' &#8592; ')) + '</span>' +
+      '<span class="to">' + ACTORS[s.to] + '</span>';
+    /* More Details button */
+    var existingBtn = explainDesc.parentNode.querySelector('.seq-more-btn');
+    if (existingBtn) existingBtn.remove();
+    if (s.details) {
+      var moreBtn = document.createElement('button');
+      moreBtn.className = 'seq-more-btn';
+      moreBtn.textContent = 'More Details';
+      moreBtn.onclick = function () { window.showSeqDetailModal(s.title, s.details); };
+      explainDesc.parentNode.insertBefore(moreBtn, explainFlow);
+    }
+  }
+
+  function hideAllExplains() {
+    if (allContainer) { allContainer.remove(); allContainer = null; }
+    explainPanel.style.display = '';
+  }
+
+  function showAllExplains() {
+    explainPanel.style.display = 'none';
+    if (allContainer) allContainer.remove();
+    allContainer = document.createElement('div');
+    allContainer.className = 'seq-explain-all';
+    STEPS.forEach(function (s, i) {
+      var item = document.createElement('div');
+      item.className = 'seq-explain-all-item';
+      var arrowHtml = s.from === s.to ? ' &#8635; ' : (s.to > s.from ? ' &#8594; ' : ' &#8592; ');
+      item.innerHTML =
+        '<div class="step-num">Step ' + (i + 1) + ' of ' + STEPS.length + '</div>' +
+        '<div class="step-title">' + s.title + '</div>' +
+        '<div class="step-desc">' + s.desc + '</div>' +
+        (s.details ? '' : '') +
+        '<div class="step-flow">' +
+          '<span class="from">' + ACTORS[s.from] + '</span>' +
+          '<span class="arrow-icon">' + arrowHtml + '</span>' +
+          '<span class="to">' + ACTORS[s.to] + '</span>' +
+        '</div>';
+      if (s.details) {
+        var moreBtn = document.createElement('button');
+        moreBtn.className = 'seq-more-btn';
+        moreBtn.textContent = 'More Details';
+        (function(title, details) {
+          moreBtn.onclick = function () { window.showSeqDetailModal(title, details); };
+        })(s.title, s.details);
+        var flow = item.querySelector('.step-flow');
+        item.insertBefore(moreBtn, flow);
+      }
+      allContainer.appendChild(item);
+    });
+    explainCol.appendChild(allContainer);
+  }
+
+  function goToStep(n) {
+    hideAllExplains();
+    currentStep = Math.max(0, Math.min(STEPS.length, n));
+    var rows = msgContainer.querySelectorAll('.seq-msg');
+    rows.forEach(function (row, i) {
+      row.classList.remove('active', 'visible');
+      if (i < currentStep) row.classList.add('visible');
+      if (i === currentStep - 1) row.classList.add('active');
+    });
+    indicator.textContent = 'Step ' + currentStep + ' / ' + STEPS.length;
+    btnPrev.disabled = currentStep <= 0;
+    btnNext.disabled = currentStep >= STEPS.length;
+    updateExplain(currentStep);
+    if (currentStep > 0) {
+      var activeRow = msgContainer.querySelector('.seq-msg.active');
+      if (activeRow) activeRow.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+  }
+
+  function showAll() {
+    stopPlay();
+    currentStep = STEPS.length;
+    var rows = msgContainer.querySelectorAll('.seq-msg');
+    rows.forEach(function (row) { row.classList.add('visible'); row.classList.remove('active'); });
+    rows[rows.length - 1].classList.add('active');
+    indicator.textContent = 'All ' + STEPS.length + ' steps shown';
+    btnPrev.disabled = false;
+    btnNext.disabled = true;
+    showAllExplains();
+  }
+
+  function stopPlay() {
+    if (playInterval) { clearInterval(playInterval); playInterval = null; }
+    btnPlay.innerHTML = '&#9654; Play';
+  }
+
+  function startPlay() {
+    if (currentStep >= STEPS.length) goToStep(0);
+    btnPlay.innerHTML = '&#9646;&#9646; Pause';
+    playInterval = setInterval(function () {
+      if (currentStep >= STEPS.length) { stopPlay(); return; }
+      goToStep(currentStep + 1);
+    }, 2200);
+  }
+
+  btnPlay.addEventListener('click', function () { playInterval ? stopPlay() : startPlay(); });
+  btnNext.addEventListener('click', function () { stopPlay(); goToStep(currentStep + 1); });
+  btnPrev.addEventListener('click', function () { stopPlay(); goToStep(currentStep - 1); });
+  btnReset.addEventListener('click', function () { stopPlay(); goToStep(0); });
+  btnShowAll.addEventListener('click', showAll);
+
+  buildMessages();
+  showAll();
+}
+
+/* expose for generated diagram init blocks */
+window.initSeqDiagram = initSeqDiagram;
+
+/* ══════════════════════════════════════════
+   PAGE WIDTH TOGGLE
+══════════════════════════════════════════ */
+var widthBtn = document.getElementById('widthBtn');
+var isWide = localStorage.getItem('pageWidth') === 'wide';
+if (isWide) applyWidth(true);
+widthBtn.addEventListener('click', function () {
+  isWide = !isWide;
+  applyWidth(isWide);
+  localStorage.setItem('pageWidth', isWide ? 'wide' : 'normal');
+});
+function applyWidth(wide) {
+  document.querySelectorAll('.slide-inner').forEach(function (el) {
+    el.classList.toggle('wide', wide);
+  });
+  widthBtn.textContent = wide ? '\u2194 Normal' : '\u2194 Wide';
+  widthBtn.classList.toggle('active', wide);
+}
+
+/* ══════════════════════════════════════════
+   COLLAPSIBLE SIDEBAR
+══════════════════════════════════════════ */
+var sidebarBtn = document.getElementById('sidebarToggle');
+var isCollapsed = localStorage.getItem('sidebarCollapsed') === 'true';
+if (isCollapsed) document.body.classList.add('sidebar-collapsed');
+sidebarBtn.addEventListener('click', function () {
+  isCollapsed = !isCollapsed;
+  document.body.classList.toggle('sidebar-collapsed', isCollapsed);
+  localStorage.setItem('sidebarCollapsed', String(isCollapsed));
+});
+
+/* ══════════════════════════════════════════
+   TOC SUBSECTION EXPAND / COLLAPSE
+══════════════════════════════════════════ */
+document.querySelectorAll('.toc-expand').forEach(function (arrow) {
+  arrow.addEventListener('click', function (e) {
+    e.stopPropagation();
+    var phaseNum = this.getAttribute('data-phase');
+    var subItems = document.querySelector('.toc-sub-items[data-phase-sub="' + phaseNum + '"]');
+    if (subItems) {
+      subItems.classList.toggle('expanded');
+      this.classList.toggle('open');
+    }
+  });
+});
+
+/* Navigate to slide + scroll to step */
+window.goSlideStep = function (slideN, stepId) {
+  showSlide(slideN);
+  setTimeout(function () {
+    var el = document.getElementById(stepId);
+    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }, 100);
+};
+
+/* ══════════════════════════════════════════
+   STEP DETAIL MODAL
+══════════════════════════════════════════ */
+var stepModalOverlay = document.getElementById('stepModal');
+var stepModalBody = document.getElementById('stepModalBody');
+var stepModalTitle = document.getElementById('stepModalTitle');
+var stepModalNav = document.getElementById('stepModalNav');
+var stepModalClose = document.getElementById('stepModalClose');
+
+window.showStepModal = function (stepId, slideN) {
+  var src = document.getElementById(stepId);
+  if (!src) return;
+  stepModalBody.innerHTML = src.innerHTML;
+  var titleEl = src.querySelector('.step-section-title');
+  stepModalTitle.textContent = titleEl ? titleEl.textContent : 'Step Details';
+  stepModalNav.style.display = 'inline';
+  stepModalNav.onclick = function () { stepModalOverlay.classList.remove('open'); goSlideStep(slideN, stepId); };
+  stepModalOverlay.classList.add('open');
+};
+window.showSeqDetailModal = function (title, detailsHtml) {
+  stepModalTitle.textContent = title;
+  stepModalBody.innerHTML = detailsHtml;
+  stepModalNav.style.display = 'none';
+  stepModalOverlay.classList.add('open');
+};
+stepModalClose.addEventListener('click', function () { stepModalOverlay.classList.remove('open'); });
+stepModalOverlay.addEventListener('click', function (e) { if (e.target === stepModalOverlay) stepModalOverlay.classList.remove('open'); });
+document.addEventListener('keydown', function (e) { if (e.key === 'Escape') stepModalOverlay.classList.remove('open'); });
+
+
+initSeqDiagram({
+  colCenters: [12.5, 25.0, 37.5, 50.0, 62.5, 75.0, 87.5],
+  actors: ["User", "SPA", "FastAPI", "OpenAI", "Engine", "Azure", "Blob"],
+  defaultDesc: 'This animated sequence shows the complete end-to-end flow from user click through evidence collection, evaluation, report generation, and delivery.',
+  messagesId: 'reportFlowMessages', bodyId: 'reportFlowBody', indicatorId: 'reportFlowIndicator',
+  explainColId: 'reportFlowExplainCol', explainId: 'reportFlowExplain',
+  exNumId: 'reportFlowExNum', exTitleId: 'reportFlowExTitle', exDescId: 'reportFlowExDesc', exFlowId: 'reportFlowExFlow',
+  playId: 'reportFlowPlay', prevId: 'reportFlowPrev', nextId: 'reportFlowNext', resetId: 'reportFlowReset', showAllId: 'reportFlowShowAll',
+  steps: [
+    { from: 0, to: 1, label: 'Run Assessment', title: '1. User Initiates Assessment', desc: 'User types a request like <em>\'Run PostureIQ assessment against FedRAMP and NIST 800-53\'</em> in the chat panel and clicks Send.', details: '<p>The chat interface accepts natural language. The user can specify:</p><ul><li>Which engine to run (PostureIQ, Data Security, Risk, etc.)</li><li>Which frameworks to evaluate against</li><li>Specific focus areas or subscriptions</li></ul><p>The SPA captures the message and prepares to send it along with pre-acquired OAuth tokens.</p>' },    { from: 1, to: 1, label: 'MSAL acquireToken', title: '2. Token Acquisition via MSAL.js', desc: 'SPA silently acquires two OAuth tokens via MSAL.js — one for <code>Microsoft Graph</code> and one for <code>Azure Management</code>.', details: '<p>Two separate <code>acquireTokenSilent()</code> calls:</p><ul><li><strong>Graph token</strong>: scopes = <code>User.Read, Directory.Read.All, Policy.Read.All, RoleManagement.Read.All, AuditLog.Read.All</code></li><li><strong>ARM token</strong>: scope = <code>https://management.azure.com/user_impersonation</code></li></ul><p>In Teams: uses Nested App Auth (NAA) via <code>createNestablePublicClientApplication()</code> for cookie-less token brokering.</p><p>Silent token refresh succeeds as long as the user has an active SSO session. Falls back to popup on failure.</p>' },    { from: 1, to: 2, label: 'POST /chat (SSE)', title: '3. SSE Request to FastAPI', desc: 'SPA opens a Server-Sent Events connection to <code>POST /chat</code>, sending the user message plus both OAuth tokens in the request body.', details: '<p>Request body:</p><pre style=\'font-size:11px;background:#1e1e1e;color:#d4d4d4;padding:8px;border-radius:4px;\'>{"message": "Run PostureIQ against FedRAMP",\n "graph_token": "eyJ0eXAi...",\n "arm_token": "eyJ0eXAi...",\n "page": "SecurityComplianceAssessment",\n "conversation_id": "abc-123"}</pre><p>The <code>page</code> field determines which tools are available (page-level tool isolation). The <code>conversation_id</code> enables session state tracking.</p>' },    { from: 2, to: 2, label: 'Validate + Build Context', title: '4. Request Validation & Context Setup', desc: 'FastAPI validates tokens, extracts tenant ID from ARM JWT <code>tid</code> claim, creates <code>UserTokenCredential</code>, builds session context, and applies page-level tool isolation.', details: '<p>Steps performed:</p><ol><li>Decode ARM JWT → extract <code>tid</code> (tenant ID), <code>oid</code> (user ID)</li><li>Create <code>UserTokenCredential</code> wrapping both tokens</li><li>Set <code>_request_creds</code> context variable for downstream collectors</li><li>Load session state (previous results if any)</li><li>Build tool schema subset based on <code>PAGE_ALLOWED_TOOLS[page]</code></li><li>Strip already-completed assessment tools from schema (session-duplicate guard)</li><li>Inject <code>SYSTEM_PROMPT</code> + session context summary into messages</li></ol>' },    { from: 2, to: 3, label: 'Chat Completion + Tools', title: '5. OpenAI Function-Calling Request', desc: 'FastAPI sends chat completion request to Azure OpenAI with the SYSTEM_PROMPT, user message, and filtered tool schemas. Uses <code>gpt-4.1</code> primary model.', details: '<p>The request includes:</p><ul><li><code>SYSTEM_PROMPT</code> (~2000 tokens) defining PostureIQ\'s persona, capabilities, and output formatting rules</li><li>Session context summary (existing results, if any)</li><li>User message</li><li>14 tool schemas (filtered by page + session state)</li></ul><p>On <code>RateLimitError</code>: automatically falls back to <code>gpt-5.1</code>.<br>On <code>context_length_exceeded</code>: auto-trims to fit.</p>' },    { from: 3, to: 2, label: 'tool_call: run_postureiq', title: '6. LLM Returns Tool Call', desc: 'OpenAI responds with a <code>tool_calls</code> array — e.g., <code>run_postureiq_assessment({frameworks: [\'FedRAMP\', \'NIST-800-53\']})</code>. FastAPI dispatches via <code>TOOL_MAP</code>.' },    { from: 2, to: 4, label: 'Dispatch to Engine', title: '7. Assessment Engine Invocation', desc: 'The agent function runs <code>_auto_preflight()</code> to verify ARM/Graph access, then dispatches to the PostureIQ orchestrator which coordinates collectors → evaluators → reports.', details: '<p>Preflight checks:</p><ul><li>ARM: verify subscription list access</li><li>Graph: verify <code>Directory.Read.All</code> scope</li><li>Entra roles: verify Security Reader</li></ul><p>If permissions are missing, returns a clear error listing which permissions to grant — does NOT proceed with partial access.</p>' },    { from: 4, to: 5, label: '64 Async Collectors', title: '8. Evidence Collection from Azure & Entra', desc: '68 registered collectors run in parallel batches (Azure: 12 concurrent, Entra: 9 concurrent) using the user\'s delegated tokens. Each collector retries 3× with exponential backoff.', details: '<p>Collection phases:</p><ol><li><strong>Azure ARM collectors</strong> (49): resource inventory, compute, network, storage, databases, security, policy, diagnostics, monitoring, AI services</li><li><strong>Entra/Graph collectors</strong> (18): users, groups, roles, conditional access, PIM, risk policies, applications, workload identity, audit logs</li></ol><p>Each collector produces typed <code>EvidenceRecord</code> objects with deterministic UUID5 identifiers. Access-denied errors are captured gracefully — the assessment continues with available evidence.</p>' },    { from: 5, to: 4, label: '218 Evidence Types', title: '9. Evidence Returned & Indexed', desc: 'Azure ARM and MS Graph APIs return evidence data. The engine normalizes all records into 218 typed evidence types indexed by <code>EvidenceType</code> enum for O(1) lookup.' },    { from: 4, to: 4, label: 'Evaluate → Score → Paths', title: '10. Evaluation Pipeline', desc: '10 domain evaluators run 113 check functions against the evidence index. Findings are mapped to 525 framework controls, scored by severity × exploitability × blast_radius, and analyzed for 9 attack path patterns.', details: '<p>Pipeline stages:</p><ol><li><strong>Domain evaluation</strong>: 10 evaluators (access, identity, data_protection, logging, network, governance, incident_response, change_management, business_continuity, asset_management) run 113 check functions</li><li><strong>Cross-domain fallback</strong>: if primary domain returns <code>not_assessed</code>, tries the owning domain</li><li><strong>Framework mapping</strong>: each finding maps to controls across all selected frameworks</li><li><strong>Risk scoring</strong>: <code>severity_weight × exploitability_factor × blast_radius → RiskScore 0–100</code></li><li><strong>Attack paths</strong>: 9 cross-domain pattern detectors (privilege escalation, lateral movement, CA bypass, etc.)</li><li><strong>Priority ranking</strong>: <code>ROI = risk / √effort</code> → identifies quick wins</li><li><strong>AI fix recommendations</strong>: GPT generates remediation scripts for top-15 findings</li></ol>' },    { from: 4, to: 2, label: 'Findings + Reports', title: '11. Reports Generated & Returned', desc: '19 report generators produce HTML dashboard, PDF, Excel, JSON, Markdown, SARIF, and OSCAL outputs. All files written to <code>/agent/output/{timestamp}/</code> with SHA-256 integrity hashes.' },    { from: 2, to: 6, label: 'Upload Reports', title: '12. Persist to Azure Blob Storage', desc: 'The entire output directory is uploaded to <code>esiqnewstorage/reports/{tenant_id}/{timestamp}/</code> via <code>blob_store.py</code>. Assessment metadata saved to history index.' },    { from: 2, to: 3, label: 'Tool result → Summary', title: '13. LLM Generates Response Summary', desc: 'FastAPI sends the tool execution result back to OpenAI. The LLM generates a user-friendly Markdown summary with compliance scores, key findings, and download links.' },    { from: 3, to: 2, label: 'Markdown response', title: '14. LLM Returns Final Response', desc: 'OpenAI returns a formatted Markdown response summarizing the assessment results, including scores, top findings, and clickable report download links.' },    { from: 2, to: 1, label: 'SSE → Render', title: '15. Streamed to User Browser', desc: 'FastAPI streams the response token-by-token via SSE. The SPA renders Markdown in real-time, displays follow-up chip buttons for drill-down, and shows report download links.' }
+  ]
+});
+initSeqDiagram({
+  colCenters: [16.7, 33.3, 50.0, 66.7, 83.3],
+  actors: ["Admin", "deploy.ps1", "Azure CLI", "Azure ARM", "Container"],
+  defaultDesc: 'This animated sequence shows the 16-step idempotent deployment from bare Azure subscription to a running PostureIQ instance.',
+  messagesId: 'infraFlowMessages', bodyId: 'infraFlowBody', indicatorId: 'infraFlowIndicator',
+  explainColId: 'infraFlowExplainCol', explainId: 'infraFlowExplain',
+  exNumId: 'infraFlowExNum', exTitleId: 'infraFlowExTitle', exDescId: 'infraFlowExDesc', exFlowId: 'infraFlowExFlow',
+  playId: 'infraFlowPlay', prevId: 'infraFlowPrev', nextId: 'infraFlowNext', resetId: 'infraFlowReset', showAllId: 'infraFlowShowAll',
+  steps: [
+    { from: 0, to: 1, label: './deploy.ps1', title: '1. Admin Executes Deployment Script', desc: 'Admin runs <code>deploy.ps1</code> with optional parameters: <code>$BaseName</code> (default: ESIQNew), <code>$Location</code> (swedencentral), <code>$PrimaryModel</code> (gpt-4.1), <code>$FallbackModel</code> (gpt-5.1).', details: '<p>All resource names are derived from <code>$BaseName</code>:</p><pre style=\'font-size:11px;background:#1e1e1e;color:#d4d4d4;padding:8px;border-radius:4px;\'>$RG = "ESIQNew-RG"\n$AIName = "ESIQNew-AI"\n$StorageName = "esiqnewstorage"\n$KVName = "ESIQNew-kv"\n$ACRName = "esiqnewacr"\n$IDName = "ESIQNew-identity"\n$EnvName = "ESIQNew-env"\n$AppName = "esiqnew-agent"</pre>' },    { from: 1, to: 2, label: 'az group create', title: '2. Create Resource Group', desc: 'Creates <code>ESIQNew-RG</code> in <code>swedencentral</code>. All subsequent resources are scoped to this group.' },    { from: 1, to: 3, label: 'REST PUT AIServices', title: '3. Create AI Foundry Resource + Project', desc: 'Creates <code>ESIQNew-AI</code> (CognitiveServices/accounts, kind=AIServices, S0) with custom domain, then creates <code>ESIQNew-project</code> as a child project via ARM REST API.', details: '<p>Two-phase creation:</p><ol><li><code>az cognitiveservices account create --kind AIServices --sku S0</code></li><li>ARM REST PATCH to enable <code>allowProjectManagement: true</code></li><li>ARM REST PUT to create project: <code>{AIId}/projects/ESIQNew-project</code></li></ol><p>The project appears in the AI Foundry portal at <code>ai.azure.com</code>. On startup, the agent self-registers via the Assistants API.</p>' },    { from: 1, to: 2, label: 'Deploy Models', title: '4. Deploy GPT-4.1 and GPT-5.1 Models', desc: 'Deploys two OpenAI models under the AI resource: <code>gpt-4.1</code> (primary, 30K TPM) and <code>gpt-5.1</code> (fallback, 30K TPM), both Standard SKU.' },    { from: 1, to: 2, label: 'Create Storage + KV + Logs', title: '5. Create Supporting Resources', desc: 'Creates Storage Account (<code>esiqnewstorage</code>, Standard_LRS) with <code>reports</code> blob container, Key Vault (<code>ESIQNew-kv</code>, RBAC auth), Log Analytics workspace, and Application Insights.' },    { from: 1, to: 2, label: 'Create ACR + Identity', title: '6. Create Container Registry & Managed Identity', desc: 'Creates <code>esiqnewacr</code> (Basic SKU) for container images and <code>ESIQNew-identity</code> (user-assigned managed identity) for workload authentication.' },    { from: 2, to: 3, label: 'RBAC + Graph API', title: '7. Assign RBAC Roles & Graph Permissions', desc: 'Assigns 6 Azure RBAC roles to the managed identity and configures MS Graph application permissions (8 scopes). Graph permissions require Global Admin consent.', details: '<p><strong>Azure RBAC roles:</strong></p><ul><li><code>AcrPull</code> → Container Registry</li><li><code>Reader</code> → Subscription</li><li><code>Security Reader</code> → Subscription</li><li><code>Cognitive Services OpenAI User</code> → AI resource</li><li><code>Azure AI Developer</code> → AI resource</li><li><code>Storage Blob Data Contributor</code> → Storage Account</li></ul><p><strong>MS Graph API permissions (Application):</strong></p><ul><li><code>Directory.Read.All</code>, <code>Policy.Read.All</code>, <code>RoleManagement.Read.All</code></li><li><code>User.Read.All</code>, <code>AuditLog.Read.All</code>, <code>UserAuthenticationMethod.Read.All</code></li><li><code>IdentityRiskyUser.Read.All</code>, <code>Application.Read.All</code></li></ul>' },    { from: 1, to: 2, label: 'Create CA Env + App', title: '8. Create Container Apps Environment & Application', desc: 'Creates Container Apps Environment (<code>ESIQNew-env</code>) in <code>northeurope</code> linked to Log Analytics, then creates the Container App (<code>esiqnew-agent</code>) with 1 vCPU, 2 GiB RAM, port 8088, external ingress.', details: '<p>Container App configuration:</p><pre style=\'font-size:11px;background:#1e1e1e;color:#d4d4d4;padding:8px;border-radius:4px;\'>cpu: 1.0, memory: 2Gi\ntargetPort: 8088\ningress: external (HTTPS)\nminReplicas: 1, maxReplicas: 1\nidentity: ESIQNew-identity\nregistry: esiqnewacr.azurecr.io</pre><p>Environment variables set: <code>AZURE_OPENAI_ENDPOINT</code>, <code>AZURE_OPENAI_DEPLOYMENT</code>, <code>FOUNDRY_PROJECT_ENDPOINT</code>, <code>AZURE_CLIENT_ID</code>, <code>AZURE_TENANT_ID</code>, <code>REPORT_STORAGE_ACCOUNT</code>, etc.</p>' },    { from: 2, to: 4, label: 'Build + Deploy Image', title: '9. ACR Build & Container Deployment', desc: 'Builds the Docker image via ACR Tasks (<code>az acr build</code>) and deploys to the Container App. The Dockerfile uses multi-stage build with non-root <code>appuser</code>.' },    { from: 1, to: 2, label: 'Register Entra App', title: '10. Create App Registration for Dashboard SSO', desc: 'Creates <code>ESIQNew-Dashboard</code> Entra app registration with SPA platform, multi-org audience, redirect URIs for localhost and the Container App FQDN. Configures <code>access_as_user</code> API scope.' },    { from: 1, to: 4, label: 'Patch + Rebuild', title: '11. Patch Webapp with MSAL Config & Rebuild', desc: 'Replaces <code>YOUR-CLIENT-ID-HERE</code> and <code>YOUR-TENANT-ID-HERE</code> placeholders in webapp HTML files with actual values, then rebuilds and redeploys the container image.' },    { from: 4, to: 4, label: 'Startup → Register Agent', title: '12. Container Starts & Registers Foundry Agent', desc: 'On startup, <code>api.py</code> creates an <code>AsyncAzureOpenAI</code> client and registers/finds an OpenAI Assistant named <code>\'EnterpriseSecurityIQ\'</code> via the Assistants API — making it visible in the AI Foundry portal.' }
+  ]
+});
+
+}); /* end DOMContentLoaded */
+
+</script>
+
+</body>
+</html>

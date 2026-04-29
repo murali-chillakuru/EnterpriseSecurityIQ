@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Report Lifecycle — PostureIQ Technical Docs</title>
+  <link rel="stylesheet" href="../docs/theme.css">
+  <link rel="stylesheet" href="../docs/print.css">
+  <script src="../docs/theme.js"></script>
+</head>
+<body>
+
+<header class="doc-header">
+  <a href="index-of-tech-docs.html" class="doc-header-brand">
+    <svg viewBox="0 0 28 28" fill="none"><rect width="28" height="28" rx="6" fill="var(--bg-accent)"/><path d="M8 8h4v12H8V8zm8 4h4v8h-4v-8z" fill="var(--text-on-accent)"/></svg>
+    <span>PostureIQ Technical Docs</span>
+  </a>
+  <nav class="doc-header-nav">
+    <a href="index-of-tech-docs.html">Home</a>
+    <a href="01-infrastructure-overview.html">Infrastructure</a>
+    <a href="02-assessment-guide.html">Assessments</a>
+    <a href="03-report-lifecycle.html" class="active">Reports</a>
+    <a href="04-manual-setup-guide.html">Setup</a>
+    <a href="05-authentication-flow.html">Auth</a>
+    <a href="06-api-reference.html">API</a>
+    <a href="07-teams-integration.html">Teams</a>
+    <a href="08-troubleshooting.html">Troubleshoot</a>
+    <button class="theme-toggle" aria-label="Toggle theme"></button>
+  </nav>
+</header>
+
+<main class="doc-container">
+<h1 id="report-lifecycle">Report Lifecycle</h1>
+<blockquote><p>How reports are created, formatted, stored, and accessed.</p></blockquote>
+<p><strong>Navigation:</strong> <a href="index-of-tech-docs.html">Index</a> · <a href="01-infrastructure-overview.html">Infrastructure</a> · <a href="02-assessment-guide.html">Assessments</a> · <strong>Reports</strong> · <a href="04-manual-setup-guide.html">Manual Setup</a> · <a href="05-authentication-flow.html">Authentication</a> · <a href="06-api-reference.html">API Reference</a> · <a href="07-teams-integration.html">Teams Integration</a> · <a href="08-troubleshooting.html">Troubleshooting</a></p>
+<hr>
+<h2 id="report-formats">Report Formats</h2>
+<p>Every assessment can produce reports in multiple formats:</p>
+<table>
+<thead><tr><th>Format</th><th>Extension</th><th>Library</th><th>Purpose</th></tr></thead>
+<tbody>
+<tr><td>HTML</td><td><code>.html</code></td><td>Built-in (string templates)</td><td>Interactive browser viewing</td></tr>
+<tr><td>PDF</td><td><code>.pdf</code></td><td>Playwright (headless Chromium)</td><td>Print-ready, offline sharing</td></tr>
+<tr><td>Excel</td><td><code>.xlsx</code></td><td>openpyxl</td><td>Tabular analysis, pivot tables</td></tr>
+<tr><td>JSON</td><td><code>.json</code></td><td>Built-in</td><td>Machine-readable results</td></tr>
+<tr><td>OSCAL</td><td><code>.json</code></td><td>Custom (NIST OSCAL 1.1.2)</td><td>US government compliance exchange</td></tr>
+<tr><td>SARIF</td><td><code>.sarif</code></td><td>Custom (SARIF 2.1.0)</td><td>GitHub Advanced Security integration</td></tr>
+<tr><td>Markdown</td><td><code>.md</code></td><td>Built-in</td><td>Documentation, wiki embedding</td></tr>
+<tr><td>ZIP</td><td><code>.zip</code></td><td>Built-in</td><td>Bundle of all reports for a run</td></tr>
+</tbody></table>
+<hr>
+<h2 id="report-generation-pipeline">Report Generation Pipeline</h2>
+<pre><code>Assessment completes (results in memory)
+       │
+       ├──► HTML Report Generator
+       │      └── Builds styled HTML with Fluent 2 theme
+       │
+       ├──► PDF Export (Playwright)
+       │      └── Opens HTML in headless Chromium → prints to PDF
+       │
+       ├──► Excel Export (openpyxl)
+       │      ├── Sheet 1: Compliance Report (all controls)
+       │      ├── Sheet 2: Gap Analysis (non-compliant only)
+       │      └── Sheet 3: Executive Summary (metrics)
+       │
+       ├──► JSON Export
+       │      └── Raw assessment results
+       │
+       ├──► OSCAL Export (if PostureIQ)
+       │      └── NIST OSCAL Assessment Results 1.1.2
+       │
+       ├──► SARIF Export (if PostureIQ)
+       │      └── SARIF 2.1.0 for GitHub Advanced Security
+       │
+       ├──► Markdown Report
+       │      └── Text-based report for docs/wikis
+       │
+       └──► ZIP Bundle
+              └── All of the above in a single download</code></pre>
+<hr>
+<h2 id="report-modules">Report Modules</h2>
+<p>There are two sets of report generators, one generic and one PostureIQ-specific:</p>
+<h3 id="generic-reports-aiagent-app-reports-27-files">Generic Reports (<code>AIAgent/app/reports/</code> — 27 files)</h3>
+<table>
+<thead><tr><th>Module</th><th>What It Generates</th></tr></thead>
+<tbody>
+<tr><td><code>ai_agent_security_report.py</code></td><td>AI Agent Security assessment HTML</td></tr>
+<tr><td><code>copilot_readiness_report.py</code></td><td>Copilot Readiness assessment HTML</td></tr>
+<tr><td><code>custom_report_builder.py</code></td><td>User-defined custom reports (HTML + Excel)</td></tr>
+<tr><td><code>data_exports.py</code></td><td>JSON data exports and evidence bundles</td></tr>
+<tr><td><code>data_security_report.py</code></td><td>Data Security assessment HTML</td></tr>
+<tr><td><code>delta_report.py</code></td><td>Run-to-run comparison (new/resolved findings)</td></tr>
+<tr><td><code>drift_report_html.py</code></td><td>Configuration drift detection HTML</td></tr>
+<tr><td><code>evidence_catalog.py</code></td><td>Full evidence listing with traceability</td></tr>
+<tr><td><code>excel_export.py</code></td><td>3-sheet Excel workbook</td></tr>
+<tr><td><code>executive_dashboard.py</code></td><td>High-level security metrics dashboard</td></tr>
+<tr><td><code>executive_summary.py</code></td><td>One-page executive summary</td></tr>
+<tr><td><code>gaps_report.py</code></td><td>Gap analysis (non-compliant controls)</td></tr>
+<tr><td><code>inventory.py</code></td><td>Azure resource inventory report</td></tr>
+<tr><td><code>markdown_report.py</code></td><td>Markdown text report</td></tr>
+<tr><td><code>master_report.py</code></td><td>Combined multi-framework report</td></tr>
+<tr><td><code>methodology_report.py</code></td><td>Assessment methodology documentation</td></tr>
+<tr><td><code>notifications.py</code></td><td>Alert/notification formatting</td></tr>
+<tr><td><code>oscal_export.py</code></td><td>NIST OSCAL 1.1.2 JSON</td></tr>
+<tr><td><code>pdf_export.py</code></td><td>HTML → PDF via Playwright Chromium</td></tr>
+<tr><td><code>rbac_report.py</code></td><td>RBAC hierarchy report (interactive tree)</td></tr>
+<tr><td><code>remediation.py</code></td><td>AI-generated fix scripts</td></tr>
+<tr><td><code>risk_report.py</code></td><td>Risk analysis HTML</td></tr>
+<tr><td><code>sarif_export.py</code></td><td>SARIF 2.1.0 for GitHub integration</td></tr>
+<tr><td><code>shared_theme.py</code></td><td>Common CSS/styling for all HTML reports</td></tr>
+<tr><td><code>trending.py</code></td><td>Historical score trending charts</td></tr>
+</tbody></table>
+<h3 id="postureiq-specific-reports-aiagent-app-postureiq-reports-20-files">PostureIQ-Specific Reports (<code>AIAgent/app/postureiq_reports/</code> — 20 files)</h3>
+<table>
+<thead><tr><th>Module</th><th>What It Generates</th></tr></thead>
+<tbody>
+<tr><td><code>data_exports.py</code></td><td>PostureIQ JSON data exports</td></tr>
+<tr><td><code>delta_report.py</code></td><td>PostureIQ run comparison</td></tr>
+<tr><td><code>drift_report_html.py</code></td><td>PostureIQ drift detection</td></tr>
+<tr><td><code>evidence_catalog.py</code></td><td>PostureIQ evidence listing</td></tr>
+<tr><td><code>excel_export.py</code></td><td>PostureIQ 3-sheet Excel</td></tr>
+<tr><td><code>executive_dashboard.py</code></td><td>PostureIQ executive dashboard</td></tr>
+<tr><td><code>html_report.py</code></td><td>Per-framework HTML report</td></tr>
+<tr><td><code>inventory.py</code></td><td>PostureIQ resource inventory</td></tr>
+<tr><td><code>json_report.py</code></td><td>PostureIQ JSON output</td></tr>
+<tr><td><code>markdown_report.py</code></td><td>PostureIQ Markdown report</td></tr>
+<tr><td><code>master_report.py</code></td><td>PostureIQ combined report</td></tr>
+<tr><td><code>methodology_report.py</code></td><td>PostureIQ methodology</td></tr>
+<tr><td><code>oscal_export.py</code></td><td>PostureIQ OSCAL output</td></tr>
+<tr><td><code>pdf_export.py</code></td><td>PostureIQ PDF via Playwright</td></tr>
+<tr><td><code>postureiq_report_html.py</code></td><td>Main PostureIQ HTML report</td></tr>
+<tr><td><code>postureiq_report_md.py</code></td><td>Main PostureIQ Markdown report</td></tr>
+<tr><td><code>remediation.py</code></td><td>PostureIQ AI fix scripts</td></tr>
+<tr><td><code>sarif_export.py</code></td><td>PostureIQ SARIF output</td></tr>
+<tr><td><code>shared_theme.py</code></td><td>PostureIQ CSS theme</td></tr>
+</tbody></table>
+<hr>
+<h2 id="pdf-generation-playwright">PDF Generation (Playwright)</h2>
+<p>PDF generation converts HTML reports to print-quality documents using headless Chromium:</p>
+<pre><code>HTML file on disk
+      │
+      ▼
+Playwright launches headless Chromium
+      │
+      ├── Navigate to file:///agent/output/.../report.html
+      │   (wait_until=&quot;networkidle&quot;)
+      │
+      ├── Expand all &lt;details&gt; elements (auto-open collapsed sections)
+      │
+      ├── Inject page-break CSS
+      │   (prevent breaking inside cards, tables, code blocks)
+      │
+      └── Print to PDF
+          ├── Format: A4 Landscape
+          ├── Margins: 12mm top/bottom, 10mm left/right
+          ├── Background: enabled (preserves colours)
+          └── Output: same directory, .pdf extension</code></pre>
+<p>Key details:</p>
+<ul>
+<li><strong>Batch mode</strong>: A single Chromium instance processes all HTML files in a directory, reusing the browser for efficiency</li>
+<li><strong>Fallback</strong>: If batch mode fails, each file is processed individually with a separate browser instance</li>
+<li><strong>Content preparation</strong>: <code><details></code> elements are expanded before printing so no content is hidden</li>
+<li><strong>Page breaks</strong>: CSS rules prevent breaking inside <code>.metric-card</code>, <code>.detail-panel</code>, <code>table</code>, <code>pre</code>, and <code>.gap-card</code></li>
+</ul>
+<hr>
+<h2 id="excel-generation-openpyxl">Excel Generation (openpyxl)</h2>
+<p>Each Excel workbook contains 3 sheets:</p>
+<h3 id="sheet-1-compliance-report">Sheet 1: Compliance Report</h3>
+<ul>
+<li>All control results sorted by severity (Critical → Low)</li>
+<li>Columns: ControlId, Title, Domain, Status, Severity, Priority, Compliance %, Description, Remediation, Evidence, Details</li>
+<li>Colour-coded status cells (red = non-compliant, green = compliant, orange = partial)</li>
+<li>Colour-coded severity cells (dark red = critical, red = high, orange = medium, yellow = low)</li>
+<li>Frozen header row, auto-filter enabled</li>
+</ul>
+<h3 id="sheet-2-gap-analysis">Sheet 2: Gap Analysis</h3>
+<ul>
+<li>Non-compliant and partial findings only</li>
+<li>Deduplicated by ControlId (first occurrence wins)</li>
+<li>Priority labels: P0 (Critical), P1 (High), P2 (Medium), P3 (Low)</li>
+</ul>
+<h3 id="sheet-3-executive-summary">Sheet 3: Executive Summary</h3>
+<ul>
+<li>Key metrics: overall score, total controls, passing controls, findings by severity</li>
+<li>Per-domain compliance scores</li>
+</ul>
+<hr>
+<h2 id="oscal-export">OSCAL Export</h2>
+<p>Generates a NIST OSCAL Assessment Results document (version 1.1.2) in JSON format.</p>
+<pre><code class="language-json">{
+  &quot;assessment-results&quot;: {
+    &quot;uuid&quot;: &quot;&lt;deterministic UUID5&gt;&quot;,
+    &quot;metadata&quot;: {
+      &quot;title&quot;: &quot;EnterpriseSecurityIQ Assessment&quot;,
+      &quot;oscal-version&quot;: &quot;1.1.2&quot;
+    },
+    &quot;results&quot;: [{
+      &quot;findings&quot;: [
+        {
+          &quot;uuid&quot;: &quot;&lt;UUID5 from control_id&gt;&quot;,
+          &quot;title&quot;: &quot;MFA Not Enforced&quot;,
+          &quot;target&quot;: {
+            &quot;status&quot;: { &quot;state&quot;: &quot;not-satisfied&quot; }
+          }
+        }
+      ],
+      &quot;observations&quot;: [
+        {
+          &quot;uuid&quot;: &quot;&lt;UUID5 from finding key&gt;&quot;,
+          &quot;props&quot;: [
+            { &quot;name&quot;: &quot;severity&quot;, &quot;value&quot;: &quot;high&quot; },
+            { &quot;name&quot;: &quot;resource&quot;, &quot;value&quot;: &quot;/subscriptions/.../...&quot; }
+          ]
+        }
+      ]
+    }]
+  }
+}</code></pre>
+<p>Status mapping: <code>compliant→satisfied</code>, <code>non_compliant→not-satisfied</code>, <code>partial→other</code>.</p>
+<p><strong>Use case:</strong> Importing results into GRC platforms (Governance, Risk, Compliance) that support OSCAL.</p>
+<hr>
+<h2 id="sarif-export">SARIF Export</h2>
+<p>Generates a SARIF 2.1.0 document for integration with GitHub Advanced Security and other SAST/DAST tools.</p>
+<pre><code class="language-json">{
+  &quot;$schema&quot;: &quot;https://raw.githubusercontent.com/oasis-tcs/sarif-spec/master/Schemata/sarif-schema-2.1.0.json&quot;,
+  &quot;version&quot;: &quot;2.1.0&quot;,
+  &quot;runs&quot;: [{
+    &quot;tool&quot;: {
+      &quot;driver&quot;: {
+        &quot;name&quot;: &quot;EnterpriseSecurityIQ&quot;,
+        &quot;version&quot;: &quot;1.0.0&quot;,
+        &quot;rules&quot;: [
+          {
+            &quot;id&quot;: &quot;NIST-AC-2&quot;,
+            &quot;shortDescription&quot;: { &quot;text&quot;: &quot;Account Management&quot; },
+            &quot;defaultConfiguration&quot;: { &quot;level&quot;: &quot;error&quot; }
+          }
+        ]
+      }
+    },
+    &quot;results&quot;: [
+      {
+        &quot;ruleId&quot;: &quot;NIST-AC-2&quot;,
+        &quot;level&quot;: &quot;error&quot;,
+        &quot;message&quot;: { &quot;text&quot;: &quot;Non-compliant: ...&quot; },
+        &quot;locations&quot;: [{
+          &quot;physicalLocation&quot;: {
+            &quot;artifactLocation&quot;: {
+              &quot;uri&quot;: &quot;/subscriptions/.../resourceGroups/...&quot;
+            }
+          }
+        }],
+        &quot;fixes&quot;: [{
+          &quot;description&quot;: { &quot;text&quot;: &quot;Remediation: ...&quot; }
+        }]
+      }
+    ]
+  }]
+}</code></pre>
+<p>Severity mapping: <code>critical/high→error</code>, <code>medium→warning</code>, <code>low→note</code>, <code>informational→none</code>.</p>
+<p><strong>Use case:</strong> Upload to GitHub Code Scanning, Azure DevOps, or any SARIF-compatible viewer.</p>
+<hr>
+<h2 id="storage-flow">Storage Flow</h2>
+<p>Reports follow a write-through pattern:</p>
+<pre><code>Report Generator
+      │
+      ├── 1. Write to local filesystem
+      │      /agent/output/{timestamp}/{framework}/
+      │
+      └── 2. Upload to Azure Blob Storage
+             esiqnewstorage/reports/{timestamp}/{framework}/
+
+User requests report:
+      │
+      ├── Check local filesystem first
+      │     └── Found? → Serve directly (fast)
+      │
+      └── Not found locally?
+            └── Download from blob → save locally → serve
+                  └── Not in blob? → 404</code></pre>
+<h3 id="directory-structure">Directory Structure</h3>
+<pre><code>output/
+  └── 20260422_023002_PM/
+       ├── FedRAMP/
+       │    ├── fedramp-compliance-report.html
+       │    ├── fedramp-compliance-report.pdf
+       │    ├── fedramp-compliance-report.xlsx
+       │    ├── fedramp-compliance.json
+       │    ├── fedramp-gap-analysis.html
+       │    ├── fedramp-executive-summary.html
+       │    ├── fedramp-remediation.html
+       │    └── fedramp-methodology.html
+       ├── CIS/
+       │    └── (same structure)
+       ├── data_exports/
+       │    ├── raw-evidence.json
+       │    ├── control-results.json
+       │    └── assessment-results.json
+       ├── compliance-results.sarif
+       ├── oscal-assessment-results.json
+       ├── drift-report.html
+       └── all-postureiq-reports.zip</code></pre>
+<h3 id="blob-storage-configuration">Blob Storage Configuration</h3>
+<table>
+<thead><tr><th>Setting</th><th>Value</th></tr></thead>
+<tbody>
+<tr><td>Account</td><td><code>esiqnewstorage</code></td></tr>
+<tr><td>Container</td><td><code>reports</code></td></tr>
+<tr><td>Auth</td><td>Managed Identity (<code>DefaultAzureCredential</code>)</td></tr>
+<tr><td>Access</td><td><code>publicNetworkAccess: Enabled</code> (no VNet)</td></tr>
+<tr><td>Shared Keys</td><td>Disabled (<code>allowSharedKeyAccess: false</code>)</td></tr>
+<tr><td>RBAC Role</td><td><code>Storage Blob Data Contributor</code> on managed identity</td></tr>
+</tbody></table>
+<hr>
+<h2 id="historical-tracking-and-delta-analysis">Historical Tracking and Delta Analysis</h2>
+<p>PostureIQ tracks assessment runs over time and can compare results between runs.</p>
+<h3 id="how-history-is-stored">How History Is Stored</h3>
+<pre><code>Blob Storage:
+  history/
+    {tenant-id}/
+      _index.json          ← Quick lookup: [{timestamp, score, frameworks}]
+      20260418_121037_AM/
+        postureiq-results.json
+      20260422_023002_PM/
+        postureiq-results.json</code></pre>
+<p>The <code>_index.json</code> file provides fast enumeration without listing all blobs.</p>
+<h3 id="delta-analysis">Delta Analysis</h3>
+<p>When comparing two runs, the system:</p>
+<ol>
+<li>Loads current and previous <code>assessment-results.json</code></li>
+<li>Keys each finding by <code>control_id|resource|check</code> (deterministic)</li>
+<li>Computes:</li>
+</ol>
+<p>   - <strong>Score change</strong>: +3.5% (improving) or -2.1% (declining)<br>
+   - <strong>New findings</strong>: Controls that were compliant before and are not now<br>
+   - <strong>Resolved findings</strong>: Controls that were non-compliant and are now fixed<br>
+   - <strong>Status changes</strong>: Controls that changed severity or status</p>
+<ol>
+<li>Generates a delta report section in Markdown</li>
+</ol>
+<h3 id="history-query-options">History Query Options</h3>
+<p>The <code>query_assessment_history</code> tool supports 4 actions:</p>
+<table>
+<thead><tr><th>Action</th><th>What It Does</th></tr></thead>
+<tbody>
+<tr><td><code>list</code></td><td>Shows a table of recent runs (timestamp, score, findings, frameworks)</td></tr>
+<tr><td><code>trend</code></td><td>Score trend over the last N runs with direction (improving/declining/stable)</td></tr>
+<tr><td><code>detail</code></td><td>Full summary for a specific historical timestamp</td></tr>
+<tr><td><code>compare</code></td><td>Side-by-side comparison of current vs. historical run</td></tr>
+</tbody></table>
+<hr>
+<h2 id="the-report-download-table">The Report Download Table</h2>
+<p>When an assessment completes, the chat interface displays a structured report table:</p>
+<pre><code>┌─────────────┬────────┬────────┬─────────┬─────────┐
+│ Framework   │  HTML  │  PDF   │  Excel  │  JSON   │
+├─────────────┼────────┼────────┼─────────┼─────────┤
+│ FedRAMP     │  📄 ↓  │  📄 ↓  │  📊 ↓   │  📋 ↓   │
+│ CIS         │  📄 ↓  │  📄 ↓  │  📊 ↓   │  📋 ↓   │
+│ NIST 800-53 │  📄 ↓  │  📄 ↓  │  📊 ↓   │  📋 ↓   │
+├─────────────┼────────┴────────┴─────────┴─────────┤
+│ Shared      │ Data Exports · Evidence · SARIF ·   │
+│             │ Drift Report · Remediation          │
+├─────────────┼─────────────────────────────────────┤
+│ Bundle      │ 📦 Download All (ZIP)                │
+└─────────────┴─────────────────────────────────────┘</code></pre>
+<p>This table is embedded in the agent's response as a <code><!--REPORT_TABLE:{json}--></code> HTML comment, parsed by the frontend JavaScript, and rendered as an interactive download grid.</p>
+<hr>
+<h2 id="custom-reports">Custom Reports</h2>
+<p>The <code>generate_custom_report</code> tool allows building focused reports on specific topics:</p>
+<pre><code>User: &quot;Generate a custom report on MFA enforcement across all frameworks&quot;
+
+Agent:
+  1. Extracts MFA-related findings from session state
+  2. Filters by topic keywords and optional severity filter
+  3. Builds HTML report with findings table
+  4. Builds Excel report with findings + summary sheets
+  5. Uploads to blob storage
+  6. Returns download links</code></pre>
+<hr>
+<p><strong>Next:</strong> <a href="04-manual-setup-guide.html">Manual Setup Guide →</a></p>
+</main>
+
+</body>
+</html>

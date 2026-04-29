@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PostureIQ Technical Documentation — PostureIQ Technical Docs</title>
+  <link rel="stylesheet" href="../docs/theme.css">
+  <link rel="stylesheet" href="../docs/print.css">
+  <script src="../docs/theme.js"></script>
+</head>
+<body>
+
+<header class="doc-header">
+  <a href="index-of-tech-docs.html" class="doc-header-brand">
+    <svg viewBox="0 0 28 28" fill="none"><rect width="28" height="28" rx="6" fill="var(--bg-accent)"/><path d="M8 8h4v12H8V8zm8 4h4v8h-4v-8z" fill="var(--text-on-accent)"/></svg>
+    <span>PostureIQ Technical Docs</span>
+  </a>
+  <nav class="doc-header-nav">
+    <a href="index-of-tech-docs.html" class="active">Home</a>
+    <a href="01-infrastructure-overview.html">Infrastructure</a>
+    <a href="02-assessment-guide.html">Assessments</a>
+    <a href="03-report-lifecycle.html">Reports</a>
+    <a href="04-manual-setup-guide.html">Setup</a>
+    <a href="05-authentication-flow.html">Auth</a>
+    <a href="06-api-reference.html">API</a>
+    <a href="07-teams-integration.html">Teams</a>
+    <a href="08-troubleshooting.html">Troubleshoot</a>
+    <button class="theme-toggle" aria-label="Toggle theme"></button>
+  </nav>
+</header>
+
+<main class="doc-container">
+<h1 id="postureiq-technical-documentation">PostureIQ Technical Documentation</h1>
+<blockquote><p>Complete technical documentation for the EnterpriseSecurityIQ (PostureIQ) platform.</p></blockquote>
+<hr>
+<h2 id="documents">Documents</h2>
+<table>
+<thead><tr><th>#</th><th>Document</th><th>Description</th></tr></thead>
+<tbody>
+<tr><td>1</td><td><a href="01-infrastructure-overview.html">Infrastructure Overview</a></td><td>Azure resources, RBAC, container config, build/deploy process, network and storage architecture</td></tr>
+<tr><td>2</td><td><a href="02-assessment-guide.html">Assessment Guide</a></td><td>All 8 assessment engines, evaluation pipeline, collectors, scoring, behind-the-scenes sequence</td></tr>
+<tr><td>3</td><td><a href="03-report-lifecycle.html">Report Lifecycle</a></td><td>Report formats (HTML/PDF/Excel/JSON/OSCAL/SARIF), generation pipeline, storage flow, historical tracking</td></tr>
+<tr><td>4</td><td><a href="04-manual-setup-guide.html">Manual Setup Guide</a></td><td>Step-by-step instructions to manually recreate the entire infrastructure from scratch</td></tr>
+<tr><td>5</td><td><a href="05-authentication-flow.html">Authentication Flow</a></td><td>MSAL.js, Teams SSO (NAA), managed identity, token flow diagrams</td></tr>
+<tr><td>6</td><td><a href="06-api-reference.html">API Reference</a></td><td>All HTTP endpoints, SSE streaming protocol, CORS, request/response formats</td></tr>
+<tr><td>7</td><td><a href="07-teams-integration.html">Teams Integration</a></td><td>Teams manifest, NAA, theme sync, iframe security, installation steps</td></tr>
+<tr><td>8</td><td><a href="08-troubleshooting.html">Troubleshooting</a></td><td>Common issues with authentication, storage, containers, assessments, and deployment</td></tr>
+</tbody></table>
+<hr>
+<h2 id="quick-links">Quick Links</h2>
+<h3 id="for-beginners">For Beginners</h3>
+<ul>
+<li><strong>"What is PostureIQ?"</strong> → <a href="01-infrastructure-overview.html#what-is-postureiq">Infrastructure Overview</a></li>
+<li><strong>"How do I deploy this?"</strong> → <a href="04-manual-setup-guide.html">Manual Setup Guide</a></li>
+<li><strong>"What assessments can I run?"</strong> → <a href="02-assessment-guide.html#assessment-types-overview">Assessment Guide</a></li>
+<li><strong>"Something is broken"</strong> → <a href="08-troubleshooting.html">Troubleshooting</a></li>
+</ul>
+<h3 id="for-developers">For Developers</h3>
+<ul>
+<li><strong>API endpoints and SSE events</strong> → <a href="06-api-reference.html">API Reference</a></li>
+<li><strong>How authentication works</strong> → <a href="05-authentication-flow.html">Authentication Flow</a></li>
+<li><strong>Report generation code</strong> → <a href="03-report-lifecycle.html#report-modules">Report Lifecycle</a></li>
+<li><strong>Teams app setup</strong> → <a href="07-teams-integration.html">Teams Integration</a></li>
+</ul>
+<h3 id="for-operators">For Operators</h3>
+<ul>
+<li><strong>Full deployment script</strong> → <a href="04-manual-setup-guide.html">Manual Setup Guide</a></li>
+<li><strong>Quick redeployment</strong> → <a href="04-manual-setup-guide.html#quick-redeployment-code-changes-only">Manual Setup Guide</a></li>
+<li><strong>Diagnostic commands</strong> → <a href="08-troubleshooting.html#diagnostic-commands-quick-reference">Troubleshooting</a></li>
+<li><strong>RBAC roles and Graph permissions</strong> → <a href="01-infrastructure-overview.html#rbac-role-assignments">Infrastructure Overview</a></li>
+</ul>
+<hr>
+<h2 id="architecture-summary">Architecture Summary</h2>
+<pre><code>┌─────────────────────────────────────────────────────────────────────┐
+│                         User Access Points                          │
+│                                                                     │
+│   Browser (SPA)          Teams Tab           Foundry Agent          │
+│   MSAL.js popup         Teams SSO (NAA)     Managed Identity        │
+│        │                     │                    │                  │
+│        └─────────┬───────────┘                    │                  │
+│                  ▼                                 │                  │
+│   ┌──────────────────────────┐                    │                  │
+│   │  Container App           │◄───────────────────┘                  │
+│   │  (FastAPI + Uvicorn)     │                                       │
+│   │  Port 8088               │                                       │
+│   │                          │                                       │
+│   │  ┌────────────────────┐  │                                       │
+│   │  │  Agent (14 tools)  │  │                                       │
+│   │  │  8 assessments     │  │                                       │
+│   │  │  47 report modules │  │                                       │
+│   │  │  64 collectors     │  │                                       │
+│   │  └────────────────────┘  │                                       │
+│   └──────┬──────┬─────┬──────┘                                       │
+│          │      │     │                                              │
+│    ┌─────┘      │     └──────┐                                       │
+│    ▼            ▼            ▼                                       │
+│  Azure       Azure        Azure                                     │
+│  OpenAI      Blob         Graph +                                   │
+│  (GPT)       Storage      ARM APIs                                  │
+└─────────────────────────────────────────────────────────────────────┘</code></pre>
+<hr>
+<h2 id="key-numbers">Key Numbers</h2>
+<table>
+<thead><tr><th>Metric</th><th>Value</th></tr></thead>
+<tbody>
+<tr><td>Azure resources</td><td>14</td></tr>
+<tr><td>Assessment engines</td><td>8</td></tr>
+<tr><td>Agent tools</td><td>14</td></tr>
+<tr><td>Data collectors</td><td>64 (49 Azure + 13 Entra + 2 general)</td></tr>
+<tr><td>Evaluation checks</td><td>113+</td></tr>
+<tr><td>Compliance frameworks</td><td>11</td></tr>
+<tr><td>Compliance controls</td><td>525</td></tr>
+<tr><td>Report modules</td><td>47 (27 generic + 20 PostureIQ)</td></tr>
+<tr><td>Report formats</td><td>8 (HTML, PDF, Excel, JSON, OSCAL, SARIF, Markdown, ZIP)</td></tr>
+<tr><td>API routes</td><td>7</td></tr>
+<tr><td>RBAC roles</td><td>6 Azure + 8 Graph permissions</td></tr>
+</tbody></table>
+</main>
+
+</body>
+</html>

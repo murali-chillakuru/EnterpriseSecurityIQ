@@ -1,0 +1,4 @@
+# Generated state and stage area — do not commit
+staged/
+.generated/
+
